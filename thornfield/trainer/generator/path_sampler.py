@@ -23,6 +23,8 @@ class PathSampler:
         enforce_monotone: bool = False,
         monotone_tolerance: float = 0.01,
         min_affinity: float = 0.05,
+        relax_phase_on_empty: bool = True,
+        allow_partial: bool = True,
     ):
         self.spec = spec
         self.graph = spec.token_graph
@@ -32,6 +34,8 @@ class PathSampler:
         self.enforce_monotone = enforce_monotone
         self.monotone_tolerance = monotone_tolerance
         self.min_affinity = min_affinity
+        self.relax_phase_on_empty = relax_phase_on_empty
+        self.allow_partial = allow_partial
         self._precomputed_valid_triads = self._precompute_valid_triads()
         self._tag_index = self._build_tag_index()
 
@@ -105,6 +109,19 @@ class PathSampler:
             candidates.append(triad)
             seen.add(key)
 
+        if candidates:
+            return candidates
+
+        if self.relax_phase_on_empty:
+            for triad in self._precomputed_valid_triads:
+                key = tuple(sorted(t.id for t in triad))
+                if key in seen:
+                    continue
+                if any(t.id in placed_ids for t in triad):
+                    continue
+                candidates.append(triad)
+                seen.add(key)
+
         return candidates
 
     def _triad_energy(self, triad: List[Token], casebook: CasebookState) -> float:
@@ -134,7 +151,14 @@ class PathSampler:
         for turn in range(1, self.max_turns):
             candidates = self._get_candidates(casebook)
             if len(candidates) < 1:
-                return None
+                if self.relax_phase_on_empty:
+                    candidates = [
+                        c
+                        for c in self._precomputed_valid_triads
+                        if not any(t.id in casebook.placed_token_ids() for t in c)
+                    ]
+                if len(candidates) < 1:
+                    return None
 
             if self.enforce_monotone:
                 prev_energy = self._triad_energy(path[-1], casebook) if path else float("inf")
@@ -166,7 +190,7 @@ class PathSampler:
                 path.append(invariants)
                 return path
 
-        return None
+        return path if self.allow_partial and path else None
 
     def sample_batch(self, n: int, verbose: bool = True) -> List[List[List[Token]]]:
         paths: List[List[List[Token]]] = []

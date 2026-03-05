@@ -17,6 +17,7 @@ class ConvergenceProof:
             sampling_temperature=1.8,
             enforce_monotone=True,
             min_affinity=0.05,
+            allow_partial=False,
         )
         test_paths = sampler.sample_batch(n_test_paths, verbose=False)
         print(f"  Sampled {len(test_paths)} held-out paths")
