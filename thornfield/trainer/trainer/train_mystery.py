@@ -316,6 +316,10 @@ def train_mystery_cartridge(
                     }
                 )
 
+                if not torch.isfinite(loss_dict["total"]).all():
+                    print("Non-finite loss detected. Aborting training.", flush=True)
+                    return model, {"loss": float("nan")}
+
                 optimizer.zero_grad()
                 loss_dict["total"].backward()
                 optimizer.step()

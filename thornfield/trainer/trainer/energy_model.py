@@ -38,16 +38,22 @@ class CasebookEncoder(nn.Module):
     def forward(self, placed_emb, positions, mask=None):
         spatial = self.spatial_enc(positions.float())
         combined = self.proj(torch.cat([placed_emb, spatial], dim=-1))
-        attended, _ = self.attn(combined, combined, combined, key_padding_mask=mask)
         if mask is not None:
-            attended = attended.masked_fill(mask.unsqueeze(-1), 0)
-            n = (~mask).float().sum(1, keepdim=True)
-            pooled = attended.sum(1) / n.clamp_min(1.0)
-            # If a row has no placed tokens, zero the pooled vector.
-            empty = n.squeeze(-1) == 0
-            if empty.any():
-                pooled[empty] = 0
+            empty = mask.all(dim=1)
+            pooled = combined.new_zeros((combined.size(0), combined.size(2)))
+            if (~empty).any():
+                idx = (~empty).nonzero(as_tuple=True)[0]
+                attended, _ = self.attn(
+                    combined[idx],
+                    combined[idx],
+                    combined[idx],
+                    key_padding_mask=mask[idx],
+                )
+                attended = attended.masked_fill(mask[idx].unsqueeze(-1), 0)
+                n = (~mask[idx]).float().sum(1, keepdim=True).clamp_min(1.0)
+                pooled[idx] = attended.sum(1) / n
         else:
+            attended, _ = self.attn(combined, combined, combined, key_padding_mask=None)
             pooled = attended.mean(1)
         return self.pool(pooled)
 
