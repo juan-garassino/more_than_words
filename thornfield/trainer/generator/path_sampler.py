@@ -20,12 +20,16 @@ class PathSampler:
         sampling_temperature: float = 1.2,
         max_turns: int | None = None,
         min_turns: int | None = None,
+        enforce_monotone: bool = False,
+        monotone_tolerance: float = 0.01,
     ):
         self.spec = spec
         self.graph = spec.token_graph
         self.sampling_temperature = sampling_temperature
         self.max_turns = max_turns if max_turns is not None else spec.max_turns
         self.min_turns = min_turns if min_turns is not None else spec.min_turns
+        self.enforce_monotone = enforce_monotone
+        self.monotone_tolerance = monotone_tolerance
         self._precomputed_valid_triads = self._precompute_valid_triads()
         self._tag_index = self._build_tag_index()
 
@@ -84,7 +88,27 @@ class PathSampler:
                             candidates.append(triad)
                             seen.add(key)
 
+        if candidates:
+            return candidates
+
+        # Fallback: allow any valid triad if tag-based lookup yields none.
+        for triad in self._precomputed_valid_triads:
+            key = tuple(sorted(t.id for t in triad))
+            if key in seen:
+                continue
+            if any(t.id in placed_ids for t in triad):
+                continue
+            if not all(t.is_available_at_turn(casebook.turn_count) for t in triad):
+                continue
+            candidates.append(triad)
+            seen.add(key)
+
         return candidates
+
+    def _triad_energy(self, triad: List[Token], casebook: CasebookState) -> float:
+        candidate_ids = [t.id for t in triad]
+        context_ids = [t.id for t in casebook.all_placed_tokens()]
+        return self.graph.induced_subgraph_energy(candidate_ids, context_ids)
 
     def _score_triad(self, triad: List[Token], casebook: CasebookState) -> float:
         candidate_ids = [t.id for t in triad]
@@ -109,6 +133,16 @@ class PathSampler:
             candidates = self._get_candidates(casebook)
             if len(candidates) < 1:
                 return None
+
+            if self.enforce_monotone:
+                prev_energy = self._triad_energy(path[-1], casebook) if path else float("inf")
+                filtered = []
+                for c in candidates:
+                    e = self._triad_energy(c, casebook)
+                    if e <= prev_energy + self.monotone_tolerance:
+                        filtered.append(c)
+                if filtered:
+                    candidates = filtered
 
             scores = np.array([self._score_triad(c, casebook) for c in candidates])
             scores = scores / self.sampling_temperature
