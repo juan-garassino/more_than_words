@@ -195,31 +195,12 @@ def train_mystery_cartridge(
     total_batches = max(1, (len(examples) + batch_size - 1) // batch_size)
     print(f"Examples: {len(examples)} | Batch size: {batch_size} | Batches/epoch: {total_batches}", flush=True)
 
-    use_tqdm = False
-    tqdm = None
-    try:
-        from tqdm import tqdm as _tqdm
-
-        tqdm = _tqdm
-        use_tqdm = True
-    except Exception:
-        use_tqdm = False
-
     for epoch in range(n_epochs):
         np.random.shuffle(examples)
         epoch_loss = 0.0
         batch_count = total_batches
 
-        iterator = range(0, len(examples), batch_size)
-        if use_tqdm and tqdm is not None:
-            iterator = tqdm(
-                iterator,
-                total=batch_count,
-                desc=f"Epoch {epoch+1:02d}/{n_epochs}",
-                leave=True,
-            )
-
-        for idx, start in enumerate(iterator, start=1):
+        for idx, start in enumerate(range(0, len(examples), batch_size), start=1):
             batch_examples = examples[start : start + batch_size]
             negatives = sample_negative_triads(spec.tokens, n_samples=len(batch_examples))
 
@@ -274,8 +255,7 @@ def train_mystery_cartridge(
             optimizer.step()
 
             epoch_loss += float(loss_dict["total"].detach().cpu())
-            if not use_tqdm and (idx % 10 == 0 or idx == batch_count):
-                print(f"Epoch {epoch+1:02d}/{n_epochs} | batch {idx}/{batch_count}", flush=True)
+            print(f"Epoch {epoch+1:02d}/{n_epochs} | batch {idx}/{batch_count}", flush=True)
 
         history["loss"] = epoch_loss / batch_count
         print(f"Epoch {epoch+1:02d}/{n_epochs} | loss={history['loss']:.4f}", flush=True)
