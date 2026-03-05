@@ -23,3 +23,6 @@ train-amber-cipher-colab-gpu: pack-amber-cipher colab-install
 
 train-amber-cipher-colab-fastproof: pack-amber-cipher colab-install
 	PYTHONUNBUFFERED=1 KMP_DUPLICATE_LIB_OK=TRUE KMP_USE_SHM=0 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=thornfield/trainer python3 thornfield/trainer/tools/train_single_case.py amber_cipher --paths 300 --epochs 20 --proof-paths 50 --proof-max-attempts 500 --device cuda
+
+train-amber-cipher-colab-cpu: pack-amber-cipher colab-install
+	PYTHONUNBUFFERED=1 KMP_DUPLICATE_LIB_OK=TRUE KMP_USE_SHM=0 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=thornfield/trainer python3 thornfield/trainer/tools/train_single_case.py amber_cipher --paths 300 --epochs 20 --proof-paths 200 --proof-max-attempts 2000 --device cpu

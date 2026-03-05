@@ -19,6 +19,7 @@ class ConvergenceProof:
         print(f"  CONVERGENCE PROOF: {spec.title}")
         print("─" * 50)
 
+        print("  Sampling held-out paths...", flush=True)
         sampler = PathSampler(
             spec,
             sampling_temperature=1.8,
@@ -46,8 +47,11 @@ class ConvergenceProof:
                 correct_invariants += 1
                 turns_list.append(len(path))
 
+        print("  Running Lyapunov check...", flush=True)
         lyapunov = analyzer.lyapunov_check(model, test_paths[:100])
+        print("  Estimating basin coverage...", flush=True)
         basin = analyzer.basin_size(model, spec, n_samples=200)
+        print("  Scanning for spurious attractors...", flush=True)
         spurious = analyzer.spurious_attractor_scan(model, spec)
 
         report = {

@@ -274,7 +274,11 @@ def train_mystery_cartridge(
             optimizer.step()
 
             epoch_loss += float(loss_dict["total"].detach().cpu())
-            print(f"Epoch {epoch+1:02d}/{n_epochs} | batch {idx}/{batch_count}", flush=True)
+            if idx % 15 == 0 or idx == batch_count:
+                print(
+                    f"Epoch {epoch+1:02d}/{n_epochs} | batch {idx}/{batch_count}",
+                    flush=True,
+                )
 
         history["loss"] = epoch_loss / batch_count
         print(f"Epoch {epoch+1:02d}/{n_epochs} | loss={history['loss']:.4f}", flush=True)
