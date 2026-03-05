@@ -1,0 +1,3550 @@
+{
+  "case_id": "hollow_season",
+  "title": "The Hollow Season",
+  "convergence_shape": "false_plateau",
+  "difficulty": "medium",
+  "opening_token_ids": [
+    "location:hollow_season_1",
+    "event:estate_owner_discovered",
+    "time:hollow_season_1"
+  ],
+  "invariant_token_ids": [
+    "suspect:edmund_carrow",
+    "event:sleeping_brandy",
+    "motive:inheritance_entailed"
+  ],
+  "tokens": [
+    {
+      "id": "suspect:edmund_carrow",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.58
+    },
+    {
+      "id": "suspect:estate_manager",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.065,
+        0.052,
+        0.028
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.56
+    },
+    {
+      "id": "suspect:solicitor_assistant",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.248,
+        0.255,
+        0.018
+      ],
+      "affinity_tags": [
+        "guilt",
+        "access",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.09
+    },
+    {
+      "id": "suspect:associate_hollow_season",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.266,
+        0.069,
+        0.033
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.83
+    },
+    {
+      "id": "suspect:relative_hollow_season",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.087,
+        0.082,
+        0.128
+      ],
+      "affinity_tags": [
+        "guilt",
+        "time_window",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.92
+    },
+    {
+      "id": "suspect:staff_hollow_season",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.2,
+        0.127,
+        0.121
+      ],
+      "affinity_tags": [
+        "method",
+        "guilt",
+        "constraint",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.64
+    },
+    {
+      "id": "suspect:visitor_hollow_season",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.021,
+        0.03,
+        0.032
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.51
+    },
+    {
+      "id": "location:hollow_season_1",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.075,
+        0.075
+      ],
+      "affinity_tags": [
+        "guilt",
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.07
+    },
+    {
+      "id": "location:hollow_season_2",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.163,
+        0.199,
+        0.098
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint",
+        "error",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.9
+    },
+    {
+      "id": "location:hollow_season_3",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.096,
+        0.076,
+        0.049
+      ],
+      "affinity_tags": [
+        "method",
+        "access",
+        "time_window",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.16
+    },
+    {
+      "id": "location:hollow_season_4",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.253,
+        0.165,
+        0.208
+      ],
+      "affinity_tags": [
+        "time_window",
+        "error",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.95
+    },
+    {
+      "id": "location:hollow_season_5",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.15,
+        0.121,
+        0.065
+      ],
+      "affinity_tags": [
+        "method",
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.47
+    },
+    {
+      "id": "location:hollow_season_6",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.096,
+        0.119,
+        0.15
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.92
+    },
+    {
+      "id": "location:hollow_season_7",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.033,
+        0.03,
+        0.027
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.52
+    },
+    {
+      "id": "location:hollow_season_8",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.144,
+        0.114,
+        0.153
+      ],
+      "affinity_tags": [
+        "method",
+        "constraint",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.25
+    },
+    {
+      "id": "object:hollow_season_1",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.052,
+        0.056,
+        0.044
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.75
+    },
+    {
+      "id": "object:hollow_season_2",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.072,
+        0.119,
+        0.085
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.21
+    },
+    {
+      "id": "object:hollow_season_3",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.145,
+        0.199,
+        0.098
+      ],
+      "affinity_tags": [
+        "access",
+        "guilt",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.16
+    },
+    {
+      "id": "object:hollow_season_4",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.024,
+        0.023,
+        0.043
+      ],
+      "affinity_tags": [
+        "error",
+        "time_window",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.16
+    },
+    {
+      "id": "object:hollow_season_5",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.197,
+        0.26,
+        0.185
+      ],
+      "affinity_tags": [
+        "method",
+        "concealment",
+        "time_window",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.87
+    },
+    {
+      "id": "object:hollow_season_6",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.089,
+        0.057,
+        0.079
+      ],
+      "affinity_tags": [
+        "method",
+        "guilt",
+        "concealment",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.15
+    },
+    {
+      "id": "object:hollow_season_7",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.066,
+        0.108,
+        0.066
+      ],
+      "affinity_tags": [
+        "guilt",
+        "physical",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.37
+    },
+    {
+      "id": "object:hollow_season_8",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.127,
+        0.124,
+        0.041
+      ],
+      "affinity_tags": [
+        "error",
+        "access",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.83
+    },
+    {
+      "id": "object:hollow_season_9",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.142,
+        0.188,
+        0.18
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "physical",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.84
+    },
+    {
+      "id": "object:hollow_season_10",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.168,
+        0.224,
+        0.109
+      ],
+      "affinity_tags": [
+        "constraint",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.31
+    },
+    {
+      "id": "object:hollow_season_11",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.078,
+        0.089,
+        0.124
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.73
+    },
+    {
+      "id": "object:hollow_season_12",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.074,
+        0.078,
+        0.09
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment",
+        "access",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.46
+    },
+    {
+      "id": "object:hollow_season_13",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.087,
+        0.097,
+        0.072
+      ],
+      "affinity_tags": [
+        "physical",
+        "concealment",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.27
+    },
+    {
+      "id": "emotion:hollow_season_1",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.125,
+        0.111,
+        0.046
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.3
+    },
+    {
+      "id": "emotion:hollow_season_2",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.075,
+        0.105,
+        0.113
+      ],
+      "affinity_tags": [
+        "method",
+        "concealment",
+        "access",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.84
+    },
+    {
+      "id": "emotion:hollow_season_3",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.066,
+        0.091,
+        0.102
+      ],
+      "affinity_tags": [
+        "concealment",
+        "method",
+        "error",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.56
+    },
+    {
+      "id": "emotion:hollow_season_4",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.192,
+        0.156,
+        0.128
+      ],
+      "affinity_tags": [
+        "time_window",
+        "concealment",
+        "physical",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.55
+    },
+    {
+      "id": "emotion:hollow_season_5",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.169,
+        0.142,
+        0.13
+      ],
+      "affinity_tags": [
+        "constraint",
+        "method",
+        "access",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.52
+    },
+    {
+      "id": "emotion:hollow_season_6",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.059,
+        0.101,
+        0.067
+      ],
+      "affinity_tags": [
+        "constraint",
+        "time_window",
+        "physical",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.87
+    },
+    {
+      "id": "modifier:hollow_season_1",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.061,
+        0.059,
+        0.038
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.19
+    },
+    {
+      "id": "modifier:hollow_season_2",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.049,
+        0.066,
+        0.068
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.58
+    },
+    {
+      "id": "modifier:hollow_season_3",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.334,
+        0.253,
+        0.202
+      ],
+      "affinity_tags": [
+        "error",
+        "constraint",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.77
+    },
+    {
+      "id": "modifier:hollow_season_4",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.058,
+        0.042,
+        0.053
+      ],
+      "affinity_tags": [
+        "time_window",
+        "concealment",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.63
+    },
+    {
+      "id": "modifier:hollow_season_5",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.159,
+        0.153,
+        0.09
+      ],
+      "affinity_tags": [
+        "time_window",
+        "guilt",
+        "access",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.79
+    },
+    {
+      "id": "modifier:hollow_season_6",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.19,
+        0.222,
+        0.132
+      ],
+      "affinity_tags": [
+        "time_window",
+        "concealment",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.71
+    },
+    {
+      "id": "modifier:hollow_season_7",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.057,
+        0.067,
+        0.03
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.24
+    },
+    {
+      "id": "modifier:hollow_season_8",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.069,
+        0.104,
+        0.081
+      ],
+      "affinity_tags": [
+        "access",
+        "guilt",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.48
+    },
+    {
+      "id": "modifier:hollow_season_9",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.203,
+        0.206,
+        0.102
+      ],
+      "affinity_tags": [
+        "constraint",
+        "access",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.29
+    },
+    {
+      "id": "modifier:hollow_season_10",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.095,
+        0.111,
+        0.146
+      ],
+      "affinity_tags": [
+        "concealment",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.77
+    },
+    {
+      "id": "action:hollow_season_1",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.185,
+        0.229,
+        0.138
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "access",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.86
+    },
+    {
+      "id": "action:hollow_season_2",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.068,
+        0.023
+      ],
+      "affinity_tags": [
+        "physical",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.65
+    },
+    {
+      "id": "action:hollow_season_3",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.096,
+        0.063,
+        0.093
+      ],
+      "affinity_tags": [
+        "access",
+        "guilt",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.77
+    },
+    {
+      "id": "action:hollow_season_4",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.059,
+        0.077,
+        0.1
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.25
+    },
+    {
+      "id": "action:hollow_season_5",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.09,
+        0.117,
+        0.061
+      ],
+      "affinity_tags": [
+        "error",
+        "constraint",
+        "concealment",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.41
+    },
+    {
+      "id": "action:hollow_season_6",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.089,
+        0.084,
+        0.122
+      ],
+      "affinity_tags": [
+        "guilt",
+        "access",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.57
+    },
+    {
+      "id": "action:hollow_season_7",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.096,
+        0.084,
+        0.124
+      ],
+      "affinity_tags": [
+        "constraint",
+        "concealment",
+        "access",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.92
+    },
+    {
+      "id": "action:hollow_season_8",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.321,
+        0.188,
+        0.224
+      ],
+      "affinity_tags": [
+        "time_window",
+        "guilt",
+        "physical",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.85
+    },
+    {
+      "id": "action:hollow_season_9",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.241,
+        0.205,
+        0.175
+      ],
+      "affinity_tags": [
+        "access",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.15
+    },
+    {
+      "id": "time:hollow_season_1",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.117,
+        0.173,
+        0.163
+      ],
+      "affinity_tags": [
+        "method",
+        "physical",
+        "concealment",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.33
+    },
+    {
+      "id": "time:hollow_season_2",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.09,
+        0.069,
+        0.047
+      ],
+      "affinity_tags": [
+        "concealment",
+        "constraint",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.91
+    },
+    {
+      "id": "time:hollow_season_3",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.078,
+        0.079,
+        0.08
+      ],
+      "affinity_tags": [
+        "method",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.48
+    },
+    {
+      "id": "time:hollow_season_4",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.218,
+        0.238,
+        0.115
+      ],
+      "affinity_tags": [
+        "method",
+        "constraint",
+        "guilt",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.74
+    },
+    {
+      "id": "time:hollow_season_5",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.045,
+        0.053,
+        0.076
+      ],
+      "affinity_tags": [
+        "concealment",
+        "method",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.64
+    },
+    {
+      "id": "motive:inheritance_entailed",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.89
+    },
+    {
+      "id": "motive:hollow_season_2",
+      "class": "MOTIVE",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.034,
+        0.002,
+        0.107
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.07
+    },
+    {
+      "id": "motive:hollow_season_3",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.065,
+        0.123,
+        0.237
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.9
+    },
+    {
+      "id": "motive:hollow_season_4",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.059,
+        0.084,
+        0.337
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.45
+    },
+    {
+      "id": "motive:hollow_season_5",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.053,
+        0.05,
+        0.192
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.75
+    },
+    {
+      "id": "motive:hollow_season_6",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.203,
+        0.054,
+        0.034
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.92
+    },
+    {
+      "id": "witness:hollow_season_1",
+      "class": "WITNESS",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.054,
+        0.075,
+        0.039
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.92
+    },
+    {
+      "id": "witness:hollow_season_2",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.038,
+        0.037,
+        0.031
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.73
+    },
+    {
+      "id": "witness:hollow_season_3",
+      "class": "WITNESS",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.031,
+        0.03
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.93
+    },
+    {
+      "id": "witness:hollow_season_4",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.05,
+        0.048,
+        0.061
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.26
+    },
+    {
+      "id": "witness:hollow_season_5",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.036,
+        0.044,
+        0.045
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.91
+    },
+    {
+      "id": "event:estate_owner_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.035,
+        0.107,
+        0.011
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.58
+    },
+    {
+      "id": "event:hollow_season_scene",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.021,
+        0.061,
+        0.021
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.25
+    },
+    {
+      "id": "event:sleeping_brandy",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.63
+    }
+  ],
+  "graph": {
+    "nodes": [
+      "suspect:edmund_carrow",
+      "suspect:estate_manager",
+      "suspect:solicitor_assistant",
+      "suspect:associate_hollow_season",
+      "suspect:relative_hollow_season",
+      "suspect:staff_hollow_season",
+      "suspect:visitor_hollow_season",
+      "location:hollow_season_1",
+      "location:hollow_season_2",
+      "location:hollow_season_3",
+      "location:hollow_season_4",
+      "location:hollow_season_5",
+      "location:hollow_season_6",
+      "location:hollow_season_7",
+      "location:hollow_season_8",
+      "object:hollow_season_1",
+      "object:hollow_season_2",
+      "object:hollow_season_3",
+      "object:hollow_season_4",
+      "object:hollow_season_5",
+      "object:hollow_season_6",
+      "object:hollow_season_7",
+      "object:hollow_season_8",
+      "object:hollow_season_9",
+      "object:hollow_season_10",
+      "object:hollow_season_11",
+      "object:hollow_season_12",
+      "object:hollow_season_13",
+      "emotion:hollow_season_1",
+      "emotion:hollow_season_2",
+      "emotion:hollow_season_3",
+      "emotion:hollow_season_4",
+      "emotion:hollow_season_5",
+      "emotion:hollow_season_6",
+      "modifier:hollow_season_1",
+      "modifier:hollow_season_2",
+      "modifier:hollow_season_3",
+      "modifier:hollow_season_4",
+      "modifier:hollow_season_5",
+      "modifier:hollow_season_6",
+      "modifier:hollow_season_7",
+      "modifier:hollow_season_8",
+      "modifier:hollow_season_9",
+      "modifier:hollow_season_10",
+      "action:hollow_season_1",
+      "action:hollow_season_2",
+      "action:hollow_season_3",
+      "action:hollow_season_4",
+      "action:hollow_season_5",
+      "action:hollow_season_6",
+      "action:hollow_season_7",
+      "action:hollow_season_8",
+      "action:hollow_season_9",
+      "time:hollow_season_1",
+      "time:hollow_season_2",
+      "time:hollow_season_3",
+      "time:hollow_season_4",
+      "time:hollow_season_5",
+      "motive:inheritance_entailed",
+      "motive:hollow_season_2",
+      "motive:hollow_season_3",
+      "motive:hollow_season_4",
+      "motive:hollow_season_5",
+      "motive:hollow_season_6",
+      "witness:hollow_season_1",
+      "witness:hollow_season_2",
+      "witness:hollow_season_3",
+      "witness:hollow_season_4",
+      "witness:hollow_season_5",
+      "event:estate_owner_discovered",
+      "event:hollow_season_scene",
+      "event:sleeping_brandy"
+    ],
+    "edges": [
+      {
+        "from": "action:hollow_season_2",
+        "to": "object:hollow_season_5",
+        "weight": 0.53,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:hollow_season_3",
+        "to": "object:hollow_season_6",
+        "weight": 0.34,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:hollow_season_3",
+        "to": "suspect:associate_hollow_season",
+        "weight": 0.52,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:hollow_season_6",
+        "to": "suspect:edmund_carrow",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:hollow_season_4",
+        "to": "object:hollow_season_6",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_2",
+        "to": "suspect:associate_hollow_season",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_1",
+        "to": "suspect:associate_hollow_season",
+        "weight": 0.34,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "suspect:associate_hollow_season",
+        "to": "suspect:edmund_carrow",
+        "weight": 0.5,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:hollow_season_4",
+        "to": "suspect:associate_hollow_season",
+        "weight": 0.53,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_2",
+        "to": "object:hollow_season_7",
+        "weight": 0.53,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_1",
+        "to": "action:hollow_season_3",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_3",
+        "to": "suspect:edmund_carrow",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_3",
+        "to": "object:hollow_season_7",
+        "weight": 0.4,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:hollow_season_10",
+        "to": "time:hollow_season_3",
+        "weight": 0.4,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "event:sleeping_brandy",
+        "to": "object:hollow_season_10",
+        "weight": 0.45,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:hollow_season_9",
+        "to": "time:hollow_season_2",
+        "weight": 0.4,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "time:hollow_season_2",
+        "to": "time:hollow_season_3",
+        "weight": 0.31,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_5",
+        "to": "object:hollow_season_9",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_5",
+        "to": "time:hollow_season_3",
+        "weight": 0.46,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_4",
+        "to": "object:hollow_season_9",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:hollow_season_8",
+        "to": "object:hollow_season_9",
+        "weight": 0.48,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_6",
+        "to": "object:hollow_season_8",
+        "weight": 0.46,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:hollow_season_6",
+        "to": "event:sleeping_brandy",
+        "weight": 0.5,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_4",
+        "to": "motive:inheritance_entailed",
+        "weight": 0.33,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_5",
+        "to": "motive:hollow_season_3",
+        "weight": 0.43,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_4",
+        "to": "modifier:hollow_season_5",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_1",
+        "to": "modifier:hollow_season_1",
+        "weight": 0.5,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_1",
+        "to": "suspect:estate_manager",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:hollow_season_1",
+        "to": "suspect:estate_manager",
+        "weight": 0.43,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_1",
+        "to": "suspect:solicitor_assistant",
+        "weight": 0.3,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_2",
+        "to": "suspect:solicitor_assistant",
+        "weight": 0.25,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "suspect:estate_manager",
+        "to": "suspect:solicitor_assistant",
+        "weight": 0.25,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "action:hollow_season_1",
+        "to": "suspect:solicitor_assistant",
+        "weight": 0.32,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:hollow_season_4",
+        "to": "suspect:solicitor_assistant",
+        "weight": 0.38,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:hollow_season_5",
+        "to": "suspect:solicitor_assistant",
+        "weight": 0.37,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_2",
+        "to": "suspect:relative_hollow_season",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_10",
+        "to": "suspect:relative_hollow_season",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_9",
+        "to": "suspect:staff_hollow_season",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_3",
+        "to": "suspect:staff_hollow_season",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:solicitor_assistant",
+        "to": "suspect:visitor_hollow_season",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:estate_manager",
+        "to": "suspect:visitor_hollow_season",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_1",
+        "to": "location:hollow_season_2",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_1",
+        "to": "object:hollow_season_8",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_2",
+        "to": "modifier:hollow_season_1",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_3",
+        "to": "witness:hollow_season_2",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_3",
+        "to": "object:hollow_season_8",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_4",
+        "to": "object:hollow_season_9",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_4",
+        "to": "suspect:solicitor_assistant",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_5",
+        "to": "location:hollow_season_5",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_5",
+        "to": "modifier:hollow_season_5",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_7",
+        "to": "location:hollow_season_6",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_6",
+        "to": "modifier:hollow_season_5",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_7",
+        "to": "modifier:hollow_season_9",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_7",
+        "to": "motive:inheritance_entailed",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_8",
+        "to": "modifier:hollow_season_7",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_4",
+        "to": "location:hollow_season_8",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_7",
+        "to": "object:hollow_season_1",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_2",
+        "to": "time:hollow_season_4",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_3",
+        "to": "object:hollow_season_2",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_9",
+        "to": "object:hollow_season_11",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_2",
+        "to": "object:hollow_season_11",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_8",
+        "to": "object:hollow_season_12",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_6",
+        "to": "object:hollow_season_12",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_1",
+        "to": "object:hollow_season_13",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_13",
+        "to": "time:hollow_season_4",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_2",
+        "to": "location:hollow_season_1",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_2",
+        "to": "location:hollow_season_6",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_3",
+        "to": "suspect:staff_hollow_season",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_4",
+        "to": "modifier:hollow_season_10",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_5",
+        "to": "emotion:hollow_season_5",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_5",
+        "to": "emotion:hollow_season_6",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_6",
+        "to": "modifier:hollow_season_5",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_3",
+        "to": "motive:hollow_season_2",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_3",
+        "to": "suspect:relative_hollow_season",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_2",
+        "to": "modifier:hollow_season_4",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_6",
+        "to": "object:hollow_season_11",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_7",
+        "to": "object:hollow_season_1",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_8",
+        "to": "suspect:relative_hollow_season",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_1",
+        "to": "action:hollow_season_4",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_7",
+        "to": "object:hollow_season_6",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_8",
+        "to": "emotion:hollow_season_2",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_8",
+        "to": "modifier:hollow_season_2",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_9",
+        "to": "location:hollow_season_6",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_6",
+        "to": "action:hollow_season_9",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_4",
+        "to": "time:hollow_season_1",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_6",
+        "to": "time:hollow_season_1",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_7",
+        "to": "time:hollow_season_5",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_2",
+        "to": "time:hollow_season_5",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_2",
+        "to": "object:hollow_season_5",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_3",
+        "to": "motive:hollow_season_3",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_9",
+        "to": "motive:hollow_season_5",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_7",
+        "to": "motive:hollow_season_5",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_5",
+        "to": "motive:hollow_season_6",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_2",
+        "to": "motive:hollow_season_6",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:sleeping_brandy",
+        "to": "witness:hollow_season_1",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_5",
+        "to": "witness:hollow_season_1",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_5",
+        "to": "witness:hollow_season_2",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_8",
+        "to": "witness:hollow_season_3",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:hollow_season_2",
+        "to": "witness:hollow_season_3",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_6",
+        "to": "witness:hollow_season_4",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_6",
+        "to": "witness:hollow_season_4",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:hollow_season_2",
+        "to": "witness:hollow_season_5",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_1",
+        "to": "witness:hollow_season_5",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:estate_owner_discovered",
+        "to": "motive:inheritance_entailed",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:estate_owner_discovered",
+        "to": "motive:hollow_season_2",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:hollow_season_scene",
+        "to": "object:hollow_season_2",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:hollow_season_scene",
+        "to": "witness:hollow_season_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_5",
+        "to": "motive:hollow_season_3",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_1",
+        "to": "suspect:staff_hollow_season",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_2",
+        "to": "event:hollow_season_scene",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_1",
+        "to": "suspect:staff_hollow_season",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_2",
+        "to": "witness:hollow_season_1",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_9",
+        "to": "object:hollow_season_4",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_3",
+        "to": "witness:hollow_season_5",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_10",
+        "to": "witness:hollow_season_3",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_7",
+        "to": "suspect:edmund_carrow",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_4",
+        "to": "location:hollow_season_8",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_3",
+        "to": "modifier:hollow_season_3",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_8",
+        "to": "motive:hollow_season_6",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_9",
+        "to": "object:hollow_season_9",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_3",
+        "to": "emotion:hollow_season_2",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_5",
+        "to": "suspect:associate_hollow_season",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_10",
+        "to": "witness:hollow_season_4",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:edmund_carrow",
+        "to": "time:hollow_season_2",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_8",
+        "to": "motive:hollow_season_6",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:hollow_season_2",
+        "to": "witness:hollow_season_4",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_9",
+        "to": "object:hollow_season_3",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_7",
+        "to": "location:hollow_season_7",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_6",
+        "to": "object:hollow_season_1",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_4",
+        "to": "object:hollow_season_7",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_6",
+        "to": "emotion:hollow_season_3",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_6",
+        "to": "witness:hollow_season_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_7",
+        "to": "object:hollow_season_4",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_6",
+        "to": "witness:hollow_season_3",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_7",
+        "to": "suspect:relative_hollow_season",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_5",
+        "to": "modifier:hollow_season_3",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_4",
+        "to": "witness:hollow_season_5",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:hollow_season_4",
+        "to": "witness:hollow_season_5",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:estate_owner_discovered",
+        "to": "witness:hollow_season_1",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_1",
+        "to": "modifier:hollow_season_8",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_4",
+        "to": "location:hollow_season_1",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_9",
+        "to": "witness:hollow_season_5",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_3",
+        "to": "suspect:visitor_hollow_season",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_2",
+        "to": "witness:hollow_season_5",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_8",
+        "to": "motive:hollow_season_3",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_10",
+        "to": "modifier:hollow_season_4",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_6",
+        "to": "witness:hollow_season_3",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_8",
+        "to": "modifier:hollow_season_10",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_6",
+        "to": "object:hollow_season_9",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_3",
+        "to": "time:hollow_season_3",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_2",
+        "to": "object:hollow_season_11",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_1",
+        "to": "modifier:hollow_season_10",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_4",
+        "to": "witness:hollow_season_3",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_8",
+        "to": "event:sleeping_brandy",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_7",
+        "to": "object:hollow_season_13",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_8",
+        "to": "suspect:relative_hollow_season",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_3",
+        "to": "motive:inheritance_entailed",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_7",
+        "to": "location:hollow_season_2",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_4",
+        "to": "object:hollow_season_12",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_5",
+        "to": "object:hollow_season_11",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_5",
+        "to": "motive:inheritance_entailed",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_2",
+        "to": "modifier:hollow_season_6",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:hollow_season_scene",
+        "to": "object:hollow_season_9",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:estate_owner_discovered",
+        "to": "time:hollow_season_5",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_4",
+        "to": "object:hollow_season_5",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:sleeping_brandy",
+        "to": "modifier:hollow_season_9",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_1",
+        "to": "suspect:visitor_hollow_season",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_9",
+        "to": "object:hollow_season_10",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_4",
+        "to": "object:hollow_season_8",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:estate_manager",
+        "to": "time:hollow_season_4",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_3",
+        "to": "witness:hollow_season_2",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_6",
+        "to": "motive:inheritance_entailed",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_12",
+        "to": "suspect:visitor_hollow_season",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_1",
+        "to": "emotion:hollow_season_3",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_6",
+        "to": "time:hollow_season_4",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:associate_hollow_season",
+        "to": "suspect:visitor_hollow_season",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_12",
+        "to": "suspect:edmund_carrow",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_7",
+        "to": "witness:hollow_season_3",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_3",
+        "to": "time:hollow_season_4",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_3",
+        "to": "time:hollow_season_5",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_4",
+        "to": "location:hollow_season_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_7",
+        "to": "object:hollow_season_4",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_3",
+        "to": "object:hollow_season_4",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_1",
+        "to": "suspect:visitor_hollow_season",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_6",
+        "to": "suspect:edmund_carrow",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_6",
+        "to": "object:hollow_season_7",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_10",
+        "to": "suspect:staff_hollow_season",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_7",
+        "to": "motive:hollow_season_2",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_6",
+        "to": "time:hollow_season_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_4",
+        "to": "time:hollow_season_4",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_1",
+        "to": "object:hollow_season_2",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_1",
+        "to": "object:hollow_season_13",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_5",
+        "to": "suspect:staff_hollow_season",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_7",
+        "to": "motive:hollow_season_3",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_11",
+        "to": "object:hollow_season_12",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_5",
+        "to": "time:hollow_season_3",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_1",
+        "to": "object:hollow_season_11",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_5",
+        "to": "event:sleeping_brandy",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_13",
+        "to": "time:hollow_season_1",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_3",
+        "to": "modifier:hollow_season_1",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:hollow_season_3",
+        "to": "witness:hollow_season_4",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_1",
+        "to": "location:hollow_season_6",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_4",
+        "to": "emotion:hollow_season_6",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_3",
+        "to": "location:hollow_season_7",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_6",
+        "to": "emotion:hollow_season_6",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_3",
+        "to": "object:hollow_season_10",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:estate_owner_discovered",
+        "to": "witness:hollow_season_2",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_2",
+        "to": "suspect:associate_hollow_season",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_1",
+        "to": "location:hollow_season_4",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_5",
+        "to": "location:hollow_season_3",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:hollow_season_scene",
+        "to": "time:hollow_season_3",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_8",
+        "to": "suspect:staff_hollow_season",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_6",
+        "to": "motive:hollow_season_2",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_4",
+        "to": "event:estate_owner_discovered",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_6",
+        "to": "object:hollow_season_5",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_4",
+        "to": "location:hollow_season_6",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_3",
+        "to": "motive:inheritance_entailed",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_3",
+        "to": "suspect:relative_hollow_season",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_2",
+        "to": "time:hollow_season_2",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_2",
+        "to": "time:hollow_season_3",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_1",
+        "to": "suspect:estate_manager",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_9",
+        "to": "object:hollow_season_7",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_4",
+        "to": "witness:hollow_season_4",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_10",
+        "to": "modifier:hollow_season_5",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_8",
+        "to": "modifier:hollow_season_6",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_4",
+        "to": "location:hollow_season_2",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_5",
+        "to": "object:hollow_season_1",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_11",
+        "to": "object:hollow_season_2",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_4",
+        "to": "motive:inheritance_entailed",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_6",
+        "to": "witness:hollow_season_4",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:hollow_season_4",
+        "to": "object:hollow_season_3",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_2",
+        "to": "suspect:estate_manager",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_5",
+        "to": "suspect:visitor_hollow_season",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:estate_owner_discovered",
+        "to": "modifier:hollow_season_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_4",
+        "to": "emotion:hollow_season_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_5",
+        "to": "object:hollow_season_2",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:hollow_season_scene",
+        "to": "suspect:edmund_carrow",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:hollow_season_1",
+        "to": "time:hollow_season_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_1",
+        "to": "emotion:hollow_season_5",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:hollow_season_4",
+        "to": "witness:hollow_season_4",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:hollow_season_4",
+        "to": "object:hollow_season_3",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_8",
+        "to": "event:estate_owner_discovered",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:hollow_season_3",
+        "to": "object:hollow_season_5",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:hollow_season_1",
+        "to": "witness:hollow_season_2",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_12",
+        "to": "object:hollow_season_8",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_4",
+        "to": "object:hollow_season_13",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:hollow_season_scene",
+        "to": "motive:hollow_season_4",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_12",
+        "to": "object:hollow_season_4",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:hollow_season_4",
+        "to": "modifier:hollow_season_7",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:hollow_season_3",
+        "to": "witness:hollow_season_2",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      }
+    ]
+  },
+  "attractor": {
+    "dimensions": [
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:edmund_carrow",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:sleeping_brandy",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:inheritance_entailed",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
+    ],
+    "convergence_display": "minimum"
+  },
+  "expressions": {
+    "suspect:edmund_carrow": "Edmund Carrow observed on site. Clothing and position recorded. No further detail.",
+    "suspect:estate_manager": "Estate Manager observed on site. Clothing and position recorded. No further detail.",
+    "suspect:solicitor_assistant": "Solicitor Assistant observed on site. Clothing and position recorded. No further detail.",
+    "suspect:associate_hollow_season": "Associate Hollow Season observed on site. Clothing and position recorded. No further detail.",
+    "suspect:relative_hollow_season": "Relative Hollow Season observed on site. Clothing and position recorded. No further detail.",
+    "suspect:staff_hollow_season": "Staff Hollow Season observed on site. Clothing and position recorded. No further detail.",
+    "suspect:visitor_hollow_season": "Visitor Hollow Season observed on site. Clothing and position recorded. No further detail.",
+    "location:hollow_season_1": "Hollow Season 1 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:hollow_season_2": "Hollow Season 2 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:hollow_season_3": "Hollow Season 3 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:hollow_season_4": "Hollow Season 4 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:hollow_season_5": "Hollow Season 5 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:hollow_season_6": "Hollow Season 6 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:hollow_season_7": "Hollow Season 7 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:hollow_season_8": "Hollow Season 8 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "object:hollow_season_1": "Hollow Season 1 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_2": "Hollow Season 2 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_3": "Hollow Season 3 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_4": "Hollow Season 4 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_5": "Hollow Season 5 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_6": "Hollow Season 6 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_7": "Hollow Season 7 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_8": "Hollow Season 8 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_9": "Hollow Season 9 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_10": "Hollow Season 10 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_11": "Hollow Season 11 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_12": "Hollow Season 12 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:hollow_season_13": "Hollow Season 13 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "emotion:hollow_season_1": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:hollow_season_2": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:hollow_season_3": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:hollow_season_4": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:hollow_season_5": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:hollow_season_6": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "modifier:hollow_season_1": "Qualifier recorded: hollow season 1. It recontextualizes a nearby detail.",
+    "modifier:hollow_season_2": "Qualifier recorded: hollow season 2. It recontextualizes a nearby detail.",
+    "modifier:hollow_season_3": "Qualifier recorded: hollow season 3. It recontextualizes a nearby detail.",
+    "modifier:hollow_season_4": "Qualifier recorded: hollow season 4. It recontextualizes a nearby detail.",
+    "modifier:hollow_season_5": "Qualifier recorded: hollow season 5. It recontextualizes a nearby detail.",
+    "modifier:hollow_season_6": "Qualifier recorded: hollow season 6. It recontextualizes a nearby detail.",
+    "modifier:hollow_season_7": "Qualifier recorded: hollow season 7. It recontextualizes a nearby detail.",
+    "modifier:hollow_season_8": "Qualifier recorded: hollow season 8. It recontextualizes a nearby detail.",
+    "modifier:hollow_season_9": "Qualifier recorded: hollow season 9. It recontextualizes a nearby detail.",
+    "modifier:hollow_season_10": "Qualifier recorded: hollow season 10. It recontextualizes a nearby detail.",
+    "action:hollow_season_1": "An action occurred: hollow season 1. It left a physical trace.",
+    "action:hollow_season_2": "An action occurred: hollow season 2. It left a physical trace.",
+    "action:hollow_season_3": "An action occurred: hollow season 3. It left a physical trace.",
+    "action:hollow_season_4": "An action occurred: hollow season 4. It left a physical trace.",
+    "action:hollow_season_5": "An action occurred: hollow season 5. It left a physical trace.",
+    "action:hollow_season_6": "An action occurred: hollow season 6. It left a physical trace.",
+    "action:hollow_season_7": "An action occurred: hollow season 7. It left a physical trace.",
+    "action:hollow_season_8": "An action occurred: hollow season 8. It left a physical trace.",
+    "action:hollow_season_9": "An action occurred: hollow season 9. It left a physical trace.",
+    "time:hollow_season_1": "Time noted: Sunday dawn. One physical change followed at that hour.",
+    "time:hollow_season_2": "Time noted: Sunday dawn. One physical change followed at that hour.",
+    "time:hollow_season_3": "Time noted: Sunday dawn. One physical change followed at that hour.",
+    "time:hollow_season_4": "Time noted: Sunday dawn. One physical change followed at that hour.",
+    "time:hollow_season_5": "Time noted: Sunday dawn. One physical change followed at that hour.",
+    "motive:inheritance_entailed": "A buried fact is recorded: inheritance entailed. It is stated plainly without inference.",
+    "motive:hollow_season_2": "A buried fact is recorded: hollow season 2. It is stated plainly without inference.",
+    "motive:hollow_season_3": "A buried fact is recorded: hollow season 3. It is stated plainly without inference.",
+    "motive:hollow_season_4": "A buried fact is recorded: hollow season 4. It is stated plainly without inference.",
+    "motive:hollow_season_5": "A buried fact is recorded: hollow season 5. It is stated plainly without inference.",
+    "motive:hollow_season_6": "A buried fact is recorded: hollow season 6. It is stated plainly without inference.",
+    "witness:hollow_season_1": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:hollow_season_2": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:hollow_season_3": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:hollow_season_4": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:hollow_season_5": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "event:estate_owner_discovered": "Event logged: estate owner discovered. It anchors the scene without comment.",
+    "event:hollow_season_scene": "Event logged: hollow season scene. It anchors the scene without comment.",
+    "event:sleeping_brandy": "Event logged: sleeping brandy. It anchors the scene without comment."
+  }
+}

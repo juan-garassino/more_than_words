@@ -1,0 +1,3542 @@
+{
+  "case_id": "orchard_at_dusk",
+  "title": "The Orchard at Dusk",
+  "convergence_shape": "gradual",
+  "difficulty": "easy",
+  "opening_token_ids": [
+    "location:orchard_at_dusk_1",
+    "event:land_surveyor_discovered",
+    "time:orchard_at_dusk_1"
+  ],
+  "invariant_token_ids": [
+    "suspect:thomas_crale",
+    "event:altered_path",
+    "motive:boundary_fraud"
+  ],
+  "tokens": [
+    {
+      "id": "suspect:thomas_crale",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.29
+    },
+    {
+      "id": "suspect:amos_webb",
+      "class": "SUSPECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.099,
+        0.09,
+        0.066
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.87
+    },
+    {
+      "id": "suspect:gatehand",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.233,
+        0.268,
+        0.018
+      ],
+      "affinity_tags": [
+        "method",
+        "guilt",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.53
+    },
+    {
+      "id": "suspect:associate_orchard_at_dusk",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.152,
+        0.057,
+        0.026
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.86
+    },
+    {
+      "id": "suspect:relative_orchard_at_dusk",
+      "class": "SUSPECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.164,
+        0.171,
+        0.141
+      ],
+      "affinity_tags": [
+        "time_window",
+        "method",
+        "concealment",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.19
+    },
+    {
+      "id": "suspect:staff_orchard_at_dusk",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.134,
+        0.109,
+        0.066
+      ],
+      "affinity_tags": [
+        "constraint",
+        "guilt",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.82
+    },
+    {
+      "id": "suspect:visitor_orchard_at_dusk",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.122,
+        0.103,
+        0.078
+      ],
+      "affinity_tags": [
+        "constraint",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.28
+    },
+    {
+      "id": "location:orchard_at_dusk_1",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.272,
+        0.263,
+        0.177
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.22
+    },
+    {
+      "id": "location:orchard_at_dusk_2",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.086,
+        0.059,
+        0.07
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment",
+        "physical",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.51
+    },
+    {
+      "id": "location:orchard_at_dusk_3",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.049,
+        0.044,
+        0.021
+      ],
+      "affinity_tags": [
+        "guilt",
+        "error",
+        "concealment",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.9
+    },
+    {
+      "id": "location:orchard_at_dusk_4",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.202,
+        0.145,
+        0.223
+      ],
+      "affinity_tags": [
+        "constraint",
+        "time_window",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.91
+    },
+    {
+      "id": "location:orchard_at_dusk_5",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.023,
+        0.036,
+        0.028
+      ],
+      "affinity_tags": [
+        "method",
+        "concealment",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.41
+    },
+    {
+      "id": "location:orchard_at_dusk_6",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.159,
+        0.126,
+        0.069
+      ],
+      "affinity_tags": [
+        "method",
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.27
+    },
+    {
+      "id": "location:orchard_at_dusk_7",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.07,
+        0.097,
+        0.061
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "access",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.23
+    },
+    {
+      "id": "location:orchard_at_dusk_8",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.091,
+        0.067,
+        0.091
+      ],
+      "affinity_tags": [
+        "access",
+        "guilt",
+        "concealment",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.25
+    },
+    {
+      "id": "object:orchard_at_dusk_1",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.095,
+        0.112,
+        0.049
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.18
+    },
+    {
+      "id": "object:orchard_at_dusk_2",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.07,
+        0.064,
+        0.04
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.36
+    },
+    {
+      "id": "object:orchard_at_dusk_3",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.076,
+        0.069
+      ],
+      "affinity_tags": [
+        "constraint",
+        "access",
+        "error",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.1
+    },
+    {
+      "id": "object:orchard_at_dusk_4",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.072,
+        0.103,
+        0.083
+      ],
+      "affinity_tags": [
+        "access",
+        "constraint",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.53
+    },
+    {
+      "id": "object:orchard_at_dusk_5",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.166,
+        0.117,
+        0.116
+      ],
+      "affinity_tags": [
+        "method",
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.23
+    },
+    {
+      "id": "object:orchard_at_dusk_6",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.222,
+        0.292,
+        0.168
+      ],
+      "affinity_tags": [
+        "time_window",
+        "guilt",
+        "error",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.9
+    },
+    {
+      "id": "object:orchard_at_dusk_7",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.106,
+        0.105,
+        0.121
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "time_window",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.76
+    },
+    {
+      "id": "object:orchard_at_dusk_8",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.063,
+        0.067,
+        0.023
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.26
+    },
+    {
+      "id": "object:orchard_at_dusk_9",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.103,
+        0.094,
+        0.057
+      ],
+      "affinity_tags": [
+        "physical",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.89
+    },
+    {
+      "id": "object:orchard_at_dusk_10",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.115,
+        0.108,
+        0.04
+      ],
+      "affinity_tags": [
+        "time_window",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.77
+    },
+    {
+      "id": "object:orchard_at_dusk_11",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.226,
+        0.177,
+        0.105
+      ],
+      "affinity_tags": [
+        "guilt",
+        "time_window",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.64
+    },
+    {
+      "id": "object:orchard_at_dusk_12",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.119,
+        0.088,
+        0.105
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.17
+    },
+    {
+      "id": "object:orchard_at_dusk_13",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.107,
+        0.103,
+        0.175
+      ],
+      "affinity_tags": [
+        "method",
+        "concealment",
+        "access",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.85
+    },
+    {
+      "id": "emotion:orchard_at_dusk_1",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.155,
+        0.153,
+        0.064
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.51
+    },
+    {
+      "id": "emotion:orchard_at_dusk_2",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.199,
+        0.199,
+        0.15
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.45
+    },
+    {
+      "id": "emotion:orchard_at_dusk_3",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.242,
+        0.197,
+        0.171
+      ],
+      "affinity_tags": [
+        "time_window",
+        "concealment",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.78
+    },
+    {
+      "id": "emotion:orchard_at_dusk_4",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.164,
+        0.122,
+        0.122
+      ],
+      "affinity_tags": [
+        "access",
+        "physical",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.73
+    },
+    {
+      "id": "emotion:orchard_at_dusk_5",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.105,
+        0.085,
+        0.051
+      ],
+      "affinity_tags": [
+        "time_window",
+        "error",
+        "physical",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.29
+    },
+    {
+      "id": "emotion:orchard_at_dusk_6",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.126,
+        0.144,
+        0.148
+      ],
+      "affinity_tags": [
+        "access",
+        "guilt",
+        "error",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.64
+    },
+    {
+      "id": "modifier:orchard_at_dusk_1",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.056,
+        0.041,
+        0.032
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.37
+    },
+    {
+      "id": "modifier:orchard_at_dusk_2",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.115,
+        0.093,
+        0.139
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.89
+    },
+    {
+      "id": "modifier:orchard_at_dusk_3",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.086,
+        0.094,
+        0.069
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.83
+    },
+    {
+      "id": "modifier:orchard_at_dusk_4",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.118,
+        0.14,
+        0.067
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5
+    },
+    {
+      "id": "modifier:orchard_at_dusk_5",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.171,
+        0.21,
+        0.104
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.38
+    },
+    {
+      "id": "modifier:orchard_at_dusk_6",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.235,
+        0.278,
+        0.268
+      ],
+      "affinity_tags": [
+        "time_window",
+        "method",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.22
+    },
+    {
+      "id": "modifier:orchard_at_dusk_7",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.075,
+        0.075,
+        0.018
+      ],
+      "affinity_tags": [
+        "error",
+        "method",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.57
+    },
+    {
+      "id": "modifier:orchard_at_dusk_8",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.041,
+        0.031,
+        0.023
+      ],
+      "affinity_tags": [
+        "error",
+        "concealment",
+        "time_window",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.83
+    },
+    {
+      "id": "modifier:orchard_at_dusk_9",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.129,
+        0.16,
+        0.121
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "time_window",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.73
+    },
+    {
+      "id": "modifier:orchard_at_dusk_10",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.161,
+        0.152,
+        0.194
+      ],
+      "affinity_tags": [
+        "method",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "action:orchard_at_dusk_1",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.058,
+        0.052,
+        0.084
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "time_window",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.86
+    },
+    {
+      "id": "action:orchard_at_dusk_2",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.051,
+        0.063,
+        0.072
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.18
+    },
+    {
+      "id": "action:orchard_at_dusk_3",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.186,
+        0.182,
+        0.141
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "constraint",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.44
+    },
+    {
+      "id": "action:orchard_at_dusk_4",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.055,
+        0.064,
+        0.084
+      ],
+      "affinity_tags": [
+        "guilt",
+        "time_window",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.47
+    },
+    {
+      "id": "action:orchard_at_dusk_5",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.194,
+        0.146,
+        0.133
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.14
+    },
+    {
+      "id": "action:orchard_at_dusk_6",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.203,
+        0.165,
+        0.15
+      ],
+      "affinity_tags": [
+        "physical",
+        "access",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "action:orchard_at_dusk_7",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.062,
+        0.069,
+        0.023
+      ],
+      "affinity_tags": [
+        "guilt",
+        "physical",
+        "access",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.52
+    },
+    {
+      "id": "action:orchard_at_dusk_8",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.071,
+        0.12,
+        0.088
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.84
+    },
+    {
+      "id": "action:orchard_at_dusk_9",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.061,
+        0.062,
+        0.022
+      ],
+      "affinity_tags": [
+        "method",
+        "guilt",
+        "concealment",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.89
+    },
+    {
+      "id": "time:orchard_at_dusk_1",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.118,
+        0.098,
+        0.093
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment",
+        "method",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.84
+    },
+    {
+      "id": "time:orchard_at_dusk_2",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.161,
+        0.18,
+        0.07
+      ],
+      "affinity_tags": [
+        "error",
+        "concealment",
+        "constraint",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.55
+    },
+    {
+      "id": "time:orchard_at_dusk_3",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.087,
+        0.09,
+        0.05
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.49
+    },
+    {
+      "id": "time:orchard_at_dusk_4",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.287,
+        0.195,
+        0.186
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "error",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.86
+    },
+    {
+      "id": "time:orchard_at_dusk_5",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.145,
+        0.156,
+        0.141
+      ],
+      "affinity_tags": [
+        "time_window",
+        "guilt",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.23
+    },
+    {
+      "id": "motive:boundary_fraud",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.05
+    },
+    {
+      "id": "motive:orchard_at_dusk_2",
+      "class": "MOTIVE",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.037,
+        0.026,
+        0.115
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.47
+    },
+    {
+      "id": "motive:orchard_at_dusk_3",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.151,
+        0.165,
+        0.446
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.08
+    },
+    {
+      "id": "motive:orchard_at_dusk_4",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.124,
+        0.096,
+        0.566
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.34
+    },
+    {
+      "id": "motive:orchard_at_dusk_5",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.027,
+        0.018,
+        0.175
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.09
+    },
+    {
+      "id": "motive:orchard_at_dusk_6",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.464,
+        0.14,
+        0.142
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.28
+    },
+    {
+      "id": "witness:orchard_at_dusk_1",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.024,
+        0.021,
+        0.017
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.93
+    },
+    {
+      "id": "witness:orchard_at_dusk_2",
+      "class": "WITNESS",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.033,
+        0.023,
+        0.022
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.82
+    },
+    {
+      "id": "witness:orchard_at_dusk_3",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.048,
+        0.069,
+        0.042
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.16
+    },
+    {
+      "id": "witness:orchard_at_dusk_4",
+      "class": "WITNESS",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.061,
+        0.068,
+        0.053
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.1
+    },
+    {
+      "id": "witness:orchard_at_dusk_5",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.067,
+        0.068,
+        0.031
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.91
+    },
+    {
+      "id": "event:land_surveyor_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.035,
+        0.15,
+        0.066
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.25
+    },
+    {
+      "id": "event:orchard_at_dusk_scene",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.021,
+        0.12,
+        0.017
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.83
+    },
+    {
+      "id": "event:altered_path",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.64
+    }
+  ],
+  "graph": {
+    "nodes": [
+      "suspect:thomas_crale",
+      "suspect:amos_webb",
+      "suspect:gatehand",
+      "suspect:associate_orchard_at_dusk",
+      "suspect:relative_orchard_at_dusk",
+      "suspect:staff_orchard_at_dusk",
+      "suspect:visitor_orchard_at_dusk",
+      "location:orchard_at_dusk_1",
+      "location:orchard_at_dusk_2",
+      "location:orchard_at_dusk_3",
+      "location:orchard_at_dusk_4",
+      "location:orchard_at_dusk_5",
+      "location:orchard_at_dusk_6",
+      "location:orchard_at_dusk_7",
+      "location:orchard_at_dusk_8",
+      "object:orchard_at_dusk_1",
+      "object:orchard_at_dusk_2",
+      "object:orchard_at_dusk_3",
+      "object:orchard_at_dusk_4",
+      "object:orchard_at_dusk_5",
+      "object:orchard_at_dusk_6",
+      "object:orchard_at_dusk_7",
+      "object:orchard_at_dusk_8",
+      "object:orchard_at_dusk_9",
+      "object:orchard_at_dusk_10",
+      "object:orchard_at_dusk_11",
+      "object:orchard_at_dusk_12",
+      "object:orchard_at_dusk_13",
+      "emotion:orchard_at_dusk_1",
+      "emotion:orchard_at_dusk_2",
+      "emotion:orchard_at_dusk_3",
+      "emotion:orchard_at_dusk_4",
+      "emotion:orchard_at_dusk_5",
+      "emotion:orchard_at_dusk_6",
+      "modifier:orchard_at_dusk_1",
+      "modifier:orchard_at_dusk_2",
+      "modifier:orchard_at_dusk_3",
+      "modifier:orchard_at_dusk_4",
+      "modifier:orchard_at_dusk_5",
+      "modifier:orchard_at_dusk_6",
+      "modifier:orchard_at_dusk_7",
+      "modifier:orchard_at_dusk_8",
+      "modifier:orchard_at_dusk_9",
+      "modifier:orchard_at_dusk_10",
+      "action:orchard_at_dusk_1",
+      "action:orchard_at_dusk_2",
+      "action:orchard_at_dusk_3",
+      "action:orchard_at_dusk_4",
+      "action:orchard_at_dusk_5",
+      "action:orchard_at_dusk_6",
+      "action:orchard_at_dusk_7",
+      "action:orchard_at_dusk_8",
+      "action:orchard_at_dusk_9",
+      "time:orchard_at_dusk_1",
+      "time:orchard_at_dusk_2",
+      "time:orchard_at_dusk_3",
+      "time:orchard_at_dusk_4",
+      "time:orchard_at_dusk_5",
+      "motive:boundary_fraud",
+      "motive:orchard_at_dusk_2",
+      "motive:orchard_at_dusk_3",
+      "motive:orchard_at_dusk_4",
+      "motive:orchard_at_dusk_5",
+      "motive:orchard_at_dusk_6",
+      "witness:orchard_at_dusk_1",
+      "witness:orchard_at_dusk_2",
+      "witness:orchard_at_dusk_3",
+      "witness:orchard_at_dusk_4",
+      "witness:orchard_at_dusk_5",
+      "event:land_surveyor_discovered",
+      "event:orchard_at_dusk_scene",
+      "event:altered_path"
+    ],
+    "edges": [
+      {
+        "from": "action:orchard_at_dusk_2",
+        "to": "object:orchard_at_dusk_3",
+        "weight": 0.5,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_3",
+        "to": "object:orchard_at_dusk_6",
+        "weight": 0.51,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_1",
+        "to": "time:orchard_at_dusk_1",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_2",
+        "to": "object:orchard_at_dusk_4",
+        "weight": 0.5,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_2",
+        "to": "object:orchard_at_dusk_5",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_3",
+        "to": "suspect:associate_orchard_at_dusk",
+        "weight": 0.52,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_3",
+        "to": "object:orchard_at_dusk_5",
+        "weight": 0.4,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "suspect:associate_orchard_at_dusk",
+        "to": "suspect:thomas_crale",
+        "weight": 0.32,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_6",
+        "to": "suspect:thomas_crale",
+        "weight": 0.53,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_5",
+        "to": "object:orchard_at_dusk_6",
+        "weight": 0.43,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "event:altered_path",
+        "to": "object:orchard_at_dusk_8",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_6",
+        "to": "event:altered_path",
+        "weight": 0.47,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_4",
+        "to": "event:altered_path",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_6",
+        "to": "time:orchard_at_dusk_2",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_4",
+        "to": "time:orchard_at_dusk_2",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_4",
+        "to": "object:orchard_at_dusk_8",
+        "weight": 0.31,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_4",
+        "to": "action:orchard_at_dusk_6",
+        "weight": 0.32,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_6",
+        "to": "motive:orchard_at_dusk_4",
+        "weight": 0.44,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_5",
+        "to": "motive:orchard_at_dusk_4",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:boundary_fraud",
+        "to": "motive:orchard_at_dusk_4",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:boundary_fraud",
+        "to": "motive:orchard_at_dusk_3",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_4",
+        "to": "modifier:orchard_at_dusk_6",
+        "weight": 0.45,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_6",
+        "to": "motive:orchard_at_dusk_2",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_4",
+        "to": "modifier:orchard_at_dusk_5",
+        "weight": 0.41,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_4",
+        "to": "motive:boundary_fraud",
+        "weight": 0.46,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:boundary_fraud",
+        "to": "motive:orchard_at_dusk_2",
+        "weight": 0.36,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_2",
+        "to": "suspect:amos_webb",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_1",
+        "to": "modifier:orchard_at_dusk_2",
+        "weight": 0.44,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_1",
+        "to": "object:orchard_at_dusk_1",
+        "weight": 0.4,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_1",
+        "to": "suspect:gatehand",
+        "weight": 0.27,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_1",
+        "to": "suspect:gatehand",
+        "weight": 0.24,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_1",
+        "to": "suspect:gatehand",
+        "weight": 0.21,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_1",
+        "to": "suspect:gatehand",
+        "weight": 0.39,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_2",
+        "to": "suspect:gatehand",
+        "weight": 0.36,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "suspect:associate_orchard_at_dusk",
+        "to": "suspect:gatehand",
+        "weight": 0.38,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_13",
+        "to": "suspect:amos_webb",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_13",
+        "to": "suspect:relative_orchard_at_dusk",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_1",
+        "to": "suspect:relative_orchard_at_dusk",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_5",
+        "to": "suspect:staff_orchard_at_dusk",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:staff_orchard_at_dusk",
+        "to": "time:orchard_at_dusk_1",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_5",
+        "to": "suspect:visitor_orchard_at_dusk",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_9",
+        "to": "suspect:visitor_orchard_at_dusk",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_1",
+        "to": "witness:orchard_at_dusk_5",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_1",
+        "to": "modifier:orchard_at_dusk_8",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_2",
+        "to": "modifier:orchard_at_dusk_8",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_2",
+        "to": "suspect:amos_webb",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_2",
+        "to": "location:orchard_at_dusk_3",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_3",
+        "to": "object:orchard_at_dusk_11",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_4",
+        "to": "motive:orchard_at_dusk_2",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_3",
+        "to": "location:orchard_at_dusk_4",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_5",
+        "to": "modifier:orchard_at_dusk_3",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_6",
+        "to": "suspect:gatehand",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_6",
+        "to": "location:orchard_at_dusk_6",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_6",
+        "to": "location:orchard_at_dusk_7",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_7",
+        "to": "motive:orchard_at_dusk_3",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_8",
+        "to": "suspect:gatehand",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_8",
+        "to": "suspect:associate_orchard_at_dusk",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_4",
+        "to": "object:orchard_at_dusk_2",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_4",
+        "to": "time:orchard_at_dusk_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_1",
+        "to": "object:orchard_at_dusk_7",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_8",
+        "to": "object:orchard_at_dusk_7",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_8",
+        "to": "object:orchard_at_dusk_9",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_7",
+        "to": "object:orchard_at_dusk_9",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_10",
+        "to": "object:orchard_at_dusk_3",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_10",
+        "to": "object:orchard_at_dusk_6",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_11",
+        "to": "suspect:staff_orchard_at_dusk",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_12",
+        "to": "object:orchard_at_dusk_9",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_12",
+        "to": "suspect:amos_webb",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_2",
+        "to": "event:land_surveyor_discovered",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_2",
+        "to": "time:orchard_at_dusk_2",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_3",
+        "to": "time:orchard_at_dusk_4",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_3",
+        "to": "modifier:orchard_at_dusk_7",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_2",
+        "to": "emotion:orchard_at_dusk_4",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_5",
+        "to": "location:orchard_at_dusk_7",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_7",
+        "to": "emotion:orchard_at_dusk_6",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_9",
+        "to": "emotion:orchard_at_dusk_6",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_1",
+        "to": "suspect:relative_orchard_at_dusk",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_1",
+        "to": "modifier:orchard_at_dusk_2",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_3",
+        "to": "modifier:orchard_at_dusk_9",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:land_surveyor_discovered",
+        "to": "modifier:orchard_at_dusk_7",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_10",
+        "to": "object:orchard_at_dusk_6",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_10",
+        "to": "witness:orchard_at_dusk_4",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_5",
+        "to": "suspect:visitor_orchard_at_dusk",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_5",
+        "to": "object:orchard_at_dusk_7",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_7",
+        "to": "suspect:staff_orchard_at_dusk",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_8",
+        "to": "action:orchard_at_dusk_9",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_8",
+        "to": "emotion:orchard_at_dusk_4",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_10",
+        "to": "time:orchard_at_dusk_3",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_4",
+        "to": "time:orchard_at_dusk_3",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_7",
+        "to": "time:orchard_at_dusk_4",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_6",
+        "to": "time:orchard_at_dusk_5",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_4",
+        "to": "time:orchard_at_dusk_5",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:orchard_at_dusk_5",
+        "to": "suspect:thomas_crale",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:orchard_at_dusk_5",
+        "to": "time:orchard_at_dusk_5",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_5",
+        "to": "motive:orchard_at_dusk_6",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:orchard_at_dusk_6",
+        "to": "object:orchard_at_dusk_9",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_2",
+        "to": "witness:orchard_at_dusk_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_8",
+        "to": "witness:orchard_at_dusk_1",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_9",
+        "to": "witness:orchard_at_dusk_2",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_3",
+        "to": "witness:orchard_at_dusk_2",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_5",
+        "to": "witness:orchard_at_dusk_3",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_5",
+        "to": "witness:orchard_at_dusk_3",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:orchard_at_dusk_5",
+        "to": "witness:orchard_at_dusk_4",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_3",
+        "to": "witness:orchard_at_dusk_5",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:orchard_at_dusk_scene",
+        "to": "location:orchard_at_dusk_6",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:orchard_at_dusk_scene",
+        "to": "time:orchard_at_dusk_5",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_4",
+        "to": "object:orchard_at_dusk_6",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_1",
+        "to": "time:orchard_at_dusk_5",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_10",
+        "to": "time:orchard_at_dusk_4",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_4",
+        "to": "witness:orchard_at_dusk_1",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_13",
+        "to": "time:orchard_at_dusk_2",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_6",
+        "to": "location:orchard_at_dusk_7",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_2",
+        "to": "location:orchard_at_dusk_6",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_7",
+        "to": "location:orchard_at_dusk_8",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_9",
+        "to": "suspect:staff_orchard_at_dusk",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:orchard_at_dusk_3",
+        "to": "witness:orchard_at_dusk_1",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:amos_webb",
+        "to": "witness:orchard_at_dusk_2",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_2",
+        "to": "time:orchard_at_dusk_3",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_9",
+        "to": "emotion:orchard_at_dusk_2",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_5",
+        "to": "motive:orchard_at_dusk_5",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_5",
+        "to": "modifier:orchard_at_dusk_10",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_9",
+        "to": "object:orchard_at_dusk_1",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_3",
+        "to": "time:orchard_at_dusk_5",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_7",
+        "to": "modifier:orchard_at_dusk_1",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_2",
+        "to": "motive:orchard_at_dusk_4",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:orchard_at_dusk_scene",
+        "to": "location:orchard_at_dusk_4",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_8",
+        "to": "witness:orchard_at_dusk_3",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:orchard_at_dusk_2",
+        "to": "time:orchard_at_dusk_4",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_6",
+        "to": "modifier:orchard_at_dusk_8",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_9",
+        "to": "suspect:thomas_crale",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_5",
+        "to": "time:orchard_at_dusk_1",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:orchard_at_dusk_5",
+        "to": "object:orchard_at_dusk_13",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_8",
+        "to": "witness:orchard_at_dusk_4",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_2",
+        "to": "location:orchard_at_dusk_1",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_10",
+        "to": "suspect:visitor_orchard_at_dusk",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_1",
+        "to": "emotion:orchard_at_dusk_4",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_10",
+        "to": "object:orchard_at_dusk_5",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_1",
+        "to": "modifier:orchard_at_dusk_10",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_6",
+        "to": "location:orchard_at_dusk_3",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_9",
+        "to": "object:orchard_at_dusk_9",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:relative_orchard_at_dusk",
+        "to": "witness:orchard_at_dusk_2",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:land_surveyor_discovered",
+        "to": "modifier:orchard_at_dusk_1",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_8",
+        "to": "object:orchard_at_dusk_9",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:orchard_at_dusk_scene",
+        "to": "time:orchard_at_dusk_4",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_3",
+        "to": "time:orchard_at_dusk_4",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_7",
+        "to": "modifier:orchard_at_dusk_3",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:orchard_at_dusk_1",
+        "to": "witness:orchard_at_dusk_2",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:land_surveyor_discovered",
+        "to": "suspect:staff_orchard_at_dusk",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_5",
+        "to": "object:orchard_at_dusk_7",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_3",
+        "to": "object:orchard_at_dusk_10",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:land_surveyor_discovered",
+        "to": "location:orchard_at_dusk_6",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_4",
+        "to": "object:orchard_at_dusk_12",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_4",
+        "to": "time:orchard_at_dusk_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:orchard_at_dusk_scene",
+        "to": "modifier:orchard_at_dusk_9",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_12",
+        "to": "time:orchard_at_dusk_4",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:orchard_at_dusk_6",
+        "to": "object:orchard_at_dusk_5",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:amos_webb",
+        "to": "witness:orchard_at_dusk_3",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:land_surveyor_discovered",
+        "to": "witness:orchard_at_dusk_3",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_1",
+        "to": "object:orchard_at_dusk_2",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:orchard_at_dusk_2",
+        "to": "witness:orchard_at_dusk_3",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_6",
+        "to": "location:orchard_at_dusk_3",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_10",
+        "to": "object:orchard_at_dusk_8",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_9",
+        "to": "time:orchard_at_dusk_4",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_6",
+        "to": "object:orchard_at_dusk_4",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:amos_webb",
+        "to": "suspect:relative_orchard_at_dusk",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_8",
+        "to": "object:orchard_at_dusk_9",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_1",
+        "to": "modifier:orchard_at_dusk_9",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:altered_path",
+        "to": "location:orchard_at_dusk_7",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_7",
+        "to": "motive:orchard_at_dusk_6",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_6",
+        "to": "modifier:orchard_at_dusk_1",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_12",
+        "to": "time:orchard_at_dusk_2",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:altered_path",
+        "to": "location:orchard_at_dusk_3",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_7",
+        "to": "object:orchard_at_dusk_11",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_5",
+        "to": "object:orchard_at_dusk_6",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_11",
+        "to": "witness:orchard_at_dusk_5",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_3",
+        "to": "time:orchard_at_dusk_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_1",
+        "to": "emotion:orchard_at_dusk_6",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:orchard_at_dusk_3",
+        "to": "suspect:relative_orchard_at_dusk",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_2",
+        "to": "location:orchard_at_dusk_8",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_1",
+        "to": "suspect:associate_orchard_at_dusk",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_8",
+        "to": "motive:orchard_at_dusk_6",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_8",
+        "to": "suspect:thomas_crale",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_8",
+        "to": "witness:orchard_at_dusk_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_5",
+        "to": "motive:orchard_at_dusk_5",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_3",
+        "to": "motive:orchard_at_dusk_4",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_2",
+        "to": "witness:orchard_at_dusk_2",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_11",
+        "to": "time:orchard_at_dusk_1",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_3",
+        "to": "motive:orchard_at_dusk_2",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_1",
+        "to": "location:orchard_at_dusk_7",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_3",
+        "to": "modifier:orchard_at_dusk_7",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_1",
+        "to": "modifier:orchard_at_dusk_8",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_4",
+        "to": "modifier:orchard_at_dusk_7",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_9",
+        "to": "time:orchard_at_dusk_1",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_4",
+        "to": "modifier:orchard_at_dusk_9",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_4",
+        "to": "object:orchard_at_dusk_7",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_6",
+        "to": "witness:orchard_at_dusk_5",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_2",
+        "to": "location:orchard_at_dusk_3",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_5",
+        "to": "location:orchard_at_dusk_2",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_2",
+        "to": "suspect:staff_orchard_at_dusk",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_3",
+        "to": "event:orchard_at_dusk_scene",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_3",
+        "to": "modifier:orchard_at_dusk_3",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_8",
+        "to": "time:orchard_at_dusk_3",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_5",
+        "to": "modifier:orchard_at_dusk_7",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_7",
+        "to": "motive:orchard_at_dusk_6",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_3",
+        "to": "location:orchard_at_dusk_5",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_5",
+        "to": "suspect:associate_orchard_at_dusk",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_1",
+        "to": "time:orchard_at_dusk_5",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_4",
+        "to": "suspect:relative_orchard_at_dusk",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:boundary_fraud",
+        "to": "witness:orchard_at_dusk_3",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_8",
+        "to": "modifier:orchard_at_dusk_7",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_2",
+        "to": "modifier:orchard_at_dusk_3",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_3",
+        "to": "time:orchard_at_dusk_2",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_4",
+        "to": "object:orchard_at_dusk_3",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_3",
+        "to": "location:orchard_at_dusk_8",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_7",
+        "to": "suspect:thomas_crale",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_6",
+        "to": "time:orchard_at_dusk_2",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_1",
+        "to": "object:orchard_at_dusk_13",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_5",
+        "to": "action:orchard_at_dusk_7",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_4",
+        "to": "time:orchard_at_dusk_1",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_3",
+        "to": "object:orchard_at_dusk_5",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_5",
+        "to": "object:orchard_at_dusk_2",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:orchard_at_dusk_scene",
+        "to": "motive:orchard_at_dusk_6",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_1",
+        "to": "location:orchard_at_dusk_5",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_10",
+        "to": "suspect:associate_orchard_at_dusk",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_12",
+        "to": "suspect:relative_orchard_at_dusk",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_1",
+        "to": "motive:orchard_at_dusk_6",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_4",
+        "to": "motive:orchard_at_dusk_3",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_4",
+        "to": "location:orchard_at_dusk_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_6",
+        "to": "witness:orchard_at_dusk_2",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:orchard_at_dusk_scene",
+        "to": "object:orchard_at_dusk_3",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_4",
+        "to": "modifier:orchard_at_dusk_6",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_3",
+        "to": "object:orchard_at_dusk_13",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_8",
+        "to": "suspect:associate_orchard_at_dusk",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_1",
+        "to": "motive:orchard_at_dusk_5",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_2",
+        "to": "action:orchard_at_dusk_8",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_8",
+        "to": "object:orchard_at_dusk_3",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_7",
+        "to": "motive:orchard_at_dusk_3",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:orchard_at_dusk_2",
+        "to": "witness:orchard_at_dusk_2",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:altered_path",
+        "to": "modifier:orchard_at_dusk_6",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:orchard_at_dusk_2",
+        "to": "motive:orchard_at_dusk_5",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_4",
+        "to": "suspect:staff_orchard_at_dusk",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:altered_path",
+        "to": "motive:orchard_at_dusk_3",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_13",
+        "to": "suspect:thomas_crale",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_6",
+        "to": "modifier:orchard_at_dusk_9",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:orchard_at_dusk_3",
+        "to": "witness:orchard_at_dusk_3",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:orchard_at_dusk_6",
+        "to": "object:orchard_at_dusk_1",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:land_surveyor_discovered",
+        "to": "object:orchard_at_dusk_1",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:orchard_at_dusk_8",
+        "to": "witness:orchard_at_dusk_1",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:orchard_at_dusk_5",
+        "to": "modifier:orchard_at_dusk_6",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:orchard_at_dusk_1",
+        "to": "motive:orchard_at_dusk_4",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      }
+    ]
+  },
+  "attractor": {
+    "dimensions": [
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:thomas_crale",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:altered_path",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:boundary_fraud",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
+    ],
+    "convergence_display": "minimum"
+  },
+  "expressions": {
+    "suspect:thomas_crale": "Thomas Crale observed on site. Clothing and position recorded. No further detail.",
+    "suspect:amos_webb": "Amos Webb observed on site. Clothing and position recorded. No further detail.",
+    "suspect:gatehand": "Gatehand observed on site. Clothing and position recorded. No further detail.",
+    "suspect:associate_orchard_at_dusk": "Associate Orchard At Dusk observed on site. Clothing and position recorded. No further detail.",
+    "suspect:relative_orchard_at_dusk": "Relative Orchard At Dusk observed on site. Clothing and position recorded. No further detail.",
+    "suspect:staff_orchard_at_dusk": "Staff Orchard At Dusk observed on site. Clothing and position recorded. No further detail.",
+    "suspect:visitor_orchard_at_dusk": "Visitor Orchard At Dusk observed on site. Clothing and position recorded. No further detail.",
+    "location:orchard_at_dusk_1": "Orchard At Dusk 1 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:orchard_at_dusk_2": "Orchard At Dusk 2 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:orchard_at_dusk_3": "Orchard At Dusk 3 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:orchard_at_dusk_4": "Orchard At Dusk 4 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:orchard_at_dusk_5": "Orchard At Dusk 5 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:orchard_at_dusk_6": "Orchard At Dusk 6 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:orchard_at_dusk_7": "Orchard At Dusk 7 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:orchard_at_dusk_8": "Orchard At Dusk 8 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "object:orchard_at_dusk_1": "Orchard At Dusk 1 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_2": "Orchard At Dusk 2 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_3": "Orchard At Dusk 3 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_4": "Orchard At Dusk 4 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_5": "Orchard At Dusk 5 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_6": "Orchard At Dusk 6 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_7": "Orchard At Dusk 7 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_8": "Orchard At Dusk 8 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_9": "Orchard At Dusk 9 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_10": "Orchard At Dusk 10 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_11": "Orchard At Dusk 11 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_12": "Orchard At Dusk 12 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:orchard_at_dusk_13": "Orchard At Dusk 13 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "emotion:orchard_at_dusk_1": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:orchard_at_dusk_2": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:orchard_at_dusk_3": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:orchard_at_dusk_4": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:orchard_at_dusk_5": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:orchard_at_dusk_6": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "modifier:orchard_at_dusk_1": "Qualifier recorded: orchard at dusk 1. It recontextualizes a nearby detail.",
+    "modifier:orchard_at_dusk_2": "Qualifier recorded: orchard at dusk 2. It recontextualizes a nearby detail.",
+    "modifier:orchard_at_dusk_3": "Qualifier recorded: orchard at dusk 3. It recontextualizes a nearby detail.",
+    "modifier:orchard_at_dusk_4": "Qualifier recorded: orchard at dusk 4. It recontextualizes a nearby detail.",
+    "modifier:orchard_at_dusk_5": "Qualifier recorded: orchard at dusk 5. It recontextualizes a nearby detail.",
+    "modifier:orchard_at_dusk_6": "Qualifier recorded: orchard at dusk 6. It recontextualizes a nearby detail.",
+    "modifier:orchard_at_dusk_7": "Qualifier recorded: orchard at dusk 7. It recontextualizes a nearby detail.",
+    "modifier:orchard_at_dusk_8": "Qualifier recorded: orchard at dusk 8. It recontextualizes a nearby detail.",
+    "modifier:orchard_at_dusk_9": "Qualifier recorded: orchard at dusk 9. It recontextualizes a nearby detail.",
+    "modifier:orchard_at_dusk_10": "Qualifier recorded: orchard at dusk 10. It recontextualizes a nearby detail.",
+    "action:orchard_at_dusk_1": "An action occurred: orchard at dusk 1. It left a physical trace.",
+    "action:orchard_at_dusk_2": "An action occurred: orchard at dusk 2. It left a physical trace.",
+    "action:orchard_at_dusk_3": "An action occurred: orchard at dusk 3. It left a physical trace.",
+    "action:orchard_at_dusk_4": "An action occurred: orchard at dusk 4. It left a physical trace.",
+    "action:orchard_at_dusk_5": "An action occurred: orchard at dusk 5. It left a physical trace.",
+    "action:orchard_at_dusk_6": "An action occurred: orchard at dusk 6. It left a physical trace.",
+    "action:orchard_at_dusk_7": "An action occurred: orchard at dusk 7. It left a physical trace.",
+    "action:orchard_at_dusk_8": "An action occurred: orchard at dusk 8. It left a physical trace.",
+    "action:orchard_at_dusk_9": "An action occurred: orchard at dusk 9. It left a physical trace.",
+    "time:orchard_at_dusk_1": "Time noted: harvest dusk. One physical change followed at that hour.",
+    "time:orchard_at_dusk_2": "Time noted: harvest dusk. One physical change followed at that hour.",
+    "time:orchard_at_dusk_3": "Time noted: harvest dusk. One physical change followed at that hour.",
+    "time:orchard_at_dusk_4": "Time noted: harvest dusk. One physical change followed at that hour.",
+    "time:orchard_at_dusk_5": "Time noted: harvest dusk. One physical change followed at that hour.",
+    "motive:boundary_fraud": "A buried fact is recorded: boundary fraud. It is stated plainly without inference.",
+    "motive:orchard_at_dusk_2": "A buried fact is recorded: orchard at dusk 2. It is stated plainly without inference.",
+    "motive:orchard_at_dusk_3": "A buried fact is recorded: orchard at dusk 3. It is stated plainly without inference.",
+    "motive:orchard_at_dusk_4": "A buried fact is recorded: orchard at dusk 4. It is stated plainly without inference.",
+    "motive:orchard_at_dusk_5": "A buried fact is recorded: orchard at dusk 5. It is stated plainly without inference.",
+    "motive:orchard_at_dusk_6": "A buried fact is recorded: orchard at dusk 6. It is stated plainly without inference.",
+    "witness:orchard_at_dusk_1": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:orchard_at_dusk_2": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:orchard_at_dusk_3": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:orchard_at_dusk_4": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:orchard_at_dusk_5": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "event:land_surveyor_discovered": "Event logged: land surveyor discovered. It anchors the scene without comment.",
+    "event:orchard_at_dusk_scene": "Event logged: orchard at dusk scene. It anchors the scene without comment.",
+    "event:altered_path": "Event logged: altered path. It anchors the scene without comment."
+  }
+}

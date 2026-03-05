@@ -248,5 +248,6 @@ def train_mystery_cartridge(
             epoch_loss += float(loss_dict["total"].detach().cpu())
 
         history["loss"] = epoch_loss / max(1, len(examples) // batch_size)
+        print(f"Epoch {epoch+1:02d}/{n_epochs} | loss={history['loss']:.4f}")
 
     return model, history

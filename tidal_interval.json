@@ -1,0 +1,3556 @@
+{
+  "case_id": "tidal_interval",
+  "title": "The Tidal Interval",
+  "convergence_shape": "late_break",
+  "difficulty": "medium",
+  "opening_token_ids": [
+    "location:tidal_interval_1",
+    "event:marine_biologist_discovered",
+    "time:tidal_interval_1"
+  ],
+  "invariant_token_ids": [
+    "suspect:piers_dunne",
+    "event:tidal_window",
+    "motive:fishing_economy"
+  ],
+  "tokens": [
+    {
+      "id": "suspect:piers_dunne",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.46
+    },
+    {
+      "id": "suspect:government_inspector",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.059,
+        0.104,
+        0.071
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.57
+    },
+    {
+      "id": "suspect:schedule_coordinator",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.233,
+        0.238,
+        0.02
+      ],
+      "affinity_tags": [
+        "physical",
+        "concealment",
+        "constraint",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.49
+    },
+    {
+      "id": "suspect:associate_tidal_interval",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.231,
+        0.056,
+        0.069
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.95
+    },
+    {
+      "id": "suspect:relative_tidal_interval",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.107,
+        0.157,
+        0.156
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.9
+    },
+    {
+      "id": "suspect:staff_tidal_interval",
+      "class": "SUSPECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.237,
+        0.222,
+        0.164
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "time_window",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.87
+    },
+    {
+      "id": "suspect:visitor_tidal_interval",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.098,
+        0.08,
+        0.059
+      ],
+      "affinity_tags": [
+        "error",
+        "access",
+        "physical",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.53
+    },
+    {
+      "id": "location:tidal_interval_1",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.122,
+        0.112,
+        0.102
+      ],
+      "affinity_tags": [
+        "guilt",
+        "time_window",
+        "method",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.76
+    },
+    {
+      "id": "location:tidal_interval_2",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.228,
+        0.209,
+        0.306
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "location:tidal_interval_3",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.05,
+        0.059,
+        0.065
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.25
+    },
+    {
+      "id": "location:tidal_interval_4",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.063,
+        0.048,
+        0.061
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.3
+    },
+    {
+      "id": "location:tidal_interval_5",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.088,
+        0.083,
+        0.076
+      ],
+      "affinity_tags": [
+        "concealment",
+        "constraint",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.56
+    },
+    {
+      "id": "location:tidal_interval_6",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.082,
+        0.079,
+        0.025
+      ],
+      "affinity_tags": [
+        "guilt",
+        "method",
+        "physical",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.15
+    },
+    {
+      "id": "location:tidal_interval_7",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.084,
+        0.105,
+        0.061
+      ],
+      "affinity_tags": [
+        "access",
+        "constraint",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.38
+    },
+    {
+      "id": "location:tidal_interval_8",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.054,
+        0.058,
+        0.051
+      ],
+      "affinity_tags": [
+        "error",
+        "constraint",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.68
+    },
+    {
+      "id": "object:tidal_interval_1",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.078,
+        0.082,
+        0.14
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.84
+    },
+    {
+      "id": "object:tidal_interval_2",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.087,
+        0.087,
+        0.061
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.8
+    },
+    {
+      "id": "object:tidal_interval_3",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.066,
+        0.055,
+        0.062
+      ],
+      "affinity_tags": [
+        "guilt",
+        "method",
+        "constraint",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.54
+    },
+    {
+      "id": "object:tidal_interval_4",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.094,
+        0.099,
+        0.069
+      ],
+      "affinity_tags": [
+        "concealment",
+        "constraint",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.57
+    },
+    {
+      "id": "object:tidal_interval_5",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.132,
+        0.121,
+        0.043
+      ],
+      "affinity_tags": [
+        "constraint",
+        "physical",
+        "guilt",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.58
+    },
+    {
+      "id": "object:tidal_interval_6",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.041,
+        0.05,
+        0.036
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.92
+    },
+    {
+      "id": "object:tidal_interval_7",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.106,
+        0.16,
+        0.125
+      ],
+      "affinity_tags": [
+        "concealment",
+        "method",
+        "physical",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.09
+    },
+    {
+      "id": "object:tidal_interval_8",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.087,
+        0.103,
+        0.079
+      ],
+      "affinity_tags": [
+        "constraint",
+        "method",
+        "physical",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.67
+    },
+    {
+      "id": "object:tidal_interval_9",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.226,
+        0.205,
+        0.29
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.15
+    },
+    {
+      "id": "object:tidal_interval_10",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.22,
+        0.231,
+        0.226
+      ],
+      "affinity_tags": [
+        "error",
+        "constraint",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.68
+    },
+    {
+      "id": "object:tidal_interval_11",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.198,
+        0.194,
+        0.165
+      ],
+      "affinity_tags": [
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.63
+    },
+    {
+      "id": "object:tidal_interval_12",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.063,
+        0.081,
+        0.1
+      ],
+      "affinity_tags": [
+        "constraint",
+        "concealment",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.17
+    },
+    {
+      "id": "object:tidal_interval_13",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.146,
+        0.22,
+        0.152
+      ],
+      "affinity_tags": [
+        "time_window",
+        "access",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.41
+    },
+    {
+      "id": "emotion:tidal_interval_1",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.131,
+        0.089,
+        0.1
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.88
+    },
+    {
+      "id": "emotion:tidal_interval_2",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.124,
+        0.171,
+        0.117
+      ],
+      "affinity_tags": [
+        "concealment",
+        "physical",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.11
+    },
+    {
+      "id": "emotion:tidal_interval_3",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.089,
+        0.09,
+        0.076
+      ],
+      "affinity_tags": [
+        "guilt",
+        "method",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.18
+    },
+    {
+      "id": "emotion:tidal_interval_4",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.17,
+        0.144,
+        0.076
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "guilt",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.25
+    },
+    {
+      "id": "emotion:tidal_interval_5",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.069,
+        0.067,
+        0.126
+      ],
+      "affinity_tags": [
+        "constraint",
+        "guilt",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5
+    },
+    {
+      "id": "emotion:tidal_interval_6",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.169,
+        0.141,
+        0.113
+      ],
+      "affinity_tags": [
+        "access",
+        "constraint",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.78
+    },
+    {
+      "id": "modifier:tidal_interval_1",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.124,
+        0.101,
+        0.14
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.08
+    },
+    {
+      "id": "modifier:tidal_interval_2",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.117,
+        0.091,
+        0.137
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.62
+    },
+    {
+      "id": "modifier:tidal_interval_3",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.261,
+        0.314,
+        0.14
+      ],
+      "affinity_tags": [
+        "method",
+        "constraint",
+        "access",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.36
+    },
+    {
+      "id": "modifier:tidal_interval_4",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.171,
+        0.165,
+        0.216
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "physical",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.46
+    },
+    {
+      "id": "modifier:tidal_interval_5",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.23,
+        0.189,
+        0.24
+      ],
+      "affinity_tags": [
+        "time_window",
+        "method",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.45
+    },
+    {
+      "id": "modifier:tidal_interval_6",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.079,
+        0.076,
+        0.031
+      ],
+      "affinity_tags": [
+        "guilt",
+        "error",
+        "access",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.27
+    },
+    {
+      "id": "modifier:tidal_interval_7",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.125,
+        0.117,
+        0.135
+      ],
+      "affinity_tags": [
+        "error",
+        "time_window",
+        "concealment",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "modifier:tidal_interval_8",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.099,
+        0.099,
+        0.133
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.73
+    },
+    {
+      "id": "modifier:tidal_interval_9",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.166,
+        0.197,
+        0.244
+      ],
+      "affinity_tags": [
+        "physical",
+        "error",
+        "guilt",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.17
+    },
+    {
+      "id": "modifier:tidal_interval_10",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.191,
+        0.221,
+        0.321
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint",
+        "method",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.9
+    },
+    {
+      "id": "action:tidal_interval_1",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.081,
+        0.082,
+        0.024
+      ],
+      "affinity_tags": [
+        "method",
+        "access",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.57
+    },
+    {
+      "id": "action:tidal_interval_2",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.168,
+        0.161,
+        0.082
+      ],
+      "affinity_tags": [
+        "physical",
+        "error",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.23
+    },
+    {
+      "id": "action:tidal_interval_3",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.151,
+        0.156,
+        0.05
+      ],
+      "affinity_tags": [
+        "physical",
+        "error",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.65
+    },
+    {
+      "id": "action:tidal_interval_4",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.045,
+        0.034,
+        0.055
+      ],
+      "affinity_tags": [
+        "constraint",
+        "access",
+        "method",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.11
+    },
+    {
+      "id": "action:tidal_interval_5",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.222,
+        0.159,
+        0.132
+      ],
+      "affinity_tags": [
+        "constraint",
+        "guilt",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.25
+    },
+    {
+      "id": "action:tidal_interval_6",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.175,
+        0.175,
+        0.115
+      ],
+      "affinity_tags": [
+        "guilt",
+        "method",
+        "concealment",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.8
+    },
+    {
+      "id": "action:tidal_interval_7",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.121,
+        0.152,
+        0.082
+      ],
+      "affinity_tags": [
+        "method",
+        "physical",
+        "constraint",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.74
+    },
+    {
+      "id": "action:tidal_interval_8",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.164,
+        0.184,
+        0.145
+      ],
+      "affinity_tags": [
+        "method",
+        "concealment",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.37
+    },
+    {
+      "id": "action:tidal_interval_9",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.086,
+        0.097,
+        0.059
+      ],
+      "affinity_tags": [
+        "guilt",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.24
+    },
+    {
+      "id": "time:tidal_interval_1",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.058,
+        0.073,
+        0.079
+      ],
+      "affinity_tags": [
+        "constraint",
+        "guilt",
+        "error",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.75
+    },
+    {
+      "id": "time:tidal_interval_2",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.234,
+        0.318,
+        0.2
+      ],
+      "affinity_tags": [
+        "method",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.72
+    },
+    {
+      "id": "time:tidal_interval_3",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.056,
+        0.08,
+        0.07
+      ],
+      "affinity_tags": [
+        "time_window",
+        "access",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.12
+    },
+    {
+      "id": "time:tidal_interval_4",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.116,
+        0.155,
+        0.147
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.76
+    },
+    {
+      "id": "time:tidal_interval_5",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.115,
+        0.105,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.94
+    },
+    {
+      "id": "motive:fishing_economy",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.24
+    },
+    {
+      "id": "motive:tidal_interval_2",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.042,
+        0.134,
+        0.238
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.57
+    },
+    {
+      "id": "motive:tidal_interval_3",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.063,
+        0.061,
+        0.18
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.75
+    },
+    {
+      "id": "motive:tidal_interval_4",
+      "class": "MOTIVE",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.035,
+        0.021,
+        0.088
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.21
+    },
+    {
+      "id": "motive:tidal_interval_5",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.19,
+        0.002,
+        0.594
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.06
+    },
+    {
+      "id": "motive:tidal_interval_6",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.314,
+        0.077,
+        0.087
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.1
+    },
+    {
+      "id": "witness:tidal_interval_1",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.034,
+        0.039,
+        0.016
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.84
+    },
+    {
+      "id": "witness:tidal_interval_2",
+      "class": "WITNESS",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.055,
+        0.057,
+        0.059
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.81
+    },
+    {
+      "id": "witness:tidal_interval_3",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.018,
+        0.018,
+        0.031
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.35
+    },
+    {
+      "id": "witness:tidal_interval_4",
+      "class": "WITNESS",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.052,
+        0.056,
+        0.077
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.33
+    },
+    {
+      "id": "witness:tidal_interval_5",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.068,
+        0.076,
+        0.045
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.35
+    },
+    {
+      "id": "event:marine_biologist_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.028,
+        0.095,
+        0.035
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.16
+    },
+    {
+      "id": "event:tidal_interval_scene",
+      "class": "EVENT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.052,
+        0.21,
+        0.052
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.43
+    },
+    {
+      "id": "event:tidal_window",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.23
+    }
+  ],
+  "graph": {
+    "nodes": [
+      "suspect:piers_dunne",
+      "suspect:government_inspector",
+      "suspect:schedule_coordinator",
+      "suspect:associate_tidal_interval",
+      "suspect:relative_tidal_interval",
+      "suspect:staff_tidal_interval",
+      "suspect:visitor_tidal_interval",
+      "location:tidal_interval_1",
+      "location:tidal_interval_2",
+      "location:tidal_interval_3",
+      "location:tidal_interval_4",
+      "location:tidal_interval_5",
+      "location:tidal_interval_6",
+      "location:tidal_interval_7",
+      "location:tidal_interval_8",
+      "object:tidal_interval_1",
+      "object:tidal_interval_2",
+      "object:tidal_interval_3",
+      "object:tidal_interval_4",
+      "object:tidal_interval_5",
+      "object:tidal_interval_6",
+      "object:tidal_interval_7",
+      "object:tidal_interval_8",
+      "object:tidal_interval_9",
+      "object:tidal_interval_10",
+      "object:tidal_interval_11",
+      "object:tidal_interval_12",
+      "object:tidal_interval_13",
+      "emotion:tidal_interval_1",
+      "emotion:tidal_interval_2",
+      "emotion:tidal_interval_3",
+      "emotion:tidal_interval_4",
+      "emotion:tidal_interval_5",
+      "emotion:tidal_interval_6",
+      "modifier:tidal_interval_1",
+      "modifier:tidal_interval_2",
+      "modifier:tidal_interval_3",
+      "modifier:tidal_interval_4",
+      "modifier:tidal_interval_5",
+      "modifier:tidal_interval_6",
+      "modifier:tidal_interval_7",
+      "modifier:tidal_interval_8",
+      "modifier:tidal_interval_9",
+      "modifier:tidal_interval_10",
+      "action:tidal_interval_1",
+      "action:tidal_interval_2",
+      "action:tidal_interval_3",
+      "action:tidal_interval_4",
+      "action:tidal_interval_5",
+      "action:tidal_interval_6",
+      "action:tidal_interval_7",
+      "action:tidal_interval_8",
+      "action:tidal_interval_9",
+      "time:tidal_interval_1",
+      "time:tidal_interval_2",
+      "time:tidal_interval_3",
+      "time:tidal_interval_4",
+      "time:tidal_interval_5",
+      "motive:fishing_economy",
+      "motive:tidal_interval_2",
+      "motive:tidal_interval_3",
+      "motive:tidal_interval_4",
+      "motive:tidal_interval_5",
+      "motive:tidal_interval_6",
+      "witness:tidal_interval_1",
+      "witness:tidal_interval_2",
+      "witness:tidal_interval_3",
+      "witness:tidal_interval_4",
+      "witness:tidal_interval_5",
+      "event:marine_biologist_discovered",
+      "event:tidal_interval_scene",
+      "event:tidal_window"
+    ],
+    "edges": [
+      {
+        "from": "action:tidal_interval_2",
+        "to": "object:tidal_interval_6",
+        "weight": 0.4,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_2",
+        "to": "action:tidal_interval_3",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_1",
+        "to": "object:tidal_interval_7",
+        "weight": 0.47,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_3",
+        "to": "object:tidal_interval_7",
+        "weight": 0.45,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_1",
+        "to": "object:tidal_interval_6",
+        "weight": 0.54,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_1",
+        "to": "suspect:piers_dunne",
+        "weight": 0.33,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_3",
+        "to": "suspect:associate_tidal_interval",
+        "weight": 0.41,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_3",
+        "to": "object:tidal_interval_6",
+        "weight": 0.33,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_3",
+        "to": "suspect:piers_dunne",
+        "weight": 0.52,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_4",
+        "to": "suspect:associate_tidal_interval",
+        "weight": 0.45,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_5",
+        "to": "object:tidal_interval_6",
+        "weight": 0.53,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_5",
+        "to": "suspect:piers_dunne",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_3",
+        "to": "time:tidal_interval_1",
+        "weight": 0.32,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_4",
+        "to": "time:tidal_interval_1",
+        "weight": 0.3,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_6",
+        "to": "time:tidal_interval_3",
+        "weight": 0.34,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "event:tidal_window",
+        "to": "time:tidal_interval_3",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_4",
+        "to": "object:tidal_interval_8",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_5",
+        "to": "object:tidal_interval_10",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_5",
+        "to": "event:tidal_window",
+        "weight": 0.3,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_6",
+        "to": "object:tidal_interval_10",
+        "weight": 0.34,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_6",
+        "to": "time:tidal_interval_2",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_10",
+        "to": "time:tidal_interval_2",
+        "weight": 0.43,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:fishing_economy",
+        "to": "motive:tidal_interval_2",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_6",
+        "to": "motive:tidal_interval_2",
+        "weight": 0.41,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_2",
+        "to": "motive:tidal_interval_3",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_6",
+        "to": "motive:tidal_interval_4",
+        "weight": 0.42,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_3",
+        "to": "motive:tidal_interval_4",
+        "weight": 0.31,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_4",
+        "to": "modifier:tidal_interval_5",
+        "weight": 0.43,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_4",
+        "to": "motive:tidal_interval_3",
+        "weight": 0.32,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_2",
+        "to": "object:tidal_interval_2",
+        "weight": 0.48,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_2",
+        "to": "suspect:government_inspector",
+        "weight": 0.45,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_1",
+        "to": "object:tidal_interval_1",
+        "weight": 0.43,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_1",
+        "to": "modifier:tidal_interval_2",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_1",
+        "to": "suspect:government_inspector",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_2",
+        "to": "suspect:government_inspector",
+        "weight": 0.45,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_1",
+        "to": "suspect:government_inspector",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "suspect:government_inspector",
+        "to": "suspect:schedule_coordinator",
+        "weight": 0.26,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_2",
+        "to": "suspect:schedule_coordinator",
+        "weight": 0.29,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_1",
+        "to": "suspect:schedule_coordinator",
+        "weight": 0.24,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_4",
+        "to": "suspect:schedule_coordinator",
+        "weight": 0.29,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_3",
+        "to": "suspect:schedule_coordinator",
+        "weight": 0.28,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_6",
+        "to": "suspect:schedule_coordinator",
+        "weight": 0.39,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "suspect:relative_tidal_interval",
+        "to": "witness:tidal_interval_2",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:relative_tidal_interval",
+        "to": "time:tidal_interval_1",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:associate_tidal_interval",
+        "to": "suspect:staff_tidal_interval",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_4",
+        "to": "suspect:staff_tidal_interval",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_5",
+        "to": "suspect:visitor_tidal_interval",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_7",
+        "to": "suspect:visitor_tidal_interval",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_1",
+        "to": "location:tidal_interval_2",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_1",
+        "to": "modifier:tidal_interval_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_window",
+        "to": "location:tidal_interval_2",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_5",
+        "to": "location:tidal_interval_3",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_3",
+        "to": "motive:tidal_interval_4",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_2",
+        "to": "location:tidal_interval_4",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_4",
+        "to": "modifier:tidal_interval_4",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_1",
+        "to": "location:tidal_interval_5",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_5",
+        "to": "object:tidal_interval_2",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_interval_scene",
+        "to": "location:tidal_interval_6",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_6",
+        "to": "object:tidal_interval_1",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_7",
+        "to": "motive:tidal_interval_6",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_4",
+        "to": "location:tidal_interval_7",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_5",
+        "to": "location:tidal_interval_8",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_8",
+        "to": "time:tidal_interval_3",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_8",
+        "to": "suspect:schedule_coordinator",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_9",
+        "to": "time:tidal_interval_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_9",
+        "to": "object:tidal_interval_9",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_11",
+        "to": "object:tidal_interval_12",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_4",
+        "to": "object:tidal_interval_11",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_12",
+        "to": "object:tidal_interval_13",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_6",
+        "to": "object:tidal_interval_13",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_2",
+        "to": "suspect:associate_tidal_interval",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_2",
+        "to": "motive:fishing_economy",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_5",
+        "to": "emotion:tidal_interval_3",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_3",
+        "to": "motive:tidal_interval_5",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_4",
+        "to": "suspect:associate_tidal_interval",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_4",
+        "to": "suspect:relative_tidal_interval",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_5",
+        "to": "modifier:tidal_interval_10",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_1",
+        "to": "emotion:tidal_interval_6",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_3",
+        "to": "object:tidal_interval_10",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_3",
+        "to": "motive:tidal_interval_4",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_5",
+        "to": "object:tidal_interval_5",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_7",
+        "to": "object:tidal_interval_12",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_1",
+        "to": "modifier:tidal_interval_7",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_7",
+        "to": "modifier:tidal_interval_8",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_8",
+        "to": "witness:tidal_interval_3",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_9",
+        "to": "object:tidal_interval_3",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_9",
+        "to": "object:tidal_interval_13",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_10",
+        "to": "time:tidal_interval_2",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_4",
+        "to": "event:tidal_window",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_7",
+        "to": "location:tidal_interval_3",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_8",
+        "to": "object:tidal_interval_2",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_8",
+        "to": "object:tidal_interval_10",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_2",
+        "to": "action:tidal_interval_9",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_4",
+        "to": "time:tidal_interval_4",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_10",
+        "to": "time:tidal_interval_4",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_8",
+        "to": "time:tidal_interval_5",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:tidal_interval_5",
+        "to": "witness:tidal_interval_2",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_5",
+        "to": "time:tidal_interval_4",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_6",
+        "to": "time:tidal_interval_3",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_2",
+        "to": "witness:tidal_interval_1",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_5",
+        "to": "witness:tidal_interval_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:tidal_interval_4",
+        "to": "witness:tidal_interval_3",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:tidal_interval_3",
+        "to": "witness:tidal_interval_4",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:marine_biologist_discovered",
+        "to": "witness:tidal_interval_4",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_3",
+        "to": "witness:tidal_interval_5",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_1",
+        "to": "witness:tidal_interval_5",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:marine_biologist_discovered",
+        "to": "object:tidal_interval_3",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_interval_scene",
+        "to": "modifier:tidal_interval_2",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_1",
+        "to": "object:tidal_interval_2",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:tidal_interval_2",
+        "to": "witness:tidal_interval_4",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_8",
+        "to": "object:tidal_interval_10",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_9",
+        "to": "motive:tidal_interval_6",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_4",
+        "to": "emotion:tidal_interval_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_10",
+        "to": "modifier:tidal_interval_4",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_5",
+        "to": "witness:tidal_interval_2",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_5",
+        "to": "object:tidal_interval_2",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_6",
+        "to": "object:tidal_interval_3",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_interval_scene",
+        "to": "motive:tidal_interval_5",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_7",
+        "to": "object:tidal_interval_5",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_5",
+        "to": "object:tidal_interval_7",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_5",
+        "to": "time:tidal_interval_3",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_8",
+        "to": "object:tidal_interval_9",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_3",
+        "to": "object:tidal_interval_1",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_5",
+        "to": "object:tidal_interval_8",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_5",
+        "to": "location:tidal_interval_8",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_8",
+        "to": "time:tidal_interval_2",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_3",
+        "to": "modifier:tidal_interval_7",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_2",
+        "to": "object:tidal_interval_8",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_10",
+        "to": "object:tidal_interval_1",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_4",
+        "to": "modifier:tidal_interval_9",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_4",
+        "to": "object:tidal_interval_6",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_2",
+        "to": "modifier:tidal_interval_8",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_5",
+        "to": "time:tidal_interval_1",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:marine_biologist_discovered",
+        "to": "event:tidal_interval_scene",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_8",
+        "to": "location:tidal_interval_5",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_1",
+        "to": "motive:tidal_interval_5",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_6",
+        "to": "object:tidal_interval_7",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:marine_biologist_discovered",
+        "to": "motive:tidal_interval_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_6",
+        "to": "motive:tidal_interval_3",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_4",
+        "to": "object:tidal_interval_9",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_6",
+        "to": "object:tidal_interval_3",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_7",
+        "to": "modifier:tidal_interval_3",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_11",
+        "to": "object:tidal_interval_13",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_6",
+        "to": "time:tidal_interval_4",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fishing_economy",
+        "to": "witness:tidal_interval_4",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fishing_economy",
+        "to": "object:tidal_interval_9",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:tidal_interval_2",
+        "to": "witness:tidal_interval_5",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_8",
+        "to": "witness:tidal_interval_4",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_12",
+        "to": "object:tidal_interval_4",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_3",
+        "to": "witness:tidal_interval_5",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_3",
+        "to": "object:tidal_interval_6",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_6",
+        "to": "event:tidal_interval_scene",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_1",
+        "to": "modifier:tidal_interval_3",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_3",
+        "to": "modifier:tidal_interval_3",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_8",
+        "to": "witness:tidal_interval_1",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_5",
+        "to": "witness:tidal_interval_2",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_4",
+        "to": "suspect:schedule_coordinator",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_1",
+        "to": "action:tidal_interval_2",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:relative_tidal_interval",
+        "to": "suspect:staff_tidal_interval",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_5",
+        "to": "object:tidal_interval_9",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_3",
+        "to": "witness:tidal_interval_4",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_2",
+        "to": "suspect:relative_tidal_interval",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_1",
+        "to": "modifier:tidal_interval_8",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:piers_dunne",
+        "to": "suspect:visitor_tidal_interval",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_interval_scene",
+        "to": "suspect:piers_dunne",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_3",
+        "to": "object:tidal_interval_3",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_5",
+        "to": "time:tidal_interval_3",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:piers_dunne",
+        "to": "suspect:staff_tidal_interval",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:marine_biologist_discovered",
+        "to": "witness:tidal_interval_2",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:government_inspector",
+        "to": "witness:tidal_interval_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_1",
+        "to": "action:tidal_interval_6",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_2",
+        "to": "suspect:staff_tidal_interval",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_4",
+        "to": "motive:fishing_economy",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:marine_biologist_discovered",
+        "to": "modifier:tidal_interval_9",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:associate_tidal_interval",
+        "to": "time:tidal_interval_3",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_9",
+        "to": "time:tidal_interval_5",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_8",
+        "to": "emotion:tidal_interval_3",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:tidal_interval_3",
+        "to": "witness:tidal_interval_5",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_6",
+        "to": "time:tidal_interval_2",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_4",
+        "to": "object:tidal_interval_4",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_9",
+        "to": "time:tidal_interval_4",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_7",
+        "to": "time:tidal_interval_4",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_5",
+        "to": "object:tidal_interval_4",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_interval_scene",
+        "to": "witness:tidal_interval_2",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:staff_tidal_interval",
+        "to": "time:tidal_interval_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_3",
+        "to": "modifier:tidal_interval_4",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_8",
+        "to": "motive:tidal_interval_5",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_6",
+        "to": "modifier:tidal_interval_8",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_interval_scene",
+        "to": "modifier:tidal_interval_10",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_13",
+        "to": "object:tidal_interval_7",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_9",
+        "to": "time:tidal_interval_2",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_7",
+        "to": "object:tidal_interval_11",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_5",
+        "to": "object:tidal_interval_4",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_2",
+        "to": "emotion:tidal_interval_4",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_3",
+        "to": "witness:tidal_interval_1",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_4",
+        "to": "emotion:tidal_interval_2",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_4",
+        "to": "suspect:piers_dunne",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_5",
+        "to": "modifier:tidal_interval_2",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_3",
+        "to": "time:tidal_interval_1",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_7",
+        "to": "suspect:relative_tidal_interval",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:piers_dunne",
+        "to": "suspect:relative_tidal_interval",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_5",
+        "to": "object:tidal_interval_8",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_3",
+        "to": "object:tidal_interval_8",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_9",
+        "to": "suspect:associate_tidal_interval",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_2",
+        "to": "modifier:tidal_interval_7",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_8",
+        "to": "object:tidal_interval_12",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:marine_biologist_discovered",
+        "to": "motive:tidal_interval_6",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_5",
+        "to": "motive:tidal_interval_6",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_7",
+        "to": "location:tidal_interval_2",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_4",
+        "to": "witness:tidal_interval_3",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_1",
+        "to": "suspect:associate_tidal_interval",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_2",
+        "to": "motive:tidal_interval_3",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_2",
+        "to": "modifier:tidal_interval_7",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_6",
+        "to": "object:tidal_interval_9",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:tidal_interval_2",
+        "to": "object:tidal_interval_6",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_6",
+        "to": "emotion:tidal_interval_3",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_2",
+        "to": "motive:tidal_interval_6",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_3",
+        "to": "suspect:visitor_tidal_interval",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_3",
+        "to": "event:tidal_window",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_8",
+        "to": "time:tidal_interval_1",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_2",
+        "to": "witness:tidal_interval_5",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_6",
+        "to": "object:tidal_interval_5",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_window",
+        "to": "motive:tidal_interval_2",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_3",
+        "to": "location:tidal_interval_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_window",
+        "to": "time:tidal_interval_4",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_9",
+        "to": "object:tidal_interval_8",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:marine_biologist_discovered",
+        "to": "object:tidal_interval_2",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_12",
+        "to": "time:tidal_interval_5",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_2",
+        "to": "emotion:tidal_interval_6",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_7",
+        "to": "time:tidal_interval_5",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_4",
+        "to": "object:tidal_interval_5",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_1",
+        "to": "emotion:tidal_interval_5",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_6",
+        "to": "object:tidal_interval_7",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_4",
+        "to": "suspect:visitor_tidal_interval",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_2",
+        "to": "motive:fishing_economy",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:tidal_window",
+        "to": "object:tidal_interval_5",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_1",
+        "to": "witness:tidal_interval_1",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_4",
+        "to": "object:tidal_interval_12",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_5",
+        "to": "time:tidal_interval_5",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_5",
+        "to": "object:tidal_interval_11",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:tidal_interval_13",
+        "to": "suspect:staff_tidal_interval",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_4",
+        "to": "location:tidal_interval_8",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_2",
+        "to": "object:tidal_interval_1",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_4",
+        "to": "time:tidal_interval_1",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:tidal_interval_4",
+        "to": "witness:tidal_interval_5",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:tidal_interval_6",
+        "to": "witness:tidal_interval_1",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_2",
+        "to": "time:tidal_interval_5",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:tidal_interval_9",
+        "to": "object:tidal_interval_11",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:tidal_interval_1",
+        "to": "object:tidal_interval_13",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:tidal_interval_9",
+        "to": "witness:tidal_interval_4",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      }
+    ]
+  },
+  "attractor": {
+    "dimensions": [
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:piers_dunne",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:tidal_window",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:fishing_economy",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
+    ],
+    "convergence_display": "minimum"
+  },
+  "expressions": {
+    "suspect:piers_dunne": "Piers Dunne observed on site. Clothing and position recorded. No further detail.",
+    "suspect:government_inspector": "Government Inspector observed on site. Clothing and position recorded. No further detail.",
+    "suspect:schedule_coordinator": "Schedule Coordinator observed on site. Clothing and position recorded. No further detail.",
+    "suspect:associate_tidal_interval": "Associate Tidal Interval observed on site. Clothing and position recorded. No further detail.",
+    "suspect:relative_tidal_interval": "Relative Tidal Interval observed on site. Clothing and position recorded. No further detail.",
+    "suspect:staff_tidal_interval": "Staff Tidal Interval observed on site. Clothing and position recorded. No further detail.",
+    "suspect:visitor_tidal_interval": "Visitor Tidal Interval observed on site. Clothing and position recorded. No further detail.",
+    "location:tidal_interval_1": "Tidal Interval 1 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:tidal_interval_2": "Tidal Interval 2 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:tidal_interval_3": "Tidal Interval 3 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:tidal_interval_4": "Tidal Interval 4 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:tidal_interval_5": "Tidal Interval 5 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:tidal_interval_6": "Tidal Interval 6 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:tidal_interval_7": "Tidal Interval 7 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:tidal_interval_8": "Tidal Interval 8 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "object:tidal_interval_1": "Tidal Interval 1 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_2": "Tidal Interval 2 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_3": "Tidal Interval 3 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_4": "Tidal Interval 4 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_5": "Tidal Interval 5 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_6": "Tidal Interval 6 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_7": "Tidal Interval 7 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_8": "Tidal Interval 8 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_9": "Tidal Interval 9 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_10": "Tidal Interval 10 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_11": "Tidal Interval 11 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_12": "Tidal Interval 12 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:tidal_interval_13": "Tidal Interval 13 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "emotion:tidal_interval_1": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:tidal_interval_2": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:tidal_interval_3": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:tidal_interval_4": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:tidal_interval_5": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:tidal_interval_6": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "modifier:tidal_interval_1": "Qualifier recorded: tidal interval 1. It recontextualizes a nearby detail.",
+    "modifier:tidal_interval_2": "Qualifier recorded: tidal interval 2. It recontextualizes a nearby detail.",
+    "modifier:tidal_interval_3": "Qualifier recorded: tidal interval 3. It recontextualizes a nearby detail.",
+    "modifier:tidal_interval_4": "Qualifier recorded: tidal interval 4. It recontextualizes a nearby detail.",
+    "modifier:tidal_interval_5": "Qualifier recorded: tidal interval 5. It recontextualizes a nearby detail.",
+    "modifier:tidal_interval_6": "Qualifier recorded: tidal interval 6. It recontextualizes a nearby detail.",
+    "modifier:tidal_interval_7": "Qualifier recorded: tidal interval 7. It recontextualizes a nearby detail.",
+    "modifier:tidal_interval_8": "Qualifier recorded: tidal interval 8. It recontextualizes a nearby detail.",
+    "modifier:tidal_interval_9": "Qualifier recorded: tidal interval 9. It recontextualizes a nearby detail.",
+    "modifier:tidal_interval_10": "Qualifier recorded: tidal interval 10. It recontextualizes a nearby detail.",
+    "action:tidal_interval_1": "An action occurred: tidal interval 1. It left a physical trace.",
+    "action:tidal_interval_2": "An action occurred: tidal interval 2. It left a physical trace.",
+    "action:tidal_interval_3": "An action occurred: tidal interval 3. It left a physical trace.",
+    "action:tidal_interval_4": "An action occurred: tidal interval 4. It left a physical trace.",
+    "action:tidal_interval_5": "An action occurred: tidal interval 5. It left a physical trace.",
+    "action:tidal_interval_6": "An action occurred: tidal interval 6. It left a physical trace.",
+    "action:tidal_interval_7": "An action occurred: tidal interval 7. It left a physical trace.",
+    "action:tidal_interval_8": "An action occurred: tidal interval 8. It left a physical trace.",
+    "action:tidal_interval_9": "An action occurred: tidal interval 9. It left a physical trace.",
+    "time:tidal_interval_1": "Time noted: storm season. One physical change followed at that hour.",
+    "time:tidal_interval_2": "Time noted: storm season. One physical change followed at that hour.",
+    "time:tidal_interval_3": "Time noted: storm season. One physical change followed at that hour.",
+    "time:tidal_interval_4": "Time noted: storm season. One physical change followed at that hour.",
+    "time:tidal_interval_5": "Time noted: storm season. One physical change followed at that hour.",
+    "motive:fishing_economy": "A buried fact is recorded: fishing economy. It is stated plainly without inference.",
+    "motive:tidal_interval_2": "A buried fact is recorded: tidal interval 2. It is stated plainly without inference.",
+    "motive:tidal_interval_3": "A buried fact is recorded: tidal interval 3. It is stated plainly without inference.",
+    "motive:tidal_interval_4": "A buried fact is recorded: tidal interval 4. It is stated plainly without inference.",
+    "motive:tidal_interval_5": "A buried fact is recorded: tidal interval 5. It is stated plainly without inference.",
+    "motive:tidal_interval_6": "A buried fact is recorded: tidal interval 6. It is stated plainly without inference.",
+    "witness:tidal_interval_1": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:tidal_interval_2": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:tidal_interval_3": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:tidal_interval_4": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:tidal_interval_5": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "event:marine_biologist_discovered": "Event logged: marine biologist discovered. It anchors the scene without comment.",
+    "event:tidal_interval_scene": "Event logged: tidal interval scene. It anchors the scene without comment.",
+    "event:tidal_window": "Event logged: tidal window. It anchors the scene without comment."
+  }
+}

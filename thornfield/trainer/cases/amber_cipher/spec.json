@@ -3,7 +3,7 @@
   "case_id": "amber_cipher",
   "title": "The Amber Cipher",
   "version": "1.0.0",
-  "vocab_size": 48,
+  "vocab_size": 72,
   "embedding_dim": 64,
   "context_dim": 128,
   "n_attractor_dims": 3,
@@ -12,13 +12,13 @@
   "min_turns": 10,
   "max_turns": 18,
   "opening_token_ids": [
-    "suspect:00",
-    "location:01",
-    "object:02"
+    "location:thornfield_crossing",
+    "event:aldous_verne_discovered",
+    "time:between_trains"
   ],
   "invariant_token_ids": [
-    "event:45",
-    "need:46",
-    "state:47"
+    "suspect:renard_voss",
+    "event:window_between_trains",
+    "motive:fraud_concealment"
   ]
 }

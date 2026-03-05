@@ -1,0 +1,3547 @@
+{
+  "case_id": "resonance_test",
+  "title": "The Resonance Test",
+  "convergence_shape": "gradual",
+  "difficulty": "easy",
+  "opening_token_ids": [
+    "location:resonance_test_1",
+    "event:visiting_examiner_discovered",
+    "time:resonance_test_1"
+  ],
+  "invariant_token_ids": [
+    "suspect:marta_solis",
+    "event:stairwell_fall",
+    "motive:stolen_composition"
+  ],
+  "tokens": [
+    {
+      "id": "suspect:marta_solis",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.45
+    },
+    {
+      "id": "suspect:scholarship_student",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.053,
+        0.067,
+        0.052
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.43
+    },
+    {
+      "id": "suspect:maintenance_porter",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.208,
+        0.252,
+        0.02
+      ],
+      "affinity_tags": [
+        "guilt",
+        "time_window",
+        "concealment",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.47
+    },
+    {
+      "id": "suspect:associate_resonance_test",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.218,
+        0.061,
+        0.092
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.76
+    },
+    {
+      "id": "suspect:relative_resonance_test",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.145,
+        0.129,
+        0.143
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.47
+    },
+    {
+      "id": "suspect:staff_resonance_test",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.225,
+        0.164,
+        0.112
+      ],
+      "affinity_tags": [
+        "error",
+        "concealment",
+        "physical",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.12
+    },
+    {
+      "id": "suspect:visitor_resonance_test",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.1,
+        0.118,
+        0.117
+      ],
+      "affinity_tags": [
+        "access",
+        "constraint",
+        "time_window",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.17
+    },
+    {
+      "id": "location:resonance_test_1",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.279,
+        0.293,
+        0.21
+      ],
+      "affinity_tags": [
+        "method",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.45
+    },
+    {
+      "id": "location:resonance_test_2",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.246,
+        0.215,
+        0.263
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.85
+    },
+    {
+      "id": "location:resonance_test_3",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.052,
+        0.038,
+        0.057
+      ],
+      "affinity_tags": [
+        "method",
+        "physical",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.59
+    },
+    {
+      "id": "location:resonance_test_4",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.159,
+        0.146,
+        0.049
+      ],
+      "affinity_tags": [
+        "method",
+        "guilt",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.67
+    },
+    {
+      "id": "location:resonance_test_5",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.086,
+        0.106,
+        0.081
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.7
+    },
+    {
+      "id": "location:resonance_test_6",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.262,
+        0.298,
+        0.154
+      ],
+      "affinity_tags": [
+        "access",
+        "guilt",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.93
+    },
+    {
+      "id": "location:resonance_test_7",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.073,
+        0.075,
+        0.1
+      ],
+      "affinity_tags": [
+        "method",
+        "guilt",
+        "time_window",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.52
+    },
+    {
+      "id": "location:resonance_test_8",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.135,
+        0.086,
+        0.104
+      ],
+      "affinity_tags": [
+        "error",
+        "constraint",
+        "time_window",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.21
+    },
+    {
+      "id": "object:resonance_test_1",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.111,
+        0.092,
+        0.096
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.47
+    },
+    {
+      "id": "object:resonance_test_2",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.084,
+        0.099,
+        0.056
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.39
+    },
+    {
+      "id": "object:resonance_test_3",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.24,
+        0.275,
+        0.112
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.08
+    },
+    {
+      "id": "object:resonance_test_4",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.137,
+        0.111,
+        0.1
+      ],
+      "affinity_tags": [
+        "constraint",
+        "time_window",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.46
+    },
+    {
+      "id": "object:resonance_test_5",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.173,
+        0.116,
+        0.16
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.07
+    },
+    {
+      "id": "object:resonance_test_6",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.076,
+        0.066,
+        0.033
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.82
+    },
+    {
+      "id": "object:resonance_test_7",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.241,
+        0.282,
+        0.18
+      ],
+      "affinity_tags": [
+        "method",
+        "time_window",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.22
+    },
+    {
+      "id": "object:resonance_test_8",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.147,
+        0.143,
+        0.082
+      ],
+      "affinity_tags": [
+        "physical",
+        "access",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.73
+    },
+    {
+      "id": "object:resonance_test_9",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.148,
+        0.129,
+        0.069
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.29
+    },
+    {
+      "id": "object:resonance_test_10",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.211,
+        0.217,
+        0.093
+      ],
+      "affinity_tags": [
+        "concealment",
+        "physical",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.62
+    },
+    {
+      "id": "object:resonance_test_11",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.191,
+        0.119,
+        0.142
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "physical",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.33
+    },
+    {
+      "id": "object:resonance_test_12",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.031,
+        0.042,
+        0.022
+      ],
+      "affinity_tags": [
+        "access",
+        "constraint",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.47
+    },
+    {
+      "id": "object:resonance_test_13",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.172,
+        0.248,
+        0.152
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.81
+    },
+    {
+      "id": "emotion:resonance_test_1",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.085,
+        0.086,
+        0.047
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.58
+    },
+    {
+      "id": "emotion:resonance_test_2",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.222,
+        0.146,
+        0.13
+      ],
+      "affinity_tags": [
+        "constraint",
+        "physical",
+        "method",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "emotion:resonance_test_3",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.085,
+        0.049,
+        0.058
+      ],
+      "affinity_tags": [
+        "time_window",
+        "method",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.63
+    },
+    {
+      "id": "emotion:resonance_test_4",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.133,
+        0.126,
+        0.089
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "error",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.8
+    },
+    {
+      "id": "emotion:resonance_test_5",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.023,
+        0.022,
+        0.037
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical",
+        "method",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.48
+    },
+    {
+      "id": "emotion:resonance_test_6",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.087,
+        0.066,
+        0.07
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical",
+        "error",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.4
+    },
+    {
+      "id": "modifier:resonance_test_1",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.046,
+        0.073,
+        0.043
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.15
+    },
+    {
+      "id": "modifier:resonance_test_2",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.103,
+        0.097,
+        0.054
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.37
+    },
+    {
+      "id": "modifier:resonance_test_3",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.039,
+        0.053,
+        0.048
+      ],
+      "affinity_tags": [
+        "error",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.18
+    },
+    {
+      "id": "modifier:resonance_test_4",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.128,
+        0.151,
+        0.232
+      ],
+      "affinity_tags": [
+        "guilt",
+        "time_window",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.33
+    },
+    {
+      "id": "modifier:resonance_test_5",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.063,
+        0.093,
+        0.092
+      ],
+      "affinity_tags": [
+        "constraint",
+        "access",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.6
+    },
+    {
+      "id": "modifier:resonance_test_6",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.107,
+        0.084,
+        0.135
+      ],
+      "affinity_tags": [
+        "error",
+        "method",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.72
+    },
+    {
+      "id": "modifier:resonance_test_7",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.179,
+        0.152,
+        0.139
+      ],
+      "affinity_tags": [
+        "constraint",
+        "time_window",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.71
+    },
+    {
+      "id": "modifier:resonance_test_8",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.252,
+        0.252,
+        0.152
+      ],
+      "affinity_tags": [
+        "constraint",
+        "error",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.82
+    },
+    {
+      "id": "modifier:resonance_test_9",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.179,
+        0.165,
+        0.124
+      ],
+      "affinity_tags": [
+        "access",
+        "constraint",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.24
+    },
+    {
+      "id": "modifier:resonance_test_10",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.079,
+        0.096,
+        0.062
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "guilt",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.56
+    },
+    {
+      "id": "action:resonance_test_1",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.12,
+        0.18,
+        0.127
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment",
+        "constraint",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.83
+    },
+    {
+      "id": "action:resonance_test_2",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.152,
+        0.162,
+        0.167
+      ],
+      "affinity_tags": [
+        "constraint",
+        "concealment",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.51
+    },
+    {
+      "id": "action:resonance_test_3",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.184,
+        0.294,
+        0.198
+      ],
+      "affinity_tags": [
+        "constraint",
+        "concealment",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.19
+    },
+    {
+      "id": "action:resonance_test_4",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.076,
+        0.122,
+        0.079
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.36
+    },
+    {
+      "id": "action:resonance_test_5",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.151,
+        0.187,
+        0.078
+      ],
+      "affinity_tags": [
+        "constraint",
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.1
+    },
+    {
+      "id": "action:resonance_test_6",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.063,
+        0.079,
+        0.078
+      ],
+      "affinity_tags": [
+        "method",
+        "physical",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.91
+    },
+    {
+      "id": "action:resonance_test_7",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.25,
+        0.223,
+        0.277
+      ],
+      "affinity_tags": [
+        "physical",
+        "guilt",
+        "constraint",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.51
+    },
+    {
+      "id": "action:resonance_test_8",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.077,
+        0.074,
+        0.034
+      ],
+      "affinity_tags": [
+        "error",
+        "concealment",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.19
+    },
+    {
+      "id": "action:resonance_test_9",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.165,
+        0.176,
+        0.084
+      ],
+      "affinity_tags": [
+        "constraint",
+        "physical",
+        "error",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.15
+    },
+    {
+      "id": "time:resonance_test_1",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.143,
+        0.188,
+        0.127
+      ],
+      "affinity_tags": [
+        "guilt",
+        "access",
+        "time_window",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.56
+    },
+    {
+      "id": "time:resonance_test_2",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.087,
+        0.107,
+        0.131
+      ],
+      "affinity_tags": [
+        "time_window",
+        "error",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.12
+    },
+    {
+      "id": "time:resonance_test_3",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.049,
+        0.052,
+        0.037
+      ],
+      "affinity_tags": [
+        "method",
+        "error",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.93
+    },
+    {
+      "id": "time:resonance_test_4",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.149,
+        0.169,
+        0.145
+      ],
+      "affinity_tags": [
+        "time_window",
+        "access",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.28
+    },
+    {
+      "id": "time:resonance_test_5",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.121,
+        0.121,
+        0.213
+      ],
+      "affinity_tags": [
+        "physical",
+        "concealment",
+        "time_window",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.68
+    },
+    {
+      "id": "motive:stolen_composition",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.53
+    },
+    {
+      "id": "motive:resonance_test_2",
+      "class": "MOTIVE",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.036,
+        0.006,
+        0.134
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.42
+    },
+    {
+      "id": "motive:resonance_test_3",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.057,
+        0.161,
+        0.332
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.13
+    },
+    {
+      "id": "motive:resonance_test_4",
+      "class": "MOTIVE",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.022,
+        0.001,
+        0.083
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.39
+    },
+    {
+      "id": "motive:resonance_test_5",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.043,
+        0.027,
+        0.278
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.57
+    },
+    {
+      "id": "motive:resonance_test_6",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.162,
+        0.055,
+        0.054
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.21
+    },
+    {
+      "id": "witness:resonance_test_1",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.047,
+        0.042,
+        0.024
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.07
+    },
+    {
+      "id": "witness:resonance_test_2",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.037,
+        0.039,
+        0.037
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.44
+    },
+    {
+      "id": "witness:resonance_test_3",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.042,
+        0.047,
+        0.046
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.14
+    },
+    {
+      "id": "witness:resonance_test_4",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.057,
+        0.052,
+        0.031
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.94
+    },
+    {
+      "id": "witness:resonance_test_5",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.033,
+        0.047,
+        0.034
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.34
+    },
+    {
+      "id": "event:visiting_examiner_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.041,
+        0.13,
+        0.0
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.8
+    },
+    {
+      "id": "event:resonance_test_scene",
+      "class": "EVENT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.079,
+        0.22,
+        0.076
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.74
+    },
+    {
+      "id": "event:stairwell_fall",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.58
+    }
+  ],
+  "graph": {
+    "nodes": [
+      "suspect:marta_solis",
+      "suspect:scholarship_student",
+      "suspect:maintenance_porter",
+      "suspect:associate_resonance_test",
+      "suspect:relative_resonance_test",
+      "suspect:staff_resonance_test",
+      "suspect:visitor_resonance_test",
+      "location:resonance_test_1",
+      "location:resonance_test_2",
+      "location:resonance_test_3",
+      "location:resonance_test_4",
+      "location:resonance_test_5",
+      "location:resonance_test_6",
+      "location:resonance_test_7",
+      "location:resonance_test_8",
+      "object:resonance_test_1",
+      "object:resonance_test_2",
+      "object:resonance_test_3",
+      "object:resonance_test_4",
+      "object:resonance_test_5",
+      "object:resonance_test_6",
+      "object:resonance_test_7",
+      "object:resonance_test_8",
+      "object:resonance_test_9",
+      "object:resonance_test_10",
+      "object:resonance_test_11",
+      "object:resonance_test_12",
+      "object:resonance_test_13",
+      "emotion:resonance_test_1",
+      "emotion:resonance_test_2",
+      "emotion:resonance_test_3",
+      "emotion:resonance_test_4",
+      "emotion:resonance_test_5",
+      "emotion:resonance_test_6",
+      "modifier:resonance_test_1",
+      "modifier:resonance_test_2",
+      "modifier:resonance_test_3",
+      "modifier:resonance_test_4",
+      "modifier:resonance_test_5",
+      "modifier:resonance_test_6",
+      "modifier:resonance_test_7",
+      "modifier:resonance_test_8",
+      "modifier:resonance_test_9",
+      "modifier:resonance_test_10",
+      "action:resonance_test_1",
+      "action:resonance_test_2",
+      "action:resonance_test_3",
+      "action:resonance_test_4",
+      "action:resonance_test_5",
+      "action:resonance_test_6",
+      "action:resonance_test_7",
+      "action:resonance_test_8",
+      "action:resonance_test_9",
+      "time:resonance_test_1",
+      "time:resonance_test_2",
+      "time:resonance_test_3",
+      "time:resonance_test_4",
+      "time:resonance_test_5",
+      "motive:stolen_composition",
+      "motive:resonance_test_2",
+      "motive:resonance_test_3",
+      "motive:resonance_test_4",
+      "motive:resonance_test_5",
+      "motive:resonance_test_6",
+      "witness:resonance_test_1",
+      "witness:resonance_test_2",
+      "witness:resonance_test_3",
+      "witness:resonance_test_4",
+      "witness:resonance_test_5",
+      "event:visiting_examiner_discovered",
+      "event:resonance_test_scene",
+      "event:stairwell_fall"
+    ],
+    "edges": [
+      {
+        "from": "object:resonance_test_4",
+        "to": "suspect:associate_resonance_test",
+        "weight": 0.52,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_3",
+        "to": "object:resonance_test_4",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:resonance_test_4",
+        "to": "object:resonance_test_5",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:resonance_test_5",
+        "to": "suspect:associate_resonance_test",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_2",
+        "to": "time:resonance_test_1",
+        "weight": 0.42,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "suspect:marta_solis",
+        "to": "time:resonance_test_1",
+        "weight": 0.42,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_1",
+        "to": "object:resonance_test_6",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_1",
+        "to": "suspect:marta_solis",
+        "weight": 0.51,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_3",
+        "to": "object:resonance_test_3",
+        "weight": 0.51,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_3",
+        "to": "object:resonance_test_7",
+        "weight": 0.5,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_4",
+        "to": "time:resonance_test_3",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "event:stairwell_fall",
+        "to": "object:resonance_test_9",
+        "weight": 0.42,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "event:stairwell_fall",
+        "to": "time:resonance_test_3",
+        "weight": 0.31,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_6",
+        "to": "event:stairwell_fall",
+        "weight": 0.36,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_5",
+        "to": "action:resonance_test_6",
+        "weight": 0.43,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:resonance_test_8",
+        "to": "object:resonance_test_9",
+        "weight": 0.32,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:resonance_test_9",
+        "to": "time:resonance_test_3",
+        "weight": 0.4,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_6",
+        "to": "object:resonance_test_9",
+        "weight": 0.3,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:resonance_test_6",
+        "to": "object:resonance_test_8",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_2",
+        "to": "motive:stolen_composition",
+        "weight": 0.44,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_5",
+        "to": "modifier:resonance_test_6",
+        "weight": 0.47,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_6",
+        "to": "motive:resonance_test_4",
+        "weight": 0.5,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_5",
+        "to": "motive:resonance_test_3",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_4",
+        "to": "modifier:resonance_test_5",
+        "weight": 0.46,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_5",
+        "to": "motive:resonance_test_4",
+        "weight": 0.45,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_1",
+        "to": "modifier:resonance_test_2",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_1",
+        "to": "object:resonance_test_1",
+        "weight": 0.46,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:resonance_test_1",
+        "to": "suspect:scholarship_student",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_2",
+        "to": "suspect:maintenance_porter",
+        "weight": 0.29,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:resonance_test_1",
+        "to": "suspect:maintenance_porter",
+        "weight": 0.29,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_1",
+        "to": "suspect:maintenance_porter",
+        "weight": 0.24,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "action:resonance_test_1",
+        "to": "suspect:maintenance_porter",
+        "weight": 0.34,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:resonance_test_3",
+        "to": "suspect:maintenance_porter",
+        "weight": 0.37,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "suspect:associate_resonance_test",
+        "to": "suspect:maintenance_porter",
+        "weight": 0.4,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_6",
+        "to": "suspect:scholarship_student",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_5",
+        "to": "suspect:relative_resonance_test",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_6",
+        "to": "suspect:relative_resonance_test",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_8",
+        "to": "suspect:staff_resonance_test",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_2",
+        "to": "suspect:staff_resonance_test",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_3",
+        "to": "suspect:visitor_resonance_test",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:scholarship_student",
+        "to": "suspect:visitor_resonance_test",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_1",
+        "to": "object:resonance_test_3",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_2",
+        "to": "location:resonance_test_1",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_2",
+        "to": "motive:resonance_test_5",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_2",
+        "to": "suspect:staff_resonance_test",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_3",
+        "to": "modifier:resonance_test_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_3",
+        "to": "object:resonance_test_2",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_4",
+        "to": "object:resonance_test_1",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_6",
+        "to": "location:resonance_test_4",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_5",
+        "to": "object:resonance_test_11",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_6",
+        "to": "modifier:resonance_test_2",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_6",
+        "to": "motive:resonance_test_3",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_7",
+        "to": "motive:resonance_test_2",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_7",
+        "to": "object:resonance_test_10",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_6",
+        "to": "location:resonance_test_8",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_2",
+        "to": "location:resonance_test_8",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_1",
+        "to": "object:resonance_test_2",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_8",
+        "to": "object:resonance_test_6",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_7",
+        "to": "time:resonance_test_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_10",
+        "to": "time:resonance_test_3",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_11",
+        "to": "witness:resonance_test_3",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_1",
+        "to": "object:resonance_test_12",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_12",
+        "to": "suspect:relative_resonance_test",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_13",
+        "to": "object:resonance_test_4",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_1",
+        "to": "object:resonance_test_13",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_3",
+        "to": "location:resonance_test_6",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_3",
+        "to": "object:resonance_test_8",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_4",
+        "to": "location:resonance_test_2",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_4",
+        "to": "object:resonance_test_9",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_5",
+        "to": "witness:resonance_test_1",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_5",
+        "to": "motive:resonance_test_5",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_6",
+        "to": "modifier:resonance_test_1",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_2",
+        "to": "modifier:resonance_test_3",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_4",
+        "to": "object:resonance_test_7",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_7",
+        "to": "motive:resonance_test_5",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_7",
+        "to": "object:resonance_test_3",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:visiting_examiner_discovered",
+        "to": "modifier:resonance_test_8",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_9",
+        "to": "object:resonance_test_6",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_4",
+        "to": "modifier:resonance_test_9",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_5",
+        "to": "modifier:resonance_test_10",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_10",
+        "to": "object:resonance_test_13",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_2",
+        "to": "modifier:resonance_test_4",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_5",
+        "to": "emotion:resonance_test_6",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_7",
+        "to": "time:resonance_test_3",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_7",
+        "to": "motive:resonance_test_5",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_8",
+        "to": "witness:resonance_test_1",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_8",
+        "to": "emotion:resonance_test_1",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_9",
+        "to": "modifier:resonance_test_10",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_9",
+        "to": "motive:stolen_composition",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_8",
+        "to": "time:resonance_test_2",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:resonance_test_4",
+        "to": "witness:resonance_test_3",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_5",
+        "to": "time:resonance_test_4",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_6",
+        "to": "time:resonance_test_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:scholarship_student",
+        "to": "time:resonance_test_5",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_4",
+        "to": "witness:resonance_test_2",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_6",
+        "to": "witness:resonance_test_2",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_5",
+        "to": "witness:resonance_test_4",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_2",
+        "to": "witness:resonance_test_4",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:resonance_test_1",
+        "to": "witness:resonance_test_5",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_10",
+        "to": "witness:resonance_test_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:visiting_examiner_discovered",
+        "to": "witness:resonance_test_5",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_8",
+        "to": "event:resonance_test_scene",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:resonance_test_scene",
+        "to": "motive:resonance_test_3",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_7",
+        "to": "location:resonance_test_8",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_1",
+        "to": "suspect:visitor_resonance_test",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_5",
+        "to": "object:resonance_test_1",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_2",
+        "to": "object:resonance_test_12",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_5",
+        "to": "suspect:staff_resonance_test",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_3",
+        "to": "object:resonance_test_11",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_8",
+        "to": "object:resonance_test_2",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_9",
+        "to": "modifier:resonance_test_3",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_3",
+        "to": "object:resonance_test_13",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:resonance_test_scene",
+        "to": "time:resonance_test_2",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_4",
+        "to": "object:resonance_test_3",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_2",
+        "to": "motive:resonance_test_4",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_9",
+        "to": "time:resonance_test_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_1",
+        "to": "location:resonance_test_2",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_1",
+        "to": "time:resonance_test_4",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:resonance_test_3",
+        "to": "time:resonance_test_5",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_6",
+        "to": "modifier:resonance_test_7",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_6",
+        "to": "object:resonance_test_13",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_7",
+        "to": "object:resonance_test_11",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_8",
+        "to": "time:resonance_test_1",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_4",
+        "to": "object:resonance_test_10",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_1",
+        "to": "motive:resonance_test_2",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_4",
+        "to": "location:resonance_test_6",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_5",
+        "to": "witness:resonance_test_4",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_4",
+        "to": "motive:resonance_test_4",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_1",
+        "to": "suspect:visitor_resonance_test",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_3",
+        "to": "witness:resonance_test_2",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_3",
+        "to": "suspect:associate_resonance_test",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_5",
+        "to": "object:resonance_test_3",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_8",
+        "to": "emotion:resonance_test_4",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_3",
+        "to": "suspect:staff_resonance_test",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_3",
+        "to": "witness:resonance_test_4",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_7",
+        "to": "modifier:resonance_test_8",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_4",
+        "to": "modifier:resonance_test_7",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:stolen_composition",
+        "to": "object:resonance_test_10",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_10",
+        "to": "time:resonance_test_1",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_10",
+        "to": "modifier:resonance_test_5",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_9",
+        "to": "suspect:visitor_resonance_test",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_2",
+        "to": "time:resonance_test_4",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_5",
+        "to": "object:resonance_test_13",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_5",
+        "to": "object:resonance_test_6",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_1",
+        "to": "modifier:resonance_test_2",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_7",
+        "to": "location:resonance_test_5",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_5",
+        "to": "object:resonance_test_12",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:resonance_test_3",
+        "to": "witness:resonance_test_2",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:associate_resonance_test",
+        "to": "suspect:relative_resonance_test",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_2",
+        "to": "modifier:resonance_test_10",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_3",
+        "to": "object:resonance_test_1",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_8",
+        "to": "time:resonance_test_1",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_1",
+        "to": "suspect:relative_resonance_test",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:visiting_examiner_discovered",
+        "to": "witness:resonance_test_1",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_2",
+        "to": "motive:resonance_test_6",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_4",
+        "to": "time:resonance_test_4",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_9",
+        "to": "suspect:scholarship_student",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_7",
+        "to": "time:resonance_test_1",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_9",
+        "to": "witness:resonance_test_2",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_1",
+        "to": "object:resonance_test_4",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:visiting_examiner_discovered",
+        "to": "modifier:resonance_test_3",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:resonance_test_2",
+        "to": "witness:resonance_test_5",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_5",
+        "to": "time:resonance_test_5",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_7",
+        "to": "suspect:relative_resonance_test",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_3",
+        "to": "object:resonance_test_12",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_10",
+        "to": "object:resonance_test_3",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_11",
+        "to": "time:resonance_test_4",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_2",
+        "to": "location:resonance_test_8",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_12",
+        "to": "time:resonance_test_1",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_1",
+        "to": "suspect:scholarship_student",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_4",
+        "to": "object:resonance_test_5",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_10",
+        "to": "witness:resonance_test_3",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_1",
+        "to": "time:resonance_test_4",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_1",
+        "to": "action:resonance_test_5",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_8",
+        "to": "witness:resonance_test_3",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_3",
+        "to": "motive:stolen_composition",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_3",
+        "to": "witness:resonance_test_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_3",
+        "to": "modifier:resonance_test_9",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_1",
+        "to": "modifier:resonance_test_10",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_2",
+        "to": "suspect:staff_resonance_test",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_4",
+        "to": "suspect:relative_resonance_test",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_8",
+        "to": "motive:resonance_test_4",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_8",
+        "to": "emotion:resonance_test_2",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_4",
+        "to": "location:resonance_test_7",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_1",
+        "to": "location:resonance_test_2",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_3",
+        "to": "object:resonance_test_8",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_13",
+        "to": "object:resonance_test_2",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_3",
+        "to": "witness:resonance_test_2",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:staff_resonance_test",
+        "to": "suspect:visitor_resonance_test",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_8",
+        "to": "modifier:resonance_test_6",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:marta_solis",
+        "to": "time:resonance_test_5",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_5",
+        "to": "location:resonance_test_8",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_9",
+        "to": "modifier:resonance_test_2",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_3",
+        "to": "time:resonance_test_2",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:resonance_test_scene",
+        "to": "modifier:resonance_test_9",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_3",
+        "to": "modifier:resonance_test_4",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_8",
+        "to": "witness:resonance_test_4",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_13",
+        "to": "object:resonance_test_8",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_2",
+        "to": "motive:resonance_test_6",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_5",
+        "to": "modifier:resonance_test_8",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_3",
+        "to": "suspect:staff_resonance_test",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:stolen_composition",
+        "to": "suspect:visitor_resonance_test",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_9",
+        "to": "motive:resonance_test_2",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_2",
+        "to": "suspect:marta_solis",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_6",
+        "to": "modifier:resonance_test_4",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_5",
+        "to": "suspect:relative_resonance_test",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_2",
+        "to": "suspect:maintenance_porter",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_6",
+        "to": "suspect:visitor_resonance_test",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:associate_resonance_test",
+        "to": "time:resonance_test_1",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_4",
+        "to": "witness:resonance_test_2",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_2",
+        "to": "modifier:resonance_test_3",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_3",
+        "to": "time:resonance_test_2",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_5",
+        "to": "time:resonance_test_3",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_4",
+        "to": "location:resonance_test_6",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:resonance_test_scene",
+        "to": "witness:resonance_test_5",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:resonance_test_scene",
+        "to": "event:stairwell_fall",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_6",
+        "to": "modifier:resonance_test_8",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_6",
+        "to": "event:visiting_examiner_discovered",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_7",
+        "to": "modifier:resonance_test_7",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_5",
+        "to": "suspect:marta_solis",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_6",
+        "to": "suspect:maintenance_porter",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_3",
+        "to": "emotion:resonance_test_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_6",
+        "to": "object:resonance_test_12",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_2",
+        "to": "modifier:resonance_test_8",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_5",
+        "to": "object:resonance_test_4",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_10",
+        "to": "time:resonance_test_2",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_3",
+        "to": "time:resonance_test_5",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_7",
+        "to": "object:resonance_test_4",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_7",
+        "to": "object:resonance_test_2",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_7",
+        "to": "modifier:resonance_test_6",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_4",
+        "to": "object:resonance_test_6",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_1",
+        "to": "location:resonance_test_7",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_4",
+        "to": "object:resonance_test_11",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_8",
+        "to": "modifier:resonance_test_10",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_6",
+        "to": "witness:resonance_test_4",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_1",
+        "to": "modifier:resonance_test_3",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_2",
+        "to": "modifier:resonance_test_3",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_7",
+        "to": "modifier:resonance_test_4",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:resonance_test_4",
+        "to": "object:resonance_test_9",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:resonance_test_1",
+        "to": "object:resonance_test_5",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_12",
+        "to": "witness:resonance_test_1",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:resonance_test_5",
+        "to": "event:resonance_test_scene",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_2",
+        "to": "location:resonance_test_6",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_2",
+        "to": "suspect:scholarship_student",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_3",
+        "to": "witness:resonance_test_4",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:resonance_test_4",
+        "to": "time:resonance_test_2",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:visiting_examiner_discovered",
+        "to": "object:resonance_test_9",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_1",
+        "to": "location:resonance_test_1",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:resonance_test_5",
+        "to": "suspect:marta_solis",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:resonance_test_4",
+        "to": "time:resonance_test_5",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      }
+    ]
+  },
+  "attractor": {
+    "dimensions": [
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:marta_solis",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:stairwell_fall",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:stolen_composition",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
+    ],
+    "convergence_display": "minimum"
+  },
+  "expressions": {
+    "suspect:marta_solis": "Marta Solis observed on site. Clothing and position recorded. No further detail.",
+    "suspect:scholarship_student": "Scholarship Student observed on site. Clothing and position recorded. No further detail.",
+    "suspect:maintenance_porter": "Maintenance Porter observed on site. Clothing and position recorded. No further detail.",
+    "suspect:associate_resonance_test": "Associate Resonance Test observed on site. Clothing and position recorded. No further detail.",
+    "suspect:relative_resonance_test": "Relative Resonance Test observed on site. Clothing and position recorded. No further detail.",
+    "suspect:staff_resonance_test": "Staff Resonance Test observed on site. Clothing and position recorded. No further detail.",
+    "suspect:visitor_resonance_test": "Visitor Resonance Test observed on site. Clothing and position recorded. No further detail.",
+    "location:resonance_test_1": "Resonance Test 1 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:resonance_test_2": "Resonance Test 2 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:resonance_test_3": "Resonance Test 3 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:resonance_test_4": "Resonance Test 4 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:resonance_test_5": "Resonance Test 5 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:resonance_test_6": "Resonance Test 6 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:resonance_test_7": "Resonance Test 7 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:resonance_test_8": "Resonance Test 8 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "object:resonance_test_1": "Resonance Test 1 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_2": "Resonance Test 2 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_3": "Resonance Test 3 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_4": "Resonance Test 4 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_5": "Resonance Test 5 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_6": "Resonance Test 6 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_7": "Resonance Test 7 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_8": "Resonance Test 8 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_9": "Resonance Test 9 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_10": "Resonance Test 10 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_11": "Resonance Test 11 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_12": "Resonance Test 12 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:resonance_test_13": "Resonance Test 13 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "emotion:resonance_test_1": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:resonance_test_2": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:resonance_test_3": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:resonance_test_4": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:resonance_test_5": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:resonance_test_6": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "modifier:resonance_test_1": "Qualifier recorded: resonance test 1. It recontextualizes a nearby detail.",
+    "modifier:resonance_test_2": "Qualifier recorded: resonance test 2. It recontextualizes a nearby detail.",
+    "modifier:resonance_test_3": "Qualifier recorded: resonance test 3. It recontextualizes a nearby detail.",
+    "modifier:resonance_test_4": "Qualifier recorded: resonance test 4. It recontextualizes a nearby detail.",
+    "modifier:resonance_test_5": "Qualifier recorded: resonance test 5. It recontextualizes a nearby detail.",
+    "modifier:resonance_test_6": "Qualifier recorded: resonance test 6. It recontextualizes a nearby detail.",
+    "modifier:resonance_test_7": "Qualifier recorded: resonance test 7. It recontextualizes a nearby detail.",
+    "modifier:resonance_test_8": "Qualifier recorded: resonance test 8. It recontextualizes a nearby detail.",
+    "modifier:resonance_test_9": "Qualifier recorded: resonance test 9. It recontextualizes a nearby detail.",
+    "modifier:resonance_test_10": "Qualifier recorded: resonance test 10. It recontextualizes a nearby detail.",
+    "action:resonance_test_1": "An action occurred: resonance test 1. It left a physical trace.",
+    "action:resonance_test_2": "An action occurred: resonance test 2. It left a physical trace.",
+    "action:resonance_test_3": "An action occurred: resonance test 3. It left a physical trace.",
+    "action:resonance_test_4": "An action occurred: resonance test 4. It left a physical trace.",
+    "action:resonance_test_5": "An action occurred: resonance test 5. It left a physical trace.",
+    "action:resonance_test_6": "An action occurred: resonance test 6. It left a physical trace.",
+    "action:resonance_test_7": "An action occurred: resonance test 7. It left a physical trace.",
+    "action:resonance_test_8": "An action occurred: resonance test 8. It left a physical trace.",
+    "action:resonance_test_9": "An action occurred: resonance test 9. It left a physical trace.",
+    "time:resonance_test_1": "Time noted: exam week. One physical change followed at that hour.",
+    "time:resonance_test_2": "Time noted: exam week. One physical change followed at that hour.",
+    "time:resonance_test_3": "Time noted: exam week. One physical change followed at that hour.",
+    "time:resonance_test_4": "Time noted: exam week. One physical change followed at that hour.",
+    "time:resonance_test_5": "Time noted: exam week. One physical change followed at that hour.",
+    "motive:stolen_composition": "A buried fact is recorded: stolen composition. It is stated plainly without inference.",
+    "motive:resonance_test_2": "A buried fact is recorded: resonance test 2. It is stated plainly without inference.",
+    "motive:resonance_test_3": "A buried fact is recorded: resonance test 3. It is stated plainly without inference.",
+    "motive:resonance_test_4": "A buried fact is recorded: resonance test 4. It is stated plainly without inference.",
+    "motive:resonance_test_5": "A buried fact is recorded: resonance test 5. It is stated plainly without inference.",
+    "motive:resonance_test_6": "A buried fact is recorded: resonance test 6. It is stated plainly without inference.",
+    "witness:resonance_test_1": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:resonance_test_2": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:resonance_test_3": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:resonance_test_4": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:resonance_test_5": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "event:visiting_examiner_discovered": "Event logged: visiting examiner discovered. It anchors the scene without comment.",
+    "event:resonance_test_scene": "Event logged: resonance test scene. It anchors the scene without comment.",
+    "event:stairwell_fall": "Event logged: stairwell fall. It anchors the scene without comment."
+  }
+}

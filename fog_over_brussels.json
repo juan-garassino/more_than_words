@@ -1,0 +1,3554 @@
+{
+  "case_id": "fog_over_brussels",
+  "title": "Fog Over Brussels",
+  "convergence_shape": "gradual",
+  "difficulty": "hard",
+  "opening_token_ids": [
+    "location:fog_over_brussels_1",
+    "event:cipher_clerk_discovered",
+    "time:fog_over_brussels_1"
+  ],
+  "invariant_token_ids": [
+    "suspect:cultural_attache",
+    "event:champagne_compound",
+    "motive:double_agent_exposure"
+  ],
+  "tokens": [
+    {
+      "id": "suspect:cultural_attache",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.46
+    },
+    {
+      "id": "suspect:ambassador_wife",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.074,
+        0.115,
+        0.084
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.76
+    },
+    {
+      "id": "suspect:security_escort",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.254,
+        0.241,
+        0.02
+      ],
+      "affinity_tags": [
+        "method",
+        "concealment",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.84
+    },
+    {
+      "id": "suspect:associate_fog_over_brussels",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.216,
+        0.037,
+        0.081
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.45
+    },
+    {
+      "id": "suspect:relative_fog_over_brussels",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.071,
+        0.028
+      ],
+      "affinity_tags": [
+        "method",
+        "concealment",
+        "time_window",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.58
+    },
+    {
+      "id": "suspect:staff_fog_over_brussels",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.107,
+        0.182,
+        0.124
+      ],
+      "affinity_tags": [
+        "constraint",
+        "method",
+        "error",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.3
+    },
+    {
+      "id": "suspect:visitor_fog_over_brussels",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.119,
+        0.085,
+        0.109
+      ],
+      "affinity_tags": [
+        "guilt",
+        "time_window",
+        "error",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.92
+    },
+    {
+      "id": "location:fog_over_brussels_1",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.117,
+        0.114,
+        0.08
+      ],
+      "affinity_tags": [
+        "error",
+        "constraint",
+        "method",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.75
+    },
+    {
+      "id": "location:fog_over_brussels_2",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.11,
+        0.117,
+        0.166
+      ],
+      "affinity_tags": [
+        "method",
+        "error",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.72
+    },
+    {
+      "id": "location:fog_over_brussels_3",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.125,
+        0.116,
+        0.06
+      ],
+      "affinity_tags": [
+        "guilt",
+        "constraint",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.06
+    },
+    {
+      "id": "location:fog_over_brussels_4",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.275,
+        0.242,
+        0.231
+      ],
+      "affinity_tags": [
+        "error",
+        "method",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "location:fog_over_brussels_5",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.175,
+        0.201,
+        0.184
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.14
+    },
+    {
+      "id": "location:fog_over_brussels_6",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.176,
+        0.124,
+        0.114
+      ],
+      "affinity_tags": [
+        "error",
+        "guilt",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.52
+    },
+    {
+      "id": "location:fog_over_brussels_7",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.228,
+        0.224,
+        0.119
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.88
+    },
+    {
+      "id": "location:fog_over_brussels_8",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.267,
+        0.215,
+        0.252
+      ],
+      "affinity_tags": [
+        "constraint",
+        "access",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.71
+    },
+    {
+      "id": "object:fog_over_brussels_1",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.093,
+        0.138,
+        0.095
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.52
+    },
+    {
+      "id": "object:fog_over_brussels_2",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.096,
+        0.095,
+        0.027
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.77
+    },
+    {
+      "id": "object:fog_over_brussels_3",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.172,
+        0.125,
+        0.173
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "physical",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.77
+    },
+    {
+      "id": "object:fog_over_brussels_4",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.141,
+        0.108,
+        0.08
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "constraint",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.22
+    },
+    {
+      "id": "object:fog_over_brussels_5",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.066,
+        0.036
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.28
+    },
+    {
+      "id": "object:fog_over_brussels_6",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.096,
+        0.095,
+        0.034
+      ],
+      "affinity_tags": [
+        "guilt",
+        "method",
+        "physical",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.56
+    },
+    {
+      "id": "object:fog_over_brussels_7",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.09,
+        0.113,
+        0.089
+      ],
+      "affinity_tags": [
+        "access",
+        "guilt",
+        "constraint",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.2
+    },
+    {
+      "id": "object:fog_over_brussels_8",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.104,
+        0.073,
+        0.098
+      ],
+      "affinity_tags": [
+        "constraint",
+        "method",
+        "access",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "object:fog_over_brussels_9",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.219,
+        0.18,
+        0.131
+      ],
+      "affinity_tags": [
+        "guilt",
+        "error",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.33
+    },
+    {
+      "id": "object:fog_over_brussels_10",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.094,
+        0.091,
+        0.165
+      ],
+      "affinity_tags": [
+        "guilt",
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.14
+    },
+    {
+      "id": "object:fog_over_brussels_11",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.176,
+        0.228,
+        0.105
+      ],
+      "affinity_tags": [
+        "guilt",
+        "access",
+        "error",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.07
+    },
+    {
+      "id": "object:fog_over_brussels_12",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.039,
+        0.034,
+        0.053
+      ],
+      "affinity_tags": [
+        "constraint",
+        "physical",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.08
+    },
+    {
+      "id": "object:fog_over_brussels_13",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.071,
+        0.083,
+        0.036
+      ],
+      "affinity_tags": [
+        "guilt",
+        "error",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.23
+    },
+    {
+      "id": "emotion:fog_over_brussels_1",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.077,
+        0.099,
+        0.085
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.06
+    },
+    {
+      "id": "emotion:fog_over_brussels_2",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.038,
+        0.036,
+        0.013
+      ],
+      "affinity_tags": [
+        "physical",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.85
+    },
+    {
+      "id": "emotion:fog_over_brussels_3",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.057,
+        0.053,
+        0.017
+      ],
+      "affinity_tags": [
+        "error",
+        "access",
+        "method",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.53
+    },
+    {
+      "id": "emotion:fog_over_brussels_4",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.098,
+        0.074,
+        0.052
+      ],
+      "affinity_tags": [
+        "method",
+        "concealment",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.11
+    },
+    {
+      "id": "emotion:fog_over_brussels_5",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.154,
+        0.133,
+        0.175
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment",
+        "physical",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.24
+    },
+    {
+      "id": "emotion:fog_over_brussels_6",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.07,
+        0.056
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.53
+    },
+    {
+      "id": "modifier:fog_over_brussels_1",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.041,
+        0.048,
+        0.07
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.26
+    },
+    {
+      "id": "modifier:fog_over_brussels_2",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.071,
+        0.086,
+        0.054
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.19
+    },
+    {
+      "id": "modifier:fog_over_brussels_3",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.189,
+        0.223,
+        0.216
+      ],
+      "affinity_tags": [
+        "method",
+        "error",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.93
+    },
+    {
+      "id": "modifier:fog_over_brussels_4",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.246,
+        0.197,
+        0.171
+      ],
+      "affinity_tags": [
+        "guilt",
+        "access",
+        "constraint",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.23
+    },
+    {
+      "id": "modifier:fog_over_brussels_5",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.112,
+        0.116,
+        0.048
+      ],
+      "affinity_tags": [
+        "constraint",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.53
+    },
+    {
+      "id": "modifier:fog_over_brussels_6",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.035,
+        0.042,
+        0.059
+      ],
+      "affinity_tags": [
+        "concealment",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.08
+    },
+    {
+      "id": "modifier:fog_over_brussels_7",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.127,
+        0.093,
+        0.124
+      ],
+      "affinity_tags": [
+        "concealment",
+        "time_window",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.82
+    },
+    {
+      "id": "modifier:fog_over_brussels_8",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.086,
+        0.081,
+        0.091
+      ],
+      "affinity_tags": [
+        "guilt",
+        "physical",
+        "constraint",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.91
+    },
+    {
+      "id": "modifier:fog_over_brussels_9",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.081,
+        0.097,
+        0.093
+      ],
+      "affinity_tags": [
+        "guilt",
+        "time_window",
+        "error",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.54
+    },
+    {
+      "id": "modifier:fog_over_brussels_10",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.257,
+        0.28,
+        0.258
+      ],
+      "affinity_tags": [
+        "constraint",
+        "error",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.81
+    },
+    {
+      "id": "action:fog_over_brussels_1",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.138,
+        0.192,
+        0.116
+      ],
+      "affinity_tags": [
+        "method",
+        "concealment",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.34
+    },
+    {
+      "id": "action:fog_over_brussels_2",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.195,
+        0.191,
+        0.049
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.54
+    },
+    {
+      "id": "action:fog_over_brussels_3",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.108,
+        0.112,
+        0.106
+      ],
+      "affinity_tags": [
+        "concealment",
+        "time_window",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.17
+    },
+    {
+      "id": "action:fog_over_brussels_4",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.228,
+        0.193,
+        0.215
+      ],
+      "affinity_tags": [
+        "time_window",
+        "error",
+        "constraint",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.47
+    },
+    {
+      "id": "action:fog_over_brussels_5",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.127,
+        0.145,
+        0.123
+      ],
+      "affinity_tags": [
+        "method",
+        "access",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5
+    },
+    {
+      "id": "action:fog_over_brussels_6",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.087,
+        0.102,
+        0.09
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.64
+    },
+    {
+      "id": "action:fog_over_brussels_7",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.116,
+        0.113,
+        0.051
+      ],
+      "affinity_tags": [
+        "time_window",
+        "error",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.35
+    },
+    {
+      "id": "action:fog_over_brussels_8",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.044,
+        0.028,
+        0.027
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "error",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "action:fog_over_brussels_9",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.031,
+        0.033,
+        0.016
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "time_window",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.76
+    },
+    {
+      "id": "time:fog_over_brussels_1",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.331,
+        0.301,
+        0.132
+      ],
+      "affinity_tags": [
+        "guilt",
+        "constraint",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.17
+    },
+    {
+      "id": "time:fog_over_brussels_2",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.132,
+        0.108,
+        0.165
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "physical",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.73
+    },
+    {
+      "id": "time:fog_over_brussels_3",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.105,
+        0.14,
+        0.071
+      ],
+      "affinity_tags": [
+        "constraint",
+        "error",
+        "time_window",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.53
+    },
+    {
+      "id": "time:fog_over_brussels_4",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.102,
+        0.114,
+        0.072
+      ],
+      "affinity_tags": [
+        "guilt",
+        "physical",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.91
+    },
+    {
+      "id": "time:fog_over_brussels_5",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.162,
+        0.213,
+        0.22
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.17
+    },
+    {
+      "id": "motive:double_agent_exposure",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.44
+    },
+    {
+      "id": "motive:fog_over_brussels_2",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.118,
+        0.039,
+        0.318
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.26
+    },
+    {
+      "id": "motive:fog_over_brussels_3",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.095,
+        0.014,
+        0.317
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "motive:fog_over_brussels_4",
+      "class": "MOTIVE",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.015,
+        0.017,
+        0.059
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.36
+    },
+    {
+      "id": "motive:fog_over_brussels_5",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.036,
+        0.058,
+        0.126
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.71
+    },
+    {
+      "id": "motive:fog_over_brussels_6",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.184,
+        0.053,
+        0.002
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.14
+    },
+    {
+      "id": "witness:fog_over_brussels_1",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.069,
+        0.071,
+        0.035
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.46
+    },
+    {
+      "id": "witness:fog_over_brussels_2",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.066,
+        0.065,
+        0.046
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.46
+    },
+    {
+      "id": "witness:fog_over_brussels_3",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.047,
+        0.049,
+        0.049
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.37
+    },
+    {
+      "id": "witness:fog_over_brussels_4",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.054,
+        0.038,
+        0.038
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.42
+    },
+    {
+      "id": "witness:fog_over_brussels_5",
+      "class": "WITNESS",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.025,
+        0.017,
+        0.022
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.26
+    },
+    {
+      "id": "event:cipher_clerk_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.036,
+        0.152,
+        0.033
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.58
+    },
+    {
+      "id": "event:fog_over_brussels_scene",
+      "class": "EVENT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.331,
+        0.173
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.25
+    },
+    {
+      "id": "event:champagne_compound",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.79
+    }
+  ],
+  "graph": {
+    "nodes": [
+      "suspect:cultural_attache",
+      "suspect:ambassador_wife",
+      "suspect:security_escort",
+      "suspect:associate_fog_over_brussels",
+      "suspect:relative_fog_over_brussels",
+      "suspect:staff_fog_over_brussels",
+      "suspect:visitor_fog_over_brussels",
+      "location:fog_over_brussels_1",
+      "location:fog_over_brussels_2",
+      "location:fog_over_brussels_3",
+      "location:fog_over_brussels_4",
+      "location:fog_over_brussels_5",
+      "location:fog_over_brussels_6",
+      "location:fog_over_brussels_7",
+      "location:fog_over_brussels_8",
+      "object:fog_over_brussels_1",
+      "object:fog_over_brussels_2",
+      "object:fog_over_brussels_3",
+      "object:fog_over_brussels_4",
+      "object:fog_over_brussels_5",
+      "object:fog_over_brussels_6",
+      "object:fog_over_brussels_7",
+      "object:fog_over_brussels_8",
+      "object:fog_over_brussels_9",
+      "object:fog_over_brussels_10",
+      "object:fog_over_brussels_11",
+      "object:fog_over_brussels_12",
+      "object:fog_over_brussels_13",
+      "emotion:fog_over_brussels_1",
+      "emotion:fog_over_brussels_2",
+      "emotion:fog_over_brussels_3",
+      "emotion:fog_over_brussels_4",
+      "emotion:fog_over_brussels_5",
+      "emotion:fog_over_brussels_6",
+      "modifier:fog_over_brussels_1",
+      "modifier:fog_over_brussels_2",
+      "modifier:fog_over_brussels_3",
+      "modifier:fog_over_brussels_4",
+      "modifier:fog_over_brussels_5",
+      "modifier:fog_over_brussels_6",
+      "modifier:fog_over_brussels_7",
+      "modifier:fog_over_brussels_8",
+      "modifier:fog_over_brussels_9",
+      "modifier:fog_over_brussels_10",
+      "action:fog_over_brussels_1",
+      "action:fog_over_brussels_2",
+      "action:fog_over_brussels_3",
+      "action:fog_over_brussels_4",
+      "action:fog_over_brussels_5",
+      "action:fog_over_brussels_6",
+      "action:fog_over_brussels_7",
+      "action:fog_over_brussels_8",
+      "action:fog_over_brussels_9",
+      "time:fog_over_brussels_1",
+      "time:fog_over_brussels_2",
+      "time:fog_over_brussels_3",
+      "time:fog_over_brussels_4",
+      "time:fog_over_brussels_5",
+      "motive:double_agent_exposure",
+      "motive:fog_over_brussels_2",
+      "motive:fog_over_brussels_3",
+      "motive:fog_over_brussels_4",
+      "motive:fog_over_brussels_5",
+      "motive:fog_over_brussels_6",
+      "witness:fog_over_brussels_1",
+      "witness:fog_over_brussels_2",
+      "witness:fog_over_brussels_3",
+      "witness:fog_over_brussels_4",
+      "witness:fog_over_brussels_5",
+      "event:cipher_clerk_discovered",
+      "event:fog_over_brussels_scene",
+      "event:champagne_compound"
+    ],
+    "edges": [
+      {
+        "from": "object:fog_over_brussels_3",
+        "to": "object:fog_over_brussels_6",
+        "weight": 0.48,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_2",
+        "to": "object:fog_over_brussels_3",
+        "weight": 0.36,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_3",
+        "to": "object:fog_over_brussels_3",
+        "weight": 0.48,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_3",
+        "to": "object:fog_over_brussels_4",
+        "weight": 0.47,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_2",
+        "to": "object:fog_over_brussels_6",
+        "weight": 0.41,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_6",
+        "to": "object:fog_over_brussels_7",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_1",
+        "to": "action:fog_over_brussels_2",
+        "weight": 0.55,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_2",
+        "to": "object:fog_over_brussels_7",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_2",
+        "to": "suspect:associate_fog_over_brussels",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_1",
+        "to": "action:fog_over_brussels_3",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_3",
+        "to": "suspect:associate_fog_over_brussels",
+        "weight": 0.51,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "suspect:associate_fog_over_brussels",
+        "to": "suspect:cultural_attache",
+        "weight": 0.36,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_5",
+        "to": "suspect:cultural_attache",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_1",
+        "to": "time:fog_over_brussels_1",
+        "weight": 0.32,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_4",
+        "to": "object:fog_over_brussels_10",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "event:champagne_compound",
+        "to": "object:fog_over_brussels_10",
+        "weight": 0.47,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_6",
+        "to": "object:fog_over_brussels_10",
+        "weight": 0.33,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_4",
+        "to": "action:fog_over_brussels_5",
+        "weight": 0.46,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_5",
+        "to": "event:champagne_compound",
+        "weight": 0.31,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_4",
+        "to": "event:champagne_compound",
+        "weight": 0.46,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_4",
+        "to": "action:fog_over_brussels_6",
+        "weight": 0.44,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "event:champagne_compound",
+        "to": "time:fog_over_brussels_2",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_9",
+        "to": "time:fog_over_brussels_2",
+        "weight": 0.4,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_4",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_2",
+        "to": "motive:fog_over_brussels_4",
+        "weight": 0.47,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:double_agent_exposure",
+        "to": "motive:fog_over_brussels_2",
+        "weight": 0.43,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_5",
+        "to": "motive:fog_over_brussels_2",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_5",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.31,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_5",
+        "to": "modifier:fog_over_brussels_6",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_1",
+        "to": "modifier:fog_over_brussels_2",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_1",
+        "to": "suspect:ambassador_wife",
+        "weight": 0.42,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_2",
+        "to": "suspect:security_escort",
+        "weight": 0.27,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "suspect:ambassador_wife",
+        "to": "suspect:security_escort",
+        "weight": 0.21,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_1",
+        "to": "suspect:security_escort",
+        "weight": 0.24,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_1",
+        "to": "suspect:security_escort",
+        "weight": 0.31,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "suspect:cultural_attache",
+        "to": "suspect:security_escort",
+        "weight": 0.4,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_4",
+        "to": "suspect:security_escort",
+        "weight": 0.37,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_4",
+        "to": "suspect:relative_fog_over_brussels",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_6",
+        "to": "suspect:relative_fog_over_brussels",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_5",
+        "to": "suspect:staff_fog_over_brussels",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_9",
+        "to": "suspect:staff_fog_over_brussels",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_1",
+        "to": "suspect:visitor_fog_over_brussels",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_5",
+        "to": "suspect:visitor_fog_over_brussels",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_6",
+        "to": "location:fog_over_brussels_1",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_2",
+        "to": "location:fog_over_brussels_4",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_5",
+        "to": "location:fog_over_brussels_2",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_2",
+        "to": "location:fog_over_brussels_3",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_3",
+        "to": "time:fog_over_brussels_5",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_4",
+        "to": "location:fog_over_brussels_8",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_5",
+        "to": "object:fog_over_brussels_4",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_5",
+        "to": "suspect:security_escort",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_5",
+        "to": "location:fog_over_brussels_6",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_6",
+        "to": "object:fog_over_brussels_2",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_4",
+        "to": "location:fog_over_brussels_7",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_7",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_8",
+        "to": "time:fog_over_brussels_2",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_1",
+        "to": "object:fog_over_brussels_1",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_8",
+        "to": "object:fog_over_brussels_1",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_4",
+        "to": "object:fog_over_brussels_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_7",
+        "to": "object:fog_over_brussels_5",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_10",
+        "to": "object:fog_over_brussels_8",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_4",
+        "to": "object:fog_over_brussels_8",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_8",
+        "to": "object:fog_over_brussels_9",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_1",
+        "to": "object:fog_over_brussels_11",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_11",
+        "to": "object:fog_over_brussels_3",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_12",
+        "to": "object:fog_over_brussels_9",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_12",
+        "to": "time:fog_over_brussels_5",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_7",
+        "to": "object:fog_over_brussels_13",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_13",
+        "to": "object:fog_over_brussels_2",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_1",
+        "to": "emotion:fog_over_brussels_6",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_1",
+        "to": "time:fog_over_brussels_4",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_7",
+        "to": "emotion:fog_over_brussels_2",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_2",
+        "to": "event:champagne_compound",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_3",
+        "to": "emotion:fog_over_brussels_4",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_3",
+        "to": "emotion:fog_over_brussels_6",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:champagne_compound",
+        "to": "modifier:fog_over_brussels_3",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_3",
+        "to": "object:fog_over_brussels_4",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_5",
+        "to": "modifier:fog_over_brussels_4",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_6",
+        "to": "motive:fog_over_brussels_5",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_7",
+        "to": "suspect:visitor_fog_over_brussels",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_3",
+        "to": "modifier:fog_over_brussels_7",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_8",
+        "to": "motive:fog_over_brussels_4",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_5",
+        "to": "modifier:fog_over_brussels_9",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_7",
+        "to": "modifier:fog_over_brussels_10",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_1",
+        "to": "action:fog_over_brussels_8",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_8",
+        "to": "witness:fog_over_brussels_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_9",
+        "to": "object:fog_over_brussels_13",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_9",
+        "to": "modifier:fog_over_brussels_5",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:fog_over_brussels_1",
+        "to": "witness:fog_over_brussels_2",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_13",
+        "to": "time:fog_over_brussels_3",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_2",
+        "to": "time:fog_over_brussels_3",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_3",
+        "to": "time:fog_over_brussels_4",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_3",
+        "to": "suspect:security_escort",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_3",
+        "to": "motive:fog_over_brussels_5",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_1",
+        "to": "motive:fog_over_brussels_6",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_1",
+        "to": "motive:fog_over_brussels_6",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_2",
+        "to": "witness:fog_over_brussels_1",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_8",
+        "to": "witness:fog_over_brussels_2",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cipher_clerk_discovered",
+        "to": "witness:fog_over_brussels_3",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:fog_over_brussels_3",
+        "to": "witness:fog_over_brussels_4",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:relative_fog_over_brussels",
+        "to": "witness:fog_over_brussels_4",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_1",
+        "to": "witness:fog_over_brussels_5",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_3",
+        "to": "witness:fog_over_brussels_5",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cipher_clerk_discovered",
+        "to": "time:fog_over_brussels_3",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_3",
+        "to": "event:fog_over_brussels_scene",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:fog_over_brussels_scene",
+        "to": "object:fog_over_brussels_6",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_5",
+        "to": "witness:fog_over_brussels_4",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_11",
+        "to": "object:fog_over_brussels_4",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_3",
+        "to": "modifier:fog_over_brussels_7",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_2",
+        "to": "location:fog_over_brussels_6",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:fog_over_brussels_1",
+        "to": "witness:fog_over_brussels_2",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_7",
+        "to": "suspect:visitor_fog_over_brussels",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_7",
+        "to": "object:fog_over_brussels_12",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_6",
+        "to": "time:fog_over_brussels_5",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cipher_clerk_discovered",
+        "to": "motive:fog_over_brussels_3",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_3",
+        "to": "witness:fog_over_brussels_5",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_8",
+        "to": "time:fog_over_brussels_1",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:relative_fog_over_brussels",
+        "to": "witness:fog_over_brussels_1",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_3",
+        "to": "object:fog_over_brussels_6",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:ambassador_wife",
+        "to": "time:fog_over_brussels_5",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_5",
+        "to": "object:fog_over_brussels_6",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_10",
+        "to": "object:fog_over_brussels_4",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_6",
+        "to": "suspect:ambassador_wife",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_6",
+        "to": "object:fog_over_brussels_10",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_8",
+        "to": "motive:fog_over_brussels_4",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_6",
+        "to": "object:fog_over_brussels_9",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_6",
+        "to": "suspect:cultural_attache",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:double_agent_exposure",
+        "to": "witness:fog_over_brussels_5",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_4",
+        "to": "modifier:fog_over_brussels_7",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_9",
+        "to": "motive:fog_over_brussels_5",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_9",
+        "to": "time:fog_over_brussels_4",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_7",
+        "to": "time:fog_over_brussels_5",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_3",
+        "to": "object:fog_over_brussels_9",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_8",
+        "to": "emotion:fog_over_brussels_3",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cipher_clerk_discovered",
+        "to": "object:fog_over_brussels_6",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_4",
+        "to": "object:fog_over_brussels_2",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_7",
+        "to": "motive:fog_over_brussels_4",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_1",
+        "to": "object:fog_over_brussels_11",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_2",
+        "to": "object:fog_over_brussels_8",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_3",
+        "to": "suspect:relative_fog_over_brussels",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_2",
+        "to": "motive:fog_over_brussels_6",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_4",
+        "to": "event:fog_over_brussels_scene",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_2",
+        "to": "object:fog_over_brussels_12",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_3",
+        "to": "suspect:cultural_attache",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_1",
+        "to": "object:fog_over_brussels_2",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:fog_over_brussels_4",
+        "to": "witness:fog_over_brussels_3",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_4",
+        "to": "object:fog_over_brussels_4",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_5",
+        "to": "modifier:fog_over_brussels_9",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_9",
+        "to": "witness:fog_over_brussels_4",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_11",
+        "to": "suspect:cultural_attache",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_4",
+        "to": "modifier:fog_over_brussels_7",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_6",
+        "to": "time:fog_over_brussels_2",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_5",
+        "to": "object:fog_over_brussels_3",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_6",
+        "to": "emotion:fog_over_brussels_6",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_5",
+        "to": "modifier:fog_over_brussels_6",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_3",
+        "to": "object:fog_over_brussels_12",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:champagne_compound",
+        "to": "motive:fog_over_brussels_2",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_4",
+        "to": "object:fog_over_brussels_5",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_3",
+        "to": "suspect:cultural_attache",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_4",
+        "to": "time:fog_over_brussels_2",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_13",
+        "to": "object:fog_over_brussels_8",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_11",
+        "to": "time:fog_over_brussels_2",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_4",
+        "to": "location:fog_over_brussels_7",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_1",
+        "to": "modifier:fog_over_brussels_3",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_12",
+        "to": "witness:fog_over_brussels_2",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_1",
+        "to": "witness:fog_over_brussels_2",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_8",
+        "to": "location:fog_over_brussels_6",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_3",
+        "to": "object:fog_over_brussels_12",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_6",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cipher_clerk_discovered",
+        "to": "modifier:fog_over_brussels_5",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_2",
+        "to": "object:fog_over_brussels_5",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_1",
+        "to": "object:fog_over_brussels_7",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_2",
+        "to": "location:fog_over_brussels_6",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:double_agent_exposure",
+        "to": "suspect:staff_fog_over_brussels",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_5",
+        "to": "modifier:fog_over_brussels_6",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_2",
+        "to": "motive:fog_over_brussels_6",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_5",
+        "to": "time:fog_over_brussels_5",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_9",
+        "to": "location:fog_over_brussels_3",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:fog_over_brussels_2",
+        "to": "time:fog_over_brussels_5",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_4",
+        "to": "witness:fog_over_brussels_1",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_7",
+        "to": "object:fog_over_brussels_9",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_5",
+        "to": "time:fog_over_brussels_4",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_7",
+        "to": "emotion:fog_over_brussels_6",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_7",
+        "to": "suspect:ambassador_wife",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_9",
+        "to": "time:fog_over_brussels_1",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_4",
+        "to": "modifier:fog_over_brussels_8",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_2",
+        "to": "witness:fog_over_brussels_2",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:double_agent_exposure",
+        "to": "object:fog_over_brussels_9",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_5",
+        "to": "object:fog_over_brussels_11",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_7",
+        "to": "time:fog_over_brussels_1",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:fog_over_brussels_scene",
+        "to": "location:fog_over_brussels_2",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_9",
+        "to": "witness:fog_over_brussels_1",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:champagne_compound",
+        "to": "modifier:fog_over_brussels_9",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_3",
+        "to": "witness:fog_over_brussels_4",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_4",
+        "to": "suspect:visitor_fog_over_brussels",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_1",
+        "to": "suspect:staff_fog_over_brussels",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_6",
+        "to": "object:fog_over_brussels_10",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_8",
+        "to": "modifier:fog_over_brussels_5",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:staff_fog_over_brussels",
+        "to": "witness:fog_over_brussels_3",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_1",
+        "to": "location:fog_over_brussels_5",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_1",
+        "to": "emotion:fog_over_brussels_3",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_5",
+        "to": "witness:fog_over_brussels_4",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_4",
+        "to": "motive:fog_over_brussels_6",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_2",
+        "to": "object:fog_over_brussels_12",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:fog_over_brussels_6",
+        "to": "time:fog_over_brussels_1",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_6",
+        "to": "suspect:cultural_attache",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:ambassador_wife",
+        "to": "witness:fog_over_brussels_2",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_9",
+        "to": "object:fog_over_brussels_3",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_4",
+        "to": "modifier:fog_over_brussels_10",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_1",
+        "to": "witness:fog_over_brussels_2",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_3",
+        "to": "time:fog_over_brussels_3",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_11",
+        "to": "suspect:ambassador_wife",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:ambassador_wife",
+        "to": "suspect:staff_fog_over_brussels",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_8",
+        "to": "time:fog_over_brussels_4",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_4",
+        "to": "modifier:fog_over_brussels_8",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_5",
+        "to": "emotion:fog_over_brussels_3",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:fog_over_brussels_scene",
+        "to": "time:fog_over_brussels_4",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_2",
+        "to": "witness:fog_over_brussels_5",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_3",
+        "to": "witness:fog_over_brussels_5",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_7",
+        "to": "motive:fog_over_brussels_2",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_10",
+        "to": "witness:fog_over_brussels_1",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_9",
+        "to": "object:fog_over_brussels_10",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_5",
+        "to": "witness:fog_over_brussels_5",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_1",
+        "to": "emotion:fog_over_brussels_6",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_6",
+        "to": "witness:fog_over_brussels_4",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_7",
+        "to": "modifier:fog_over_brussels_4",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_4",
+        "to": "modifier:fog_over_brussels_9",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_5",
+        "to": "object:fog_over_brussels_13",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_4",
+        "to": "modifier:fog_over_brussels_7",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:visitor_fog_over_brussels",
+        "to": "witness:fog_over_brussels_5",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_1",
+        "to": "object:fog_over_brussels_2",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_2",
+        "to": "emotion:fog_over_brussels_5",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_5",
+        "to": "object:fog_over_brussels_7",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_3",
+        "to": "modifier:fog_over_brussels_8",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_5",
+        "to": "witness:fog_over_brussels_4",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_3",
+        "to": "modifier:fog_over_brussels_6",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:fog_over_brussels_scene",
+        "to": "suspect:visitor_fog_over_brussels",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:fog_over_brussels_3",
+        "to": "witness:fog_over_brussels_1",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_4",
+        "to": "suspect:staff_fog_over_brussels",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_2",
+        "to": "motive:fog_over_brussels_3",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:fog_over_brussels_6",
+        "to": "object:fog_over_brussels_13",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:fog_over_brussels_4",
+        "to": "object:fog_over_brussels_7",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_2",
+        "to": "emotion:fog_over_brussels_2",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_8",
+        "to": "modifier:fog_over_brussels_9",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_1",
+        "to": "modifier:fog_over_brussels_3",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:fog_over_brussels_scene",
+        "to": "object:fog_over_brussels_8",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_10",
+        "to": "suspect:visitor_fog_over_brussels",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:fog_over_brussels_8",
+        "to": "modifier:fog_over_brussels_10",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:fog_over_brussels_3",
+        "to": "object:fog_over_brussels_13",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:fog_over_brussels_9",
+        "to": "object:fog_over_brussels_1",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      }
+    ]
+  },
+  "attractor": {
+    "dimensions": [
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:cultural_attache",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:champagne_compound",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:double_agent_exposure",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
+    ],
+    "convergence_display": "minimum"
+  },
+  "expressions": {
+    "suspect:cultural_attache": "Cultural Attache observed on site. Clothing and position recorded. No further detail.",
+    "suspect:ambassador_wife": "Ambassador Wife observed on site. Clothing and position recorded. No further detail.",
+    "suspect:security_escort": "Security Escort observed on site. Clothing and position recorded. No further detail.",
+    "suspect:associate_fog_over_brussels": "Associate Fog Over Brussels observed on site. Clothing and position recorded. No further detail.",
+    "suspect:relative_fog_over_brussels": "Relative Fog Over Brussels observed on site. Clothing and position recorded. No further detail.",
+    "suspect:staff_fog_over_brussels": "Staff Fog Over Brussels observed on site. Clothing and position recorded. No further detail.",
+    "suspect:visitor_fog_over_brussels": "Visitor Fog Over Brussels observed on site. Clothing and position recorded. No further detail.",
+    "location:fog_over_brussels_1": "Fog Over Brussels 1 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:fog_over_brussels_2": "Fog Over Brussels 2 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:fog_over_brussels_3": "Fog Over Brussels 3 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:fog_over_brussels_4": "Fog Over Brussels 4 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:fog_over_brussels_5": "Fog Over Brussels 5 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:fog_over_brussels_6": "Fog Over Brussels 6 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:fog_over_brussels_7": "Fog Over Brussels 7 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:fog_over_brussels_8": "Fog Over Brussels 8 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "object:fog_over_brussels_1": "Fog Over Brussels 1 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_2": "Fog Over Brussels 2 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_3": "Fog Over Brussels 3 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_4": "Fog Over Brussels 4 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_5": "Fog Over Brussels 5 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_6": "Fog Over Brussels 6 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_7": "Fog Over Brussels 7 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_8": "Fog Over Brussels 8 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_9": "Fog Over Brussels 9 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_10": "Fog Over Brussels 10 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_11": "Fog Over Brussels 11 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_12": "Fog Over Brussels 12 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:fog_over_brussels_13": "Fog Over Brussels 13 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "emotion:fog_over_brussels_1": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:fog_over_brussels_2": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:fog_over_brussels_3": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:fog_over_brussels_4": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:fog_over_brussels_5": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:fog_over_brussels_6": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "modifier:fog_over_brussels_1": "Qualifier recorded: fog over brussels 1. It recontextualizes a nearby detail.",
+    "modifier:fog_over_brussels_2": "Qualifier recorded: fog over brussels 2. It recontextualizes a nearby detail.",
+    "modifier:fog_over_brussels_3": "Qualifier recorded: fog over brussels 3. It recontextualizes a nearby detail.",
+    "modifier:fog_over_brussels_4": "Qualifier recorded: fog over brussels 4. It recontextualizes a nearby detail.",
+    "modifier:fog_over_brussels_5": "Qualifier recorded: fog over brussels 5. It recontextualizes a nearby detail.",
+    "modifier:fog_over_brussels_6": "Qualifier recorded: fog over brussels 6. It recontextualizes a nearby detail.",
+    "modifier:fog_over_brussels_7": "Qualifier recorded: fog over brussels 7. It recontextualizes a nearby detail.",
+    "modifier:fog_over_brussels_8": "Qualifier recorded: fog over brussels 8. It recontextualizes a nearby detail.",
+    "modifier:fog_over_brussels_9": "Qualifier recorded: fog over brussels 9. It recontextualizes a nearby detail.",
+    "modifier:fog_over_brussels_10": "Qualifier recorded: fog over brussels 10. It recontextualizes a nearby detail.",
+    "action:fog_over_brussels_1": "An action occurred: fog over brussels 1. It left a physical trace.",
+    "action:fog_over_brussels_2": "An action occurred: fog over brussels 2. It left a physical trace.",
+    "action:fog_over_brussels_3": "An action occurred: fog over brussels 3. It left a physical trace.",
+    "action:fog_over_brussels_4": "An action occurred: fog over brussels 4. It left a physical trace.",
+    "action:fog_over_brussels_5": "An action occurred: fog over brussels 5. It left a physical trace.",
+    "action:fog_over_brussels_6": "An action occurred: fog over brussels 6. It left a physical trace.",
+    "action:fog_over_brussels_7": "An action occurred: fog over brussels 7. It left a physical trace.",
+    "action:fog_over_brussels_8": "An action occurred: fog over brussels 8. It left a physical trace.",
+    "action:fog_over_brussels_9": "An action occurred: fog over brussels 9. It left a physical trace.",
+    "time:fog_over_brussels_1": "Time noted: reception night. One physical change followed at that hour.",
+    "time:fog_over_brussels_2": "Time noted: reception night. One physical change followed at that hour.",
+    "time:fog_over_brussels_3": "Time noted: reception night. One physical change followed at that hour.",
+    "time:fog_over_brussels_4": "Time noted: reception night. One physical change followed at that hour.",
+    "time:fog_over_brussels_5": "Time noted: reception night. One physical change followed at that hour.",
+    "motive:double_agent_exposure": "A buried fact is recorded: double agent exposure. It is stated plainly without inference.",
+    "motive:fog_over_brussels_2": "A buried fact is recorded: fog over brussels 2. It is stated plainly without inference.",
+    "motive:fog_over_brussels_3": "A buried fact is recorded: fog over brussels 3. It is stated plainly without inference.",
+    "motive:fog_over_brussels_4": "A buried fact is recorded: fog over brussels 4. It is stated plainly without inference.",
+    "motive:fog_over_brussels_5": "A buried fact is recorded: fog over brussels 5. It is stated plainly without inference.",
+    "motive:fog_over_brussels_6": "A buried fact is recorded: fog over brussels 6. It is stated plainly without inference.",
+    "witness:fog_over_brussels_1": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:fog_over_brussels_2": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:fog_over_brussels_3": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:fog_over_brussels_4": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:fog_over_brussels_5": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "event:cipher_clerk_discovered": "Event logged: cipher clerk discovered. It anchors the scene without comment.",
+    "event:fog_over_brussels_scene": "Event logged: fog over brussels scene. It anchors the scene without comment.",
+    "event:champagne_compound": "Event logged: champagne compound. It anchors the scene without comment."
+  }
+}

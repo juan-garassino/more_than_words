@@ -1,0 +1,3550 @@
+{
+  "case_id": "attended_hour",
+  "title": "The Attended Hour",
+  "convergence_shape": "false_plateau",
+  "difficulty": "hard",
+  "opening_token_ids": [
+    "location:attended_hour_1",
+    "event:cardiac_patient_discovered",
+    "time:attended_hour_1"
+  ],
+  "invariant_token_ids": [
+    "suspect:callum_dray",
+    "event:dosage_interaction",
+    "motive:negligence_testimony"
+  ],
+  "tokens": [
+    {
+      "id": "suspect:callum_dray",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.27
+    },
+    {
+      "id": "suspect:attending_physician",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.123,
+        0.082,
+        0.069
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.93
+    },
+    {
+      "id": "suspect:records_clerk",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.263,
+        0.237,
+        0.02
+      ],
+      "affinity_tags": [
+        "time_window",
+        "concealment",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.6
+    },
+    {
+      "id": "suspect:associate_attended_hour",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.311,
+        0.06,
+        0.024
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.32
+    },
+    {
+      "id": "suspect:relative_attended_hour",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.085,
+        0.122,
+        0.094
+      ],
+      "affinity_tags": [
+        "error",
+        "guilt",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.7
+    },
+    {
+      "id": "suspect:staff_attended_hour",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.044,
+        0.031,
+        0.044
+      ],
+      "affinity_tags": [
+        "access",
+        "physical",
+        "method",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.27
+    },
+    {
+      "id": "suspect:visitor_attended_hour",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.085,
+        0.069,
+        0.104
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.15
+    },
+    {
+      "id": "location:attended_hour_1",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.093,
+        0.078,
+        0.076
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "guilt",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.91
+    },
+    {
+      "id": "location:attended_hour_2",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.067,
+        0.069,
+        0.091
+      ],
+      "affinity_tags": [
+        "constraint",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.11
+    },
+    {
+      "id": "location:attended_hour_3",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.197,
+        0.175,
+        0.143
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "method",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.51
+    },
+    {
+      "id": "location:attended_hour_4",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.21,
+        0.179,
+        0.103
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical",
+        "concealment",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.88
+    },
+    {
+      "id": "location:attended_hour_5",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.024,
+        0.029,
+        0.033
+      ],
+      "affinity_tags": [
+        "constraint",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.51
+    },
+    {
+      "id": "location:attended_hour_6",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.095,
+        0.106,
+        0.039
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.47
+    },
+    {
+      "id": "location:attended_hour_7",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.103,
+        0.075,
+        0.076
+      ],
+      "affinity_tags": [
+        "concealment",
+        "physical",
+        "guilt",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.92
+    },
+    {
+      "id": "location:attended_hour_8",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.18,
+        0.108,
+        0.113
+      ],
+      "affinity_tags": [
+        "constraint",
+        "time_window",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.82
+    },
+    {
+      "id": "object:attended_hour_1",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.082,
+        0.106,
+        0.079
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.19
+    },
+    {
+      "id": "object:attended_hour_2",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.124,
+        0.137,
+        0.079
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.31
+    },
+    {
+      "id": "object:attended_hour_3",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.111,
+        0.089,
+        0.074
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.61
+    },
+    {
+      "id": "object:attended_hour_4",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.121,
+        0.166,
+        0.126
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.6
+    },
+    {
+      "id": "object:attended_hour_5",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.167,
+        0.129,
+        0.125
+      ],
+      "affinity_tags": [
+        "guilt",
+        "access",
+        "physical",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.45
+    },
+    {
+      "id": "object:attended_hour_6",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.083,
+        0.123,
+        0.098
+      ],
+      "affinity_tags": [
+        "access",
+        "constraint",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.44
+    },
+    {
+      "id": "object:attended_hour_7",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.077,
+        0.109,
+        0.079
+      ],
+      "affinity_tags": [
+        "concealment",
+        "constraint",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.81
+    },
+    {
+      "id": "object:attended_hour_8",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.135,
+        0.163,
+        0.211
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "time_window",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.74
+    },
+    {
+      "id": "object:attended_hour_9",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.172,
+        0.246,
+        0.22
+      ],
+      "affinity_tags": [
+        "physical",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.93
+    },
+    {
+      "id": "object:attended_hour_10",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.13,
+        0.161,
+        0.096
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.4
+    },
+    {
+      "id": "object:attended_hour_11",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.045,
+        0.039,
+        0.036
+      ],
+      "affinity_tags": [
+        "method",
+        "error",
+        "time_window",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.07
+    },
+    {
+      "id": "object:attended_hour_12",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.165,
+        0.197,
+        0.179
+      ],
+      "affinity_tags": [
+        "error",
+        "access",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.74
+    },
+    {
+      "id": "object:attended_hour_13",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.306,
+        0.191,
+        0.201
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.52
+    },
+    {
+      "id": "emotion:attended_hour_1",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.089,
+        0.105,
+        0.106
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.39
+    },
+    {
+      "id": "emotion:attended_hour_2",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.107,
+        0.104,
+        0.034
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "time_window",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.42
+    },
+    {
+      "id": "emotion:attended_hour_3",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.1,
+        0.128,
+        0.075
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "method",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.51
+    },
+    {
+      "id": "emotion:attended_hour_4",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.101,
+        0.113,
+        0.047
+      ],
+      "affinity_tags": [
+        "constraint",
+        "physical",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.33
+    },
+    {
+      "id": "emotion:attended_hour_5",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.289,
+        0.235,
+        0.147
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.82
+    },
+    {
+      "id": "emotion:attended_hour_6",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.194,
+        0.231,
+        0.133
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "constraint",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.32
+    },
+    {
+      "id": "modifier:attended_hour_1",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.082,
+        0.068,
+        0.041
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.29
+    },
+    {
+      "id": "modifier:attended_hour_2",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.117,
+        0.1,
+        0.05
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.13
+    },
+    {
+      "id": "modifier:attended_hour_3",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.137,
+        0.118,
+        0.149
+      ],
+      "affinity_tags": [
+        "concealment",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.24
+    },
+    {
+      "id": "modifier:attended_hour_4",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.162,
+        0.158,
+        0.146
+      ],
+      "affinity_tags": [
+        "constraint",
+        "guilt",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.43
+    },
+    {
+      "id": "modifier:attended_hour_5",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.105,
+        0.14,
+        0.15
+      ],
+      "affinity_tags": [
+        "method",
+        "guilt",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.1
+    },
+    {
+      "id": "modifier:attended_hour_6",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.167,
+        0.119,
+        0.186
+      ],
+      "affinity_tags": [
+        "guilt",
+        "error",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.81
+    },
+    {
+      "id": "modifier:attended_hour_7",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.088,
+        0.071,
+        0.091
+      ],
+      "affinity_tags": [
+        "method",
+        "error",
+        "access",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.93
+    },
+    {
+      "id": "modifier:attended_hour_8",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.103,
+        0.126,
+        0.07
+      ],
+      "affinity_tags": [
+        "access",
+        "constraint",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.69
+    },
+    {
+      "id": "modifier:attended_hour_9",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.096,
+        0.094,
+        0.106
+      ],
+      "affinity_tags": [
+        "constraint",
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "modifier:attended_hour_10",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.145,
+        0.109,
+        0.159
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment",
+        "physical",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.7
+    },
+    {
+      "id": "action:attended_hour_1",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.285,
+        0.224,
+        0.169
+      ],
+      "affinity_tags": [
+        "concealment",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.65
+    },
+    {
+      "id": "action:attended_hour_2",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.068,
+        0.06,
+        0.101
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "constraint",
+        "buried"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.86
+    },
+    {
+      "id": "action:attended_hour_3",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.048,
+        0.079,
+        0.052
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.51
+    },
+    {
+      "id": "action:attended_hour_4",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.07,
+        0.071,
+        0.054
+      ],
+      "affinity_tags": [
+        "physical",
+        "concealment",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.55
+    },
+    {
+      "id": "action:attended_hour_5",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.146,
+        0.23,
+        0.161
+      ],
+      "affinity_tags": [
+        "error",
+        "concealment",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.32
+    },
+    {
+      "id": "action:attended_hour_6",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.102,
+        0.085,
+        0.063
+      ],
+      "affinity_tags": [
+        "guilt",
+        "physical",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.78
+    },
+    {
+      "id": "action:attended_hour_7",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.128,
+        0.088,
+        0.103
+      ],
+      "affinity_tags": [
+        "physical",
+        "access",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.32
+    },
+    {
+      "id": "action:attended_hour_8",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.254,
+        0.227,
+        0.202
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.4
+    },
+    {
+      "id": "action:attended_hour_9",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.152,
+        0.136,
+        0.126
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "physical",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.07
+    },
+    {
+      "id": "time:attended_hour_1",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.104,
+        0.061,
+        0.075
+      ],
+      "affinity_tags": [
+        "physical",
+        "access",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.18
+    },
+    {
+      "id": "time:attended_hour_2",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.106,
+        0.091,
+        0.161
+      ],
+      "affinity_tags": [
+        "error",
+        "physical",
+        "guilt",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.67
+    },
+    {
+      "id": "time:attended_hour_3",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.088,
+        0.079,
+        0.067
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.28
+    },
+    {
+      "id": "time:attended_hour_4",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.083,
+        0.073,
+        0.085
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "guilt",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.78
+    },
+    {
+      "id": "time:attended_hour_5",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.212,
+        0.146,
+        0.162
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "method",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.88
+    },
+    {
+      "id": "motive:negligence_testimony",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.44
+    },
+    {
+      "id": "motive:attended_hour_2",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.066,
+        0.01,
+        0.283
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.45
+    },
+    {
+      "id": "motive:attended_hour_3",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.154,
+        0.116,
+        0.371
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.22
+    },
+    {
+      "id": "motive:attended_hour_4",
+      "class": "MOTIVE",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.018,
+        0.007,
+        0.058
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [
+        "surface"
+      ],
+      "temperature": 0.87
+    },
+    {
+      "id": "motive:attended_hour_5",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.147,
+        0.071,
+        0.555
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.13
+    },
+    {
+      "id": "motive:attended_hour_6",
+      "class": "MOTIVE",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.207,
+        0.04,
+        0.025
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.73
+    },
+    {
+      "id": "witness:attended_hour_1",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.021,
+        0.034,
+        0.028
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.66
+    },
+    {
+      "id": "witness:attended_hour_2",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.057,
+        0.055,
+        0.056
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.53
+    },
+    {
+      "id": "witness:attended_hour_3",
+      "class": "WITNESS",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.048,
+        0.031,
+        0.028
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.2
+    },
+    {
+      "id": "witness:attended_hour_4",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.059,
+        0.039,
+        0.05
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.28
+    },
+    {
+      "id": "witness:attended_hour_5",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.029,
+        0.032,
+        0.032
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.91
+    },
+    {
+      "id": "event:cardiac_patient_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.042,
+        0.106,
+        0.034
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.1
+    },
+    {
+      "id": "event:attended_hour_scene",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.036,
+        0.088,
+        0.027
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.8
+    },
+    {
+      "id": "event:dosage_interaction",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "access",
+        "error",
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.49
+    }
+  ],
+  "graph": {
+    "nodes": [
+      "suspect:callum_dray",
+      "suspect:attending_physician",
+      "suspect:records_clerk",
+      "suspect:associate_attended_hour",
+      "suspect:relative_attended_hour",
+      "suspect:staff_attended_hour",
+      "suspect:visitor_attended_hour",
+      "location:attended_hour_1",
+      "location:attended_hour_2",
+      "location:attended_hour_3",
+      "location:attended_hour_4",
+      "location:attended_hour_5",
+      "location:attended_hour_6",
+      "location:attended_hour_7",
+      "location:attended_hour_8",
+      "object:attended_hour_1",
+      "object:attended_hour_2",
+      "object:attended_hour_3",
+      "object:attended_hour_4",
+      "object:attended_hour_5",
+      "object:attended_hour_6",
+      "object:attended_hour_7",
+      "object:attended_hour_8",
+      "object:attended_hour_9",
+      "object:attended_hour_10",
+      "object:attended_hour_11",
+      "object:attended_hour_12",
+      "object:attended_hour_13",
+      "emotion:attended_hour_1",
+      "emotion:attended_hour_2",
+      "emotion:attended_hour_3",
+      "emotion:attended_hour_4",
+      "emotion:attended_hour_5",
+      "emotion:attended_hour_6",
+      "modifier:attended_hour_1",
+      "modifier:attended_hour_2",
+      "modifier:attended_hour_3",
+      "modifier:attended_hour_4",
+      "modifier:attended_hour_5",
+      "modifier:attended_hour_6",
+      "modifier:attended_hour_7",
+      "modifier:attended_hour_8",
+      "modifier:attended_hour_9",
+      "modifier:attended_hour_10",
+      "action:attended_hour_1",
+      "action:attended_hour_2",
+      "action:attended_hour_3",
+      "action:attended_hour_4",
+      "action:attended_hour_5",
+      "action:attended_hour_6",
+      "action:attended_hour_7",
+      "action:attended_hour_8",
+      "action:attended_hour_9",
+      "time:attended_hour_1",
+      "time:attended_hour_2",
+      "time:attended_hour_3",
+      "time:attended_hour_4",
+      "time:attended_hour_5",
+      "motive:negligence_testimony",
+      "motive:attended_hour_2",
+      "motive:attended_hour_3",
+      "motive:attended_hour_4",
+      "motive:attended_hour_5",
+      "motive:attended_hour_6",
+      "witness:attended_hour_1",
+      "witness:attended_hour_2",
+      "witness:attended_hour_3",
+      "witness:attended_hour_4",
+      "witness:attended_hour_5",
+      "event:cardiac_patient_discovered",
+      "event:attended_hour_scene",
+      "event:dosage_interaction"
+    ],
+    "edges": [
+      {
+        "from": "action:attended_hour_1",
+        "to": "time:attended_hour_1",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_3",
+        "to": "time:attended_hour_1",
+        "weight": 0.42,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_2",
+        "to": "object:attended_hour_6",
+        "weight": 0.33,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:attended_hour_6",
+        "to": "object:attended_hour_7",
+        "weight": 0.3,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_1",
+        "to": "suspect:callum_dray",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_1",
+        "to": "object:attended_hour_5",
+        "weight": 0.51,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:attended_hour_7",
+        "to": "suspect:associate_attended_hour",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_3",
+        "to": "object:attended_hour_4",
+        "weight": 0.4,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:attended_hour_5",
+        "to": "suspect:callum_dray",
+        "weight": 0.31,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "event:dosage_interaction",
+        "to": "time:attended_hour_2",
+        "weight": 0.31,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_5",
+        "to": "object:attended_hour_9",
+        "weight": 0.34,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_5",
+        "to": "time:attended_hour_2",
+        "weight": 0.43,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_5",
+        "to": "object:attended_hour_10",
+        "weight": 0.38,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_5",
+        "to": "action:attended_hour_6",
+        "weight": 0.44,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_4",
+        "to": "action:attended_hour_5",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:attended_hour_9",
+        "to": "time:attended_hour_2",
+        "weight": 0.37,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:attended_hour_9",
+        "to": "time:attended_hour_3",
+        "weight": 0.34,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_6",
+        "to": "object:attended_hour_9",
+        "weight": 0.31,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:attended_hour_8",
+        "to": "time:attended_hour_2",
+        "weight": 0.46,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:attended_hour_8",
+        "to": "time:attended_hour_3",
+        "weight": 0.5,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_6",
+        "to": "time:attended_hour_3",
+        "weight": 0.41,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "action:attended_hour_6",
+        "to": "object:attended_hour_8",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_5",
+        "to": "motive:negligence_testimony",
+        "weight": 0.48,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_5",
+        "to": "motive:attended_hour_2",
+        "weight": 0.41,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_4",
+        "to": "modifier:attended_hour_5",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_5",
+        "to": "motive:attended_hour_3",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_6",
+        "to": "motive:attended_hour_2",
+        "weight": 0.34,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_4",
+        "to": "modifier:attended_hour_6",
+        "weight": 0.35,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_4",
+        "to": "motive:attended_hour_2",
+        "weight": 0.39,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_2",
+        "to": "motive:attended_hour_3",
+        "weight": 0.49,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_2",
+        "to": "motive:attended_hour_4",
+        "weight": 0.3,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_1",
+        "to": "object:attended_hour_1",
+        "weight": 0.44,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "object:attended_hour_1",
+        "to": "suspect:attending_physician",
+        "weight": 0.48,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_1",
+        "to": "modifier:attended_hour_2",
+        "weight": 0.5,
+        "tags": [
+          "cluster"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_2",
+        "to": "suspect:records_clerk",
+        "weight": 0.21,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_1",
+        "to": "suspect:records_clerk",
+        "weight": 0.28,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_1",
+        "to": "suspect:records_clerk",
+        "weight": 0.21,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "object:attended_hour_3",
+        "to": "suspect:records_clerk",
+        "weight": 0.3,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "action:attended_hour_3",
+        "to": "suspect:records_clerk",
+        "weight": 0.33,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "action:attended_hour_1",
+        "to": "suspect:records_clerk",
+        "weight": 0.35,
+        "tags": [
+          "bridge"
+        ]
+      },
+      {
+        "from": "location:attended_hour_1",
+        "to": "suspect:attending_physician",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:associate_attended_hour",
+        "to": "witness:attended_hour_3",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_5",
+        "to": "suspect:relative_attended_hour",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_10",
+        "to": "suspect:relative_attended_hour",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:callum_dray",
+        "to": "suspect:staff_attended_hour",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_5",
+        "to": "suspect:staff_attended_hour",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:dosage_interaction",
+        "to": "suspect:visitor_attended_hour",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:visitor_attended_hour",
+        "to": "time:attended_hour_1",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_1",
+        "to": "motive:attended_hour_3",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_2",
+        "to": "modifier:attended_hour_8",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_2",
+        "to": "object:attended_hour_8",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_3",
+        "to": "witness:attended_hour_4",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_5",
+        "to": "location:attended_hour_3",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_4",
+        "to": "object:attended_hour_3",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_4",
+        "to": "time:attended_hour_1",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_5",
+        "to": "modifier:attended_hour_2",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_5",
+        "to": "modifier:attended_hour_4",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_6",
+        "to": "object:attended_hour_6",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_6",
+        "to": "object:attended_hour_4",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_7",
+        "to": "object:attended_hour_5",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_7",
+        "to": "modifier:attended_hour_5",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_1",
+        "to": "location:attended_hour_8",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_8",
+        "to": "suspect:associate_attended_hour",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_2",
+        "to": "suspect:staff_attended_hour",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_3",
+        "to": "object:attended_hour_2",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_1",
+        "to": "object:attended_hour_11",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_11",
+        "to": "suspect:callum_dray",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_12",
+        "to": "object:attended_hour_5",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_7",
+        "to": "object:attended_hour_12",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_7",
+        "to": "object:attended_hour_13",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_6",
+        "to": "object:attended_hour_13",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_8",
+        "to": "emotion:attended_hour_2",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_2",
+        "to": "object:attended_hour_10",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_3",
+        "to": "object:attended_hour_7",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_3",
+        "to": "object:attended_hour_9",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_4",
+        "to": "time:attended_hour_1",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_7",
+        "to": "emotion:attended_hour_4",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_5",
+        "to": "object:attended_hour_13",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_6",
+        "to": "witness:attended_hour_5",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_4",
+        "to": "emotion:attended_hour_6",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_3",
+        "to": "object:attended_hour_7",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_5",
+        "to": "modifier:attended_hour_7",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_7",
+        "to": "object:attended_hour_7",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_8",
+        "to": "suspect:visitor_attended_hour",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_4",
+        "to": "modifier:attended_hour_9",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_5",
+        "to": "modifier:attended_hour_9",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_1",
+        "to": "modifier:attended_hour_10",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_10",
+        "to": "motive:attended_hour_5",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_2",
+        "to": "time:attended_hour_5",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_4",
+        "to": "witness:attended_hour_4",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_8",
+        "to": "modifier:attended_hour_9",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_9",
+        "to": "emotion:attended_hour_5",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_9",
+        "to": "event:dosage_interaction",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:attended_hour_4",
+        "to": "time:attended_hour_5",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_2",
+        "to": "time:attended_hour_4",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:negligence_testimony",
+        "to": "witness:attended_hour_4",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_4",
+        "to": "time:attended_hour_4",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_5",
+        "to": "object:attended_hour_4",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_6",
+        "to": "time:attended_hour_1",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_6",
+        "to": "suspect:staff_attended_hour",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_6",
+        "to": "witness:attended_hour_1",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "witness:attended_hour_1",
+        "to": "witness:attended_hour_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cardiac_patient_discovered",
+        "to": "witness:attended_hour_2",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_2",
+        "to": "witness:attended_hour_2",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_7",
+        "to": "witness:attended_hour_3",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cardiac_patient_discovered",
+        "to": "location:attended_hour_8",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:attended_hour_scene",
+        "to": "event:dosage_interaction",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:attended_hour_scene",
+        "to": "time:attended_hour_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:visitor_attended_hour",
+        "to": "witness:attended_hour_5",
+        "weight": 0.12,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_3",
+        "to": "object:attended_hour_6",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_8",
+        "to": "location:attended_hour_4",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_1",
+        "to": "suspect:records_clerk",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:attended_hour_scene",
+        "to": "suspect:attending_physician",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cardiac_patient_discovered",
+        "to": "modifier:attended_hour_10",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_4",
+        "to": "motive:negligence_testimony",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:attended_hour_scene",
+        "to": "object:attended_hour_13",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_4",
+        "to": "witness:attended_hour_5",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_5",
+        "to": "object:attended_hour_8",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_7",
+        "to": "object:attended_hour_4",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_7",
+        "to": "modifier:attended_hour_3",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_5",
+        "to": "object:attended_hour_13",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_5",
+        "to": "object:attended_hour_13",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_7",
+        "to": "suspect:attending_physician",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_9",
+        "to": "location:attended_hour_6",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_6",
+        "to": "location:attended_hour_6",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_3",
+        "to": "event:dosage_interaction",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_5",
+        "to": "time:attended_hour_4",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:attended_hour_3",
+        "to": "witness:attended_hour_4",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_2",
+        "to": "motive:attended_hour_3",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:attending_physician",
+        "to": "witness:attended_hour_1",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_3",
+        "to": "witness:attended_hour_5",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_8",
+        "to": "witness:attended_hour_1",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_2",
+        "to": "location:attended_hour_7",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_8",
+        "to": "object:attended_hour_4",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_2",
+        "to": "motive:attended_hour_5",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:attended_hour_scene",
+        "to": "modifier:attended_hour_10",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_11",
+        "to": "witness:attended_hour_4",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_8",
+        "to": "emotion:attended_hour_4",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_6",
+        "to": "object:attended_hour_6",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_9",
+        "to": "time:attended_hour_5",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:dosage_interaction",
+        "to": "object:attended_hour_5",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_3",
+        "to": "suspect:staff_attended_hour",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_7",
+        "to": "modifier:attended_hour_7",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:attending_physician",
+        "to": "suspect:staff_attended_hour",
+        "weight": 0.09,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_3",
+        "to": "suspect:staff_attended_hour",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:attended_hour_scene",
+        "to": "object:attended_hour_8",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_3",
+        "to": "modifier:attended_hour_4",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_6",
+        "to": "object:attended_hour_9",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_6",
+        "to": "suspect:staff_attended_hour",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_1",
+        "to": "object:attended_hour_6",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_8",
+        "to": "time:attended_hour_5",
+        "weight": 0.17,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:attended_hour_3",
+        "to": "time:attended_hour_5",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_3",
+        "to": "action:attended_hour_4",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_3",
+        "to": "location:attended_hour_4",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_7",
+        "to": "object:attended_hour_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_3",
+        "to": "suspect:callum_dray",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_9",
+        "to": "emotion:attended_hour_6",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:attended_hour_scene",
+        "to": "motive:attended_hour_3",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_4",
+        "to": "object:attended_hour_7",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_6",
+        "to": "time:attended_hour_5",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_6",
+        "to": "time:attended_hour_5",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_7",
+        "to": "motive:attended_hour_3",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_7",
+        "to": "witness:attended_hour_4",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_8",
+        "to": "time:attended_hour_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:relative_attended_hour",
+        "to": "witness:attended_hour_1",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_9",
+        "to": "witness:attended_hour_5",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_6",
+        "to": "object:attended_hour_7",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:records_clerk",
+        "to": "witness:attended_hour_4",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_1",
+        "to": "modifier:attended_hour_8",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_1",
+        "to": "location:attended_hour_3",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cardiac_patient_discovered",
+        "to": "witness:attended_hour_1",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_4",
+        "to": "time:attended_hour_5",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_5",
+        "to": "location:attended_hour_8",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_8",
+        "to": "object:attended_hour_11",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_4",
+        "to": "time:attended_hour_3",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_2",
+        "to": "location:attended_hour_5",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_5",
+        "to": "object:attended_hour_13",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_3",
+        "to": "suspect:visitor_attended_hour",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_4",
+        "to": "object:attended_hour_13",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_3",
+        "to": "time:attended_hour_4",
+        "weight": 0.33,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_6",
+        "to": "witness:attended_hour_2",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_8",
+        "to": "modifier:attended_hour_10",
+        "weight": 0.29,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_4",
+        "to": "action:attended_hour_8",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_4",
+        "to": "motive:attended_hour_4",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_3",
+        "to": "modifier:attended_hour_10",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_1",
+        "to": "witness:attended_hour_3",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_9",
+        "to": "motive:attended_hour_5",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_2",
+        "to": "object:attended_hour_12",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_3",
+        "to": "time:attended_hour_4",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_3",
+        "to": "motive:attended_hour_5",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_1",
+        "to": "object:attended_hour_2",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_3",
+        "to": "modifier:attended_hour_8",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_4",
+        "to": "object:attended_hour_5",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_3",
+        "to": "object:attended_hour_12",
+        "weight": 0.21,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cardiac_patient_discovered",
+        "to": "modifier:attended_hour_7",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:attended_hour_3",
+        "to": "witness:attended_hour_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_10",
+        "to": "time:attended_hour_4",
+        "weight": 0.25,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_2",
+        "to": "modifier:attended_hour_9",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_2",
+        "to": "modifier:attended_hour_8",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_2",
+        "to": "modifier:attended_hour_1",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_6",
+        "to": "object:attended_hour_10",
+        "weight": 0.14,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:callum_dray",
+        "to": "time:attended_hour_2",
+        "weight": 0.06,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_7",
+        "to": "object:attended_hour_8",
+        "weight": 0.37,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:dosage_interaction",
+        "to": "location:attended_hour_6",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_5",
+        "to": "suspect:associate_attended_hour",
+        "weight": 0.05,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "time:attended_hour_1",
+        "to": "time:attended_hour_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_6",
+        "to": "modifier:attended_hour_8",
+        "weight": 0.31,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_4",
+        "to": "modifier:attended_hour_7",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:callum_dray",
+        "to": "witness:attended_hour_5",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "object:attended_hour_6",
+        "to": "witness:attended_hour_2",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_3",
+        "to": "location:attended_hour_5",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_4",
+        "to": "location:attended_hour_2",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:callum_dray",
+        "to": "witness:attended_hour_2",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_7",
+        "to": "witness:attended_hour_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_5",
+        "to": "event:dosage_interaction",
+        "weight": 0.4,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_1",
+        "to": "location:attended_hour_3",
+        "weight": 0.11,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_2",
+        "to": "witness:attended_hour_3",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_6",
+        "to": "suspect:attending_physician",
+        "weight": 0.22,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_5",
+        "to": "suspect:relative_attended_hour",
+        "weight": 0.32,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_6",
+        "to": "location:attended_hour_5",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:negligence_testimony",
+        "to": "witness:attended_hour_2",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_7",
+        "to": "object:attended_hour_10",
+        "weight": 0.07,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_3",
+        "to": "witness:attended_hour_5",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_4",
+        "to": "time:attended_hour_2",
+        "weight": 0.35,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_2",
+        "to": "witness:attended_hour_4",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_7",
+        "to": "location:attended_hour_8",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_7",
+        "to": "location:attended_hour_3",
+        "weight": 0.23,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_4",
+        "to": "location:attended_hour_5",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cardiac_patient_discovered",
+        "to": "object:attended_hour_9",
+        "weight": 0.36,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:attended_hour_scene",
+        "to": "object:attended_hour_9",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_2",
+        "to": "location:attended_hour_3",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_6",
+        "to": "modifier:attended_hour_8",
+        "weight": 0.15,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_5",
+        "to": "suspect:visitor_attended_hour",
+        "weight": 0.24,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_5",
+        "to": "witness:attended_hour_2",
+        "weight": 0.19,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_1",
+        "to": "object:attended_hour_2",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "suspect:visitor_attended_hour",
+        "to": "witness:attended_hour_1",
+        "weight": 0.39,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_6",
+        "to": "object:attended_hour_4",
+        "weight": 0.16,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_9",
+        "to": "modifier:attended_hour_3",
+        "weight": 0.28,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_5",
+        "to": "emotion:attended_hour_6",
+        "weight": 0.08,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "event:cardiac_patient_discovered",
+        "to": "object:attended_hour_12",
+        "weight": 0.38,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_9",
+        "to": "object:attended_hour_2",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_1",
+        "to": "suspect:attending_physician",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_8",
+        "to": "motive:attended_hour_2",
+        "weight": 0.26,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_9",
+        "to": "suspect:associate_attended_hour",
+        "weight": 0.18,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "emotion:attended_hour_3",
+        "to": "modifier:attended_hour_4",
+        "weight": 0.13,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "motive:attended_hour_4",
+        "to": "motive:negligence_testimony",
+        "weight": 0.3,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_6",
+        "to": "object:attended_hour_3",
+        "weight": 0.1,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "modifier:attended_hour_1",
+        "to": "suspect:relative_attended_hour",
+        "weight": 0.2,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "action:attended_hour_2",
+        "to": "motive:negligence_testimony",
+        "weight": 0.27,
+        "tags": [
+          "cohere"
+        ]
+      },
+      {
+        "from": "location:attended_hour_2",
+        "to": "motive:attended_hour_4",
+        "weight": 0.34,
+        "tags": [
+          "cohere"
+        ]
+      }
+    ]
+  },
+  "attractor": {
+    "dimensions": [
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:callum_dray",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:dosage_interaction",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:negligence_testimony",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
+    ],
+    "convergence_display": "minimum"
+  },
+  "expressions": {
+    "suspect:callum_dray": "Callum Dray observed on site. Clothing and position recorded. No further detail.",
+    "suspect:attending_physician": "Attending Physician observed on site. Clothing and position recorded. No further detail.",
+    "suspect:records_clerk": "Records Clerk observed on site. Clothing and position recorded. No further detail.",
+    "suspect:associate_attended_hour": "Associate Attended Hour observed on site. Clothing and position recorded. No further detail.",
+    "suspect:relative_attended_hour": "Relative Attended Hour observed on site. Clothing and position recorded. No further detail.",
+    "suspect:staff_attended_hour": "Staff Attended Hour observed on site. Clothing and position recorded. No further detail.",
+    "suspect:visitor_attended_hour": "Visitor Attended Hour observed on site. Clothing and position recorded. No further detail.",
+    "location:attended_hour_1": "Attended Hour 1 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:attended_hour_2": "Attended Hour 2 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:attended_hour_3": "Attended Hour 3 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:attended_hour_4": "Attended Hour 4 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:attended_hour_5": "Attended Hour 5 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:attended_hour_6": "Attended Hour 6 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:attended_hour_7": "Attended Hour 7 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "location:attended_hour_8": "Attended Hour 8 area. Fixed dimensions and a single entry point. A functional detail is noted on site.",
+    "object:attended_hour_1": "Attended Hour 1 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_2": "Attended Hour 2 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_3": "Attended Hour 3 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_4": "Attended Hour 4 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_5": "Attended Hour 5 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_6": "Attended Hour 6 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_7": "Attended Hour 7 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_8": "Attended Hour 8 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_9": "Attended Hour 9 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_10": "Attended Hour 10 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_11": "Attended Hour 11 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_12": "Attended Hour 12 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "object:attended_hour_13": "Attended Hour 13 object. Material noted, condition noted, position noted. One anomaly is present.",
+    "emotion:attended_hour_1": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:attended_hour_2": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:attended_hour_3": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:attended_hour_4": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:attended_hour_5": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "emotion:attended_hour_6": "Observed behavior only. The subject looked away and held still. No interpretation recorded.",
+    "modifier:attended_hour_1": "Qualifier recorded: attended hour 1. It recontextualizes a nearby detail.",
+    "modifier:attended_hour_2": "Qualifier recorded: attended hour 2. It recontextualizes a nearby detail.",
+    "modifier:attended_hour_3": "Qualifier recorded: attended hour 3. It recontextualizes a nearby detail.",
+    "modifier:attended_hour_4": "Qualifier recorded: attended hour 4. It recontextualizes a nearby detail.",
+    "modifier:attended_hour_5": "Qualifier recorded: attended hour 5. It recontextualizes a nearby detail.",
+    "modifier:attended_hour_6": "Qualifier recorded: attended hour 6. It recontextualizes a nearby detail.",
+    "modifier:attended_hour_7": "Qualifier recorded: attended hour 7. It recontextualizes a nearby detail.",
+    "modifier:attended_hour_8": "Qualifier recorded: attended hour 8. It recontextualizes a nearby detail.",
+    "modifier:attended_hour_9": "Qualifier recorded: attended hour 9. It recontextualizes a nearby detail.",
+    "modifier:attended_hour_10": "Qualifier recorded: attended hour 10. It recontextualizes a nearby detail.",
+    "action:attended_hour_1": "An action occurred: attended hour 1. It left a physical trace.",
+    "action:attended_hour_2": "An action occurred: attended hour 2. It left a physical trace.",
+    "action:attended_hour_3": "An action occurred: attended hour 3. It left a physical trace.",
+    "action:attended_hour_4": "An action occurred: attended hour 4. It left a physical trace.",
+    "action:attended_hour_5": "An action occurred: attended hour 5. It left a physical trace.",
+    "action:attended_hour_6": "An action occurred: attended hour 6. It left a physical trace.",
+    "action:attended_hour_7": "An action occurred: attended hour 7. It left a physical trace.",
+    "action:attended_hour_8": "An action occurred: attended hour 8. It left a physical trace.",
+    "action:attended_hour_9": "An action occurred: attended hour 9. It left a physical trace.",
+    "time:attended_hour_1": "Time noted: night shift. One physical change followed at that hour.",
+    "time:attended_hour_2": "Time noted: night shift. One physical change followed at that hour.",
+    "time:attended_hour_3": "Time noted: night shift. One physical change followed at that hour.",
+    "time:attended_hour_4": "Time noted: night shift. One physical change followed at that hour.",
+    "time:attended_hour_5": "Time noted: night shift. One physical change followed at that hour.",
+    "motive:negligence_testimony": "A buried fact is recorded: negligence testimony. It is stated plainly without inference.",
+    "motive:attended_hour_2": "A buried fact is recorded: attended hour 2. It is stated plainly without inference.",
+    "motive:attended_hour_3": "A buried fact is recorded: attended hour 3. It is stated plainly without inference.",
+    "motive:attended_hour_4": "A buried fact is recorded: attended hour 4. It is stated plainly without inference.",
+    "motive:attended_hour_5": "A buried fact is recorded: attended hour 5. It is stated plainly without inference.",
+    "motive:attended_hour_6": "A buried fact is recorded: attended hour 6. It is stated plainly without inference.",
+    "witness:attended_hour_1": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:attended_hour_2": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:attended_hour_3": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:attended_hour_4": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "witness:attended_hour_5": "Witness present. Statement is partial and time-bound. One fragment is noted.",
+    "event:cardiac_patient_discovered": "Event logged: cardiac patient discovered. It anchors the scene without comment.",
+    "event:attended_hour_scene": "Event logged: attended hour scene. It anchors the scene without comment.",
+    "event:dosage_interaction": "Event logged: dosage interaction. It anchors the scene without comment."
+  }
+}

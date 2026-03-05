@@ -1,7 +1,7 @@
 {
   "invariants": [
-    "event:45",
-    "need:46",
-    "state:47"
+    "suspect:renard_voss",
+    "event:window_between_trains",
+    "motive:fraud_concealment"
   ]
 }
