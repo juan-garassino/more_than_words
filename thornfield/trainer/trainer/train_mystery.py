@@ -23,6 +23,8 @@ class TrainingExample:
     triad: List[Token]
     cumulative_dimensions: np.ndarray
     target_delta: np.ndarray
+    prev_energy: float
+    curr_energy: float
 
 
 def _build_mappings(tokens: List[Token]) -> Tuple[Dict[str, int], Dict[str, int], Dict[str, int]]:
@@ -50,7 +52,7 @@ def _pad_sequences(seqs: List[List[int]], pad: int) -> Tuple[torch.Tensor, torch
 
 
 def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
-    sampler = PathSampler(spec, sampling_temperature=1.2)
+    sampler = PathSampler(spec, sampling_temperature=1.4, min_affinity=0.05)
     print(f"Sampling {n_paths} training paths...", flush=True)
     paths = sampler.sample_batch(n_paths, verbose=True)
     examples: List[TrainingExample] = []
@@ -59,6 +61,7 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
         placed_tokens: List[Token] = []
         placed_positions: List[Tuple[int, int]] = []
         cumulative = np.zeros(spec.n_attractor_dims, dtype=np.float32)
+        prev_energy = float("inf")
 
         for turn, triad in enumerate(path):
             if all(t.is_invariant for t in triad):
@@ -66,6 +69,10 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
 
             contribution = np.stack([t.attractor_weights for t in triad]).mean(axis=0)
             target_delta = np.minimum(1.0, contribution * 0.25)
+
+            candidate_ids = [t.id for t in triad]
+            context_ids = [t.id for t in placed_tokens]
+            curr_energy = spec.token_graph.induced_subgraph_energy(candidate_ids, context_ids)
 
             examples.append(
                 TrainingExample(
@@ -76,6 +83,8 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
                         1.0, cumulative + contribution * 0.25
                     ),
                     target_delta=target_delta,
+                    prev_energy=prev_energy,
+                    curr_energy=curr_energy,
                 )
             )
 
@@ -84,6 +93,7 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
             placed_tokens.extend(triad)
             placed_positions.extend([(row, col)] * 3)
             cumulative = np.minimum(1.0, cumulative + contribution * 0.25)
+            prev_energy = curr_energy
 
     return examples
 
@@ -111,6 +121,7 @@ def _batchify(
 
     cumulative_dimensions = []
     target_delta = []
+    path_energies = []
 
     for ex, neg in zip(examples, negatives):
         t_ids, c_ids, p_ids = _encode_tokens(ex.context_tokens, id_to_idx, class_to_idx, phase_to_idx)
@@ -131,6 +142,7 @@ def _batchify(
 
         cumulative_dimensions.append(ex.cumulative_dimensions)
         target_delta.append(ex.target_delta)
+        path_energies.append([ex.prev_energy, ex.curr_energy])
 
     context_token_ids, context_mask = _pad_sequences(context_token_ids, pad=0)
     context_class_ids, _ = _pad_sequences(context_class_ids, pad=0)
@@ -156,6 +168,7 @@ def _batchify(
         "negative_phase_ids": torch.tensor(negative_phase_ids, device=device),
         "cumulative_dimensions": torch.tensor(np.stack(cumulative_dimensions), device=device),
         "target_delta": torch.tensor(np.stack(target_delta), device=device),
+        "path_energies": torch.tensor(np.stack(path_energies), device=device),
     }
 
     return batch
@@ -241,7 +254,7 @@ def train_mystery_cartridge(
                     "energy_positive": output_pos["energy"],
                     "energy_negative": output_neg["energy"],
                     "cumulative_dimensions": batch["cumulative_dimensions"],
-                    "path_energies": torch.zeros((len(batch_examples), 2), device=device),
+                    "path_energies": batch["path_energies"],
                     "predicted_delta": output_pos["convergence_delta"],
                     "target_delta": batch["target_delta"],
                 }

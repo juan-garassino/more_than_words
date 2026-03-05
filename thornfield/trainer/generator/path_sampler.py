@@ -22,6 +22,7 @@ class PathSampler:
         min_turns: int | None = None,
         enforce_monotone: bool = False,
         monotone_tolerance: float = 0.01,
+        min_affinity: float = 0.05,
     ):
         self.spec = spec
         self.graph = spec.token_graph
@@ -30,6 +31,7 @@ class PathSampler:
         self.min_turns = min_turns if min_turns is not None else spec.min_turns
         self.enforce_monotone = enforce_monotone
         self.monotone_tolerance = monotone_tolerance
+        self.min_affinity = min_affinity
         self._precomputed_valid_triads = self._precompute_valid_triads()
         self._tag_index = self._build_tag_index()
 
@@ -51,7 +53,7 @@ class PathSampler:
             return False
 
         pairs = [(tokens[0], tokens[1]), (tokens[0], tokens[2]), (tokens[1], tokens[2])]
-        has_edge = any(self.graph.weight(a.id, b.id) > 0.1 for a, b in pairs)
+        has_edge = any(self.graph.weight(a.id, b.id) > self.min_affinity for a, b in pairs)
         if not has_edge:
             return False
 
