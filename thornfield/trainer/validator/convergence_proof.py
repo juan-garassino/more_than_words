@@ -2,7 +2,14 @@ from __future__ import annotations
 
 
 class ConvergenceProof:
-    def run(self, model, spec, n_test_paths: int = 500) -> dict:
+    def run(
+        self,
+        model,
+        spec,
+        n_test_paths: int = 500,
+        max_attempts: int | None = None,
+        verbose: bool = True,
+    ) -> dict:
         from generator.path_sampler import PathSampler
         from trainer.hopfield_analyzer import HopfieldAnalyzer
 
@@ -19,8 +26,12 @@ class ConvergenceProof:
             min_affinity=0.05,
             allow_partial=False,
         )
-        test_paths = sampler.sample_batch(n_test_paths, verbose=False)
-        print(f"  Sampled {len(test_paths)} held-out paths")
+        test_paths = sampler.sample_batch(
+            n_test_paths,
+            verbose=verbose,
+            max_attempts=max_attempts,
+        )
+        print(f"  Sampled {len(test_paths)} held-out paths", flush=True)
 
         converged = 0
         correct_invariants = 0

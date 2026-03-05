@@ -10,6 +10,14 @@ import numpy as np
 from packager.manifest import build_manifest
 
 
+def _model_state_to_npz(model) -> bytes:
+    state = model.state_dict()
+    arrays = {k: v.detach().cpu().numpy() for k, v in state.items()}
+    buffer = io.BytesIO()
+    np.savez(buffer, **arrays)
+    return buffer.getvalue()
+
+
 def export_mystery_cartridge(model, spec, output_path: str, proof_report: dict) -> None:
     if not proof_report.get("passed", False):
         raise RuntimeError("Convergence proof failed. Cartridge export blocked.")
@@ -52,9 +60,7 @@ def export_mystery_cartridge(model, spec, output_path: str, proof_report: dict) 
         zf.writestr("precomputed.json", json.dumps(precomputed, indent=2))
         zf.writestr("expressions.json", json.dumps({}, indent=2))
         zf.writestr("proof.json", json.dumps(proof_report, indent=2))
-        buffer = io.BytesIO()
-        np.savez(buffer, weights=np.array([0.0], dtype=np.float32))
-        zf.writestr("weights.npz", buffer.getvalue())
+        zf.writestr("weights.npz", _model_state_to_npz(model))
 
     _ = model
 
@@ -93,8 +99,6 @@ def export_tamagotchi_cartridge(model, spec, output_path: str) -> None:
         zf.writestr("manifest.json", json.dumps(manifest, indent=2))
         zf.writestr("tokens.json", json.dumps(tokens, indent=2))
         zf.writestr("expressions.json", json.dumps({}, indent=2))
-        buffer = io.BytesIO()
-        np.savez(buffer, weights=np.array([0.0], dtype=np.float32))
-        zf.writestr("weights.npz", buffer.getvalue())
+        zf.writestr("weights.npz", _model_state_to_npz(model))
 
     _ = model

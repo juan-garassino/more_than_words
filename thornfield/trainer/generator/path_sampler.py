@@ -192,11 +192,17 @@ class PathSampler:
 
         return path if self.allow_partial and path else None
 
-    def sample_batch(self, n: int, verbose: bool = True) -> List[List[List[Token]]]:
+    def sample_batch(
+        self,
+        n: int,
+        verbose: bool = True,
+        max_attempts: int | None = None,
+    ) -> List[List[List[Token]]]:
         paths: List[List[List[Token]]] = []
         attempts = 0
+        cap = max_attempts if max_attempts is not None else n * 6
 
-        while len(paths) < n and attempts < n * 6:
+        while len(paths) < n and attempts < cap:
             path = self.sample_path()
             if path is not None:
                 paths.append(path)

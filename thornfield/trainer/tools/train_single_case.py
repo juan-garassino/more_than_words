@@ -1,4 +1,5 @@
 import argparse
+import json
 import os
 from pathlib import Path
 
@@ -24,6 +25,8 @@ def main() -> None:
     parser.add_argument("--paths", type=int, default=300)
     parser.add_argument("--epochs", type=int, default=20)
     parser.add_argument("--proof-paths", type=int, default=200)
+    parser.add_argument("--proof-max-attempts", type=int, default=2000)
+    parser.add_argument("--skip-proof", action="store_true")
     parser.add_argument("--device", default="cpu")
     args = parser.parse_args()
 
@@ -62,8 +65,36 @@ def main() -> None:
     print(f"Training complete. Final loss: {history.get('loss', 0.0):.4f}")
     print(f"Model parameters: {param_count:,}")
 
+    # Persist trained model and history for local testing.
+    model_path = output_dir / "model.pt"
+    torch.save(
+        {
+            "state_dict": model.state_dict(),
+            "spec_path": str(spec_path),
+            "case_id": args.case_id,
+            "embedding_dim": spec_preview.embedding_dim,
+            "context_dim": spec_preview.context_dim,
+            "n_attractor_dims": spec_preview.n_attractor_dims,
+        },
+        model_path,
+    )
+    history_path = output_dir / "history.json"
+    history_path.write_text(json.dumps(history, indent=2))
+    print(f"Saved model: {model_path}")
+    print(f"Saved history: {history_path}")
+
+    if args.skip_proof:
+        print("Skipping convergence proof by request.")
+        return
+
     spec = CartridgeSpec.load(str(spec_path))
-    proof = ConvergenceProof().run(model, spec, n_test_paths=args.proof_paths)
+    proof = ConvergenceProof().run(
+        model,
+        spec,
+        n_test_paths=args.proof_paths,
+        max_attempts=args.proof_max_attempts,
+        verbose=True,
+    )
 
     export_mystery_cartridge(
         model=model,
