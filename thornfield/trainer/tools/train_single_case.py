@@ -48,7 +48,14 @@ def main() -> None:
     print(f"Training case: {args.case_id}")
     print(f"Spec path: {spec_path}")
     print(f"Output dir: {output_dir}")
-    print(f"Paths: {args.paths} | Epochs: {args.epochs} | Proof paths: {args.proof_paths} | Device: {args.device}")
+    device = args.device
+    if device.startswith("cuda") and not torch.cuda.is_available():
+        print("Warning: CUDA requested but not available. Falling back to CPU.")
+        device = "cpu"
+
+    print(
+        f"Paths: {args.paths} | Epochs: {args.epochs} | Proof paths: {args.proof_paths} | Device: {device}"
+    )
 
     model, history = train_mystery_cartridge(
         spec_path=str(spec_path),
@@ -58,7 +65,7 @@ def main() -> None:
         convergence_rate=0.25,
         min_turns=10,
         max_turns=18,
-        device=args.device,
+        device=device,
     )
 
     param_count = sum(p.numel() for p in model.parameters())
