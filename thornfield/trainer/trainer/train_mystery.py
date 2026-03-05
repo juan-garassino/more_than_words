@@ -195,140 +195,87 @@ def train_mystery_cartridge(
     total_batches = max(1, (len(examples) + batch_size - 1) // batch_size)
     print(f"Examples: {len(examples)} | Batch size: {batch_size} | Batches/epoch: {total_batches}", flush=True)
 
-    use_rich = False
-    progress = None
-    if os.getenv("RICH_PROGRESS", "0") == "1":
-        try:
-            from rich.progress import Progress, BarColumn, TextColumn, TimeElapsedColumn
+    use_tqdm = False
+    tqdm = None
+    try:
+        from tqdm import tqdm as _tqdm
 
-            progress = Progress(
-                TextColumn("[bold]Epoch {task.fields[epoch]}[/bold]"),
-                BarColumn(),
-                TextColumn("{task.completed}/{task.total} batches"),
-                TimeElapsedColumn(),
-            )
-            use_rich = True
-        except Exception:
-            use_rich = False
+        tqdm = _tqdm
+        use_tqdm = True
+    except Exception:
+        use_tqdm = False
 
     for epoch in range(n_epochs):
         np.random.shuffle(examples)
         epoch_loss = 0.0
         batch_count = total_batches
 
-        if use_rich and progress is not None:
-            with progress:
-                task_id = progress.add_task("train", total=batch_count, epoch=f"{epoch+1:02d}/{n_epochs}")
-                for start in range(0, len(examples), batch_size):
-                    batch_examples = examples[start : start + batch_size]
-                    negatives = sample_negative_triads(spec.tokens, n_samples=len(batch_examples))
+        iterator = range(0, len(examples), batch_size)
+        if use_tqdm and tqdm is not None:
+            iterator = tqdm(
+                iterator,
+                total=batch_count,
+                desc=f"Epoch {epoch+1:02d}/{n_epochs}",
+                leave=True,
+            )
 
-                    batch = _batchify(
-                        batch_examples,
-                        negatives,
-                        id_to_idx,
-                        class_to_idx,
-                        phase_to_idx,
-                        device,
-                    )
+        for idx, start in enumerate(iterator, start=1):
+            batch_examples = examples[start : start + batch_size]
+            negatives = sample_negative_triads(spec.tokens, n_samples=len(batch_examples))
 
-                    model.train()
-                    output_pos = model(
-                        batch["placed_token_ids"],
-                        batch["placed_class_ids"],
-                        batch["placed_phase_ids"],
-                        batch["placed_positions"],
-                        batch["placed_mask"],
-                        batch["candidate_token_ids"],
-                        batch["candidate_class_ids"],
-                        batch["candidate_phase_ids"],
-                    )
-                    output_neg = model(
-                        batch["placed_token_ids"],
-                        batch["placed_class_ids"],
-                        batch["placed_phase_ids"],
-                        batch["placed_positions"],
-                        batch["placed_mask"],
-                        batch["negative_token_ids"],
-                        batch["negative_class_ids"],
-                        batch["negative_phase_ids"],
-                    )
+            batch = _batchify(
+                batch_examples,
+                negatives,
+                id_to_idx,
+                class_to_idx,
+                phase_to_idx,
+                device,
+            )
 
-                    loss_dict = criterion(
-                        {
-                            "energy_positive": output_pos["energy"],
-                            "energy_negative": output_neg["energy"],
-                            "cumulative_dimensions": batch["cumulative_dimensions"],
-                            "path_energies": torch.zeros((len(batch_examples), 2), device=device),
-                            "predicted_delta": output_pos["convergence_delta"],
-                            "target_delta": batch["target_delta"],
-                        }
-                    )
+            model.train()
+            output_pos = model(
+                batch["placed_token_ids"],
+                batch["placed_class_ids"],
+                batch["placed_phase_ids"],
+                batch["placed_positions"],
+                batch["placed_mask"],
+                batch["candidate_token_ids"],
+                batch["candidate_class_ids"],
+                batch["candidate_phase_ids"],
+            )
+            output_neg = model(
+                batch["placed_token_ids"],
+                batch["placed_class_ids"],
+                batch["placed_phase_ids"],
+                batch["placed_positions"],
+                batch["placed_mask"],
+                batch["negative_token_ids"],
+                batch["negative_class_ids"],
+                batch["negative_phase_ids"],
+            )
 
-                    optimizer.zero_grad()
-                    loss_dict["total"].backward()
-                    optimizer.step()
+            loss_dict = criterion(
+                {
+                    "energy_positive": output_pos["energy"],
+                    "energy_negative": output_neg["energy"],
+                    "cumulative_dimensions": batch["cumulative_dimensions"],
+                    "path_energies": torch.zeros((len(batch_examples), 2), device=device),
+                    "predicted_delta": output_pos["convergence_delta"],
+                    "target_delta": batch["target_delta"],
+                }
+            )
 
-                    epoch_loss += float(loss_dict["total"].detach().cpu())
-                    progress.advance(task_id)
-        else:
-            for idx, start in enumerate(range(0, len(examples), batch_size), start=1):
-                batch_examples = examples[start : start + batch_size]
-                negatives = sample_negative_triads(spec.tokens, n_samples=len(batch_examples))
+            if not torch.isfinite(loss_dict["total"]).all():
+                print("Non-finite loss detected. Aborting training.", flush=True)
+                return model, {"loss": float("nan")}
 
-                batch = _batchify(
-                    batch_examples,
-                    negatives,
-                    id_to_idx,
-                    class_to_idx,
-                    phase_to_idx,
-                    device,
-                )
+            optimizer.zero_grad()
+            loss_dict["total"].backward()
+            optimizer.step()
 
-                model.train()
-                output_pos = model(
-                    batch["placed_token_ids"],
-                    batch["placed_class_ids"],
-                    batch["placed_phase_ids"],
-                    batch["placed_positions"],
-                    batch["placed_mask"],
-                    batch["candidate_token_ids"],
-                    batch["candidate_class_ids"],
-                    batch["candidate_phase_ids"],
-                )
-                output_neg = model(
-                    batch["placed_token_ids"],
-                    batch["placed_class_ids"],
-                    batch["placed_phase_ids"],
-                    batch["placed_positions"],
-                    batch["placed_mask"],
-                    batch["negative_token_ids"],
-                    batch["negative_class_ids"],
-                    batch["negative_phase_ids"],
-                )
-
-                loss_dict = criterion(
-                    {
-                        "energy_positive": output_pos["energy"],
-                        "energy_negative": output_neg["energy"],
-                        "cumulative_dimensions": batch["cumulative_dimensions"],
-                        "path_energies": torch.zeros((len(batch_examples), 2), device=device),
-                        "predicted_delta": output_pos["convergence_delta"],
-                        "target_delta": batch["target_delta"],
-                    }
-                )
-
-                if not torch.isfinite(loss_dict["total"]).all():
-                    print("Non-finite loss detected. Aborting training.", flush=True)
-                    return model, {"loss": float("nan")}
-
-                optimizer.zero_grad()
-                loss_dict["total"].backward()
-                optimizer.step()
-
-                epoch_loss += float(loss_dict["total"].detach().cpu())
-                if idx % 10 == 0 or idx == batch_count:
-                    print(f"Epoch {epoch+1:02d}/{n_epochs} | batch {idx}/{batch_count}", flush=True)
+            epoch_loss += float(loss_dict["total"].detach().cpu())
+            if not use_tqdm and (idx % 10 == 0 or idx == batch_count):
+                print(f"Epoch {epoch+1:02d}/{n_epochs} | batch {idx}/{batch_count}", flush=True)
 
         history["loss"] = epoch_loss / batch_count
         print(f"Epoch {epoch+1:02d}/{n_epochs} | loss={history['loss']:.4f}", flush=True)
