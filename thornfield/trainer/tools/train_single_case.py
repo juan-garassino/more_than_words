@@ -23,6 +23,7 @@ def main() -> None:
     parser.add_argument("case_id", help="Case id (folder name under cases)")
     parser.add_argument("--paths", type=int, default=300)
     parser.add_argument("--epochs", type=int, default=20)
+    parser.add_argument("--proof-paths", type=int, default=200)
     parser.add_argument("--device", default="cpu")
     args = parser.parse_args()
 
@@ -44,7 +45,7 @@ def main() -> None:
     print(f"Training case: {args.case_id}")
     print(f"Spec path: {spec_path}")
     print(f"Output dir: {output_dir}")
-    print(f"Paths: {args.paths} | Epochs: {args.epochs} | Device: {args.device}")
+    print(f"Paths: {args.paths} | Epochs: {args.epochs} | Proof paths: {args.proof_paths} | Device: {args.device}")
 
     model, history = train_mystery_cartridge(
         spec_path=str(spec_path),
@@ -62,7 +63,7 @@ def main() -> None:
     print(f"Model parameters: {param_count:,}")
 
     spec = CartridgeSpec.load(str(spec_path))
-    proof = ConvergenceProof().run(model, spec, n_test_paths=200)
+    proof = ConvergenceProof().run(model, spec, n_test_paths=args.proof_paths)
 
     export_mystery_cartridge(
         model=model,

@@ -191,7 +191,7 @@ def train_mystery_cartridge(
 
     batch_size = min(64, len(examples))
     history = {"loss": 0.0}
-    total_batches = max(1, len(examples) // batch_size)
+    total_batches = max(1, (len(examples) + batch_size - 1) // batch_size)
     print(f"Examples: {len(examples)} | Batch size: {batch_size} | Batches/epoch: {total_batches}", flush=True)
 
     use_rich = False
@@ -212,7 +212,7 @@ def train_mystery_cartridge(
     for epoch in range(n_epochs):
         np.random.shuffle(examples)
         epoch_loss = 0.0
-        batch_count = max(1, len(examples) // batch_size)
+        batch_count = total_batches
 
         if use_rich and progress is not None:
             with progress:

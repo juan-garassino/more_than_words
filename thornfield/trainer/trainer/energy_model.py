@@ -41,8 +41,12 @@ class CasebookEncoder(nn.Module):
         attended, _ = self.attn(combined, combined, combined, key_padding_mask=mask)
         if mask is not None:
             attended = attended.masked_fill(mask.unsqueeze(-1), 0)
-            n = (~mask).float().sum(1, keepdim=True).unsqueeze(-1)
-            pooled = attended.sum(1) / n.squeeze(-1)
+            n = (~mask).float().sum(1, keepdim=True)
+            pooled = attended.sum(1) / n.clamp_min(1.0)
+            # If a row has no placed tokens, zero the pooled vector.
+            empty = n.squeeze(-1) == 0
+            if empty.any():
+                pooled[empty] = 0
         else:
             pooled = attended.mean(1)
         return self.pool(pooled)
