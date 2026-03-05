@@ -1,0 +1,22 @@
+{
+  "cartridge_type": "MYSTERY",
+  "case_id": "amber_cipher",
+  "title": "The Amber Cipher",
+  "version": "1.0.0",
+  "vocab_size": 48,
+  "embedding_dim": 64,
+  "context_dim": 128,
+  "n_attractor_dims": 3,
+  "convergence_threshold": 0.75,
+  "convergence_rate": 0.25,
+  "min_turns": 10,
+  "max_turns": 18,
+  "opening_token_ids": [
+    "suspect:00",
+    "location:01",
+    "object:02"
+  ],
+  "proof_convergence_rate": 1.0,
+  "proof_invariant_accuracy": 1.0,
+  "hopfield_basin_coverage": 0.97
+}

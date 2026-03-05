@@ -1,0 +1,494 @@
+{
+  "nodes": [
+    "suspect:00",
+    "location:01",
+    "object:02",
+    "emotion:03",
+    "modifier:04",
+    "action:05",
+    "time:06",
+    "motive:07",
+    "witness:08",
+    "event:09",
+    "need:10",
+    "state:11",
+    "suspect:12",
+    "location:13",
+    "object:14",
+    "emotion:15",
+    "modifier:16",
+    "action:17",
+    "time:18",
+    "motive:19",
+    "witness:20",
+    "event:21",
+    "need:22",
+    "state:23",
+    "suspect:24",
+    "location:25",
+    "object:26",
+    "emotion:27",
+    "modifier:28",
+    "action:29",
+    "time:30",
+    "motive:31",
+    "witness:32",
+    "event:33",
+    "need:34",
+    "state:35",
+    "suspect:36",
+    "location:37",
+    "object:38",
+    "emotion:39",
+    "modifier:40",
+    "action:41",
+    "time:42",
+    "motive:43",
+    "witness:44",
+    "event:45",
+    "need:46",
+    "state:47"
+  ],
+  "edges": [
+    {
+      "from": "suspect:00",
+      "to": "location:01",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "location:01",
+      "to": "object:02",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "object:02",
+      "to": "emotion:03",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "emotion:03",
+      "to": "modifier:04",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "modifier:04",
+      "to": "action:05",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "action:05",
+      "to": "time:06",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "time:06",
+      "to": "motive:07",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "motive:07",
+      "to": "witness:08",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "witness:08",
+      "to": "event:09",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "event:09",
+      "to": "need:10",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "need:10",
+      "to": "state:11",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "state:11",
+      "to": "suspect:12",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "suspect:12",
+      "to": "location:13",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "location:13",
+      "to": "object:14",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "object:14",
+      "to": "emotion:15",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "emotion:15",
+      "to": "modifier:16",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "modifier:16",
+      "to": "action:17",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "action:17",
+      "to": "time:18",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "time:18",
+      "to": "motive:19",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "motive:19",
+      "to": "witness:20",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "witness:20",
+      "to": "event:21",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "event:21",
+      "to": "need:22",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "need:22",
+      "to": "state:23",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "state:23",
+      "to": "suspect:24",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "suspect:24",
+      "to": "location:25",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "location:25",
+      "to": "object:26",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "object:26",
+      "to": "emotion:27",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "emotion:27",
+      "to": "modifier:28",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "modifier:28",
+      "to": "action:29",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "action:29",
+      "to": "time:30",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "time:30",
+      "to": "motive:31",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "motive:31",
+      "to": "witness:32",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "witness:32",
+      "to": "event:33",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "event:33",
+      "to": "need:34",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "need:34",
+      "to": "state:35",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "state:35",
+      "to": "suspect:36",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "suspect:36",
+      "to": "location:37",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "location:37",
+      "to": "object:38",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "object:38",
+      "to": "emotion:39",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "emotion:39",
+      "to": "modifier:40",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "modifier:40",
+      "to": "action:41",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "action:41",
+      "to": "time:42",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "time:42",
+      "to": "motive:43",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "motive:43",
+      "to": "witness:44",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "witness:44",
+      "to": "event:45",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "event:45",
+      "to": "need:46",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "need:46",
+      "to": "state:47",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "suspect:00",
+      "to": "action:05",
+      "weight": 0.5,
+      "tags": [
+        "cluster"
+      ]
+    },
+    {
+      "from": "time:06",
+      "to": "state:11",
+      "weight": 0.5,
+      "tags": [
+        "cluster"
+      ]
+    },
+    {
+      "from": "suspect:12",
+      "to": "action:17",
+      "weight": 0.5,
+      "tags": [
+        "cluster"
+      ]
+    },
+    {
+      "from": "time:18",
+      "to": "state:23",
+      "weight": 0.5,
+      "tags": [
+        "cluster"
+      ]
+    },
+    {
+      "from": "suspect:24",
+      "to": "action:29",
+      "weight": 0.5,
+      "tags": [
+        "cluster"
+      ]
+    },
+    {
+      "from": "time:30",
+      "to": "state:35",
+      "weight": 0.5,
+      "tags": [
+        "cluster"
+      ]
+    },
+    {
+      "from": "suspect:36",
+      "to": "action:41",
+      "weight": 0.5,
+      "tags": [
+        "cluster"
+      ]
+    },
+    {
+      "from": "time:42",
+      "to": "state:47",
+      "weight": 0.5,
+      "tags": [
+        "cluster"
+      ]
+    }
+  ]
+}

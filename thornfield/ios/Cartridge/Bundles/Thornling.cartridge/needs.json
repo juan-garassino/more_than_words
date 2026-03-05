@@ -1,0 +1,10 @@
+{
+  "needs": [
+    "sustenance",
+    "connection",
+    "play",
+    "rest",
+    "warmth",
+    "wonder"
+  ]
+}

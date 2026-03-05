@@ -1,0 +1,10 @@
+{
+  "cartridge_type": "TAMAGOTCHI",
+  "case_id": "thornling",
+  "title": "Thornling",
+  "version": "1.0.0",
+  "vocab_size": 32,
+  "embedding_dim": 64,
+  "n_needs": 6,
+  "n_personality_dims": 8
+}

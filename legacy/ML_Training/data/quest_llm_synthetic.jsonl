@@ -1,0 +1,66 @@
+{"story_id": "branch_1a_peaceful_resolution", "steps": [
+  {"action": "START", "world": ["LOC_FOREST", "NPC_ENEMY", "DANGER_MED"], "emotions": {"stress": 0.5, "energy": 0.8, "happiness": 0.4, "hunger": 0.2, "loneliness": 0.5}, "lambda": 0.4},
+  {"action": "PERSUADE", "world": ["LOC_FOREST", "NPC_ENEMY", "SUSPECT_CALM"], "emotions": {"stress": 0.4, "energy": 0.7, "happiness": 0.5, "hunger": 0.2, "loneliness": 0.4}, "lambda": 0.3},
+  {"action": "TRADE", "world": ["LOC_FOREST", "NPC_ALLY", "ITEM_MAP"], "emotions": {"stress": 0.1, "energy": 0.8, "happiness": 0.8, "hunger": 0.1, "loneliness": 0.1}, "lambda": 0.2},
+  {"action": "READ_TOME", "world": ["LOC_FOREST", "SECRET_REVEALED"], "emotions": {"stress": 0.0, "energy": 0.6, "happiness": 0.9, "hunger": 0.2, "loneliness": 0.1}, "lambda": 0.1}
+]}
+{"story_id": "branch_1b_violent_conflict", "steps": [
+  {"action": "START", "world": ["LOC_FOREST", "NPC_ENEMY", "DANGER_MED"], "emotions": {"stress": 0.5, "energy": 0.8, "happiness": 0.4, "hunger": 0.2, "loneliness": 0.5}, "lambda": 0.4},
+  {"action": "FIGHT", "world": ["LOC_FOREST", "NPC_ENEMY", "DANGER_HIGH", "EVENT_AMBUSH"], "emotions": {"stress": 0.9, "energy": 0.9, "happiness": 0.1, "hunger": 0.3, "loneliness": 0.5}, "lambda": 0.7},
+  {"action": "CAST_SPELL", "world": ["LOC_FOREST", "MAGIC_AURA", "NPC_ENEMY"], "emotions": {"stress": 0.8, "energy": 0.4, "happiness": 0.2, "hunger": 0.4, "loneliness": 0.5}, "lambda": 0.8},
+  {"action": "FLEE", "world": ["LOC_CAVE", "DARKNESS", "DANGER_LOW"], "emotions": {"stress": 0.7, "energy": 0.2, "happiness": 0.3, "hunger": 0.5, "loneliness": 0.8}, "lambda": 0.5}
+]}
+{"story_id": "branch_1c_sneaky_theft", "steps": [
+  {"action": "START", "world": ["LOC_FOREST", "NPC_ENEMY", "DANGER_MED"], "emotions": {"stress": 0.5, "energy": 0.8, "happiness": 0.4, "hunger": 0.2, "loneliness": 0.5}, "lambda": 0.4},
+  {"action": "SNEAK", "world": ["LOC_FOREST", "NPC_ENEMY", "DARKNESS"], "emotions": {"stress": 0.6, "energy": 0.7, "happiness": 0.4, "hunger": 0.2, "loneliness": 0.6}, "lambda": 0.6},
+  {"action": "PICK_UP", "world": ["LOC_FOREST", "ITEM_KEY", "DANGER_LOW"], "emotions": {"stress": 0.4, "energy": 0.7, "happiness": 0.7, "hunger": 0.2, "loneliness": 0.5}, "lambda": 0.3},
+  {"action": "MOVE_E", "world": ["LOC_TOWER", "DOOR_LOCKED"], "emotions": {"stress": 0.3, "energy": 0.6, "happiness": 0.6, "hunger": 0.3, "loneliness": 0.5}, "lambda": 0.3},
+  {"action": "USE_ITEM", "world": ["LOC_TOWER", "DOOR_OPEN", "EVENT_TREASURE"], "emotions": {"stress": 0.1, "energy": 0.8, "happiness": 1.0, "hunger": 0.3, "loneliness": 0.3}, "lambda": 0.1}
+]}
+{"story_id": "branch_2a_cave_exploration_success", "steps": [
+  {"action": "START", "world": ["LOC_CAVE", "DARKNESS", "MAGIC_AURA"], "emotions": {"stress": 0.6, "energy": 0.6, "happiness": 0.3, "hunger": 0.2, "loneliness": 0.7}, "lambda": 0.8},
+  {"action": "CAST_SPELL", "world": ["LOC_CAVE", "LIGHT", "ITEM_ARTIFACT"], "emotions": {"stress": 0.4, "energy": 0.5, "happiness": 0.7, "hunger": 0.2, "loneliness": 0.6}, "lambda": 0.4},
+  {"action": "PICK_UP", "world": ["LOC_CAVE", "CURSED_OBJECT", "DANGER_HIGH"], "emotions": {"stress": 0.8, "energy": 0.6, "happiness": 0.2, "hunger": 0.2, "loneliness": 0.6}, "lambda": 0.9},
+  {"action": "READ_TOME", "world": ["LOC_CAVE", "SECRET_REVEALED", "DANGER_LOW"], "emotions": {"stress": 0.3, "energy": 0.5, "happiness": 0.6, "hunger": 0.3, "loneliness": 0.5}, "lambda": 0.2}
+]}
+{"story_id": "branch_2b_cave_trap_clueless", "steps": [
+  {"action": "START", "world": ["LOC_CAVE", "DARKNESS", "MAGIC_AURA"], "emotions": {"stress": 0.6, "energy": 0.6, "happiness": 0.3, "hunger": 0.2, "loneliness": 0.7}, "lambda": 0.8},
+  {"action": "MOVE_N", "world": ["LOC_CAVE", "EVENT_TRAP", "DANGER_HIGH"], "emotions": {"stress": 0.9, "energy": 0.7, "happiness": 0.1, "hunger": 0.2, "loneliness": 0.8}, "lambda": 0.7},
+  {"action": "FIGHT", "world": ["LOC_CAVE", "EVENT_TRAP", "SICK"], "emotions": {"stress": 1.0, "energy": 0.2, "happiness": 0.0, "hunger": 0.3, "loneliness": 0.9}, "lambda": 0.9},
+  {"action": "WAIT", "world": ["LOC_CAVE", "DARKNESS", "LETHARGIC"], "emotions": {"stress": 0.8, "energy": 0.1, "happiness": 0.1, "hunger": 0.5, "loneliness": 0.9}, "lambda": 0.9}
+]}
+{"story_id": "branch_3a_market_haggler", "steps": [
+  {"action": "START", "world": ["LOC_MARKET", "NPC_MERCHANT", "FOOD_PRESENT"], "emotions": {"stress": 0.2, "energy": 0.7, "happiness": 0.6, "hunger": 0.5, "loneliness": 0.2}, "lambda": 0.2},
+  {"action": "TRADE", "world": ["LOC_MARKET", "NPC_MERCHANT", "ITEM_POTION"], "emotions": {"stress": 0.1, "energy": 0.7, "happiness": 0.8, "hunger": 0.5, "loneliness": 0.2}, "lambda": 0.1},
+  {"action": "DRINK_POTION", "world": ["LOC_MARKET", "ENERGETIC", "HEALTHY"], "emotions": {"stress": 0.0, "energy": 1.0, "happiness": 0.9, "hunger": 0.5, "loneliness": 0.2}, "lambda": 0.1},
+  {"action": "SPEAK", "world": ["LOC_MARKET", "NPC_ALLY", "CLUE_NOTE"], "emotions": {"stress": 0.0, "energy": 0.9, "happiness": 0.9, "hunger": 0.5, "loneliness": 0.1}, "lambda": 0.2}
+]}
+{"story_id": "branch_3b_market_thief_caught", "steps": [
+  {"action": "START", "world": ["LOC_MARKET", "NPC_MERCHANT", "FOOD_PRESENT"], "emotions": {"stress": 0.2, "energy": 0.7, "happiness": 0.6, "hunger": 0.5, "loneliness": 0.2}, "lambda": 0.2},
+  {"action": "SNEAK", "world": ["LOC_MARKET", "NPC_MERCHANT", "SUSPECT_NERVOUS"], "emotions": {"stress": 0.6, "energy": 0.8, "happiness": 0.5, "hunger": 0.5, "loneliness": 0.3}, "lambda": 0.4},
+  {"action": "PICK_UP", "world": ["LOC_MARKET", "NPC_ENEMY", "DANGER_MED"], "emotions": {"stress": 0.8, "energy": 0.8, "happiness": 0.2, "hunger": 0.5, "loneliness": 0.3}, "lambda": 0.5},
+  {"action": "FLEE", "world": ["LOC_ALLEY", "DIRTY_M", "TIRED_M"], "emotions": {"stress": 0.7, "energy": 0.4, "happiness": 0.3, "hunger": 0.6, "loneliness": 0.5}, "lambda": 0.4}
+]}
+{"story_id": "branch_4a_mansion_ghost_diplomacy", "steps": [
+  {"action": "START", "world": ["LOC_MANSION", "DARKNESS", "MAGIC_AURA"], "emotions": {"stress": 0.7, "energy": 0.5, "happiness": 0.3, "hunger": 0.2, "loneliness": 0.8}, "lambda": 0.9},
+  {"action": "SPEAK", "world": ["LOC_MANSION", "NPC_ENEMY", "SUSPECT_ANGRY"], "emotions": {"stress": 0.8, "energy": 0.6, "happiness": 0.2, "hunger": 0.2, "loneliness": 0.6}, "lambda": 0.8},
+  {"action": "PERSUADE", "world": ["LOC_MANSION", "NPC_ALLY", "SECRET_REVEALED"], "emotions": {"stress": 0.4, "energy": 0.6, "happiness": 0.5, "hunger": 0.2, "loneliness": 0.4}, "lambda": 0.5},
+  {"action": "OPEN_DOOR", "world": ["LOC_LAB", "LIGHT", "ITEM_KEY"], "emotions": {"stress": 0.2, "energy": 0.7, "happiness": 0.7, "hunger": 0.3, "loneliness": 0.4}, "lambda": 0.2}
+]}
+{"story_id": "branch_4b_mansion_ghost_combat", "steps": [
+  {"action": "START", "world": ["LOC_MANSION", "DARKNESS", "MAGIC_AURA"], "emotions": {"stress": 0.7, "energy": 0.5, "happiness": 0.3, "hunger": 0.2, "loneliness": 0.8}, "lambda": 0.9},
+  {"action": "CAST_SPELL", "world": ["LOC_MANSION", "LIGHT", "NPC_ENEMY"], "emotions": {"stress": 0.6, "energy": 0.4, "happiness": 0.4, "hunger": 0.2, "loneliness": 0.7}, "lambda": 0.6},
+  {"action": "FIGHT", "world": ["LOC_MANSION", "NPC_ENEMY", "DANGER_HIGH"], "emotions": {"stress": 0.9, "energy": 0.2, "happiness": 0.1, "hunger": 0.3, "loneliness": 0.7}, "lambda": 0.7},
+  {"action": "USE_ITEM", "world": ["LOC_MANSION", "ITEM_POTION", "HEALTHY"], "emotions": {"stress": 0.5, "energy": 0.5, "happiness": 0.4, "hunger": 0.3, "loneliness": 0.6}, "lambda": 0.5},
+  {"action": "ACCUSE", "world": ["LOC_MANSION", "NPC_ENEMY", "FLEE"], "emotions": {"stress": 0.3, "energy": 0.6, "happiness": 0.8, "hunger": 0.3, "loneliness": 0.5}, "lambda": 0.3}
+]}
+{"story_id": "branch_5_complex_mystery_loops", "steps": [
+  {"action": "START", "world": ["LOC_OFFICE", "CLUE_NOTE", "DANGER_LOW"], "emotions": {"stress": 0.3, "energy": 0.8, "happiness": 0.5, "hunger": 0.2, "loneliness": 0.5}, "lambda": 0.3},
+  {"action": "READ_TOME", "world": ["LOC_OFFICE", "MAGIC_AURA", "LOC_FOREST"], "emotions": {"stress": 0.4, "energy": 0.7, "happiness": 0.6, "hunger": 0.2, "loneliness": 0.5}, "lambda": 0.7},
+  {"action": "MOVE_E", "world": ["LOC_FOREST", "DARKNESS", "EVENT_AMBUSH"], "emotions": {"stress": 0.8, "energy": 0.7, "happiness": 0.2, "hunger": 0.3, "loneliness": 0.6}, "lambda": 0.8},
+  {"action": "SNEAK", "world": ["LOC_FOREST", "NPC_ENEMY", "SUSPECT_CALM"], "emotions": {"stress": 0.7, "energy": 0.6, "happiness": 0.3, "hunger": 0.3, "loneliness": 0.6}, "lambda": 0.6},
+  {"action": "HACK", "world": ["LOC_FOREST", "ITEM_ARTIFACT", "SECRET_REVEALED"], "emotions": {"stress": 0.2, "energy": 0.8, "happiness": 0.9, "hunger": 0.3, "loneliness": 0.4}, "lambda": 0.2},
+  {"action": "USE_ITEM", "world": ["LOC_OFFICE", "LIGHT", "BODY_FOUND"], "emotions": {"stress": 0.9, "energy": 0.5, "happiness": 0.1, "hunger": 0.4, "loneliness": 0.4}, "lambda": 0.5},
+  {"action": "INTERROGATE", "world": ["LOC_OFFICE", "SUSPECT_NERVOUS", "CLUE_BLOOD"], "emotions": {"stress": 0.7, "energy": 0.6, "happiness": 0.2, "hunger": 0.4, "loneliness": 0.3}, "lambda": 0.4},
+  {"action": "ACCUSE", "world": ["LOC_OFFICE", "SUSPECT_ANGRY", "DANGER_HIGH"], "emotions": {"stress": 1.0, "energy": 0.3, "happiness": 0.2, "hunger": 0.5, "loneliness": 0.3}, "lambda": 0.6}
+]}

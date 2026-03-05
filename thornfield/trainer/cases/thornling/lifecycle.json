@@ -1,0 +1,8 @@
+{
+  "states": [
+    "alive",
+    "declining",
+    "dormant",
+    "dissolved"
+  ]
+}
