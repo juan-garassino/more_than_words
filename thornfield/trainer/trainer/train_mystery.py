@@ -51,7 +51,8 @@ def _pad_sequences(seqs: List[List[int]], pad: int) -> Tuple[torch.Tensor, torch
 
 def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
     sampler = PathSampler(spec, sampling_temperature=1.2)
-    paths = sampler.sample_batch(n_paths, verbose=False)
+    print(f"Sampling {n_paths} training paths...", flush=True)
+    paths = sampler.sample_batch(n_paths, verbose=True)
     examples: List[TrainingExample] = []
 
     for path in paths:

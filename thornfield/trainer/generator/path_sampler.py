@@ -176,11 +176,11 @@ class PathSampler:
                 paths.append(path)
             attempts += 1
 
-            if verbose and len(paths) % 100 == 0 and len(paths) > 0:
+            if verbose and len(paths) % 25 == 0 and len(paths) > 0:
                 rate = len(paths) / attempts
-                print(f"  {len(paths)}/{n} paths | success rate: {rate:.1%}")
+                print(f"  {len(paths)}/{n} paths | success rate: {rate:.1%}", flush=True)
 
         if verbose:
-            print(f"  Complete: {len(paths)} paths from {attempts} attempts")
+            print(f"  Complete: {len(paths)} paths from {attempts} attempts", flush=True)
 
         return paths
