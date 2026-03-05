@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 from typing import Dict, List, Tuple
 
 import numpy as np
@@ -196,18 +197,19 @@ def train_mystery_cartridge(
 
     use_rich = False
     progress = None
-    try:
-        from rich.progress import Progress, BarColumn, TextColumn, TimeElapsedColumn
+    if os.getenv("RICH_PROGRESS", "0") == "1":
+        try:
+            from rich.progress import Progress, BarColumn, TextColumn, TimeElapsedColumn
 
-        progress = Progress(
-            TextColumn("[bold]Epoch {task.fields[epoch]}[/bold]"),
-            BarColumn(),
-            TextColumn("{task.completed}/{task.total} batches"),
-            TimeElapsedColumn(),
-        )
-        use_rich = True
-    except Exception:
-        use_rich = False
+            progress = Progress(
+                TextColumn("[bold]Epoch {task.fields[epoch]}[/bold]"),
+                BarColumn(),
+                TextColumn("{task.completed}/{task.total} batches"),
+                TimeElapsedColumn(),
+            )
+            use_rich = True
+        except Exception:
+            use_rich = False
 
     for epoch in range(n_epochs):
         np.random.shuffle(examples)

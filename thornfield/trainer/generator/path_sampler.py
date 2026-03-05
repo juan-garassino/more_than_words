@@ -18,14 +18,14 @@ class PathSampler:
         self,
         spec: CartridgeSpec,
         sampling_temperature: float = 1.2,
-        max_turns: int = 20,
-        min_turns: int = 8,
+        max_turns: int | None = None,
+        min_turns: int | None = None,
     ):
         self.spec = spec
         self.graph = spec.token_graph
         self.sampling_temperature = sampling_temperature
-        self.max_turns = max_turns
-        self.min_turns = min_turns
+        self.max_turns = max_turns if max_turns is not None else spec.max_turns
+        self.min_turns = min_turns if min_turns is not None else spec.min_turns
         self._precomputed_valid_triads = self._precompute_valid_triads()
         self._tag_index = self._build_tag_index()
 

@@ -64,8 +64,19 @@ class HopfieldAnalyzer:
 
         for path_idx, path in enumerate(valid_paths):
             prev_energy = float("inf")
+            context_ids: List[str] = []
             for turn, triad in enumerate(path):
-                energy = model.compute_energy(triad)
+                if hasattr(model, "token_graph") and model.token_graph is not None:
+                    if hasattr(triad, "tokens"):
+                        token_ids = [t.id for t in triad.tokens]
+                    else:
+                        token_ids = [t.id for t in triad]
+                    energy = model.token_graph.induced_subgraph_energy(
+                        token_ids, context_ids
+                    )
+                    context_ids.extend(token_ids)
+                else:
+                    energy = model.compute_energy(triad)
                 if energy > prev_energy + tolerance:
                     violations.append(
                         {
