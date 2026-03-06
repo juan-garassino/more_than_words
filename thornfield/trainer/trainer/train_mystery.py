@@ -73,7 +73,7 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
                 break
 
             contribution = np.stack([t.attractor_weights for t in triad]).mean(axis=0)
-            target_delta = np.minimum(1.0, contribution * 0.25)
+            target_delta = np.minimum(1.0, contribution * spec.convergence_rate)
 
             candidate_ids = [t.id for t in triad]
             context_ids = [t.id for t in placed_tokens]
@@ -85,7 +85,7 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
                     context_positions=list(placed_positions),
                     triad=list(triad),
                     cumulative_dimensions=np.minimum(
-                        1.0, cumulative + contribution * 0.25
+                        1.0, cumulative + contribution * spec.convergence_rate
                     ),
                     target_delta=target_delta,
                     prev_energy=prev_energy,
@@ -97,7 +97,7 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
             col = turn % 6
             placed_tokens.extend(triad)
             placed_positions.extend([(row, col)] * 3)
-            cumulative = np.minimum(1.0, cumulative + contribution * 0.25)
+            cumulative = np.minimum(1.0, cumulative + contribution * spec.convergence_rate)
             prev_energy = curr_energy
 
     return examples

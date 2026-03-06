@@ -140,7 +140,8 @@ class PathSampler:
 
     def sample_path(self) -> Optional[List[List[Token]]]:
         casebook = CasebookState(
-            convergence_dimensions=np.zeros(self.spec.n_attractor_dims, dtype=np.float32)
+            convergence_dimensions=np.zeros(self.spec.n_attractor_dims, dtype=np.float32),
+            convergence_rate=self.spec.convergence_rate,
         )
         path: List[List[Token]] = []
 

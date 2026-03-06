@@ -30,7 +30,7 @@ def pack_case(case_path: Path, output_dir: Path) -> None:
         "context_dim": 128,
         "n_attractor_dims": 3,
         "convergence_threshold": 0.75,
-        "convergence_rate": 0.25,
+        "convergence_rate": 0.40,
         "min_turns": 10,
         "max_turns": 18,
         "opening_token_ids": case["opening_token_ids"],

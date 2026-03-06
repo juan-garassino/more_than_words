@@ -14,6 +14,7 @@ GridPosition = Tuple[int, int]
 @dataclass
 class CasebookState:
     convergence_dimensions: np.ndarray
+    convergence_rate: float = 0.25
     placed_triads: Dict[GridPosition, List[Token]] = field(default_factory=dict)
     turn_count: int = 0
 
@@ -31,7 +32,7 @@ class CasebookState:
 
         contribution = np.stack([t.attractor_weights for t in tokens]).mean(axis=0)
         self.convergence_dimensions = np.minimum(
-            1.0, self.convergence_dimensions + contribution * 0.25
+            1.0, self.convergence_dimensions + contribution * self.convergence_rate
         )
 
     def all_placed_tokens(self) -> List[Token]:

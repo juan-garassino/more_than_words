@@ -34,6 +34,27 @@ class ConvergenceProof:
         )
         print(f"  Sampled {len(test_paths)} held-out paths", flush=True)
 
+        if not test_paths:
+            print("\n  Proof: ✗ FAILED")
+            print("  Path sampler produced 0 held-out paths — convergence threshold unreachable.")
+            print("  ⚠ Cartridge blocked. Cannot export until proof passes.")
+            print("  Suggested fixes:")
+            print("    — Raise convergence_rate in pack_case.py (currently too low to reach threshold)")
+            print("    — Increase max_turns in spec")
+            print("    — Lower convergence_threshold in spec")
+            return {
+                "passed": False,
+                "convergence_rate": 0.0,
+                "invariant_accuracy": 0.0,
+                "lyapunov_passed": False,
+                "lyapunov_monotone_rate": 0.0,
+                "basin_coverage": 0.0,
+                "spurious_attractors": 0,
+                "avg_turns": 0,
+                "min_turns": 0,
+                "max_turns": 0,
+            }
+
         converged = 0
         correct_invariants = 0
         turns_list = []

@@ -100,7 +100,7 @@ class HopfieldAnalyzer:
     def basin_size(self, model, spec: "CartridgeSpec", n_samples: int = 1000) -> float:
         from generator.path_sampler import PathSampler
 
-        sampler = PathSampler(spec, sampling_temperature=2.0)
+        sampler = PathSampler(spec, sampling_temperature=2.0, allow_partial=False)
         converged = 0
         for _ in range(n_samples):
             path = sampler.sample_path()
