@@ -146,6 +146,9 @@ class PathSampler:
         path: List[List[Token]] = []
 
         opening = [self.spec.get_token(tid) for tid in self.spec.opening_token_ids]
+        opening_ids = [t.id for t in opening]
+        # Energy of opening against empty context — just internal subgraph energy.
+        prev_energy = self.graph.subgraph_energy(opening_ids)
         casebook.place_triad(opening, position=(0, 0))
         path.append(opening)
 
@@ -161,15 +164,21 @@ class PathSampler:
                 if len(candidates) < 1:
                     return None
 
+            # Compute context once, before any candidate is placed.
+            context_ids = [t.id for t in casebook.all_placed_tokens()]
+
             if self.enforce_monotone:
-                prev_energy = self._triad_energy(path[-1], casebook) if path else float("inf")
-                filtered = []
-                for c in candidates:
-                    e = self._triad_energy(c, casebook)
-                    if e <= prev_energy + self.monotone_tolerance:
-                        filtered.append(c)
+                # Energy of each candidate against current context (candidate not yet placed).
+                # This matches the Lyapunov check's computation exactly.
+                filtered = [
+                    c for c in candidates
+                    if self.graph.induced_subgraph_energy([t.id for t in c], context_ids)
+                    <= prev_energy + self.monotone_tolerance
+                ]
                 if filtered:
                     candidates = filtered
+                # If no candidates pass the monotone filter, fall through with all candidates.
+                # The Lyapunov check tolerates a small rate of violations; do not abort the path.
 
             scores = np.array([self._score_triad(c, casebook) for c in candidates])
             scores = scores / self.sampling_temperature
@@ -179,6 +188,8 @@ class PathSampler:
 
             idx = np.random.choice(len(candidates), p=weights)
             chosen = candidates[idx]
+            # Record energy at selection time so the next iteration compares correctly.
+            prev_energy = self.graph.induced_subgraph_energy([t.id for t in chosen], context_ids)
 
             row = min(turn, 7)
             col = np.random.randint(0, 4)

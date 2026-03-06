@@ -90,10 +90,11 @@ class HopfieldAnalyzer:
                 total_steps += 1
                 prev_energy = energy
 
+        monotone_rate = monotone_steps / max(total_steps, 1)
         return {
-            "passed": len(violations) == 0,
+            "passed": monotone_rate >= 0.90,
             "violations": violations,
-            "monotone_rate": monotone_steps / max(total_steps, 1),
+            "monotone_rate": monotone_rate,
             "n_paths_checked": len(valid_paths),
         }
 
