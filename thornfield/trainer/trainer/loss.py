@@ -39,6 +39,7 @@ class CombinedMysteryLoss(nn.Module):
         self.attractor_loss = AttractorConvergenceLoss(threshold=0.75)
         self.lyapunov_reg = LyapunovRegularization()
         self.convergence_loss = nn.MSELoss()
+        self.retrieval_loss = HopfieldRetrievalLoss()
 
     def forward(self, batch: dict) -> dict:
         l_margin = self.margin_loss(batch["energy_positive"], batch["energy_negative"])
@@ -48,7 +49,20 @@ class CombinedMysteryLoss(nn.Module):
             batch["predicted_delta"], batch["target_delta"]
         )
 
-        total = 1.0 * l_margin + 0.8 * l_attractor + 0.4 * l_lyapunov + 0.5 * l_convergence
+        # Retrieval loss (optional — only present when invariant targets are provided)
+        l_retrieval = torch.tensor(0.0, device=l_margin.device)
+        if "retrieval_logits" in batch and "invariant_indices" in batch:
+            l_retrieval = self.retrieval_loss(
+                batch["retrieval_logits"], batch["invariant_indices"]
+            )
+
+        total = (
+            1.0 * l_margin
+            + 0.8 * l_attractor
+            + 0.4 * l_lyapunov
+            + 0.5 * l_convergence
+            + 0.3 * l_retrieval
+        )
 
         return {
             "total": total,
@@ -56,7 +70,21 @@ class CombinedMysteryLoss(nn.Module):
             "attractor": l_attractor,
             "lyapunov": l_lyapunov,
             "convergence": l_convergence,
+            "retrieval": l_retrieval,
         }
+
+
+class HopfieldRetrievalLoss(nn.Module):
+    """
+    Cross-entropy loss for multi-dim invariant token retrieval.
+
+    logits:  (B, n_dims, V)  — one score per vocabulary token per dimension
+    targets: (B, n_dims)     — ground-truth invariant token index per dimension
+    """
+
+    def forward(self, logits: Tensor, targets: Tensor) -> Tensor:
+        B, n_dims, V = logits.shape
+        return F.cross_entropy(logits.reshape(B * n_dims, V), targets.reshape(B * n_dims))
 
 
 class EdgeCoherenceLoss(nn.Module):

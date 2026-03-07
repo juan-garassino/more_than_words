@@ -40,6 +40,9 @@ def export_mystery_cartridge(model, spec, output_path: str, proof_report: dict) 
             "id": t.id,
             "token_class": t.token_class.value,
             "phase": t.phase.value,
+            "stream": t.stream.value,
+            "agency": t.agency.value,
+            "surface_expression": t.surface_expression,
             "attractor_weights": t.attractor_weights.tolist(),
             "affinity_tags": t.affinity_tags,
             "repulsion_tags": t.repulsion_tags,
@@ -64,7 +67,11 @@ def export_mystery_cartridge(model, spec, output_path: str, proof_report: dict) 
         zf.writestr("tokens.json", json.dumps(tokens, indent=2))
         zf.writestr("graph.json", json.dumps(graph, indent=2))
         zf.writestr("attractor.json", json.dumps({"invariants": spec.invariant_token_ids}, indent=2))
-        zf.writestr("phases.json", json.dumps({"min_turns": spec.min_turns, "max_turns": spec.max_turns}, indent=2))
+        zf.writestr("phases.json", json.dumps({
+            "min_turns": spec.min_turns,
+            "max_turns": spec.max_turns,
+            "opening_token_ids": spec.opening_token_ids,
+        }, indent=2))
         zf.writestr("precomputed.json", json.dumps(precomputed, indent=2))
         zf.writestr("expressions.json", json.dumps({}, indent=2))
         zf.writestr("proof.json", json.dumps(proof_report, indent=2))

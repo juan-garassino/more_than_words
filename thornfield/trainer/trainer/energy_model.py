@@ -114,6 +114,42 @@ class ConvergenceHead(nn.Module):
         return self.pred(torch.cat([flat, context], dim=-1))
 
 
+class HopfieldRetrievalHead(nn.Module):
+    """
+    Multi-dimensional token retrieval via Hopfield/transformer attention.
+
+    For each of the n_dims invariant dimensions, learns a query vector
+    (projected from context) and computes dot-product scores against the
+    full vocabulary embedding matrix.
+
+    At inference: argmax per dim → predicted invariant token ID.
+    During training: cross-entropy vs. the known invariant index per dim.
+
+    This is the transformer-attention = Modern Hopfield equivalence:
+        scores = Q K^T / sqrt(d)  where K = V = token embedding matrix
+
+    Output: (B, n_dims, V) logits
+    """
+
+    def __init__(self, context_dim: int = 128, embedding_dim: int = 64, n_dims: int = 3):
+        super().__init__()
+        self.n_dims = n_dims
+        self.scale = embedding_dim ** -0.5
+        # All dim queries as a single batched linear (context_dim → n_dims * embedding_dim)
+        self.queries = nn.Linear(context_dim, embedding_dim * n_dims, bias=False)
+
+    def forward(self, context: torch.Tensor, all_token_embs: torch.Tensor) -> torch.Tensor:
+        """
+        context:        (B, context_dim)
+        all_token_embs: (V, embedding_dim)
+        returns:        (B, n_dims, V) logits
+        """
+        B = context.size(0)
+        D = all_token_embs.size(-1)
+        queries = self.queries(context).reshape(B, self.n_dims, D)  # (B, n_dims, D)
+        return queries @ all_token_embs.t() * self.scale             # (B, n_dims, V)
+
+
 class TokenResonanceHead(nn.Module):
     """
     Vocabulary projection: given a context vector, surface which tokens the
@@ -155,6 +191,7 @@ class MysteryEnergyModel(nn.Module):
         self.casebook_encoder = CasebookEncoder(embedding_dim, context_dim)
         self.energy_head = TriadEnergyHead(embedding_dim, context_dim)
         self.convergence_head = ConvergenceHead(embedding_dim, context_dim, n_attractor_dims)
+        self.retrieval_head = HopfieldRetrievalHead(context_dim, embedding_dim, n_attractor_dims)
         self.resonance_head = TokenResonanceHead(context_dim, embedding_dim)
         self.token_graph = token_graph
 
@@ -190,6 +227,7 @@ class MysteryEnergyModel(nn.Module):
         return {
             "energy": self.energy_head(candidate_emb, context),
             "convergence_delta": self.convergence_head(candidate_emb, context),
+            "retrieval_logits": self.retrieval_head(context, all_token_embs),
             "resonance_logits": self.resonance_head(context, all_token_embs),
         }
 

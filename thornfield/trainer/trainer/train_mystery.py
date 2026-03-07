@@ -25,6 +25,8 @@ class TrainingExample:
     target_delta: np.ndarray
     prev_energy: float
     curr_energy: float
+    # Index into vocab for each invariant dimension (dim_d → token_idx)
+    invariant_indices: np.ndarray  # shape (n_attractor_dims,), dtype int64
 
 
 def _build_mappings(tokens: List[Token]) -> Tuple[Dict[str, int], Dict[str, int], Dict[str, int], Dict[str, int], Dict[str, int]]:
@@ -77,6 +79,17 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
     else:
         print("[PATH SAMPLING] FAILED — 0 paths returned", flush=True)
 
+    # Build invariant_indices: for dim d, find the token whose attractor_weights[d] == 1.0
+    id_to_idx_local = {t.id: i for i, t in enumerate(spec.tokens)}
+    n_dims = spec.n_attractor_dims
+    invariant_indices = np.zeros(n_dims, dtype=np.int64)
+    for inv_id in spec.invariant_token_ids:
+        tok = spec.get_token(inv_id)
+        for d in range(n_dims):
+            if tok.attractor_weights[d] > 0.5:
+                invariant_indices[d] = id_to_idx_local[inv_id]
+                break
+
     examples: List[TrainingExample] = []
 
     for path in paths:
@@ -107,6 +120,7 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
                     target_delta=target_delta,
                     prev_energy=prev_energy,
                     curr_energy=curr_energy,
+                    invariant_indices=invariant_indices,
                 )
             )
 
@@ -152,6 +166,7 @@ def _batchify(
     cumulative_dimensions = []
     target_delta = []
     path_energies = []
+    invariant_indices = []
 
     for ex, neg in zip(examples, negatives):
         t_ids, c_ids, p_ids, s_ids, a_ids = _encode_tokens(
@@ -185,6 +200,7 @@ def _batchify(
         cumulative_dimensions.append(ex.cumulative_dimensions)
         target_delta.append(ex.target_delta)
         path_energies.append([ex.prev_energy, ex.curr_energy])
+        invariant_indices.append(ex.invariant_indices)
 
     context_token_ids, context_mask = _pad_sequences(context_token_ids, pad=0)
     context_class_ids, _ = _pad_sequences(context_class_ids, pad=0)
@@ -219,6 +235,7 @@ def _batchify(
         "cumulative_dimensions": torch.tensor(np.stack(cumulative_dimensions), device=device),
         "target_delta": torch.tensor(np.stack(target_delta), device=device),
         "path_energies": torch.tensor(np.stack(path_energies), device=device),
+        "invariant_indices": torch.tensor(np.stack(invariant_indices), device=device),
     }
 
     return batch
@@ -263,8 +280,8 @@ def train_mystery_cartridge(
         f"batches/epoch={total_batches}  params={param_count:,}",
         flush=True,
     )
-    print("[TRAIN] epoch  loss     e_pos   e_neg   delta_err", flush=True)
-    print("[TRAIN] " + "-" * 45, flush=True)
+    print("[TRAIN] epoch  loss     e_pos   e_neg   delta_err  retrieval", flush=True)
+    print("[TRAIN] " + "-" * 54, flush=True)
 
     loss_history: List[float] = []
 
@@ -274,6 +291,7 @@ def train_mystery_cartridge(
         epoch_e_pos = 0.0
         epoch_e_neg = 0.0
         epoch_delta_err = 0.0
+        epoch_retrieval = 0.0
         batch_count = total_batches
 
         for idx, start in enumerate(range(0, len(examples), batch_size), start=1):
@@ -329,6 +347,8 @@ def train_mystery_cartridge(
                     "path_energies": batch["path_energies"],
                     "predicted_delta": output_pos["convergence_delta"],
                     "target_delta": batch["target_delta"],
+                    "retrieval_logits": output_pos["retrieval_logits"],
+                    "invariant_indices": batch["invariant_indices"],
                 }
             )
 
@@ -350,6 +370,7 @@ def train_mystery_cartridge(
                 (output_pos["convergence_delta"] - batch["target_delta"]).abs().mean().detach().cpu()
             )
             epoch_delta_err += delta_err
+            epoch_retrieval += float(loss_dict["retrieval"].detach().cpu())
 
         avg_loss = epoch_loss / batch_count
         history["loss"] = avg_loss
@@ -365,7 +386,8 @@ def train_mystery_cartridge(
             f"{avg_loss:.4f}  "
             f"{epoch_e_pos/batch_count:.3f}  "
             f"{epoch_e_neg/batch_count:.3f}  "
-            f"{epoch_delta_err/batch_count:.4f}  {trend}",
+            f"{epoch_delta_err/batch_count:.4f}  "
+            f"{epoch_retrieval/batch_count:.4f}  {trend}",
             flush=True,
         )
 
