@@ -1,4 +1,5 @@
-.PHONY: validate-amber-cipher pack-amber-cipher train-amber-cipher
+.PHONY: validate-amber-cipher pack-amber-cipher train-amber-cipher \
+        validate-amber-cipher-L pack-amber-cipher-L train-amber-cipher-L train-amber-cipher-L-colab-cpu
 
 validate-amber-cipher:
 	python3 thornfield_case_validator.py amber_cipher.json
@@ -26,3 +27,25 @@ train-amber-cipher-colab-fastproof: pack-amber-cipher colab-install
 
 train-amber-cipher-colab-cpu: pack-amber-cipher colab-install
 	cd thornfield/trainer && PYTHONUNBUFFERED=1 KMP_DUPLICATE_LIB_OK=TRUE KMP_USE_SHM=0 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=. python3 tools/train_single_case.py amber_cipher --paths 300 --epochs 20 --proof-paths 200 --proof-max-attempts 2000 --device cpu
+
+# amber_cipher_L targets
+validate-amber-cipher-L:
+	python3 thornfield_case_validator.py amber_cipher_L.json
+
+pack-amber-cipher-L: validate-amber-cipher-L
+	python3 thornfield/trainer/tools/pack_case.py amber_cipher_L.json
+
+train-amber-cipher-L: pack-amber-cipher-L
+	cd thornfield/trainer && PYTHONUNBUFFERED=1 KMP_DUPLICATE_LIB_OK=TRUE KMP_USE_SHM=0 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=. python3 tools/train_single_case.py amber_cipher_L --paths 300 --epochs 1 --proof-paths 200 --proof-max-attempts 2000
+
+train-amber-cipher-L-fast: pack-amber-cipher-L
+	cd thornfield/trainer && PYTHONUNBUFFERED=1 KMP_DUPLICATE_LIB_OK=TRUE KMP_USE_SHM=0 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=. python3 tools/train_single_case.py amber_cipher_L --paths 100 --epochs 1 --proof-paths 50 --proof-max-attempts 500 --skip-proof
+
+train-amber-cipher-L-colab: pack-amber-cipher-L colab-install
+	cd thornfield/trainer && PYTHONUNBUFFERED=1 KMP_DUPLICATE_LIB_OK=TRUE KMP_USE_SHM=0 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=. python3 tools/train_single_case.py amber_cipher_L --paths 500 --epochs 20 --proof-paths 200 --proof-max-attempts 2000
+
+train-amber-cipher-L-colab-gpu: pack-amber-cipher-L colab-install
+	cd thornfield/trainer && PYTHONUNBUFFERED=1 KMP_DUPLICATE_LIB_OK=TRUE KMP_USE_SHM=0 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=. python3 tools/train_single_case.py amber_cipher_L --paths 500 --epochs 20 --proof-paths 200 --proof-max-attempts 2000 --device cuda
+
+train-amber-cipher-L-colab-cpu: pack-amber-cipher-L colab-install
+	cd thornfield/trainer && PYTHONUNBUFFERED=1 KMP_DUPLICATE_LIB_OK=TRUE KMP_USE_SHM=0 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=. python3 tools/train_single_case.py amber_cipher_L --paths 500 --epochs 20 --proof-paths 200 --proof-max-attempts 2000 --device cpu
