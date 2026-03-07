@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch import Tensor
 
 
 class EnergyMarginLoss(nn.Module):
@@ -56,3 +57,36 @@ class CombinedMysteryLoss(nn.Module):
             "lyapunov": l_lyapunov,
             "convergence": l_convergence,
         }
+
+
+class EdgeCoherenceLoss(nn.Module):
+    """BCE loss for edge coherence prediction (connection model)."""
+
+    def forward(self, predicted: Tensor, target: Tensor) -> Tensor:
+        # predicted: (B, 1), target: (B,)
+        return F.binary_cross_entropy(predicted.squeeze(-1), target)
+
+
+class CombinedConnectionLoss(nn.Module):
+    """
+    Composite loss for the connection model.
+    weights: coherence=1.0, lyapunov=0.4
+    """
+
+    def __init__(self):
+        super().__init__()
+        self.coherence_loss = EdgeCoherenceLoss()
+        self.lyapunov_reg = LyapunovRegularization()
+
+    def forward(self, batch: dict) -> dict:
+        l_coherence = self.coherence_loss(
+            batch["predicted_coherence"], batch["target_coherence"]
+        )
+        if "path_energies" in batch:
+            l_lyapunov = self.lyapunov_reg(batch["path_energies"])
+        else:
+            l_lyapunov = torch.tensor(0.0, device=l_coherence.device)
+
+        total = 1.0 * l_coherence + 0.4 * l_lyapunov
+
+        return {"total": total, "coherence": l_coherence, "lyapunov": l_lyapunov}

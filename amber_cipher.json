@@ -31,7 +31,9 @@
         "secret"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "object:ledger_book",
@@ -50,7 +52,9 @@
         "secret"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "object:telegraph_form",
@@ -69,7 +73,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "object:coal_dust",
@@ -88,7 +94,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "motive:third_party_link",
@@ -107,7 +115,9 @@
         "secret"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "object:sealed_envelope",
@@ -126,7 +136,9 @@
         "secret"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "modifier:lamps_dimmed",
@@ -145,7 +157,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "action:signal_paused",
@@ -164,7 +178,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "object:station_key",
@@ -183,7 +199,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "modifier:damp",
@@ -202,7 +220,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "action:platform_crossed",
@@ -221,7 +241,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "time:signal_reset",
@@ -240,7 +262,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "suspect:stationmaster",
@@ -259,7 +283,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "suspect:railway_clerk",
@@ -278,7 +304,9 @@
         "concealment"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "object:cipher_sheet",
@@ -297,7 +325,9 @@
         "concealment"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "object:initialed_cufflink",
@@ -316,7 +346,9 @@
         "concealment"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "modifier:initialed_RV",
@@ -335,7 +367,9 @@
         "concealment"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "action:telegram_handled",
@@ -354,7 +388,9 @@
         "concealment"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "action:satchel_swapped",
@@ -373,7 +409,9 @@
         "concealment"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "emotion:steady_hands",
@@ -392,7 +430,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "location:thornfield_crossing",
@@ -411,7 +451,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
     },
     {
       "id": "location:platform_two",
@@ -430,7 +472,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "location:platform_one",
@@ -449,7 +493,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "location:station_office",
@@ -468,7 +514,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "location:signal_box",
@@ -487,7 +535,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "location:waiting_room",
@@ -506,7 +556,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "location:goods_shed",
@@ -525,7 +577,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "location:carriage_siding",
@@ -544,7 +598,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "suspect:estranged_daughter",
@@ -566,7 +622,9 @@
         "access",
         "guilt"
       ],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "object:torn_ticket",
@@ -588,7 +646,9 @@
         "access",
         "guilt"
       ],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "emotion:fixed_stare",
@@ -610,7 +670,9 @@
         "access",
         "guilt"
       ],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "modifier:late_arrival",
@@ -632,7 +694,9 @@
         "access",
         "guilt"
       ],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "event:platform_two_scene",
@@ -654,7 +718,9 @@
         "access",
         "guilt"
       ],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "suspect:renard_voss",
@@ -673,7 +739,9 @@
         "concealment"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "ENGINE"
     },
     {
       "id": "suspect:night_porter",
@@ -692,7 +760,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "suspect:platform_guard",
@@ -711,7 +781,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "suspect:travelling_broker",
@@ -730,7 +802,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "object:telegram",
@@ -749,7 +823,9 @@
         "concealment"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "object:satchel",
@@ -768,7 +844,9 @@
         "concealment"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "object:cash_tin",
@@ -787,7 +865,9 @@
         "secret"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "object:platform_lantern",
@@ -806,7 +886,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "object:ink_blotter",
@@ -825,7 +907,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "emotion:avoided_contact",
@@ -844,7 +928,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "emotion:measured_breath",
@@ -863,7 +949,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "emotion:paused_reply",
@@ -882,7 +970,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "emotion:closed_posture",
@@ -901,7 +991,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "modifier:paid_off",
@@ -920,7 +1012,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "modifier:unlocked",
@@ -939,7 +1033,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "modifier:misplaced",
@@ -958,7 +1054,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "modifier:unclaimed",
@@ -977,7 +1075,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "modifier:smudged",
@@ -996,7 +1096,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "modifier:ticket_punched",
@@ -1015,7 +1117,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "action:office_entered",
@@ -1034,7 +1138,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "action:ledger_checked",
@@ -1053,7 +1159,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "action:guard_bribed",
@@ -1072,7 +1180,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "action:door_left_open",
@@ -1091,7 +1201,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "action:footsteps_faded",
@@ -1110,7 +1222,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "time:between_trains",
@@ -1129,7 +1243,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
     },
     {
       "id": "time:last_arrival",
@@ -1148,7 +1264,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "time:first_departure",
@@ -1167,7 +1285,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "time:fog_thickens",
@@ -1186,7 +1306,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
     },
     {
       "id": "motive:fraud_concealment",
@@ -1205,7 +1327,9 @@
         "secret"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "ENGINE"
     },
     {
       "id": "motive:partnership_ruin",
@@ -1224,7 +1348,9 @@
         "secret"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "motive:ledger_exposure",
@@ -1243,7 +1369,9 @@
         "secret"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
     },
     {
       "id": "motive:debt_pressure",
@@ -1262,7 +1390,9 @@
         "secret"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "witness:ticket_clerk",
@@ -1281,7 +1411,9 @@
         "present"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "witness:porter",
@@ -1300,7 +1432,9 @@
         "present"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "witness:signalman",
@@ -1319,7 +1453,9 @@
         "present"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "witness:carriage_cleaner",
@@ -1338,7 +1474,9 @@
         "present"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "witness:telegraph_operator",
@@ -1357,7 +1495,9 @@
         "present"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
     },
     {
       "id": "event:aldous_verne_discovered",
@@ -1376,7 +1516,9 @@
         "error"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
     },
     {
       "id": "event:window_between_trains",
@@ -1395,7 +1537,9 @@
         "constraint"
       ],
       "repulsion_tags": [],
-      "temperature": 0.5
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "ENGINE"
     }
   ],
   "graph": {

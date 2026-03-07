@@ -32,6 +32,19 @@ class TokenPhase(str, Enum):
     ANY = "ANY"
 
 
+class TokenStream(str, Enum):
+    EVIDENCE = "EVIDENCE"      # Detective-navigated: objects, deduced actions, motives
+    ATMOSPHERE = "ATMOSPHERE"  # World-controlled: weather, time, location, structure
+    OPENING = "OPENING"        # Fixed scene-setting tokens
+    INVARIANT = "INVARIANT"    # Solution tokens (killer, mechanism, motive)
+
+
+class TokenAgency(str, Enum):
+    PLAYER = "PLAYER"  # Only the detective/player can surface
+    ENGINE = "ENGINE"  # Only the world/engine surfaces
+    SHARED = "SHARED"  # Either player or engine can surface
+
+
 @dataclass
 class Token:
     id: str
@@ -44,6 +57,8 @@ class Token:
     narrative_gradient: float
     is_invariant: bool
     surface_expression: str
+    stream: TokenStream = TokenStream.EVIDENCE
+    agency: TokenAgency = TokenAgency.SHARED
     embedding: Optional[np.ndarray] = None
 
     def is_available_at_turn(self, turn: int) -> bool:

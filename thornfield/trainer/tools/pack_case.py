@@ -51,6 +51,8 @@ def pack_case(case_path: Path, output_dir: Path) -> None:
                 "temperature": token.get("temperature", 0.5),
                 "is_invariant": token.get("is_invariant", False),
                 "surface_expression": expressions.get(token_id, ""),
+                "stream": token.get("stream", "EVIDENCE"),
+                "agency": token.get("agency", "SHARED"),
             }
         )
 

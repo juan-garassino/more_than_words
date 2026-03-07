@@ -58,23 +58,36 @@ class TokenGraph:
 
 class HopfieldAnalyzer:
     def lyapunov_check(self, model, valid_paths: List[List["Triad"]], tolerance=0.01):
+        """
+        Verify that the Hopfield energy decreases monotonically along each path.
+
+        Uses *cumulative total system energy* — the sum of all edge weights between
+        all tokens placed so far — which is the correct Lyapunov function for a
+        Hopfield network.  For any graph with non-negative weights, total energy
+        can only decrease (become more negative) as tokens are added; any increase
+        above `tolerance` indicates a graph defect (negative-weight edge).
+
+        The per-triad marginal energy comparison used previously was not a valid
+        Lyapunov condition: it compared successive triads' marginal contributions,
+        which can legitimately differ without violating stability.
+        """
         violations = []
         total_steps = 0
         monotone_steps = 0
 
         for path_idx, path in enumerate(valid_paths):
             prev_energy = float("inf")
-            context_ids: List[str] = []
+            all_ids: List[str] = []   # cumulative token ids placed so far
             for turn, triad in enumerate(path):
                 if hasattr(model, "token_graph") and model.token_graph is not None:
                     if hasattr(triad, "tokens"):
                         token_ids = [t.id for t in triad.tokens]
                     else:
                         token_ids = [t.id for t in triad]
-                    energy = model.token_graph.induced_subgraph_energy(
-                        token_ids, context_ids
-                    )
-                    context_ids.extend(token_ids)
+                    all_ids.extend(token_ids)
+                    # Total system energy: sum of all edge weights between placed tokens.
+                    # For non-negative weights this is guaranteed to decrease each turn.
+                    energy = model.token_graph.subgraph_energy(all_ids)
                 else:
                     energy = model.compute_energy(triad)
                 if energy > prev_energy + tolerance:

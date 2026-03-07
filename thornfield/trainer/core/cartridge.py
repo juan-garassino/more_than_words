@@ -7,7 +7,7 @@ from typing import Dict, List
 
 import numpy as np
 
-from .token import Token, TokenClass, TokenPhase, compute_narrative_gradient
+from .token import Token, TokenClass, TokenPhase, TokenStream, TokenAgency, compute_narrative_gradient
 from .hopfield import TokenGraph
 
 
@@ -64,6 +64,8 @@ class CartridgeSpec:
                 narrative_gradient=0.0,
                 is_invariant=bool(item.get("is_invariant", False)),
                 surface_expression=item.get("surface_expression", ""),
+                stream=TokenStream(item.get("stream", "EVIDENCE")),
+                agency=TokenAgency(item.get("agency", "SHARED")),
             )
             token.narrative_gradient = compute_narrative_gradient(
                 token, spec["n_attractor_dims"]

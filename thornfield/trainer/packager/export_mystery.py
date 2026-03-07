@@ -18,9 +18,17 @@ def _model_state_to_npz(model) -> bytes:
     return buffer.getvalue()
 
 
-def export_mystery_cartridge(model, spec, output_path: str, proof_report: dict) -> None:
+def export_mystery_cartridge(model, spec, output_path: str, proof_report: dict) -> bool:
+    """
+    Export a trained cartridge.  Returns True on success, False if proof has not passed.
+    Never raises — callers check the return value.
+    """
     if not proof_report.get("passed", False):
-        raise RuntimeError("Convergence proof failed. Cartridge export blocked.")
+        print(
+            "\n[EXPORT] Cartridge not exported — convergence proof has not passed.\n"
+            "[EXPORT] Run with proof enabled and ensure all checks pass before exporting."
+        )
+        return False
 
     out_path = Path(output_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -62,7 +70,8 @@ def export_mystery_cartridge(model, spec, output_path: str, proof_report: dict) 
         zf.writestr("proof.json", json.dumps(proof_report, indent=2))
         zf.writestr("weights.npz", _model_state_to_npz(model))
 
-    _ = model
+    print(f"[EXPORT] Cartridge written → {out_path}")
+    return True
 
 
 def export_tamagotchi_cartridge(model, spec, output_path: str) -> None:

@@ -13,18 +13,34 @@ except Exception:  # pragma: no cover - optional dependency for compute_energy
 
 
 class TokenEmbedding(nn.Module):
+    # Streams: EVIDENCE, ATMOSPHERE, OPENING, INVARIANT = 4
+    N_STREAMS = 4
+    # Agencies: PLAYER, ENGINE, SHARED = 3
+    N_AGENCIES = 3
+
     def __init__(self, vocab_size: int, embedding_dim: int = 64):
         super().__init__()
         self.token_emb = nn.Embedding(vocab_size, embedding_dim)
         self.class_emb = nn.Embedding(14, 16)
         self.phase_emb = nn.Embedding(8, 8)
-        self.proj = nn.Linear(embedding_dim + 16 + 8, embedding_dim)
+        self.stream_emb = nn.Embedding(self.N_STREAMS, 8)
+        self.agency_emb = nn.Embedding(self.N_AGENCIES, 8)
+        self.proj = nn.Linear(embedding_dim + 16 + 8 + 8 + 8, embedding_dim)
 
-    def forward(self, token_ids, class_ids, phase_ids):
+    def forward(self, token_ids, class_ids, phase_ids, stream_ids=None, agency_ids=None):
         t = self.token_emb(token_ids)
         c = self.class_emb(class_ids)
         p = self.phase_emb(phase_ids)
-        return self.proj(torch.cat([t, c, p], dim=-1))
+        parts = [t, c, p]
+        if stream_ids is not None:
+            parts.append(self.stream_emb(stream_ids))
+        else:
+            parts.append(t.new_zeros(*t.shape[:-1], 8))
+        if agency_ids is not None:
+            parts.append(self.agency_emb(agency_ids))
+        else:
+            parts.append(t.new_zeros(*t.shape[:-1], 8))
+        return self.proj(torch.cat(parts, dim=-1))
 
 
 class CasebookEncoder(nn.Module):
@@ -98,6 +114,31 @@ class ConvergenceHead(nn.Module):
         return self.pred(torch.cat([flat, context], dim=-1))
 
 
+class TokenResonanceHead(nn.Module):
+    """
+    Vocabulary projection: given a context vector, surface which tokens the
+    field is 'calling for' next. This is the core game mechanic — after each
+    player move, the engine reveals the top-k resonating tokens from the deck.
+
+    Output: (B, vocab_size) logits (pre-softmax).
+    """
+
+    def __init__(self, context_dim: int = 128, embedding_dim: int = 64):
+        super().__init__()
+        self.scale = embedding_dim ** -0.5
+        # Small bottleneck: project context into embedding space for dot-product.
+        self.ctx_proj = nn.Linear(context_dim, embedding_dim, bias=False)
+
+    def forward(self, context: torch.Tensor, all_token_embs: torch.Tensor) -> torch.Tensor:
+        """
+        context:        (B, context_dim)
+        all_token_embs: (V, embedding_dim)  — embedding matrix for the full vocabulary
+        returns:        (B, V) logits
+        """
+        q = self.ctx_proj(context)  # (B, D)
+        return q @ all_token_embs.t() * self.scale  # (B, V)
+
+
 class MysteryEnergyModel(nn.Module):
     def __init__(
         self,
@@ -108,10 +149,13 @@ class MysteryEnergyModel(nn.Module):
         token_graph: Optional["TokenGraph"] = None,
     ):
         super().__init__()
+        self.vocab_size = vocab_size
+        self.embedding_dim = embedding_dim
         self.token_embedding = TokenEmbedding(vocab_size, embedding_dim)
         self.casebook_encoder = CasebookEncoder(embedding_dim, context_dim)
         self.energy_head = TriadEnergyHead(embedding_dim, context_dim)
         self.convergence_head = ConvergenceHead(embedding_dim, context_dim, n_attractor_dims)
+        self.resonance_head = TokenResonanceHead(context_dim, embedding_dim)
         self.token_graph = token_graph
 
     def forward(
@@ -124,18 +168,29 @@ class MysteryEnergyModel(nn.Module):
         candidate_token_ids,
         candidate_class_ids,
         candidate_phase_ids,
+        placed_stream_ids=None,
+        placed_agency_ids=None,
+        candidate_stream_ids=None,
+        candidate_agency_ids=None,
     ) -> dict:
         placed_emb = self.token_embedding(
-            placed_token_ids, placed_class_ids, placed_phase_ids
+            placed_token_ids, placed_class_ids, placed_phase_ids,
+            placed_stream_ids, placed_agency_ids,
         )
         context = self.casebook_encoder(placed_emb, placed_positions, placed_mask)
         candidate_emb = self.token_embedding(
-            candidate_token_ids, candidate_class_ids, candidate_phase_ids
+            candidate_token_ids, candidate_class_ids, candidate_phase_ids,
+            candidate_stream_ids, candidate_agency_ids,
         )
+
+        # Full vocabulary embedding matrix for resonance (no stream/agency bias).
+        all_ids = torch.arange(self.vocab_size, device=placed_token_ids.device)
+        all_token_embs = self.token_embedding.token_emb(all_ids)
 
         return {
             "energy": self.energy_head(candidate_emb, context),
             "convergence_delta": self.convergence_head(candidate_emb, context),
+            "resonance_logits": self.resonance_head(context, all_token_embs),
         }
 
     def compute_energy(self, triad) -> float:

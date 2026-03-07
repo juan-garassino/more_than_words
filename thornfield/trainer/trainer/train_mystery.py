@@ -9,7 +9,7 @@ import torch
 from torch import nn
 
 from core.cartridge import CartridgeSpec
-from core.token import Token, TokenClass, TokenPhase
+from core.token import Token, TokenClass, TokenPhase, TokenStream, TokenAgency
 from generator.path_sampler import PathSampler
 from generator.negative_sampler import sample_negative_triads
 from trainer.energy_model import MysteryEnergyModel
@@ -27,18 +27,22 @@ class TrainingExample:
     curr_energy: float
 
 
-def _build_mappings(tokens: List[Token]) -> Tuple[Dict[str, int], Dict[str, int], Dict[str, int]]:
+def _build_mappings(tokens: List[Token]) -> Tuple[Dict[str, int], Dict[str, int], Dict[str, int], Dict[str, int], Dict[str, int]]:
     id_to_idx = {t.id: i for i, t in enumerate(tokens)}
     class_to_idx = {c.value: i for i, c in enumerate(TokenClass)}
     phase_to_idx = {p.value: i for i, p in enumerate(TokenPhase)}
-    return id_to_idx, class_to_idx, phase_to_idx
+    stream_to_idx = {s.value: i for i, s in enumerate(TokenStream)}
+    agency_to_idx = {a.value: i for i, a in enumerate(TokenAgency)}
+    return id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx
 
 
-def _encode_tokens(tokens: List[Token], id_to_idx, class_to_idx, phase_to_idx):
+def _encode_tokens(tokens: List[Token], id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx):
     token_ids = [id_to_idx[t.id] for t in tokens]
     class_ids = [class_to_idx[t.token_class.value] for t in tokens]
     phase_ids = [phase_to_idx[t.phase.value] for t in tokens]
-    return token_ids, class_ids, phase_ids
+    stream_ids = [stream_to_idx[t.stream.value] for t in tokens]
+    agency_ids = [agency_to_idx[t.agency.value] for t in tokens]
+    return token_ids, class_ids, phase_ids, stream_ids, agency_ids
 
 
 def _pad_sequences(seqs: List[List[int]], pad: int) -> Tuple[torch.Tensor, torch.Tensor]:
@@ -58,8 +62,21 @@ def _build_examples(spec: CartridgeSpec, n_paths: int) -> List[TrainingExample]:
         min_affinity=0.05,
         allow_partial=True,
     )
-    print(f"Sampling {n_paths} training paths...", flush=True)
+    print(f"\n[PATH SAMPLING] requesting {n_paths} paths...", flush=True)
     paths = sampler.sample_batch(n_paths, verbose=True)
+
+    if paths:
+        path_lengths = [len(p) for p in paths]
+        converged = sum(1 for p in paths if any(all(t.is_invariant for t in triad) for triad in p))
+        print(
+            f"[PATH SAMPLING] done  paths={len(paths)}  "
+            f"converged={converged}/{len(paths)} ({converged/len(paths):.0%})  "
+            f"turns min/avg/max={min(path_lengths)}/{sum(path_lengths)/len(path_lengths):.1f}/{max(path_lengths)}",
+            flush=True,
+        )
+    else:
+        print("[PATH SAMPLING] FAILED — 0 paths returned", flush=True)
+
     examples: List[TrainingExample] = []
 
     for path in paths:
@@ -109,41 +126,61 @@ def _batchify(
     id_to_idx,
     class_to_idx,
     phase_to_idx,
+    stream_to_idx,
+    agency_to_idx,
     device: str,
 ) -> Dict[str, torch.Tensor]:
     context_token_ids = []
     context_class_ids = []
     context_phase_ids = []
+    context_stream_ids = []
+    context_agency_ids = []
     context_positions = []
 
     candidate_token_ids = []
     candidate_class_ids = []
     candidate_phase_ids = []
+    candidate_stream_ids = []
+    candidate_agency_ids = []
 
     negative_token_ids = []
     negative_class_ids = []
     negative_phase_ids = []
+    negative_stream_ids = []
+    negative_agency_ids = []
 
     cumulative_dimensions = []
     target_delta = []
     path_energies = []
 
     for ex, neg in zip(examples, negatives):
-        t_ids, c_ids, p_ids = _encode_tokens(ex.context_tokens, id_to_idx, class_to_idx, phase_to_idx)
+        t_ids, c_ids, p_ids, s_ids, a_ids = _encode_tokens(
+            ex.context_tokens, id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx
+        )
         context_token_ids.append(t_ids)
         context_class_ids.append(c_ids)
         context_phase_ids.append(p_ids)
+        context_stream_ids.append(s_ids)
+        context_agency_ids.append(a_ids)
         context_positions.append([list(pos) for pos in ex.context_positions])
 
-        t_ids, c_ids, p_ids = _encode_tokens(ex.triad, id_to_idx, class_to_idx, phase_to_idx)
+        t_ids, c_ids, p_ids, s_ids, a_ids = _encode_tokens(
+            ex.triad, id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx
+        )
         candidate_token_ids.append(t_ids)
         candidate_class_ids.append(c_ids)
         candidate_phase_ids.append(p_ids)
+        candidate_stream_ids.append(s_ids)
+        candidate_agency_ids.append(a_ids)
 
-        t_ids, c_ids, p_ids = _encode_tokens(neg, id_to_idx, class_to_idx, phase_to_idx)
+        t_ids, c_ids, p_ids, s_ids, a_ids = _encode_tokens(
+            neg, id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx
+        )
         negative_token_ids.append(t_ids)
         negative_class_ids.append(c_ids)
         negative_phase_ids.append(p_ids)
+        negative_stream_ids.append(s_ids)
+        negative_agency_ids.append(a_ids)
 
         cumulative_dimensions.append(ex.cumulative_dimensions)
         target_delta.append(ex.target_delta)
@@ -152,6 +189,8 @@ def _batchify(
     context_token_ids, context_mask = _pad_sequences(context_token_ids, pad=0)
     context_class_ids, _ = _pad_sequences(context_class_ids, pad=0)
     context_phase_ids, _ = _pad_sequences(context_phase_ids, pad=0)
+    context_stream_ids, _ = _pad_sequences(context_stream_ids, pad=0)
+    context_agency_ids, _ = _pad_sequences(context_agency_ids, pad=0)
 
     max_len = context_token_ids.size(1)
     pos_arr = np.zeros((len(context_positions), max_len, 2), dtype=np.float32)
@@ -163,14 +202,20 @@ def _batchify(
         "placed_token_ids": context_token_ids.to(device),
         "placed_class_ids": context_class_ids.to(device),
         "placed_phase_ids": context_phase_ids.to(device),
+        "placed_stream_ids": context_stream_ids.to(device),
+        "placed_agency_ids": context_agency_ids.to(device),
         "placed_positions": torch.tensor(pos_arr, device=device),
         "placed_mask": context_mask.to(device),
         "candidate_token_ids": torch.tensor(candidate_token_ids, device=device),
         "candidate_class_ids": torch.tensor(candidate_class_ids, device=device),
         "candidate_phase_ids": torch.tensor(candidate_phase_ids, device=device),
+        "candidate_stream_ids": torch.tensor(candidate_stream_ids, device=device),
+        "candidate_agency_ids": torch.tensor(candidate_agency_ids, device=device),
         "negative_token_ids": torch.tensor(negative_token_ids, device=device),
         "negative_class_ids": torch.tensor(negative_class_ids, device=device),
         "negative_phase_ids": torch.tensor(negative_phase_ids, device=device),
+        "negative_stream_ids": torch.tensor(negative_stream_ids, device=device),
+        "negative_agency_ids": torch.tensor(negative_agency_ids, device=device),
         "cumulative_dimensions": torch.tensor(np.stack(cumulative_dimensions), device=device),
         "target_delta": torch.tensor(np.stack(target_delta), device=device),
         "path_energies": torch.tensor(np.stack(path_energies), device=device),
@@ -200,23 +245,35 @@ def train_mystery_cartridge(
         token_graph=spec.token_graph,
     ).to(device)
 
-    id_to_idx, class_to_idx, phase_to_idx = _build_mappings(spec.tokens)
+    id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx = _build_mappings(spec.tokens)
     examples = _build_examples(spec, n_paths)
     if not examples:
-        print("No training examples generated. Exiting.", flush=True)
+        print("[TRAIN] ERROR: no training examples generated — aborting.", flush=True)
         return model, {"loss": 0.0}
 
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     criterion = CombinedMysteryLoss()
 
     batch_size = min(64, len(examples))
-    history = {"loss": 0.0}
+    history: Dict[str, float] = {"loss": 0.0}
     total_batches = max(1, (len(examples) + batch_size - 1) // batch_size)
-    print(f"Examples: {len(examples)} | Batch size: {batch_size} | Batches/epoch: {total_batches}", flush=True)
+    param_count = sum(p.numel() for p in model.parameters())
+    print(
+        f"\n[TRAIN] examples={len(examples)}  batch_size={batch_size}  "
+        f"batches/epoch={total_batches}  params={param_count:,}",
+        flush=True,
+    )
+    print("[TRAIN] epoch  loss     e_pos   e_neg   delta_err", flush=True)
+    print("[TRAIN] " + "-" * 45, flush=True)
+
+    loss_history: List[float] = []
 
     for epoch in range(n_epochs):
         np.random.shuffle(examples)
         epoch_loss = 0.0
+        epoch_e_pos = 0.0
+        epoch_e_neg = 0.0
+        epoch_delta_err = 0.0
         batch_count = total_batches
 
         for idx, start in enumerate(range(0, len(examples), batch_size), start=1):
@@ -229,6 +286,8 @@ def train_mystery_cartridge(
                 id_to_idx,
                 class_to_idx,
                 phase_to_idx,
+                stream_to_idx,
+                agency_to_idx,
                 device,
             )
 
@@ -242,6 +301,10 @@ def train_mystery_cartridge(
                 batch["candidate_token_ids"],
                 batch["candidate_class_ids"],
                 batch["candidate_phase_ids"],
+                placed_stream_ids=batch["placed_stream_ids"],
+                placed_agency_ids=batch["placed_agency_ids"],
+                candidate_stream_ids=batch["candidate_stream_ids"],
+                candidate_agency_ids=batch["candidate_agency_ids"],
             )
             output_neg = model(
                 batch["placed_token_ids"],
@@ -252,6 +315,10 @@ def train_mystery_cartridge(
                 batch["negative_token_ids"],
                 batch["negative_class_ids"],
                 batch["negative_phase_ids"],
+                placed_stream_ids=batch["placed_stream_ids"],
+                placed_agency_ids=batch["placed_agency_ids"],
+                candidate_stream_ids=batch["negative_stream_ids"],
+                candidate_agency_ids=batch["negative_agency_ids"],
             )
 
             loss_dict = criterion(
@@ -266,7 +333,10 @@ def train_mystery_cartridge(
             )
 
             if not torch.isfinite(loss_dict["total"]).all():
-                print("Non-finite loss detected. Aborting training.", flush=True)
+                print(
+                    f"[TRAIN] ERROR: non-finite loss at epoch {epoch+1} batch {idx} — aborting.",
+                    flush=True,
+                )
                 return model, {"loss": float("nan")}
 
             optimizer.zero_grad()
@@ -274,13 +344,29 @@ def train_mystery_cartridge(
             optimizer.step()
 
             epoch_loss += float(loss_dict["total"].detach().cpu())
-            if idx % 15 == 0 or idx == batch_count:
-                print(
-                    f"Epoch {epoch+1:02d}/{n_epochs} | batch {idx}/{batch_count}",
-                    flush=True,
-                )
+            epoch_e_pos += float(output_pos["energy"].mean().detach().cpu())
+            epoch_e_neg += float(output_neg["energy"].mean().detach().cpu())
+            delta_err = float(
+                (output_pos["convergence_delta"] - batch["target_delta"]).abs().mean().detach().cpu()
+            )
+            epoch_delta_err += delta_err
 
-        history["loss"] = epoch_loss / batch_count
-        print(f"Epoch {epoch+1:02d}/{n_epochs} | loss={history['loss']:.4f}", flush=True)
+        avg_loss = epoch_loss / batch_count
+        history["loss"] = avg_loss
+        loss_history.append(avg_loss)
+
+        trend = ""
+        if len(loss_history) >= 2:
+            delta = loss_history[-1] - loss_history[-2]
+            trend = f"{'↓' if delta < 0 else '↑'}{abs(delta):.4f}"
+
+        print(
+            f"[TRAIN] {epoch+1:02d}/{n_epochs}  "
+            f"{avg_loss:.4f}  "
+            f"{epoch_e_pos/batch_count:.3f}  "
+            f"{epoch_e_neg/batch_count:.3f}  "
+            f"{epoch_delta_err/batch_count:.4f}  {trend}",
+            flush=True,
+        )
 
     return model, history
