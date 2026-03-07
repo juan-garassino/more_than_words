@@ -94,6 +94,10 @@ class GameSpec:
                 return t
         raise KeyError(tid)
 
+    @property
+    def invariant_tokens(self) -> List[Token]:
+        return [self.get_token(tid) for tid in self.invariant_token_ids]
+
 
 @dataclass
 class PlacedConnection:
@@ -688,7 +692,7 @@ def action_scene(state: GameState, model) -> str:
     if not state.engine_pool:
         return "[yellow]Nothing more stirs in the world tonight.[/yellow]"
 
-    placed_ids = [t.id for t in state.atmosphere] + list(state.casebook.played_token_ids())
+    placed_ids = [t.id for t in state.atmosphere] + list(state.casebook.placed_token_ids())
     candidates = state.engine_pool[:10]
     scored = [
         (tok, state.spec.token_graph.induced_subgraph_energy(placed_ids, [tok.id]))
