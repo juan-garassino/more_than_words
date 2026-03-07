@@ -1,0 +1,26 @@
+{
+  "cartridge_type": "MYSTERY",
+  "case_id": "amber_cipher_L",
+  "title": "The Amber Cipher: The Long Case",
+  "version": "1.0.0",
+  "vocab_size": 152,
+  "embedding_dim": 64,
+  "context_dim": 128,
+  "n_attractor_dims": 5,
+  "convergence_threshold": 0.75,
+  "convergence_rate": 0.38,
+  "min_turns": 15,
+  "max_turns": 28,
+  "opening_token_ids": [
+    "location:thornfield_crossing",
+    "event:aldous_verne_discovered",
+    "time:between_trains"
+  ],
+  "invariant_token_ids": [
+    "suspect:renard_voss",
+    "event:window_between_trains",
+    "motive:fraud_concealment",
+    "location:stationmasters_office",
+    "accomplice:elara_voss"
+  ]
+}

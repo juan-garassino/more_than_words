@@ -18,6 +18,7 @@ class TokenClass(str, Enum):
     MOTIVE = "MOTIVE"
     WITNESS = "WITNESS"
     EVENT = "EVENT"
+    ACCOMPLICE = "ACCOMPLICE"
     NEED = "NEED"
     STATE = "STATE"
     OFFERING = "OFFERING"

@@ -20,6 +20,16 @@ def pack_case(case_path: Path, output_dir: Path) -> None:
     tokens = case["tokens"]
     expressions = case.get("expressions", {})
 
+    # Derive n_attractor_dims from the attractor dimensions array if present
+    attractor_dims = case.get("attractor", {}).get("dimensions", [])
+    n_attractor_dims = len(attractor_dims) if attractor_dims else 3
+
+    # Read convergence params from case JSON, fall back to defaults
+    convergence_rate = case.get("convergence_rate", 0.40)
+    convergence_threshold = case.get("convergence_threshold", 0.75)
+    min_turns = case.get("min_turns", 10)
+    max_turns = case.get("max_turns", 18)
+
     spec = {
         "cartridge_type": "MYSTERY",
         "case_id": case["case_id"],
@@ -28,11 +38,11 @@ def pack_case(case_path: Path, output_dir: Path) -> None:
         "vocab_size": len(tokens),
         "embedding_dim": 64,
         "context_dim": 128,
-        "n_attractor_dims": 3,
-        "convergence_threshold": 0.75,
-        "convergence_rate": 0.40,
-        "min_turns": 10,
-        "max_turns": 18,
+        "n_attractor_dims": n_attractor_dims,
+        "convergence_threshold": convergence_threshold,
+        "convergence_rate": convergence_rate,
+        "min_turns": min_turns,
+        "max_turns": max_turns,
         "opening_token_ids": case["opening_token_ids"],
         "invariant_token_ids": case["invariant_token_ids"],
     }
@@ -58,8 +68,8 @@ def pack_case(case_path: Path, output_dir: Path) -> None:
 
     graph = case["graph"]
     phases = {
-        "min_turns": 10,
-        "max_turns": 18,
+        "min_turns": min_turns,
+        "max_turns": max_turns,
     }
     attractor = {
         "invariants": case["invariant_token_ids"],
