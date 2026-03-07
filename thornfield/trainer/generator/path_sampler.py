@@ -197,9 +197,9 @@ class PathSampler:
             path.append(chosen)
 
             if casebook.convergence_score >= 0.75 and turn >= self.min_turns:
-                invariants = self.spec.invariant_tokens
-                casebook.place_triad(invariants, position=(7, 2))
-                path.append(invariants)
+                # Append invariants as a termination marker (not placed in casebook —
+                # place_triad requires exactly 3 tokens but n_invariants may differ).
+                path.append(self.spec.invariant_tokens)
                 return path
 
         return path if self.allow_partial and path else None
