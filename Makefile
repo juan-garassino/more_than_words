@@ -64,7 +64,7 @@ ac-s01-validate:
 	@echo "================================================================"
 	@echo "  AC  STAGE 01 — VALIDATE  (amber_cipher.json)"
 	@echo "================================================================"
-	python3 thornfield_case_validator.py amber_cipher.json
+	python3 thornfield_case_validator.py cases/amber_cipher.json
 	@echo "  [OK] amber_cipher.json is valid"
 
 validate-amber-cipher: ac-s01-validate   # backwards-compat alias
@@ -78,7 +78,7 @@ ac-s02-pack: ac-s01-validate
 	@echo "================================================================"
 	@echo "  AC  STAGE 02 — PACK  (amber_cipher → cases/amber_cipher/)"
 	@echo "================================================================"
-	python3 thornfield/trainer/tools/pack_case.py amber_cipher.json
+	python3 thornfield/trainer/tools/pack_case.py cases/amber_cipher.json
 	@echo "  [OK] packed to thornfield/trainer/cases/amber_cipher/"
 
 pack-amber-cipher: ac-s02-pack   # backwards-compat alias
@@ -249,7 +249,7 @@ acm-s01-validate:
 	@echo "================================================================"
 	@echo "  ACM STAGE 01 — VALIDATE  (amber_cipher_M.json)"
 	@echo "================================================================"
-	python3 thornfield_case_validator.py amber_cipher_M.json
+	python3 thornfield_case_validator.py cases/amber_cipher_M.json
 	@echo "  [OK] amber_cipher_M.json is valid"
 
 validate-amber-cipher-M: acm-s01-validate
@@ -263,7 +263,7 @@ acm-s02-pack: acm-s01-validate
 	@echo "================================================================"
 	@echo "  ACM STAGE 02 — PACK  (amber_cipher_M → cases/amber_cipher_M/)"
 	@echo "================================================================"
-	python3 thornfield/trainer/tools/pack_case.py amber_cipher_M.json
+	python3 thornfield/trainer/tools/pack_case.py cases/amber_cipher_M.json
 	@echo "  [OK] packed to thornfield/trainer/cases/amber_cipher_M/"
 
 pack-amber-cipher-M: acm-s02-pack

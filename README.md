@@ -12,40 +12,59 @@ The game is **retrieval**: the player places triads of tokens onto a casebook. E
 
 | Component | Role | Ships? |
 |---|---|---|
-| Hopfield network | Proof oracle and teacher — generates training data, validates convergence | No |
+| Hopfield network | Training scaffold and proof oracle | No |
 | `model.pt` | Trained Hopfield weights | No |
-| `policy.pt` | Transformer trained via KD + RL | **Yes — this runs the iOS game** |
+| `policy.pt` | Transformer trained via KD + RL | **Yes — runs the iOS game** |
 | `.cartridge` | Packed case spec (vocabulary, graph, convergence rules) | **Yes** |
 
 Each case is a DLC: one `.cartridge` + one `policy.pt`. The transformer runs on-device. No backend required.
 
 ---
 
-## Core idea
+## The cases
 
-A Thornfield mystery is a **Modern Hopfield Network** expressed as a game. The network stores one solution — three invariant tokens (killer, mechanism, motive) — as its energy minimum. Every other token is a clue, distractor, or atmosphere. The player guides the network toward convergence by placing triads.
+Twenty-four cases across mystery, naval, and adventure formats. See [`docs/cases/`](docs/cases/) for the full narrative specifications.
 
-The **Hopfield engine** is symbolically correct and mathematically provable. But it is a fixed rule with no game-feel — it cannot learn pacing, exploration, or diversity.
+### Mystery (01–20)
 
-The **transformer policy** is trained to do what the Hopfield cannot:
-- **Stage 1 — Knowledge distillation**: the Hopfield attractor weight matrix becomes a soft teacher distribution. The transformer learns the full energy gradient, not just the argmax.
-- **Stage 2 — REINFORCE**: the transformer explores beyond Hopfield demonstrations. It is rewarded for energy efficiency, correct timing (13–17 turns), and narrative diversity.
+| # | Title | Period | Setting | Difficulty |
+|---|---|---|---|---|
+| 01 | The Amber Cipher | 1887 | Railway junction, Essex | medium |
+| 02 | The Venetian Mirror | 1931 | Palazzo, Venice carnival | hard |
+| 03 | Fog Over Brussels | 1961 | Belgian embassy | hard |
+| 04 | The Hollow Season | 1907 | Edwardian country house | medium |
+| 05 | The Resonance Test | 1974 | Music conservatory, London | easy |
+| 06 | The Tidal Interval | Present | Island research station | medium |
+| 07 | The Third Signature | 1935 | London literary club | hard |
+| 08 | The Sulphur Line | 1889 | Victorian chemical works | medium |
+| 09 | The Orchard at Dusk | 1903 | Rural England, harvest | easy |
+| 10 | The Attended Hour | Present | Hospital cardiac ward | hard |
+| 11 | The Winter Station | 1912 | Antarctic research depot | medium |
+| 12 | The Monsoon Ledger | 1905 | Calcutta, Bengal Partition | medium |
+| 13 | The Observatory Clock | 1900 | Paris Observatory | medium |
+| 14 | The Endgame | 1972 | Reykjavik chess championship | hard |
+| 15 | The Amber Silence | 1943 | Occupied Normandy | hard |
+| 16 | The Signal Fire | 1943 | Pacific island, WWII | hard |
+| 17 | The Covenant Garden | 1349 | Yorkshire monastery | medium |
+| 18 | The Mountain Exchange | 1938 | Swiss Alps, pre-war | hard |
+| 19 | The Instrument Landing | 1954 | Post-war London | medium |
+| 20 | The Burning Glass | 1909 | Istanbul, Young Turk era | medium |
 
-The transformer must pass the same proof gate as the Hopfield before it can ship. If it passes, the benchmark outputs `DECISION: SHIP TRANSFORMER` and points to `policy.pt`.
+### Naval (21)
 
----
+| # | Title | Period | Setting | Difficulty |
+|---|---|---|---|---|
+| 21 | The Dead Calm | 1698 | Pirate brigantine, Caribbean | hard |
 
-## Cases
+### Adventure (A01–A03)
 
-Each case is an independent DLC: one vocabulary, one trained transformer, one cartridge.
+Adventure cases converge toward a **chosen state** rather than a fixed truth. The player's choices determine what becomes possible. The field records them.
 
-| File | ID | Dims | Vocab | Difficulty | Status |
-|---|---|---|---|---|---|
-| `amber_cipher.json` | `amber_cipher` | 3 | 72 tokens | medium (M) | trained, proof passed |
-| `amber_cipher_L.json` | `amber_cipher_L` | 5 | 152 tokens | large (L) | packed, ready to train |
-| `attended_hour.json` | — | — | — | — | draft |
-| `fog_over_brussels.json` | — | — | — | — | draft |
-| `hollow_season.json` | — | — | — | — | draft |
+| # | Title | Period | Protagonist |
+|---|---|---|---|
+| A01 | The Thirteenth Tide | 1697 | Sera Vane, cartographer's daughter, Nassau |
+| A02 | The Glass Cartographer | 1627 | Lena Faber, glassmaker's daughter, Bohemia |
+| A03 | The Iron Cartridge | 1876 | Elias Drum, interpreter, Dakota Territory |
 
 ---
 
@@ -59,14 +78,14 @@ make ac-pipeline
 make ac-pipeline-gpu
 
 # Or run stages individually:
-make ac-s01-validate        # check amber_cipher.json structure
+make ac-s01-validate        # check cases/amber_cipher.json
 make ac-s02-pack            # pack → thornfield/trainer/cases/amber_cipher/
 make ac-s03-train-hopfield  # train Hopfield model → outputs/amber_cipher/model.pt
 make ac-s04-train-policy    # supervised + REINFORCE → outputs/amber_cipher/policy.pt
 make ac-s05-benchmark       # compare both, print XCODE RECOMMENDATION
 ```
 
-At the end of `ac-s05-benchmark`, the output includes:
+At the end of `ac-s05-benchmark`:
 
 ```
 ================================================================
@@ -74,41 +93,8 @@ At the end of `ac-s05-benchmark`, the output includes:
 ================================================================
   DECISION  : SHIP TRANSFORMER
   USE FILE  : outputs/amber_cipher/policy.pt
-  FULL PATH : /path/to/.../outputs/amber_cipher/policy.pt
 ================================================================
 ```
-
----
-
-## Pipeline overview
-
-```
-amber_cipher.json
-      │
-      ▼ s01  thornfield_case_validator.py
-  validated JSON
-      │
-      ▼ s02  tools/pack_case.py
-  cases/amber_cipher/
-    spec.json, tokens.json, graph.json, ...
-      │
-      ▼ s03  tools/train_single_case.py
-  outputs/amber_cipher/model.pt          ← Hopfield model + proof gate
-      │
-      ├─ Hopfield paths (PathSampler, allow_partial=True)
-      │       2000 convergent demonstrations
-      │
-      ▼ s04  trainer/train_policy.py
-  [Stage 1] Supervised pretraining       ← behavioral cloning from Hopfield
-  [Stage 2] REINFORCE fine-tuning        ← RL on CasebookEnv
-  outputs/amber_cipher/policy.pt
-      │
-      ▼ s05  tools/benchmark_models.py
-  comparison table + proof gate on transformer
-  → DECISION: SHIP TRANSFORMER / KEEP HOPFIELD
-```
-
-See [`docs/training.md`](docs/training.md) for the full training philosophy.
 
 ---
 
@@ -118,103 +104,49 @@ See [`docs/training.md`](docs/training.md) for the full training philosophy.
 MysteryEnergyModel
 ├── TokenEmbedding          token_id + class + phase + stream + agency → (B, 64)
 ├── CasebookEncoder         attention over placed tokens → context (B, 128)
+├── HopfieldRetrievalHead   Q·K^T retrieval → invariant logits (B, n_dims, V)
 ├── TriadEnergyHead         energy score for a candidate triad (B, 1)
 ├── ConvergenceHead         predicted convergence delta per dim (B, n_dims)
-├── HopfieldRetrievalHead   Q·K^T retrieval → invariant logits (B, n_dims, V)
 └── TokenResonanceHead      field resonance → next-token suggestions (B, V)
 ```
 
-The **HopfieldRetrievalHead** is the game policy. It implements transformer self-attention where:
-- `Q` = query vectors projected from context (one per attractor dimension)
-- `K = V` = token embedding matrix for the full vocabulary
-
-This is the Modern Hopfield / transformer-attention equivalence: `scores = QK^T / sqrt(d)`.
+The `HopfieldRetrievalHead` is the game policy. It implements transformer self-attention where Q = query vectors projected from context (one per attractor dimension) and K = V = token embedding matrix for the full vocabulary. This is the Modern Hopfield / transformer-attention equivalence: `scores = QK^T / sqrt(d)`.
 
 See [`docs/architecture.md`](docs/architecture.md) for the full model breakdown.
 
 ---
 
-## Makefile reference
-
-### amber_cipher  (`ac-`)
-
-| Target | What it does |
-|---|---|
-| `ac-s01-validate` | Validate `amber_cipher.json` |
-| `ac-s02-pack` | Pack case → `trainer/cases/amber_cipher/` |
-| `ac-s03-train-hopfield` | Train Hopfield model, CPU |
-| `ac-s03-train-hopfield-gpu` | Train Hopfield model, GPU |
-| `ac-s03-train-hopfield-fastproof` | Train with reduced proof (dev) |
-| `ac-s04-train-policy` | Supervised + REINFORCE policy, CPU |
-| `ac-s04-train-policy-gpu` | Supervised + REINFORCE policy, GPU |
-| `ac-s05-benchmark` | Benchmark + Xcode recommendation |
-| `ac-pipeline` | Full pipeline, CPU |
-| `ac-pipeline-gpu` | Full pipeline, GPU |
-
-### amber_cipher_M  (`acm-`)  — 5-dim, 152 tokens
-
-| Target | What it does |
-|---|---|
-| `acm-s01-validate` | Validate `amber_cipher_M.json` |
-| `acm-s02-pack` | Pack case → `trainer/cases/amber_cipher_M/` |
-| `acm-s03-train-hopfield` | Train Hopfield model, CPU |
-| `acm-s03-train-hopfield-gpu` | Train Hopfield model, GPU |
-| `acm-s04-train-policy` | Supervised + REINFORCE policy, CPU |
-| `acm-s04-train-policy-gpu` | Supervised + REINFORCE policy, GPU |
-| `acm-s05-benchmark` | Benchmark + Xcode recommendation |
-| `acm-pipeline` | Full pipeline, CPU |
-| `acm-pipeline-gpu` | Full pipeline, GPU |
-
----
-
-## Key files
+## Repository layout
 
 ```
 more_than_words/
-├── amber_cipher.json              case definition (small, 3-dim)
-├── amber_cipher_M.json            case definition (medium, 5-dim)
-├── thornfield_case_validator.py   validates case JSON before packing
-├── Makefile                       all pipeline commands
+├── CLAUDE.md                     project instructions
+├── Makefile                      all pipeline commands
+├── thornfield_case_validator.py  validates case JSON before packing
+│
+├── cases/                        case definitions (JSON)
+│   ├── amber_cipher.json         trained, proof passed
+│   ├── amber_cipher_M.json       large variant (5-dim, 152 tokens)
+│   └── *.json                    draft cases
 │
 ├── docs/
-│   ├── architecture.md            model components deep-dive
-│   └── training.md                training philosophy + distillation
+│   ├── architecture.md           model components deep-dive
+│   ├── training.md               training philosophy + distillation
+│   └── cases/                    narrative specifications for all 24 cases
+│       ├── index.md
+│       ├── 01_amber_cipher.md … 21_dead_calm.md
+│       └── A01_thirteenth_tide.md … A03_iron_cartridge.md
+│
+├── notebooks/                    Colab and development notebooks
 │
 └── thornfield/trainer/
-    ├── core/
-    │   ├── token.py               Token, TokenClass, TokenPhase, TokenStream
-    │   ├── hopfield.py            TokenGraph — energy, subgraph_energy (Lyapunov)
-    │   ├── casebook.py            CasebookState — convergence tracking
-    │   └── cartridge.py           CartridgeSpec — full case spec loader
-    │
-    ├── generator/
-    │   └── path_sampler.py        PathSampler — Monte Carlo path generator
-    │
-    ├── trainer/
-    │   ├── energy_model.py        MysteryEnergyModel (all heads)
-    │   ├── loss.py                EnergyMargin + Attractor + Lyapunov + Retrieval
-    │   ├── train_mystery.py       Hopfield training loop
-    │   └── train_policy.py        Supervised pretraining + REINFORCE loop
-    │
-    ├── rl/
-    │   ├── casebook_env.py        Gym-style env wrapping CasebookState
-    │   └── rewards.py             compute_reward — energy + timing + diversity
-    │
-    ├── validator/
-    │   └── convergence_proof.py   Lyapunov + basin + invariant proof gate
-    │
-    ├── tools/
-    │   ├── pack_case.py           JSON → cases/<id>/
-    │   ├── train_single_case.py   Hopfield training entry point
-    │   └── benchmark_models.py    Hopfield vs Transformer comparison
-    │
-    └── outputs/
-        ├── amber_cipher/
-        │   ├── model.pt           trained Hopfield weights
-        │   ├── policy.pt          trained transformer policy (after s04)
-        │   └── TheAmberCipher.cartridge   iOS export
-        └── amber_cipher_M/
-            └── model.pt           (after acm-s03)
+    ├── core/                     Token, CasebookState, TokenGraph, CartridgeSpec
+    ├── generator/                PathSampler
+    ├── trainer/                  MysteryEnergyModel, train_mystery.py, train_policy.py
+    ├── rl/                       CasebookEnv, rewards.py
+    ├── validator/                convergence_proof.py
+    ├── tools/                    pack_case.py, benchmark_models.py
+    └── outputs/                  model.pt + policy.pt per case
 ```
 
 ---

@@ -24,8 +24,8 @@ Each case is a fully specified symbolic field:
 - Progress visibility (clear batch/proof progress output).
 
 ## Key Commands
-- Validate case: `python3 thornfield_case_validator.py amber_cipher.json`
-- Pack case: `python3 thornfield/trainer/tools/pack_case.py amber_cipher.json`
+- Validate case: `python3 thornfield_case_validator.py cases/amber_cipher.json`
+- Pack case: `python3 thornfield/trainer/tools/pack_case.py cases/amber_cipher.json`
 - Train + proof: `make train-amber-cipher-colab-cpu`
 - Train without proof: add `--skip-proof`
 - Load trained model: `python3 thornfield/trainer/tools/load_trained_model.py thornfield/trainer/outputs/amber_cipher/model.pt`
