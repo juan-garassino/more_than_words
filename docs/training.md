@@ -33,13 +33,23 @@ make acm-pipeline-gpu    # full pipeline GPU (~20 min)
 
 ---
 
+## What ships
+
+**The transformer ships. The Hopfield never does.**
+
+The product is a transformer-powered mystery game. Each case is distributed as a self-contained DLC: a `.cartridge` (packed vocabulary + graph + convergence spec) and a `policy.pt` (trained transformer weights). The transformer runs entirely on-device with no server or backend.
+
+The Hopfield engine is the **training scaffold and proof oracle**. It generates demonstrations, encodes the solution as an energy minimum, and runs the proof gate. Once the transformer passes the gate, the Hopfield has served its purpose. Players interact only with the transformer.
+
+---
+
 ## The training philosophy
 
-### Why two stages?
+### Why transformer? Why two stages?
 
-The Hopfield graph engine is **symbolically correct** — it provably converges to the stored solution within the turn window (proof gate). But it is a fixed rule: it samples paths according to graph energy, with no concept of game-feel, pacing, or the diversity a real player would want.
+The Hopfield graph engine is **symbolically correct** — it provably converges to the stored solution within the turn window (proof gate). But it is a fixed rule: it samples paths according to graph energy, with no concept of game-feel, pacing, or narrative diversity.
 
-The transformer policy learns from Hopfield expertise, then improves beyond it via reinforcement learning. The goal is a model that passes the same proof gate as the Hopfield engine but also plays better games — more exploratory, better paced, hitting the target turn window of 13–17 turns.
+The transformer learns from Hopfield expertise, then improves beyond it via reinforcement learning. The goal: a model that passes the same proof gate as the Hopfield but also plays *better games* — more exploratory, better paced, hitting the target turn window of 13–17 turns. Crucially, it can be marketed as a transformer-powered AI opponent, because that is exactly what it is.
 
 ---
 

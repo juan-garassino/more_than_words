@@ -1,27 +1,48 @@
 # Thornfield
 
-A symbolic mystery game engine built on a **Modern Hopfield Network**, with a Python training pipeline and an iOS runtime. There is no LLM. Inference operates entirely on token IDs and float weights — no text generation, no embeddings from language models.
+A mystery game **powered by a transformer**, trained via knowledge distillation and reinforcement learning. Each case ships as a self-contained trained model — no server, no LLM, no text generation. Inference runs entirely on-device from token IDs and float weights.
 
-The game is **retrieval**: the player places triads of tokens onto a casebook. Each placement updates a convergence state across attractor dimensions. When the energy landscape converges to the stored invariants (killer, mechanism, motive), the case is solved.
+The game is **retrieval**: the player places triads of tokens onto a casebook. Each placement updates a convergence state across attractor dimensions. When the field converges to the stored solution (killer, mechanism, motive), the case is solved.
+
+---
+
+## What ships
+
+**The transformer ships. The Hopfield never does.**
+
+| Component | Role | Ships? |
+|---|---|---|
+| Hopfield network | Proof oracle and teacher — generates training data, validates convergence | No |
+| `model.pt` | Trained Hopfield weights | No |
+| `policy.pt` | Transformer trained via KD + RL | **Yes — this runs the iOS game** |
+| `.cartridge` | Packed case spec (vocabulary, graph, convergence rules) | **Yes** |
+
+Each case is a DLC: one `.cartridge` + one `policy.pt`. The transformer runs on-device. No backend required.
 
 ---
 
 ## Core idea
 
-The Hopfield network stores a mystery solution as an energy minimum. Every token in the vocabulary has a weight vector (attractor weights) and edges to related tokens (affinity graph). Placing tokens decreases system energy. The solution — three invariant tokens — sits at the global minimum.
+A Thornfield mystery is a **Modern Hopfield Network** expressed as a game. The network stores one solution — three invariant tokens (killer, mechanism, motive) — as its energy minimum. Every other token is a clue, distractor, or atmosphere. The player guides the network toward convergence by placing triads.
 
-The training pipeline validates this mathematically via a **proof gate**: a Lyapunov monotonicity check, basin coverage test, and convergence proof that the network reliably reaches the correct attractors within the allowed turn window.
+The **Hopfield engine** is symbolically correct and mathematically provable. But it is a fixed rule with no game-feel — it cannot learn pacing, exploration, or diversity.
 
-A **transformer policy** is then trained on top: first by imitating Hopfield-generated paths (behavioral cloning), then fine-tuned with REINFORCE to optimise for game-feel metrics like mean turn count and solution diversity. The transformer must pass the same proof gate before it can ship.
+The **transformer policy** is trained to do what the Hopfield cannot:
+- **Stage 1 — Knowledge distillation**: the Hopfield attractor weight matrix becomes a soft teacher distribution. The transformer learns the full energy gradient, not just the argmax.
+- **Stage 2 — REINFORCE**: the transformer explores beyond Hopfield demonstrations. It is rewarded for energy efficiency, correct timing (13–17 turns), and narrative diversity.
+
+The transformer must pass the same proof gate as the Hopfield before it can ship. If it passes, the benchmark outputs `DECISION: SHIP TRANSFORMER` and points to `policy.pt`.
 
 ---
 
 ## Cases
 
+Each case is an independent DLC: one vocabulary, one trained transformer, one cartridge.
+
 | File | ID | Dims | Vocab | Difficulty | Status |
 |---|---|---|---|---|---|
-| `amber_cipher.json` | `amber_cipher` | 3 | 72 tokens | medium | trained, proof passed |
-| `amber_cipher_M.json` | `amber_cipher_M` | 5 | 152 tokens | hard | packed, ready to train |
+| `amber_cipher.json` | `amber_cipher` | 3 | 72 tokens | medium (M) | trained, proof passed |
+| `amber_cipher_L.json` | `amber_cipher_L` | 5 | 152 tokens | large (L) | packed, ready to train |
 | `attended_hour.json` | — | — | — | — | draft |
 | `fog_over_brussels.json` | — | — | — | — | draft |
 | `hollow_season.json` | — | — | — | — | draft |

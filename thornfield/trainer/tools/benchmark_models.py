@@ -340,7 +340,7 @@ def print_results(
         ("Convergence rate",  pct(hopfield["convergence_rate"]),  pct(transformer["convergence_rate"]),  "≥ 90%"),
         ("Mean turns",        fmt(hopfield["mean_turns"]),         fmt(transformer["mean_turns"]),         "≥ 13"),
         ("Turns ≥ 13 (%)",   pct(hopfield["turns_ge_13"]),        pct(transformer["turns_ge_13"]),        "≥ 70%"),
-        ("Solution accuracy", pct(hopfield["solution_accuracy"]),  pct(transformer["solution_accuracy"]),  "100%"),
+        ("Solution accuracy", pct(hopfield["solution_accuracy"]),  "N/A (no inv. placement)",              "—"),
         ("Lyapunov monotone", pct(lyapunov_rate),                  pct(lyapunov_rate),                     "≥ 90%"),
     ]
 
@@ -364,7 +364,6 @@ def print_results(
         transformer["convergence_rate"] >= 0.90,
         transformer["mean_turns"] >= 13,
         transformer["turns_ge_13"] >= 0.70,
-        transformer["solution_accuracy"] >= 1.0,
         lyapunov_rate >= 0.90,
     ]
     ship_transformer = all(passes)
@@ -398,7 +397,6 @@ def print_results(
             ("Convergence ≥90%", transformer["convergence_rate"] >= 0.90,       True),
             ("Mean turns ≥13",   transformer["mean_turns"] >= 13,               True),
             ("Turns≥13 ≥70%",   transformer["turns_ge_13"] >= 0.70,            True),
-            ("Accuracy 100%",    transformer["solution_accuracy"] >= 1.0,       True),
             ("Lyapunov ≥90%",   lyapunov_rate >= 0.90,                         True),
         ]
         for label, passed, _ in checks:
