@@ -599,7 +599,11 @@ def main() -> None:
                         help="KD anchor coefficient in REINFORCE loss (default 0.05)")
     args = parser.parse_args()
 
-    device = torch.device(args.device)
+    _device_str = args.device
+    if _device_str == "cuda" and not torch.cuda.is_available():
+        logging.warning("CUDA requested but not available. Falling back to CPU.")
+        _device_str = "cpu"
+    device = torch.device(_device_str)
     case_id = args.case_id
     run_t0 = time.time()
 
