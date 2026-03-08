@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import logging
 import random
 import time
 from collections import deque
@@ -310,6 +311,49 @@ def _build_supervised_examples(spec: CartridgeSpec, n_paths: int) -> list:
     return examples
 
 
+def _collate_batch(
+    examples: list,
+    id_to_idx: Dict[str, int],
+    class_to_idx: Dict[str, int],
+    phase_to_idx: Dict[str, int],
+    stream_to_idx: Dict[str, int],
+    agency_to_idx: Dict[str, int],
+    n_dims: int,
+    device: torch.device,
+):
+    """Collate variable-length examples into padded GPU tensors for a batched forward pass."""
+    B = len(examples)
+    max_len = max(len(ex["context_tokens"]) for ex in examples)
+
+    tok_t   = torch.zeros(B, max_len, dtype=torch.long)
+    cls_t   = torch.zeros(B, max_len, dtype=torch.long)
+    phase_t = torch.zeros(B, max_len, dtype=torch.long)
+    strm_t  = torch.zeros(B, max_len, dtype=torch.long)
+    agcy_t  = torch.zeros(B, max_len, dtype=torch.long)
+    pos_t   = torch.zeros(B, max_len, 2, dtype=torch.float32)
+    mask_t  = torch.ones(B, max_len, dtype=torch.bool)   # True = padding (ignored by encoder)
+    inv_t   = torch.zeros(B, n_dims, dtype=torch.long)
+
+    for i, ex in enumerate(examples):
+        toks = ex["context_tokens"]
+        pos  = ex["context_positions"]
+        n    = len(toks)
+        tok_t[i, :n]   = torch.tensor([id_to_idx[t.id]                   for t in toks], dtype=torch.long)
+        cls_t[i, :n]   = torch.tensor([class_to_idx[t.token_class.value] for t in toks], dtype=torch.long)
+        phase_t[i, :n] = torch.tensor([phase_to_idx[t.phase.value]       for t in toks], dtype=torch.long)
+        strm_t[i, :n]  = torch.tensor([stream_to_idx[t.stream.value]     for t in toks], dtype=torch.long)
+        agcy_t[i, :n]  = torch.tensor([agency_to_idx[t.agency.value]     for t in toks], dtype=torch.long)
+        pos_t[i, :n]   = torch.tensor(pos, dtype=torch.float32)
+        mask_t[i, :n]  = False
+        inv_t[i]       = torch.tensor(ex["invariant_indices"], dtype=torch.long)
+
+    return (
+        tok_t.to(device), cls_t.to(device), phase_t.to(device),
+        strm_t.to(device), agcy_t.to(device), pos_t.to(device),
+        mask_t.to(device), inv_t.to(device), max_len,
+    )
+
+
 def train_supervised(
     model: MysteryEnergyModel,
     spec: CartridgeSpec,
@@ -354,6 +398,7 @@ def train_supervised(
     hard_history: List[float] = []
     soft_history: List[float] = []
 
+    batch_size = 64
     for epoch in range(n_epochs):
         if epoch == 5:
             _log("[SUPERVISED] Unfreezing TokenEmbedding (epoch 6+)")
@@ -368,47 +413,44 @@ def train_supervised(
         total_soft = 0.0
         n_batches = 0
 
-        for ex in examples:
-            optimizer.zero_grad()
-            logits = _get_retrieval_logits(
-                model,
-                ex["context_tokens"],
-                ex["context_positions"],
-                id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx,
-                device,
-            )  # (1, n_dims, V)
-            inv_indices = torch.tensor(
-                ex["invariant_indices"], dtype=torch.long, device=device
+        for batch_start in range(0, len(examples), batch_size):
+            batch = examples[batch_start : batch_start + batch_size]
+            tok_t, cls_t, phase_t, strm_t, agcy_t, pos_t, mask_t, inv_t, max_len = _collate_batch(
+                batch, id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx,
+                n_dims, device,
             )
+            B = tok_t.size(0)
+
+            # Batched forward pass — all on GPU
+            placed_emb = model.token_embedding(
+                tok_t.view(-1), cls_t.view(-1), phase_t.view(-1),
+                strm_t.view(-1), agcy_t.view(-1),
+            ).view(B, max_len, -1)                                        # (B, max_len, emb_dim)
+            context  = model.casebook_encoder(placed_emb, pos_t, mask_t) # (B, context_dim)
+            all_embs = model.token_embedding.token_emb(
+                torch.arange(model.vocab_size, device=device)
+            )                                                              # (V, emb_dim)
+            logits   = model.retrieval_head(context, all_embs)            # (B, n_dims, V)
 
             loss = torch.tensor(0.0, device=device)
             batch_hard = 0.0
             batch_soft = 0.0
-
             for d in range(n_dims):
-                dim_logits = logits[0, d, :]  # (V,)
-
-                # Hard cross-entropy: the invariant token is the ground truth
-                hard_ce = F.cross_entropy(
-                    dim_logits.unsqueeze(0), inv_indices[d].unsqueeze(0)
-                )
-
-                # Soft KD: KL(softmax(logits/T) ∥ soft_targets[d])
-                # Hinton et al. scaling: multiply by T² to preserve gradient magnitude
-                student_log_soft = F.log_softmax(dim_logits / kd_temperature, dim=0)
+                hard_ce = F.cross_entropy(logits[:, d, :], inv_t[:, d])
+                student_log_soft = F.log_softmax(logits[:, d, :] / kd_temperature, dim=-1)
                 kl_soft = F.kl_div(
-                    student_log_soft.unsqueeze(0),
-                    soft_targets[d].unsqueeze(0),
+                    student_log_soft,
+                    soft_targets[d].unsqueeze(0).expand(B, -1),
                     reduction="batchmean",
                     log_target=False,
                 ) * (kd_temperature ** 2)
-
                 loss_d = kd_alpha * hard_ce + (1.0 - kd_alpha) * kl_soft
                 loss = loss + loss_d
                 batch_hard += hard_ce.item()
                 batch_soft += kl_soft.item()
 
             loss = loss / n_dims
+            optimizer.zero_grad()
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             optimizer.step()
@@ -588,11 +630,12 @@ def main() -> None:
     parser.add_argument("--supervised-epochs", type=int, default=20)
     parser.add_argument("--rl-episodes", type=int, default=500)
     parser.add_argument("--skip-rl", action="store_true")
-    parser.add_argument("--kd-temperature", type=float, default=0.5,
+    parser.add_argument("--kd-temperature", type=float, default=0.20,
                         help="Softmax temperature for teacher distribution. "
-                             "amber_cipher attractor weights are in [0,1] with mean non-inv ~0.13, "
-                             "so T=0.5 gives P(invariant)~8%%, T=0.35 gives ~20%%. "
-                             "Original T=2.0 produces near-uniform teacher (useless). (default 0.5)")
+                             "amber_cipher attractor weights: invariant=1.0, non-inv mean~0.13. "
+                             "T=0.50 → P(invariant)~7%% (near-uniform, fights hard CE). "
+                             "T=0.20 → P(invariant)~50%% (teacher is meaningful). "
+                             "T=0.10 → P(invariant)~99%% (same as hard CE). (default 0.20)")
     parser.add_argument("--kd-alpha", type=float, default=0.3,
                         help="Weight of hard CE vs soft KD (0=all soft, 1=all hard, default 0.3)")
     parser.add_argument("--kd-coef", type=float, default=0.05,

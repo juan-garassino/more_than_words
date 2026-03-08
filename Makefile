@@ -152,6 +152,18 @@ ac-s04-train-policy-gpu: ac-s02-pack colab-install
 	  --supervised-paths 2000 --supervised-epochs 20 --rl-episodes 500 --device cuda
 	@echo "  [OK] policy.pt saved"
 
+ac-s04-train-policy-fast: ac-s02-pack colab-install
+	@echo ""
+	@echo "================================================================"
+	@echo "  AC  STAGE 04 — TRAIN TRANSFORMER POLICY  (fast / GPU)"
+	@echo "  500 paths · 5 KD epochs · 200 RL episodes"
+	@echo "  smoke-test: ~8 min on GPU"
+	@echo "================================================================"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 trainer/train_policy.py amber_cipher \
+	  --supervised-paths 500 --supervised-epochs 5 --rl-episodes 200 --device cuda
+	@echo "  [OK] policy.pt saved"
+
 # -----------------------------------------------------------------------------
 # Stage 05 — Benchmark + Xcode recommendation
 # Requires: policy.pt from stage 04
@@ -205,6 +217,23 @@ ac-pipeline-gpu: colab-install
 	@echo "  PIPELINE COMPLETE"
 	@echo "  Check the XCODE MODEL RECOMMENDATION block above for the"
 	@echo "  .pt file to load in Xcode."
+	@echo "################################################################"
+
+ac-pipeline-fast: colab-install
+	@echo ""
+	@echo "################################################################"
+	@echo "  THORNFIELD — AMBER CIPHER FAST PIPELINE  (GPU smoke-test)"
+	@echo "  s03 hopfield (GPU) → s04 policy fast (500p/5e/200rl) → s05"
+	@echo "  ~25 min total: hopfield+proof ~15 min, policy ~8 min"
+	@echo "################################################################"
+	$(MAKE) ac-s01-validate
+	$(MAKE) ac-s02-pack
+	$(MAKE) ac-s03-train-hopfield-gpu
+	$(MAKE) ac-s04-train-policy-fast
+	$(MAKE) ac-s05-benchmark
+	@echo ""
+	@echo "################################################################"
+	@echo "  FAST PIPELINE COMPLETE"
 	@echo "################################################################"
 
 # =============================================================================
