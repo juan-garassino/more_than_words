@@ -1,0 +1,2414 @@
+{
+  "nodes": [
+    "motive:sealed_proof",
+    "motive:third_party_link",
+    "motive:partnership_ruin",
+    "motive:ledger_exposure",
+    "motive:debt_pressure",
+    "object:ledger_book",
+    "object:telegraph_form",
+    "object:coal_dust",
+    "object:sealed_envelope",
+    "object:telegram",
+    "object:cipher_sheet",
+    "object:satchel",
+    "object:initialed_cufflink",
+    "object:station_key",
+    "object:cash_tin",
+    "object:platform_lantern",
+    "object:torn_ticket",
+    "object:ink_blotter",
+    "suspect:stationmaster",
+    "suspect:railway_clerk",
+    "suspect:night_porter",
+    "suspect:platform_guard",
+    "suspect:travelling_broker",
+    "suspect:estranged_daughter",
+    "location:thornfield_crossing",
+    "location:platform_two",
+    "location:platform_one",
+    "location:station_office",
+    "location:signal_box",
+    "location:waiting_room",
+    "location:goods_shed",
+    "location:carriage_siding",
+    "modifier:lamps_dimmed",
+    "modifier:initialed_RV",
+    "modifier:paid_off",
+    "modifier:unlocked",
+    "modifier:misplaced",
+    "modifier:unclaimed",
+    "modifier:smudged",
+    "modifier:damp",
+    "modifier:late_arrival",
+    "modifier:ticket_punched",
+    "action:signal_paused",
+    "action:office_entered",
+    "action:ledger_checked",
+    "action:telegram_handled",
+    "action:satchel_swapped",
+    "action:platform_crossed",
+    "action:guard_bribed",
+    "action:door_left_open",
+    "action:footsteps_faded",
+    "emotion:steady_hands",
+    "emotion:fixed_stare",
+    "emotion:avoided_contact",
+    "emotion:measured_breath",
+    "emotion:paused_reply",
+    "emotion:closed_posture",
+    "time:between_trains",
+    "time:last_arrival",
+    "time:first_departure",
+    "time:fog_thickens",
+    "time:signal_reset",
+    "witness:ticket_clerk",
+    "witness:porter",
+    "witness:signalman",
+    "witness:carriage_cleaner",
+    "witness:telegraph_operator",
+    "event:aldous_verne_discovered",
+    "event:platform_two_scene",
+    "suspect:renard_voss",
+    "event:window_between_trains",
+    "motive:fraud_concealment",
+    "location:stationmasters_office",
+    "accomplice:elara_voss",
+    "suspect:marco_laine",
+    "suspect:vera_holt",
+    "suspect:elara_voss",
+    "suspect:night_dispatch",
+    "suspect:office_keeper",
+    "suspect:laine_associate",
+    "witness:booking_clerk",
+    "witness:lamp_trimmer",
+    "witness:freight_handler",
+    "witness:dispatch_runner",
+    "witness:coal_boy",
+    "witness:night_cleaner",
+    "witness:platform_vendor",
+    "witness:office_attendant",
+    "witness:stationmaster_aide",
+    "witness:luggage_porter",
+    "location:upper_corridor",
+    "location:records_room",
+    "location:dispatch_office",
+    "location:back_platform",
+    "location:goods_office",
+    "object:voss_gloves",
+    "object:wax_seal_stamp",
+    "object:access_register",
+    "object:falsified_entry",
+    "object:receipt_book",
+    "object:cipher_key",
+    "object:dispatch_log",
+    "object:floor_plan",
+    "object:burned_note",
+    "object:office_ledger",
+    "object:monogrammed_scarf",
+    "object:log_entry",
+    "object:door_wedge",
+    "object:key_impression",
+    "object:account_slip",
+    "motive:inheritance_blocked",
+    "motive:elara_complicity",
+    "motive:office_access_price",
+    "motive:record_destruction",
+    "action:log_altered",
+    "action:office_swept",
+    "action:key_duplicated",
+    "action:message_relayed",
+    "action:records_pulled",
+    "action:corridor_cleared",
+    "action:seal_broken",
+    "action:rendezvous_kept",
+    "emotion:shared_glance",
+    "emotion:feigned_surprise",
+    "emotion:coordinated_calm",
+    "emotion:rehearsed_alibi",
+    "emotion:guarded_proximity",
+    "emotion:deflected_question",
+    "modifier:freshly_wiped",
+    "modifier:twice_signed",
+    "modifier:out_of_sequence",
+    "modifier:recently_moved",
+    "modifier:matched_handwriting",
+    "modifier:still_warm",
+    "modifier:door_forced",
+    "modifier:two_visitors",
+    "modifier:ink_matched",
+    "modifier:unscheduled",
+    "time:office_window",
+    "time:elara_arrival",
+    "time:before_discovery",
+    "time:corridor_empty",
+    "time:ledger_opened",
+    "time:second_visit",
+    "event:voss_meeting",
+    "event:office_entry",
+    "event:record_alteration",
+    "event:cipher_exchange",
+    "event:document_removal",
+    "event:elara_spotted",
+    "event:ledger_burned",
+    "event:false_alibi"
+  ],
+  "edges": [
+    {
+      "from": "object:satchel",
+      "to": "suspect:renard_voss",
+      "weight": 0.48,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "object:telegram",
+      "to": "suspect:renard_voss",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:initialed_cufflink",
+      "to": "suspect:renard_voss",
+      "weight": 0.5,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "modifier:initialed_RV",
+      "to": "suspect:renard_voss",
+      "weight": 0.45,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "action:telegram_handled",
+      "to": "suspect:renard_voss",
+      "weight": 0.4,
+      "tags": [
+        "contact"
+      ]
+    },
+    {
+      "from": "action:satchel_swapped",
+      "to": "suspect:renard_voss",
+      "weight": 0.4,
+      "tags": [
+        "exchange"
+      ]
+    },
+    {
+      "from": "object:cipher_sheet",
+      "to": "suspect:renard_voss",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:telegram_handled",
+      "to": "suspect:railway_clerk",
+      "weight": 0.33,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "object:telegram",
+      "to": "suspect:railway_clerk",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "object:cipher_sheet",
+      "to": "object:telegram",
+      "weight": 0.45,
+      "tags": [
+        "contents"
+      ]
+    },
+    {
+      "from": "action:telegram_handled",
+      "to": "object:telegram",
+      "weight": 0.4,
+      "tags": [
+        "handling"
+      ]
+    },
+    {
+      "from": "action:satchel_swapped",
+      "to": "object:satchel",
+      "weight": 0.4,
+      "tags": [
+        "exchange"
+      ]
+    },
+    {
+      "from": "modifier:initialed_RV",
+      "to": "object:initialed_cufflink",
+      "weight": 0.42,
+      "tags": [
+        "mark"
+      ]
+    },
+    {
+      "from": "modifier:misplaced",
+      "to": "object:satchel",
+      "weight": 0.32,
+      "tags": [
+        "placement"
+      ]
+    },
+    {
+      "from": "modifier:unclaimed",
+      "to": "object:satchel",
+      "weight": 0.28,
+      "tags": [
+        "unclaimed"
+      ]
+    },
+    {
+      "from": "action:satchel_swapped",
+      "to": "modifier:misplaced",
+      "weight": 0.3,
+      "tags": [
+        "error"
+      ]
+    },
+    {
+      "from": "event:window_between_trains",
+      "to": "time:between_trains",
+      "weight": 0.5,
+      "tags": [
+        "time_window"
+      ]
+    },
+    {
+      "from": "event:window_between_trains",
+      "to": "time:last_arrival",
+      "weight": 0.42,
+      "tags": [
+        "time_window"
+      ]
+    },
+    {
+      "from": "event:window_between_trains",
+      "to": "time:first_departure",
+      "weight": 0.46,
+      "tags": [
+        "time_window"
+      ]
+    },
+    {
+      "from": "time:between_trains",
+      "to": "time:last_arrival",
+      "weight": 0.38,
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "from": "time:between_trains",
+      "to": "time:first_departure",
+      "weight": 0.38,
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "from": "time:first_departure",
+      "to": "time:last_arrival",
+      "weight": 0.35,
+      "tags": [
+        "schedule"
+      ]
+    },
+    {
+      "from": "location:station_office",
+      "to": "modifier:unlocked",
+      "weight": 0.4,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "action:office_entered",
+      "to": "location:station_office",
+      "weight": 0.38,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "action:door_left_open",
+      "to": "action:office_entered",
+      "weight": 0.32,
+      "tags": [
+        "exit"
+      ]
+    },
+    {
+      "from": "action:door_left_open",
+      "to": "modifier:unlocked",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "location:station_office",
+      "to": "object:station_key",
+      "weight": 0.35,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "modifier:unlocked",
+      "to": "object:station_key",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "action:guard_bribed",
+      "to": "suspect:stationmaster",
+      "weight": 0.48,
+      "tags": [
+        "payment"
+      ]
+    },
+    {
+      "from": "modifier:paid_off",
+      "to": "suspect:stationmaster",
+      "weight": 0.39,
+      "tags": [
+        "payment"
+      ]
+    },
+    {
+      "from": "action:guard_bribed",
+      "to": "suspect:platform_guard",
+      "weight": 0.32,
+      "tags": [
+        "payment"
+      ]
+    },
+    {
+      "from": "action:signal_paused",
+      "to": "location:signal_box",
+      "weight": 0.36,
+      "tags": [
+        "control"
+      ]
+    },
+    {
+      "from": "action:signal_paused",
+      "to": "time:signal_reset",
+      "weight": 0.34,
+      "tags": [
+        "sequence"
+      ]
+    },
+    {
+      "from": "location:signal_box",
+      "to": "time:signal_reset",
+      "weight": 0.3,
+      "tags": [
+        "sequence"
+      ]
+    },
+    {
+      "from": "motive:fraud_concealment",
+      "to": "object:telegram",
+      "weight": 0.36,
+      "tags": [
+        "proof"
+      ]
+    },
+    {
+      "from": "motive:fraud_concealment",
+      "to": "object:cipher_sheet",
+      "weight": 0.34,
+      "tags": [
+        "proof"
+      ]
+    },
+    {
+      "from": "motive:fraud_concealment",
+      "to": "motive:third_party_link",
+      "weight": 0.35,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "motive:fraud_concealment",
+      "to": "motive:partnership_ruin",
+      "weight": 0.34,
+      "tags": [
+        "consequence"
+      ]
+    },
+    {
+      "from": "motive:fraud_concealment",
+      "to": "motive:ledger_exposure",
+      "weight": 0.36,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "motive:ledger_exposure",
+      "to": "object:ledger_book",
+      "weight": 0.4,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "action:ledger_checked",
+      "to": "object:ledger_book",
+      "weight": 0.32,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "motive:sealed_proof",
+      "to": "object:sealed_envelope",
+      "weight": 0.42,
+      "tags": [
+        "proof"
+      ]
+    },
+    {
+      "from": "motive:sealed_proof",
+      "to": "object:telegraph_form",
+      "weight": 0.28,
+      "tags": [
+        "dispatch"
+      ]
+    },
+    {
+      "from": "motive:third_party_link",
+      "to": "object:sealed_envelope",
+      "weight": 0.3,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "motive:debt_pressure",
+      "to": "object:cash_tin",
+      "weight": 0.38,
+      "tags": [
+        "payment"
+      ]
+    },
+    {
+      "from": "motive:partnership_ruin",
+      "to": "object:ledger_book",
+      "weight": 0.28,
+      "tags": [
+        "accounts"
+      ]
+    },
+    {
+      "from": "location:platform_two",
+      "to": "suspect:estranged_daughter",
+      "weight": 0.43,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "object:torn_ticket",
+      "to": "suspect:estranged_daughter",
+      "weight": 0.38,
+      "tags": [
+        "possession"
+      ]
+    },
+    {
+      "from": "object:platform_lantern",
+      "to": "suspect:estranged_daughter",
+      "weight": 0.36,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:fixed_stare",
+      "to": "suspect:estranged_daughter",
+      "weight": 0.32,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "modifier:ticket_punched",
+      "to": "object:torn_ticket",
+      "weight": 0.35,
+      "tags": [
+        "mark"
+      ]
+    },
+    {
+      "from": "modifier:lamps_dimmed",
+      "to": "object:platform_lantern",
+      "weight": 0.36,
+      "tags": [
+        "light"
+      ]
+    },
+    {
+      "from": "event:platform_two_scene",
+      "to": "location:platform_two",
+      "weight": 0.35,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "event:platform_two_scene",
+      "to": "modifier:late_arrival",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "suspect:estranged_daughter",
+      "to": "suspect:stationmaster",
+      "weight": 0.24,
+      "tags": [
+        "witness"
+      ]
+    },
+    {
+      "from": "object:torn_ticket",
+      "to": "suspect:stationmaster",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "object:telegram",
+      "to": "suspect:stationmaster",
+      "weight": 0.32,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "action:telegram_handled",
+      "to": "suspect:stationmaster",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "location:station_office",
+      "to": "suspect:stationmaster",
+      "weight": 0.3,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "object:telegram",
+      "to": "object:telegraph_form",
+      "weight": 0.34,
+      "tags": [
+        "paper"
+      ]
+    },
+    {
+      "from": "location:station_office",
+      "to": "object:ink_blotter",
+      "weight": 0.28,
+      "tags": [
+        "desk"
+      ]
+    },
+    {
+      "from": "modifier:smudged",
+      "to": "object:telegram",
+      "weight": 0.3,
+      "tags": [
+        "ink"
+      ]
+    },
+    {
+      "from": "modifier:damp",
+      "to": "time:fog_thickens",
+      "weight": 0.26,
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "from": "modifier:late_arrival",
+      "to": "object:torn_ticket",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "modifier:late_arrival",
+      "to": "suspect:estranged_daughter",
+      "weight": 0.24,
+      "tags": [
+        "arrival"
+      ]
+    },
+    {
+      "from": "action:footsteps_faded",
+      "to": "location:platform_two",
+      "weight": 0.24,
+      "tags": [
+        "trail"
+      ]
+    },
+    {
+      "from": "action:platform_crossed",
+      "to": "location:platform_one",
+      "weight": 0.26,
+      "tags": [
+        "movement"
+      ]
+    },
+    {
+      "from": "action:platform_crossed",
+      "to": "location:platform_two",
+      "weight": 0.28,
+      "tags": [
+        "movement"
+      ]
+    },
+    {
+      "from": "action:platform_crossed",
+      "to": "object:coal_dust",
+      "weight": 0.24,
+      "tags": [
+        "trace"
+      ]
+    },
+    {
+      "from": "location:goods_shed",
+      "to": "object:coal_dust",
+      "weight": 0.36,
+      "tags": [
+        "trace"
+      ]
+    },
+    {
+      "from": "location:platform_two",
+      "to": "time:fog_thickens",
+      "weight": 0.24,
+      "tags": [
+        "visibility"
+      ]
+    },
+    {
+      "from": "location:platform_one",
+      "to": "time:last_arrival",
+      "weight": 0.22,
+      "tags": [
+        "arrival"
+      ]
+    },
+    {
+      "from": "location:platform_one",
+      "to": "time:first_departure",
+      "weight": 0.24,
+      "tags": [
+        "departure"
+      ]
+    },
+    {
+      "from": "action:signal_paused",
+      "to": "witness:signalman",
+      "weight": 0.3,
+      "tags": [
+        "log"
+      ]
+    },
+    {
+      "from": "location:signal_box",
+      "to": "witness:signalman",
+      "weight": 0.3,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "location:waiting_room",
+      "to": "witness:porter",
+      "weight": 0.3,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "location:platform_one",
+      "to": "witness:ticket_clerk",
+      "weight": 0.3,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "location:carriage_siding",
+      "to": "witness:carriage_cleaner",
+      "weight": 0.26,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "object:telegraph_form",
+      "to": "witness:telegraph_operator",
+      "weight": 0.3,
+      "tags": [
+        "handled"
+      ]
+    },
+    {
+      "from": "event:aldous_verne_discovered",
+      "to": "location:platform_two",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "event:aldous_verne_discovered",
+      "to": "time:between_trains",
+      "weight": 0.28,
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "from": "event:aldous_verne_discovered",
+      "to": "witness:porter",
+      "weight": 0.24,
+      "tags": [
+        "found"
+      ]
+    },
+    {
+      "from": "emotion:paused_reply",
+      "to": "witness:ticket_clerk",
+      "weight": 0.22,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:avoided_contact",
+      "to": "suspect:night_porter",
+      "weight": 0.22,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:measured_breath",
+      "to": "suspect:railway_clerk",
+      "weight": 0.26,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:steady_hands",
+      "to": "suspect:stationmaster",
+      "weight": 0.24,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:closed_posture",
+      "to": "suspect:travelling_broker",
+      "weight": 0.2,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "location:waiting_room",
+      "to": "suspect:night_porter",
+      "weight": 0.26,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "suspect:night_porter",
+      "to": "witness:porter",
+      "weight": 0.24,
+      "tags": [
+        "colleagues"
+      ]
+    },
+    {
+      "from": "location:platform_one",
+      "to": "suspect:platform_guard",
+      "weight": 0.28,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "object:platform_lantern",
+      "to": "suspect:platform_guard",
+      "weight": 0.26,
+      "tags": [
+        "equipment"
+      ]
+    },
+    {
+      "from": "location:waiting_room",
+      "to": "suspect:travelling_broker",
+      "weight": 0.24,
+      "tags": [
+        "presence"
+      ]
+    },
+    {
+      "from": "suspect:travelling_broker",
+      "to": "witness:ticket_clerk",
+      "weight": 0.22,
+      "tags": [
+        "ticket"
+      ]
+    },
+    {
+      "from": "location:thornfield_crossing",
+      "to": "time:between_trains",
+      "weight": 0.24,
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "from": "event:aldous_verne_discovered",
+      "to": "location:thornfield_crossing",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:goods_shed",
+      "to": "suspect:railway_clerk",
+      "weight": 0.24,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "location:carriage_siding",
+      "to": "object:coal_dust",
+      "weight": 0.24,
+      "tags": [
+        "trace"
+      ]
+    },
+    {
+      "from": "modifier:paid_off",
+      "to": "object:cash_tin",
+      "weight": 0.32,
+      "tags": [
+        "payment"
+      ]
+    },
+    {
+      "from": "object:cipher_sheet",
+      "to": "object:ink_blotter",
+      "weight": 0.28,
+      "tags": [
+        "desk"
+      ]
+    },
+    {
+      "from": "emotion:fixed_stare",
+      "to": "location:platform_two",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:measured_breath",
+      "to": "object:station_key",
+      "weight": 0.22,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:steady_hands",
+      "to": "object:station_key",
+      "weight": 0.24,
+      "tags": [
+        "handover"
+      ]
+    },
+    {
+      "from": "emotion:paused_reply",
+      "to": "time:first_departure",
+      "weight": 0.22,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:closed_posture",
+      "to": "location:waiting_room",
+      "weight": 0.22,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "location:station_office",
+      "to": "modifier:unclaimed",
+      "weight": 0.24,
+      "tags": [
+        "property"
+      ]
+    },
+    {
+      "from": "modifier:smudged",
+      "to": "object:sealed_envelope",
+      "weight": 0.28,
+      "tags": [
+        "ink"
+      ]
+    },
+    {
+      "from": "location:platform_two",
+      "to": "modifier:lamps_dimmed",
+      "weight": 0.28,
+      "tags": [
+        "light"
+      ]
+    },
+    {
+      "from": "modifier:ticket_punched",
+      "to": "witness:ticket_clerk",
+      "weight": 0.26,
+      "tags": [
+        "mark"
+      ]
+    },
+    {
+      "from": "action:ledger_checked",
+      "to": "motive:ledger_exposure",
+      "weight": 0.3,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "action:footsteps_faded",
+      "to": "time:fog_thickens",
+      "weight": 0.24,
+      "tags": [
+        "visibility"
+      ]
+    },
+    {
+      "from": "motive:debt_pressure",
+      "to": "object:ledger_book",
+      "weight": 0.26,
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "from": "object:coal_dust",
+      "to": "witness:carriage_cleaner",
+      "weight": 0.24,
+      "tags": [
+        "cleaning"
+      ]
+    },
+    {
+      "from": "location:station_office",
+      "to": "witness:telegraph_operator",
+      "weight": 0.24,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "emotion:avoided_contact",
+      "to": "location:waiting_room",
+      "weight": 0.22,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "modifier:damp",
+      "to": "object:sealed_envelope",
+      "weight": 0.24,
+      "tags": [
+        "moisture"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "object:cipher_sheet",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "object:satchel",
+      "weight": 0.32,
+      "tags": [
+        "possession"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "location:waiting_room",
+      "weight": 0.3,
+      "tags": [
+        "presence"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "witness:ticket_clerk",
+      "weight": 0.28,
+      "tags": [
+        "witness"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "modifier:late_arrival",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "motive:third_party_link",
+      "weight": 0.34,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "action:satchel_swapped",
+      "weight": 0.3,
+      "tags": [
+        "exchange"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "suspect:laine_associate",
+      "weight": 0.4,
+      "tags": [
+        "associate"
+      ]
+    },
+    {
+      "from": "suspect:laine_associate",
+      "to": "object:sealed_envelope",
+      "weight": 0.28,
+      "tags": [
+        "possession"
+      ]
+    },
+    {
+      "from": "suspect:laine_associate",
+      "to": "location:waiting_room",
+      "weight": 0.26,
+      "tags": [
+        "presence"
+      ]
+    },
+    {
+      "from": "suspect:laine_associate",
+      "to": "witness:booking_clerk",
+      "weight": 0.24,
+      "tags": [
+        "witness"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "object:torn_ticket",
+      "weight": 0.28,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "time:between_trains",
+      "weight": 0.24,
+      "tags": [
+        "alibi"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "event:aldous_verne_discovered",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "emotion:fixed_stare",
+      "weight": 0.24,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "modifier:unclaimed",
+      "weight": 0.24,
+      "tags": [
+        "property"
+      ]
+    },
+    {
+      "from": "suspect:laine_associate",
+      "to": "motive:third_party_link",
+      "weight": 0.3,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "witness:luggage_porter",
+      "weight": 0.26,
+      "tags": [
+        "witness"
+      ]
+    },
+    {
+      "from": "suspect:laine_associate",
+      "to": "action:satchel_swapped",
+      "weight": 0.24,
+      "tags": [
+        "exchange"
+      ]
+    },
+    {
+      "from": "suspect:marco_laine",
+      "to": "object:telegram",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:elara_voss",
+      "to": "object:monogrammed_scarf",
+      "weight": 0.44,
+      "tags": [
+        "possession"
+      ]
+    },
+    {
+      "from": "suspect:elara_voss",
+      "to": "object:voss_gloves",
+      "weight": 0.4,
+      "tags": [
+        "possession"
+      ]
+    },
+    {
+      "from": "suspect:elara_voss",
+      "to": "action:log_altered",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:elara_voss",
+      "to": "event:elara_spotted",
+      "weight": 0.44,
+      "tags": [
+        "presence"
+      ]
+    },
+    {
+      "from": "suspect:elara_voss",
+      "to": "time:elara_arrival",
+      "weight": 0.38,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "suspect:elara_voss",
+      "to": "action:rendezvous_kept",
+      "weight": 0.36,
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "from": "suspect:elara_voss",
+      "to": "emotion:shared_glance",
+      "weight": 0.34,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "suspect:elara_voss",
+      "to": "motive:elara_complicity",
+      "weight": 0.38,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:monogrammed_scarf",
+      "to": "location:upper_corridor",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "object:voss_gloves",
+      "to": "location:upper_corridor",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "event:voss_meeting",
+      "to": "suspect:elara_voss",
+      "weight": 0.4,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "event:voss_meeting",
+      "to": "suspect:renard_voss",
+      "weight": 0.38,
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "from": "event:voss_meeting",
+      "to": "location:waiting_room",
+      "weight": 0.3,
+      "tags": [
+        "location"
+      ]
+    },
+    {
+      "from": "action:rendezvous_kept",
+      "to": "event:voss_meeting",
+      "weight": 0.36,
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "from": "modifier:two_visitors",
+      "to": "event:voss_meeting",
+      "weight": 0.32,
+      "tags": [
+        "count"
+      ]
+    },
+    {
+      "from": "modifier:two_visitors",
+      "to": "location:waiting_room",
+      "weight": 0.28,
+      "tags": [
+        "presence"
+      ]
+    },
+    {
+      "from": "object:monogrammed_scarf",
+      "to": "witness:booking_clerk",
+      "weight": 0.28,
+      "tags": [
+        "found"
+      ]
+    },
+    {
+      "from": "time:elara_arrival",
+      "to": "witness:booking_clerk",
+      "weight": 0.3,
+      "tags": [
+        "log"
+      ]
+    },
+    {
+      "from": "event:elara_spotted",
+      "to": "witness:freight_handler",
+      "weight": 0.3,
+      "tags": [
+        "sighting"
+      ]
+    },
+    {
+      "from": "suspect:elara_voss",
+      "to": "emotion:guarded_proximity",
+      "weight": 0.32,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "location:stationmasters_office",
+      "to": "action:key_duplicated",
+      "weight": 0.42,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "location:stationmasters_office",
+      "to": "object:access_register",
+      "weight": 0.4,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "location:stationmasters_office",
+      "to": "action:office_swept",
+      "weight": 0.38,
+      "tags": [
+        "trace"
+      ]
+    },
+    {
+      "from": "location:stationmasters_office",
+      "to": "location:upper_corridor",
+      "weight": 0.36,
+      "tags": [
+        "adjacent"
+      ]
+    },
+    {
+      "from": "location:upper_corridor",
+      "to": "action:corridor_cleared",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "location:stationmasters_office",
+      "to": "object:office_ledger",
+      "weight": 0.38,
+      "tags": [
+        "contents"
+      ]
+    },
+    {
+      "from": "location:stationmasters_office",
+      "to": "event:office_entry",
+      "weight": 0.42,
+      "tags": [
+        "entry"
+      ]
+    },
+    {
+      "from": "object:access_register",
+      "to": "action:log_altered",
+      "weight": 0.4,
+      "tags": [
+        "alteration"
+      ]
+    },
+    {
+      "from": "object:key_impression",
+      "to": "action:key_duplicated",
+      "weight": 0.42,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "object:key_impression",
+      "to": "object:station_key",
+      "weight": 0.36,
+      "tags": [
+        "source"
+      ]
+    },
+    {
+      "from": "modifier:freshly_wiped",
+      "to": "object:voss_gloves",
+      "weight": 0.34,
+      "tags": [
+        "trace"
+      ]
+    },
+    {
+      "from": "modifier:freshly_wiped",
+      "to": "location:stationmasters_office",
+      "weight": 0.3,
+      "tags": [
+        "cleaning"
+      ]
+    },
+    {
+      "from": "object:door_wedge",
+      "to": "location:stationmasters_office",
+      "weight": 0.28,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "object:door_wedge",
+      "to": "action:corridor_cleared",
+      "weight": 0.26,
+      "tags": [
+        "prop"
+      ]
+    },
+    {
+      "from": "modifier:door_forced",
+      "to": "location:records_room",
+      "weight": 0.3,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "location:records_room",
+      "to": "location:stationmasters_office",
+      "weight": 0.34,
+      "tags": [
+        "adjacent"
+      ]
+    },
+    {
+      "from": "location:records_room",
+      "to": "object:office_ledger",
+      "weight": 0.32,
+      "tags": [
+        "contents"
+      ]
+    },
+    {
+      "from": "object:floor_plan",
+      "to": "location:stationmasters_office",
+      "weight": 0.34,
+      "tags": [
+        "blueprint"
+      ]
+    },
+    {
+      "from": "event:office_entry",
+      "to": "time:office_window",
+      "weight": 0.38,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:corridor_empty",
+      "to": "action:office_swept",
+      "weight": 0.32,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "suspect:renard_voss",
+      "to": "object:falsified_entry",
+      "weight": 0.44,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:renard_voss",
+      "to": "event:cipher_exchange",
+      "weight": 0.4,
+      "tags": [
+        "activity"
+      ]
+    },
+    {
+      "from": "suspect:renard_voss",
+      "to": "action:seal_broken",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:renard_voss",
+      "to": "object:cipher_key",
+      "weight": 0.42,
+      "tags": [
+        "tool"
+      ]
+    },
+    {
+      "from": "suspect:renard_voss",
+      "to": "object:log_entry",
+      "weight": 0.4,
+      "tags": [
+        "record"
+      ]
+    },
+    {
+      "from": "suspect:renard_voss",
+      "to": "event:record_alteration",
+      "weight": 0.38,
+      "tags": [
+        "activity"
+      ]
+    },
+    {
+      "from": "suspect:renard_voss",
+      "to": "motive:record_destruction",
+      "weight": 0.36,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:renard_voss",
+      "to": "action:rendezvous_kept",
+      "weight": 0.36,
+      "tags": [
+        "meeting"
+      ]
+    },
+    {
+      "from": "object:cipher_key",
+      "to": "object:cipher_sheet",
+      "weight": 0.42,
+      "tags": [
+        "pair"
+      ]
+    },
+    {
+      "from": "event:cipher_exchange",
+      "to": "object:cipher_key",
+      "weight": 0.38,
+      "tags": [
+        "involved"
+      ]
+    },
+    {
+      "from": "event:cipher_exchange",
+      "to": "object:cipher_sheet",
+      "weight": 0.36,
+      "tags": [
+        "involved"
+      ]
+    },
+    {
+      "from": "action:seal_broken",
+      "to": "object:sealed_envelope",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:log_entry",
+      "to": "object:ledger_book",
+      "weight": 0.36,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "modifier:matched_handwriting",
+      "to": "object:falsified_entry",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:matched_handwriting",
+      "to": "object:log_entry",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:ink_matched",
+      "to": "object:falsified_entry",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:ink_matched",
+      "to": "object:log_entry",
+      "weight": 0.32,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "event:false_alibi",
+      "to": "suspect:renard_voss",
+      "weight": 0.36,
+      "tags": [
+        "alibi"
+      ]
+    },
+    {
+      "from": "event:false_alibi",
+      "to": "suspect:elara_voss",
+      "weight": 0.34,
+      "tags": [
+        "alibi"
+      ]
+    },
+    {
+      "from": "object:burned_note",
+      "to": "motive:record_destruction",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "time:office_window",
+      "to": "time:between_trains",
+      "weight": 0.4,
+      "tags": [
+        "overlap"
+      ]
+    },
+    {
+      "from": "time:office_window",
+      "to": "time:signal_reset",
+      "weight": 0.34,
+      "tags": [
+        "sequence"
+      ]
+    },
+    {
+      "from": "time:elara_arrival",
+      "to": "time:between_trains",
+      "weight": 0.34,
+      "tags": [
+        "overlap"
+      ]
+    },
+    {
+      "from": "time:before_discovery",
+      "to": "time:between_trains",
+      "weight": 0.36,
+      "tags": [
+        "sequence"
+      ]
+    },
+    {
+      "from": "time:corridor_empty",
+      "to": "time:between_trains",
+      "weight": 0.32,
+      "tags": [
+        "window"
+      ]
+    },
+    {
+      "from": "time:second_visit",
+      "to": "time:office_window",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:ledger_opened",
+      "to": "action:ledger_checked",
+      "weight": 0.34,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:ledger_opened",
+      "to": "time:office_window",
+      "weight": 0.3,
+      "tags": [
+        "overlap"
+      ]
+    },
+    {
+      "from": "time:before_discovery",
+      "to": "event:aldous_verne_discovered",
+      "weight": 0.34,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "modifier:unscheduled",
+      "to": "time:between_trains",
+      "weight": 0.28,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "from": "modifier:unscheduled",
+      "to": "action:office_entered",
+      "weight": 0.26,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "from": "modifier:out_of_sequence",
+      "to": "object:access_register",
+      "weight": 0.3,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "from": "modifier:out_of_sequence",
+      "to": "time:signal_reset",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:elara_arrival",
+      "to": "event:aldous_verne_discovered",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:second_visit",
+      "to": "event:voss_meeting",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "suspect:vera_holt",
+      "to": "object:receipt_book",
+      "weight": 0.34,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "suspect:vera_holt",
+      "to": "motive:debt_pressure",
+      "weight": 0.3,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "suspect:vera_holt",
+      "to": "witness:dispatch_runner",
+      "weight": 0.26,
+      "tags": [
+        "associate"
+      ]
+    },
+    {
+      "from": "suspect:night_dispatch",
+      "to": "action:message_relayed",
+      "weight": 0.36,
+      "tags": [
+        "role"
+      ]
+    },
+    {
+      "from": "suspect:night_dispatch",
+      "to": "object:dispatch_log",
+      "weight": 0.34,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "suspect:night_dispatch",
+      "to": "time:between_trains",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "suspect:office_keeper",
+      "to": "object:station_key",
+      "weight": 0.36,
+      "tags": [
+        "custody"
+      ]
+    },
+    {
+      "from": "suspect:office_keeper",
+      "to": "location:stationmasters_office",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:office_keeper",
+      "to": "modifier:door_forced",
+      "weight": 0.3,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "object:dispatch_log",
+      "to": "time:signal_reset",
+      "weight": 0.28,
+      "tags": [
+        "log"
+      ]
+    },
+    {
+      "from": "object:dispatch_log",
+      "to": "event:window_between_trains",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:receipt_book",
+      "to": "motive:fraud_concealment",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:receipt_book",
+      "to": "object:ledger_book",
+      "weight": 0.32,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "object:account_slip",
+      "to": "object:receipt_book",
+      "weight": 0.3,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "object:account_slip",
+      "to": "motive:debt_pressure",
+      "weight": 0.28,
+      "tags": [
+        "debt"
+      ]
+    },
+    {
+      "from": "object:wax_seal_stamp",
+      "to": "object:sealed_envelope",
+      "weight": 0.38,
+      "tags": [
+        "tool"
+      ]
+    },
+    {
+      "from": "object:wax_seal_stamp",
+      "to": "action:seal_broken",
+      "weight": 0.36,
+      "tags": [
+        "tool"
+      ]
+    },
+    {
+      "from": "object:office_ledger",
+      "to": "object:ledger_book",
+      "weight": 0.32,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "object:office_ledger",
+      "to": "motive:fraud_concealment",
+      "weight": 0.34,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "motive:inheritance_blocked",
+      "to": "suspect:renard_voss",
+      "weight": 0.34,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:inheritance_blocked",
+      "to": "motive:fraud_concealment",
+      "weight": 0.3,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "motive:office_access_price",
+      "to": "action:guard_bribed",
+      "weight": 0.32,
+      "tags": [
+        "payment"
+      ]
+    },
+    {
+      "from": "motive:office_access_price",
+      "to": "motive:fraud_concealment",
+      "weight": 0.28,
+      "tags": [
+        "link"
+      ]
+    },
+    {
+      "from": "event:document_removal",
+      "to": "location:stationmasters_office",
+      "weight": 0.36,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "event:document_removal",
+      "to": "object:office_ledger",
+      "weight": 0.34,
+      "tags": [
+        "target"
+      ]
+    },
+    {
+      "from": "event:ledger_burned",
+      "to": "object:burned_note",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "event:ledger_burned",
+      "to": "object:office_ledger",
+      "weight": 0.32,
+      "tags": [
+        "target"
+      ]
+    },
+    {
+      "from": "action:records_pulled",
+      "to": "location:records_room",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:message_relayed",
+      "to": "event:cipher_exchange",
+      "weight": 0.3,
+      "tags": [
+        "chain"
+      ]
+    },
+    {
+      "from": "accomplice:elara_voss",
+      "to": "suspect:elara_voss",
+      "weight": 0.48,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "accomplice:elara_voss",
+      "to": "action:log_altered",
+      "weight": 0.44,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "accomplice:elara_voss",
+      "to": "object:monogrammed_scarf",
+      "weight": 0.42,
+      "tags": [
+        "possession"
+      ]
+    },
+    {
+      "from": "witness:lamp_trimmer",
+      "to": "location:upper_corridor",
+      "weight": 0.26,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "witness:lamp_trimmer",
+      "to": "time:corridor_empty",
+      "weight": 0.22,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:freight_handler",
+      "to": "location:back_platform",
+      "weight": 0.24,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "witness:dispatch_runner",
+      "to": "object:dispatch_log",
+      "weight": 0.26,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "witness:coal_boy",
+      "to": "location:goods_shed",
+      "weight": 0.24,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "witness:coal_boy",
+      "to": "object:coal_dust",
+      "weight": 0.22,
+      "tags": [
+        "trace"
+      ]
+    },
+    {
+      "from": "witness:night_cleaner",
+      "to": "location:upper_corridor",
+      "weight": 0.22,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "witness:night_cleaner",
+      "to": "time:before_discovery",
+      "weight": 0.2,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:platform_vendor",
+      "to": "location:waiting_room",
+      "weight": 0.22,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "witness:platform_vendor",
+      "to": "event:voss_meeting",
+      "weight": 0.22,
+      "tags": [
+        "sighting"
+      ]
+    },
+    {
+      "from": "witness:office_attendant",
+      "to": "location:upper_corridor",
+      "weight": 0.26,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "witness:office_attendant",
+      "to": "time:office_window",
+      "weight": 0.24,
+      "tags": [
+        "gap"
+      ]
+    },
+    {
+      "from": "witness:stationmaster_aide",
+      "to": "location:stationmasters_office",
+      "weight": 0.26,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "witness:stationmaster_aide",
+      "to": "time:ledger_opened",
+      "weight": 0.22,
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "from": "witness:luggage_porter",
+      "to": "location:waiting_room",
+      "weight": 0.22,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "location:dispatch_office",
+      "to": "object:dispatch_log",
+      "weight": 0.3,
+      "tags": [
+        "contents"
+      ]
+    },
+    {
+      "from": "location:dispatch_office",
+      "to": "suspect:night_dispatch",
+      "weight": 0.3,
+      "tags": [
+        "post"
+      ]
+    },
+    {
+      "from": "location:back_platform",
+      "to": "object:coal_dust",
+      "weight": 0.24,
+      "tags": [
+        "trace"
+      ]
+    },
+    {
+      "from": "location:goods_office",
+      "to": "object:receipt_book",
+      "weight": 0.28,
+      "tags": [
+        "contents"
+      ]
+    },
+    {
+      "from": "location:goods_office",
+      "to": "location:goods_shed",
+      "weight": 0.24,
+      "tags": [
+        "adjacent"
+      ]
+    },
+    {
+      "from": "object:floor_plan",
+      "to": "location:upper_corridor",
+      "weight": 0.28,
+      "tags": [
+        "blueprint"
+      ]
+    },
+    {
+      "from": "motive:elara_complicity",
+      "to": "object:monogrammed_scarf",
+      "weight": 0.3,
+      "tags": [
+        "possession"
+      ]
+    },
+    {
+      "from": "action:records_pulled",
+      "to": "object:office_ledger",
+      "weight": 0.32,
+      "tags": [
+        "target"
+      ]
+    },
+    {
+      "from": "emotion:shared_glance",
+      "to": "event:voss_meeting",
+      "weight": 0.28,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "emotion:feigned_surprise",
+      "to": "event:aldous_verne_discovered",
+      "weight": 0.26,
+      "tags": [
+        "reaction"
+      ]
+    },
+    {
+      "from": "emotion:feigned_surprise",
+      "to": "suspect:elara_voss",
+      "weight": 0.28,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "emotion:coordinated_calm",
+      "to": "suspect:renard_voss",
+      "weight": 0.26,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "emotion:coordinated_calm",
+      "to": "suspect:elara_voss",
+      "weight": 0.26,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "emotion:rehearsed_alibi",
+      "to": "event:false_alibi",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "emotion:rehearsed_alibi",
+      "to": "suspect:renard_voss",
+      "weight": 0.24,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "emotion:guarded_proximity",
+      "to": "event:voss_meeting",
+      "weight": 0.28,
+      "tags": [
+        "behavior"
+      ]
+    },
+    {
+      "from": "emotion:deflected_question",
+      "to": "witness:office_attendant",
+      "weight": 0.24,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:deflected_question",
+      "to": "location:upper_corridor",
+      "weight": 0.22,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "modifier:twice_signed",
+      "to": "object:access_register",
+      "weight": 0.32,
+      "tags": [
+        "mark"
+      ]
+    },
+    {
+      "from": "modifier:twice_signed",
+      "to": "object:falsified_entry",
+      "weight": 0.28,
+      "tags": [
+        "mark"
+      ]
+    },
+    {
+      "from": "modifier:recently_moved",
+      "to": "object:door_wedge",
+      "weight": 0.26,
+      "tags": [
+        "placement"
+      ]
+    },
+    {
+      "from": "modifier:recently_moved",
+      "to": "location:upper_corridor",
+      "weight": 0.24,
+      "tags": [
+        "clue"
+      ]
+    },
+    {
+      "from": "modifier:still_warm",
+      "to": "object:burned_note",
+      "weight": 0.28,
+      "tags": [
+        "trace"
+      ]
+    },
+    {
+      "from": "modifier:still_warm",
+      "to": "location:stationmasters_office",
+      "weight": 0.26,
+      "tags": [
+        "trace"
+      ]
+    },
+    {
+      "from": "event:record_alteration",
+      "to": "object:office_ledger",
+      "weight": 0.34,
+      "tags": [
+        "target"
+      ]
+    }
+  ]
+}
