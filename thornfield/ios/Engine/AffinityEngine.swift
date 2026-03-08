@@ -3,10 +3,12 @@ import Foundation
 final class AffinityEngine {
     let affinityTable: AffinityTable
     let triadIndex: TriadIndex
+    private let convergenceRate: Float
 
-    init(affinityTable: AffinityTable, triadIndex: TriadIndex) {
+    init(affinityTable: AffinityTable, triadIndex: TriadIndex, convergenceRate: Float = 0.25) {
         self.affinityTable = affinityTable
         self.triadIndex = triadIndex
+        self.convergenceRate = convergenceRate
     }
 
     func computeJointEnergy(triad: Triad, casebook: CasebookState) -> Float {
@@ -103,7 +105,7 @@ final class AffinityEngine {
     private func projectConvergenceDelta(triad: Triad, casebook: CasebookState) -> [Float] {
         let contribution = triad.attractorContribution
         return contribution.map { v in
-            min(1.0, v * 0.25)
+            min(1.0, v * convergenceRate)
         }
     }
 

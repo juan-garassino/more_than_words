@@ -5,9 +5,11 @@ struct CasebookState {
     var convergenceDimensions: [Float]
     var turnCount: Int = 0
     var grid: [[Triad?]]
+    var convergenceRate: Float
 
-    init(convergenceDimensions: [Float], rows: Int = 8, cols: Int = 6) {
+    init(convergenceDimensions: [Float], convergenceRate: Float = 0.25, rows: Int = 8, cols: Int = 6) {
         self.convergenceDimensions = convergenceDimensions
+        self.convergenceRate = convergenceRate
         self.grid = Array(repeating: Array(repeating: nil, count: cols), count: rows)
     }
 
@@ -46,7 +48,7 @@ struct CasebookState {
 
         let contribution = triad.attractorContribution
         for i in convergenceDimensions.indices {
-            convergenceDimensions[i] = min(1.0, convergenceDimensions[i] + contribution[i] * 0.25)
+            convergenceDimensions[i] = min(1.0, convergenceDimensions[i] + contribution[i] * convergenceRate)
         }
     }
 }

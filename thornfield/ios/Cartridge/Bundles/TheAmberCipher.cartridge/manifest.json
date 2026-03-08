@@ -1,0 +1,16 @@
+{
+  "cartridge_type": "MYSTERY",
+  "case_id": "amber_cipher",
+  "title": "The Amber Cipher",
+  "vocab_size": 72,
+  "n_attractor_dims": 3,
+  "convergence_threshold": 0.75,
+  "convergence_rate": 0.4,
+  "min_turns": 10,
+  "max_turns": 18,
+  "opening_token_ids": [
+    "location:thornfield_crossing",
+    "event:aldous_verne_discovered",
+    "time:between_trains"
+  ]
+}

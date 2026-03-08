@@ -19,16 +19,17 @@ final class GameState: ObservableObject {
     @Published var selectedTriad: Triad?
 
     private let engine: AffinityEngine
-    private let cartridge: CartridgeSpec
+    let cartridge: CartridgeSpec
 
     init(cartridge: CartridgeSpec) {
         self.cartridge = cartridge
         self.casebook = CasebookState(
-            convergenceDimensions: Array(repeating: 0.0, count: cartridge.nAttractorDims)
+            convergenceDimensions: Array(repeating: 0.0, count: cartridge.nAttractorDims),
+            convergenceRate: cartridge.convergenceRate
         )
         let index = TriadIndex()
         index.build(from: cartridge.tokens, affinityTable: cartridge.affinityTable)
-        self.engine = AffinityEngine(affinityTable: cartridge.affinityTable, triadIndex: index)
+        self.engine = AffinityEngine(affinityTable: cartridge.affinityTable, triadIndex: index, convergenceRate: cartridge.convergenceRate)
         self.playerHand = (0..<5).map { _ in UnknownToken(playerDescription: "Unknown") }
 
         placeOpeningTriad()
@@ -81,6 +82,18 @@ final class GameState: ObservableObject {
             convergenceDelta: Array(repeating: 1.0, count: cartridge.nAttractorDims),
             suggestedPosition: GridPosition(row: 7, col: 2)
         )
+    }
+
+    func restart() {
+        phase = .opening
+        casebook = CasebookState(
+            convergenceDimensions: Array(repeating: 0.0, count: cartridge.nAttractorDims),
+            convergenceRate: cartridge.convergenceRate
+        )
+        currentTriads = []
+        selectedTriad = nil
+        playerHand = (0..<5).map { _ in UnknownToken(playerDescription: "Unknown") }
+        placeOpeningTriad()
     }
 
     private func placeOpeningTriad() {

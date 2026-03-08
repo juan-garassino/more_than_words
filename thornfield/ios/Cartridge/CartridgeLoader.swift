@@ -47,7 +47,7 @@ final class CartridgeLoader {
                 temperature: temperature,
                 narrativeGradient: narrativeGradient,
                 isInvariant: isInvariant,
-                surfaceExpression: ""
+                surfaceExpression: item["surface_expression"] as? String ?? ""
             )
         }
 

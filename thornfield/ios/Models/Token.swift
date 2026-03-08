@@ -14,6 +14,7 @@ enum TokenClass: String, Codable, CaseIterable {
     case need = "NEED"
     case state = "STATE"
     case offering = "OFFERING"
+    case accomplice = "ACCOMPLICE"
     case unknown = "UNKNOWN"
 }
 

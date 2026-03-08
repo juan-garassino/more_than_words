@@ -29,6 +29,6 @@ struct CasebookView: View {
                 }
             }
         }
-        .frame(height: 360)
+        .frame(height: 280)
     }
 }
