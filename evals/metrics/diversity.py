@@ -5,7 +5,10 @@ from typing import Dict, List
 
 import numpy as np
 
-from datasets._schema import GameResult
+try:
+    from evals.datasets._schema import GameResult
+except ImportError:  # pragma: no cover
+    from datasets._schema import GameResult
 
 
 def compute_path_jaccard_distance(results: List[GameResult]) -> float:

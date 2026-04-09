@@ -1,4 +1,4 @@
-# Thornfield — Case Index
+# Living Tales — Case Index
 
 Twenty-four cases across mystery, naval, and adventure formats. One engine.
 
@@ -123,5 +123,5 @@ Adventure cases differ in one essential way: the player is an actor, not an obse
 
 - Narrative specifications: `docs/cases/NN_case_id.md`
 - Case JSON (vocabulary + graph): `cases/case_id.json`
-- Packed spec (after s02): `thornfield/trainer/cases/case_id/`
-- Trained transformer (after s04): `thornfield/trainer/outputs/case_id/policy.pt`
+- Packed spec (after s02): `living_tales/trainer/cases/case_id/`
+- Trained transformer (after s04): `living_tales/trainer/outputs/case_id/policy.pt`

@@ -1,4 +1,4 @@
-PYTHONPATH := ../thornfield/trainer:..
+PYTHONPATH := ../living_tales/trainer:..
 
 eval-all:
 	PYTHONPATH=$(PYTHONPATH) python3 -m pytest tests/ -v --tb=short

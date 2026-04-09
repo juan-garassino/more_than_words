@@ -1,5 +1,5 @@
 """
-Shared pytest fixtures for Thornfield evaluation.
+Shared pytest fixtures for Living Tales evaluation.
 """
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ import pytest
 
 # Add trainer to path
 _ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_ROOT / "thornfield" / "trainer"))
+sys.path.insert(0, str(_ROOT / "living_tales" / "trainer"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import torch
@@ -24,8 +24,8 @@ from utils.game_runner import DialogueGameRunner
 
 
 CASE_ID = "amber_cipher"
-MODEL_DIR = _ROOT / "thornfield" / "trainer" / "outputs" / CASE_ID
-CASE_DIR = _ROOT / "thornfield" / "trainer" / "cases" / CASE_ID
+MODEL_DIR = _ROOT / "living_tales" / "trainer" / "outputs" / CASE_ID
+CASE_DIR = _ROOT / "living_tales" / "trainer" / "cases" / CASE_ID
 
 
 @pytest.fixture(scope="session")

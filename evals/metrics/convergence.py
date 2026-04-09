@@ -3,7 +3,10 @@ from __future__ import annotations
 
 from typing import List
 
-from datasets._schema import GameResult
+try:
+    from evals.datasets._schema import GameResult
+except ImportError:  # pragma: no cover
+    from datasets._schema import GameResult
 
 
 def compute_convergence_rate(

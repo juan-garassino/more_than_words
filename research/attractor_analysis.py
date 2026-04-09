@@ -2,7 +2,7 @@
 """
 research/attractor_analysis.py
 ================================
-Two-track validation of Thornfield's theoretical foundations.
+Two-track validation of Living Tales's theoretical foundations.
 
 TRACK 1 — [HOPFIELD-LIKE ENERGY GEOMETRY]
   Measures properties derived from the TokenGraph weight matrix.
@@ -22,11 +22,11 @@ Usage
 -----
   # Run against a packed case directory:
   cd /path/to/more_than_words
-  python3 research/attractor_analysis.py thornfield/trainer/cases/amber_cipher
-  python3 research/attractor_analysis.py thornfield/trainer/cases/amber_cipher_L
+  python3 research/attractor_analysis.py living_tales/trainer/cases/amber_cipher
+  python3 research/attractor_analysis.py living_tales/trainer/cases/amber_cipher_L
 
   # Save plots to disk:
-  python3 research/attractor_analysis.py thornfield/trainer/cases/amber_cipher --plots
+  python3 research/attractor_analysis.py living_tales/trainer/cases/amber_cipher --plots
 """
 from __future__ import annotations
 
@@ -43,7 +43,7 @@ import numpy as np
 # Path setup: allow running from repo root
 # ---------------------------------------------------------------------------
 _REPO_ROOT = Path(__file__).resolve().parent.parent
-_TRAINER = _REPO_ROOT / "thornfield" / "trainer"
+_TRAINER = _REPO_ROOT / "living_tales" / "trainer"
 if str(_TRAINER) not in sys.path:
     sys.path.insert(0, str(_TRAINER))
 
@@ -671,7 +671,7 @@ def save_plots(spec: CartridgeSpec, r1: Dict, r2: Dict, out_dir: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Two-track Thornfield attractor analysis",
+        description="Two-track Living Tales attractor analysis",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
@@ -696,7 +696,7 @@ def main() -> None:
     spec_path = case_dir / "spec.json"
     if not spec_path.exists():
         print(f"ERROR: spec.json not found in {case_dir}")
-        print("Run: python3 thornfield/trainer/tools/pack_case.py <case.json>")
+        print("Run: python3 living_tales/trainer/tools/pack_case.py <case.json>")
         sys.exit(1)
 
     print(f"Loading case from: {case_dir}")

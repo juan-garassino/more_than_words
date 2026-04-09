@@ -3,7 +3,10 @@ from __future__ import annotations
 
 from typing import List
 
-from datasets._schema import GameResult
+try:
+    from evals.datasets._schema import GameResult
+except ImportError:  # pragma: no cover
+    from datasets._schema import GameResult
 
 # Phase ordering: EARLY < MID < LATE
 _PHASE_ORDER = {"EARLY": 0, "MID": 1, "LATE": 2, "INVARIANT": 3, "ANY": -1}

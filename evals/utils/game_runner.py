@@ -11,11 +11,14 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(_HERE.parent.parent / "thornfield" / "trainer"))
+sys.path.insert(0, str(_HERE.parent.parent / "living_tales" / "trainer"))
 
 from core.cartridge import CartridgeSpec
 from core.token import Token, TokenAgency, TokenStream
-from datasets._schema import DialogueTurn, GameResult
+try:
+    from evals.datasets._schema import DialogueTurn, GameResult
+except ImportError:  # pragma: no cover
+    from datasets._schema import DialogueTurn, GameResult
 
 
 class DialogueGameRunner:

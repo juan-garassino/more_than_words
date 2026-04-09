@@ -1,0 +1,21 @@
+{
+  "case_id": "little_creature_M",
+  "mode": "oscillating",
+  "n_games": 5,
+  "random_mean_score": 1.0,
+  "random_combo_frequency": 0.03755868544600939,
+  "random_decay_recovery_closure_rate": 0.07142857142857142,
+  "random_repetition_rate": 0.5336538461538461,
+  "random_dead_turn_rate": 0.5769230769230769,
+  "random_arc_diversity": 50.0,
+  "random_dimension_volatility": {
+    "0": 0.012550480090654813,
+    "1": 0.013144231759584867,
+    "2": 0.015581732472548118,
+    "3": 0.012675480200694157,
+    "4": 0.013269229577137874,
+    "5": 0.013956729609232683,
+    "6": 0.011956730714211097
+  },
+  "timestamp": "2026-04-09T18:55:25.378625"
+}

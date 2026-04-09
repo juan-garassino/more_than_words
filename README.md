@@ -1,8 +1,24 @@
-# Thornfield
+# Living Tales
 
-A mystery game **powered by a transformer**, trained via knowledge distillation and reinforcement learning. Each case ships as a self-contained trained model — no server, no LLM, no text generation. Inference runs entirely on-device from token IDs and float weights.
+Living Tales is a shared on-device game engine for two tracks:
+- `mystery`: converging cases where the player guides the field toward hidden invariants
+- `creature`: oscillating care loops where state rises and falls through decay, action, combo, and recovery
 
-The game is **retrieval**: the player places triads of tokens onto a casebook. Each placement updates a convergence state across attractor dimensions. When the field converges to the stored solution (killer, mechanism, motive), the case is solved.
+Both tracks ship from token IDs, weighted state vectors, and graph structure. No server, no LLM, no text generation at runtime.
+
+---
+
+## Tracks
+
+### Mystery
+
+The player places triads of tokens onto a casebook. Each placement updates a convergence state across attractor dimensions. When the field converges to the stored solution, the case is solved.
+
+### Creature
+
+The creature track uses the same cartridge architecture in `oscillating` mode. Positive weights lift care dimensions, negative weights pull them down, and the loop is designed to cycle through need, mischief, repair, and recovery rather than end in a solved state.
+
+`little_creature_M` is the current canonical creature proof-of-concept slice.
 
 ---
 
@@ -17,7 +33,7 @@ The game is **retrieval**: the player places triads of tokens onto a casebook. E
 | `policy.pt` | Transformer trained via KD + RL | **Yes — runs the iOS game** |
 | `.cartridge` | Packed case spec (vocabulary, graph, convergence rules) | **Yes** |
 
-Each case is a DLC: one `.cartridge` + one `policy.pt`. The transformer runs on-device. No backend required.
+Each cartridge is a DLC-sized unit of authored state and graph data. Mystery additionally ships a trained policy; creature is currently evaluated as a heuristic/system proof-of-concept.
 
 ---
 
@@ -79,7 +95,7 @@ make ac-pipeline-gpu
 
 # Or run stages individually:
 make ac-s01-validate        # check cases/amber_cipher.json
-make ac-s02-pack            # pack → thornfield/trainer/cases/amber_cipher/
+make ac-s02-pack            # pack → living_tales/trainer/cases/amber_cipher/
 make ac-s03-train-hopfield  # train Hopfield model → outputs/amber_cipher/model.pt
 make ac-s04-train-policy    # supervised + REINFORCE → outputs/amber_cipher/policy.pt
 make ac-s05-benchmark       # compare both, print XCODE RECOMMENDATION
@@ -87,6 +103,14 @@ make ac-s05-benchmark       # compare both, print XCODE RECOMMENDATION
 
 At the end of `ac-s05-benchmark`:
 
+```
+
+For creature balancing:
+
+```bash
+python3 living_tales_case_validator.py cases/little_creature_M.json
+python3 -m evals.utils.baseline_runner little_creature_M --n-games 100
+python3 living_tales/trainer/tools/report_creature_case.py little_creature_M --runs 100
 ```
 ================================================================
   XCODE MODEL RECOMMENDATION
@@ -99,6 +123,10 @@ At the end of `ac-s05-benchmark`:
 ---
 
 ## Architecture
+
+The shared engine now supports two explicit modes:
+- `converging`: mystery-style upward-only state accumulation
+- `oscillating`: creature-style bounded rise/fall with midpoint starts
 
 ```
 MysteryEnergyModel
@@ -113,6 +141,7 @@ MysteryEnergyModel
 The `HopfieldRetrievalHead` is the game policy. It implements transformer self-attention where Q = query vectors projected from context (one per attractor dimension) and K = V = token embedding matrix for the full vocabulary. This is the Modern Hopfield / transformer-attention equivalence: `scores = QK^T / sqrt(d)`.
 
 See [`docs/architecture.md`](docs/architecture.md) for the full model breakdown.
+See [`docs/creature.md`](docs/creature.md) for the creature-specific loop and balancing vocabulary.
 
 ---
 
@@ -122,7 +151,7 @@ See [`docs/architecture.md`](docs/architecture.md) for the full model breakdown.
 more_than_words/
 ├── CLAUDE.md                     project instructions
 ├── Makefile                      all pipeline commands
-├── thornfield_case_validator.py  validates case JSON before packing
+├── living_tales_case_validator.py  validates case JSON before packing
 │
 ├── cases/                        case definitions (JSON)
 │   ├── amber_cipher.json         trained, proof passed
@@ -131,6 +160,7 @@ more_than_words/
 │
 ├── docs/
 │   ├── architecture.md           model components deep-dive
+│   ├── creature.md               creature track and oscillating mode
 │   ├── training.md               training philosophy + distillation
 │   └── cases/                    narrative specifications for all 24 cases
 │       ├── index.md
@@ -139,13 +169,13 @@ more_than_words/
 │
 ├── notebooks/                    Colab and development notebooks
 │
-└── thornfield/trainer/
-    ├── core/                     Token, CasebookState, TokenGraph, CartridgeSpec
+└── living_tales/trainer/
+    ├── core/                     shared engine, mode logic, token roles
     ├── generator/                PathSampler
     ├── trainer/                  MysteryEnergyModel, train_mystery.py, train_policy.py
     ├── rl/                       CasebookEnv, rewards.py
     ├── validator/                convergence_proof.py
-    ├── tools/                    pack_case.py, benchmark_models.py
+    ├── tools/                    pack_case.py, benchmark_models.py, report_creature_case.py
     └── outputs/                  model.pt + policy.pt per case
 ```
 
@@ -154,7 +184,8 @@ more_than_words/
 ## Invariants (non-negotiable)
 
 - The engine never reads surface expressions (token labels are UI-only).
-- Convergence score is `min(convergence_dimensions)` — the weakest attractor dimension gates the solution.
+- In `converging` mode, score is `min(convergence_dimensions)` — the weakest attractor dimension gates the solution.
+- In `oscillating` mode, dimensions are bounded and start at a midpoint so they can rise and fall over time.
 - Cartridges cannot export without a passed proof gate.
 - `subgraph_energy` is the Lyapunov function. For non-negative weights it is guaranteed monotone decreasing as tokens are added.
 
@@ -163,7 +194,7 @@ more_than_words/
 ## Requirements
 
 ```bash
-pip install -r thornfield/trainer/requirements.txt
+pip install -r living_tales/trainer/requirements.txt
 # or:
 make colab-install
 ```

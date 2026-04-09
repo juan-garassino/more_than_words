@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from typing import List
@@ -21,11 +22,22 @@ import numpy as np
 
 _ROOT = Path(__file__).resolve().parent.parent.parent
 _EVALS = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_ROOT / "thornfield" / "trainer"))
+sys.path.insert(0, str(_EVALS))
+sys.path.insert(0, str(_ROOT / "living_tales" / "trainer"))
 
 from core.cartridge import CartridgeSpec
 from core.token import Token, TokenAgency, TokenStream
 from dataclasses import dataclass, field as dc_field
+from metrics.oscillation import (
+    compute_arc_diversity,
+    compute_combo_frequency,
+    compute_dead_turn_rate,
+    compute_decay_recovery_closure_rate,
+    compute_dimension_volatility,
+    compute_repetition_rate,
+)
+from utils.creature_runner import CreatureGameRunner
+from tools.pack_case import pack_case as pack_case_json
 
 
 @dataclass
@@ -189,6 +201,23 @@ def _run_random_game(spec: CartridgeSpec, seed: int, max_turns: int = 60) -> _Ga
 
 def compute_baselines(spec: CartridgeSpec, n_games: int = 200) -> dict:
     """Run random games and compute all metric baselines."""
+    if spec.mode == "oscillating":
+        print(f"Running {n_games} creature sessions...", flush=True)
+        results = CreatureGameRunner(spec).run_batch(n_games, seeds=list(range(n_games)))
+        return {
+            "case_id": spec.case_id,
+            "mode": spec.mode,
+            "n_games": n_games,
+            "random_mean_score": float(np.mean([r.final_convergence for r in results])),
+            "random_combo_frequency": compute_combo_frequency(results),
+            "random_decay_recovery_closure_rate": compute_decay_recovery_closure_rate(results),
+            "random_repetition_rate": compute_repetition_rate(results),
+            "random_dead_turn_rate": compute_dead_turn_rate(results),
+            "random_arc_diversity": compute_arc_diversity(results),
+            "random_dimension_volatility": compute_dimension_volatility(results),
+            "timestamp": datetime.now().isoformat(),
+        }
+
     print(f"Running {n_games} random dialogue games...", flush=True)
     results = [_run_random_game(spec, seed=i) for i in range(n_games)]
 
@@ -197,6 +226,7 @@ def compute_baselines(spec: CartridgeSpec, n_games: int = 200) -> dict:
 
     baselines = {
         "case_id": spec.case_id,
+        "mode": spec.mode,
         "n_games": n_games,
         "random_convergence_rate": _compute_convergence_rate(results),
         "random_lyapunov_monotonicity": _compute_lyapunov_monotonicity(results),
@@ -212,19 +242,33 @@ def compute_baselines(spec: CartridgeSpec, n_games: int = 200) -> dict:
     return baselines
 
 
+def _load_spec(case_id: str) -> CartridgeSpec:
+    case_dir = _ROOT / "living_tales" / "trainer" / "cases" / case_id
+    spec_path = case_dir / "spec.json"
+    if spec_path.exists():
+        return CartridgeSpec.load(str(spec_path))
+
+    case_json = _ROOT / "cases" / f"{case_id}.json"
+    if not case_json.exists():
+        raise FileNotFoundError(f"Neither packed case nor source JSON found for {case_id}")
+
+    with tempfile.TemporaryDirectory(prefix=f"{case_id}_packed_") as tmpdir:
+        out_dir = Path(tmpdir) / case_id
+        pack_case_json(case_json, out_dir)
+        return CartridgeSpec.load(str(out_dir / "spec.json"))
+
+
 def main():
     parser = argparse.ArgumentParser(description="Compute eval baselines from random play.")
     parser.add_argument("case_id", help="Case ID (e.g. amber_cipher)")
     parser.add_argument("--n-games", type=int, default=200)
     args = parser.parse_args()
 
-    case_dir = _ROOT / "thornfield" / "trainer" / "cases" / args.case_id
-    spec_path = case_dir / "spec.json"
-    if not spec_path.exists():
-        print(f"Error: {spec_path} not found. Pack the case first.")
+    try:
+        spec = _load_spec(args.case_id)
+    except FileNotFoundError as exc:
+        print(f"Error: {exc}")
         sys.exit(1)
-
-    spec = CartridgeSpec.load(str(spec_path))
     baselines = compute_baselines(spec, args.n_games)
 
     # Save

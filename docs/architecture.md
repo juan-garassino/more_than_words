@@ -1,8 +1,15 @@
-# Thornfield — Architecture
+# Living Tales — Architecture
+
+Living Tales now has two explicit runtime modes:
+
+- `converging` for mystery cases
+- `oscillating` for creature cases
+
+The shared cartridge/state machinery supports both; only the interpretation of state updates differs.
 
 ## The core abstraction
 
-A Thornfield mystery is a **Modern Hopfield Network** expressed as a game.
+A Living Tales mystery is a **Modern Hopfield Network** expressed as a game.
 
 The network stores one solution: three (or more, for multi-dim cases) invariant tokens representing killer, mechanism, and motive. Every other token in the vocabulary is a distractor, a clue, or an atmospheric element. The player's goal is to guide the network to its stored attractor by placing triads.
 

@@ -1,4 +1,4 @@
-"""Data schema for Thornfield game evaluation."""
+"""Data schema for Living Tales game evaluation."""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -13,6 +13,8 @@ class DialogueTurn:
     phase: str
     energy_at_step: float
     convergence_at_step: float
+    token_role: Optional[str] = None
+    dimension_snapshot: Optional[List[float]] = None
 
 
 @dataclass
@@ -23,6 +25,7 @@ class GameResult:
     final_convergence: float
     final_token_ids: List[str]
     total_energy: float
+    mode: str = "converging"
 
 
 @dataclass

@@ -1,0 +1,26 @@
+{
+  "cartridge_type": "MYSTERY",
+  "case_id": "little_creature",
+  "title": "Little Creature",
+  "version": "1.0.0",
+  "vocab_size": 112,
+  "embedding_dim": 64,
+  "context_dim": 128,
+  "n_attractor_dims": 5,
+  "convergence_threshold": 0.75,
+  "convergence_rate": 0.65,
+  "min_turns": 10,
+  "max_turns": 36,
+  "opening_token_ids": [
+    "location:cozy_den",
+    "event:creature_discovered",
+    "time:sunrise"
+  ],
+  "invariant_token_ids": [
+    "state:well_fed",
+    "state:content",
+    "state:rested",
+    "state:bonded",
+    "state:groomed"
+  ]
+}

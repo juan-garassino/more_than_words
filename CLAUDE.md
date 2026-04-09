@@ -1,6 +1,6 @@
-# Thornfield
+# Living Tales
 
-Thornfield is a symbolic mystery game where a tiny overfitted transformer co-narrates with the player through token dialogue. The Hopfield network is the story compiler (training + proof); the transformer is the story runtime (shipped to device).
+Living Tales is a symbolic mystery game where a tiny overfitted transformer co-narrates with the player through token dialogue. The Hopfield network is the story compiler (training + proof); the transformer is the story runtime (shipped to device).
 
 There is no LLM. The engine operates only on token IDs and float weights. Surface expressions are UI-only labels and must never influence inference. Tokens are symbolic: suspects, events, locations, objects, motives — not natural language.
 
@@ -13,7 +13,7 @@ Every game starts from the story's origin. Tokens unfold in strict chronological
 ## Training Pipeline
 
 ```
-1. Validate case JSON           thornfield_case_validator.py
+1. Validate case JSON           living_tales_case_validator.py
 2. Pack case                    tools/pack_case.py
 3. Train Hopfield (existing)    tools/train_single_case.py --model-type triad
 4. Sample dialogue trajectories generator/dialogue_sampler.py
@@ -26,14 +26,14 @@ Every game starts from the story's origin. Tokens unfold in strict chronological
 
 ## Key Commands
 
-- Validate case: `python3 thornfield_case_validator.py cases/amber_cipher.json`
-- Pack case: `python3 thornfield/trainer/tools/pack_case.py cases/amber_cipher.json`
+- Validate case: `python3 living_tales_case_validator.py cases/amber_cipher.json`
+- Pack case: `python3 living_tales/trainer/tools/pack_case.py cases/amber_cipher.json`
 - Train Hopfield: `make ac-s03-train-hopfield`
 - Train dialogue transformer: `make ac-s04-train-dialogue`
 - Train dialogue (fast): `make ac-s04-train-dialogue-fast`
-- Play interactively: `cd thornfield/trainer && python3 tools/play_dialogue.py amber_cipher`
+- Play interactively: `cd living_tales/trainer && python3 tools/play_dialogue.py amber_cipher`
 - Run evals: `cd evals && make eval-all`
-- Load trained model: `python3 thornfield/trainer/tools/load_trained_model.py thornfield/trainer/outputs/amber_cipher/dialogue_model.pt`
+- Load trained model: `python3 living_tales/trainer/tools/load_trained_model.py living_tales/trainer/outputs/amber_cipher/dialogue_model.pt`
 
 ## Invariants (Non-Negotiable)
 

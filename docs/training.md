@@ -1,4 +1,4 @@
-# Thornfield — Training Guide
+# Living Tales — Training Guide
 
 ## Are we ready to train?
 
@@ -258,6 +258,6 @@ Check which metrics are failing in the output:
 ## Extending to a new case
 
 1. Author `my_case.json` following `amber_cipher.json` structure
-2. Run `python3 thornfield_case_validator.py my_case.json`
+2. Run `python3 living_tales_case_validator.py my_case.json`
 3. Add Makefile targets following the `ac-` or `acm-` pattern
 4. Pack, train, benchmark: same pipeline

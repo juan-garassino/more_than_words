@@ -13,7 +13,7 @@
 | **False plateau** | Shallow; `motive_dim` cannot close on Webb because his grievance (the cheated survey) points toward Crale, not away; the buried motive (the 1884 transaction) recontextualises Crale's motive entirely |
 | **Bridge token** | The 1884 transaction — oblique surface expression, two LATE phase motive tokens; when placed together they reveal that Crale killed to protect nineteen years of silence, not seven acres of orchard |
 
-*Cross-case note: "Thornfield" appears here as the name of a village in Somerset. The game is named for this kind of place — a field that holds something.*
+*Cross-case note: "Thornfield" appears here as the name of a village in Somerset. It remains only an in-world place name in this case.*
 
 ---
 
