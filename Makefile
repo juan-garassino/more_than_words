@@ -165,6 +165,45 @@ ac-s04-train-policy-fast: ac-s02-pack colab-install
 	@echo "  [OK] policy.pt saved"
 
 # -----------------------------------------------------------------------------
+# Stage 04d — Train dialogue transformer (supervised KD + REINFORCE)
+# Output: thornfield/trainer/outputs/amber_cipher/dialogue_model.pt
+# -----------------------------------------------------------------------------
+
+ac-s04-train-dialogue: ac-s02-pack colab-install
+	@echo ""
+	@echo "================================================================"
+	@echo "  AC  STAGE 04d — TRAIN DIALOGUE TRANSFORMER  (CPU)"
+	@echo "  supervised KD + REINFORCE fine-tuning"
+	@echo "  output: outputs/amber_cipher/dialogue_model.pt"
+	@echo "================================================================"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/train_single_case.py amber_cipher \
+	  --model-type dialogue --paths 2000 --epochs 100 --rl-episodes 500 --device cpu --skip-proof
+	@echo "  [OK] dialogue_model.pt saved"
+
+ac-s04-train-dialogue-gpu: ac-s02-pack colab-install
+	@echo ""
+	@echo "================================================================"
+	@echo "  AC  STAGE 04d — TRAIN DIALOGUE TRANSFORMER  (GPU)"
+	@echo "  output: outputs/amber_cipher/dialogue_model.pt"
+	@echo "================================================================"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/train_single_case.py amber_cipher \
+	  --model-type dialogue --paths 2000 --epochs 100 --rl-episodes 500 --device cuda --skip-proof
+	@echo "  [OK] dialogue_model.pt saved"
+
+ac-s04-train-dialogue-fast: ac-s02-pack colab-install
+	@echo ""
+	@echo "================================================================"
+	@echo "  AC  STAGE 04d — TRAIN DIALOGUE TRANSFORMER  (fast / CPU)"
+	@echo "  500 paths · 30 KD epochs · 100 RL episodes"
+	@echo "================================================================"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/train_single_case.py amber_cipher \
+	  --model-type dialogue --paths 500 --epochs 30 --rl-episodes 100 --device cpu --skip-proof
+	@echo "  [OK] dialogue_model.pt saved"
+
+# -----------------------------------------------------------------------------
 # Stage 05 — Benchmark + Xcode recommendation
 # Requires: policy.pt from stage 04
 # -----------------------------------------------------------------------------

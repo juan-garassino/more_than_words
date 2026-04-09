@@ -33,10 +33,12 @@ def main() -> None:
     parser.add_argument("--device", default="cpu")
     parser.add_argument(
         "--model-type",
-        choices=["triad", "connection"],
+        choices=["triad", "connection", "dialogue"],
         default="triad",
-        help="Model architecture: 'triad' (default) or 'connection'.",
+        help="Model architecture: 'triad' (default), 'connection', or 'dialogue'.",
     )
+    parser.add_argument("--rl-episodes", type=int, default=500,
+                        help="REINFORCE episodes (dialogue mode only).")
     args = parser.parse_args()
 
     case_dir = Path(__file__).resolve().parents[1] / "cases" / args.case_id
@@ -77,7 +79,17 @@ def main() -> None:
     print(f"  agency           : {dict(agency_counts)}")
     print("=" * 60, flush=True)
 
-    if args.model_type == _CONNECTION_MODEL_TYPE:
+    if args.model_type == "dialogue":
+        from trainer.train_dialogue import train_dialogue_cartridge
+        model, history = train_dialogue_cartridge(
+            spec_path=str(spec_path),
+            output_dir=str(output_dir),
+            n_dialogues=args.paths,
+            n_epochs=args.epochs,
+            n_rl_episodes=args.rl_episodes,
+            device=device,
+        )
+    elif args.model_type == _CONNECTION_MODEL_TYPE:
         from trainer.train_connection import train_connection_cartridge
         model, history = train_connection_cartridge(
             spec_path=str(spec_path),
@@ -124,9 +136,9 @@ def main() -> None:
     print(f"Saved model: {model_path}")
     print(f"Saved history: {history_path}")
 
-    if args.skip_proof or args.model_type == _CONNECTION_MODEL_TYPE:
-        if args.model_type == _CONNECTION_MODEL_TYPE:
-            print("  Skipping convergence proof (not applicable for connection model).")
+    if args.skip_proof or args.model_type in (_CONNECTION_MODEL_TYPE, "dialogue"):
+        if args.model_type in (_CONNECTION_MODEL_TYPE, "dialogue"):
+            print(f"  Skipping convergence proof (not applicable for {args.model_type} model).")
         else:
             print("  Skipping convergence proof by request.")
         print("=" * 60)
