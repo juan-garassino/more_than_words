@@ -16,11 +16,19 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 
 from core.cartridge import CartridgeSpec
-from core.token import Token, TokenAgency, TokenPhase, TokenStream
+from core.token import Token, TokenAgency, TokenClass, TokenPhase, TokenStream
 
 
 ROLE_PLAYER = "player"
 ROLE_ENGINE = "engine"
+
+STRATEGIES = ("energy", "random", "red_herring_first", "location_first", "suspect_first", "object_first")
+
+_CLASS_BIAS_MAP = {
+    "location_first": TokenClass.LOCATION,
+    "suspect_first": TokenClass.SUSPECT,
+    "object_first": TokenClass.OBJECT,
+}
 
 
 @dataclass
@@ -55,11 +63,15 @@ class DialogueSampler:
         convergence_rate: float | None = None,
         soft_target_temperature: float = 2.0,
         allow_partial: bool = True,
+        strategy: str = "energy",
+        temperature_jitter: float = 0.0,
     ):
         self.spec = spec
         self.graph = spec.token_graph
         self.player_temperature = player_temperature
         self.engine_temperature = engine_temperature
+        self._strategy = strategy
+        self._temperature_jitter = temperature_jitter
         self.max_turns = max_turns if max_turns is not None else spec.max_turns * 2
         self.min_turns = min_turns if min_turns is not None else spec.min_turns
         self.convergence_rate = convergence_rate if convergence_rate is not None else spec.convergence_rate
@@ -103,23 +115,59 @@ class DialogueSampler:
             if t.id not in placed_ids and self._phase_valid(t, dialogue_position)
         ]
 
-    def _score_token(self, token: Token, context_ids: List[str]) -> float:
-        """Energy-based scoring: lower energy + higher narrative gradient = better."""
+    def _score_token(
+        self, token: Token, context_ids: List[str], dialogue_pos: int,
+    ) -> float:
+        """Score a token based on the current strategy."""
+        strategy = self._strategy
+
+        if strategy == "random":
+            return 0.0  # uniform random
+
         energy = self.graph.induced_subgraph_energy([token.id], context_ids)
-        return -energy + token.narrative_gradient * 0.2
+        base_score = -energy + token.narrative_gradient * 0.2
+
+        if strategy == "red_herring_first":
+            progress = dialogue_pos / max(self.max_turns, 1)
+            if progress < 0.6:
+                # Invert: prefer low-signal tokens early
+                return -base_score
+            return base_score
+
+        if strategy in _CLASS_BIAS_MAP:
+            target_class = _CLASS_BIAS_MAP[strategy]
+            progress = dialogue_pos / max(self.max_turns, 1)
+            if progress < 0.4 and token.token_class == target_class:
+                base_score += 2.0
+            return base_score
+
+        # Default: "energy" strategy
+        return base_score
 
     def _sample_from_pool(
         self,
         candidates: List[Token],
         context_ids: List[str],
         temperature: float,
+        dialogue_pos: int = 0,
     ) -> Optional[Token]:
         """Softmax sample a token from scored candidates."""
         if not candidates:
             return None
 
-        scores = np.array([self._score_token(t, context_ids) for t in candidates])
-        scores = scores / max(temperature, 1e-8)
+        # Apply temperature jitter
+        temp = temperature
+        if self._temperature_jitter > 0:
+            temp += np.random.uniform(-self._temperature_jitter, self._temperature_jitter)
+            temp = max(temp, 0.1)
+
+        if self._strategy == "random":
+            return candidates[np.random.randint(len(candidates))]
+
+        scores = np.array([
+            self._score_token(t, context_ids, dialogue_pos) for t in candidates
+        ])
+        scores = scores / max(temp, 1e-8)
         scores -= scores.max()
         weights = np.exp(scores)
         total = weights.sum()
@@ -203,7 +251,7 @@ class DialogueSampler:
             if not candidates:
                 break
 
-            chosen = self._sample_from_pool(candidates, context_ids, temp)
+            chosen = self._sample_from_pool(candidates, context_ids, temp, dialogue_pos)
             if chosen is None:
                 break
 
@@ -256,13 +304,30 @@ class DialogueSampler:
         n: int,
         verbose: bool = True,
         max_attempts: int | None = None,
+        strategy_mix: Dict[str, float] | None = None,
     ) -> List[DialoguePath]:
-        """Sample n dialogue trajectories."""
+        """
+        Sample n dialogue trajectories.
+
+        If strategy_mix is provided (e.g. {"energy": 0.5, "random": 0.3, "red_herring_first": 0.2}),
+        each sample draws a strategy proportionally.
+        """
+        mix_strategies: Optional[List[str]] = None
+        mix_weights: Optional[np.ndarray] = None
+        if strategy_mix:
+            mix_strategies = list(strategy_mix.keys())
+            mix_weights = np.array(list(strategy_mix.values()), dtype=np.float64)
+            mix_weights /= mix_weights.sum()
+
         paths: List[DialoguePath] = []
         attempts = 0
         cap = max_attempts if max_attempts is not None else n * 6
 
         while len(paths) < n and attempts < cap:
+            # Set strategy for this sample
+            if mix_strategies is not None:
+                self._strategy = np.random.choice(mix_strategies, p=mix_weights)
+
             path = self.sample_dialogue()
             if path is not None:
                 paths.append(path)

@@ -3,6 +3,7 @@ Shared pytest fixtures for Thornfield evaluation.
 """
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -90,3 +91,13 @@ def game_results(trained_model, spec, mappings):
     """Run 100 games with different seeds."""
     runner = DialogueGameRunner(trained_model, spec, mappings)
     return runner.run_batch(100, seeds=list(range(100)))
+
+
+@pytest.fixture(scope="session")
+def baselines():
+    """Load precomputed baselines from random play."""
+    path = _ROOT / "evals" / "datasets_json" / f"{CASE_ID}_baselines.json"
+    if not path.exists():
+        pytest.skip(f"Baselines not computed: {path}. Run: python3 -m utils.baseline_runner {CASE_ID}")
+    with open(path) as f:
+        return json.load(f)

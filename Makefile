@@ -415,3 +415,127 @@ acm-pipeline-gpu: colab-install
 	@echo "  Check the XCODE MODEL RECOMMENDATION block above for the"
 	@echo "  .pt file to load in Xcode."
 	@echo "################################################################"
+
+# =============================================================================
+# Pre-fitting infrastructure (audit, baselines, proof, visualization)
+# =============================================================================
+
+ac-audit: ac-s02-pack
+	@echo ""
+	@echo "================================================================"
+	@echo "  AC  AUDIT — DIALOGUE VIABILITY  (amber_cipher)"
+	@echo "================================================================"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/audit_case_dialogue.py amber_cipher
+	@echo "  [OK] audit complete"
+
+ac-s00-baselines: ac-s02-pack colab-install
+	@echo ""
+	@echo "================================================================"
+	@echo "  AC  BASELINES — RANDOM PLAY METRICS  (amber_cipher)"
+	@echo "================================================================"
+	cd evals && PYTHONPATH=../thornfield/trainer python3 -m utils.baseline_runner amber_cipher
+	@echo "  [OK] baselines saved"
+
+ac-dialogue-proof: ac-s02-pack colab-install
+	@echo ""
+	@echo "================================================================"
+	@echo "  AC  DIALOGUE CONVERGENCE PROOF  (amber_cipher)"
+	@echo "================================================================"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 -c "from validator.dialogue_proof import DialogueConvergenceProof; from core.cartridge import CartridgeSpec; spec=CartridgeSpec.load('cases/amber_cipher/spec.json'); DialogueConvergenceProof().run(spec, n_test_dialogues=200)"
+	@echo "  [OK] proof complete"
+
+ac-visualize: ac-s02-pack colab-install
+	@echo ""
+	@echo "================================================================"
+	@echo "  AC  VISUALIZE  (amber_cipher)"
+	@echo "================================================================"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/visualize.py trajectories amber_cipher --output-dir outputs/amber_cipher
+	@echo "  [OK] visualizations saved"
+
+ac-preflight: ac-audit ac-s00-baselines ac-dialogue-proof
+	@echo ""
+	@echo "################################################################"
+	@echo "  AMBER CIPHER PREFLIGHT COMPLETE"
+	@echo "  Case is ready for dialogue training."
+	@echo "################################################################"
+
+# =============================================================================
+# fog_over_brussels (fob-)
+# =============================================================================
+
+fob-s01-validate:
+	@echo ""
+	@echo "================================================================"
+	@echo "  FOB  STAGE 01 — VALIDATE  (fog_over_brussels.json)"
+	@echo "================================================================"
+	python3 thornfield_case_validator.py cases/fog_over_brussels.json
+	@echo "  [OK] fog_over_brussels.json is valid"
+
+fob-s02-pack: fob-s01-validate
+	@echo ""
+	@echo "================================================================"
+	@echo "  FOB  STAGE 02 — PACK  (fog_over_brussels)"
+	@echo "================================================================"
+	python3 thornfield/trainer/tools/pack_case.py cases/fog_over_brussels.json
+	@echo "  [OK] packed to thornfield/trainer/cases/fog_over_brussels/"
+
+fob-audit: fob-s02-pack
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/audit_case_dialogue.py fog_over_brussels
+
+fob-baselines: fob-s02-pack colab-install
+	cd evals && PYTHONPATH=../thornfield/trainer python3 -m utils.baseline_runner fog_over_brussels
+
+fob-dialogue-proof: fob-s02-pack colab-install
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 -c "from validator.dialogue_proof import DialogueConvergenceProof; from core.cartridge import CartridgeSpec; spec=CartridgeSpec.load('cases/fog_over_brussels/spec.json'); DialogueConvergenceProof().run(spec, n_test_dialogues=200)"
+
+fob-preflight: fob-audit fob-baselines fob-dialogue-proof
+	@echo ""
+	@echo "################################################################"
+	@echo "  FOG OVER BRUSSELS PREFLIGHT COMPLETE"
+	@echo "################################################################"
+
+# =============================================================================
+# Fit · Play · Report (end-to-end smoke test)
+# =============================================================================
+
+ac-fit-play-report: ac-s02-pack colab-install
+	@echo ""
+	@echo "================================================================"
+	@echo "  THORNFIELD FIT PLAY REPORT  (amber_cipher)"
+	@echo "================================================================"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/fit_play_report.py amber_cipher \
+	  --paths 500 --epochs 30 --rl-episodes 100 --games 3
+
+# =============================================================================
+# Train all valid cases (batch)
+# =============================================================================
+
+train-all-fast: colab-install
+	@echo ""
+	@echo "################################################################"
+	@echo "  THORNFIELD — TRAIN ALL CASES (fast)"
+	@echo "################################################################"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/train_all_cases.py --paths 500 --epochs 30 --rl-episodes 100 --games 3
+
+train-all: colab-install
+	@echo ""
+	@echo "################################################################"
+	@echo "  THORNFIELD — TRAIN ALL CASES"
+	@echo "################################################################"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/train_all_cases.py --paths 2000 --epochs 100 --rl-episodes 500 --games 5
+
+train-all-production: colab-install
+	@echo ""
+	@echo "################################################################"
+	@echo "  THORNFIELD — TRAIN ALL CASES (production)"
+	@echo "################################################################"
+	cd thornfield/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/train_all_cases.py --production

@@ -36,6 +36,7 @@ from core.token import Token, TokenClass, TokenPhase, TokenStream, TokenAgency
 from generator.dialogue_sampler import DialogueSampler, DialoguePath, ROLE_PLAYER, ROLE_ENGINE
 from trainer.dialogue_model import DialogueTransformer
 from trainer.loss import LyapunovRegularization
+from rl.dialogue_rewards import DialogueRewardConfig, DialogueRewardComputer
 
 
 # ---------------------------------------------------------------------------
@@ -429,6 +430,7 @@ def train_dialogue_rl(
     kd_anchor_weight: float = 0.05,
     kd_temperature: float = 2.0,
     max_turns: int | None = None,
+    reward_config: DialogueRewardConfig | None = None,
     device: str = "cpu",
 ) -> Tuple[DialogueTransformer, Dict]:
     """
@@ -443,6 +445,16 @@ def train_dialogue_rl(
 
     max_t = max_turns if max_turns is not None else spec.max_turns * 2
     min_t = spec.min_turns
+
+    # Reward computer
+    if reward_config is None:
+        reward_config = DialogueRewardConfig()
+    reward_computer = DialogueRewardComputer(
+        config=reward_config,
+        graph=spec.token_graph,
+        max_turns=max_t,
+        convergence_threshold=spec.convergence_threshold,
+    )
 
     # KD anchor (soft target distribution)
     soft_target = _build_vocab_soft_targets(spec, kd_temperature, device)
@@ -483,6 +495,8 @@ def train_dialogue_rl(
 
         log_probs: List[torch.Tensor] = []
         rewards: List[float] = []
+        recent_player: List = []  # last 3 player tokens for responsiveness
+        signal_history: List[float] = []  # attractor weight norms for pacing
 
         # Opening tokens (no gradient)
         for tid in spec.opening_token_ids:
@@ -529,18 +543,22 @@ def train_dialogue_rl(
                 placed_ids.add(chosen_tok.id)
                 context_ids.append(chosen_tok.id)
 
-                new_tags = set(chosen_tok.affinity_tags)
-                r = _compute_dialogue_reward(
-                    spec.token_graph, ids_before, context_ids,
-                    chosen_tok, turn, max_t, new_tags, prev_tags,
-                )
-                prev_tags |= new_tags
-                rewards.append(r)
-                log_probs.append(torch.tensor(0.0, device=device))  # no gradient
-
                 convergence_dims = np.minimum(
                     1.0, convergence_dims + chosen_tok.attractor_weights * spec.convergence_rate,
                 )
+                conv_at = float(convergence_dims.min())
+
+                r = reward_computer.compute_turn_reward(
+                    ids_before, context_ids, chosen_tok, turn,
+                    prev_tags, recent_player, signal_history, conv_at,
+                )
+                prev_tags |= set(chosen_tok.affinity_tags)
+                recent_player.append(chosen_tok)
+                if len(recent_player) > 3:
+                    recent_player.pop(0)
+                signal_history.append(float(np.linalg.norm(chosen_tok.attractor_weights)))
+                rewards.append(r)
+                log_probs.append(torch.tensor(0.0, device=device))  # no gradient
             else:
                 # Engine: model predicts next token (WITH gradient)
                 model.train()
@@ -586,21 +604,20 @@ def train_dialogue_rl(
                 placed_ids.add(chosen_tok.id)
                 context_ids.append(chosen_tok.id)
 
-                new_tags = set(chosen_tok.affinity_tags)
-                r = _compute_dialogue_reward(
-                    spec.token_graph, ids_before, context_ids,
-                    chosen_tok, turn, max_t, new_tags, prev_tags,
-                )
-                prev_tags |= new_tags
-                rewards.append(r)
-                log_probs.append(lp)
-
                 convergence_dims = np.minimum(
                     1.0, convergence_dims + chosen_tok.attractor_weights * spec.convergence_rate,
                 )
+                conv_at = float(convergence_dims.min())
 
-                # KD anchor: KL from model's distribution to Hopfield soft target
-                # (computed but stored for loss — not added to reward)
+                r = reward_computer.compute_turn_reward(
+                    ids_before, context_ids, chosen_tok, turn,
+                    prev_tags, recent_player, signal_history, conv_at,
+                )
+                prev_tags |= set(chosen_tok.affinity_tags)
+                signal_history.append(float(np.linalg.norm(chosen_tok.attractor_weights)))
+                rewards.append(r)
+                log_probs.append(lp)
+
                 model.eval()
 
             is_player_turn = not is_player_turn
@@ -761,4 +778,11 @@ def train_dialogue_cartridge(
         "rl": rl_history,
         "loss": rl_history.get("loss", sup_history.get("loss", 0.0)),
     }
+
+    # Save combined history for visualization
+    import json
+    history_path = Path(output_dir) / "history.json"
+    history_path.write_text(json.dumps(combined_history, indent=2, default=str))
+    _log(f"Saved history: {history_path}")
+
     return model, combined_history

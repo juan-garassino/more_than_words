@@ -1,0 +1,13 @@
+{
+  "case_id": "amber_cipher",
+  "n_games": 100,
+  "random_convergence_rate": 1.0,
+  "random_lyapunov_monotonicity": 1.0,
+  "random_jaccard_distance": 0.6668108674051743,
+  "random_phase_compliance": 0.5677261613691932,
+  "random_class_entropy": 3.242260573140493,
+  "random_perplexity": 72.0,
+  "random_accuracy": 0.013888888888888888,
+  "random_mean_length": 20.45,
+  "timestamp": "2026-04-09T11:35:51.035419"
+}
