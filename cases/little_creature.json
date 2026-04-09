@@ -1,0 +1,2890 @@
+{
+  "case_id": "little_creature",
+  "title": "Little Creature",
+  "convergence_shape": "gradual",
+  "difficulty": "easy",
+  "opening_token_ids": [
+    "location:cozy_den",
+    "event:creature_discovered",
+    "time:sunrise"
+  ],
+  "invariant_token_ids": [
+    "state:well_fed",
+    "state:content",
+    "state:rested",
+    "state:bonded",
+    "state:groomed"
+  ],
+  "tokens": [
+    {
+      "id": "state:well_fed",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "state:content",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "state:rested",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "state:bonded",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "state:groomed",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "action:fill_bowl",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.22,
+        0.04,
+        0.02,
+        0.02,
+        0.01
+      ],
+      "affinity_tags": [
+        "care",
+        "hunger",
+        "routine"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:give_treat",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.12,
+        0.14,
+        0.02,
+        0.06,
+        0.01
+      ],
+      "affinity_tags": [
+        "care",
+        "hunger",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:pour_water",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.18,
+        0.02,
+        0.04,
+        0.01,
+        0.02
+      ],
+      "affinity_tags": [
+        "care",
+        "hunger",
+        "routine"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:toss_ball",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.16,
+        0.08,
+        0.1,
+        0.01
+      ],
+      "affinity_tags": [
+        "play",
+        "energy",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:tug_rope",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.12,
+        0.1,
+        0.12,
+        0.01
+      ],
+      "affinity_tags": [
+        "play",
+        "energy",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:scratch_chin",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.12,
+        0.02,
+        0.1,
+        0.06
+      ],
+      "affinity_tags": [
+        "care",
+        "bond",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:brush_coat",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.06,
+        0.02,
+        0.04,
+        0.2
+      ],
+      "affinity_tags": [
+        "groom",
+        "comfort",
+        "care"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:clean_paws",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.04,
+        0.02,
+        0.02,
+        0.18
+      ],
+      "affinity_tags": [
+        "groom",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:dim_lamp",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.08,
+        0.26,
+        0.05,
+        0.05
+      ],
+      "affinity_tags": [
+        "rest",
+        "energy",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:sing_low",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.13,
+        0.18,
+        0.11,
+        0.03
+      ],
+      "affinity_tags": [
+        "rest",
+        "bond",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:open_door",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.1,
+        0.06,
+        0.08,
+        0.01
+      ],
+      "affinity_tags": [
+        "explore",
+        "energy",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:wrap_blanket",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.1,
+        0.19,
+        0.07,
+        0.07
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "mood:happy_wag",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.04,
+        0.16,
+        0.04,
+        0.08,
+        0.02
+      ],
+      "affinity_tags": [
+        "joy",
+        "bond",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mood:calm_sigh",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.05,
+        0.11,
+        0.16,
+        0.07,
+        0.07
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mood:eager_bounce",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.14,
+        0.06,
+        0.1,
+        0.02
+      ],
+      "affinity_tags": [
+        "play",
+        "energy",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mood:low_whine",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.12,
+        0.02,
+        0.02,
+        0.06,
+        0.01
+      ],
+      "affinity_tags": [
+        "hunger",
+        "need",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mood:drowsy_blink",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.08,
+        0.24,
+        0.05,
+        0.05
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mood:curious_sniff",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.04,
+        0.08,
+        0.04,
+        0.06,
+        0.02
+      ],
+      "affinity_tags": [
+        "explore",
+        "energy",
+        "play"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mood:anxious_pace",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.04,
+        0.02,
+        0.04,
+        0.12,
+        0.02
+      ],
+      "affinity_tags": [
+        "need",
+        "bond",
+        "stress"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mood:playful_crouch",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.12,
+        0.08,
+        0.1,
+        0.02
+      ],
+      "affinity_tags": [
+        "play",
+        "energy",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mood:warm_lean",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.1,
+        0.04,
+        0.14,
+        0.04
+      ],
+      "affinity_tags": [
+        "bond",
+        "comfort",
+        "care"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mood:proud_prance",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.18,
+        0.08,
+        0.1,
+        0.08
+      ],
+      "affinity_tags": [
+        "joy",
+        "energy",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:cozy_den",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.04,
+        0.06,
+        0.08,
+        0.04,
+        0.06
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:sunny_garden",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.08,
+        0.06,
+        0.06,
+        0.02
+      ],
+      "affinity_tags": [
+        "play",
+        "explore",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:kitchen_corner",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.14,
+        0.04,
+        0.02,
+        0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "hunger",
+        "routine",
+        "care"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:warm_hearth",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.04,
+        0.08,
+        0.1,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:muddy_path",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.06,
+        0.08,
+        0.08,
+        0.01
+      ],
+      "affinity_tags": [
+        "explore",
+        "energy",
+        "play"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:wash_basin",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.02,
+        0.02,
+        0.02,
+        0.16
+      ],
+      "affinity_tags": [
+        "groom",
+        "comfort",
+        "care"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:front_step",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.06,
+        0.04,
+        0.08,
+        0.02
+      ],
+      "affinity_tags": [
+        "bond",
+        "explore",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:soft_bed",
+      "class": "LOCATION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.08,
+        0.2,
+        0.05,
+        0.1
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:rain_outside",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.04,
+        0.06,
+        0.08,
+        0.02
+      ],
+      "affinity_tags": [
+        "comfort",
+        "bond",
+        "rest"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:warm_sun",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.08,
+        0.04,
+        0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "play",
+        "energy",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:cool_breeze",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.06,
+        0.06,
+        0.04,
+        0.04
+      ],
+      "affinity_tags": [
+        "comfort",
+        "energy",
+        "explore"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:quiet_house",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.06,
+        0.26,
+        0.06,
+        0.09
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:visitor_knock",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.06,
+        0.02,
+        0.12,
+        0.02
+      ],
+      "affinity_tags": [
+        "bond",
+        "energy",
+        "explore"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:snow_falling",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.09,
+        0.12,
+        0.09,
+        0.12
+      ],
+      "affinity_tags": [
+        "comfort",
+        "rest",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:fresh_air",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.06,
+        0.06,
+        0.04,
+        0.04
+      ],
+      "affinity_tags": [
+        "energy",
+        "explore",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:thunder_rumble",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.02,
+        0.05,
+        0.12,
+        0.02
+      ],
+      "affinity_tags": [
+        "stress",
+        "bond",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:birdsong",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.08,
+        0.04,
+        0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "play",
+        "energy",
+        "explore"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:firelight",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.12,
+        0.14,
+        0.09,
+        0.09
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "object:food_bowl",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.14,
+        0.04,
+        0.02,
+        0.02,
+        0.02
+      ],
+      "affinity_tags": [
+        "hunger",
+        "routine",
+        "care"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:water_dish",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.12,
+        0.02,
+        0.02,
+        0.02,
+        0.02
+      ],
+      "affinity_tags": [
+        "hunger",
+        "routine"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:rubber_ball",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.1,
+        0.06,
+        0.08,
+        0.01
+      ],
+      "affinity_tags": [
+        "play",
+        "energy",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:knotted_rope",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.08,
+        0.08,
+        0.1,
+        0.01
+      ],
+      "affinity_tags": [
+        "play",
+        "energy",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:soft_blanket",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.09,
+        0.2,
+        0.06,
+        0.09
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:bristle_brush",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.04,
+        0.02,
+        0.04,
+        0.16
+      ],
+      "affinity_tags": [
+        "groom",
+        "comfort",
+        "care"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:small_bone",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.14,
+        0.08,
+        0.02,
+        0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "hunger",
+        "play",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:worn_collar",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.04,
+        0.02,
+        0.08,
+        0.06
+      ],
+      "affinity_tags": [
+        "bond",
+        "comfort",
+        "care"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:tin_bell",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.06,
+        0.04,
+        0.06,
+        0.02
+      ],
+      "affinity_tags": [
+        "play",
+        "bond",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:chew_stick",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.02,
+        0.04,
+        0.08
+      ],
+      "affinity_tags": [
+        "hunger",
+        "groom",
+        "play"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:warm_towel",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.04,
+        0.04,
+        0.02,
+        0.14
+      ],
+      "affinity_tags": [
+        "groom",
+        "comfort",
+        "care"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:squeaky_duck",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.01,
+        0.12,
+        0.04,
+        0.08,
+        0.01
+      ],
+      "affinity_tags": [
+        "play",
+        "bond",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:pillow_nest",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.05,
+        0.22,
+        0.05,
+        0.11
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "need:belly_rumble",
+      "class": "MOTIVE",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.12,
+        0.02,
+        0.02,
+        0.02,
+        0.01
+      ],
+      "affinity_tags": [
+        "hunger",
+        "need",
+        "routine"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "need:restless_pacing",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.02,
+        0.1,
+        0.07,
+        0.02
+      ],
+      "affinity_tags": [
+        "energy",
+        "need",
+        "stress"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "need:lonely_cry",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.04,
+        0.02,
+        0.14,
+        0.02
+      ],
+      "affinity_tags": [
+        "bond",
+        "need",
+        "stress"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "need:itchy_scratch",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.02,
+        0.02,
+        0.02,
+        0.14
+      ],
+      "affinity_tags": [
+        "groom",
+        "need",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "need:yawn_stretch",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.07,
+        0.23,
+        0.07,
+        0.07
+      ],
+      "affinity_tags": [
+        "rest",
+        "energy",
+        "need"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "need:play_nudge",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.12,
+        0.04,
+        0.08,
+        0.02
+      ],
+      "affinity_tags": [
+        "play",
+        "bond",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "companion:park_dog",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.08,
+        0.04,
+        0.1,
+        0.02
+      ],
+      "affinity_tags": [
+        "bond",
+        "play",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "companion:window_bird",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.06,
+        0.02,
+        0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "explore",
+        "play"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "companion:child_visitor",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.1,
+        0.04,
+        0.12,
+        0.02
+      ],
+      "affinity_tags": [
+        "bond",
+        "play",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "companion:calm_cat",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.04,
+        0.06,
+        0.08,
+        0.02
+      ],
+      "affinity_tags": [
+        "bond",
+        "comfort",
+        "rest"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "companion:mail_carrier",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.04,
+        0.04,
+        0.06,
+        0.02
+      ],
+      "affinity_tags": [
+        "bond",
+        "explore",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:sunrise",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.04,
+        0.06,
+        0.02,
+        0.02
+      ],
+      "affinity_tags": [
+        "routine",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:midday_warmth",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.04,
+        0.06,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "affinity_tags": [
+        "play",
+        "energy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:golden_hour",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.04,
+        0.08,
+        0.06,
+        0.06,
+        0.02
+      ],
+      "affinity_tags": [
+        "bond",
+        "comfort",
+        "play"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:dusk_settling",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.09,
+        0.2,
+        0.09,
+        0.06
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:deep_night",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.03,
+        0.06,
+        0.26,
+        0.06,
+        0.09
+      ],
+      "affinity_tags": [
+        "rest",
+        "comfort"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:creature_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.04,
+        0.06,
+        0.04,
+        0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "routine",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:meal_served",
+      "class": "EVENT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.16,
+        0.06,
+        0.02,
+        0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "hunger",
+        "routine",
+        "care"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "event:walk_begun",
+      "class": "EVENT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.08,
+        0.08,
+        0.1,
+        0.02
+      ],
+      "affinity_tags": [
+        "explore",
+        "energy",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      "state:well_fed",
+      "state:content",
+      "state:rested",
+      "state:bonded",
+      "state:groomed",
+      "action:fill_bowl",
+      "action:give_treat",
+      "action:pour_water",
+      "action:toss_ball",
+      "action:tug_rope",
+      "action:scratch_chin",
+      "action:brush_coat",
+      "action:clean_paws",
+      "action:dim_lamp",
+      "action:sing_low",
+      "action:open_door",
+      "action:wrap_blanket",
+      "mood:happy_wag",
+      "mood:calm_sigh",
+      "mood:eager_bounce",
+      "mood:low_whine",
+      "mood:drowsy_blink",
+      "mood:curious_sniff",
+      "mood:anxious_pace",
+      "mood:playful_crouch",
+      "mood:warm_lean",
+      "mood:proud_prance",
+      "location:cozy_den",
+      "location:sunny_garden",
+      "location:kitchen_corner",
+      "location:warm_hearth",
+      "location:muddy_path",
+      "location:wash_basin",
+      "location:front_step",
+      "location:soft_bed",
+      "context:rain_outside",
+      "context:warm_sun",
+      "context:cool_breeze",
+      "context:quiet_house",
+      "context:visitor_knock",
+      "context:snow_falling",
+      "context:fresh_air",
+      "context:thunder_rumble",
+      "context:birdsong",
+      "context:firelight",
+      "object:food_bowl",
+      "object:water_dish",
+      "object:rubber_ball",
+      "object:knotted_rope",
+      "object:soft_blanket",
+      "object:bristle_brush",
+      "object:small_bone",
+      "object:worn_collar",
+      "object:tin_bell",
+      "object:chew_stick",
+      "object:warm_towel",
+      "object:squeaky_duck",
+      "object:pillow_nest",
+      "need:belly_rumble",
+      "need:restless_pacing",
+      "need:lonely_cry",
+      "need:itchy_scratch",
+      "need:yawn_stretch",
+      "need:play_nudge",
+      "companion:park_dog",
+      "companion:window_bird",
+      "companion:child_visitor",
+      "companion:calm_cat",
+      "companion:mail_carrier",
+      "time:sunrise",
+      "time:midday_warmth",
+      "time:golden_hour",
+      "time:dusk_settling",
+      "time:deep_night",
+      "event:creature_discovered",
+      "event:meal_served",
+      "event:walk_begun"
+    ],
+    "edges": [
+      {
+        "from": "action:fill_bowl",
+        "to": "object:food_bowl",
+        "weight": 0.45,
+        "tags": [
+          "care"
+        ]
+      },
+      {
+        "from": "action:fill_bowl",
+        "to": "need:belly_rumble",
+        "weight": 0.4,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:fill_bowl",
+        "to": "location:kitchen_corner",
+        "weight": 0.35,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:pour_water",
+        "to": "object:water_dish",
+        "weight": 0.4,
+        "tags": [
+          "care"
+        ]
+      },
+      {
+        "from": "action:pour_water",
+        "to": "location:kitchen_corner",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:give_treat",
+        "to": "object:small_bone",
+        "weight": 0.38,
+        "tags": [
+          "care"
+        ]
+      },
+      {
+        "from": "action:give_treat",
+        "to": "mood:happy_wag",
+        "weight": 0.35,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:toss_ball",
+        "to": "object:rubber_ball",
+        "weight": 0.42,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "action:toss_ball",
+        "to": "mood:eager_bounce",
+        "weight": 0.38,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:toss_ball",
+        "to": "location:sunny_garden",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:tug_rope",
+        "to": "object:knotted_rope",
+        "weight": 0.4,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "action:tug_rope",
+        "to": "mood:playful_crouch",
+        "weight": 0.36,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:scratch_chin",
+        "to": "mood:warm_lean",
+        "weight": 0.4,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "action:scratch_chin",
+        "to": "mood:calm_sigh",
+        "weight": 0.32,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:brush_coat",
+        "to": "object:bristle_brush",
+        "weight": 0.42,
+        "tags": [
+          "groom"
+        ]
+      },
+      {
+        "from": "action:brush_coat",
+        "to": "need:itchy_scratch",
+        "weight": 0.36,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:brush_coat",
+        "to": "location:wash_basin",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:clean_paws",
+        "to": "object:warm_towel",
+        "weight": 0.4,
+        "tags": [
+          "groom"
+        ]
+      },
+      {
+        "from": "action:clean_paws",
+        "to": "location:wash_basin",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:dim_lamp",
+        "to": "mood:drowsy_blink",
+        "weight": 0.38,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:dim_lamp",
+        "to": "location:cozy_den",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:sing_low",
+        "to": "mood:calm_sigh",
+        "weight": 0.36,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:sing_low",
+        "to": "location:soft_bed",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:open_door",
+        "to": "mood:eager_bounce",
+        "weight": 0.34,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:open_door",
+        "to": "location:front_step",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:wrap_blanket",
+        "to": "object:soft_blanket",
+        "weight": 0.4,
+        "tags": [
+          "care"
+        ]
+      },
+      {
+        "from": "action:wrap_blanket",
+        "to": "mood:calm_sigh",
+        "weight": 0.34,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:wrap_blanket",
+        "to": "location:soft_bed",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "mood:happy_wag",
+        "to": "location:sunny_garden",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "mood:happy_wag",
+        "to": "companion:child_visitor",
+        "weight": 0.28,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "mood:calm_sigh",
+        "to": "location:warm_hearth",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "mood:calm_sigh",
+        "to": "context:firelight",
+        "weight": 0.28,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "mood:eager_bounce",
+        "to": "event:walk_begun",
+        "weight": 0.34,
+        "tags": [
+          "energy"
+        ]
+      },
+      {
+        "from": "mood:eager_bounce",
+        "to": "companion:park_dog",
+        "weight": 0.3,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "mood:low_whine",
+        "to": "need:belly_rumble",
+        "weight": 0.36,
+        "tags": [
+          "need"
+        ]
+      },
+      {
+        "from": "mood:low_whine",
+        "to": "location:kitchen_corner",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "mood:drowsy_blink",
+        "to": "location:soft_bed",
+        "weight": 0.34,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "mood:drowsy_blink",
+        "to": "need:yawn_stretch",
+        "weight": 0.3,
+        "tags": [
+          "need"
+        ]
+      },
+      {
+        "from": "mood:curious_sniff",
+        "to": "location:front_step",
+        "weight": 0.3,
+        "tags": [
+          "explore"
+        ]
+      },
+      {
+        "from": "mood:curious_sniff",
+        "to": "companion:window_bird",
+        "weight": 0.26,
+        "tags": [
+          "explore"
+        ]
+      },
+      {
+        "from": "mood:anxious_pace",
+        "to": "need:lonely_cry",
+        "weight": 0.34,
+        "tags": [
+          "need"
+        ]
+      },
+      {
+        "from": "mood:anxious_pace",
+        "to": "context:thunder_rumble",
+        "weight": 0.3,
+        "tags": [
+          "stress"
+        ]
+      },
+      {
+        "from": "mood:playful_crouch",
+        "to": "location:sunny_garden",
+        "weight": 0.3,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "mood:playful_crouch",
+        "to": "object:squeaky_duck",
+        "weight": 0.28,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "mood:warm_lean",
+        "to": "location:warm_hearth",
+        "weight": 0.32,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "mood:warm_lean",
+        "to": "companion:calm_cat",
+        "weight": 0.26,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "mood:proud_prance",
+        "to": "location:sunny_garden",
+        "weight": 0.28,
+        "tags": [
+          "energy"
+        ]
+      },
+      {
+        "from": "mood:proud_prance",
+        "to": "object:worn_collar",
+        "weight": 0.26,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "location:cozy_den",
+        "to": "event:creature_discovered",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:cozy_den",
+        "to": "time:sunrise",
+        "weight": 0.28,
+        "tags": [
+          "routine"
+        ]
+      },
+      {
+        "from": "location:sunny_garden",
+        "to": "context:warm_sun",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:sunny_garden",
+        "to": "context:birdsong",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:kitchen_corner",
+        "to": "event:meal_served",
+        "weight": 0.34,
+        "tags": [
+          "routine"
+        ]
+      },
+      {
+        "from": "location:kitchen_corner",
+        "to": "time:sunrise",
+        "weight": 0.26,
+        "tags": [
+          "routine"
+        ]
+      },
+      {
+        "from": "location:warm_hearth",
+        "to": "context:firelight",
+        "weight": 0.32,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "location:warm_hearth",
+        "to": "time:dusk_settling",
+        "weight": 0.28,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "location:muddy_path",
+        "to": "event:walk_begun",
+        "weight": 0.32,
+        "tags": [
+          "explore"
+        ]
+      },
+      {
+        "from": "location:muddy_path",
+        "to": "context:rain_outside",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:wash_basin",
+        "to": "need:itchy_scratch",
+        "weight": 0.3,
+        "tags": [
+          "groom"
+        ]
+      },
+      {
+        "from": "location:front_step",
+        "to": "companion:mail_carrier",
+        "weight": 0.26,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "location:front_step",
+        "to": "context:fresh_air",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:soft_bed",
+        "to": "time:deep_night",
+        "weight": 0.32,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "location:soft_bed",
+        "to": "object:pillow_nest",
+        "weight": 0.3,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "context:rain_outside",
+        "to": "mood:anxious_pace",
+        "weight": 0.28,
+        "tags": [
+          "stress"
+        ]
+      },
+      {
+        "from": "context:warm_sun",
+        "to": "mood:happy_wag",
+        "weight": 0.28,
+        "tags": [
+          "joy"
+        ]
+      },
+      {
+        "from": "context:cool_breeze",
+        "to": "location:front_step",
+        "weight": 0.26,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "context:quiet_house",
+        "to": "mood:drowsy_blink",
+        "weight": 0.3,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "context:quiet_house",
+        "to": "time:deep_night",
+        "weight": 0.28,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "context:visitor_knock",
+        "to": "mood:eager_bounce",
+        "weight": 0.3,
+        "tags": [
+          "energy"
+        ]
+      },
+      {
+        "from": "context:visitor_knock",
+        "to": "companion:child_visitor",
+        "weight": 0.28,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "context:snow_falling",
+        "to": "location:cozy_den",
+        "weight": 0.28,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "context:snow_falling",
+        "to": "mood:calm_sigh",
+        "weight": 0.26,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "context:fresh_air",
+        "to": "mood:curious_sniff",
+        "weight": 0.28,
+        "tags": [
+          "explore"
+        ]
+      },
+      {
+        "from": "context:thunder_rumble",
+        "to": "need:lonely_cry",
+        "weight": 0.3,
+        "tags": [
+          "stress"
+        ]
+      },
+      {
+        "from": "context:birdsong",
+        "to": "mood:curious_sniff",
+        "weight": 0.28,
+        "tags": [
+          "explore"
+        ]
+      },
+      {
+        "from": "context:firelight",
+        "to": "mood:warm_lean",
+        "weight": 0.3,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "object:food_bowl",
+        "to": "event:meal_served",
+        "weight": 0.34,
+        "tags": [
+          "routine"
+        ]
+      },
+      {
+        "from": "object:food_bowl",
+        "to": "need:belly_rumble",
+        "weight": 0.3,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "object:water_dish",
+        "to": "need:belly_rumble",
+        "weight": 0.28,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "object:rubber_ball",
+        "to": "mood:playful_crouch",
+        "weight": 0.3,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "object:knotted_rope",
+        "to": "mood:playful_crouch",
+        "weight": 0.28,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "object:soft_blanket",
+        "to": "mood:calm_sigh",
+        "weight": 0.3,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "object:bristle_brush",
+        "to": "need:itchy_scratch",
+        "weight": 0.32,
+        "tags": [
+          "groom"
+        ]
+      },
+      {
+        "from": "object:small_bone",
+        "to": "mood:happy_wag",
+        "weight": 0.28,
+        "tags": [
+          "hunger"
+        ]
+      },
+      {
+        "from": "object:worn_collar",
+        "to": "event:walk_begun",
+        "weight": 0.28,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "object:tin_bell",
+        "to": "mood:eager_bounce",
+        "weight": 0.26,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "object:chew_stick",
+        "to": "need:itchy_scratch",
+        "weight": 0.26,
+        "tags": [
+          "groom"
+        ]
+      },
+      {
+        "from": "object:warm_towel",
+        "to": "mood:calm_sigh",
+        "weight": 0.28,
+        "tags": [
+          "groom"
+        ]
+      },
+      {
+        "from": "object:squeaky_duck",
+        "to": "mood:eager_bounce",
+        "weight": 0.28,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "object:pillow_nest",
+        "to": "need:yawn_stretch",
+        "weight": 0.3,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "need:belly_rumble",
+        "to": "time:sunrise",
+        "weight": 0.28,
+        "tags": [
+          "routine"
+        ]
+      },
+      {
+        "from": "need:restless_pacing",
+        "to": "time:midday_warmth",
+        "weight": 0.26,
+        "tags": [
+          "energy"
+        ]
+      },
+      {
+        "from": "need:lonely_cry",
+        "to": "companion:calm_cat",
+        "weight": 0.28,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "need:itchy_scratch",
+        "to": "context:rain_outside",
+        "weight": 0.24,
+        "tags": [
+          "groom"
+        ]
+      },
+      {
+        "from": "need:yawn_stretch",
+        "to": "time:dusk_settling",
+        "weight": 0.3,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "need:play_nudge",
+        "to": "time:golden_hour",
+        "weight": 0.28,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "companion:park_dog",
+        "to": "location:muddy_path",
+        "weight": 0.28,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "companion:window_bird",
+        "to": "location:front_step",
+        "weight": 0.24,
+        "tags": [
+          "explore"
+        ]
+      },
+      {
+        "from": "companion:child_visitor",
+        "to": "location:sunny_garden",
+        "weight": 0.28,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "companion:calm_cat",
+        "to": "location:warm_hearth",
+        "weight": 0.26,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "companion:mail_carrier",
+        "to": "mood:eager_bounce",
+        "weight": 0.24,
+        "tags": [
+          "energy"
+        ]
+      },
+      {
+        "from": "time:sunrise",
+        "to": "event:creature_discovered",
+        "weight": 0.3,
+        "tags": [
+          "routine"
+        ]
+      },
+      {
+        "from": "time:midday_warmth",
+        "to": "context:warm_sun",
+        "weight": 0.28,
+        "tags": [
+          "energy"
+        ]
+      },
+      {
+        "from": "time:golden_hour",
+        "to": "event:walk_begun",
+        "weight": 0.28,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "time:golden_hour",
+        "to": "context:cool_breeze",
+        "weight": 0.24,
+        "tags": [
+          "comfort"
+        ]
+      },
+      {
+        "from": "time:dusk_settling",
+        "to": "context:firelight",
+        "weight": 0.28,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "event:creature_discovered",
+        "to": "need:belly_rumble",
+        "weight": 0.28,
+        "tags": [
+          "routine"
+        ]
+      },
+      {
+        "from": "event:meal_served",
+        "to": "mood:happy_wag",
+        "weight": 0.3,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "event:walk_begun",
+        "to": "mood:proud_prance",
+        "weight": 0.28,
+        "tags": [
+          "energy"
+        ]
+      },
+      {
+        "from": "need:restless_pacing",
+        "to": "mood:anxious_pace",
+        "weight": 0.28,
+        "tags": [
+          "stress"
+        ]
+      },
+      {
+        "from": "need:play_nudge",
+        "to": "mood:playful_crouch",
+        "weight": 0.3,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "object:water_dish",
+        "to": "location:kitchen_corner",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "object:tin_bell",
+        "to": "companion:park_dog",
+        "weight": 0.24,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "context:cool_breeze",
+        "to": "mood:curious_sniff",
+        "weight": 0.24,
+        "tags": [
+          "explore"
+        ]
+      },
+      {
+        "from": "need:lonely_cry",
+        "to": "action:scratch_chin",
+        "weight": 0.28,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "action:fill_bowl",
+        "to": "state:well_fed",
+        "weight": 0.4,
+        "tags": [
+          "care"
+        ]
+      },
+      {
+        "from": "action:give_treat",
+        "to": "state:well_fed",
+        "weight": 0.35,
+        "tags": [
+          "care"
+        ]
+      },
+      {
+        "from": "action:toss_ball",
+        "to": "state:content",
+        "weight": 0.38,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "mood:happy_wag",
+        "to": "state:content",
+        "weight": 0.36,
+        "tags": [
+          "joy"
+        ]
+      },
+      {
+        "from": "action:dim_lamp",
+        "to": "state:rested",
+        "weight": 0.38,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "mood:drowsy_blink",
+        "to": "state:rested",
+        "weight": 0.36,
+        "tags": [
+          "rest"
+        ]
+      },
+      {
+        "from": "action:scratch_chin",
+        "to": "state:bonded",
+        "weight": 0.38,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "mood:warm_lean",
+        "to": "state:bonded",
+        "weight": 0.36,
+        "tags": [
+          "bond"
+        ]
+      },
+      {
+        "from": "action:brush_coat",
+        "to": "state:groomed",
+        "weight": 0.4,
+        "tags": [
+          "groom"
+        ]
+      },
+      {
+        "from": "action:clean_paws",
+        "to": "state:groomed",
+        "weight": 0.36,
+        "tags": [
+          "groom"
+        ]
+      },
+      {
+        "from": "object:chew_stick",
+        "to": "mood:happy_wag",
+        "weight": 0.26,
+        "tags": [
+          "play"
+        ]
+      }
+    ]
+  },
+  "attractor": {
+    "dimensions": [
+      {
+        "id": "hunger_dimension",
+        "invariant_token": "state:well_fed",
+        "threshold": 0.75,
+        "label": "hunger satisfied"
+      },
+      {
+        "id": "happiness_dimension",
+        "invariant_token": "state:content",
+        "threshold": 0.75,
+        "label": "happiness filled"
+      },
+      {
+        "id": "energy_dimension",
+        "invariant_token": "state:rested",
+        "threshold": 0.75,
+        "label": "energy balanced"
+      },
+      {
+        "id": "social_dimension",
+        "invariant_token": "state:bonded",
+        "threshold": 0.75,
+        "label": "bond strong"
+      },
+      {
+        "id": "comfort_dimension",
+        "invariant_token": "state:groomed",
+        "threshold": 0.75,
+        "label": "comfort high"
+      }
+    ],
+    "convergence_display": "minimum"
+  },
+  "expressions": {
+    "state:well_fed": "The bowl is empty and the creature sits back on its haunches. Its belly is round and its eyes are half-closed.",
+    "state:content": "It lies on its side with one paw stretched forward. A slow breath lifts the fur along its ribs.",
+    "state:rested": "The creature sleeps curled in a tight circle. Its nose is tucked beneath its tail and its breathing is even.",
+    "state:bonded": "It presses its head against your hand and holds still. The warmth of its skull fills your palm.",
+    "state:groomed": "The coat lies flat and glossy from ear to tail. Each strand catches the light when it turns.",
+    "action:fill_bowl": "You fill the bowl from the bag and set it on the stone floor. The sound of dry food hitting ceramic brings the creature running.",
+    "action:give_treat": "You hold the treat between two fingers and wait. The creature takes it gently and carries it to its corner.",
+    "action:pour_water": "You pour water into the dish until it catches the light. The creature drinks without lifting its head.",
+    "action:toss_ball": "You toss the ball across the garden in a low arc. The creature is already moving before it leaves your hand.",
+    "action:tug_rope": "You grip one end of the rope and brace. The creature digs in and pulls with a low growl that is not anger.",
+    "action:scratch_chin": "You scratch beneath the chin where the fur is softest. The creature tilts its head and closes its eyes.",
+    "action:brush_coat": "You draw the brush from shoulder to haunch in long strokes. Loose fur gathers on the bristles and the creature leans into the pull.",
+    "action:clean_paws": "You lift each paw and wipe the mud from between the pads. The creature holds still and watches your hands.",
+    "action:dim_lamp": "You turn the lamp down until only a glow remains. The creature settles deeper into its bed.",
+    "action:sing_low": "You hum a low melody without words. The creature's ears rotate forward and its breathing slows.",
+    "action:open_door": "You unlatch the door and the light falls in a rectangle on the floor. The creature stands in the doorway and lifts its nose.",
+    "action:wrap_blanket": "You fold the blanket once and drape it over the sleeping form. The creature shifts without waking.",
+    "mood:happy_wag": "The tail moves in wide sweeps that rock its entire back half. Its mouth is open and its tongue hangs to the left.",
+    "mood:calm_sigh": "It exhales through its nose and rests its chin on its paws. The eyes remain open but unfocused.",
+    "mood:eager_bounce": "All four feet leave the ground at once. It spins once and faces you with its weight forward.",
+    "mood:low_whine": "A thin sound comes from behind closed teeth. The creature looks at the bowl and back at you.",
+    "mood:drowsy_blink": "Each blink takes longer than the last. The head dips and catches itself twice before settling.",
+    "mood:curious_sniff": "The nose works in quick pulses, reading the air in layers. One ear turns toward the sound the other has already tracked.",
+    "mood:anxious_pace": "It walks from door to window and back without stopping. Its nails click on the floor in a broken rhythm.",
+    "mood:playful_crouch": "The front end drops while the back stays high. The tail vibrates and the eyes lock on the toy.",
+    "mood:warm_lean": "It leans its full weight against your leg and does not move. You feel its ribs expand with each breath.",
+    "mood:proud_prance": "It carries the stick high and trots with exaggerated steps. It will not put it down until you notice.",
+    "location:cozy_den": "The den is a hollow of blankets in the corner of the room. The walls are warm and the light is filtered.",
+    "location:sunny_garden": "The garden is small and walled with stone. Sun falls on the grass in a shifting pattern through the leaves.",
+    "location:kitchen_corner": "The kitchen corner holds two bowls on a mat. The stone floor is cool and the creature's nails tap on it.",
+    "location:warm_hearth": "The hearth holds a low fire that pops and settles. The creature lies as close as the heat allows.",
+    "location:muddy_path": "The path runs along the fence and collects rain. Paw prints overlap in the soft ground.",
+    "location:wash_basin": "The basin sits on a low stand with a folded towel beside it. Warm water steams in the morning air.",
+    "location:front_step": "The front step overlooks the lane and catches the morning light. The creature sits here and watches everything pass.",
+    "location:soft_bed": "The bed is raised off the floor and lined with wool. A dip in the centre marks where the creature sleeps.",
+    "context:rain_outside": "Rain strikes the windows in gusts and the garden is grey. The creature watches from the doorway but does not go out.",
+    "context:warm_sun": "Sunlight moves across the floor in a slow band. The creature follows it and lies in each new patch.",
+    "context:cool_breeze": "A breeze comes through the open window and lifts the curtain edge. The creature's nose twitches and its ears prick.",
+    "context:quiet_house": "The house is still and the only sound is the clock. The creature's breathing is the loudest thing in the room.",
+    "context:visitor_knock": "A knock comes at the door and the creature is on its feet. Its ears are forward and its tail begins to move.",
+    "context:snow_falling": "Snow falls past the window in slow diagonal lines. The creature presses its nose to the cold glass.",
+    "context:fresh_air": "The door is open and the air smells of cut grass and distance. The creature stands at the threshold with its weight forward.",
+    "context:thunder_rumble": "A low rumble crosses the sky and the windows rattle. The creature moves to the nearest person and presses close.",
+    "context:birdsong": "Birds call from the garden wall in short repeating phrases. The creature's head tracks left and right, calculating distance.",
+    "context:firelight": "The fire has burned down to embers that pulse orange and grey. The creature's fur glows along the edges.",
+    "object:food_bowl": "The ceramic bowl sits on the mat with a chip on the rim. The inside is worn smooth from use.",
+    "object:water_dish": "The water dish is heavy stoneware and holds a day's supply. A single hair floats on the surface.",
+    "object:rubber_ball": "The ball is red and has lost its bounce on one side. The creature finds it under furniture by smell.",
+    "object:knotted_rope": "The rope is braided cotton with two knots at each end. The middle section is damp and frayed from pulling.",
+    "object:soft_blanket": "The blanket is wool and carries the creature's scent. One corner is darker from being chewed.",
+    "object:bristle_brush": "The brush has natural bristles set in a wooden back. Loose fur clings between the rows.",
+    "object:small_bone": "The bone is dried and pale and fits in one paw. It is carried from room to room and hidden in blankets.",
+    "object:worn_collar": "The collar is leather with a brass buckle. The inside is smooth from wear and the tag is scratched.",
+    "object:tin_bell": "The bell is the size of a thimble and hangs from a loop. It rings when the creature runs.",
+    "object:chew_stick": "The stick is hard and flavoured with something the creature favours. One end is splintered to a point.",
+    "object:warm_towel": "The towel is folded on the basin edge and still warm. It smells of soap and clean water.",
+    "object:squeaky_duck": "The duck is yellow rubber and makes a sound when bitten. The creature carries it everywhere after rain.",
+    "object:pillow_nest": "The pillow is dented in the centre where the creature curls. A ring of shed fur marks the edge.",
+    "need:belly_rumble": "A small sound comes from the creature's middle. It looks toward the kitchen and then at you.",
+    "need:restless_pacing": "It cannot settle in any position for more than a minute. The tail swishes low and the eyes are wide.",
+    "need:lonely_cry": "A single high note hangs in the room after you leave. It fades and comes again at intervals.",
+    "need:itchy_scratch": "The back leg pumps against the shoulder in rapid bursts. The creature stops and starts and cannot quite reach.",
+    "need:yawn_stretch": "The mouth opens wide enough to show every tooth. The front legs extend and the spine drops in a long curve.",
+    "need:play_nudge": "It pushes the ball toward your foot with its nose. When you look down it steps back and waits.",
+    "companion:park_dog": "A brown dog appears at the garden gate and stands with its tail level. The two sniff each other through the bars.",
+    "companion:window_bird": "A sparrow lands on the windowsill and hops twice. The creature watches without moving, only its eyes tracking.",
+    "companion:child_visitor": "A child kneels on the floor and holds out both hands. The creature approaches low and then licks once.",
+    "companion:calm_cat": "The cat sits on the hearth rug with its paws tucked. The creature lies beside it without touching.",
+    "companion:mail_carrier": "The mail carrier opens the gate and the creature runs to meet her. She leans down and scratches behind the ear.",
+    "time:sunrise": "Light enters the room from the east and moves across the floor. The creature stirs and stretches before opening its eyes.",
+    "time:midday_warmth": "The sun is directly overhead and the house is warm. The creature lies flat on the cool stone.",
+    "time:golden_hour": "The light turns amber and the shadows stretch long. The creature sits at the window and watches the lane.",
+    "time:dusk_settling": "The sky dims and the lamps are not yet lit. The creature moves to its bed and circles twice.",
+    "time:deep_night": "The house is dark and the only sound is breathing. The creature sleeps and its paws twitch in a dream.",
+    "event:meal_served": "You set the bowl down and step back. The creature approaches and eats without rushing.",
+    "event:walk_begun": "The collar clicks shut and the door opens. The creature steps out and the whole body lifts with anticipation.",
+    "event:creature_discovered": "You open your eyes and the creature is already watching. It has been waiting without making a sound."
+  },
+  "convergence_rate": 0.65,
+  "max_turns": 36
+}
