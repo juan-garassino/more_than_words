@@ -53,6 +53,7 @@ def check(path: Path):
     # Determine convergence params from case JSON or defaults
     convergence_rate = case.get('convergence_rate', 0.40)
     max_turns = case.get('max_turns', 18)
+    mode = case.get('mode', 'converging')  # 'converging' or 'oscillating'
 
     def fail(name, msg):
         violations.append((name, msg))
@@ -136,14 +137,24 @@ def check(path: Path):
     if bad_len:
         fail(name, f"wrong weight vector length (expected {n_dims}): {bad_len[:5]}")
 
-    name = 'WEIGHTS values in [0,1]'
-    out_of_range = []
-    for t in tokens:
-        w = t['attractor_weights']
-        if any(v < 0.0 or v > 1.0 for v in w):
-            out_of_range.append((t['id'], w))
-    if out_of_range:
-        fail(name, f"out of range: {out_of_range[:5]}")
+    if mode == 'oscillating':
+        name = 'WEIGHTS values in [-1,1]'
+        out_of_range = []
+        for t in tokens:
+            w = t['attractor_weights']
+            if any(v < -1.0 or v > 1.0 for v in w):
+                out_of_range.append((t['id'], w))
+        if out_of_range:
+            fail(name, f"out of range: {out_of_range[:5]}")
+    else:
+        name = 'WEIGHTS values in [0,1]'
+        out_of_range = []
+        for t in tokens:
+            w = t['attractor_weights']
+            if any(v < 0.0 or v > 1.0 for v in w):
+                out_of_range.append((t['id'], w))
+        if out_of_range:
+            fail(name, f"out of range: {out_of_range[:5]}")
 
     name = 'STRUCTURE invariant unit vectors'
     bad = []
@@ -172,25 +183,27 @@ def check(path: Path):
     def sumw(t):
         return sum(t['attractor_weights'])
 
-    name = 'WEIGHTS early range'
-    bad = [t['id'] for t in tokens if t['phase']=='EARLY' and not (0.08 <= sumw(t) <= 0.28 * n_dims)]
-    if bad:
-        fail(name, f"early outside range: {bad[:10]}")
+    if mode != 'oscillating':
+        name = 'WEIGHTS early range'
+        bad = [t['id'] for t in tokens if t['phase']=='EARLY' and not (0.08 <= sumw(t) <= 0.28 * n_dims)]
+        if bad:
+            fail(name, f"early outside range: {bad[:10]}")
 
-    name = 'WEIGHTS mid range'
-    bad = [t['id'] for t in tokens if t['phase']=='MID' and not (0.22 <= sumw(t) <= 0.52 * n_dims)]
-    if bad:
-        fail(name, f"mid outside range: {bad[:10]}")
+        name = 'WEIGHTS mid range'
+        bad = [t['id'] for t in tokens if t['phase']=='MID' and not (0.22 <= sumw(t) <= 0.52 * n_dims)]
+        if bad:
+            fail(name, f"mid outside range: {bad[:10]}")
 
-    name = 'WEIGHTS late range'
-    bad = [t['id'] for t in tokens if t['phase']=='LATE' and not (0.45 <= sumw(t) <= 0.80 * n_dims)]
-    if bad:
-        fail(name, f"late outside range: {bad[:10]}")
+    if mode != 'oscillating':
+        name = 'WEIGHTS late range'
+        bad = [t['id'] for t in tokens if t['phase']=='LATE' and not (0.45 <= sumw(t) <= 0.80 * n_dims)]
+        if bad:
+            fail(name, f"late outside range: {bad[:10]}")
 
-    name = 'WEIGHTS red herring max'
-    bad = [t['id'] for t in tokens if RED_TAGS.issubset(set(t['affinity_tags'])) and sumw(t) > 0.38 * n_dims]
-    if bad:
-        fail(name, f"red herring too high: {bad[:10]}")
+        name = 'WEIGHTS red herring max'
+        bad = [t['id'] for t in tokens if RED_TAGS.issubset(set(t['affinity_tags'])) and sumw(t) > 0.38 * n_dims]
+        if bad:
+            fail(name, f"red herring too high: {bad[:10]}")
 
     # GRAPH
     name = 'GRAPH self-loops'
@@ -265,48 +278,46 @@ def check(path: Path):
     if templ:
         fail(name, f"template markers: {templ[:10]}")
 
-    # CONVERGENCE SIMULATION — adaptive for n_dims
-    def simulate(order_ids):
-        dims = [0.0] * n_dims
-        cap = min(len(order_ids), max_turns)
-        for i, tid in enumerate(order_ids[:cap]):
-            w = token_by_id[tid]['attractor_weights']
-            dims = [min(1.0, d + w[j] * convergence_rate) for j, d in enumerate(dims)]
-            if min(dims) >= 0.75:
-                return True
-        return False
+    # CONVERGENCE SIMULATION — skip for oscillating mode (never converges by design)
+    if mode != 'oscillating':
+        def simulate(order_ids):
+            dims = [0.0] * n_dims
+            cap = min(len(order_ids), max_turns)
+            for i, tid in enumerate(order_ids[:cap]):
+                w = token_by_id[tid]['attractor_weights']
+                dims = [min(1.0, d + w[j] * convergence_rate) for j, d in enumerate(dims)]
+                if min(dims) >= 0.75:
+                    return True
+            return False
 
-    name = 'SIM A top signal descending'
-    non_inv = [t for t in tokens if not t['is_invariant']]
-    if n_dims == 3:
-        # For 3-dim: sort by killer dim weight
-        order = sorted(non_inv, key=lambda t: t['attractor_weights'][0], reverse=True)
-    else:
-        # For n_dims > 3: sort by sum of all weights (ensures coverage across all dims)
-        order = sorted(non_inv, key=lambda t: sum(t['attractor_weights']), reverse=True)
-    if not simulate([t['id'] for t in order]):
-        fail(name, f"did not converge by turn {max_turns}")
+        name = 'SIM A top signal descending'
+        non_inv = [t for t in tokens if not t['is_invariant']]
+        if n_dims == 3:
+            order = sorted(non_inv, key=lambda t: t['attractor_weights'][0], reverse=True)
+        else:
+            order = sorted(non_inv, key=lambda t: sum(t['attractor_weights']), reverse=True)
+        if not simulate([t['id'] for t in order]):
+            fail(name, f"did not converge by turn {max_turns}")
 
-    name = 'SIM B locations first'
-    locs = [t for t in non_inv if t['class']=='LOCATION']
-    rest = [t for t in non_inv if t['class']!='LOCATION']
-    order = locs + sorted(rest, key=lambda t: sum(t['attractor_weights']), reverse=True)
-    if not simulate([t['id'] for t in order]):
-        fail(name, f"did not converge by turn {max_turns}")
+        name = 'SIM B locations first'
+        locs = [t for t in non_inv if t['class']=='LOCATION']
+        rest = [t for t in non_inv if t['class']!='LOCATION']
+        order = locs + sorted(rest, key=lambda t: sum(t['attractor_weights']), reverse=True)
+        if not simulate([t['id'] for t in order]):
+            fail(name, f"did not converge by turn {max_turns}")
 
-    name = 'SIM C red herring then enabler'
-    red = [t for t in non_inv if RED_TAGS.issubset(set(t['affinity_tags']))]
-    # find enabler: suspect with dim0>=0.2 and dim1>=0.2
-    enabler = None
-    for t in non_inv:
-        if t['class']=='SUSPECT' and t['attractor_weights'][0] >= 0.2 and t['attractor_weights'][1] >= 0.2:
-            enabler = t
-            break
-    rest_c = sorted([t for t in non_inv if t not in red and t != enabler],
-                    key=lambda t: sum(t['attractor_weights']), reverse=True)
-    order = red + ([enabler] if enabler else []) + rest_c
-    if not simulate([t['id'] for t in order]):
-        fail(name, f"did not converge by turn {max_turns}")
+        name = 'SIM C red herring then enabler'
+        red = [t for t in non_inv if RED_TAGS.issubset(set(t['affinity_tags']))]
+        enabler = None
+        for t in non_inv:
+            if t['class']=='SUSPECT' and t['attractor_weights'][0] >= 0.2 and t['attractor_weights'][1] >= 0.2:
+                enabler = t
+                break
+        rest_c = sorted([t for t in non_inv if t not in red and t != enabler],
+                        key=lambda t: sum(t['attractor_weights']), reverse=True)
+        order = red + ([enabler] if enabler else []) + rest_c
+        if not simulate([t['id'] for t in order]):
+            fail(name, f"did not converge by turn {max_turns}")
 
     return violations
 
