@@ -3961,6 +3961,1101 @@
       "temperature": 0.5,
       "stream": "EVIDENCE",
       "agency": "SHARED"
+    },
+    {
+      "id": "decay:got_hungry",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        -0.08,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "hunger",
+        "need",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:grew_bored",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "boredom",
+        "need",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:grew_tired",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        -0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "fatigue",
+        "need",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:felt_lonely",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        0.0,
+        -0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "lonely",
+        "need",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:coat_matted",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "groom",
+        "need",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:caught_chill",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.01,
+        0.0,
+        0.0,
+        0.0,
+        -0.06,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "health",
+        "need",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:season_shock",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.01,
+        -0.01,
+        0.0,
+        -0.01,
+        0.0,
+        -0.04,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "season",
+        "comfort",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:lost_confidence",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.06,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "personality",
+        "need",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:stubborn_refusal",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.04,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "personality",
+        "stress",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:reverted_to_shy",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.06,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "personality",
+        "need",
+        "stress"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:ignored_command",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.06,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "personality",
+        "training",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:forgot_briefly",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.06
+      ],
+      "affinity_tags": [
+        "decay",
+        "memory",
+        "need",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:wrong_path_chosen",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.01,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.06
+      ],
+      "affinity_tags": [
+        "decay",
+        "memory",
+        "explore",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:startled_by_familiar",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.02,
+        -0.04
+      ],
+      "affinity_tags": [
+        "decay",
+        "memory",
+        "personality",
+        "stress"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decay:routine_confused",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        -0.02,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.06
+      ],
+      "affinity_tags": [
+        "decay",
+        "memory",
+        "routine",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mischief:raided_bin",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        -0.04,
+        -0.02,
+        0.01,
+        0.0,
+        -0.02,
+        -0.01,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "mischief",
+        "hunger",
+        "boredom",
+        "health",
+        "decay"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mischief:chewed_shoe",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.01,
+        -0.02,
+        -0.01,
+        0.0,
+        0.0,
+        0.02,
+        0.0
+      ],
+      "affinity_tags": [
+        "mischief",
+        "boredom",
+        "lonely",
+        "personality",
+        "decay"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mischief:rolled_in_mud",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.02,
+        0.01,
+        0.0,
+        -0.06,
+        -0.01,
+        0.0,
+        0.02,
+        0.0
+      ],
+      "affinity_tags": [
+        "mischief",
+        "play",
+        "groom",
+        "personality",
+        "decay"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mischief:stole_sock",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.02,
+        0.01,
+        -0.02,
+        -0.01,
+        0.0,
+        0.0,
+        0.02,
+        0.0
+      ],
+      "affinity_tags": [
+        "mischief",
+        "play",
+        "boredom",
+        "personality",
+        "decay"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mischief:pretended_not_to_hear",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "mischief",
+        "personality",
+        "training",
+        "memory",
+        "decay"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mischief:hid_favourite_toy",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.01,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.02,
+        -0.04
+      ],
+      "affinity_tags": [
+        "mischief",
+        "memory",
+        "personality",
+        "play",
+        "decay"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "mischief:went_wrong_way",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.02,
+        -0.04
+      ],
+      "affinity_tags": [
+        "mischief",
+        "memory",
+        "explore",
+        "personality",
+        "decay"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decline:empty_stare_at_bowl",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        -0.04,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "hunger",
+        "need"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decline:dramatic_sigh",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.04,
+        -0.01,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "boredom",
+        "fatigue"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decline:door_watching",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.01,
+        0.0,
+        -0.04,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.01
+      ],
+      "affinity_tags": [
+        "decay",
+        "lonely",
+        "need",
+        "bond",
+        "memory"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decline:confused_pause",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.02,
+        -0.04
+      ],
+      "affinity_tags": [
+        "decay",
+        "memory",
+        "personality",
+        "need"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "decline:backing_away",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.04,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "personality",
+        "stress",
+        "bond"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "combo:guilty_face",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.0,
+        0.02,
+        -0.01,
+        0.0,
+        0.0,
+        0.02,
+        0.0
+      ],
+      "affinity_tags": [
+        "combo",
+        "mischief",
+        "bond",
+        "personality",
+        "decay"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "combo:zoomies",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.02,
+        -0.04,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.02,
+        0.0
+      ],
+      "affinity_tags": [
+        "combo",
+        "energy",
+        "boredom",
+        "personality",
+        "mischief"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "combo:selective_deafness",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "combo",
+        "personality",
+        "training",
+        "memory",
+        "mischief"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "combo:wrong_route_joy",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.02,
+        0.0,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.04
+      ],
+      "affinity_tags": [
+        "combo",
+        "memory",
+        "explore",
+        "joy",
+        "personality"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "combo:sulky_corner",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.04,
+        -0.01,
+        -0.01,
+        0.0,
+        0.0,
+        0.0,
+        -0.02,
+        0.0
+      ],
+      "affinity_tags": [
+        "combo",
+        "boredom",
+        "lonely",
+        "personality",
+        "decay"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:left_alone",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.02,
+        0.0,
+        -0.04,
+        0.0,
+        0.0,
+        0.0,
+        -0.02,
+        -0.02
+      ],
+      "affinity_tags": [
+        "decay",
+        "lonely",
+        "personality",
+        "memory",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:skipped_meal",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        -0.06,
+        -0.01,
+        0.0,
+        0.0,
+        0.0,
+        -0.01,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "decay",
+        "hunger",
+        "health",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "context:unfamiliar_noise",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        -0.01,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.04,
+        -0.02
+      ],
+      "affinity_tags": [
+        "decay",
+        "personality",
+        "memory",
+        "stress",
+        "heartbeat"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "recovery:grateful_lick",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.02,
+        0.02,
+        0.0,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.02
+      ],
+      "affinity_tags": [
+        "recovery",
+        "bond",
+        "care",
+        "memory"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "recovery:forgiven_wag",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.02,
+        0.0,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.02,
+        0.0
+      ],
+      "affinity_tags": [
+        "recovery",
+        "bond",
+        "joy",
+        "personality",
+        "mischief"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "recovery:confidence_rebuilt",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.02,
+        0.0,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.04,
+        0.02
+      ],
+      "affinity_tags": [
+        "recovery",
+        "personality",
+        "bond",
+        "memory"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "recovery:remembered_again",
+      "class": "EMOTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.02,
+        0.0,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06
+      ],
+      "affinity_tags": [
+        "recovery",
+        "memory",
+        "bond",
+        "joy"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "recovery:fresh_and_clean",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.0,
+        0.02,
+        0.0,
+        0.0,
+        0.04,
+        0.02,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [
+        "recovery",
+        "groom",
+        "comfort",
+        "care",
+        "health"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
     }
   ],
   "graph": {
@@ -4111,7 +5206,47 @@
       "event:vet_visit",
       "event:season_changed",
       "event:trick_performed",
-      "event:remembered_place"
+      "event:remembered_place",
+      "decay:got_hungry",
+      "decay:grew_bored",
+      "decay:grew_tired",
+      "decay:felt_lonely",
+      "decay:coat_matted",
+      "decay:caught_chill",
+      "decay:season_shock",
+      "decay:lost_confidence",
+      "decay:stubborn_refusal",
+      "decay:reverted_to_shy",
+      "decay:ignored_command",
+      "decay:forgot_briefly",
+      "decay:wrong_path_chosen",
+      "decay:startled_by_familiar",
+      "decay:routine_confused",
+      "mischief:raided_bin",
+      "mischief:chewed_shoe",
+      "mischief:rolled_in_mud",
+      "mischief:stole_sock",
+      "mischief:pretended_not_to_hear",
+      "mischief:hid_favourite_toy",
+      "mischief:went_wrong_way",
+      "decline:empty_stare_at_bowl",
+      "decline:dramatic_sigh",
+      "decline:door_watching",
+      "decline:confused_pause",
+      "decline:backing_away",
+      "combo:guilty_face",
+      "combo:zoomies",
+      "combo:selective_deafness",
+      "combo:wrong_route_joy",
+      "combo:sulky_corner",
+      "context:left_alone",
+      "context:skipped_meal",
+      "context:unfamiliar_noise",
+      "recovery:grateful_lick",
+      "recovery:forgiven_wag",
+      "recovery:confidence_rebuilt",
+      "recovery:remembered_again",
+      "recovery:fresh_and_clean"
     ],
     "edges": [
       {
@@ -6041,6 +7176,598 @@
         "tags": [
           "season"
         ]
+      },
+      {
+        "from": "decay:got_hungry",
+        "to": "need:belly_rumble",
+        "weight": 0.3,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:got_hungry",
+        "to": "decline:empty_stare_at_bowl",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:grew_bored",
+        "to": "need:play_nudge",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:grew_bored",
+        "to": "decline:dramatic_sigh",
+        "weight": 0.24,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:grew_tired",
+        "to": "need:yawn_stretch",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:felt_lonely",
+        "to": "need:lonely_cry",
+        "weight": 0.28,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:felt_lonely",
+        "to": "decline:door_watching",
+        "weight": 0.24,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:coat_matted",
+        "to": "need:itchy_scratch",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:caught_chill",
+        "to": "need:runny_nose",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:lost_confidence",
+        "to": "need:approval_seeking",
+        "weight": 0.28,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:lost_confidence",
+        "to": "decline:backing_away",
+        "weight": 0.24,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:stubborn_refusal",
+        "to": "mood:stubborn_stand",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:stubborn_refusal",
+        "to": "trait:stubborn_streak",
+        "weight": 0.22,
+        "tags": [
+          "personality"
+        ]
+      },
+      {
+        "from": "decay:reverted_to_shy",
+        "to": "mood:shy_retreat",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:reverted_to_shy",
+        "to": "trait:cautious_step",
+        "weight": 0.22,
+        "tags": [
+          "personality"
+        ]
+      },
+      {
+        "from": "decay:ignored_command",
+        "to": "combo:selective_deafness",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:ignored_command",
+        "to": "location:training_yard",
+        "weight": 0.2,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "decay:forgot_briefly",
+        "to": "need:comfort_seeking",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:forgot_briefly",
+        "to": "decline:confused_pause",
+        "weight": 0.24,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:wrong_path_chosen",
+        "to": "combo:wrong_route_joy",
+        "weight": 0.26,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:wrong_path_chosen",
+        "to": "location:old_walking_route",
+        "weight": 0.22,
+        "tags": [
+          "memory"
+        ]
+      },
+      {
+        "from": "decay:startled_by_familiar",
+        "to": "memory:feared_sound",
+        "weight": 0.24,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:startled_by_familiar",
+        "to": "mood:wary_recall",
+        "weight": 0.22,
+        "tags": [
+          "memory"
+        ]
+      },
+      {
+        "from": "decay:routine_confused",
+        "to": "decline:confused_pause",
+        "weight": 0.24,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:routine_confused",
+        "to": "location:kitchen_corner",
+        "weight": 0.2,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "mischief:raided_bin",
+        "to": "combo:guilty_face",
+        "weight": 0.28,
+        "tags": [
+          "mischief"
+        ]
+      },
+      {
+        "from": "mischief:chewed_shoe",
+        "to": "combo:guilty_face",
+        "weight": 0.26,
+        "tags": [
+          "mischief"
+        ]
+      },
+      {
+        "from": "mischief:chewed_shoe",
+        "to": "decay:grew_bored",
+        "weight": 0.22,
+        "tags": [
+          "mischief"
+        ]
+      },
+      {
+        "from": "mischief:rolled_in_mud",
+        "to": "decay:coat_matted",
+        "weight": 0.26,
+        "tags": [
+          "mischief"
+        ]
+      },
+      {
+        "from": "mischief:stole_sock",
+        "to": "combo:zoomies",
+        "weight": 0.26,
+        "tags": [
+          "mischief"
+        ]
+      },
+      {
+        "from": "mischief:pretended_not_to_hear",
+        "to": "combo:selective_deafness",
+        "weight": 0.26,
+        "tags": [
+          "mischief"
+        ]
+      },
+      {
+        "from": "mischief:pretended_not_to_hear",
+        "to": "decay:ignored_command",
+        "weight": 0.22,
+        "tags": [
+          "mischief"
+        ]
+      },
+      {
+        "from": "mischief:hid_favourite_toy",
+        "to": "decay:forgot_briefly",
+        "weight": 0.22,
+        "tags": [
+          "mischief"
+        ]
+      },
+      {
+        "from": "mischief:hid_favourite_toy",
+        "to": "object:old_toy",
+        "weight": 0.22,
+        "tags": [
+          "memory"
+        ]
+      },
+      {
+        "from": "mischief:went_wrong_way",
+        "to": "combo:wrong_route_joy",
+        "weight": 0.26,
+        "tags": [
+          "mischief"
+        ]
+      },
+      {
+        "from": "mischief:went_wrong_way",
+        "to": "decay:wrong_path_chosen",
+        "weight": 0.22,
+        "tags": [
+          "memory"
+        ]
+      },
+      {
+        "from": "decline:empty_stare_at_bowl",
+        "to": "action:fill_bowl",
+        "weight": 0.26,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "decline:dramatic_sigh",
+        "to": "action:toss_ball",
+        "weight": 0.22,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "decline:door_watching",
+        "to": "action:scratch_chin",
+        "weight": 0.24,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "decline:confused_pause",
+        "to": "action:repeat_routine",
+        "weight": 0.24,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "decline:confused_pause",
+        "to": "action:encourage_gently",
+        "weight": 0.22,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "decline:backing_away",
+        "to": "action:encourage_gently",
+        "weight": 0.24,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "decline:backing_away",
+        "to": "action:wait_patiently",
+        "weight": 0.22,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "combo:guilty_face",
+        "to": "recovery:forgiven_wag",
+        "weight": 0.26,
+        "tags": [
+          "combo"
+        ]
+      },
+      {
+        "from": "combo:zoomies",
+        "to": "location:sunny_garden",
+        "weight": 0.22,
+        "tags": [
+          "combo"
+        ]
+      },
+      {
+        "from": "combo:selective_deafness",
+        "to": "action:firm_command",
+        "weight": 0.24,
+        "tags": [
+          "response"
+        ]
+      },
+      {
+        "from": "combo:wrong_route_joy",
+        "to": "mood:happy_wag",
+        "weight": 0.22,
+        "tags": [
+          "combo"
+        ]
+      },
+      {
+        "from": "combo:sulky_corner",
+        "to": "location:cozy_den",
+        "weight": 0.2,
+        "tags": [
+          "combo"
+        ]
+      },
+      {
+        "from": "context:left_alone",
+        "to": "decay:felt_lonely",
+        "weight": 0.26,
+        "tags": [
+          "context"
+        ]
+      },
+      {
+        "from": "context:left_alone",
+        "to": "decline:door_watching",
+        "weight": 0.22,
+        "tags": [
+          "context"
+        ]
+      },
+      {
+        "from": "context:skipped_meal",
+        "to": "decay:got_hungry",
+        "weight": 0.26,
+        "tags": [
+          "context"
+        ]
+      },
+      {
+        "from": "context:unfamiliar_noise",
+        "to": "decay:lost_confidence",
+        "weight": 0.24,
+        "tags": [
+          "context"
+        ]
+      },
+      {
+        "from": "context:unfamiliar_noise",
+        "to": "memory:feared_sound",
+        "weight": 0.22,
+        "tags": [
+          "memory"
+        ]
+      },
+      {
+        "from": "recovery:grateful_lick",
+        "to": "mood:warm_lean",
+        "weight": 0.24,
+        "tags": [
+          "recovery"
+        ]
+      },
+      {
+        "from": "recovery:forgiven_wag",
+        "to": "mood:happy_wag",
+        "weight": 0.24,
+        "tags": [
+          "recovery"
+        ]
+      },
+      {
+        "from": "recovery:confidence_rebuilt",
+        "to": "mood:confident_strut",
+        "weight": 0.26,
+        "tags": [
+          "recovery"
+        ]
+      },
+      {
+        "from": "recovery:confidence_rebuilt",
+        "to": "trait:bold_approach",
+        "weight": 0.22,
+        "tags": [
+          "recovery"
+        ]
+      },
+      {
+        "from": "recovery:remembered_again",
+        "to": "mood:recognition_spark",
+        "weight": 0.26,
+        "tags": [
+          "recovery"
+        ]
+      },
+      {
+        "from": "recovery:remembered_again",
+        "to": "memory:favorite_spot",
+        "weight": 0.22,
+        "tags": [
+          "recovery"
+        ]
+      },
+      {
+        "from": "recovery:fresh_and_clean",
+        "to": "mood:proud_prance",
+        "weight": 0.22,
+        "tags": [
+          "recovery"
+        ]
+      },
+      {
+        "from": "decay:season_shock",
+        "to": "location:front_step",
+        "weight": 0.2,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "combo:sulky_corner",
+        "to": "decay:grew_bored",
+        "weight": 0.22,
+        "tags": [
+          "decay"
+        ]
+      },
+      {
+        "from": "decay:grew_tired",
+        "to": "location:soft_bed",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "decay:caught_chill",
+        "to": "location:soft_bed",
+        "weight": 0.22,
+        "tags": [
+          "health"
+        ]
+      },
+      {
+        "from": "decay:caught_chill",
+        "to": "mood:sick_shiver",
+        "weight": 0.22,
+        "tags": [
+          "health"
+        ]
+      },
+      {
+        "from": "decay:season_shock",
+        "to": "mood:curious_sniff",
+        "weight": 0.2,
+        "tags": [
+          "season"
+        ]
+      },
+      {
+        "from": "decay:season_shock",
+        "to": "location:cozy_den",
+        "weight": 0.2,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "mischief:raided_bin",
+        "to": "location:kitchen_corner",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "mischief:rolled_in_mud",
+        "to": "location:muddy_path",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "mischief:stole_sock",
+        "to": "mood:playful_crouch",
+        "weight": 0.22,
+        "tags": [
+          "play"
+        ]
+      },
+      {
+        "from": "context:skipped_meal",
+        "to": "decline:empty_stare_at_bowl",
+        "weight": 0.22,
+        "tags": [
+          "context"
+        ]
+      },
+      {
+        "from": "context:skipped_meal",
+        "to": "location:kitchen_corner",
+        "weight": 0.2,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "recovery:grateful_lick",
+        "to": "mood:happy_wag",
+        "weight": 0.22,
+        "tags": [
+          "recovery"
+        ]
+      },
+      {
+        "from": "recovery:fresh_and_clean",
+        "to": "mood:happy_wag",
+        "weight": 0.2,
+        "tags": [
+          "recovery"
+        ]
       }
     ]
   },
@@ -6250,6 +7977,47 @@
     "event:vet_visit": "The car stops and the creature knows the smell. It presses against you in the waiting room and does not look at the other animals.",
     "event:season_changed": "Something has shifted overnight. The air is different and the creature stands at the door reading it with every sense.",
     "event:trick_performed": "The word is given and the creature responds. The movement is precise and the eyes find yours immediately after.",
-    "event:remembered_place": "The creature stops and sniffs the air at the bend in the path. It has been here before and its body knows it."
-  }
+    "event:remembered_place": "The creature stops and sniffs the air at the bend in the path. It has been here before and its body knows it.",
+    "decay:got_hungry": "The bowl is empty and the creature keeps checking. It sits by the mat and looks at you with increasing urgency.",
+    "decay:grew_bored": "It sighs and drops its chin onto its paws. The toy is right there but the toy is not enough.",
+    "decay:grew_tired": "The eyes are heavy and the body lists to one side. It has been awake longer than it should.",
+    "decay:felt_lonely": "It sits by the door and stares at the gap beneath. Every sound from outside makes the ears lift and fall.",
+    "decay:coat_matted": "The fur sticks out at odd angles behind the ears. The creature scratches and makes it worse.",
+    "decay:caught_chill": "A shiver passes along the spine and the nose feels warm. The creature curls tighter into the blanket.",
+    "decay:season_shock": "The temperature changed overnight and the creature is not ready. It stands at the door and decides against it.",
+    "decay:lost_confidence": "It hesitates before the jump it made yesterday without thinking. Something in the world has become less certain.",
+    "decay:stubborn_refusal": "The creature has decided and no amount of persuasion will change it. The jaw is set and the body is stone.",
+    "decay:reverted_to_shy": "It hides behind your legs around a person it met last week. The progress has unwound overnight.",
+    "decay:ignored_command": "The word is spoken and the creature looks at you, then away. It heard and chose otherwise.",
+    "decay:forgot_briefly": "It stands at the turning and does not know which way. The nose works but the memory does not come.",
+    "decay:wrong_path_chosen": "It pulls confidently in the wrong direction, sure of a route that no longer exists.",
+    "decay:startled_by_familiar": "The neighbour's voice makes the creature flinch. It knew this voice yesterday.",
+    "decay:routine_confused": "It goes to the bowl at the wrong time and sits there puzzled. The schedule has slipped.",
+    "mischief:raided_bin": "The bin is on its side and the contents are sorted by interest. The creature sits among wrappers with no remorse.",
+    "mischief:chewed_shoe": "Your left shoe has a new ventilation hole. The creature greets you with the lace still hanging from its mouth.",
+    "mischief:rolled_in_mud": "It returns from the garden wearing the garden. The tail wags as if this is an achievement.",
+    "mischief:stole_sock": "Your sock is now a prize. The creature runs in tight circles with it, daring you to try.",
+    "mischief:pretended_not_to_hear": "You called three times and the ears moved each time. The creature did not.",
+    "mischief:hid_favourite_toy": "The toy has vanished and the creature knows where. It will not tell you and its face says so.",
+    "mischief:went_wrong_way": "It chose the left fork with absolute conviction. This is not where you were going.",
+    "decline:empty_stare_at_bowl": "It sits in front of the empty bowl and does not move. The stare is patient and infinite.",
+    "decline:dramatic_sigh": "The creature lies flat on its side and exhales with its whole body. This is a creature that has known better days.",
+    "decline:door_watching": "It has not moved from the door in twenty minutes. Every car that passes gets a head tilt and a tiny whine.",
+    "decline:confused_pause": "It stops mid-action and looks around as if the room has rearranged itself. The pause lasts three seconds and is filled with thinking.",
+    "decline:backing_away": "It was approaching, then stopped and backed up one step. The boldness has flickered out.",
+    "combo:guilty_face": "It will not look directly at you. The tail wags low and the whole body curves into an apology.",
+    "combo:zoomies": "Something snaps and the creature runs at full speed in a perfect circle. The eyes are wild and the tongue flies sideways.",
+    "combo:selective_deafness": "It can hear a treat bag at forty paces but cannot hear its name at three feet. The condition is situational.",
+    "combo:wrong_route_joy": "It is delighted to be lost. The wrong path has better smells and the creature has no complaints.",
+    "combo:sulky_corner": "It has turned its back to the room and pressed its nose into the corner. This is a protest.",
+    "context:left_alone": "The house is empty and the creature knows it. Every settling sound takes on a different quality.",
+    "context:skipped_meal": "The clock has passed the usual time and no bowl has appeared. The creature positions itself near the bag.",
+    "context:unfamiliar_noise": "A sound the creature does not recognise comes from upstairs. It freezes, one paw raised, and looks at you for guidance.",
+    "recovery:grateful_lick": "After being fed it comes to find you and licks your hand once. The message is received.",
+    "recovery:forgiven_wag": "After the scolding and the cleanup, the tail begins again. The grudge lasted four seconds.",
+    "recovery:confidence_rebuilt": "It takes the jump again and lands cleanly. The hesitation is gone and the eyes say everything.",
+    "recovery:remembered_again": "At the turning it pauses, lifts its nose, and turns right without doubt. The memory has returned.",
+    "recovery:fresh_and_clean": "The coat lies smooth after the brush. The creature shakes once and struts as if wearing new clothes."
+  },
+  "mode": "oscillating"
 }
