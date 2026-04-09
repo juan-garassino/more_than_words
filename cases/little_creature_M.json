@@ -3,7 +3,7 @@
   "title": "Little Creature (Seasons)",
   "convergence_shape": "gradual",
   "difficulty": "medium",
-  "convergence_rate": 0.6,
+  "convergence_rate": 0.75,
   "max_turns": 60,
   "opening_token_ids": [
     "location:cozy_den",
@@ -1003,7 +1003,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:warm_hearth",
@@ -1053,7 +1053,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:wash_basin",
@@ -1078,7 +1078,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:front_step",
@@ -1103,7 +1103,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:soft_bed",
@@ -1152,7 +1152,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:winter_room",
@@ -1176,7 +1176,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:garden_shed",
@@ -1200,7 +1200,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:porch_swing",
@@ -1224,7 +1224,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:rain_outside",
@@ -1300,7 +1300,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:quiet_house",
@@ -1324,7 +1324,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:visitor_knock",
@@ -1348,7 +1348,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:snow_falling",
@@ -1398,7 +1398,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:thunder_rumble",
@@ -1424,7 +1424,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:birdsong",
@@ -1449,7 +1449,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:firelight",
@@ -1474,7 +1474,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:spring_bloom",
@@ -1524,7 +1524,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:autumn_chill",
@@ -1573,7 +1573,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:long_shadows",
@@ -1597,7 +1597,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:humid_air",
@@ -1621,7 +1621,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:dry_wind",
@@ -1646,7 +1646,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:morning_dew",
@@ -1670,7 +1670,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "object:food_bowl",
@@ -2637,7 +2637,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:golden_hour",
@@ -2662,7 +2662,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:dusk_settling",
@@ -2687,7 +2687,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:deep_night",
@@ -2711,7 +2711,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:early_spring",
@@ -2735,7 +2735,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:midsummer",
@@ -2759,7 +2759,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:late_autumn",
@@ -2784,7 +2784,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "event:creature_discovered",
@@ -2807,7 +2807,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "OPENING",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "event:meal_served",
@@ -3655,7 +3655,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:skipped_meal",
@@ -3680,7 +3680,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:cold_draft",
@@ -3706,7 +3706,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "recovery:grateful_lick",
@@ -6420,5 +6420,6 @@
     "recovery:fresh_and_clean": "The coat lies smooth after the brush. The creature shakes once and struts as if wearing new clothes.",
     "recovery:warmed_up": "The shivering has stopped and the nose is cool again. The creature stretches out by the fire with a sigh of relief."
   },
-  "mode": "oscillating"
+  "mode": "oscillating",
+  "convergence_threshold": 0.65
 }

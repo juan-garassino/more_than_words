@@ -37,7 +37,7 @@ def default_dimension_bounds(mode: str) -> Tuple[float, float]:
 def default_initial_dimension_value(mode: str) -> float:
     normalized = normalize_game_mode(mode)
     if normalized == MODE_OSCILLATING:
-        return 0.35  # Creature starts slightly needy — not in crisis, but not comfortable
+        return 0.15  # Creature starts needy — player sees progress from first action
     return 0.0
 
 

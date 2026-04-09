@@ -45,7 +45,7 @@ def pack_case(case_path: Path, output_dir: Path) -> None:
         "convergence_rate": convergence_rate,
         "min_turns": min_turns,
         "max_turns": max_turns,
-        "initial_dimension_value": 0.35 if mode == "oscillating" else 0.0,
+        "initial_dimension_value": 0.15 if mode == "oscillating" else 0.0,
         "dimension_lower_bound": 0.0,
         "dimension_upper_bound": 1.0,
         "opening_token_ids": case["opening_token_ids"],

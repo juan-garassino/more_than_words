@@ -260,10 +260,12 @@ def train_dialogue_supervised(
     ]
 
     # --- Create model ---
+    # Use 4 layers for better action→response learning
     model = DialogueTransformer(
         vocab_size=spec.vocab_size,
         embedding_dim=spec.embedding_dim,
         context_dim=spec.context_dim,
+        n_layers=4,
     ).to(device)
 
     param_count = sum(p.numel() for p in model.parameters())
