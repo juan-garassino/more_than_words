@@ -208,6 +208,79 @@ def _build_vocab_soft_targets(
 
 
 # ---------------------------------------------------------------------------
+# Inference probe — run during training to detect collapse
+# ---------------------------------------------------------------------------
+
+def _inference_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
+                     stream_to_idx, agency_to_idx, device):
+    """Sample action→response predictions to monitor training quality."""
+    from core.token import TokenAgency, TokenStream
+
+    idx_to_id = {v: k for k, v in id_to_idx.items()}
+
+    # Build engine mask
+    engine_mask = torch.zeros(spec.vocab_size, dtype=torch.bool, device=device)
+    for t in spec.tokens:
+        if t.agency in (TokenAgency.ENGINE, TokenAgency.SHARED) and not t.is_invariant:
+            engine_mask[id_to_idx[t.id]] = True
+
+    if not engine_mask.any():
+        return
+
+    def _enc(tok):
+        return (
+            id_to_idx[tok.id], class_to_idx[tok.token_class.value],
+            phase_to_idx[tok.phase.value], stream_to_idx[tok.stream.value],
+            agency_to_idx[tok.agency.value],
+        )
+
+    # Build opening context
+    seq_t, seq_c, seq_p, seq_s, seq_a = [], [], [], [], []
+    for tid in spec.opening_token_ids:
+        tok = spec.get_token(tid)
+        enc = _enc(tok)
+        seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
+        seq_s.append(enc[3]); seq_a.append(enc[4])
+
+    # Test a few actions
+    probe_actions = ['action:fill_bowl', 'action:toss_ball', 'action:scratch_chin',
+                     'action:brush_coat', 'action:dim_lamp']
+    probe_actions = [a for a in probe_actions if a in id_to_idx]
+
+    if not probe_actions:
+        return
+
+    model.eval()
+    _log("  [PROBE] action → model prediction:")
+    with torch.no_grad():
+        for action_id in probe_actions:
+            tok = spec.get_token(action_id)
+            enc = _enc(tok)
+            test_t = torch.tensor([seq_t + [enc[0]]], dtype=torch.long, device=device)
+            test_c = torch.tensor([seq_c + [enc[1]]], dtype=torch.long, device=device)
+            test_p = torch.tensor([seq_p + [enc[2]]], dtype=torch.long, device=device)
+            test_s = torch.tensor([seq_s + [enc[3]]], dtype=torch.long, device=device)
+            test_a = torch.tensor([seq_a + [enc[4]]], dtype=torch.long, device=device)
+
+            chosen_idx, probs = model.predict_next(
+                test_t, test_c, test_p, test_s, test_a,
+                valid_mask=engine_mask, temperature=0.3,
+            )
+            chosen_id = idx_to_id[chosen_idx]
+
+            # Top 3
+            masked_probs = probs.clone()
+            masked_probs[~engine_mask] = 0
+            top3_idx = masked_probs.topk(3).indices.tolist()
+            top3_str = ", ".join(f"{idx_to_id[i].split(':')[1]}({masked_probs[i]:.0%})" for i in top3_idx)
+
+            action_short = action_id.split(':')[1]
+            chosen_short = chosen_id.split(':')[1]
+            _log(f"    {action_short:>15s} → {chosen_short:<25s}  [{top3_str}]")
+    model.train()
+
+
+# ---------------------------------------------------------------------------
 # Stage 1 — Supervised KD training
 # ---------------------------------------------------------------------------
 
@@ -356,6 +429,11 @@ def train_dialogue_supervised(
         if epoch % 10 == 0 or epoch == n_epochs - 1:
             frozen_tag = " [emb frozen]" if freeze else ""
             _log(f"Epoch {epoch:>3d}/{n_epochs}  loss={avg_loss:.4f}{frozen_tag}")
+
+        # --- Inference probe every 50 epochs ---
+        if epoch % 50 == 0 and epoch > 0:
+            _inference_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
+                            stream_to_idx, agency_to_idx, device)
 
     # Unfreeze everything
     for p in model.parameters():
