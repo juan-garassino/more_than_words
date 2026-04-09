@@ -182,19 +182,56 @@ class DialogueSampler:
         """
         Compute vocabulary-wide soft target from Hopfield attractor weights.
         Averages softmax across attractor dimensions.
+        Used as fallback when no context is available.
         """
         T = self.soft_target_temperature
-        # For each dimension, softmax over vocab
-        # shape: (V, D) -> per-dim softmax -> average -> (V,)
-        logits = self._attractor_matrix / max(T, 1e-8)  # (V, D)
-        # Softmax per dimension (column-wise)
+        logits = self._attractor_matrix / max(T, 1e-8)
         exp_logits = np.exp(logits - logits.max(axis=0, keepdims=True))
-        soft_per_dim = exp_logits / exp_logits.sum(axis=0, keepdims=True)  # (V, D)
-        # Average across dimensions for a single vocab-wide distribution
-        soft_target = soft_per_dim.mean(axis=1)  # (V,)
-        # Re-normalize
+        soft_per_dim = exp_logits / exp_logits.sum(axis=0, keepdims=True)
+        soft_target = soft_per_dim.mean(axis=1)
         soft_target /= soft_target.sum()
         return soft_target.astype(np.float32)
+
+    def _compute_soft_target_conditional(self, last_token_id: str, context_ids: List[str]) -> np.ndarray:
+        """
+        Compute soft target conditioned on graph edges to the last token and recent context.
+
+        After toss_ball, tokens connected to toss_ball by strong edges (like eager_bounce)
+        get high probability. This teaches the transformer to follow graph structure.
+        """
+        T = max(self.soft_target_temperature, 1e-8)
+        scores = np.zeros(len(self.spec.tokens), dtype=np.float32)
+
+        # Recent context for broader affinity (last 3 tokens)
+        recent = context_ids[-3:] if len(context_ids) >= 3 else context_ids
+
+        for i, tok in enumerate(self.spec.tokens):
+            # Direct edge weight to the last token placed (strongest signal)
+            edge_to_last = self.graph.weight(tok.id, last_token_id)
+
+            # Average edge weight to recent context (weaker background signal)
+            context_affinity = 0.0
+            if recent:
+                context_affinity = sum(self.graph.weight(tok.id, cid) for cid in recent) / len(recent)
+
+            # Attractor weight norm as base prior (very weak)
+            attractor_norm = float(np.linalg.norm(tok.attractor_weights))
+
+            # Combine: edges dominate, attractor is a tiebreaker
+            scores[i] = edge_to_last * 3.0 + context_affinity * 1.0 + attractor_norm * 0.3
+
+        # Softmax with temperature
+        scores = scores / T
+        scores -= scores.max()
+        probs = np.exp(scores)
+        total = probs.sum()
+        if total < 1e-12:
+            # Fallback to uniform
+            probs = np.ones_like(probs) / len(probs)
+        else:
+            probs /= total
+
+        return probs.astype(np.float32)
 
     def sample_dialogue(self) -> Optional[DialoguePath]:
         """
@@ -209,7 +246,7 @@ class DialogueSampler:
         context_ids: List[str] = []
         turns: List[DialogueTurn] = []
         soft_targets: List[np.ndarray] = []
-        soft_target = self._compute_soft_target()
+        fallback_soft_target = self._compute_soft_target()
 
         # --- Opening: place scene-setting tokens ---
         for tid in self.spec.opening_token_ids:
@@ -227,7 +264,8 @@ class DialogueSampler:
                 energy_at_step=energy,
                 convergence_at_step=float(convergence_dims.min()),
             ))
-            soft_targets.append(soft_target.copy())
+            # Opening tokens use fallback (no last-action context yet)
+            soft_targets.append(fallback_soft_target.copy())
 
         # --- Alternating dialogue ---
         dialogue_pos = len(turns)
@@ -271,7 +309,10 @@ class DialogueSampler:
                 energy_at_step=energy,
                 convergence_at_step=conv_score,
             ))
-            soft_targets.append(soft_target.copy())
+            # Context-conditioned soft target: what should come AFTER this token?
+            soft_targets.append(
+                self._compute_soft_target_conditional(chosen.id, context_ids)
+            )
 
             dialogue_pos += 1
             is_player_turn = not is_player_turn

@@ -2,6 +2,7 @@
   "cartridge_type": "MYSTERY",
   "case_id": "little_creature",
   "title": "Little Creature",
+  "mode": "oscillating",
   "version": "1.0.0",
   "vocab_size": 112,
   "embedding_dim": 64,
@@ -11,6 +12,9 @@
   "convergence_rate": 0.65,
   "min_turns": 10,
   "max_turns": 36,
+  "initial_dimension_value": 0.15,
+  "dimension_lower_bound": 0.0,
+  "dimension_upper_bound": 1.0,
   "opening_token_ids": [
     "location:cozy_den",
     "event:creature_discovered",

@@ -292,7 +292,7 @@ def train_dialogue_supervised(
     batch_size: int = 32,
     lr: float = 1e-3,
     kd_temperature: float = 2.0,
-    kd_alpha: float = 0.7,
+    kd_alpha: float = 0.3,
     lyapunov_weight: float = 0.1,
     freeze_emb_epochs: int = 5,
     device: str = "cpu",
@@ -407,11 +407,20 @@ def train_dialogue_supervised(
             energies = batch["energies"]  # (B, S)
             lya_loss = lyapunov_reg(energies)
 
+            # --- Entropy bonus: penalize collapsed predictions ---
+            pred_log_probs = F.log_softmax(logits, dim=-1)
+            pred_probs = F.softmax(logits, dim=-1)
+            pred_entropy = -(pred_probs * pred_log_probs).sum(dim=-1)  # (B, S)
+            # Only count non-padded positions
+            entropy_mask = (targets != -100).float()
+            mean_entropy = (pred_entropy * entropy_mask).sum() / entropy_mask.sum().clamp(min=1)
+
             # --- Total loss ---
             total = (
                 (1 - kd_alpha) * ce_loss
                 + kd_alpha * kd_loss
                 + lyapunov_weight * lya_loss
+                - 0.05 * mean_entropy  # reward diverse predictions
             )
 
             optimizer.zero_grad()
@@ -823,7 +832,7 @@ def train_dialogue_cartridge(
     lr: float = 1e-3,
     rl_lr: float = 3e-5,
     kd_temperature: float = 2.0,
-    kd_alpha: float = 0.7,
+    kd_alpha: float = 0.3,
     lyapunov_weight: float = 0.1,
     device: str = "cpu",
 ) -> Tuple[DialogueTransformer, Dict]:
