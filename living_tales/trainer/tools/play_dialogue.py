@@ -141,6 +141,9 @@ def _load_model_and_spec(case_id: str, model_path: Optional[str]):
             vocab_size=ckpt["vocab_size"],
             embedding_dim=ckpt["embedding_dim"],
             context_dim=ckpt["context_dim"],
+            n_layers=ckpt.get("n_layers", 4),
+            n_heads=ckpt.get("n_heads", 4),
+            max_seq_len=ckpt.get("max_seq_len", 64),
         )
         model.load_state_dict(ckpt["state_dict"])
         model.eval()

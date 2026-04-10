@@ -222,7 +222,14 @@ def _build_vocab_soft_targets(
 
 def _inference_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
                      stream_to_idx, agency_to_idx, device):
-    """Sample action→response predictions to monitor training quality."""
+    """
+    Realistic inference probe: builds game-like context (opening + several
+    player/engine exchanges) then tests action→response predictions.
+
+    Two probe modes:
+      SHORT — opening + 1 action (4 tokens, tests raw action mapping)
+      GAME  — opening + 6 context tokens + action (10 tokens, matches gameplay)
+    """
     from core.token import TokenAgency, TokenStream
 
     idx_to_id = {v: k for k, v in id_to_idx.items()}
@@ -244,72 +251,103 @@ def _inference_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
         )
 
     # Build opening context
-    seq_t, seq_c, seq_p, seq_s, seq_a = [], [], [], [], []
+    opening_seqs = {'t': [], 'c': [], 'p': [], 's': [], 'a': []}
     for tid in spec.opening_token_ids:
         tok = spec.get_token(tid)
         enc = _enc(tok)
-        seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
-        seq_s.append(enc[3]); seq_a.append(enc[4])
+        opening_seqs['t'].append(enc[0]); opening_seqs['c'].append(enc[1])
+        opening_seqs['p'].append(enc[2]); opening_seqs['s'].append(enc[3])
+        opening_seqs['a'].append(enc[4])
 
-    # Test a few actions
+    # Build a game-like context: opening + 6 random EARLY tokens (3 player + 3 engine)
+    context_pool = [
+        t for t in spec.tokens
+        if not t.is_invariant and t.stream != TokenStream.OPENING
+        and t.phase.value == "EARLY"
+    ]
+    np.random.seed(42)  # deterministic probe
+    game_ctx_tokens = []
+    if len(context_pool) >= 6:
+        chosen_ctx = list(np.random.choice(len(context_pool), size=6, replace=False))
+        game_ctx_tokens = [context_pool[i] for i in chosen_ctx]
+
+    game_seqs = {k: list(v) for k, v in opening_seqs.items()}
+    for tok in game_ctx_tokens:
+        enc = _enc(tok)
+        game_seqs['t'].append(enc[0]); game_seqs['c'].append(enc[1])
+        game_seqs['p'].append(enc[2]); game_seqs['s'].append(enc[3])
+        game_seqs['a'].append(enc[4])
+
+    # Test actions
     probe_actions = ['action:fill_bowl', 'action:toss_ball', 'action:scratch_chin',
                      'action:brush_coat', 'action:dim_lamp']
     probe_actions = [a for a in probe_actions if a in id_to_idx]
-
     if not probe_actions:
         return
 
     model.eval()
-    _log("  [PROBE] action → model prediction:")
-    chosen_ids: List[str] = []
-    entropies: List[float] = []
-    with torch.no_grad():
-        for action_id in probe_actions:
-            tok = spec.get_token(action_id)
-            enc = _enc(tok)
-            test_t = torch.tensor([seq_t + [enc[0]]], dtype=torch.long, device=device)
-            test_c = torch.tensor([seq_c + [enc[1]]], dtype=torch.long, device=device)
-            test_p = torch.tensor([seq_p + [enc[2]]], dtype=torch.long, device=device)
-            test_s = torch.tensor([seq_s + [enc[3]]], dtype=torch.long, device=device)
-            test_a = torch.tensor([seq_a + [enc[4]]], dtype=torch.long, device=device)
 
-            chosen_idx, probs = model.predict_next(
-                test_t, test_c, test_p, test_s, test_a,
-                valid_mask=engine_mask, temperature=0.3,
-            )
-            chosen_id = idx_to_id[chosen_idx]
-            chosen_ids.append(chosen_id)
+    def _run_probe(label, base_seqs, temp):
+        _log(f"  [{label}] action → prediction (temp={temp}, ctx={len(base_seqs['t'])} tokens):")
+        chosen_ids_local: List[str] = []
+        entropies_local: List[float] = []
+        with torch.no_grad():
+            for action_id in probe_actions:
+                tok = spec.get_token(action_id)
+                enc = _enc(tok)
+                test_t = torch.tensor([base_seqs['t'] + [enc[0]]], dtype=torch.long, device=device)
+                test_c = torch.tensor([base_seqs['c'] + [enc[1]]], dtype=torch.long, device=device)
+                test_p = torch.tensor([base_seqs['p'] + [enc[2]]], dtype=torch.long, device=device)
+                test_s = torch.tensor([base_seqs['s'] + [enc[3]]], dtype=torch.long, device=device)
+                test_a = torch.tensor([base_seqs['a'] + [enc[4]]], dtype=torch.long, device=device)
 
-            # Top 3
-            masked_probs = probs.clone()
-            masked_probs[~engine_mask] = 0
-            masked_probs = masked_probs / masked_probs.sum().clamp(min=1e-12)
-            entropies.append(float(-(masked_probs * masked_probs.clamp(min=1e-12).log()).sum().item()))
-            top3_idx = masked_probs.topk(3).indices.tolist()
-            top3_str = ", ".join(f"{idx_to_id[i].split(':')[1]}({masked_probs[i]:.0%})" for i in top3_idx)
+                chosen_idx, probs = model.predict_next(
+                    test_t, test_c, test_p, test_s, test_a,
+                    valid_mask=engine_mask, temperature=temp,
+                )
+                chosen_id = idx_to_id[chosen_idx]
+                chosen_ids_local.append(chosen_id)
 
-            action_short = action_id.split(':')[1]
-            chosen_short = chosen_id.split(':')[1]
-            _log(f"    {action_short:>15s} → {chosen_short:<25s}  [{top3_str}]")
+                masked_probs = probs.clone()
+                masked_probs[~engine_mask] = 0
+                masked_probs = masked_probs / masked_probs.sum().clamp(min=1e-12)
+                ent = float(-(masked_probs * masked_probs.clamp(min=1e-12).log()).sum().item())
+                entropies_local.append(ent)
+                top3_idx = masked_probs.topk(3).indices.tolist()
+                top3_str = ", ".join(f"{idx_to_id[i].split(':')[1]}({masked_probs[i]:.0%})" for i in top3_idx)
+
+                action_short = action_id.split(':')[1]
+                chosen_short = chosen_id.split(':')[1]
+                _log(f"    {action_short:>15s} → {chosen_short:<25s}  [{top3_str}]")
+
+        counts: Dict[str, int] = {}
+        for tid in chosen_ids_local:
+            counts[tid] = counts.get(tid, 0) + 1
+        dominant_id = max(counts, key=counts.get)
+        dominance_rate = counts[dominant_id] / max(len(chosen_ids_local), 1)
+        mean_ent = float(np.mean(entropies_local)) if entropies_local else 0.0
+        _log(
+            f"  [{label}] diversity: "
+            f"unique={len(counts)}/{len(chosen_ids_local)}  "
+            f"dominant={dominant_id.split(':')[-1]}({dominance_rate:.0%})  "
+            f"entropy={mean_ent:.2f}"
+        )
+        return {
+            "unique_predictions": len(counts),
+            "dominant_prediction": dominant_id,
+            "dominance_rate": dominance_rate,
+            "mean_entropy": mean_ent,
+        }
+
+    # Run both probes
+    short_metrics = _run_probe("SHORT", opening_seqs, temp=0.3)
+    game_metrics = _run_probe("GAME", game_seqs, temp=1.0)
+
     model.train()
-    counts: Dict[str, int] = {}
-    for token_id in chosen_ids:
-        counts[token_id] = counts.get(token_id, 0) + 1
-    dominant_id = max(counts, key=counts.get)
-    dominance_rate = counts[dominant_id] / max(len(chosen_ids), 1)
-    metrics = {
-        "unique_predictions": len(counts),
-        "dominant_prediction": dominant_id,
-        "dominance_rate": dominance_rate,
-        "mean_entropy": float(np.mean(entropies)) if entropies else 0.0,
-    }
-    _log(
-        "  [PROBE] diversity: "
-        f"unique={metrics['unique_predictions']}/{len(chosen_ids)}  "
-        f"dominant={dominant_id.split(':')[-1]}({dominance_rate:.0%})  "
-        f"entropy={metrics['mean_entropy']:.2f}"
-    )
-    return metrics
+
+    # Return game probe metrics as the primary signal
+    game_metrics["short_probe"] = short_metrics
+    return game_metrics
 
 
 # ---------------------------------------------------------------------------
@@ -365,12 +403,16 @@ def train_dialogue_supervised(
     ]
 
     # --- Create model ---
-    # Use 4 layers for better action→response learning
+    # 6 layers, wider dims for better action→response learning with short context
+    model_embed = max(spec.embedding_dim, 96)
+    model_context = max(spec.context_dim, 192)
     model = DialogueTransformer(
         vocab_size=spec.vocab_size,
-        embedding_dim=spec.embedding_dim,
-        context_dim=spec.context_dim,
-        n_layers=4,
+        embedding_dim=model_embed,
+        context_dim=model_context,
+        n_layers=6,
+        n_heads=6,
+        max_seq_len=128,
     ).to(device)
 
     param_count = sum(p.numel() for p in model.parameters())
@@ -524,8 +566,11 @@ def train_dialogue_supervised(
         "state_dict": model.state_dict(),
         "spec_path": str(spec_path),
         "case_id": spec.case_id,
-        "embedding_dim": spec.embedding_dim,
-        "context_dim": spec.context_dim,
+        "embedding_dim": model_embed,
+        "context_dim": model_context,
+        "n_layers": 6,
+        "n_heads": 6,
+        "max_seq_len": 128,
         "vocab_size": spec.vocab_size,
         "model_type": "dialogue",
         "id_to_idx": id_to_idx,
@@ -897,8 +942,11 @@ def train_dialogue_rl(
         "state_dict": model.state_dict(),
         "spec_path": str(spec_path),
         "case_id": spec.case_id,
-        "embedding_dim": spec.embedding_dim,
-        "context_dim": spec.context_dim,
+        "embedding_dim": model.embedding_dim,
+        "context_dim": model.context_dim,
+        "n_layers": len(model.transformer.layers),
+        "n_heads": model.transformer.layers[0].self_attn.num_heads,
+        "max_seq_len": model.max_seq_len,
         "vocab_size": spec.vocab_size,
         "model_type": "dialogue",
         "id_to_idx": id_to_idx,
