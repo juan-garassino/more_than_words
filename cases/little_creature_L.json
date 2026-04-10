@@ -4,7 +4,7 @@
   "convergence_shape": "gradual",
   "difficulty": "hard",
   "convergence_rate": 0.7,
-  "max_turns": 60,
+  "max_turns": 65,
   "opening_token_ids": [
     "location:cozy_den",
     "event:creature_discovered",
@@ -1529,7 +1529,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:warm_hearth",
@@ -1585,7 +1585,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:wash_basin",
@@ -1613,7 +1613,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:front_step",
@@ -1641,7 +1641,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:soft_bed",
@@ -1697,7 +1697,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:winter_room",
@@ -1724,7 +1724,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:garden_shed",
@@ -1751,7 +1751,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:porch_swing",
@@ -1778,7 +1778,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:training_yard",
@@ -1805,7 +1805,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:old_walking_route",
@@ -1832,7 +1832,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:rain_outside",
@@ -1916,7 +1916,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:quiet_house",
@@ -1943,7 +1943,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:visitor_knock",
@@ -1970,7 +1970,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:snow_falling",
@@ -2026,7 +2026,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:thunder_rumble",
@@ -2056,7 +2056,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:birdsong",
@@ -2084,7 +2084,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:firelight",
@@ -2112,7 +2112,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:spring_bloom",
@@ -2195,7 +2195,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:morning_dew",
@@ -2222,7 +2222,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:familiar_scent",
@@ -2248,7 +2248,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:new_place_smell",
@@ -2275,7 +2275,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "object:food_bowl",
@@ -3632,7 +3632,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:golden_hour",
@@ -3660,7 +3660,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:dusk_settling",
@@ -3688,7 +3688,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:deep_night",
@@ -3715,7 +3715,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:early_spring",
@@ -3742,7 +3742,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:late_autumn",
@@ -3770,7 +3770,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "event:creature_discovered",
@@ -3796,7 +3796,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "OPENING",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "event:meal_served",
@@ -4131,12 +4131,12 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
-        -0.01,
+        -0.02,
+        -0.02,
         0.0,
-        -0.01,
+        -0.02,
         0.0,
-        -0.04,
+        -0.08,
         0.0,
         0.0
       ],
@@ -4185,13 +4185,13 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
-        0.0,
-        -0.02,
-        0.0,
-        0.0,
+        -0.04,
         0.0,
         -0.04,
+        0.0,
+        0.0,
+        0.0,
+        -0.08,
         0.0
       ],
       "affinity_tags": [
@@ -4320,14 +4320,14 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
+        -0.04,
         0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.0,
         0.0,
-        -0.02,
-        -0.04
+        -0.04,
+        -0.08
       ],
       "affinity_tags": [
         "decay",
@@ -4373,12 +4373,12 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
+        -0.08,
         -0.04,
-        -0.02,
         0.01,
         0.0,
+        -0.04,
         -0.02,
-        -0.01,
         0.0,
         0.0,
         0.0
@@ -4402,10 +4402,10 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
+        -0.04,
         0.01,
+        -0.04,
         -0.02,
-        -0.01,
         0.0,
         0.0,
         0.02,
@@ -4460,8 +4460,8 @@
         0.0,
         0.02,
         0.01,
+        -0.04,
         -0.02,
-        -0.01,
         0.0,
         0.0,
         0.02,
@@ -4488,11 +4488,11 @@
         0.0,
         0.0,
         0.0,
-        -0.02,
-        0.0,
-        0.0,
-        0.0,
         -0.04,
+        0.0,
+        0.0,
+        0.0,
+        -0.08,
         0.02
       ],
       "affinity_tags": [
@@ -4514,14 +4514,14 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
+        -0.04,
         0.01,
         0.0,
         0.0,
         0.0,
         0.0,
         0.02,
-        -0.04
+        -0.08
       ],
       "affinity_tags": [
         "mischief",
@@ -4543,13 +4543,13 @@
       "attractor_weights": [
         0.0,
         0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.0,
         0.0,
         0.0,
         0.02,
-        -0.04
+        -0.08
       ],
       "affinity_tags": [
         "mischief",
@@ -4569,8 +4569,8 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
+        -0.08,
         -0.04,
-        -0.02,
         0.0,
         0.0,
         0.0,
@@ -4596,8 +4596,8 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.04,
-        -0.01,
+        -0.08,
+        -0.02,
         0.0,
         0.0,
         0.0,
@@ -4622,14 +4622,14 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
+        -0.02,
         0.0,
-        -0.04,
-        0.0,
-        0.0,
+        -0.08,
         0.0,
         0.0,
-        -0.01
+        0.0,
+        0.0,
+        -0.02
       ],
       "affinity_tags": [
         "decay",
@@ -4650,14 +4650,14 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.0,
         0.0,
         0.0,
         0.0,
-        -0.02,
-        -0.04
+        -0.04,
+        -0.08
       ],
       "affinity_tags": [
         "decay",
@@ -4677,13 +4677,13 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
-        0.0,
-        -0.02,
-        0.0,
-        0.0,
+        -0.04,
         0.0,
         -0.04,
+        0.0,
+        0.0,
+        0.0,
+        -0.08,
         0.0
       ],
       "affinity_tags": [
@@ -4704,10 +4704,10 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.02,
-        -0.01,
+        -0.02,
         0.0,
         0.0,
         0.02,
@@ -4733,9 +4733,9 @@
       "attractor_weights": [
         0.0,
         0.02,
-        -0.04,
+        -0.08,
         0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.0,
         0.02,
@@ -4762,11 +4762,11 @@
         0.0,
         0.0,
         0.0,
-        -0.02,
-        0.0,
-        0.0,
-        0.0,
         -0.04,
+        0.0,
+        0.0,
+        0.0,
+        -0.08,
         0.02
       ],
       "affinity_tags": [
@@ -4795,7 +4795,7 @@
         0.0,
         0.0,
         0.0,
-        -0.04
+        -0.08
       ],
       "affinity_tags": [
         "combo",
@@ -4816,13 +4816,13 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.04,
-        -0.01,
-        -0.01,
-        0.0,
-        0.0,
-        0.0,
+        -0.08,
         -0.02,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.04,
         0.0
       ],
       "affinity_tags": [
@@ -4844,14 +4844,14 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
-        0.0,
         -0.04,
         0.0,
+        -0.08,
         0.0,
         0.0,
-        -0.02,
-        -0.02
+        0.0,
+        -0.04,
+        -0.04
       ],
       "affinity_tags": [
         "decay",
@@ -4863,7 +4863,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:skipped_meal",
@@ -4890,7 +4890,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:unfamiliar_noise",
@@ -4899,14 +4899,14 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
-        0.0,
         -0.02,
         0.0,
-        0.0,
-        0.0,
         -0.04,
-        -0.02
+        0.0,
+        0.0,
+        0.0,
+        -0.08,
+        -0.04
       ],
       "affinity_tags": [
         "decay",
@@ -4918,7 +4918,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "recovery:grateful_lick",
@@ -8019,5 +8019,6 @@
     "recovery:remembered_again": "At the turning it pauses, lifts its nose, and turns right without doubt. The memory has returned.",
     "recovery:fresh_and_clean": "The coat lies smooth after the brush. The creature shakes once and struts as if wearing new clothes."
   },
-  "mode": "oscillating"
+  "mode": "oscillating",
+  "convergence_threshold": 0.65
 }

@@ -3,7 +3,7 @@
   "title": "Little Creature (A Life)",
   "convergence_shape": "gradual",
   "difficulty": "hard",
-  "convergence_rate": 0.75,
+  "convergence_rate": 0.65,
   "max_turns": 80,
   "opening_token_ids": [
     "location:cozy_den",
@@ -2392,7 +2392,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:warm_hearth",
@@ -2452,7 +2452,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:wash_basin",
@@ -2481,7 +2481,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:front_step",
@@ -2512,7 +2512,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:soft_bed",
@@ -2571,7 +2571,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:winter_room",
@@ -2600,7 +2600,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:training_yard",
@@ -2631,7 +2631,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:old_walking_route",
@@ -2661,7 +2661,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:porch_swing",
@@ -2691,7 +2691,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:puppy_pen",
@@ -2720,7 +2720,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:garden_gate",
@@ -2750,7 +2750,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "location:fireside_rug",
@@ -2781,7 +2781,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:rain_outside",
@@ -2871,7 +2871,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:thunder_rumble",
@@ -2904,7 +2904,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:birdsong",
@@ -2934,7 +2934,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:firelight",
@@ -2965,7 +2965,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:spring_bloom",
@@ -3084,7 +3084,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:familiar_scent",
@@ -3113,7 +3113,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:new_place_smell",
@@ -3142,7 +3142,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:morning_dew",
@@ -3171,7 +3171,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:cool_breeze",
@@ -3200,7 +3200,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:visitor_knock",
@@ -3230,7 +3230,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:fresh_air",
@@ -3261,7 +3261,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:puppy_smell",
@@ -3290,7 +3290,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:old_blanket_scent",
@@ -3319,7 +3319,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "object:food_bowl",
@@ -5281,7 +5281,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:golden_hour",
@@ -5312,7 +5312,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:dusk_settling",
@@ -5342,7 +5342,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:deep_night",
@@ -5371,7 +5371,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:early_spring",
@@ -5401,7 +5401,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:late_autumn",
@@ -5432,7 +5432,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "time:years_passing",
@@ -5460,7 +5460,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "event:creature_discovered",
@@ -5490,7 +5490,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "OPENING",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "event:meal_served",
@@ -5888,7 +5888,7 @@
         0.0,
         0.0,
         0.0,
-        -0.04,
+        -0.08,
         0.0,
         0.0,
         0.0,
@@ -5943,12 +5943,12 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
-        -0.01,
+        -0.02,
+        -0.02,
         0.0,
-        -0.01,
+        -0.02,
         0.0,
-        -0.04,
+        -0.08,
         0.0,
         0.0,
         0.0,
@@ -6059,14 +6059,14 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
+        -0.02,
         0.0,
-        -0.01,
+        -0.02,
         0.0,
         0.0,
         0.0,
-        -0.01,
-        -0.04,
+        -0.02,
+        -0.08,
         0.0,
         0.0
       ],
@@ -6088,15 +6088,15 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
+        -0.02,
         0.0,
         0.0,
-        -0.03,
-        -0.01,
+        -0.06,
+        -0.02,
         0.0,
         0.0,
         0.0,
-        -0.04,
+        -0.08,
         0.0
       ],
       "affinity_tags": [
@@ -6118,15 +6118,15 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
         -0.02,
-        0.0,
-        -0.01,
-        -0.02,
-        0.0,
-        0.0,
-        0.0,
         -0.04,
+        0.0,
+        -0.02,
+        -0.04,
+        0.0,
+        0.0,
+        0.0,
+        -0.08,
         0.0
       ],
       "affinity_tags": [
@@ -6149,14 +6149,14 @@
       "attractor_weights": [
         0.0,
         0.0,
-        -0.03,
-        0.0,
-        0.0,
-        -0.02,
-        0.0,
+        -0.06,
         0.0,
         0.0,
         -0.04,
+        0.0,
+        0.0,
+        0.0,
+        -0.08,
         0.0
       ],
       "affinity_tags": [
@@ -6179,15 +6179,15 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
-        -0.02,
-        0.0,
-        0.0,
-        -0.02,
-        0.0,
-        0.0,
-        -0.01,
         -0.04,
+        -0.04,
+        0.0,
+        0.0,
+        -0.04,
+        0.0,
+        0.0,
+        -0.02,
+        -0.08,
         0.0
       ],
       "affinity_tags": [
@@ -6209,16 +6209,16 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        -0.02,
-        0.0,
-        0.0,
-        0.0,
-        -0.01,
-        -0.01,
+        -0.04,
         0.0,
         0.0,
         0.0,
         -0.02,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        -0.04,
         0.0
       ],
       "affinity_tags": [
@@ -6270,16 +6270,16 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
+        -0.04,
         0.0,
-        -0.02,
-        0.0,
-        0.0,
-        0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.0,
-        -0.04
+        0.0,
+        -0.04,
+        0.0,
+        0.0,
+        -0.08
       ],
       "affinity_tags": [
         "decay",
@@ -6301,14 +6301,14 @@
         0.0,
         0.0,
         0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.0,
         0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.0,
-        -0.04
+        -0.08
       ],
       "affinity_tags": [
         "decay",
@@ -6328,16 +6328,16 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
+        -0.02,
+        0.0,
+        -0.04,
+        0.0,
+        0.0,
         0.0,
         -0.02,
         0.0,
         0.0,
-        0.0,
-        -0.01,
-        0.0,
-        0.0,
-        -0.04
+        -0.08
       ],
       "affinity_tags": [
         "decay",
@@ -6356,12 +6356,12 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        -0.03,
-        -0.01,
+        -0.06,
+        -0.02,
         0.01,
         0.0,
-        -0.01,
-        -0.01,
+        -0.02,
+        -0.02,
         0.0,
         0.01,
         0.0,
@@ -6387,16 +6387,16 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
+        -0.02,
         0.01,
-        -0.01,
-        -0.01,
+        -0.02,
+        -0.02,
         0.0,
         0.0,
         0.01,
         0.0,
         0.0,
-        -0.01
+        -0.02
       ],
       "affinity_tags": [
         "mischief",
@@ -6420,8 +6420,8 @@
         0.0,
         0.01,
         0.01,
-        -0.01,
-        -0.01,
+        -0.02,
+        -0.02,
         0.0,
         0.0,
         0.01,
@@ -6451,13 +6451,13 @@
         0.01,
         0.01,
         0.0,
-        -0.03,
+        -0.06,
         0.0,
         0.0,
         0.0,
         0.0,
-        -0.02,
-        -0.01
+        -0.04,
+        -0.02
       ],
       "affinity_tags": [
         "mischief",
@@ -6479,14 +6479,14 @@
       "attractor_weights": [
         0.0,
         0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.01,
-        -0.01,
+        -0.02,
         0.0,
         0.02,
         0.0,
-        -0.02,
+        -0.04,
         0.01
       ],
       "affinity_tags": [
@@ -6507,8 +6507,8 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        -0.03,
-        -0.01,
+        -0.06,
+        -0.02,
         0.0,
         0.0,
         0.0,
@@ -6536,8 +6536,8 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.03,
-        -0.01,
+        -0.06,
+        -0.02,
         0.0,
         0.0,
         0.0,
@@ -6564,16 +6564,16 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
+        -0.02,
         0.0,
-        -0.03,
-        0.0,
-        0.0,
+        -0.06,
         0.0,
         0.0,
-        -0.01,
         0.0,
-        -0.01
+        0.0,
+        -0.02,
+        0.0,
+        -0.02
       ],
       "affinity_tags": [
         "decay",
@@ -6595,14 +6595,14 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
+        -0.02,
         0.0,
         0.0,
         0.0,
         0.0,
         0.0,
-        -0.01,
-        -0.03,
+        -0.02,
+        -0.06,
         0.0,
         0.0
       ],
@@ -6624,10 +6624,10 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
+        -0.02,
         0.0,
         0.01,
-        -0.01,
+        -0.02,
         0.0,
         0.0,
         0.01,
@@ -6656,9 +6656,9 @@
       "attractor_weights": [
         0.0,
         0.01,
-        -0.03,
+        -0.06,
         0.0,
-        -0.01,
+        -0.02,
         0.0,
         0.0,
         0.01,
@@ -6687,14 +6687,14 @@
       "attractor_weights": [
         0.0,
         0.02,
+        -0.04,
+        0.0,
+        -0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         -0.02,
-        0.0,
-        -0.03,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        -0.01,
         0.01
       ],
       "affinity_tags": [
@@ -6717,14 +6717,14 @@
       "attractor_weights": [
         0.0,
         0.0,
+        -0.04,
+        0.01,
+        0.01,
         -0.02,
-        0.01,
-        0.01,
-        -0.01,
         0.0,
         0.0,
         0.02,
-        -0.02,
+        -0.04,
         0.02
       ],
       "affinity_tags": [
@@ -6776,16 +6776,16 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.01,
+        -0.02,
         0.0,
-        -0.03,
+        -0.06,
         0.0,
         0.0,
         0.0,
-        -0.01,
-        -0.01,
+        -0.02,
+        -0.02,
         0.0,
-        -0.02
+        -0.04
       ],
       "affinity_tags": [
         "decay",
@@ -6798,7 +6798,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:skipped_meal",
@@ -6827,7 +6827,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "context:harsh_word_spoken",
@@ -6836,16 +6836,16 @@
       "is_invariant": false,
       "attractor_weights": [
         0.0,
-        -0.02,
+        -0.04,
         0.0,
-        -0.02,
-        0.0,
-        0.0,
-        0.0,
-        -0.02,
+        -0.04,
         0.0,
         0.0,
-        -0.04
+        0.0,
+        -0.04,
+        0.0,
+        0.0,
+        -0.08
       ],
       "affinity_tags": [
         "decay",
@@ -6857,7 +6857,7 @@
       "repulsion_tags": [],
       "temperature": 0.5,
       "stream": "ATMOSPHERE",
-      "agency": "ENGINE"
+      "agency": "SHARED"
     },
     {
       "id": "recovery:grateful_lick",
@@ -10727,5 +10727,6 @@
     "recovery:puppy_forgiven": "The puddle is cleaned and the creature licks your face. It does not know what it did but it knows you stayed.",
     "recovery:senior_comfort": "You sit on the floor beside the old body and it leans into you. This is all either of you needs."
   },
-  "mode": "oscillating"
+  "mode": "oscillating",
+  "convergence_threshold": 0.65
 }
