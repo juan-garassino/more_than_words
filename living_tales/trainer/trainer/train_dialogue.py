@@ -500,29 +500,36 @@ def train_dialogue_supervised(
             energies = batch["energies"]  # (B, S)
             lya_loss = lyapunov_reg(energies)
 
-            # --- Entropy bonus: penalize collapsed predictions ---
+            # --- Entropy + diversity: only kick in when collapse is detected ---
             pred_log_probs = F.log_softmax(logits, dim=-1)
             pred_probs = F.softmax(logits, dim=-1)
             pred_entropy = -(pred_probs * pred_log_probs).sum(dim=-1)  # (B, S)
             entropy_mask = train_mask.float()
             mean_entropy = (pred_entropy * entropy_mask).sum() / entropy_mask.sum().clamp(min=1)
 
-            # --- Batch diversity loss: penalize when all inputs predict the same token ---
-            if flat_mask.any():
-                avg_pred = pred_probs.reshape(B * S, V)[flat_mask].mean(dim=0)  # (V,)
-                batch_entropy = -(avg_pred * avg_pred.clamp(min=1e-12).log()).sum()
-                max_entropy = math.log(V)
-                diversity_loss = 1.0 - batch_entropy / max_entropy  # 0=diverse, 1=collapsed
-            else:
-                diversity_loss = torch.tensor(0.0, device=device)
+            # Adaptive: only apply anti-collapse when entropy is low (collapse happening)
+            # Threshold ~1.5 nats ≈ model strongly favoring 2-3 tokens
+            entropy_bonus = torch.tensor(0.0, device=device)
+            diversity_loss = torch.tensor(0.0, device=device)
+            collapse_threshold = 1.5
+
+            if mean_entropy.item() < collapse_threshold:
+                # Entropy is low → model is collapsing → push it to explore
+                entropy_bonus = 0.15 * mean_entropy
+
+                if flat_mask.any():
+                    avg_pred = pred_probs.reshape(B * S, V)[flat_mask].mean(dim=0)
+                    batch_entropy = -(avg_pred * avg_pred.clamp(min=1e-12).log()).sum()
+                    max_entropy = math.log(V)
+                    diversity_loss = 1.0 - batch_entropy / max_entropy
 
             # --- Total loss ---
             total = (
                 (1 - kd_alpha) * ce_loss
                 + kd_alpha * kd_loss
                 + lyapunov_weight * lya_loss
-                - 0.15 * mean_entropy  # reward diverse predictions (was 0.05)
-                + 0.3 * diversity_loss  # penalize batch-level collapse
+                - entropy_bonus
+                + 0.3 * diversity_loss
             )
 
             optimizer.zero_grad()
