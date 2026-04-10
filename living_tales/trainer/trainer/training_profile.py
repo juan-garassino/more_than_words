@@ -9,6 +9,10 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass
+from typing import List
+
+import numpy as np
+import torch
 
 from core.cartridge import CartridgeSpec
 from core.token import TokenAgency, TokenStream
@@ -110,7 +114,46 @@ class TrainingProfile:
         return (
             f"[{self.game_type}] {self.case_id}: "
             f"model={self.model_size} ({self.n_layers}L/{self.embedding_dim}E/{self.context_dim}C) "
-            f"eng={self.n_engine_tokens} dims={self.n_dims} "
+            f"eng={self.n_engine_tokens} dims={self.n_dims} heads={self.n_dims} "
             f"collapse<{self.collapse_threshold:.2f} warmup={self.warmup_epochs} "
             f"focal_γ={self.focal_gamma} kd_α={self.kd_alpha} lr={self.lr:.0e}"
         )
+
+
+def build_head_vocab_masks(
+    spec: CartridgeSpec,
+    threshold: float = 0.05,
+) -> torch.Tensor:
+    """
+    Build per-head vocabulary masks from attractor weights.
+
+    Returns (n_dims, vocab_size) bool tensor where mask[d][t] = True if token t
+    has significant weight on dimension d (abs(weight) > threshold).
+
+    Tokens with weight on a dimension are candidates for that head. Invariant
+    tokens and opening tokens are excluded from all heads.
+    """
+    n_dims = spec.n_attractor_dims
+    V = spec.vocab_size
+    masks = torch.zeros(n_dims, V, dtype=torch.bool)
+
+    for tok_idx, tok in enumerate(spec.tokens):
+        if tok.is_invariant or tok.stream == TokenStream.OPENING:
+            continue
+        for dim in range(n_dims):
+            if abs(tok.attractor_weights[dim]) > threshold:
+                masks[dim, tok_idx] = True
+
+    # Ensure every head has at least some candidates
+    for dim in range(n_dims):
+        if masks[dim].sum() < 3:
+            # Fallback: include top tokens by abs weight on this dimension
+            weights = torch.tensor([
+                abs(tok.attractor_weights[dim]) if not tok.is_invariant else 0.0
+                for tok in spec.tokens
+            ])
+            topk = min(10, V)
+            top_indices = weights.topk(topk).indices
+            masks[dim, top_indices] = True
+
+    return masks
