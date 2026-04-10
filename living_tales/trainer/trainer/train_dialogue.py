@@ -38,6 +38,7 @@ from generator.dialogue_sampler import DialogueSampler, DialoguePath, ROLE_PLAYE
 from trainer.dialogue_model import DialogueTransformer
 from trainer.loss import LyapunovRegularization
 from rl.dialogue_rewards import DialogueRewardConfig, DialogueRewardComputer
+from trainer.training_profile import TrainingProfile
 
 
 # ---------------------------------------------------------------------------
@@ -368,9 +369,9 @@ def train_dialogue_supervised(
     n_dialogues: int = 2000,
     n_epochs: int = 100,
     batch_size: int = 32,
-    lr: float = 1e-3,
+    lr: float | None = None,
     kd_temperature: float = 2.0,
-    kd_alpha: float = 0.15,
+    kd_alpha: float | None = None,
     lyapunov_weight: float = 0.1,
     freeze_emb_epochs: int = 5,
     device: str = "cpu",
@@ -381,6 +382,16 @@ def train_dialogue_supervised(
     _banner("DIALOGUE TRANSFORMER — SUPERVISED KD")
 
     spec = CartridgeSpec.load(spec_path)
+
+    # --- Training profile: auto-derived from case spec ---
+    profile = TrainingProfile.from_spec(spec)
+    _log(f"Profile: {profile.log_summary()}")
+
+    # Allow explicit overrides, otherwise use profile
+    if lr is None:
+        lr = profile.lr
+    if kd_alpha is None:
+        kd_alpha = profile.kd_alpha
     mappings = _build_mappings(spec.tokens)
     id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx = mappings
 
@@ -468,15 +479,14 @@ def train_dialogue_supervised(
             engine_targets = batch["engine_targets"]  # (B, S)
             train_mask = (targets != -100) & engine_targets
 
-            # --- Hard CE loss (focal loss: γ=2 downweights easy/frequent tokens) ---
+            # --- Hard CE loss (focal loss: γ from profile) ---
             flat_mask = train_mask.reshape(B * S)
             if flat_mask.any():
                 flat_logits = logits.reshape(B * S, V)[flat_mask]
                 flat_targets = targets.reshape(B * S)[flat_mask]
-                # Focal loss: CE * (1-p_t)^γ — reduces gradient for confident predictions
                 with torch.no_grad():
                     p_t = F.softmax(flat_logits, dim=-1).gather(1, flat_targets.unsqueeze(1)).squeeze(1)
-                    focal_weight = (1 - p_t) ** 2  # γ=2
+                    focal_weight = (1 - p_t) ** profile.focal_gamma
                 per_sample_ce = F.cross_entropy(flat_logits, flat_targets, reduction="none")
                 ce_loss = (focal_weight * per_sample_ce).mean()
             else:
@@ -500,23 +510,18 @@ def train_dialogue_supervised(
             energies = batch["energies"]  # (B, S)
             lya_loss = lyapunov_reg(energies)
 
-            # --- Entropy + diversity: only kick in when collapse is detected ---
+            # --- Entropy + diversity: adaptive, profile-driven anti-collapse ---
             pred_log_probs = F.log_softmax(logits, dim=-1)
             pred_probs = F.softmax(logits, dim=-1)
             pred_entropy = -(pred_probs * pred_log_probs).sum(dim=-1)  # (B, S)
             entropy_mask = train_mask.float()
             mean_entropy = (pred_entropy * entropy_mask).sum() / entropy_mask.sum().clamp(min=1)
 
-            # Adaptive: only apply anti-collapse when entropy is low (collapse happening)
-            # Threshold ~1.5 nats ≈ model strongly favoring 2-3 tokens
             entropy_bonus = torch.tensor(0.0, device=device)
             diversity_loss = torch.tensor(0.0, device=device)
-            collapse_threshold = 1.5
 
-            if mean_entropy.item() < collapse_threshold:
-                # Entropy is low → model is collapsing → push it to explore
-                entropy_bonus = 0.15 * mean_entropy
-
+            if mean_entropy.item() < profile.collapse_threshold:
+                entropy_bonus = profile.entropy_coef * mean_entropy
                 if flat_mask.any():
                     avg_pred = pred_probs.reshape(B * S, V)[flat_mask].mean(dim=0)
                     batch_entropy = -(avg_pred * avg_pred.clamp(min=1e-12).log()).sum()
@@ -529,7 +534,7 @@ def train_dialogue_supervised(
                 + kd_alpha * kd_loss
                 + lyapunov_weight * lya_loss
                 - entropy_bonus
-                + 0.3 * diversity_loss
+                + profile.diversity_coef * diversity_loss
             )
 
             optimizer.zero_grad()
@@ -988,10 +993,10 @@ def train_dialogue_cartridge(
     n_epochs: int = 100,
     n_rl_episodes: int = 500,
     batch_size: int = 32,
-    lr: float = 1e-3,
+    lr: float | None = None,
     rl_lr: float = 3e-5,
     kd_temperature: float = 2.0,
-    kd_alpha: float = 0.15,
+    kd_alpha: float | None = None,
     lyapunov_weight: float = 0.1,
     device: str = "cpu",
 ) -> Tuple[DialogueTransformer, Dict]:
