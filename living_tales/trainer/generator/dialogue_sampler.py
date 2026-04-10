@@ -408,7 +408,7 @@ class DialogueSampler:
                 paths.append(path)
             attempts += 1
 
-            if verbose and len(paths) % 50 == 0 and len(paths) > 0:
+            if verbose and len(paths) % 500 == 0 and len(paths) > 0:
                 rate = len(paths) / attempts
                 converged = sum(1 for p in paths if p.converged)
                 print(

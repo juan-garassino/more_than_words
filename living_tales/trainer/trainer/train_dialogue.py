@@ -475,8 +475,8 @@ def train_dialogue_supervised(
             frozen_tag = " [emb frozen]" if freeze else ""
             _log(f"Epoch {epoch:>3d}/{n_epochs}  loss={avg_loss:.4f}{frozen_tag}")
 
-        # --- Inference probe every 50 epochs ---
-        if epoch % 50 == 0 and epoch > 0:
+        # --- Inference probe every 25 epochs ---
+        if epoch % 25 == 0 and epoch > 0:
             latest_probe = _inference_probe(
                 model, spec, id_to_idx, class_to_idx, phase_to_idx,
                 stream_to_idx, agency_to_idx, device,
