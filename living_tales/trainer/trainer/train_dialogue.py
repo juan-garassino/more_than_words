@@ -846,11 +846,22 @@ def train_dialogue_rl(
         if (ep + 1) % 50 == 0 or ep == 0:
             mean_ret = np.mean(list(returns_window))
             conv_rate = np.mean(list(convergence_window))
+            n_decay = sum(1 for t in seq_token if idx_to_token.get(t, '').startswith('decay:'))
+            n_recovery = sum(1 for t in seq_token if idx_to_token.get(t, '').startswith('recovery:'))
             _log(
                 f"Episode {ep + 1:>4d}/{n_episodes}  "
                 f"return={mean_ret:+.2f}  "
                 f"conv={conv_rate:.1%}  "
-                f"turns={len(rewards)}"
+                f"turns={len(rewards)}  "
+                f"decay={n_decay} recov={n_recovery}"
+            )
+
+        # --- RL inference probe every 100 episodes ---
+        if (ep + 1) % 100 == 0:
+            _log(f"  [RL PROBE] episode {ep+1}:")
+            _inference_probe(
+                model, spec, id_to_idx, class_to_idx, phase_to_idx,
+                stream_to_idx, agency_to_idx, device,
             )
 
     history["convergence_rate"] = float(np.mean(list(convergence_window))) if convergence_window else 0.0
