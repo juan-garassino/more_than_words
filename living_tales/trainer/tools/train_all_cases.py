@@ -2,7 +2,7 @@
 Living Tales — Train All Cases
 ==============================
 Validates, packs, trains dialogue transformers for all valid cases,
-plays automated games on each, and zips all outputs for download.
+plays automated games on each, and zips all outputs + logs for download.
 
 Usage:
     cd living_tales/trainer
@@ -13,6 +13,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import os
 import shutil
@@ -20,6 +21,7 @@ import subprocess
 import sys
 import time
 import zipfile
+from contextlib import redirect_stdout
 from datetime import datetime
 from pathlib import Path
 
@@ -37,6 +39,7 @@ _ROOT = _TRAINER.parent.parent
 _CASES_JSON = _ROOT / "cases"
 _CASES_PACKED = _TRAINER / "cases"
 _OUTPUTS = _TRAINER / "outputs"
+_LOGS = _OUTPUTS / "logs"
 
 sys.path.insert(0, str(_TRAINER))
 
@@ -56,6 +59,39 @@ def _banner(title: str):
     print(f"{'#' * w}", flush=True)
 
 
+# ── Tee helper: capture stdout to a string while also printing ────────────
+
+class TeeCapture:
+    """Context manager that captures stdout to a buffer while still printing."""
+    def __init__(self):
+        self.buffer = io.StringIO()
+        self._original = None
+
+    def __enter__(self):
+        self._original = sys.stdout
+        sys.stdout = _TeeWriter(self._original, self.buffer)
+        return self
+
+    def __exit__(self, *exc):
+        sys.stdout = self._original
+
+    def getvalue(self) -> str:
+        return self.buffer.getvalue()
+
+
+class _TeeWriter:
+    def __init__(self, *streams):
+        self.streams = streams
+
+    def write(self, msg):
+        for s in self.streams:
+            s.write(msg)
+
+    def flush(self):
+        for s in self.streams:
+            s.flush()
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Step 1: Discover and validate cases
 # ─────────────────────────────────────────────────────────────────────────────
@@ -69,7 +105,6 @@ def discover_cases() -> list[str]:
 
     for cf in case_files:
         case_id = cf.stem
-        # Skip generator scripts
         if case_id.startswith("gen_"):
             continue
 
@@ -94,7 +129,6 @@ def discover_cases() -> list[str]:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def pack_case(case_id: str) -> bool:
-    """Pack a case JSON into trainer/cases/. Returns True on success."""
     json_path = _CASES_JSON / f"{case_id}.json"
     try:
         result = subprocess.run(
@@ -111,7 +145,6 @@ def pack_case(case_id: str) -> bool:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def train_case(case_id: str, args) -> dict:
-    """Train dialogue transformer on a case. Returns history."""
     from trainer.train_dialogue import train_dialogue_cartridge
 
     spec_path = str(_CASES_PACKED / case_id / "spec.json")
@@ -133,8 +166,7 @@ def train_case(case_id: str, args) -> dict:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def play_games(case_id: str, n_games: int) -> list[dict]:
-    """Load trained model and play automated games."""
-    from tools.fit_play_report import play_game, _encode_token
+    from tools.fit_play_report import play_game
     from trainer.dialogue_model import DialogueTransformer
     from trainer.train_dialogue import _build_mappings
 
@@ -148,6 +180,9 @@ def play_games(case_id: str, n_games: int) -> list[dict]:
         vocab_size=ckpt["vocab_size"],
         embedding_dim=ckpt["embedding_dim"],
         context_dim=ckpt["context_dim"],
+        n_layers=ckpt.get("n_layers", 4),
+        n_heads=ckpt.get("n_heads", 4),
+        max_seq_len=ckpt.get("max_seq_len", 64),
     )
     model.load_state_dict(ckpt["state_dict"])
     model.eval()
@@ -169,7 +204,6 @@ def play_games(case_id: str, n_games: int) -> list[dict]:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def case_report(case_id: str, games: list, history: dict) -> dict:
-    """Compute summary metrics for a case."""
     converged = sum(1 for g in games if g["converged"])
     avg_turns = np.mean([g["n_turns"] for g in games])
     avg_conv = np.mean([g["final_convergence"] for g in games])
@@ -189,13 +223,12 @@ def case_report(case_id: str, games: list, history: dict) -> dict:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Step 6: Zip outputs
+# Step 6: Zip outputs + logs
 # ─────────────────────────────────────────────────────────────────────────────
 
 def zip_outputs(case_ids: list[str]) -> str:
-    """Zip all dialogue_model.pt + history.json + cartridge data into one archive."""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    zip_path = _OUTPUTS / f"living_tales_all_cases_{timestamp}.zip"
+    zip_path = _OUTPUTS / f"living_tales_all_{timestamp}.zip"
 
     with zipfile.ZipFile(str(zip_path), "w", zipfile.ZIP_DEFLATED) as zf:
         for case_id in case_ids:
@@ -212,11 +245,16 @@ def zip_outputs(case_ids: list[str]) -> str:
             if history_json.exists():
                 zf.write(str(history_json), f"{case_id}/history.json")
 
-            # Packed case data (spec, tokens, graph)
-            for name in ["spec.json", "tokens.json", "graph.json"]:
+            # Packed case data
+            for name in ["spec.json", "tokens.json", "graph.json", "expressions.json"]:
                 p = case_packed / name
                 if p.exists():
                     zf.write(str(p), f"{case_id}/cartridge/{name}")
+
+        # Training logs
+        if _LOGS.exists():
+            for log_file in _LOGS.glob("*.log"):
+                zf.write(str(log_file), f"logs/{log_file.name}")
 
     _log(f"Zipped to: {zip_path} ({zip_path.stat().st_size / 1024 / 1024:.1f} MB)")
     return str(zip_path)
@@ -234,22 +272,25 @@ def main():
     parser.add_argument("--games", type=int, default=3)
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--production", action="store_true",
-                        help="Full production settings (10K paths, 200 epochs, 2K RL)")
+                        help="Full production settings (3K paths, 200 epochs, 500 RL)")
     parser.add_argument("--cases", nargs="*", default=None,
                         help="Specific case IDs to train (default: all valid)")
     args = parser.parse_args()
 
     if args.production:
-        args.paths = 10000
+        args.paths = 3000
         args.epochs = 200
-        args.rl_episodes = 2000
+        args.rl_episodes = 500
         args.games = 5
 
     torch.set_num_threads(1)
     torch.set_num_interop_threads(1)
 
+    # Create logs directory
+    _LOGS.mkdir(parents=True, exist_ok=True)
+
     _banner("LIVING TALES — TRAIN ALL CASES")
-    _log(f"Settings: paths={args.paths} epochs={args.epochs} rl={args.rl_episodes} games={args.games}")
+    _log(f"Settings: paths={args.paths} epochs={args.epochs} rl={args.rl_episodes} games={args.games} device={args.device}")
 
     t0 = time.time()
 
@@ -279,13 +320,23 @@ def main():
             _log(f"Failed to pack {case_id}, skipping.")
             continue
 
-        # Train
+        # Train with log capture
         _log("Training...")
+        tee = TeeCapture()
         try:
-            history = train_case(case_id, args)
+            with tee:
+                history = train_case(case_id, args)
         except Exception as e:
             _log(f"Training failed for {case_id}: {e}")
+            # Save partial log even on failure
+            log_path = _LOGS / f"{case_id}.log"
+            log_path.write_text(tee.getvalue(), encoding="utf-8")
             continue
+
+        # Save training log
+        log_path = _LOGS / f"{case_id}.log"
+        log_path.write_text(tee.getvalue(), encoding="utf-8")
+        _log(f"Saved log: {log_path}")
 
         # Play
         _log(f"Playing {args.games} automated games...")
@@ -307,26 +358,34 @@ def main():
             f"avg turns {report['avg_turns']:.1f}"
         )
 
-    # Zip
-    if trained_ids:
-        _banner("PACKAGING")
-        zip_path = zip_outputs(trained_ids)
-    else:
-        zip_path = None
-
     # Final summary
     elapsed = time.time() - t0
     _banner("FINAL SUMMARY")
     _log(f"Total time: {elapsed:.0f}s ({elapsed/60:.1f} min)")
     _log(f"Cases trained: {len(trained_ids)}/{len(case_ids)}")
 
-    print(f"\n{'  Case':<25s} {'Conv%':>6s} {'Turns':>6s} {'Loss':>12s}")
-    print(f"  {'─' * 50}")
+    summary_lines = []
+    header = f"\n{'  Case':<25s} {'Conv%':>6s} {'Turns':>6s} {'Loss':>12s}"
+    sep = f"  {'─' * 50}"
+    print(header); summary_lines.append(header)
+    print(sep); summary_lines.append(sep)
     for r in reports:
         loss_str = f"{r['kd_loss_start']:.3f}→{r['kd_loss_end']:.3f}" if r['kd_loss_start'] else "—"
-        print(f"  {r['case_id']:<23s} {r['convergence_rate']:>5.0%} {r['avg_turns']:>6.1f} {loss_str:>12s}")
+        line = f"  {r['case_id']:<23s} {r['convergence_rate']:>5.0%} {r['avg_turns']:>6.1f} {loss_str:>12s}"
+        print(line); summary_lines.append(line)
 
-    if zip_path:
+    # Save summary
+    summary_path = _LOGS / "summary.txt"
+    summary_path.write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
+
+    # Save reports JSON
+    reports_path = _LOGS / "reports.json"
+    reports_path.write_text(json.dumps(reports, indent=2), encoding="utf-8")
+
+    # Zip everything
+    if trained_ids:
+        _banner("PACKAGING")
+        zip_path = zip_outputs(trained_ids)
         print(f"\n  Download: {zip_path}")
     print()
 

@@ -125,11 +125,23 @@ def _encode_token(tok, mappings):
 
 
 def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
-    """Play one automated dialogue game. Returns structured game data."""
+    """
+    Play one automated dialogue game. Returns structured game data.
+
+    For oscillating (creature) mode: the game runs for max_turns with a rolling
+    context window — tokens can be replayed and the creature lives indefinitely.
+    For converging (mystery) mode: stops when convergence is reached.
+    """
     rng = np.random.RandomState(seed)
     model_device = next(model.parameters()).device
     id_to_idx = mappings["id_to_idx"]
     idx_to_id = {v: k for k, v in id_to_idx.items()}
+
+    is_creature = getattr(spec, "mode", "converging") == "oscillating"
+    # Creatures: longer auto-play to show the loop; mysteries: stop at convergence
+    effective_max = max_turns * 2 if is_creature else max_turns
+    # Rolling context window size for the transformer
+    context_window = 64
 
     player_pool = [
         t for t in spec.tokens
@@ -163,28 +175,49 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
         transcript.append(("FIELD", tok, float(convergence_dims.min())))
 
     is_player = True
-    for step in range(len(transcript), max_turns):
+    for step in range(len(transcript), effective_max):
         game_turn = step // 2
         conv_score = float(convergence_dims.min())
-        if conv_score >= spec.convergence_threshold and game_turn >= spec.min_turns:
+
+        # Mystery mode: stop at convergence
+        if not is_creature and conv_score >= spec.convergence_threshold and game_turn >= spec.min_turns:
             break
+
+        # Creature mode: reset placed_ids periodically so tokens can replay
+        # (the creature's needs recur — you feed it again, play again, etc.)
+        if is_creature and step > 0 and step % 20 == 0:
+            # Keep opening tokens placed, reset everything else
+            placed_ids = set(spec.opening_token_ids)
 
         if is_player:
             candidates = [
                 t for t in player_pool
                 if t.id not in placed_ids and t.is_available_at_turn(game_turn)
             ]
+            if not candidates and is_creature:
+                # Creature: reset placed_ids and try again
+                placed_ids = set(spec.opening_token_ids)
+                candidates = [
+                    t for t in player_pool
+                    if t.id not in placed_ids and t.is_available_at_turn(game_turn)
+                ]
             if not candidates:
                 break
             chosen = candidates[rng.randint(len(candidates))]
         else:
-            # Model picks engine token
+            # Model picks engine token — use rolling window for transformer input
             model.eval()
-            inp_t = torch.tensor([seq_t], dtype=torch.long, device=model_device)
-            inp_c = torch.tensor([seq_c], dtype=torch.long, device=model_device)
-            inp_p = torch.tensor([seq_p], dtype=torch.long, device=model_device)
-            inp_s = torch.tensor([seq_s], dtype=torch.long, device=model_device)
-            inp_a = torch.tensor([seq_a], dtype=torch.long, device=model_device)
+            win_t = seq_t[-context_window:]
+            win_c = seq_c[-context_window:]
+            win_p = seq_p[-context_window:]
+            win_s = seq_s[-context_window:]
+            win_a = seq_a[-context_window:]
+
+            inp_t = torch.tensor([win_t], dtype=torch.long, device=model_device)
+            inp_c = torch.tensor([win_c], dtype=torch.long, device=model_device)
+            inp_p = torch.tensor([win_p], dtype=torch.long, device=model_device)
+            inp_s = torch.tensor([win_s], dtype=torch.long, device=model_device)
+            inp_a = torch.tensor([win_a], dtype=torch.long, device=model_device)
 
             valid_mask = torch.zeros(spec.vocab_size, dtype=torch.bool, device=model_device)
             for t in engine_pool:
@@ -192,7 +225,13 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
                     valid_mask[id_to_idx[t.id]] = True
 
             if not valid_mask.any():
-                break
+                if is_creature:
+                    placed_ids = set(spec.opening_token_ids)
+                    for t in engine_pool:
+                        if t.id not in placed_ids and t.is_available_at_turn(game_turn):
+                            valid_mask[id_to_idx[t.id]] = True
+                if not valid_mask.any():
+                    break
 
             with torch.no_grad():
                 chosen_idx, probs = model.predict_next(
@@ -206,6 +245,10 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
         convergence_dims = np.minimum(
             1.0, convergence_dims + chosen.attractor_weights * spec.convergence_rate,
         )
+        # Creature mode: dimensions also decay naturally over time
+        if is_creature:
+            convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+
         enc = _encode_token(chosen, mappings)
         seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
         seq_s.append(enc[3]); seq_a.append(enc[4])
@@ -215,7 +258,7 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
         is_player = not is_player
 
     final_conv = float(convergence_dims.min())
-    energy = spec.token_graph.subgraph_energy(context_ids) if context_ids else 0.0
+    energy = spec.token_graph.subgraph_energy(context_ids[-30:]) if context_ids else 0.0
 
     return {
         "seed": seed,

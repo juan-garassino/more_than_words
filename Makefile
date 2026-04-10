@@ -35,7 +35,8 @@
   acm-s04-train-policy acm-s04-train-policy-gpu \
   acm-s05-benchmark \
   acm-pipeline acm-pipeline-gpu \
-  validate-amber-cipher pack-amber-cipher train-amber-cipher-colab-cpu
+  validate-amber-cipher pack-amber-cipher train-amber-cipher-colab-cpu \
+  train-creatures train-mysteries
 
 # Shared env flags (suppress threading conflicts on macOS / Colab)
 ENV := PYTHONUNBUFFERED=1 KMP_DUPLICATE_LIB_OK=TRUE KMP_USE_SHM=0 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
@@ -526,18 +527,21 @@ ac-fit-play-report: ac-s02-pack colab-install
 train-all-fast: colab-install
 	@echo ""
 	@echo "################################################################"
-	@echo "  LIVING TALES — TRAIN ALL CASES (fast)"
+	@echo "  LIVING TALES — TRAIN ALL CASES (fast smoke-test)"
+	@echo "  500 paths · 30 epochs · 100 RL · 3 games"
 	@echo "################################################################"
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
-	python3 tools/train_all_cases.py --paths 500 --epochs 30 --rl-episodes 100 --games 3
+	python3 tools/train_all_cases.py --paths 500 --epochs 30 --rl-episodes 100 --games 3 --device cuda
 
 train-all: colab-install
 	@echo ""
 	@echo "################################################################"
 	@echo "  LIVING TALES — TRAIN ALL CASES"
+	@echo "  3000 paths · 200 epochs · 500 RL · 5 games"
+	@echo "  Logs saved per case + zipped for download"
 	@echo "################################################################"
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
-	python3 tools/train_all_cases.py --paths 2000 --epochs 100 --rl-episodes 500 --games 5
+	python3 tools/train_all_cases.py --paths 3000 --epochs 200 --rl-episodes 500 --games 5 --device cuda
 
 train-all-production: colab-install
 	@echo ""
@@ -545,4 +549,26 @@ train-all-production: colab-install
 	@echo "  LIVING TALES — TRAIN ALL CASES (production)"
 	@echo "################################################################"
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
-	python3 tools/train_all_cases.py --production
+	python3 tools/train_all_cases.py --production --device cuda
+
+train-creatures: colab-install
+	@echo ""
+	@echo "################################################################"
+	@echo "  LIVING TALES — TRAIN ALL CREATURES"
+	@echo "  little_creature (S/M/L/XL)"
+	@echo "################################################################"
+	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/train_all_cases.py --production --device cuda \
+	  --cases little_creature little_creature_M little_creature_L little_creature_XL
+
+train-mysteries: colab-install
+	@echo ""
+	@echo "################################################################"
+	@echo "  LIVING TALES — TRAIN ALL MYSTERIES"
+	@echo "################################################################"
+	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
+	python3 tools/train_all_cases.py --production --device cuda \
+	  --cases amber_cipher amber_cipher_L amber_cipher_M \
+	  attended_hour black_ledger dust_and_verdict fog_over_brussels \
+	  hollow_season neon_blackout orchard_at_dusk resonance_test \
+	  sulphur_line third_signature tidal_interval venetian_mirror
