@@ -34,11 +34,13 @@ import torch.nn.functional as F
 from core.cartridge import CartridgeSpec
 from core.creature_case import classify_creature_token_role
 from core.token import Token, TokenClass, TokenPhase, TokenStream, TokenAgency
-from generator.dialogue_sampler import DialogueSampler, DialoguePath, ROLE_PLAYER, ROLE_ENGINE
-from trainer.dialogue_model import DialogueTransformer
+from generator.dialogue_sampler import (
+    DialogueSampler, DialoguePath, SceneDialoguePath, ROLE_PLAYER, ROLE_ENGINE,
+)
+from trainer.dialogue_model import DialogueTransformer, SceneTransformer
 from trainer.loss import LyapunovRegularization
 from rl.dialogue_rewards import DialogueRewardConfig, DialogueRewardComputer
-from trainer.training_profile import TrainingProfile
+from trainer.training_profile import TrainingProfile, build_head_vocab_masks
 
 
 # ---------------------------------------------------------------------------
@@ -1040,6 +1042,408 @@ def train_dialogue_cartridge(
     }
 
     # Save combined history for visualization
+    import json
+    history_path = Path(output_dir) / "history.json"
+    history_path.write_text(json.dumps(combined_history, indent=2, default=str))
+    _log(f"Saved history: {history_path}")
+
+    return model, combined_history
+
+
+# ---------------------------------------------------------------------------
+# Scene training — multi-head parallel prediction
+# ---------------------------------------------------------------------------
+
+def _scene_to_tensors(
+    path: SceneDialoguePath,
+    id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx,
+    n_dims: int,
+) -> dict:
+    """Convert a SceneDialoguePath to training tensors."""
+    token_ids, class_ids, phase_ids, stream_ids, agency_ids = [], [], [], [], []
+    roles = []
+
+    for tok in path.all_tokens:
+        tid, cid, pid, sid, aid = _encode_token(
+            tok, id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx,
+        )
+        token_ids.append(tid)
+        class_ids.append(cid)
+        phase_ids.append(pid)
+        stream_ids.append(sid)
+        agency_ids.append(aid)
+
+    return {
+        "token_ids": token_ids,
+        "class_ids": class_ids,
+        "phase_ids": phase_ids,
+        "stream_ids": stream_ids,
+        "agency_ids": agency_ids,
+        "roles": path.all_roles,
+        "soft_targets": path.soft_targets,
+    }
+
+
+def _collate_scene_batch(examples: list, device: str, n_dims: int, vocab_size: int,
+                         head_vocab_masks: torch.Tensor = None) -> dict:
+    """Pad and batch scene examples."""
+    max_len = max(len(ex["token_ids"]) for ex in examples)
+    B = len(examples)
+
+    token_ids = np.full((B, max_len), 0, dtype=np.int64)
+    class_ids = np.full((B, max_len), 0, dtype=np.int64)
+    phase_ids = np.full((B, max_len), 0, dtype=np.int64)
+    stream_ids = np.full((B, max_len), 0, dtype=np.int64)
+    agency_ids = np.full((B, max_len), 0, dtype=np.int64)
+    padding_mask = np.ones((B, max_len), dtype=bool)
+
+    # Per-head targets: for each position, which token should each head predict?
+    # Shape: (B, max_len, n_dims) — target token index per head, -100 = ignore
+    head_targets = np.full((B, max_len, n_dims), -100, dtype=np.int64)
+
+    V = vocab_size
+    soft_targets = np.zeros((B, max_len, V), dtype=np.float32)
+
+    for i, ex in enumerate(examples):
+        n = len(ex["token_ids"])
+        token_ids[i, :n] = ex["token_ids"]
+        class_ids[i, :n] = ex["class_ids"]
+        phase_ids[i, :n] = ex["phase_ids"]
+        stream_ids[i, :n] = ex["stream_ids"]
+        agency_ids[i, :n] = ex["agency_ids"]
+        padding_mask[i, :n] = False
+
+        # Build head targets: look ahead from each position to find the next
+        # engine token for each dimension
+        # For simplicity: at each engine position, that token IS the target for its head
+        # We use shifted targets: position t predicts what comes at t+1
+        if n > 1:
+            for t in range(n - 1):
+                next_tok_idx = ex["token_ids"][t + 1]
+                next_role = ex["roles"][t + 1]
+                if next_role == ROLE_ENGINE:
+                    # Only set target for heads where this token is in their vocabulary
+                    for d in range(n_dims):
+                        if head_vocab_masks is not None and not head_vocab_masks[d, next_tok_idx]:
+                            continue  # token not in this head's vocab
+                        head_targets[i, t, d] = next_tok_idx
+
+        for t in range(min(n, len(ex["soft_targets"]))):
+            soft_targets[i, t, :] = ex["soft_targets"][t]
+
+    return {
+        "token_ids": torch.tensor(token_ids, device=device),
+        "class_ids": torch.tensor(class_ids, device=device),
+        "phase_ids": torch.tensor(phase_ids, device=device),
+        "stream_ids": torch.tensor(stream_ids, device=device),
+        "agency_ids": torch.tensor(agency_ids, device=device),
+        "padding_mask": torch.tensor(padding_mask, device=device),
+        "head_targets": torch.tensor(head_targets, device=device),
+        "soft_targets": torch.tensor(soft_targets, device=device),
+    }
+
+
+def train_scene_supervised(
+    spec_path: str,
+    output_dir: str,
+    n_dialogues: int = 2000,
+    n_epochs: int = 100,
+    batch_size: int = 32,
+    kd_temperature: float = 2.0,
+    lyapunov_weight: float = 0.1,
+    freeze_emb_epochs: int = 5,
+    model_size_override: str | None = None,
+    device: str = "cpu",
+) -> Tuple[SceneTransformer, Dict]:
+    """Train a SceneTransformer on scene dialogue trajectories."""
+    _banner("SCENE TRANSFORMER — SUPERVISED KD")
+
+    spec = CartridgeSpec.load(spec_path)
+    profile = TrainingProfile.from_spec(spec, model_size_override=model_size_override)
+    _log(f"Profile: {profile.log_summary()}")
+
+    mappings = _build_mappings(spec.tokens)
+    id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx = mappings
+    n_dims = spec.n_attractor_dims
+
+    lr = profile.lr
+    kd_alpha = profile.kd_alpha
+
+    # --- Build head vocab masks ---
+    head_masks = build_head_vocab_masks(spec)
+    _log(f"Head masks: {n_dims} heads")
+    for d in range(n_dims):
+        n_tok = head_masks[d].sum().item()
+        _log(f"  Head {d}: {n_tok} tokens")
+
+    # --- Sample scene dialogues ---
+    _section("Sampling scene dialogues")
+    sampler = DialogueSampler(
+        spec,
+        player_temperature=1.2,
+        engine_temperature=0.8,
+        soft_target_temperature=kd_temperature,
+    )
+    t0 = time.time()
+    paths = sampler.sample_scene_batch(n_dialogues, verbose=True)
+    _log(f"Sampled {len(paths)} scene dialogues in {time.time() - t0:.1f}s")
+
+    if not paths:
+        raise RuntimeError("No scene dialogues sampled.")
+
+    converged = sum(1 for p in paths if p.converged)
+    avg_len = np.mean([len(p.all_tokens) for p in paths])
+    _log(f"  converged: {converged}/{len(paths)} ({converged/len(paths):.1%})")
+    _log(f"  avg length: {avg_len:.1f} tokens")
+
+    # --- Convert to training examples ---
+    examples = [
+        _scene_to_tensors(p, id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx, n_dims)
+        for p in paths
+    ]
+
+    # --- Create model ---
+    model = SceneTransformer(
+        vocab_size=spec.vocab_size,
+        embedding_dim=profile.embedding_dim,
+        context_dim=profile.context_dim,
+        n_heads=profile.n_heads,
+        n_layers=profile.n_layers,
+        n_output_heads=n_dims,
+        head_vocab_masks=head_masks,
+        max_seq_len=128,
+    ).to(device)
+
+    param_count = sum(p.numel() for p in model.parameters())
+    _log(f"Model params: {param_count:,}")
+
+    # --- Optimizer + cosine LR ---
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=n_epochs, eta_min=lr * 0.05)
+
+    # --- Training loop ---
+    _section("Training")
+    history = {"epoch_losses": [], "loss": 0.0}
+
+    for epoch in range(n_epochs):
+        model.train()
+
+        freeze = epoch < freeze_emb_epochs
+        for p in model.token_embedding.parameters():
+            p.requires_grad = not freeze
+
+        np.random.shuffle(examples)
+        epoch_loss = 0.0
+        n_batches = 0
+
+        for batch_start in range(0, len(examples), batch_size):
+            batch_examples = examples[batch_start:batch_start + batch_size]
+            batch = _collate_scene_batch(batch_examples, device, n_dims, spec.vocab_size, head_masks)
+
+            # Forward: get logits per head
+            all_logits = model(
+                batch["token_ids"], batch["class_ids"], batch["phase_ids"],
+                batch["stream_ids"], batch["agency_ids"], batch["padding_mask"],
+            )  # list of n_dims tensors, each (B, S, V)
+
+            # --- Per-head CE loss ---
+            total_ce = torch.tensor(0.0, device=device)
+            n_valid_heads = 0
+
+            for d in range(n_dims):
+                logits_d = all_logits[d]  # (B, S, V)
+                targets_d = batch["head_targets"][:, :, d]  # (B, S)
+                B, S, V = logits_d.shape
+
+                # Only compute loss where we have targets
+                valid = targets_d != -100
+                if not valid.any():
+                    continue
+
+                flat_logits = logits_d.reshape(B * S, V)[valid.reshape(B * S)]
+                flat_targets = targets_d.reshape(B * S)[valid.reshape(B * S)]
+
+                # Focal loss
+                with torch.no_grad():
+                    p_t = F.softmax(flat_logits, dim=-1).gather(1, flat_targets.unsqueeze(1)).squeeze(1)
+                    focal_w = (1 - p_t) ** profile.focal_gamma
+                per_sample = F.cross_entropy(flat_logits, flat_targets, reduction="none")
+                head_loss = (focal_w * per_sample).mean()
+                total_ce = total_ce + head_loss
+                n_valid_heads += 1
+
+            if n_valid_heads > 0:
+                total_ce = total_ce / n_valid_heads
+
+            # --- Entropy bonus (per head, adaptive) ---
+            entropy_bonus = torch.tensor(0.0, device=device)
+            warmup_done = epoch >= profile.warmup_epochs
+
+            if warmup_done:
+                for d in range(n_dims):
+                    logits_d = all_logits[d]
+                    probs_d = F.softmax(logits_d, dim=-1)
+                    log_probs_d = F.log_softmax(logits_d, dim=-1)
+                    ent_d = -(probs_d * log_probs_d).sum(dim=-1).mean()
+                    if ent_d.item() < profile.collapse_threshold:
+                        entropy_bonus = entropy_bonus + profile.entropy_coef * ent_d
+
+                if n_dims > 0:
+                    entropy_bonus = entropy_bonus / n_dims
+
+            # --- Total loss ---
+            total = (1 - kd_alpha) * total_ce - entropy_bonus
+
+            optimizer.zero_grad()
+            total.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            optimizer.step()
+
+            epoch_loss += total.item()
+            n_batches += 1
+
+        avg_loss = epoch_loss / max(n_batches, 1)
+        history["epoch_losses"].append(avg_loss)
+        history["loss"] = avg_loss
+        scheduler.step()
+
+        if epoch % 10 == 0 or epoch == n_epochs - 1:
+            frozen_tag = " [emb frozen]" if freeze else ""
+            cur_lr = scheduler.get_last_lr()[0]
+            _log(f"Epoch {epoch:>3d}/{n_epochs}  loss={avg_loss:.4f}  lr={cur_lr:.2e}{frozen_tag}")
+
+        # --- Scene probe every 25 epochs ---
+        if (epoch == 10) or (epoch % 25 == 0 and epoch > 0):
+            _scene_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
+                        stream_to_idx, agency_to_idx, device)
+
+    # Unfreeze
+    for p in model.parameters():
+        p.requires_grad = True
+
+    # --- Save checkpoint ---
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+    ckpt_path = output_path / "dialogue_model.pt"
+
+    torch.save({
+        "state_dict": model.state_dict(),
+        "spec_path": str(spec_path),
+        "case_id": spec.case_id,
+        "model_type": "scene",
+        "embedding_dim": profile.embedding_dim,
+        "context_dim": profile.context_dim,
+        "n_layers": profile.n_layers,
+        "n_heads": profile.n_heads,
+        "n_output_heads": n_dims,
+        "max_seq_len": 128,
+        "vocab_size": spec.vocab_size,
+        "id_to_idx": id_to_idx,
+        "class_to_idx": class_to_idx,
+        "phase_to_idx": phase_to_idx,
+        "stream_to_idx": stream_to_idx,
+        "agency_to_idx": agency_to_idx,
+    }, ckpt_path)
+    _log(f"Saved scene checkpoint: {ckpt_path}")
+
+    return model, history
+
+
+def _scene_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
+                 stream_to_idx, agency_to_idx, device):
+    """Probe: play one action and show what each head predicts."""
+    from core.token import TokenAgency, TokenStream
+
+    idx_to_id = {v: k for k, v in id_to_idx.items()}
+
+    def _enc(tok):
+        return (
+            id_to_idx[tok.id], class_to_idx[tok.token_class.value],
+            phase_to_idx[tok.phase.value], stream_to_idx[tok.stream.value],
+            agency_to_idx[tok.agency.value],
+        )
+
+    # Build opening context
+    seq_t, seq_c, seq_p, seq_s, seq_a = [], [], [], [], []
+    for tid in spec.opening_token_ids:
+        tok = spec.get_token(tid)
+        enc = _enc(tok)
+        seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
+        seq_s.append(enc[3]); seq_a.append(enc[4])
+
+    # Find probe actions
+    probe_actions = [t.id for t in spec.tokens
+                     if t.id.startswith('action:') and t.id in id_to_idx]
+    if not probe_actions:
+        probe_actions = [t.id for t in spec.tokens
+                         if t.agency in (TokenAgency.PLAYER, TokenAgency.SHARED)
+                         and not t.is_invariant and t.stream != TokenStream.OPENING
+                         and t.id in id_to_idx]
+    probe_actions = probe_actions[:3]
+    if not probe_actions:
+        return
+
+    model.eval()
+    _log(f"  [SCENE PROBE] action → scene prediction ({spec.n_attractor_dims} heads):")
+
+    with torch.no_grad():
+        for action_id in probe_actions:
+            tok = spec.get_token(action_id)
+            enc = _enc(tok)
+            test_t = torch.tensor([seq_t + [enc[0]]], dtype=torch.long, device=device)
+            test_c = torch.tensor([seq_c + [enc[1]]], dtype=torch.long, device=device)
+            test_p = torch.tensor([seq_p + [enc[2]]], dtype=torch.long, device=device)
+            test_s = torch.tensor([seq_s + [enc[3]]], dtype=torch.long, device=device)
+            test_a = torch.tensor([seq_a + [enc[4]]], dtype=torch.long, device=device)
+
+            results = model.predict_scene(test_t, test_c, test_p, test_s, test_a, temperature=0.8)
+
+            action_short = action_id.split(':')[1]
+            scene_parts = []
+            for d, (chosen_idx, probs) in enumerate(results):
+                if chosen_idx >= 0:
+                    tok_name = idx_to_id[chosen_idx].split(':')[1]
+                    prob = probs[chosen_idx].item()
+                    scene_parts.append(f"d{d}:{tok_name}({prob:.0%})")
+                else:
+                    scene_parts.append(f"d{d}:NONE")
+
+            _log(f"    {action_short:>15s} → [{', '.join(scene_parts)}]")
+
+    model.train()
+
+
+def train_scene_cartridge(
+    spec_path: str,
+    output_dir: str,
+    n_dialogues: int = 2000,
+    n_epochs: int = 100,
+    n_rl_episodes: int = 500,
+    batch_size: int = 32,
+    kd_temperature: float = 2.0,
+    model_size_override: str | None = None,
+    device: str = "cpu",
+) -> Tuple[SceneTransformer, Dict]:
+    """Full scene training pipeline: supervised KD (RL TBD in next iteration)."""
+    model, sup_history = train_scene_supervised(
+        spec_path=spec_path,
+        output_dir=output_dir,
+        n_dialogues=n_dialogues,
+        n_epochs=n_epochs,
+        batch_size=batch_size,
+        kd_temperature=kd_temperature,
+        model_size_override=model_size_override,
+        device=device,
+    )
+
+    # TODO: Scene RL fine-tuning (play N-token scenes, reward per scene)
+    # For now, supervised-only is enough to test the multi-head architecture
+
+    combined_history = {
+        "supervised": sup_history,
+        "loss": sup_history.get("loss", 0.0),
+    }
+
     import json
     history_path = Path(output_dir) / "history.json"
     history_path.write_text(json.dumps(combined_history, indent=2, default=str))

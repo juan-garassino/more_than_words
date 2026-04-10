@@ -205,7 +205,7 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
                 break
             chosen = candidates[rng.randint(len(candidates))]
         else:
-            # Model picks engine token — use rolling window for transformer input
+            # Model picks engine token(s) — use rolling window for transformer input
             model.eval()
             win_t = seq_t[-context_window:]
             win_c = seq_c[-context_window:]
@@ -219,6 +219,47 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
             inp_s = torch.tensor([win_s], dtype=torch.long, device=model_device)
             inp_a = torch.tensor([win_a], dtype=torch.long, device=model_device)
 
+            # Check if this is a SceneTransformer (multi-head)
+            is_scene_model = hasattr(model, 'predict_scene')
+
+            if is_scene_model:
+                # SceneTransformer: predict N tokens (one per head/dimension)
+                with torch.no_grad():
+                    results = model.predict_scene(
+                        inp_t, inp_c, inp_p, inp_s, inp_a, temperature=0.8,
+                    )
+
+                # Place all scene tokens
+                scene_tokens_placed = 0
+                for d, (chosen_idx, probs) in enumerate(results):
+                    if chosen_idx < 0:
+                        continue
+                    chosen_tok = spec.get_token(idx_to_id[chosen_idx])
+                    if chosen_tok.id in placed_ids and not is_creature:
+                        continue  # skip duplicates for mysteries
+
+                    placed_ids.add(chosen_tok.id)
+                    context_ids.append(chosen_tok.id)
+                    convergence_dims = np.minimum(
+                        1.0, convergence_dims + chosen_tok.attractor_weights * spec.convergence_rate,
+                    )
+                    if is_creature:
+                        convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+
+                    enc = _encode_token(chosen_tok, mappings)
+                    seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
+                    seq_s.append(enc[3]); seq_a.append(enc[4])
+
+                    role = "FIELD"
+                    transcript.append((role, chosen_tok, float(convergence_dims.min())))
+                    scene_tokens_placed += 1
+
+                if scene_tokens_placed == 0:
+                    break
+                is_player = not is_player
+                continue  # skip the single-token placement below
+
+            # Single-token model fallback
             valid_mask = torch.zeros(spec.vocab_size, dtype=torch.bool, device=model_device)
             for t in engine_pool:
                 if t.id not in placed_ids and t.is_available_at_turn(game_turn):

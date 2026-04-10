@@ -162,14 +162,14 @@ def pack_case(case_id: str) -> bool:
 
 def train_case(case_id: str, args, model_size_override: str | None = None,
                output_id: str | None = None) -> dict:
-    """Train a case. output_id overrides the output directory name (for scale experiments)."""
-    from trainer.train_dialogue import train_dialogue_cartridge
+    """Train a case with SceneTransformer (multi-head). Falls back to single-token if needed."""
+    from trainer.train_dialogue import train_scene_cartridge
 
     spec_path = str(_CASES_PACKED / case_id / "spec.json")
     out_name = output_id or case_id
     output_dir = str(_OUTPUTS / out_name)
 
-    model, history = train_dialogue_cartridge(
+    model, history = train_scene_cartridge(
         spec_path=spec_path,
         output_dir=output_dir,
         n_dialogues=args.paths,
@@ -187,7 +187,8 @@ def train_case(case_id: str, args, model_size_override: str | None = None,
 
 def play_games(case_id: str, n_games: int, output_id: str | None = None) -> list[dict]:
     from tools.fit_play_report import play_game
-    from trainer.dialogue_model import DialogueTransformer
+    from trainer.dialogue_model import DialogueTransformer, SceneTransformer
+    from trainer.training_profile import build_head_vocab_masks
     from trainer.train_dialogue import _build_mappings
 
     spec_path = _CASES_PACKED / case_id / "spec.json"
@@ -197,14 +198,28 @@ def play_games(case_id: str, n_games: int, output_id: str | None = None) -> list
     spec = CartridgeSpec.load(str(spec_path))
     ckpt = torch.load(str(model_path), map_location="cpu", weights_only=False)
 
-    model = DialogueTransformer(
-        vocab_size=ckpt["vocab_size"],
-        embedding_dim=ckpt["embedding_dim"],
-        context_dim=ckpt["context_dim"],
-        n_layers=ckpt.get("n_layers", 4),
-        n_heads=ckpt.get("n_heads", 4),
-        max_seq_len=ckpt.get("max_seq_len", 64),
-    )
+    model_type = ckpt.get("model_type", "dialogue")
+    if model_type == "scene":
+        head_masks = build_head_vocab_masks(spec)
+        model = SceneTransformer(
+            vocab_size=ckpt["vocab_size"],
+            embedding_dim=ckpt["embedding_dim"],
+            context_dim=ckpt["context_dim"],
+            n_layers=ckpt.get("n_layers", 6),
+            n_heads=ckpt.get("n_heads", 6),
+            n_output_heads=ckpt.get("n_output_heads", spec.n_attractor_dims),
+            head_vocab_masks=head_masks,
+            max_seq_len=ckpt.get("max_seq_len", 128),
+        )
+    else:
+        model = DialogueTransformer(
+            vocab_size=ckpt["vocab_size"],
+            embedding_dim=ckpt["embedding_dim"],
+            context_dim=ckpt["context_dim"],
+            n_layers=ckpt.get("n_layers", 4),
+            n_heads=ckpt.get("n_heads", 4),
+            max_seq_len=ckpt.get("max_seq_len", 64),
+        )
     model.load_state_dict(ckpt["state_dict"])
     model.eval()
 

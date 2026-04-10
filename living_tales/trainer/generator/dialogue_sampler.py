@@ -48,6 +48,29 @@ class DialoguePath:
     final_convergence: float
 
 
+@dataclass
+class SceneTurn:
+    """One engine scene: N tokens predicted in parallel (one per dimension)."""
+    tokens: List[Token]         # N tokens, one per head/dimension
+    dim_indices: List[int]      # which dimension each token belongs to
+    role: str                   # always ROLE_ENGINE for scene turns
+    turn_index: int
+    energy_at_step: float
+    convergence_at_step: float
+
+
+@dataclass
+class SceneDialoguePath:
+    """A dialogue where engine turns produce N-token scenes."""
+    player_turns: List[DialogueTurn]    # single-token player turns
+    scene_turns: List[SceneTurn]        # multi-token engine scenes
+    all_tokens: List[Token]             # flat sequence of all tokens in order
+    all_roles: List[str]                # role for each token in flat sequence
+    soft_targets: List[np.ndarray]      # per-position in flat sequence
+    converged: bool
+    final_convergence: float
+
+
 class DialogueSampler:
     """
     Monte Carlo sampler for interleaved player/engine dialogue trajectories.
@@ -373,6 +396,219 @@ class DialogueSampler:
                 final_convergence=final_conv,
             )
         return None
+
+    def _build_dim_pools(self, threshold: float = 0.05) -> List[List[Token]]:
+        """Build per-dimension token pools from attractor weights."""
+        n_dims = self.spec.n_attractor_dims
+        pools: List[List[Token]] = [[] for _ in range(n_dims)]
+        for tok in self._engine_tokens:
+            for d in range(n_dims):
+                if abs(tok.attractor_weights[d]) > threshold:
+                    pools[d].append(tok)
+        # Ensure every dim has candidates
+        for d in range(n_dims):
+            if len(pools[d]) < 3:
+                sorted_by_dim = sorted(
+                    self._engine_tokens,
+                    key=lambda t: abs(t.attractor_weights[d]),
+                    reverse=True,
+                )
+                pools[d] = sorted_by_dim[:10]
+        return pools
+
+    def sample_scene_dialogue(self) -> Optional[SceneDialoguePath]:
+        """
+        Sample a dialogue where engine turns produce N-token scenes.
+
+        Player plays 1 token → engine responds with N tokens (one per dimension).
+        The flat sequence is: [opening..., player, eng_d0, eng_d1, ..., eng_dN, player, ...]
+        """
+        n_dims = self.spec.n_attractor_dims
+        dim_pools = self._build_dim_pools()
+        convergence_dims = np.zeros(n_dims, dtype=np.float32)
+        placed_ids: set = set()
+        context_ids: List[str] = []
+        all_tokens: List[Token] = []
+        all_roles: List[str] = []
+        soft_targets: List[np.ndarray] = []
+        player_turns: List[DialogueTurn] = []
+        scene_turns: List[SceneTurn] = []
+        fallback_soft = self._compute_soft_target()
+
+        # --- Opening ---
+        for tid in self.spec.opening_token_ids:
+            token = self.spec.get_token(tid)
+            placed_ids.add(token.id)
+            context_ids.append(token.id)
+            convergence_dims = np.minimum(
+                1.0, convergence_dims + token.attractor_weights * self.convergence_rate
+            )
+            all_tokens.append(token)
+            all_roles.append(ROLE_ENGINE)
+            soft_targets.append(fallback_soft.copy())
+
+        dialogue_pos = len(all_tokens)
+        role_counts: Dict[str, int] = {}
+
+        for step in range(self.max_turns):
+            game_turn = dialogue_pos // 2
+
+            # --- Player turn: 1 token ---
+            candidates = self._get_candidates(self._player_tokens, placed_ids, dialogue_pos)
+            if not candidates:
+                break
+            chosen = self._sample_from_pool(
+                candidates, context_ids, self.player_temperature, dialogue_pos, role_counts,
+            )
+            if chosen is None:
+                break
+
+            placed_ids.add(chosen.id)
+            context_ids.append(chosen.id)
+            convergence_dims = np.minimum(
+                1.0, convergence_dims + chosen.attractor_weights * self.convergence_rate
+            )
+            energy = self.graph.subgraph_energy(context_ids)
+            conv_score = float(convergence_dims.min())
+
+            all_tokens.append(chosen)
+            all_roles.append(ROLE_PLAYER)
+            soft_targets.append(
+                self._compute_soft_target_conditional(chosen.id, context_ids)
+            )
+            player_turns.append(DialogueTurn(
+                token=chosen, role=ROLE_PLAYER, turn_index=len(all_tokens) - 1,
+                energy_at_step=energy, convergence_at_step=conv_score,
+            ))
+            dialogue_pos += 1
+
+            # --- Engine scene: N tokens (one per dimension) ---
+            scene_tokens = []
+            scene_dims = []
+            for d in range(n_dims):
+                dim_candidates = [
+                    t for t in dim_pools[d]
+                    if t.id not in placed_ids and self._phase_valid(t, dialogue_pos)
+                ]
+                if not dim_candidates:
+                    # Allow replaying tokens for this dimension
+                    dim_candidates = [
+                        t for t in dim_pools[d]
+                        if self._phase_valid(t, dialogue_pos)
+                    ]
+                if not dim_candidates:
+                    continue
+
+                # Score and sample from dimension pool
+                scores = np.array([
+                    self._score_token(t, context_ids, dialogue_pos) +
+                    abs(t.attractor_weights[d]) * 2.0  # boost tokens strong on this dim
+                    for t in dim_candidates
+                ])
+                temp = self.engine_temperature
+                if self._temperature_jitter > 0:
+                    temp += np.random.uniform(-self._temperature_jitter, self._temperature_jitter)
+                    temp = max(temp, 0.1)
+                scores = scores / max(temp, 1e-8)
+                scores -= scores.max()
+                weights = np.exp(scores)
+                total = weights.sum()
+                if total < 1e-12:
+                    chosen_tok = dim_candidates[np.random.randint(len(dim_candidates))]
+                else:
+                    weights /= total
+                    idx = np.random.choice(len(dim_candidates), p=weights)
+                    chosen_tok = dim_candidates[idx]
+
+                placed_ids.add(chosen_tok.id)
+                context_ids.append(chosen_tok.id)
+                convergence_dims = np.minimum(
+                    1.0, convergence_dims + chosen_tok.attractor_weights * self.convergence_rate
+                )
+                scene_tokens.append(chosen_tok)
+                scene_dims.append(d)
+
+                all_tokens.append(chosen_tok)
+                all_roles.append(ROLE_ENGINE)
+                soft_targets.append(
+                    self._compute_soft_target_conditional(chosen_tok.id, context_ids)
+                )
+                dialogue_pos += 1
+
+            if not scene_tokens:
+                break
+
+            energy = self.graph.subgraph_energy(context_ids)
+            conv_score = float(convergence_dims.min())
+            scene_turns.append(SceneTurn(
+                tokens=scene_tokens, dim_indices=scene_dims, role=ROLE_ENGINE,
+                turn_index=len(all_tokens) - len(scene_tokens),
+                energy_at_step=energy, convergence_at_step=conv_score,
+            ))
+
+            # Update role counts
+            for tok in scene_tokens:
+                r = tok.id.split(':')[0]
+                role_counts[r] = role_counts.get(r, 0) + 1
+
+            # Check convergence
+            if conv_score >= self.spec.convergence_threshold and game_turn >= self.min_turns:
+                return SceneDialoguePath(
+                    player_turns=player_turns, scene_turns=scene_turns,
+                    all_tokens=all_tokens, all_roles=all_roles,
+                    soft_targets=soft_targets, converged=True,
+                    final_convergence=conv_score,
+                )
+
+        if not all_tokens:
+            return None
+
+        final_conv = float(convergence_dims.min())
+        if self.allow_partial or final_conv >= self.spec.convergence_threshold:
+            return SceneDialoguePath(
+                player_turns=player_turns, scene_turns=scene_turns,
+                all_tokens=all_tokens, all_roles=all_roles,
+                soft_targets=soft_targets,
+                converged=final_conv >= self.spec.convergence_threshold,
+                final_convergence=final_conv,
+            )
+        return None
+
+    def sample_scene_batch(
+        self,
+        n: int,
+        verbose: bool = True,
+        max_attempts: int | None = None,
+    ) -> List[SceneDialoguePath]:
+        """Sample n scene dialogue trajectories."""
+        paths: List[SceneDialoguePath] = []
+        attempts = 0
+        cap = max_attempts if max_attempts is not None else n * 6
+
+        while len(paths) < n and attempts < cap:
+            path = self.sample_scene_dialogue()
+            if path is not None:
+                paths.append(path)
+            attempts += 1
+
+            if verbose and len(paths) % 500 == 0 and len(paths) > 0:
+                rate = len(paths) / attempts
+                converged = sum(1 for p in paths if p.converged)
+                print(
+                    f"  {len(paths)}/{n} scene dialogues | "
+                    f"success: {rate:.1%} | converged: {converged}/{len(paths)}",
+                    flush=True,
+                )
+
+        if verbose:
+            converged = sum(1 for p in paths if p.converged)
+            avg_len = np.mean([len(p.all_tokens) for p in paths]) if paths else 0
+            print(
+                f"  Complete: {len(paths)} scene dialogues from {attempts} attempts "
+                f"({converged} converged, avg {avg_len:.0f} tokens)",
+                flush=True,
+            )
+        return paths
 
     def sample_batch(
         self,
