@@ -324,7 +324,7 @@ def train_dialogue_supervised(
     batch_size: int = 32,
     lr: float = 1e-3,
     kd_temperature: float = 2.0,
-    kd_alpha: float = 0.3,
+    kd_alpha: float = 0.15,
     lyapunov_weight: float = 0.1,
     freeze_emb_epochs: int = 5,
     device: str = "cpu",
@@ -376,8 +376,9 @@ def train_dialogue_supervised(
     param_count = sum(p.numel() for p in model.parameters())
     _log(f"Model params: {param_count:,}")
 
-    # --- Optimizer ---
+    # --- Optimizer + cosine LR schedule ---
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=n_epochs, eta_min=lr * 0.05)
     lyapunov_reg = LyapunovRegularization()
 
     # --- Training loop ---
@@ -417,12 +418,17 @@ def train_dialogue_supervised(
             engine_targets = batch["engine_targets"]  # (B, S)
             train_mask = (targets != -100) & engine_targets
 
-            # --- Hard CE loss ---
+            # --- Hard CE loss (focal loss: γ=2 downweights easy/frequent tokens) ---
             flat_mask = train_mask.reshape(B * S)
             if flat_mask.any():
                 flat_logits = logits.reshape(B * S, V)[flat_mask]
                 flat_targets = targets.reshape(B * S)[flat_mask]
-                ce_loss = F.cross_entropy(flat_logits, flat_targets)
+                # Focal loss: CE * (1-p_t)^γ — reduces gradient for confident predictions
+                with torch.no_grad():
+                    p_t = F.softmax(flat_logits, dim=-1).gather(1, flat_targets.unsqueeze(1)).squeeze(1)
+                    focal_weight = (1 - p_t) ** 2  # γ=2
+                per_sample_ce = F.cross_entropy(flat_logits, flat_targets, reduction="none")
+                ce_loss = (focal_weight * per_sample_ce).mean()
             else:
                 ce_loss = torch.tensor(0.0, device=device)
 
@@ -451,12 +457,22 @@ def train_dialogue_supervised(
             entropy_mask = train_mask.float()
             mean_entropy = (pred_entropy * entropy_mask).sum() / entropy_mask.sum().clamp(min=1)
 
+            # --- Batch diversity loss: penalize when all inputs predict the same token ---
+            if flat_mask.any():
+                avg_pred = pred_probs.reshape(B * S, V)[flat_mask].mean(dim=0)  # (V,)
+                batch_entropy = -(avg_pred * avg_pred.clamp(min=1e-12).log()).sum()
+                max_entropy = math.log(V)
+                diversity_loss = 1.0 - batch_entropy / max_entropy  # 0=diverse, 1=collapsed
+            else:
+                diversity_loss = torch.tensor(0.0, device=device)
+
             # --- Total loss ---
             total = (
                 (1 - kd_alpha) * ce_loss
                 + kd_alpha * kd_loss
                 + lyapunov_weight * lya_loss
-                - 0.05 * mean_entropy  # reward diverse predictions
+                - 0.15 * mean_entropy  # reward diverse predictions (was 0.05)
+                + 0.3 * diversity_loss  # penalize batch-level collapse
             )
 
             optimizer.zero_grad()
@@ -470,13 +486,18 @@ def train_dialogue_supervised(
         avg_loss = epoch_loss / max(n_batches, 1)
         history["epoch_losses"].append(avg_loss)
         history["loss"] = avg_loss
+        scheduler.step()
 
         if epoch % 10 == 0 or epoch == n_epochs - 1:
             frozen_tag = " [emb frozen]" if freeze else ""
-            _log(f"Epoch {epoch:>3d}/{n_epochs}  loss={avg_loss:.4f}{frozen_tag}")
+            cur_lr = scheduler.get_last_lr()[0]
+            _log(f"Epoch {epoch:>3d}/{n_epochs}  loss={avg_loss:.4f}  lr={cur_lr:.2e}{frozen_tag}")
+        elif epoch % 5 == 0 and epoch <= 30:
+            # Extra early logging to catch collapse forming
+            _log(f"Epoch {epoch:>3d}/{n_epochs}  loss={avg_loss:.4f}")
 
-        # --- Inference probe every 25 epochs ---
-        if epoch % 25 == 0 and epoch > 0:
+        # --- Inference probe: epoch 10, then every 25 epochs ---
+        if (epoch == 10) or (epoch % 25 == 0 and epoch > 0):
             latest_probe = _inference_probe(
                 model, spec, id_to_idx, class_to_idx, phase_to_idx,
                 stream_to_idx, agency_to_idx, device,
@@ -905,7 +926,7 @@ def train_dialogue_cartridge(
     lr: float = 1e-3,
     rl_lr: float = 3e-5,
     kd_temperature: float = 2.0,
-    kd_alpha: float = 0.3,
+    kd_alpha: float = 0.15,
     lyapunov_weight: float = 0.1,
     device: str = "cpu",
 ) -> Tuple[DialogueTransformer, Dict]:
