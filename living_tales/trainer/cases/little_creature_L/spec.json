@@ -1,17 +1,17 @@
 {
   "cartridge_type": "MYSTERY",
-  "case_id": "little_creature",
-  "title": "Little Creature",
+  "case_id": "little_creature_L",
+  "title": "Little Creature (Personality)",
   "mode": "oscillating",
   "version": "1.0.0",
-  "vocab_size": 112,
+  "vocab_size": 187,
   "embedding_dim": 64,
   "context_dim": 128,
-  "n_attractor_dims": 5,
+  "n_attractor_dims": 9,
   "convergence_threshold": 0.65,
-  "convergence_rate": 0.8,
+  "convergence_rate": 0.7,
   "min_turns": 10,
-  "max_turns": 45,
+  "max_turns": 65,
   "initial_dimension_value": 0.15,
   "dimension_lower_bound": 0.0,
   "dimension_upper_bound": 1.0,
@@ -25,6 +25,10 @@
     "state:content",
     "state:rested",
     "state:bonded",
-    "state:groomed"
+    "state:groomed",
+    "state:healthy",
+    "state:in_season",
+    "state:self_known",
+    "state:remembered"
   ]
 }

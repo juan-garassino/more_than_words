@@ -1,0 +1,28 @@
+{
+  "cartridge_type": "MYSTERY",
+  "case_id": "hollow_season",
+  "title": "The Hollow Season",
+  "mode": "converging",
+  "version": "1.0.0",
+  "vocab_size": 72,
+  "embedding_dim": 64,
+  "context_dim": 128,
+  "n_attractor_dims": 3,
+  "convergence_threshold": 0.75,
+  "convergence_rate": 0.4,
+  "min_turns": 10,
+  "max_turns": 18,
+  "initial_dimension_value": 0.0,
+  "dimension_lower_bound": 0.0,
+  "dimension_upper_bound": 1.0,
+  "opening_token_ids": [
+    "location:carrow_hall",
+    "event:archibald_discovered",
+    "time:late_october"
+  ],
+  "invariant_token_ids": [
+    "suspect:edmund_carrow",
+    "event:sleeping_brandy",
+    "motive:inheritance_entailed"
+  ]
+}
