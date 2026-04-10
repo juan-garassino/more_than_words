@@ -150,8 +150,9 @@ class DialogueSampler:
         context_ids: List[str],
         temperature: float,
         dialogue_pos: int = 0,
+        role_counts: Optional[Dict[str, int]] = None,
     ) -> Optional[Token]:
-        """Softmax sample a token from scored candidates."""
+        """Softmax sample a token from scored candidates with role balancing."""
         if not candidates:
             return None
 
@@ -167,6 +168,30 @@ class DialogueSampler:
         scores = np.array([
             self._score_token(t, context_ids, dialogue_pos) for t in candidates
         ])
+
+        # --- Role balancing: even distribution, with boost for creature-reactive roles ---
+        if role_counts is not None:
+            total_placed = sum(role_counts.values()) or 1
+            # Creature-reactive roles should be at least as frequent as atmospheric ones
+            reactive_roles = {'mood', 'need', 'decay', 'decline', 'recovery', 'combo', 'mischief'}
+
+            for i, candidate in enumerate(candidates):
+                role = candidate.id.split(':')[0]
+                role_freq = role_counts.get(role, 0) / total_placed
+
+                if role in reactive_roles:
+                    # Reactive tokens: boost if underrepresented (target ~8% each)
+                    if role_freq < 0.06:
+                        scores[i] *= 3.0
+                    elif role_freq < 0.10:
+                        scores[i] *= 1.5
+                else:
+                    # Atmospheric tokens: penalize if overrepresented (target ~8% each)
+                    if role_freq > 0.15:
+                        scores[i] *= 0.2
+                    elif role_freq > 0.10:
+                        scores[i] *= 0.5
+
         scores = scores / max(temp, 1e-8)
         scores -= scores.max()
         weights = np.exp(scores)
@@ -267,6 +292,12 @@ class DialogueSampler:
             # Opening tokens use fallback (no last-action context yet)
             soft_targets.append(fallback_soft_target.copy())
 
+        # --- Track role distribution for balanced sampling ---
+        role_counts: Dict[str, int] = {}
+        for t in turns:
+            role = t.token.id.split(':')[0]
+            role_counts[role] = role_counts.get(role, 0) + 1
+
         # --- Alternating dialogue ---
         dialogue_pos = len(turns)
         is_player_turn = True
@@ -289,12 +320,15 @@ class DialogueSampler:
             if not candidates:
                 break
 
-            chosen = self._sample_from_pool(candidates, context_ids, temp, dialogue_pos)
+            chosen = self._sample_from_pool(candidates, context_ids, temp, dialogue_pos, role_counts)
             if chosen is None:
                 break
 
             placed_ids.add(chosen.id)
             context_ids.append(chosen.id)
+            # Update role counts for balancing
+            chosen_role = chosen.id.split(':')[0]
+            role_counts[chosen_role] = role_counts.get(chosen_role, 0) + 1
             energy = self.graph.subgraph_energy(context_ids)
 
             convergence_dims = np.minimum(
