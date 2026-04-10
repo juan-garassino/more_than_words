@@ -32,6 +32,7 @@ import torch
 import torch.nn.functional as F
 
 from core.cartridge import CartridgeSpec
+from core.creature_case import classify_creature_token_role
 from core.token import Token, TokenClass, TokenPhase, TokenStream, TokenAgency
 from generator.dialogue_sampler import DialogueSampler, DialoguePath, ROLE_PLAYER, ROLE_ENGINE
 from trainer.dialogue_model import DialogueTransformer
@@ -97,6 +98,7 @@ class DialogueExample:
     phase_ids: List[int]
     stream_ids: List[int]
     agency_ids: List[int]
+    roles: List[str]
     energies: List[float]
     soft_targets: List[np.ndarray]  # per-step (V,)
 
@@ -124,6 +126,7 @@ def _dialogue_to_example(
         phase_ids=phase_ids,
         stream_ids=stream_ids,
         agency_ids=agency_ids,
+        roles=[turn.role for turn in path.turns],
         energies=energies,
         soft_targets=path.soft_targets,
     )
@@ -151,6 +154,7 @@ def _collate_dialogues(
     agency_ids = np.full((B, max_len), 0, dtype=np.int64)
     padding_mask = np.ones((B, max_len), dtype=bool)
     targets = np.full((B, max_len), -100, dtype=np.int64)  # -100 = ignore in CE
+    engine_targets = np.zeros((B, max_len), dtype=bool)
     energies = np.zeros((B, max_len), dtype=np.float32)
 
     V = examples[0].soft_targets[0].shape[0] if examples[0].soft_targets else 1
@@ -169,6 +173,10 @@ def _collate_dialogues(
         # Teacher-forced targets: predict next token (shifted by 1)
         if n > 1:
             targets[i, :n - 1] = ex.token_ids[1:]
+            engine_targets[i, :n - 1] = np.array(
+                [role == ROLE_ENGINE for role in ex.roles[1:]],
+                dtype=bool,
+            )
 
         for t in range(min(n, len(ex.soft_targets))):
             soft_targets[i, t, :] = ex.soft_targets[t]
@@ -181,6 +189,7 @@ def _collate_dialogues(
         "agency_ids": torch.tensor(agency_ids, device=device),
         "padding_mask": torch.tensor(padding_mask, device=device),
         "targets": torch.tensor(targets, device=device),
+        "engine_targets": torch.tensor(engine_targets, device=device),
         "energies": torch.tensor(energies, device=device),
         "soft_targets": torch.tensor(soft_targets, device=device),
     }
@@ -252,6 +261,8 @@ def _inference_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
 
     model.eval()
     _log("  [PROBE] action → model prediction:")
+    chosen_ids: List[str] = []
+    entropies: List[float] = []
     with torch.no_grad():
         for action_id in probe_actions:
             tok = spec.get_token(action_id)
@@ -267,10 +278,13 @@ def _inference_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
                 valid_mask=engine_mask, temperature=0.3,
             )
             chosen_id = idx_to_id[chosen_idx]
+            chosen_ids.append(chosen_id)
 
             # Top 3
             masked_probs = probs.clone()
             masked_probs[~engine_mask] = 0
+            masked_probs = masked_probs / masked_probs.sum().clamp(min=1e-12)
+            entropies.append(float(-(masked_probs * masked_probs.clamp(min=1e-12).log()).sum().item()))
             top3_idx = masked_probs.topk(3).indices.tolist()
             top3_str = ", ".join(f"{idx_to_id[i].split(':')[1]}({masked_probs[i]:.0%})" for i in top3_idx)
 
@@ -278,6 +292,24 @@ def _inference_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
             chosen_short = chosen_id.split(':')[1]
             _log(f"    {action_short:>15s} → {chosen_short:<25s}  [{top3_str}]")
     model.train()
+    counts: Dict[str, int] = {}
+    for token_id in chosen_ids:
+        counts[token_id] = counts.get(token_id, 0) + 1
+    dominant_id = max(counts, key=counts.get)
+    dominance_rate = counts[dominant_id] / max(len(chosen_ids), 1)
+    metrics = {
+        "unique_predictions": len(counts),
+        "dominant_prediction": dominant_id,
+        "dominance_rate": dominance_rate,
+        "mean_entropy": float(np.mean(entropies)) if entropies else 0.0,
+    }
+    _log(
+        "  [PROBE] diversity: "
+        f"unique={metrics['unique_predictions']}/{len(chosen_ids)}  "
+        f"dominant={dominant_id.split(':')[-1]}({dominance_rate:.0%})  "
+        f"entropy={metrics['mean_entropy']:.2f}"
+    )
+    return metrics
 
 
 # ---------------------------------------------------------------------------
@@ -350,7 +382,8 @@ def train_dialogue_supervised(
 
     # --- Training loop ---
     _section("Training")
-    history = {"epoch_losses": [], "loss": 0.0}
+    history = {"epoch_losses": [], "loss": 0.0, "probe_metrics": []}
+    latest_probe = None
 
     for epoch in range(n_epochs):
         model.train()
@@ -381,19 +414,23 @@ def train_dialogue_supervised(
 
             B, S, V = logits.shape
             targets = batch["targets"]  # (B, S)
+            engine_targets = batch["engine_targets"]  # (B, S)
+            train_mask = (targets != -100) & engine_targets
 
             # --- Hard CE loss ---
-            ce_loss = F.cross_entropy(
-                logits.reshape(B * S, V),
-                targets.reshape(B * S),
-                ignore_index=-100,
-            )
+            flat_mask = train_mask.reshape(B * S)
+            if flat_mask.any():
+                flat_logits = logits.reshape(B * S, V)[flat_mask]
+                flat_targets = targets.reshape(B * S)[flat_mask]
+                ce_loss = F.cross_entropy(flat_logits, flat_targets)
+            else:
+                ce_loss = torch.tensor(0.0, device=device)
 
             # --- Soft KD loss ---
             # Compute KL divergence between student and teacher distributions
             soft_t = batch["soft_targets"]  # (B, S, V)
-            # Only compute KD on non-padded, non-target=-100 positions
-            valid = (targets != -100).unsqueeze(-1).expand_as(logits)  # (B, S, V)
+            # Only compute KD on engine targets, not every next-token position.
+            valid = train_mask.unsqueeze(-1).expand_as(logits)  # (B, S, V)
             if valid.any():
                 student_log = F.log_softmax(logits / kd_temperature, dim=-1)
                 teacher = soft_t.clamp(min=1e-12)
@@ -411,8 +448,7 @@ def train_dialogue_supervised(
             pred_log_probs = F.log_softmax(logits, dim=-1)
             pred_probs = F.softmax(logits, dim=-1)
             pred_entropy = -(pred_probs * pred_log_probs).sum(dim=-1)  # (B, S)
-            # Only count non-padded positions
-            entropy_mask = (targets != -100).float()
+            entropy_mask = train_mask.float()
             mean_entropy = (pred_entropy * entropy_mask).sum() / entropy_mask.sum().clamp(min=1)
 
             # --- Total loss ---
@@ -441,8 +477,18 @@ def train_dialogue_supervised(
 
         # --- Inference probe every 50 epochs ---
         if epoch % 50 == 0 and epoch > 0:
-            _inference_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
-                            stream_to_idx, agency_to_idx, device)
+            latest_probe = _inference_probe(
+                model, spec, id_to_idx, class_to_idx, phase_to_idx,
+                stream_to_idx, agency_to_idx, device,
+            )
+            history["probe_metrics"].append({"epoch": epoch, **latest_probe})
+
+    if latest_probe is None:
+        latest_probe = _inference_probe(
+            model, spec, id_to_idx, class_to_idx, phase_to_idx,
+            stream_to_idx, agency_to_idx, device,
+        )
+        history["probe_metrics"].append({"epoch": n_epochs - 1, **latest_probe})
 
     # Unfreeze everything
     for p in model.parameters():
@@ -547,6 +593,8 @@ def train_dialogue_rl(
 
     # KD anchor (soft target distribution)
     soft_target = _build_vocab_soft_targets(spec, kd_temperature, device)
+    if spec.mode == "oscillating":
+        kd_anchor_weight *= 0.25
 
     # Token pools
     player_tokens = [
@@ -584,8 +632,11 @@ def train_dialogue_rl(
 
         log_probs: List[torch.Tensor] = []
         rewards: List[float] = []
+        engine_logits_for_kd: List[torch.Tensor] = []
         recent_player: List = []  # last 3 player tokens for responsiveness
         signal_history: List[float] = []  # attractor weight norms for pacing
+        recent_engine_roles: deque[str] = deque(maxlen=4)
+        unresolved_problem_roles: deque[str] = deque(maxlen=6)
 
         # Opening tokens (no gradient)
         for tid in spec.opening_token_ids:
@@ -679,6 +730,7 @@ def train_dialogue_rl(
                 chosen_idx = action.item()
                 chosen_id = idx_to_token[chosen_idx]
                 chosen_tok = spec.get_token(chosen_id)
+                chosen_role = classify_creature_token_role(chosen_tok.id) if spec.mode == "oscillating" else ""
 
                 t_enc = _encode_token(
                     chosen_tok, id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx,
@@ -704,6 +756,21 @@ def train_dialogue_rl(
                 )
                 prev_tags |= set(chosen_tok.affinity_tags)
                 signal_history.append(float(np.linalg.norm(chosen_tok.attractor_weights)))
+                engine_logits_for_kd.append(masked_logits)
+                if spec.mode == "oscillating":
+                    if chosen_role in {"decay", "decline", "need", "mood", "combo"}:
+                        unresolved_problem_roles.append(chosen_role)
+                    elif chosen_role == "recovery":
+                        unresolved_problem_roles.clear()
+                    repeats = sum(1 for role in recent_engine_roles if role == chosen_role)
+                    if chosen_role in {"context", "state"}:
+                        repeats += 1
+                    if unresolved_problem_roles and chosen_role not in {"action", "recovery"}:
+                        r -= 0.08 * len(unresolved_problem_roles)
+                    if unresolved_problem_roles and chosen_role in {"action", "recovery"}:
+                        r += 0.12 * len(unresolved_problem_roles)
+                    r -= 0.12 * repeats
+                    recent_engine_roles.append(chosen_role)
                 rewards.append(r)
                 log_probs.append(lp)
 
@@ -725,6 +792,8 @@ def train_dialogue_rl(
         # Terminal penalty for non-convergence
         if not converged:
             rewards[-1] -= 1.0
+        if spec.mode == "oscillating" and unresolved_problem_roles:
+            rewards[-1] -= 0.2 * len(unresolved_problem_roles)
 
         # --- Compute returns ---
         returns = []
@@ -756,18 +825,11 @@ def train_dialogue_rl(
             total_loss = policy_loss
 
             # KD anchor: push model distribution toward Hopfield soft targets
-            if kd_anchor_weight > 0 and len(seq_token) > 1:
-                model.train()
-                inp_t = torch.tensor([seq_token], dtype=torch.long, device=device)
-                inp_c = torch.tensor([seq_class], dtype=torch.long, device=device)
-                inp_p = torch.tensor([seq_phase], dtype=torch.long, device=device)
-                inp_s = torch.tensor([seq_stream], dtype=torch.long, device=device)
-                inp_a = torch.tensor([seq_agency], dtype=torch.long, device=device)
-                pad = torch.zeros(1, len(seq_token), dtype=torch.bool, device=device)
-
-                all_logits = model(inp_t, inp_c, inp_p, inp_s, inp_a, pad)
-                # Average KL across all positions
-                student_log = F.log_softmax(all_logits[0] / kd_temperature, dim=-1)
+            if kd_anchor_weight > 0 and engine_logits_for_kd:
+                student_log = F.log_softmax(
+                    torch.stack(engine_logits_for_kd, dim=0) / kd_temperature,
+                    dim=-1,
+                )
                 teacher = soft_target.unsqueeze(0).expand_as(student_log)
                 kl = F.kl_div(student_log, teacher, reduction="batchmean")
                 total_loss += kd_anchor_weight * kd_temperature ** 2 * kl

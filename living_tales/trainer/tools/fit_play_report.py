@@ -127,6 +127,7 @@ def _encode_token(tok, mappings):
 def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
     """Play one automated dialogue game. Returns structured game data."""
     rng = np.random.RandomState(seed)
+    model_device = next(model.parameters()).device
     id_to_idx = mappings["id_to_idx"]
     idx_to_id = {v: k for k, v in id_to_idx.items()}
 
@@ -179,13 +180,13 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
         else:
             # Model picks engine token
             model.eval()
-            inp_t = torch.tensor([seq_t], dtype=torch.long)
-            inp_c = torch.tensor([seq_c], dtype=torch.long)
-            inp_p = torch.tensor([seq_p], dtype=torch.long)
-            inp_s = torch.tensor([seq_s], dtype=torch.long)
-            inp_a = torch.tensor([seq_a], dtype=torch.long)
+            inp_t = torch.tensor([seq_t], dtype=torch.long, device=model_device)
+            inp_c = torch.tensor([seq_c], dtype=torch.long, device=model_device)
+            inp_p = torch.tensor([seq_p], dtype=torch.long, device=model_device)
+            inp_s = torch.tensor([seq_s], dtype=torch.long, device=model_device)
+            inp_a = torch.tensor([seq_a], dtype=torch.long, device=model_device)
 
-            valid_mask = torch.zeros(spec.vocab_size, dtype=torch.bool)
+            valid_mask = torch.zeros(spec.vocab_size, dtype=torch.bool, device=model_device)
             for t in engine_pool:
                 if t.id not in placed_ids and t.is_available_at_turn(game_turn):
                     valid_mask[id_to_idx[t.id]] = True

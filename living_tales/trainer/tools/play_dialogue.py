@@ -346,14 +346,15 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
 
         if model is not None and mappings is not None and HAS_TORCH:
             # Model-driven response
-            inp_t = torch.tensor([seq_t], dtype=torch.long)
-            inp_c = torch.tensor([seq_c], dtype=torch.long)
-            inp_p = torch.tensor([seq_p], dtype=torch.long)
-            inp_s = torch.tensor([seq_s], dtype=torch.long)
-            inp_a = torch.tensor([seq_a], dtype=torch.long)
+            model_device = next(model.parameters()).device
+            inp_t = torch.tensor([seq_t], dtype=torch.long, device=model_device)
+            inp_c = torch.tensor([seq_c], dtype=torch.long, device=model_device)
+            inp_p = torch.tensor([seq_p], dtype=torch.long, device=model_device)
+            inp_s = torch.tensor([seq_s], dtype=torch.long, device=model_device)
+            inp_a = torch.tensor([seq_a], dtype=torch.long, device=model_device)
 
             # Build valid mask: engine tokens, phase-valid, not placed
-            valid_mask = torch.zeros(spec.vocab_size, dtype=torch.bool)
+            valid_mask = torch.zeros(spec.vocab_size, dtype=torch.bool, device=model_device)
             id_to_idx = mappings["id_to_idx"]
             for t in engine_pool:
                 if t.id not in placed_ids and t.is_available_at_turn(game_turn_engine):

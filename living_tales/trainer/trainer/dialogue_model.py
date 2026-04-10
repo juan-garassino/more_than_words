@@ -87,6 +87,28 @@ class DialogueTransformer(nn.Module):
 
         self.resonance_head = TokenResonanceHead(context_dim, embedding_dim)
 
+    def _model_device(self) -> torch.device:
+        return next(self.parameters()).device
+
+    def _prepare_inference_inputs(
+        self,
+        token_ids: torch.Tensor,
+        class_ids: torch.Tensor,
+        phase_ids: torch.Tensor,
+        stream_ids: torch.Tensor,
+        agency_ids: torch.Tensor,
+        valid_mask: Optional[torch.Tensor],
+    ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, Optional[torch.Tensor]]:
+        device = self._model_device()
+        token_ids = token_ids.to(device=device, dtype=torch.long)
+        class_ids = class_ids.to(device=device, dtype=torch.long)
+        phase_ids = phase_ids.to(device=device, dtype=torch.long)
+        stream_ids = stream_ids.to(device=device, dtype=torch.long)
+        agency_ids = agency_ids.to(device=device, dtype=torch.long)
+        if valid_mask is not None:
+            valid_mask = valid_mask.to(device=device, dtype=torch.bool)
+        return token_ids, class_ids, phase_ids, stream_ids, agency_ids, valid_mask
+
     def _causal_mask(self, seq_len: int, device: torch.device) -> torch.Tensor:
         """Upper-triangular causal mask (True = masked)."""
         return torch.triu(
@@ -161,6 +183,9 @@ class DialogueTransformer(nn.Module):
             (chosen_idx, probabilities) — index into vocab and full prob vector.
         """
         self.eval()
+        token_ids, class_ids, phase_ids, stream_ids, agency_ids, valid_mask = self._prepare_inference_inputs(
+            token_ids, class_ids, phase_ids, stream_ids, agency_ids, valid_mask,
+        )
         padding_mask = torch.zeros_like(token_ids, dtype=torch.bool)
         logits = self.forward(
             token_ids, class_ids, phase_ids, stream_ids, agency_ids, padding_mask,

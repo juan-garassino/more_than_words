@@ -15,6 +15,7 @@ import numpy as np
 
 from core.hopfield import TokenGraph
 from core.token import Token
+from core.creature_case import classify_creature_token_role
 
 
 @dataclass
@@ -27,6 +28,9 @@ class DialogueRewardConfig:
     pacing_weight: float = 0.1
     arc_shape: str = "linear"       # "linear" | "late_break" | "early_burst"
     arc_weight: float = 0.2
+    unresolved_need_penalty_weight: float = 0.0
+    repeat_role_penalty_weight: float = 0.0
+    recovery_bonus_weight: float = 0.0
 
 
 class DialogueRewardComputer:
@@ -65,6 +69,9 @@ class DialogueRewardComputer:
         reward += c.responsiveness_weight * self._responsiveness(token, recent_player_tokens)
         reward += c.pacing_weight * self._pacing(token, signal_history)
         reward += c.arc_weight * self._arc_shaping(convergence_at_step, turn)
+        reward += c.unresolved_need_penalty_weight * self._creature_need_pressure(context_ids_after)
+        reward += c.repeat_role_penalty_weight * self._repeat_role_penalty(context_ids_after)
+        reward += c.recovery_bonus_weight * self._recovery_bonus(context_ids_before, token.id)
 
         return reward
 
@@ -132,3 +139,33 @@ class DialogueRewardComputer:
                 return 0.5 + (progress - 0.3) / 0.7 * 0.5  # slow climb
         else:  # "linear"
             return progress * self.convergence_threshold
+
+    def _creature_need_pressure(self, context_ids_after: List[str]) -> float:
+        recent_roles = [
+            classify_creature_token_role(token_id)
+            for token_id in context_ids_after[-6:]
+        ]
+        pending = sum(1 for role in recent_roles if role in {"decay", "decline", "need", "mood", "combo"})
+        return -float(pending)
+
+    def _repeat_role_penalty(self, context_ids_after: List[str]) -> float:
+        recent_roles = [
+            classify_creature_token_role(token_id)
+            for token_id in context_ids_after[-4:]
+        ]
+        if len(recent_roles) < 2:
+            return 0.0
+        last_role = recent_roles[-1]
+        repeats = sum(1 for role in recent_roles[:-1] if role == last_role)
+        return -float(repeats)
+
+    def _recovery_bonus(self, context_ids_before: List[str], token_id: str) -> float:
+        if classify_creature_token_role(token_id) != "recovery":
+            return 0.0
+        prior_roles = [
+            classify_creature_token_role(prev_id)
+            for prev_id in context_ids_before[-4:]
+        ]
+        if any(role in {"decay", "decline", "need", "mood", "combo"} for role in prior_roles):
+            return 1.0
+        return 0.0
