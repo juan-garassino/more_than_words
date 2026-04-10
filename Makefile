@@ -536,12 +536,14 @@ train-all-fast: colab-install
 train-all: colab-install
 	@echo ""
 	@echo "################################################################"
-	@echo "  LIVING TALES — TRAIN ALL CASES"
-	@echo "  3000 paths · 200 epochs · 500 RL · 5 games"
-	@echo "  Logs saved per case + zipped for download"
+	@echo "  LIVING TALES — TRAIN ALL (24 runs)"
+	@echo "  19 cases + D&V scale (S/M/L) + creature M/XL scale (M/L)"
+	@echo "  Cipher L=L, creature M/XL get scale experiments"
 	@echo "################################################################"
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
-	python3 tools/train_all_cases.py --paths 3000 --epochs 200 --rl-episodes 500 --games 5 --device cuda
+	python3 tools/train_all_cases.py --production --device cuda \
+	  --scale-sizes amber_cipher_L=L \
+	  --scale-experiment dust_and_verdict little_creature_M little_creature_XL
 
 train-all-production: colab-install
 	@echo ""

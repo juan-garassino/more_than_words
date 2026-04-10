@@ -160,11 +160,14 @@ def pack_case(case_id: str) -> bool:
 # Step 3: Train
 # ─────────────────────────────────────────────────────────────────────────────
 
-def train_case(case_id: str, args) -> dict:
+def train_case(case_id: str, args, model_size_override: str | None = None,
+               output_id: str | None = None) -> dict:
+    """Train a case. output_id overrides the output directory name (for scale experiments)."""
     from trainer.train_dialogue import train_dialogue_cartridge
 
     spec_path = str(_CASES_PACKED / case_id / "spec.json")
-    output_dir = str(_OUTPUTS / case_id)
+    out_name = output_id or case_id
+    output_dir = str(_OUTPUTS / out_name)
 
     model, history = train_dialogue_cartridge(
         spec_path=spec_path,
@@ -172,6 +175,7 @@ def train_case(case_id: str, args) -> dict:
         n_dialogues=args.paths,
         n_epochs=args.epochs,
         n_rl_episodes=args.rl_episodes,
+        model_size_override=model_size_override,
         device=args.device,
     )
     return history
@@ -181,13 +185,14 @@ def train_case(case_id: str, args) -> dict:
 # Step 4: Play automated games
 # ─────────────────────────────────────────────────────────────────────────────
 
-def play_games(case_id: str, n_games: int) -> list[dict]:
+def play_games(case_id: str, n_games: int, output_id: str | None = None) -> list[dict]:
     from tools.fit_play_report import play_game
     from trainer.dialogue_model import DialogueTransformer
     from trainer.train_dialogue import _build_mappings
 
     spec_path = _CASES_PACKED / case_id / "spec.json"
-    model_path = _OUTPUTS / case_id / "dialogue_model.pt"
+    out_name = output_id or case_id
+    model_path = _OUTPUTS / out_name / "dialogue_model.pt"
 
     spec = CartridgeSpec.load(str(spec_path))
     ckpt = torch.load(str(model_path), map_location="cpu", weights_only=False)
@@ -242,15 +247,22 @@ def case_report(case_id: str, games: list, history: dict) -> dict:
 # Step 6: Zip outputs + logs
 # ─────────────────────────────────────────────────────────────────────────────
 
-def zip_outputs(mystery_ids: list[str], creature_ids: list[str]) -> str:
+def zip_outputs(mystery_ids: list[str], creature_ids: list[str],
+                scale_ids: list[str] | None = None) -> str:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     zip_path = _OUTPUTS / f"living_tales_all_{timestamp}.zip"
 
+    groups = [("mysteries", mystery_ids), ("creatures", creature_ids)]
+    if scale_ids:
+        groups.append(("scale", scale_ids))
+
     with zipfile.ZipFile(str(zip_path), "w", zipfile.ZIP_DEFLATED) as zf:
-        for group_name, case_ids in [("mysteries", mystery_ids), ("creatures", creature_ids)]:
+        for group_name, case_ids in groups:
             for case_id in case_ids:
                 case_out = _OUTPUTS / case_id
-                case_packed = _CASES_PACKED / case_id
+                # Scale experiments: packed data lives under base case id
+                base_id = case_id.split("__")[0] if "__" in case_id else case_id
+                case_packed = _CASES_PACKED / base_id
                 prefix = f"{group_name}/{case_id}"
 
                 # Model checkpoint
@@ -293,6 +305,10 @@ def main():
                         help="Full production settings (3K paths, 200 epochs, 500 RL)")
     parser.add_argument("--cases", nargs="*", default=None,
                         help="Specific case IDs to train (default: all valid)")
+    parser.add_argument("--scale-experiment", nargs="*", default=None,
+                        help="Case IDs to train at S/M/L model sizes (e.g. dust_and_verdict)")
+    parser.add_argument("--scale-sizes", nargs="*", default=None,
+                        help="Model size overrides for specific cases (e.g. amber_cipher_L=L little_creature_M=L)")
     args = parser.parse_args()
 
     if args.production:
@@ -349,7 +365,18 @@ def main():
         _log("No cases ready for training.")
         sys.exit(1)
 
-    _log(f"\nReady: {len(ready_mysteries)} mysteries + {len(ready_creatures)} creatures = {ready_total} total\n")
+    # Parse --scale-sizes overrides (e.g. amber_cipher_L=L little_creature_M=L)
+    size_overrides: dict[str, str] = {}
+    if args.scale_sizes:
+        for item in args.scale_sizes:
+            cid, sz = item.split("=")
+            size_overrides[cid] = sz.upper()
+
+    _log(f"\nReady: {len(ready_mysteries)} mysteries + {len(ready_creatures)} creatures = {ready_total} total")
+    if size_overrides:
+        _log(f"  Size overrides: {size_overrides}")
+    if args.scale_experiment:
+        _log(f"  Scale experiments: {args.scale_experiment} (S/M/L each)")
 
     # ── Phase 2: Train mysteries, then creatures ────────────────────────────
     reports = []
@@ -370,11 +397,12 @@ def main():
             _banner(f"[{group_label}] {case_num}/{ready_total}: {case_id}")
 
             # Train with log capture
-            _log("Training...")
+            override = size_overrides.get(case_id)
+            _log(f"Training...{f' (model size override: {override})' if override else ''}")
             tee = TeeCapture()
             try:
                 with tee:
-                    history = train_case(case_id, args)
+                    history = train_case(case_id, args, model_size_override=override)
             except Exception as e:
                 _log(f"Training failed for {case_id}: {e}")
                 log_path = _LOGS / f"{case_id}.log"
@@ -396,7 +424,7 @@ def main():
 
             # Report
             report = case_report(case_id, games, history)
-            report["type"] = group_label.lower().rstrip("s")  # "mystery" or "creature"
+            report["type"] = group_label.lower().rstrip("s")
             reports.append(report)
             trained_list.append(case_id)
 
@@ -407,14 +435,59 @@ def main():
                 f"avg turns {report['avg_turns']:.1f}"
             )
 
+    # ── Phase 3: Scale experiments ────────────────────────────────────────
+    scale_trained = []
+    if args.scale_experiment:
+        _banner("PHASE 3: SCALE EXPERIMENTS")
+        for case_id in args.scale_experiment:
+            if case_id not in (ready_mysteries + ready_creatures):
+                _log(f"Skipping {case_id} — not packed")
+                continue
+            for size in ["S", "M", "L"]:
+                output_id = f"{case_id}__{size}" if size != "S" else case_id
+                # Skip if already trained at default size in phase 2
+                if size == "S" and case_id in (trained_mysteries + trained_creatures):
+                    _log(f"  {output_id} already trained in phase 2, skipping")
+                    scale_trained.append(output_id)
+                    continue
+
+                _banner(f"SCALE: {case_id} @ {size} → {output_id}")
+                _log(f"Training {case_id} with model size {size}...")
+                tee = TeeCapture()
+                try:
+                    with tee:
+                        history = train_case(case_id, args, model_size_override=size, output_id=output_id)
+                except Exception as e:
+                    _log(f"Training failed for {output_id}: {e}")
+                    (_LOGS / f"{output_id}.log").write_text(tee.getvalue(), encoding="utf-8")
+                    continue
+
+                (_LOGS / f"{output_id}.log").write_text(tee.getvalue(), encoding="utf-8")
+
+                try:
+                    games = play_games(case_id, args.games, output_id=output_id)
+                except Exception as e:
+                    _log(f"Play failed for {output_id}: {e}")
+                    games = []
+
+                report = case_report(output_id, games, history)
+                report["type"] = "scale"
+                report["base_case"] = case_id
+                report["model_size"] = size
+                reports.append(report)
+                scale_trained.append(output_id)
+
+                converged = sum(1 for g in games if g["converged"])
+                _log(f"Done: {converged}/{len(games)} converged | avg turns {report['avg_turns']:.1f}")
+
     # ── Final summary ───────────────────────────────────────────────────────
     elapsed = time.time() - t0
     _banner("FINAL SUMMARY")
     _log(f"Total time: {elapsed:.0f}s ({elapsed/60:.1f} min)")
-    _log(f"Trained: {len(trained_mysteries)} mysteries + {len(trained_creatures)} creatures")
+    _log(f"Trained: {len(trained_mysteries)} mysteries + {len(trained_creatures)} creatures + {len(scale_trained)} scale experiments")
 
     summary_lines = []
-    for group_label, trained_list in [("MYSTERIES", trained_mysteries), ("CREATURES", trained_creatures)]:
+    for group_label, trained_list in [("MYSTERIES", trained_mysteries), ("CREATURES", trained_creatures), ("SCALE EXPERIMENTS", scale_trained)]:
         group_reports = [r for r in reports if r["case_id"] in trained_list]
         if not group_reports:
             continue
@@ -432,10 +505,10 @@ def main():
     (_LOGS / "summary.txt").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
     (_LOGS / "reports.json").write_text(json.dumps(reports, indent=2), encoding="utf-8")
 
-    # Zip everything (grouped: mysteries/ and creatures/)
-    if trained_mysteries or trained_creatures:
+    # Zip everything (grouped: mysteries/, creatures/, scale/)
+    if trained_mysteries or trained_creatures or scale_trained:
         _banner("PACKAGING")
-        zip_path = zip_outputs(trained_mysteries, trained_creatures)
+        zip_path = zip_outputs(trained_mysteries, trained_creatures, scale_trained)
         print(f"\n  Download: {zip_path}")
     print()
 

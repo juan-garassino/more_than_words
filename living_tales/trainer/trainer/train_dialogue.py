@@ -374,6 +374,7 @@ def train_dialogue_supervised(
     kd_alpha: float | None = None,
     lyapunov_weight: float = 0.1,
     freeze_emb_epochs: int = 5,
+    model_size_override: str | None = None,
     device: str = "cpu",
 ) -> Tuple[DialogueTransformer, Dict]:
     """
@@ -384,7 +385,7 @@ def train_dialogue_supervised(
     spec = CartridgeSpec.load(spec_path)
 
     # --- Training profile: auto-derived from case spec ---
-    profile = TrainingProfile.from_spec(spec)
+    profile = TrainingProfile.from_spec(spec, model_size_override=model_size_override)
     _log(f"Profile: {profile.log_summary()}")
 
     # Allow explicit overrides, otherwise use profile
@@ -421,16 +422,13 @@ def train_dialogue_supervised(
         for p in paths
     ]
 
-    # --- Create model ---
-    # 6 layers, wider dims for better action→response learning with short context
-    model_embed = max(spec.embedding_dim, 96)
-    model_context = max(spec.context_dim, 192)
+    # --- Create model (architecture from profile) ---
     model = DialogueTransformer(
         vocab_size=spec.vocab_size,
-        embedding_dim=model_embed,
-        context_dim=model_context,
-        n_layers=6,
-        n_heads=6,
+        embedding_dim=profile.embedding_dim,
+        context_dim=profile.context_dim,
+        n_layers=profile.n_layers,
+        n_heads=profile.n_heads,
         max_seq_len=128,
     ).to(device)
 
@@ -520,7 +518,8 @@ def train_dialogue_supervised(
             entropy_bonus = torch.tensor(0.0, device=device)
             diversity_loss = torch.tensor(0.0, device=device)
 
-            if mean_entropy.item() < profile.collapse_threshold:
+            warmup_done = epoch >= profile.warmup_epochs
+            if warmup_done and mean_entropy.item() < profile.collapse_threshold:
                 entropy_bonus = profile.entropy_coef * mean_entropy
                 if flat_mask.any():
                     avg_pred = pred_probs.reshape(B * S, V)[flat_mask].mean(dim=0)
@@ -588,10 +587,10 @@ def train_dialogue_supervised(
         "state_dict": model.state_dict(),
         "spec_path": str(spec_path),
         "case_id": spec.case_id,
-        "embedding_dim": model_embed,
-        "context_dim": model_context,
-        "n_layers": 6,
-        "n_heads": 6,
+        "embedding_dim": profile.embedding_dim,
+        "context_dim": profile.context_dim,
+        "n_layers": profile.n_layers,
+        "n_heads": profile.n_heads,
         "max_seq_len": 128,
         "vocab_size": spec.vocab_size,
         "model_type": "dialogue",
@@ -662,6 +661,7 @@ def train_dialogue_rl(
     _banner("DIALOGUE TRANSFORMER — REINFORCE")
 
     spec = CartridgeSpec.load(spec_path)
+    profile = TrainingProfile.from_spec(spec)
     mappings = _build_mappings(spec.tokens)
     id_to_idx, class_to_idx, phase_to_idx, stream_to_idx, agency_to_idx = mappings
     idx_to_token = {i: t for t, i in id_to_idx.items()}
@@ -895,7 +895,6 @@ def train_dialogue_rl(
 
         # --- Policy gradient loss ---
         policy_loss = torch.tensor(0.0, device=device)
-        entropy_loss = torch.tensor(0.0, device=device)
         n_engine_turns = 0
 
         for i, (lp, G_i) in enumerate(zip(log_probs, returns_t)):
@@ -906,11 +905,17 @@ def train_dialogue_rl(
         if n_engine_turns > 0:
             policy_loss /= n_engine_turns
 
-            # Entropy bonus (encourage exploration)
-            # Recompute last engine logits for entropy
-            # (simplified: use mean log_prob as proxy)
+            # Entropy floor: prevent RL from collapsing to one token
+            entropy_bonus = torch.tensor(0.0, device=device)
+            if engine_logits_for_kd:
+                stacked = torch.stack(engine_logits_for_kd, dim=0)  # (N, V)
+                rl_probs = F.softmax(stacked, dim=-1)
+                rl_log_probs = F.log_softmax(stacked, dim=-1)
+                rl_entropy = -(rl_probs * rl_log_probs).sum(dim=-1).mean()
+                if rl_entropy.item() < profile.collapse_threshold:
+                    entropy_bonus = profile.entropy_coef * rl_entropy
 
-            total_loss = policy_loss
+            total_loss = policy_loss - entropy_bonus
 
             # KD anchor: push model distribution toward Hopfield soft targets
             if kd_anchor_weight > 0 and engine_logits_for_kd:
@@ -997,6 +1002,7 @@ def train_dialogue_cartridge(
     rl_lr: float = 3e-5,
     kd_temperature: float = 2.0,
     kd_alpha: float | None = None,
+    model_size_override: str | None = None,
     lyapunov_weight: float = 0.1,
     device: str = "cpu",
 ) -> Tuple[DialogueTransformer, Dict]:
@@ -1013,6 +1019,7 @@ def train_dialogue_cartridge(
         kd_temperature=kd_temperature,
         kd_alpha=kd_alpha,
         lyapunov_weight=lyapunov_weight,
+        model_size_override=model_size_override,
         device=device,
     )
 
