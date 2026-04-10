@@ -68,9 +68,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "surface",
@@ -92,9 +92,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "access",
@@ -112,9 +112,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "access",
@@ -132,9 +132,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "surface",
@@ -156,9 +156,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "access",
@@ -176,9 +176,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "concealment",
@@ -196,9 +196,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -215,9 +215,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -235,9 +235,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "concealment",
@@ -255,9 +255,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -274,9 +274,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "concealment",
@@ -294,9 +294,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "access",
@@ -314,9 +314,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -333,9 +333,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "access",
@@ -353,9 +353,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -374,9 +374,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -395,9 +395,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -415,9 +415,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -434,9 +434,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -454,9 +454,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -474,9 +474,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -518,9 +518,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -538,9 +538,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "access",
@@ -558,9 +558,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -578,9 +578,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "concealment",
@@ -597,9 +597,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -618,9 +618,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "guilt",
@@ -637,9 +637,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "surface",
@@ -661,9 +661,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -681,9 +681,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "guilt",
@@ -700,9 +700,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "guilt",
@@ -719,9 +719,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "surface",
@@ -764,9 +764,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "concealment",
@@ -803,9 +803,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "concealment",
@@ -823,9 +823,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "access",
@@ -843,9 +843,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "physical",
@@ -884,9 +884,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -904,9 +904,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "surface",
@@ -928,9 +928,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "concealment",
@@ -948,9 +948,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -968,9 +968,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "method",
@@ -989,9 +989,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -1009,9 +1009,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.05,
-        0.25,
-        0.25
+        0.02,
+        0.27,
+        0.27
       ],
       "affinity_tags": [
         "concealment",
@@ -1029,9 +1029,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -1073,9 +1073,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -1092,9 +1092,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -1112,9 +1112,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -1132,9 +1132,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "time_window",
@@ -1151,9 +1151,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "time_window",
@@ -1170,9 +1170,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "time_window",
@@ -1189,9 +1189,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "time_window",
@@ -1209,9 +1209,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "time_window",
@@ -1229,9 +1229,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "buried",
@@ -1250,9 +1250,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "buried",
@@ -1271,9 +1271,9 @@
       "phase": "LATE",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -1291,9 +1291,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "concealment",
@@ -1310,9 +1310,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.06,
-        0.35
+        0.01,
+        0.01,
+        0.44
       ],
       "affinity_tags": [
         "buried",
@@ -1330,9 +1330,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "fragment",
@@ -1351,9 +1351,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "fragment",
@@ -1372,9 +1372,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "fragment",
@@ -1393,9 +1393,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "fragment",
@@ -1414,9 +1414,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.35,
-        0.06,
-        0.06
+        0.44,
+        0.01,
+        0.01
       ],
       "affinity_tags": [
         "fragment",
@@ -1435,9 +1435,9 @@
       "phase": "EARLY",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
@@ -1454,9 +1454,9 @@
       "phase": "MID",
       "is_invariant": false,
       "attractor_weights": [
-        0.06,
-        0.35,
-        0.06
+        0.01,
+        0.44,
+        0.01
       ],
       "affinity_tags": [
         "physical",
