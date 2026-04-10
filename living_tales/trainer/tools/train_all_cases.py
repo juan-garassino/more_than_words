@@ -305,20 +305,32 @@ def main():
         _log("No valid cases found.")
         sys.exit(1)
 
-    _log(f"\nWill train {len(case_ids)} cases: {', '.join(case_ids)}\n")
+    _log(f"\nCandidates: {len(case_ids)} cases: {', '.join(case_ids)}\n")
 
-    # Process each case
+    # ── Phase 1: Validate + Pack ALL cases upfront ──────────────────────────
+    _banner("PHASE 1: VALIDATE + PACK")
+    ready_ids = []
+    for case_id in case_ids:
+        _log(f"Packing {case_id}...")
+        if pack_case(case_id):
+            ready_ids.append(case_id)
+            _log(f"  OK  {case_id}")
+        else:
+            _log(f"  FAIL {case_id} — skipping")
+
+    if not ready_ids:
+        _log("No cases ready for training.")
+        sys.exit(1)
+
+    _log(f"\n{len(ready_ids)}/{len(case_ids)} cases ready for training: {', '.join(ready_ids)}\n")
+
+    # ── Phase 2: Train + Play each case ─────────────────────────────────────
+    _banner("PHASE 2: TRAIN + PLAY")
     reports = []
     trained_ids = []
 
-    for i, case_id in enumerate(case_ids):
-        _banner(f"CASE {i+1}/{len(case_ids)}: {case_id}")
-
-        # Pack
-        _log("Packing...")
-        if not pack_case(case_id):
-            _log(f"Failed to pack {case_id}, skipping.")
-            continue
+    for i, case_id in enumerate(ready_ids):
+        _banner(f"CASE {i+1}/{len(ready_ids)}: {case_id}")
 
         # Train with log capture
         _log("Training...")

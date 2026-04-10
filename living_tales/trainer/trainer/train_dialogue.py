@@ -278,12 +278,20 @@ def _inference_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
         game_seqs['p'].append(enc[2]); game_seqs['s'].append(enc[3])
         game_seqs['a'].append(enc[4])
 
-    # Test actions
-    probe_actions = ['action:fill_bowl', 'action:toss_ball', 'action:scratch_chin',
-                     'action:brush_coat', 'action:dim_lamp']
-    probe_actions = [a for a in probe_actions if a in id_to_idx]
+    # Test actions — auto-detect from case tokens (works for mysteries AND creatures)
+    # Prefer action: tokens, fall back to any player-playable non-opening tokens
+    probe_actions = [t.id for t in spec.tokens
+                     if t.id.startswith('action:') and t.id in id_to_idx]
     if not probe_actions:
-        return
+        # Mystery fallback: pick player-agency EARLY tokens as probe inputs
+        probe_actions = [t.id for t in spec.tokens
+                         if t.agency in (TokenAgency.PLAYER, TokenAgency.SHARED)
+                         and not t.is_invariant and t.stream != TokenStream.OPENING
+                         and t.id in id_to_idx]
+    probe_actions = probe_actions[:5]  # limit to 5
+    if not probe_actions:
+        _log("  [PROBE] no probe actions found, skipping")
+        return {}
 
     model.eval()
 
@@ -544,14 +552,16 @@ def train_dialogue_supervised(
                 model, spec, id_to_idx, class_to_idx, phase_to_idx,
                 stream_to_idx, agency_to_idx, device,
             )
-            history["probe_metrics"].append({"epoch": epoch, **latest_probe})
+            if latest_probe:
+                history["probe_metrics"].append({"epoch": epoch, **latest_probe})
 
     if latest_probe is None:
         latest_probe = _inference_probe(
             model, spec, id_to_idx, class_to_idx, phase_to_idx,
             stream_to_idx, agency_to_idx, device,
         )
-        history["probe_metrics"].append({"epoch": n_epochs - 1, **latest_probe})
+        if latest_probe:
+            history["probe_metrics"].append({"epoch": n_epochs - 1, **latest_probe})
 
     # Unfreeze everything
     for p in model.parameters():
