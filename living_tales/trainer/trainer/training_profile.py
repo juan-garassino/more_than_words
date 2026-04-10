@@ -122,7 +122,7 @@ class TrainingProfile:
 
 def build_head_vocab_masks(
     spec: CartridgeSpec,
-    threshold: float = 0.05,
+    threshold: float | None = None,
 ) -> torch.Tensor:
     """
     Build per-head vocabulary masks from attractor weights.
@@ -133,6 +133,9 @@ def build_head_vocab_masks(
     Tokens with weight on a dimension are candidates for that head. Invariant
     tokens and opening tokens are excluded from all heads.
     """
+    if threshold is None:
+        threshold = 0.10 if spec.mode == "converging" else 0.05
+
     n_dims = spec.n_attractor_dims
     V = spec.vocab_size
     masks = torch.zeros(n_dims, V, dtype=torch.bool)

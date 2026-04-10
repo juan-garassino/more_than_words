@@ -14,225 +14,2560 @@
     "motive:forgery_operation"
   ],
   "tokens": [
-    {"id": "suspect:countess_morvaine", "class": "SUSPECT", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [1.0, 0.0, 0.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "event:balcony_fall", "class": "EVENT", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [0.0, 1.0, 0.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "motive:forgery_operation", "class": "MOTIVE", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [0.0, 0.0, 1.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "suspect:carlo_bassi", "class": "SUSPECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.08], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:dr_klaus_winter", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:elena_rizzoli", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.14], "affinity_tags": ["access", "concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:marco_dandolo", "class": "SUSPECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:signora_pelosi", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.12], "affinity_tags": ["access", "concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:inspector_bruno", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.16], "affinity_tags": ["concealment", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "location:palazzo_contarini", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.1, 0.09, 0.09], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "location:main_balcony", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.09], "affinity_tags": ["physical", "method", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:mirror_gallery", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.12, 0.14], "affinity_tags": ["concealment", "access", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:canal_entrance", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.1], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:studio_room", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.16], "affinity_tags": ["concealment", "secret", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:servants_stair", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:courtyard", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:private_salon", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.12], "affinity_tags": ["access", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "object:cracked_mirror", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.08], "affinity_tags": ["physical", "method", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:paint_analysis", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.24, 0.12, 0.28], "affinity_tags": ["concealment", "secret", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:forged_canvas", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.22, 0.1, 0.24], "affinity_tags": ["concealment", "secret", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:balcony_railing", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.22, 0.12], "affinity_tags": ["physical", "method", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:guest_list", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.1, 0.08, 0.09], "affinity_tags": ["physical", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:provenance_file", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.18], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:pigment_sample", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.14, 0.2], "affinity_tags": ["physical", "method", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:silk_glove", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:auction_catalogue", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["concealment", "secret", "financial"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:restoration_notes", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["physical", "method", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:canal_key", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:linen_fragment", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.1, 0.12, 0.14], "affinity_tags": ["physical", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:sale_receipt", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.26], "affinity_tags": ["buried", "financial", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "emotion:polished_grace", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.1, 0.14], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:startled_poise", "class": "EMOTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:measured_deflection", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:stiff_formality", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:avoided_subject", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.14], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:practised_dismay", "class": "EMOTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.08], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:railing_scored", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.22, 0.14], "affinity_tags": ["physical", "method", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:modern_pigment", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.12, 0.22], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:frame_swapped", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:carnival_mask", "class": "MODIFIER", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["physical", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "modifier:door_bolted", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["access", "method", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:canvas_aged", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.1, 0.26], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:varnish_fresh", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["physical", "time_window", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:scratch_on_stone", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.12], "affinity_tags": ["physical", "method", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:glove_torn", "class": "MODIFIER", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:silk_residue", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["physical", "method", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "action:canvas_switched", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.1, 0.26], "affinity_tags": ["concealment", "guilt", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:railing_weakened", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.22, 0.14], "affinity_tags": ["method", "physical", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:studio_locked", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.16], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:mask_removed", "class": "ACTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:notes_destroyed", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.12, 0.24], "affinity_tags": ["concealment", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:sale_arranged", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.16], "affinity_tags": ["concealment", "secret", "financial"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:provenance_forged", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.12, 0.22], "affinity_tags": ["concealment", "secret", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:stair_descended", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["access", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:gallery_inspected", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.1, 0.12, 0.14], "affinity_tags": ["physical", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "time:carnival_evening", "class": "TIME", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.09], "affinity_tags": ["time_window", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "time:midnight_bell", "class": "TIME", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.08, 0.09], "affinity_tags": ["time_window", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "time:body_found_dawn", "class": "TIME", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["time_window", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "time:gallery_closed", "class": "TIME", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["time_window", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "time:auction_date", "class": "TIME", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.2], "affinity_tags": ["time_window", "constraint", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "motive:collection_value", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.14, 0.3], "affinity_tags": ["buried", "financial", "secret", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:exposure_risk", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.12, 0.28], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:rival_claim", "class": "MOTIVE", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:insurance_fraud", "class": "MOTIVE", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.16], "affinity_tags": ["buried", "financial", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:reputation_ruin", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.12, 0.24], "affinity_tags": ["buried", "financial", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "witness:gondolier", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.08], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:palazzo_maid", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:night_guard", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:art_dealer", "class": "WITNESS", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:canal_boatman", "class": "WITNESS", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.14], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "event:luca_marini_discovered", "class": "EVENT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.1], "affinity_tags": ["physical", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "event:carnival_reception", "class": "EVENT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["physical", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"}
+    {
+      "id": "suspect:countess_morvaine",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "event:balcony_fall",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "motive:forgery_operation",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:carlo_bassi",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:dr_klaus_winter",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:elena_rizzoli",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:marco_dandolo",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:signora_pelosi",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:inspector_bruno",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "location:palazzo_contarini",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.10,
+        0.10,
+        0.10
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:main_balcony",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:mirror_gallery",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:canal_entrance",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:studio_room",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:servants_stair",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:courtyard",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:private_salon",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "object:cracked_mirror",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:paint_analysis",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:forged_canvas",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:balcony_railing",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:guest_list",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:provenance_file",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:pigment_sample",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:silk_glove",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:auction_catalogue",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:restoration_notes",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:canal_key",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:linen_fragment",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:sale_receipt",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "emotion:polished_grace",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:startled_poise",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.07,
+        0.07,
+        0.07
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:measured_deflection",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:stiff_formality",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:avoided_subject",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:practised_dismay",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.07,
+        0.07,
+        0.07
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:railing_scored",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:modern_pigment",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:frame_swapped",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:carnival_mask",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "modifier:door_bolted",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:canvas_aged",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:varnish_fresh",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:scratch_on_stone",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:glove_torn",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:silk_residue",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "action:canvas_switched",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:railing_weakened",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "method",
+        "physical",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:studio_locked",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:mask_removed",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:notes_destroyed",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:sale_arranged",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:provenance_forged",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:stair_descended",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:gallery_inspected",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "time:carnival_evening",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:midnight_bell",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:body_found_dawn",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:gallery_closed",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:auction_date",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "motive:collection_value",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "secret",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:exposure_risk",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:rival_claim",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:insurance_fraud",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:reputation_ruin",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "witness:gondolier",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:palazzo_maid",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:night_guard",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:art_dealer",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:canal_boatman",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:luca_marini_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:carnival_reception",
+      "class": "EVENT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    }
   ],
   "graph": {
     "nodes": [
-      "suspect:countess_morvaine", "suspect:carlo_bassi", "suspect:dr_klaus_winter", "suspect:elena_rizzoli", "suspect:marco_dandolo", "suspect:signora_pelosi", "suspect:inspector_bruno",
-      "location:palazzo_contarini", "location:main_balcony", "location:mirror_gallery", "location:canal_entrance", "location:studio_room", "location:servants_stair", "location:courtyard", "location:private_salon",
-      "object:cracked_mirror", "object:paint_analysis", "object:forged_canvas", "object:balcony_railing", "object:guest_list", "object:provenance_file", "object:pigment_sample", "object:silk_glove", "object:auction_catalogue", "object:restoration_notes", "object:canal_key", "object:linen_fragment", "object:sale_receipt",
-      "emotion:polished_grace", "emotion:startled_poise", "emotion:measured_deflection", "emotion:stiff_formality", "emotion:avoided_subject", "emotion:practised_dismay",
-      "modifier:railing_scored", "modifier:modern_pigment", "modifier:frame_swapped", "modifier:carnival_mask", "modifier:door_bolted", "modifier:canvas_aged", "modifier:varnish_fresh", "modifier:scratch_on_stone", "modifier:glove_torn", "modifier:silk_residue",
-      "action:canvas_switched", "action:railing_weakened", "action:studio_locked", "action:mask_removed", "action:notes_destroyed", "action:sale_arranged", "action:provenance_forged", "action:stair_descended", "action:gallery_inspected",
-      "time:carnival_evening", "time:midnight_bell", "time:body_found_dawn", "time:gallery_closed", "time:auction_date",
-      "motive:collection_value", "motive:exposure_risk", "motive:rival_claim", "motive:insurance_fraud", "motive:reputation_ruin", "motive:forgery_operation",
-      "witness:gondolier", "witness:palazzo_maid", "witness:night_guard", "witness:art_dealer", "witness:canal_boatman",
-      "event:luca_marini_discovered", "event:balcony_fall", "event:carnival_reception"
+      "suspect:countess_morvaine",
+      "suspect:carlo_bassi",
+      "suspect:dr_klaus_winter",
+      "suspect:elena_rizzoli",
+      "suspect:marco_dandolo",
+      "suspect:signora_pelosi",
+      "suspect:inspector_bruno",
+      "location:palazzo_contarini",
+      "location:main_balcony",
+      "location:mirror_gallery",
+      "location:canal_entrance",
+      "location:studio_room",
+      "location:servants_stair",
+      "location:courtyard",
+      "location:private_salon",
+      "object:cracked_mirror",
+      "object:paint_analysis",
+      "object:forged_canvas",
+      "object:balcony_railing",
+      "object:guest_list",
+      "object:provenance_file",
+      "object:pigment_sample",
+      "object:silk_glove",
+      "object:auction_catalogue",
+      "object:restoration_notes",
+      "object:canal_key",
+      "object:linen_fragment",
+      "object:sale_receipt",
+      "emotion:polished_grace",
+      "emotion:startled_poise",
+      "emotion:measured_deflection",
+      "emotion:stiff_formality",
+      "emotion:avoided_subject",
+      "emotion:practised_dismay",
+      "modifier:railing_scored",
+      "modifier:modern_pigment",
+      "modifier:frame_swapped",
+      "modifier:carnival_mask",
+      "modifier:door_bolted",
+      "modifier:canvas_aged",
+      "modifier:varnish_fresh",
+      "modifier:scratch_on_stone",
+      "modifier:glove_torn",
+      "modifier:silk_residue",
+      "action:canvas_switched",
+      "action:railing_weakened",
+      "action:studio_locked",
+      "action:mask_removed",
+      "action:notes_destroyed",
+      "action:sale_arranged",
+      "action:provenance_forged",
+      "action:stair_descended",
+      "action:gallery_inspected",
+      "time:carnival_evening",
+      "time:midnight_bell",
+      "time:body_found_dawn",
+      "time:gallery_closed",
+      "time:auction_date",
+      "motive:collection_value",
+      "motive:exposure_risk",
+      "motive:rival_claim",
+      "motive:insurance_fraud",
+      "motive:reputation_ruin",
+      "motive:forgery_operation",
+      "witness:gondolier",
+      "witness:palazzo_maid",
+      "witness:night_guard",
+      "witness:art_dealer",
+      "witness:canal_boatman",
+      "event:luca_marini_discovered",
+      "event:balcony_fall",
+      "event:carnival_reception"
     ],
     "edges": [
-      {"from": "object:forged_canvas", "to": "suspect:countess_morvaine", "weight": 0.48, "tags": ["identity"]},
-      {"from": "object:paint_analysis", "to": "suspect:countess_morvaine", "weight": 0.46, "tags": ["identity"]},
-      {"from": "emotion:polished_grace", "to": "suspect:countess_morvaine", "weight": 0.38, "tags": ["interview"]},
-      {"from": "emotion:measured_deflection", "to": "suspect:countess_morvaine", "weight": 0.36, "tags": ["interview"]},
-      {"from": "action:canvas_switched", "to": "suspect:countess_morvaine", "weight": 0.44, "tags": ["evidence"]},
-      {"from": "action:notes_destroyed", "to": "suspect:countess_morvaine", "weight": 0.42, "tags": ["evidence"]},
-      {"from": "location:mirror_gallery", "to": "suspect:countess_morvaine", "weight": 0.36, "tags": ["access"]},
-      {"from": "modifier:modern_pigment", "to": "suspect:countess_morvaine", "weight": 0.42, "tags": ["evidence"]},
-      {"from": "modifier:canvas_aged", "to": "suspect:countess_morvaine", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "motive:collection_value", "to": "suspect:countess_morvaine", "weight": 0.44, "tags": ["motive"]},
-      {"from": "motive:exposure_risk", "to": "suspect:countess_morvaine", "weight": 0.40, "tags": ["motive"]},
-      {"from": "motive:reputation_ruin", "to": "suspect:countess_morvaine", "weight": 0.38, "tags": ["motive"]},
-      {"from": "object:balcony_railing", "to": "event:balcony_fall", "weight": 0.46, "tags": ["method"]},
-      {"from": "object:cracked_mirror", "to": "event:balcony_fall", "weight": 0.42, "tags": ["method"]},
-      {"from": "action:railing_weakened", "to": "event:balcony_fall", "weight": 0.44, "tags": ["method"]},
-      {"from": "modifier:railing_scored", "to": "event:balcony_fall", "weight": 0.42, "tags": ["evidence"]},
-      {"from": "modifier:scratch_on_stone", "to": "event:balcony_fall", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "location:main_balcony", "to": "event:balcony_fall", "weight": 0.38, "tags": ["scene"]},
-      {"from": "action:stair_descended", "to": "event:balcony_fall", "weight": 0.34, "tags": ["timing"]},
-      {"from": "event:carnival_reception", "to": "event:balcony_fall", "weight": 0.32, "tags": ["timing"]},
-      {"from": "object:provenance_file", "to": "motive:forgery_operation", "weight": 0.46, "tags": ["motive"]},
-      {"from": "object:sale_receipt", "to": "motive:forgery_operation", "weight": 0.44, "tags": ["motive"]},
-      {"from": "object:paint_analysis", "to": "motive:forgery_operation", "weight": 0.42, "tags": ["motive"]},
-      {"from": "motive:exposure_risk", "to": "motive:forgery_operation", "weight": 0.40, "tags": ["motive"]},
-      {"from": "action:provenance_forged", "to": "motive:forgery_operation", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "action:sale_arranged", "to": "motive:forgery_operation", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "modifier:frame_swapped", "to": "motive:forgery_operation", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:carlo_bassi", "to": "emotion:startled_poise", "weight": 0.28, "tags": ["interview"]},
-      {"from": "suspect:carlo_bassi", "to": "object:silk_glove", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:carlo_bassi", "to": "emotion:practised_dismay", "weight": 0.26, "tags": ["interview"]},
-      {"from": "suspect:carlo_bassi", "to": "location:canal_entrance", "weight": 0.28, "tags": ["scene"]},
-      {"from": "suspect:marco_dandolo", "to": "action:mask_removed", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:marco_dandolo", "to": "location:courtyard", "weight": 0.28, "tags": ["scene"]},
-      {"from": "suspect:marco_dandolo", "to": "modifier:glove_torn", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "suspect:marco_dandolo", "to": "location:main_balcony", "weight": 0.24, "tags": ["scene"]},
-      {"from": "suspect:dr_klaus_winter", "to": "object:paint_analysis", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "suspect:dr_klaus_winter", "to": "location:studio_room", "weight": 0.34, "tags": ["access"]},
-      {"from": "suspect:dr_klaus_winter", "to": "object:pigment_sample", "weight": 0.32, "tags": ["evidence"]},
-      {"from": "suspect:dr_klaus_winter", "to": "object:restoration_notes", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:elena_rizzoli", "to": "object:auction_catalogue", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:elena_rizzoli", "to": "motive:insurance_fraud", "weight": 0.32, "tags": ["motive"]},
-      {"from": "suspect:elena_rizzoli", "to": "location:private_salon", "weight": 0.28, "tags": ["scene"]},
-      {"from": "suspect:elena_rizzoli", "to": "object:provenance_file", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:signora_pelosi", "to": "object:canal_key", "weight": 0.38, "tags": ["access"]},
-      {"from": "suspect:signora_pelosi", "to": "location:servants_stair", "weight": 0.34, "tags": ["access"]},
-      {"from": "suspect:signora_pelosi", "to": "motive:rival_claim", "weight": 0.30, "tags": ["motive"]},
-      {"from": "suspect:signora_pelosi", "to": "object:guest_list", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "suspect:inspector_bruno", "to": "object:provenance_file", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:inspector_bruno", "to": "motive:insurance_fraud", "weight": 0.30, "tags": ["motive"]},
-      {"from": "suspect:inspector_bruno", "to": "location:studio_room", "weight": 0.28, "tags": ["access"]},
-      {"from": "suspect:inspector_bruno", "to": "object:sale_receipt", "weight": 0.32, "tags": ["evidence"]},
-      {"from": "location:palazzo_contarini", "to": "event:luca_marini_discovered", "weight": 0.30, "tags": ["scene"]},
-      {"from": "location:palazzo_contarini", "to": "time:carnival_evening", "weight": 0.28, "tags": ["scene"]},
-      {"from": "location:palazzo_contarini", "to": "time:midnight_bell", "weight": 0.26, "tags": ["scene"]},
-      {"from": "location:main_balcony", "to": "event:luca_marini_discovered", "weight": 0.34, "tags": ["scene"]},
-      {"from": "location:main_balcony", "to": "object:balcony_railing", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:mirror_gallery", "to": "object:forged_canvas", "weight": 0.36, "tags": ["scene"]},
-      {"from": "location:mirror_gallery", "to": "object:cracked_mirror", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:studio_room", "to": "object:paint_analysis", "weight": 0.36, "tags": ["scene"]},
-      {"from": "location:studio_room", "to": "object:restoration_notes", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:servants_stair", "to": "action:stair_descended", "weight": 0.34, "tags": ["movement"]},
-      {"from": "location:servants_stair", "to": "modifier:door_bolted", "weight": 0.28, "tags": ["constraint"]},
-      {"from": "location:canal_entrance", "to": "object:canal_key", "weight": 0.30, "tags": ["access"]},
-      {"from": "location:canal_entrance", "to": "modifier:carnival_mask", "weight": 0.24, "tags": ["scene"]},
-      {"from": "location:courtyard", "to": "modifier:carnival_mask", "weight": 0.22, "tags": ["scene"]},
-      {"from": "location:courtyard", "to": "time:midnight_bell", "weight": 0.24, "tags": ["scene"]},
-      {"from": "location:private_salon", "to": "event:carnival_reception", "weight": 0.30, "tags": ["scene"]},
-      {"from": "location:private_salon", "to": "object:auction_catalogue", "weight": 0.28, "tags": ["scene"]},
-      {"from": "object:forged_canvas", "to": "modifier:modern_pigment", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "object:forged_canvas", "to": "modifier:canvas_aged", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "object:paint_analysis", "to": "modifier:modern_pigment", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "object:balcony_railing", "to": "modifier:railing_scored", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "object:provenance_file", "to": "action:provenance_forged", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "object:pigment_sample", "to": "modifier:varnish_fresh", "weight": 0.32, "tags": ["evidence"]},
-      {"from": "object:auction_catalogue", "to": "action:sale_arranged", "weight": 0.32, "tags": ["evidence"]},
-      {"from": "object:restoration_notes", "to": "action:notes_destroyed", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "object:canal_key", "to": "modifier:door_bolted", "weight": 0.32, "tags": ["access"]},
-      {"from": "object:linen_fragment", "to": "modifier:frame_swapped", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "object:guest_list", "to": "time:carnival_evening", "weight": 0.28, "tags": ["timing"]},
-      {"from": "object:sale_receipt", "to": "motive:collection_value", "weight": 0.36, "tags": ["motive"]},
-      {"from": "action:canvas_switched", "to": "time:gallery_closed", "weight": 0.30, "tags": ["timing"]},
-      {"from": "action:stair_descended", "to": "time:gallery_closed", "weight": 0.28, "tags": ["timing"]},
-      {"from": "action:studio_locked", "to": "time:body_found_dawn", "weight": 0.28, "tags": ["timing"]},
-      {"from": "action:gallery_inspected", "to": "event:carnival_reception", "weight": 0.28, "tags": ["scene"]},
-      {"from": "time:carnival_evening", "to": "event:luca_marini_discovered", "weight": 0.30, "tags": ["timing"]},
-      {"from": "time:carnival_evening", "to": "event:carnival_reception", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:body_found_dawn", "to": "event:luca_marini_discovered", "weight": 0.32, "tags": ["timing"]},
-      {"from": "time:body_found_dawn", "to": "location:courtyard", "weight": 0.28, "tags": ["scene"]},
-      {"from": "time:gallery_closed", "to": "modifier:door_bolted", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:auction_date", "to": "motive:collection_value", "weight": 0.38, "tags": ["motive"]},
-      {"from": "time:midnight_bell", "to": "modifier:carnival_mask", "weight": 0.24, "tags": ["scene"]},
-      {"from": "motive:insurance_fraud", "to": "motive:rival_claim", "weight": 0.30, "tags": ["motive"]},
-      {"from": "motive:collection_value", "to": "motive:exposure_risk", "weight": 0.34, "tags": ["motive"]},
-      {"from": "motive:collection_value", "to": "motive:reputation_ruin", "weight": 0.32, "tags": ["motive"]},
-      {"from": "witness:gondolier", "to": "location:canal_entrance", "weight": 0.28, "tags": ["scene"]},
-      {"from": "witness:gondolier", "to": "time:midnight_bell", "weight": 0.26, "tags": ["timing"]},
-      {"from": "witness:palazzo_maid", "to": "location:servants_stair", "weight": 0.26, "tags": ["scene"]},
-      {"from": "witness:palazzo_maid", "to": "time:body_found_dawn", "weight": 0.24, "tags": ["timing"]},
-      {"from": "witness:night_guard", "to": "location:courtyard", "weight": 0.24, "tags": ["scene"]},
-      {"from": "witness:night_guard", "to": "object:guest_list", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "witness:art_dealer", "to": "object:auction_catalogue", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "witness:art_dealer", "to": "location:private_salon", "weight": 0.26, "tags": ["scene"]},
-      {"from": "witness:canal_boatman", "to": "time:midnight_bell", "weight": 0.24, "tags": ["timing"]},
-      {"from": "witness:canal_boatman", "to": "location:canal_entrance", "weight": 0.22, "tags": ["scene"]},
-      {"from": "emotion:stiff_formality", "to": "suspect:signora_pelosi", "weight": 0.26, "tags": ["interview"]},
-      {"from": "emotion:avoided_subject", "to": "suspect:inspector_bruno", "weight": 0.28, "tags": ["interview"]},
-      {"from": "emotion:startled_poise", "to": "location:main_balcony", "weight": 0.24, "tags": ["scene"]},
-      {"from": "emotion:practised_dismay", "to": "suspect:elena_rizzoli", "weight": 0.24, "tags": ["interview"]},
-      {"from": "emotion:polished_grace", "to": "location:mirror_gallery", "weight": 0.26, "tags": ["scene"]},
-      {"from": "emotion:measured_deflection", "to": "location:studio_room", "weight": 0.24, "tags": ["scene"]},
-      {"from": "modifier:varnish_fresh", "to": "time:body_found_dawn", "weight": 0.28, "tags": ["timing"]},
-      {"from": "modifier:glove_torn", "to": "object:silk_glove", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "event:carnival_reception", "to": "time:body_found_dawn", "weight": 0.30, "tags": ["timing"]},
-      {"from": "motive:rival_claim", "to": "object:canal_key", "weight": 0.28, "tags": ["motive"]},
-      {"from": "object:linen_fragment", "to": "location:studio_room", "weight": 0.26, "tags": ["scene"]},
-      {"from": "emotion:stiff_formality", "to": "location:servants_stair", "weight": 0.24, "tags": ["scene"]},
-      {"from": "emotion:avoided_subject", "to": "location:private_salon", "weight": 0.24, "tags": ["scene"]},
-      {"from": "modifier:scratch_on_stone", "to": "location:courtyard", "weight": 0.28, "tags": ["scene"]},
-      {"from": "modifier:silk_residue", "to": "object:balcony_railing", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "action:railing_weakened", "to": "location:main_balcony", "weight": 0.30, "tags": ["scene"]},
-      {"from": "modifier:silk_residue", "to": "suspect:countess_morvaine", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "action:studio_locked", "to": "location:studio_room", "weight": 0.28, "tags": ["access"]},
-      {"from": "action:mask_removed", "to": "time:midnight_bell", "weight": 0.26, "tags": ["timing"]},
-      {"from": "action:gallery_inspected", "to": "location:mirror_gallery", "weight": 0.28, "tags": ["scene"]},
-      {"from": "time:auction_date", "to": "motive:exposure_risk", "weight": 0.34, "tags": ["motive"]}
+      {
+        "from": "object:forged_canvas",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.48,
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "from": "object:paint_analysis",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.46,
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "from": "emotion:polished_grace",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.38,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:measured_deflection",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.36,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "action:canvas_switched",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.44,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:notes_destroyed",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.42,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "location:mirror_gallery",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.36,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "modifier:modern_pigment",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.42,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:canvas_aged",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "motive:collection_value",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.44,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:exposure_risk",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.4,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:reputation_ruin",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.38,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:balcony_railing",
+        "to": "event:balcony_fall",
+        "weight": 0.46,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "object:cracked_mirror",
+        "to": "event:balcony_fall",
+        "weight": 0.42,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "action:railing_weakened",
+        "to": "event:balcony_fall",
+        "weight": 0.44,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "modifier:railing_scored",
+        "to": "event:balcony_fall",
+        "weight": 0.42,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:scratch_on_stone",
+        "to": "event:balcony_fall",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "location:main_balcony",
+        "to": "event:balcony_fall",
+        "weight": 0.38,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:stair_descended",
+        "to": "event:balcony_fall",
+        "weight": 0.34,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "event:carnival_reception",
+        "to": "event:balcony_fall",
+        "weight": 0.32,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:provenance_file",
+        "to": "motive:forgery_operation",
+        "weight": 0.46,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:sale_receipt",
+        "to": "motive:forgery_operation",
+        "weight": 0.44,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:paint_analysis",
+        "to": "motive:forgery_operation",
+        "weight": 0.42,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:exposure_risk",
+        "to": "motive:forgery_operation",
+        "weight": 0.4,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "action:provenance_forged",
+        "to": "motive:forgery_operation",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:sale_arranged",
+        "to": "motive:forgery_operation",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:frame_swapped",
+        "to": "motive:forgery_operation",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:carlo_bassi",
+        "to": "emotion:startled_poise",
+        "weight": 0.28,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "suspect:carlo_bassi",
+        "to": "object:silk_glove",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:carlo_bassi",
+        "to": "emotion:practised_dismay",
+        "weight": 0.26,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "suspect:carlo_bassi",
+        "to": "location:canal_entrance",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:marco_dandolo",
+        "to": "action:mask_removed",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:marco_dandolo",
+        "to": "location:courtyard",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:marco_dandolo",
+        "to": "modifier:glove_torn",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:marco_dandolo",
+        "to": "location:main_balcony",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:dr_klaus_winter",
+        "to": "object:paint_analysis",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:dr_klaus_winter",
+        "to": "location:studio_room",
+        "weight": 0.34,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:dr_klaus_winter",
+        "to": "object:pigment_sample",
+        "weight": 0.32,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:dr_klaus_winter",
+        "to": "object:restoration_notes",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:elena_rizzoli",
+        "to": "object:auction_catalogue",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:elena_rizzoli",
+        "to": "motive:insurance_fraud",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:elena_rizzoli",
+        "to": "location:private_salon",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:elena_rizzoli",
+        "to": "object:provenance_file",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:signora_pelosi",
+        "to": "object:canal_key",
+        "weight": 0.38,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:signora_pelosi",
+        "to": "location:servants_stair",
+        "weight": 0.34,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:signora_pelosi",
+        "to": "motive:rival_claim",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:signora_pelosi",
+        "to": "object:guest_list",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:inspector_bruno",
+        "to": "object:provenance_file",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:inspector_bruno",
+        "to": "motive:insurance_fraud",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:inspector_bruno",
+        "to": "location:studio_room",
+        "weight": 0.28,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:inspector_bruno",
+        "to": "object:sale_receipt",
+        "weight": 0.32,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "location:palazzo_contarini",
+        "to": "event:luca_marini_discovered",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:palazzo_contarini",
+        "to": "time:carnival_evening",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:palazzo_contarini",
+        "to": "time:midnight_bell",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:main_balcony",
+        "to": "event:luca_marini_discovered",
+        "weight": 0.34,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:main_balcony",
+        "to": "object:balcony_railing",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:mirror_gallery",
+        "to": "object:forged_canvas",
+        "weight": 0.36,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:mirror_gallery",
+        "to": "object:cracked_mirror",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:studio_room",
+        "to": "object:paint_analysis",
+        "weight": 0.36,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:studio_room",
+        "to": "object:restoration_notes",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:servants_stair",
+        "to": "action:stair_descended",
+        "weight": 0.34,
+        "tags": [
+          "movement"
+        ]
+      },
+      {
+        "from": "location:servants_stair",
+        "to": "modifier:door_bolted",
+        "weight": 0.28,
+        "tags": [
+          "constraint"
+        ]
+      },
+      {
+        "from": "location:canal_entrance",
+        "to": "object:canal_key",
+        "weight": 0.3,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "location:canal_entrance",
+        "to": "modifier:carnival_mask",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:courtyard",
+        "to": "modifier:carnival_mask",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:courtyard",
+        "to": "time:midnight_bell",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:private_salon",
+        "to": "event:carnival_reception",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:private_salon",
+        "to": "object:auction_catalogue",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "object:forged_canvas",
+        "to": "modifier:modern_pigment",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:forged_canvas",
+        "to": "modifier:canvas_aged",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:paint_analysis",
+        "to": "modifier:modern_pigment",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:balcony_railing",
+        "to": "modifier:railing_scored",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:provenance_file",
+        "to": "action:provenance_forged",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:pigment_sample",
+        "to": "modifier:varnish_fresh",
+        "weight": 0.32,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:auction_catalogue",
+        "to": "action:sale_arranged",
+        "weight": 0.32,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:restoration_notes",
+        "to": "action:notes_destroyed",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:canal_key",
+        "to": "modifier:door_bolted",
+        "weight": 0.32,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "object:linen_fragment",
+        "to": "modifier:frame_swapped",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:guest_list",
+        "to": "time:carnival_evening",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:sale_receipt",
+        "to": "motive:collection_value",
+        "weight": 0.36,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "action:canvas_switched",
+        "to": "time:gallery_closed",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:stair_descended",
+        "to": "time:gallery_closed",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:studio_locked",
+        "to": "time:body_found_dawn",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:gallery_inspected",
+        "to": "event:carnival_reception",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "time:carnival_evening",
+        "to": "event:luca_marini_discovered",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:carnival_evening",
+        "to": "event:carnival_reception",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:body_found_dawn",
+        "to": "event:luca_marini_discovered",
+        "weight": 0.32,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:body_found_dawn",
+        "to": "location:courtyard",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "time:gallery_closed",
+        "to": "modifier:door_bolted",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:auction_date",
+        "to": "motive:collection_value",
+        "weight": 0.38,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "time:midnight_bell",
+        "to": "modifier:carnival_mask",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "motive:insurance_fraud",
+        "to": "motive:rival_claim",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:collection_value",
+        "to": "motive:exposure_risk",
+        "weight": 0.34,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:collection_value",
+        "to": "motive:reputation_ruin",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "witness:gondolier",
+        "to": "location:canal_entrance",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:gondolier",
+        "to": "time:midnight_bell",
+        "weight": 0.26,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:palazzo_maid",
+        "to": "location:servants_stair",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:palazzo_maid",
+        "to": "time:body_found_dawn",
+        "weight": 0.24,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:night_guard",
+        "to": "location:courtyard",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:night_guard",
+        "to": "object:guest_list",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "witness:art_dealer",
+        "to": "object:auction_catalogue",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "witness:art_dealer",
+        "to": "location:private_salon",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:canal_boatman",
+        "to": "time:midnight_bell",
+        "weight": 0.24,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:canal_boatman",
+        "to": "location:canal_entrance",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:stiff_formality",
+        "to": "suspect:signora_pelosi",
+        "weight": 0.26,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:avoided_subject",
+        "to": "suspect:inspector_bruno",
+        "weight": 0.28,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:startled_poise",
+        "to": "location:main_balcony",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:practised_dismay",
+        "to": "suspect:elena_rizzoli",
+        "weight": 0.24,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:polished_grace",
+        "to": "location:mirror_gallery",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:measured_deflection",
+        "to": "location:studio_room",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "modifier:varnish_fresh",
+        "to": "time:body_found_dawn",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "modifier:glove_torn",
+        "to": "object:silk_glove",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "event:carnival_reception",
+        "to": "time:body_found_dawn",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "motive:rival_claim",
+        "to": "object:canal_key",
+        "weight": 0.28,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:linen_fragment",
+        "to": "location:studio_room",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:stiff_formality",
+        "to": "location:servants_stair",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:avoided_subject",
+        "to": "location:private_salon",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "modifier:scratch_on_stone",
+        "to": "location:courtyard",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "modifier:silk_residue",
+        "to": "object:balcony_railing",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:railing_weakened",
+        "to": "location:main_balcony",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "modifier:silk_residue",
+        "to": "suspect:countess_morvaine",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:studio_locked",
+        "to": "location:studio_room",
+        "weight": 0.28,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "action:mask_removed",
+        "to": "time:midnight_bell",
+        "weight": 0.26,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:gallery_inspected",
+        "to": "location:mirror_gallery",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "time:auction_date",
+        "to": "motive:exposure_risk",
+        "weight": 0.34,
+        "tags": [
+          "motive"
+        ]
+      }
     ]
   },
   "attractor": {
     "dimensions": [
-      {"id": "killer_dimension", "invariant_token": "suspect:countess_morvaine", "threshold": 0.75, "label": "who acted"},
-      {"id": "mechanism_dimension", "invariant_token": "event:balcony_fall", "threshold": 0.75, "label": "how it was done"},
-      {"id": "motive_dimension", "invariant_token": "motive:forgery_operation", "threshold": 0.75, "label": "why it happened"}
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:countess_morvaine",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:balcony_fall",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:forgery_operation",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
     ],
     "convergence_display": "minimum"
   },

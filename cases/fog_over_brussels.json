@@ -14,227 +14,2573 @@
     "motive:double_agent_exposure"
   ],
   "tokens": [
-    {"id": "suspect:gregor_veronese", "class": "SUSPECT", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [1.0, 0.0, 0.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "event:champagne_compound", "class": "EVENT", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [0.0, 1.0, 0.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "motive:double_agent_exposure", "class": "MOTIVE", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [0.0, 0.0, 1.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "suspect:marguerite_devaux", "class": "SUSPECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:sergeant_linden", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["access", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:commander_holt", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.14], "affinity_tags": ["access", "concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:daniil_orlov", "class": "SUSPECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.08], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:henri_maes", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:eva_brandt", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.16], "affinity_tags": ["concealment", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "location:belgian_embassy", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.1, 0.09, 0.09], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "location:conservatory", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.09], "affinity_tags": ["physical", "method", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:east_corridor", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.12], "affinity_tags": ["access", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:reception_hall", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.1], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:cipher_office", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.16], "affinity_tags": ["concealment", "secret", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:service_pantry", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:embassy_garden", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:attache_suite", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.12, 0.14], "affinity_tags": ["concealment", "access", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "object:champagne_flute", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.08], "affinity_tags": ["physical", "method", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:cipher_ledger", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.18], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:torn_pages", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.16], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:coded_dispatch", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.24, 0.12, 0.28], "affinity_tags": ["concealment", "secret", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:vial_residue", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.22, 0.12], "affinity_tags": ["physical", "method", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:guest_register", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.1, 0.08, 0.09], "affinity_tags": ["physical", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:radio_log", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["time_window", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:photograph_roll", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.1, 0.12, 0.14], "affinity_tags": ["concealment", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:embassy_key", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:glove_powder", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:service_tray", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["physical", "method", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:diplomatic_pouch", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.22, 0.1, 0.24], "affinity_tags": ["concealment", "secret", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:frequency_list", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.26], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "emotion:measured_calm", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.1, 0.14], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:averted_gaze", "class": "EMOTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:rigid_posture", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:careful_phrasing", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:delayed_reaction", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.14], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:feigned_concern", "class": "EMOTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.08], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:lipstick_mismatch", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.1], "affinity_tags": ["physical", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:tampered_seal", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.12, 0.22], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:glass_missing", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.12], "affinity_tags": ["physical", "method", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:burned_fragments", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:fog_thickness", "class": "MODIFIER", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["physical", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "modifier:corridor_locked", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["access", "method", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "modifier:substitution_cipher", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.1, 0.26], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:fresh_ink", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["physical", "time_window", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:wax_impression", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.14, 0.2], "affinity_tags": ["concealment", "error", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:chalk_residue", "class": "MODIFIER", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.08], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "action:pages_torn", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.18], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:glass_switched", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.22, 0.14], "affinity_tags": ["method", "physical", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:corridor_crossed", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.18, 0.16], "affinity_tags": ["access", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:dispatch_concealed", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.1, 0.26], "affinity_tags": ["concealment", "guilt", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:camera_confiscated", "class": "ACTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:toast_raised", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["physical", "method", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:pouch_opened", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.12, 0.24], "affinity_tags": ["concealment", "secret", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:ledger_photographed", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.1, 0.12, 0.14], "affinity_tags": ["concealment", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:vial_discarded", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.22, 0.16], "affinity_tags": ["method", "physical", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "time:intermission_hour", "class": "TIME", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.09], "affinity_tags": ["time_window", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "time:fog_descended", "class": "TIME", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.08, 0.09], "affinity_tags": ["physical", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "time:guest_arrival", "class": "TIME", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.16, 0.18], "affinity_tags": ["time_window", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "time:radio_gap", "class": "TIME", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["time_window", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "time:body_found", "class": "TIME", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["time_window", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "motive:cipher_seizure", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.12, 0.28], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:diplomatic_leverage", "class": "MOTIVE", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.16], "affinity_tags": ["buried", "financial", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:handler_payment", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.14, 0.3], "affinity_tags": ["buried", "financial", "secret", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:career_protection", "class": "MOTIVE", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:blackmail_pressure", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.12, 0.24], "affinity_tags": ["buried", "financial", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "witness:wine_steward", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.08], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:coat_check_girl", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:gate_guard", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:kitchen_porter", "class": "WITNESS", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:driver", "class": "WITNESS", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.14], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "event:aldric_poel_discovered", "class": "EVENT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.1], "affinity_tags": ["physical", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "event:intermission_recess", "class": "EVENT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["physical", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"}
+    {
+      "id": "suspect:gregor_veronese",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "event:champagne_compound",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "motive:double_agent_exposure",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:marguerite_devaux",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:sergeant_linden",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:commander_holt",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:daniil_orlov",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:henri_maes",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:eva_brandt",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "location:belgian_embassy",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:conservatory",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:east_corridor",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.25,
+        0.25,
+        0.05
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:reception_hall",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:cipher_office",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:service_pantry",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.25,
+        0.25,
+        0.05
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:embassy_garden",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:attache_suite",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "object:champagne_flute",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.25,
+        0.25,
+        0.05
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:cipher_ledger",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:torn_pages",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:coded_dispatch",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:vial_residue",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:guest_register",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:radio_log",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:photograph_roll",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:embassy_key",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:glove_powder",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:service_tray",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:diplomatic_pouch",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:frequency_list",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "emotion:measured_calm",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:averted_gaze",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:rigid_posture",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:careful_phrasing",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:delayed_reaction",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:feigned_concern",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:lipstick_mismatch",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:tampered_seal",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:glass_missing",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:burned_fragments",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:fog_thickness",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "modifier:corridor_locked",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "modifier:substitution_cipher",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:fresh_ink",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:wax_impression",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:chalk_residue",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "action:pages_torn",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:glass_switched",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "method",
+        "physical",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:corridor_crossed",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:dispatch_concealed",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:camera_confiscated",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:toast_raised",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:pouch_opened",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:ledger_photographed",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:vial_discarded",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "method",
+        "physical",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "time:intermission_hour",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:fog_descended",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:guest_arrival",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:radio_gap",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:body_found",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "motive:cipher_seizure",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:diplomatic_leverage",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:handler_payment",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "secret",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:career_protection",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:blackmail_pressure",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "witness:wine_steward",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:coat_check_girl",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:gate_guard",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:kitchen_porter",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:driver",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:aldric_poel_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:intermission_recess",
+      "class": "EVENT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    }
   ],
   "graph": {
     "nodes": [
-      "suspect:gregor_veronese", "suspect:marguerite_devaux", "suspect:sergeant_linden", "suspect:commander_holt", "suspect:daniil_orlov", "suspect:henri_maes", "suspect:eva_brandt",
-      "location:belgian_embassy", "location:conservatory", "location:east_corridor", "location:reception_hall", "location:cipher_office", "location:service_pantry", "location:embassy_garden", "location:attache_suite",
-      "object:champagne_flute", "object:cipher_ledger", "object:torn_pages", "object:coded_dispatch", "object:vial_residue", "object:guest_register", "object:radio_log", "object:photograph_roll", "object:embassy_key", "object:glove_powder", "object:service_tray", "object:diplomatic_pouch", "object:frequency_list",
-      "emotion:measured_calm", "emotion:averted_gaze", "emotion:rigid_posture", "emotion:careful_phrasing", "emotion:delayed_reaction", "emotion:feigned_concern",
-      "modifier:lipstick_mismatch", "modifier:tampered_seal", "modifier:glass_missing", "modifier:burned_fragments", "modifier:fog_thickness", "modifier:corridor_locked", "modifier:substitution_cipher", "modifier:fresh_ink", "modifier:wax_impression", "modifier:chalk_residue",
-      "action:pages_torn", "action:glass_switched", "action:corridor_crossed", "action:dispatch_concealed", "action:camera_confiscated", "action:toast_raised", "action:pouch_opened", "action:ledger_photographed", "action:vial_discarded",
-      "time:intermission_hour", "time:fog_descended", "time:guest_arrival", "time:radio_gap", "time:body_found",
-      "motive:cipher_seizure", "motive:diplomatic_leverage", "motive:handler_payment", "motive:career_protection", "motive:blackmail_pressure", "motive:double_agent_exposure",
-      "witness:wine_steward", "witness:coat_check_girl", "witness:gate_guard", "witness:kitchen_porter", "witness:driver",
-      "event:aldric_poel_discovered", "event:champagne_compound", "event:intermission_recess"
+      "suspect:gregor_veronese",
+      "suspect:marguerite_devaux",
+      "suspect:sergeant_linden",
+      "suspect:commander_holt",
+      "suspect:daniil_orlov",
+      "suspect:henri_maes",
+      "suspect:eva_brandt",
+      "location:belgian_embassy",
+      "location:conservatory",
+      "location:east_corridor",
+      "location:reception_hall",
+      "location:cipher_office",
+      "location:service_pantry",
+      "location:embassy_garden",
+      "location:attache_suite",
+      "object:champagne_flute",
+      "object:cipher_ledger",
+      "object:torn_pages",
+      "object:coded_dispatch",
+      "object:vial_residue",
+      "object:guest_register",
+      "object:radio_log",
+      "object:photograph_roll",
+      "object:embassy_key",
+      "object:glove_powder",
+      "object:service_tray",
+      "object:diplomatic_pouch",
+      "object:frequency_list",
+      "emotion:measured_calm",
+      "emotion:averted_gaze",
+      "emotion:rigid_posture",
+      "emotion:careful_phrasing",
+      "emotion:delayed_reaction",
+      "emotion:feigned_concern",
+      "modifier:lipstick_mismatch",
+      "modifier:tampered_seal",
+      "modifier:glass_missing",
+      "modifier:burned_fragments",
+      "modifier:fog_thickness",
+      "modifier:corridor_locked",
+      "modifier:substitution_cipher",
+      "modifier:fresh_ink",
+      "modifier:wax_impression",
+      "modifier:chalk_residue",
+      "action:pages_torn",
+      "action:glass_switched",
+      "action:corridor_crossed",
+      "action:dispatch_concealed",
+      "action:camera_confiscated",
+      "action:toast_raised",
+      "action:pouch_opened",
+      "action:ledger_photographed",
+      "action:vial_discarded",
+      "time:intermission_hour",
+      "time:fog_descended",
+      "time:guest_arrival",
+      "time:radio_gap",
+      "time:body_found",
+      "motive:cipher_seizure",
+      "motive:diplomatic_leverage",
+      "motive:handler_payment",
+      "motive:career_protection",
+      "motive:blackmail_pressure",
+      "motive:double_agent_exposure",
+      "witness:wine_steward",
+      "witness:coat_check_girl",
+      "witness:gate_guard",
+      "witness:kitchen_porter",
+      "witness:driver",
+      "event:aldric_poel_discovered",
+      "event:champagne_compound",
+      "event:intermission_recess"
     ],
     "edges": [
-      {"from": "object:coded_dispatch", "to": "suspect:gregor_veronese", "weight": 0.48, "tags": ["identity"]},
-      {"from": "object:diplomatic_pouch", "to": "suspect:gregor_veronese", "weight": 0.46, "tags": ["identity"]},
-      {"from": "emotion:measured_calm", "to": "suspect:gregor_veronese", "weight": 0.38, "tags": ["interview"]},
-      {"from": "emotion:careful_phrasing", "to": "suspect:gregor_veronese", "weight": 0.36, "tags": ["interview"]},
-      {"from": "action:dispatch_concealed", "to": "suspect:gregor_veronese", "weight": 0.44, "tags": ["evidence"]},
-      {"from": "action:glass_switched", "to": "suspect:gregor_veronese", "weight": 0.42, "tags": ["method"]},
-      {"from": "location:attache_suite", "to": "suspect:gregor_veronese", "weight": 0.36, "tags": ["access"]},
-      {"from": "modifier:tampered_seal", "to": "suspect:gregor_veronese", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "modifier:substitution_cipher", "to": "suspect:gregor_veronese", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "motive:handler_payment", "to": "suspect:gregor_veronese", "weight": 0.42, "tags": ["motive"]},
-      {"from": "motive:cipher_seizure", "to": "suspect:gregor_veronese", "weight": 0.40, "tags": ["motive"]},
-      {"from": "motive:blackmail_pressure", "to": "suspect:gregor_veronese", "weight": 0.38, "tags": ["motive"]},
-      {"from": "object:champagne_flute", "to": "event:champagne_compound", "weight": 0.44, "tags": ["method"]},
-      {"from": "object:vial_residue", "to": "event:champagne_compound", "weight": 0.46, "tags": ["method"]},
-      {"from": "action:glass_switched", "to": "event:champagne_compound", "weight": 0.42, "tags": ["method"]},
-      {"from": "action:vial_discarded", "to": "event:champagne_compound", "weight": 0.40, "tags": ["method"]},
-      {"from": "action:toast_raised", "to": "event:champagne_compound", "weight": 0.36, "tags": ["timing"]},
-      {"from": "object:service_tray", "to": "event:champagne_compound", "weight": 0.38, "tags": ["method"]},
-      {"from": "modifier:glass_missing", "to": "event:champagne_compound", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "modifier:lipstick_mismatch", "to": "event:champagne_compound", "weight": 0.32, "tags": ["evidence"]},
-      {"from": "object:cipher_ledger", "to": "motive:double_agent_exposure", "weight": 0.44, "tags": ["motive"]},
-      {"from": "object:torn_pages", "to": "motive:double_agent_exposure", "weight": 0.40, "tags": ["motive"]},
-      {"from": "object:frequency_list", "to": "motive:double_agent_exposure", "weight": 0.42, "tags": ["motive"]},
-      {"from": "motive:cipher_seizure", "to": "motive:double_agent_exposure", "weight": 0.38, "tags": ["motive"]},
-      {"from": "action:pages_torn", "to": "motive:double_agent_exposure", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "action:pouch_opened", "to": "motive:double_agent_exposure", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "modifier:burned_fragments", "to": "motive:double_agent_exposure", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:marguerite_devaux", "to": "emotion:averted_gaze", "weight": 0.28, "tags": ["interview"]},
-      {"from": "suspect:marguerite_devaux", "to": "object:glove_powder", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:marguerite_devaux", "to": "emotion:feigned_concern", "weight": 0.26, "tags": ["interview"]},
-      {"from": "suspect:marguerite_devaux", "to": "location:conservatory", "weight": 0.28, "tags": ["scene"]},
-      {"from": "suspect:daniil_orlov", "to": "object:photograph_roll", "weight": 0.32, "tags": ["evidence"]},
-      {"from": "suspect:daniil_orlov", "to": "action:camera_confiscated", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:daniil_orlov", "to": "action:ledger_photographed", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:daniil_orlov", "to": "location:reception_hall", "weight": 0.26, "tags": ["scene"]},
-      {"from": "suspect:sergeant_linden", "to": "object:radio_log", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "suspect:sergeant_linden", "to": "location:east_corridor", "weight": 0.34, "tags": ["access"]},
-      {"from": "suspect:sergeant_linden", "to": "time:radio_gap", "weight": 0.32, "tags": ["timing"]},
-      {"from": "suspect:sergeant_linden", "to": "action:corridor_crossed", "weight": 0.30, "tags": ["movement"]},
-      {"from": "suspect:commander_holt", "to": "object:frequency_list", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:commander_holt", "to": "motive:diplomatic_leverage", "weight": 0.32, "tags": ["motive"]},
-      {"from": "suspect:commander_holt", "to": "object:cipher_ledger", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:commander_holt", "to": "location:cipher_office", "weight": 0.28, "tags": ["access"]},
-      {"from": "suspect:henri_maes", "to": "object:embassy_key", "weight": 0.38, "tags": ["access"]},
-      {"from": "suspect:henri_maes", "to": "object:service_tray", "weight": 0.36, "tags": ["method"]},
-      {"from": "suspect:henri_maes", "to": "location:service_pantry", "weight": 0.34, "tags": ["access"]},
-      {"from": "suspect:henri_maes", "to": "object:champagne_flute", "weight": 0.32, "tags": ["method"]},
-      {"from": "suspect:henri_maes", "to": "object:vial_residue", "weight": 0.30, "tags": ["method"]},
-      {"from": "suspect:eva_brandt", "to": "object:cipher_ledger", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:eva_brandt", "to": "location:cipher_office", "weight": 0.32, "tags": ["access"]},
-      {"from": "suspect:eva_brandt", "to": "motive:career_protection", "weight": 0.30, "tags": ["motive"]},
-      {"from": "suspect:eva_brandt", "to": "object:torn_pages", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "location:belgian_embassy", "to": "event:aldric_poel_discovered", "weight": 0.30, "tags": ["scene"]},
-      {"from": "location:belgian_embassy", "to": "time:intermission_hour", "weight": 0.28, "tags": ["scene"]},
-      {"from": "location:belgian_embassy", "to": "time:guest_arrival", "weight": 0.26, "tags": ["scene"]},
-      {"from": "location:conservatory", "to": "event:aldric_poel_discovered", "weight": 0.34, "tags": ["scene"]},
-      {"from": "location:conservatory", "to": "object:champagne_flute", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:east_corridor", "to": "action:corridor_crossed", "weight": 0.34, "tags": ["movement"]},
-      {"from": "location:east_corridor", "to": "modifier:corridor_locked", "weight": 0.30, "tags": ["constraint"]},
-      {"from": "location:cipher_office", "to": "object:cipher_ledger", "weight": 0.36, "tags": ["scene"]},
-      {"from": "location:cipher_office", "to": "object:frequency_list", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:service_pantry", "to": "object:service_tray", "weight": 0.34, "tags": ["scene"]},
-      {"from": "location:service_pantry", "to": "object:embassy_key", "weight": 0.30, "tags": ["access"]},
-      {"from": "location:service_pantry", "to": "object:vial_residue", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:attache_suite", "to": "object:coded_dispatch", "weight": 0.38, "tags": ["scene"]},
-      {"from": "location:attache_suite", "to": "object:diplomatic_pouch", "weight": 0.36, "tags": ["scene"]},
-      {"from": "location:embassy_garden", "to": "modifier:fog_thickness", "weight": 0.24, "tags": ["scene"]},
-      {"from": "location:embassy_garden", "to": "time:fog_descended", "weight": 0.22, "tags": ["scene"]},
-      {"from": "location:reception_hall", "to": "event:intermission_recess", "weight": 0.30, "tags": ["scene"]},
-      {"from": "location:reception_hall", "to": "action:toast_raised", "weight": 0.28, "tags": ["scene"]},
-      {"from": "location:reception_hall", "to": "object:guest_register", "weight": 0.26, "tags": ["scene"]},
-      {"from": "object:champagne_flute", "to": "modifier:lipstick_mismatch", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "object:cipher_ledger", "to": "object:torn_pages", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "object:cipher_ledger", "to": "action:pages_torn", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "object:cipher_ledger", "to": "action:ledger_photographed", "weight": 0.32, "tags": ["evidence"]},
-      {"from": "object:torn_pages", "to": "modifier:burned_fragments", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "object:vial_residue", "to": "action:vial_discarded", "weight": 0.38, "tags": ["method"]},
-      {"from": "object:radio_log", "to": "time:radio_gap", "weight": 0.34, "tags": ["timing"]},
-      {"from": "object:guest_register", "to": "time:guest_arrival", "weight": 0.28, "tags": ["timing"]},
-      {"from": "object:diplomatic_pouch", "to": "modifier:tampered_seal", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "object:diplomatic_pouch", "to": "action:pouch_opened", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "object:diplomatic_pouch", "to": "modifier:wax_impression", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "object:coded_dispatch", "to": "modifier:substitution_cipher", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "object:coded_dispatch", "to": "modifier:fresh_ink", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "object:frequency_list", "to": "motive:cipher_seizure", "weight": 0.36, "tags": ["motive"]},
-      {"from": "object:service_tray", "to": "modifier:glass_missing", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "object:service_tray", "to": "action:toast_raised", "weight": 0.30, "tags": ["method"]},
-      {"from": "object:photograph_roll", "to": "action:camera_confiscated", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "object:embassy_key", "to": "modifier:corridor_locked", "weight": 0.32, "tags": ["access"]},
-      {"from": "action:pages_torn", "to": "modifier:burned_fragments", "weight": 0.32, "tags": ["evidence"]},
-      {"from": "action:corridor_crossed", "to": "time:radio_gap", "weight": 0.30, "tags": ["timing"]},
-      {"from": "action:toast_raised", "to": "time:intermission_hour", "weight": 0.28, "tags": ["timing"]},
-      {"from": "action:toast_raised", "to": "event:intermission_recess", "weight": 0.30, "tags": ["scene"]},
-      {"from": "time:intermission_hour", "to": "event:aldric_poel_discovered", "weight": 0.30, "tags": ["timing"]},
-      {"from": "time:intermission_hour", "to": "event:intermission_recess", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:body_found", "to": "event:aldric_poel_discovered", "weight": 0.32, "tags": ["timing"]},
-      {"from": "time:body_found", "to": "location:conservatory", "weight": 0.28, "tags": ["scene"]},
-      {"from": "time:radio_gap", "to": "modifier:corridor_locked", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:fog_descended", "to": "modifier:fog_thickness", "weight": 0.26, "tags": ["scene"]},
-      {"from": "motive:diplomatic_leverage", "to": "motive:career_protection", "weight": 0.30, "tags": ["motive"]},
-      {"from": "motive:handler_payment", "to": "motive:blackmail_pressure", "weight": 0.34, "tags": ["motive"]},
-      {"from": "motive:handler_payment", "to": "motive:cipher_seizure", "weight": 0.32, "tags": ["motive"]},
-      {"from": "witness:wine_steward", "to": "object:service_tray", "weight": 0.28, "tags": ["scene"]},
-      {"from": "witness:wine_steward", "to": "location:service_pantry", "weight": 0.26, "tags": ["scene"]},
-      {"from": "witness:coat_check_girl", "to": "location:reception_hall", "weight": 0.24, "tags": ["scene"]},
-      {"from": "witness:coat_check_girl", "to": "time:guest_arrival", "weight": 0.26, "tags": ["timing"]},
-      {"from": "witness:gate_guard", "to": "location:embassy_garden", "weight": 0.24, "tags": ["scene"]},
-      {"from": "witness:gate_guard", "to": "object:guest_register", "weight": 0.26, "tags": ["timing"]},
-      {"from": "witness:kitchen_porter", "to": "location:service_pantry", "weight": 0.28, "tags": ["scene"]},
-      {"from": "witness:kitchen_porter", "to": "object:vial_residue", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "witness:driver", "to": "time:fog_descended", "weight": 0.24, "tags": ["timing"]},
-      {"from": "witness:driver", "to": "location:embassy_garden", "weight": 0.22, "tags": ["scene"]},
-      {"from": "emotion:rigid_posture", "to": "suspect:henri_maes", "weight": 0.26, "tags": ["interview"]},
-      {"from": "emotion:delayed_reaction", "to": "suspect:eva_brandt", "weight": 0.28, "tags": ["interview"]},
-      {"from": "emotion:averted_gaze", "to": "location:conservatory", "weight": 0.24, "tags": ["scene"]},
-      {"from": "emotion:feigned_concern", "to": "suspect:daniil_orlov", "weight": 0.24, "tags": ["interview"]},
-      {"from": "modifier:fresh_ink", "to": "time:body_found", "weight": 0.28, "tags": ["timing"]},
-      {"from": "modifier:chalk_residue", "to": "object:glove_powder", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "modifier:chalk_residue", "to": "suspect:marguerite_devaux", "weight": 0.24, "tags": ["evidence"]},
-      {"from": "emotion:measured_calm", "to": "location:reception_hall", "weight": 0.24, "tags": ["scene"]},
-      {"from": "emotion:rigid_posture", "to": "location:service_pantry", "weight": 0.24, "tags": ["scene"]},
-      {"from": "emotion:careful_phrasing", "to": "location:attache_suite", "weight": 0.26, "tags": ["scene"]},
-      {"from": "emotion:delayed_reaction", "to": "location:cipher_office", "weight": 0.24, "tags": ["scene"]},
-      {"from": "modifier:wax_impression", "to": "action:pouch_opened", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "action:dispatch_concealed", "to": "location:attache_suite", "weight": 0.32, "tags": ["access"]},
-      {"from": "event:intermission_recess", "to": "time:body_found", "weight": 0.30, "tags": ["timing"]},
-      {"from": "motive:career_protection", "to": "object:cipher_ledger", "weight": 0.28, "tags": ["motive"]}
+      {
+        "from": "object:coded_dispatch",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.48,
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "from": "object:diplomatic_pouch",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.46,
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "from": "emotion:measured_calm",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.38,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:careful_phrasing",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.36,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "action:dispatch_concealed",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.44,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:glass_switched",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.42,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "location:attache_suite",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.36,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "modifier:tampered_seal",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:substitution_cipher",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "motive:handler_payment",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.42,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:cipher_seizure",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.4,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:blackmail_pressure",
+        "to": "suspect:gregor_veronese",
+        "weight": 0.38,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:champagne_flute",
+        "to": "event:champagne_compound",
+        "weight": 0.44,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "object:vial_residue",
+        "to": "event:champagne_compound",
+        "weight": 0.46,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "action:glass_switched",
+        "to": "event:champagne_compound",
+        "weight": 0.42,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "action:vial_discarded",
+        "to": "event:champagne_compound",
+        "weight": 0.4,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "action:toast_raised",
+        "to": "event:champagne_compound",
+        "weight": 0.36,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:service_tray",
+        "to": "event:champagne_compound",
+        "weight": 0.38,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "modifier:glass_missing",
+        "to": "event:champagne_compound",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:lipstick_mismatch",
+        "to": "event:champagne_compound",
+        "weight": 0.32,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:cipher_ledger",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.44,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:torn_pages",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.4,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:frequency_list",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.42,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:cipher_seizure",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.38,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "action:pages_torn",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:pouch_opened",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:burned_fragments",
+        "to": "motive:double_agent_exposure",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:marguerite_devaux",
+        "to": "emotion:averted_gaze",
+        "weight": 0.28,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "suspect:marguerite_devaux",
+        "to": "object:glove_powder",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:marguerite_devaux",
+        "to": "emotion:feigned_concern",
+        "weight": 0.26,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "suspect:marguerite_devaux",
+        "to": "location:conservatory",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:daniil_orlov",
+        "to": "object:photograph_roll",
+        "weight": 0.32,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:daniil_orlov",
+        "to": "action:camera_confiscated",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:daniil_orlov",
+        "to": "action:ledger_photographed",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:daniil_orlov",
+        "to": "location:reception_hall",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:sergeant_linden",
+        "to": "object:radio_log",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:sergeant_linden",
+        "to": "location:east_corridor",
+        "weight": 0.34,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:sergeant_linden",
+        "to": "time:radio_gap",
+        "weight": 0.32,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "suspect:sergeant_linden",
+        "to": "action:corridor_crossed",
+        "weight": 0.3,
+        "tags": [
+          "movement"
+        ]
+      },
+      {
+        "from": "suspect:commander_holt",
+        "to": "object:frequency_list",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:commander_holt",
+        "to": "motive:diplomatic_leverage",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:commander_holt",
+        "to": "object:cipher_ledger",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:commander_holt",
+        "to": "location:cipher_office",
+        "weight": 0.28,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:henri_maes",
+        "to": "object:embassy_key",
+        "weight": 0.38,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:henri_maes",
+        "to": "object:service_tray",
+        "weight": 0.36,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "suspect:henri_maes",
+        "to": "location:service_pantry",
+        "weight": 0.34,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:henri_maes",
+        "to": "object:champagne_flute",
+        "weight": 0.32,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "suspect:henri_maes",
+        "to": "object:vial_residue",
+        "weight": 0.3,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "suspect:eva_brandt",
+        "to": "object:cipher_ledger",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:eva_brandt",
+        "to": "location:cipher_office",
+        "weight": 0.32,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:eva_brandt",
+        "to": "motive:career_protection",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:eva_brandt",
+        "to": "object:torn_pages",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "location:belgian_embassy",
+        "to": "event:aldric_poel_discovered",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:belgian_embassy",
+        "to": "time:intermission_hour",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:belgian_embassy",
+        "to": "time:guest_arrival",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:conservatory",
+        "to": "event:aldric_poel_discovered",
+        "weight": 0.34,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:conservatory",
+        "to": "object:champagne_flute",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:east_corridor",
+        "to": "action:corridor_crossed",
+        "weight": 0.34,
+        "tags": [
+          "movement"
+        ]
+      },
+      {
+        "from": "location:east_corridor",
+        "to": "modifier:corridor_locked",
+        "weight": 0.3,
+        "tags": [
+          "constraint"
+        ]
+      },
+      {
+        "from": "location:cipher_office",
+        "to": "object:cipher_ledger",
+        "weight": 0.36,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:cipher_office",
+        "to": "object:frequency_list",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:service_pantry",
+        "to": "object:service_tray",
+        "weight": 0.34,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:service_pantry",
+        "to": "object:embassy_key",
+        "weight": 0.3,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "location:service_pantry",
+        "to": "object:vial_residue",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:attache_suite",
+        "to": "object:coded_dispatch",
+        "weight": 0.38,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:attache_suite",
+        "to": "object:diplomatic_pouch",
+        "weight": 0.36,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:embassy_garden",
+        "to": "modifier:fog_thickness",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:embassy_garden",
+        "to": "time:fog_descended",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:reception_hall",
+        "to": "event:intermission_recess",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:reception_hall",
+        "to": "action:toast_raised",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:reception_hall",
+        "to": "object:guest_register",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "object:champagne_flute",
+        "to": "modifier:lipstick_mismatch",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:cipher_ledger",
+        "to": "object:torn_pages",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:cipher_ledger",
+        "to": "action:pages_torn",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:cipher_ledger",
+        "to": "action:ledger_photographed",
+        "weight": 0.32,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:torn_pages",
+        "to": "modifier:burned_fragments",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:vial_residue",
+        "to": "action:vial_discarded",
+        "weight": 0.38,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "object:radio_log",
+        "to": "time:radio_gap",
+        "weight": 0.34,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:guest_register",
+        "to": "time:guest_arrival",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:diplomatic_pouch",
+        "to": "modifier:tampered_seal",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:diplomatic_pouch",
+        "to": "action:pouch_opened",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:diplomatic_pouch",
+        "to": "modifier:wax_impression",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:coded_dispatch",
+        "to": "modifier:substitution_cipher",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:coded_dispatch",
+        "to": "modifier:fresh_ink",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:frequency_list",
+        "to": "motive:cipher_seizure",
+        "weight": 0.36,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:service_tray",
+        "to": "modifier:glass_missing",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:service_tray",
+        "to": "action:toast_raised",
+        "weight": 0.3,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "object:photograph_roll",
+        "to": "action:camera_confiscated",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:embassy_key",
+        "to": "modifier:corridor_locked",
+        "weight": 0.32,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "action:pages_torn",
+        "to": "modifier:burned_fragments",
+        "weight": 0.32,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:corridor_crossed",
+        "to": "time:radio_gap",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:toast_raised",
+        "to": "time:intermission_hour",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:toast_raised",
+        "to": "event:intermission_recess",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "time:intermission_hour",
+        "to": "event:aldric_poel_discovered",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:intermission_hour",
+        "to": "event:intermission_recess",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:body_found",
+        "to": "event:aldric_poel_discovered",
+        "weight": 0.32,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:body_found",
+        "to": "location:conservatory",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "time:radio_gap",
+        "to": "modifier:corridor_locked",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:fog_descended",
+        "to": "modifier:fog_thickness",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "motive:diplomatic_leverage",
+        "to": "motive:career_protection",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:handler_payment",
+        "to": "motive:blackmail_pressure",
+        "weight": 0.34,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:handler_payment",
+        "to": "motive:cipher_seizure",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "witness:wine_steward",
+        "to": "object:service_tray",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:wine_steward",
+        "to": "location:service_pantry",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:coat_check_girl",
+        "to": "location:reception_hall",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:coat_check_girl",
+        "to": "time:guest_arrival",
+        "weight": 0.26,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:gate_guard",
+        "to": "location:embassy_garden",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:gate_guard",
+        "to": "object:guest_register",
+        "weight": 0.26,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:kitchen_porter",
+        "to": "location:service_pantry",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:kitchen_porter",
+        "to": "object:vial_residue",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "witness:driver",
+        "to": "time:fog_descended",
+        "weight": 0.24,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:driver",
+        "to": "location:embassy_garden",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:rigid_posture",
+        "to": "suspect:henri_maes",
+        "weight": 0.26,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:delayed_reaction",
+        "to": "suspect:eva_brandt",
+        "weight": 0.28,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:averted_gaze",
+        "to": "location:conservatory",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:feigned_concern",
+        "to": "suspect:daniil_orlov",
+        "weight": 0.24,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "modifier:fresh_ink",
+        "to": "time:body_found",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "modifier:chalk_residue",
+        "to": "object:glove_powder",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:chalk_residue",
+        "to": "suspect:marguerite_devaux",
+        "weight": 0.24,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "emotion:measured_calm",
+        "to": "location:reception_hall",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:rigid_posture",
+        "to": "location:service_pantry",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:careful_phrasing",
+        "to": "location:attache_suite",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:delayed_reaction",
+        "to": "location:cipher_office",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "modifier:wax_impression",
+        "to": "action:pouch_opened",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:dispatch_concealed",
+        "to": "location:attache_suite",
+        "weight": 0.32,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "event:intermission_recess",
+        "to": "time:body_found",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "motive:career_protection",
+        "to": "object:cipher_ledger",
+        "weight": 0.28,
+        "tags": [
+          "motive"
+        ]
+      }
     ]
   },
   "attractor": {
     "dimensions": [
-      {"id": "killer_dimension", "invariant_token": "suspect:gregor_veronese", "threshold": 0.75, "label": "who acted"},
-      {"id": "mechanism_dimension", "invariant_token": "event:champagne_compound", "threshold": 0.75, "label": "how it was done"},
-      {"id": "motive_dimension", "invariant_token": "motive:double_agent_exposure", "threshold": 0.75, "label": "why it happened"}
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:gregor_veronese",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:champagne_compound",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:double_agent_exposure",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
     ],
     "convergence_display": "minimum"
   },

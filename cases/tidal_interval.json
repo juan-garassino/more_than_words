@@ -14,223 +14,2543 @@
     "motive:fishing_economy"
   ],
   "tokens": [
-    {"id": "suspect:piers_dunne", "class": "SUSPECT", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [1.0, 0.0, 0.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "event:tidal_window", "class": "EVENT", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [0.0, 1.0, 0.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "motive:fishing_economy", "class": "MOTIVE", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [0.0, 0.0, 1.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "suspect:gill_rowan", "class": "SUSPECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.08], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:harbour_master", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:malcolm_crewe", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.14], "affinity_tags": ["access", "concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:fiona_cross", "class": "SUSPECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:coastguard_bell", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.12], "affinity_tags": ["access", "concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:dr_anne_webb", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.16], "affinity_tags": ["concealment", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "location:dunne_harbour", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.1, 0.09, 0.09], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "location:sea_cave", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.09], "affinity_tags": ["physical", "method", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:fish_market", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:coast_path", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.1], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:research_cabin", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.16], "affinity_tags": ["concealment", "secret", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:slipway", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.12, 0.14], "affinity_tags": ["concealment", "access", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:breakwater", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:chandlery", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.12], "affinity_tags": ["access", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "object:sample_jars", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.08], "affinity_tags": ["physical", "method", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:logbook", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.18], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:mooring_rope", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.22, 0.12], "affinity_tags": ["physical", "method", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:quota_records", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.1, 0.28], "affinity_tags": ["concealment", "secret", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:water_samples", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.26], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:visitor_permit", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.1, 0.08, 0.09], "affinity_tags": ["physical", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:engine_key", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:salt_stain", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:catch_manifest", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["concealment", "secret", "financial"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:camera_housing", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["physical", "method", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:survey_report", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.22, 0.12, 0.22], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:fuel_receipt", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.1, 0.12, 0.14], "affinity_tags": ["physical", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:anchor_chain", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.2, 0.14], "affinity_tags": ["physical", "method", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "emotion:salt_roughness", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.1, 0.14], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:steady_gaze", "class": "EMOTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:clipped_denial", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:practised_sorrow", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:turned_away", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.14], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:hard_silence", "class": "EMOTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.08], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:rope_frayed", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.22, 0.14], "affinity_tags": ["physical", "method", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:quota_exceeded", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.12, 0.22], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:cave_flooded", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.12], "affinity_tags": ["physical", "method", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:engine_disabled", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:fog_bank", "class": "MODIFIER", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["physical", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "modifier:slipway_scraped", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["access", "method", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:manifest_altered", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.1, 0.26], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:salt_on_jacket", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["physical", "time_window", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:chain_shortened", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.14, 0.2], "affinity_tags": ["physical", "method", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:boot_salt_ring", "class": "MODIFIER", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "action:boat_launched", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.14], "affinity_tags": ["physical", "method", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:rope_cut", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.22, 0.14], "affinity_tags": ["method", "physical", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:records_falsified", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.1, 0.26], "affinity_tags": ["concealment", "guilt", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:cave_entered", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.12], "affinity_tags": ["physical", "method", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:engine_tampered", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.14, 0.2], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:permit_revoked", "class": "ACTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:samples_collected", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.1, 0.12, 0.14], "affinity_tags": ["concealment", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:chain_released", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.16], "affinity_tags": ["concealment", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:logbook_amended", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["concealment", "secret", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "time:low_slack", "class": "TIME", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.09], "affinity_tags": ["time_window", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "time:rising_flood", "class": "TIME", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.08, 0.09], "affinity_tags": ["time_window", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "time:dawn_discovery", "class": "TIME", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["time_window", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "time:market_closing", "class": "TIME", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["time_window", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "time:quota_deadline", "class": "TIME", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.2], "affinity_tags": ["time_window", "constraint", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "motive:overfishing_cover", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.14, 0.3], "affinity_tags": ["buried", "financial", "secret", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:survey_suppression", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.12, 0.28], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:licence_loss", "class": "MOTIVE", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:subsidy_fraud", "class": "MOTIVE", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.16], "affinity_tags": ["buried", "financial", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:family_livelihood", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.12, 0.24], "affinity_tags": ["buried", "financial", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "witness:ferry_captain", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.08], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:bait_seller", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:dock_hand", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:pub_landlord", "class": "WITNESS", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:lifeboat_crew", "class": "WITNESS", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.14], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "event:ellen_cross_discovered", "class": "EVENT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.1], "affinity_tags": ["physical", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "event:spring_survey", "class": "EVENT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["physical", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"}
+    {
+      "id": "suspect:piers_dunne",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "event:tidal_window",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "motive:fishing_economy",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:gill_rowan",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:harbour_master",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:malcolm_crewe",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:fiona_cross",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:coastguard_bell",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:dr_anne_webb",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "location:dunne_harbour",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:sea_cave",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:fish_market",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:coast_path",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:research_cabin",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:slipway",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:breakwater",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:chandlery",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "object:sample_jars",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:logbook",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:mooring_rope",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:quota_records",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:water_samples",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:visitor_permit",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:engine_key",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:salt_stain",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:catch_manifest",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "financial"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:camera_housing",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:survey_report",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:fuel_receipt",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:anchor_chain",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "emotion:salt_roughness",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:steady_gaze",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:clipped_denial",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:practised_sorrow",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:turned_away",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:hard_silence",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:rope_frayed",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:quota_exceeded",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:cave_flooded",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:engine_disabled",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:fog_bank",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "modifier:slipway_scraped",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:manifest_altered",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:salt_on_jacket",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:chain_shortened",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:boot_salt_ring",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "action:boat_launched",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:rope_cut",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "method",
+        "physical",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:records_falsified",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:cave_entered",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:engine_tampered",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:permit_revoked",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:samples_collected",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:chain_released",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:logbook_amended",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "time:low_slack",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:rising_flood",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:dawn_discovery",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:market_closing",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:quota_deadline",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "motive:overfishing_cover",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "secret",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:survey_suppression",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:licence_loss",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:subsidy_fraud",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:family_livelihood",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "witness:ferry_captain",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:bait_seller",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:dock_hand",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:pub_landlord",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:lifeboat_crew",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:ellen_cross_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:spring_survey",
+      "class": "EVENT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    }
   ],
   "graph": {
     "nodes": [
-      "suspect:piers_dunne", "suspect:gill_rowan", "suspect:harbour_master", "suspect:malcolm_crewe", "suspect:fiona_cross", "suspect:coastguard_bell", "suspect:dr_anne_webb",
-      "location:dunne_harbour", "location:sea_cave", "location:fish_market", "location:coast_path", "location:research_cabin", "location:slipway", "location:breakwater", "location:chandlery",
-      "object:sample_jars", "object:logbook", "object:mooring_rope", "object:quota_records", "object:water_samples", "object:visitor_permit", "object:engine_key", "object:salt_stain", "object:catch_manifest", "object:camera_housing", "object:survey_report", "object:fuel_receipt", "object:anchor_chain",
-      "emotion:salt_roughness", "emotion:steady_gaze", "emotion:clipped_denial", "emotion:practised_sorrow", "emotion:turned_away", "emotion:hard_silence",
-      "modifier:rope_frayed", "modifier:quota_exceeded", "modifier:cave_flooded", "modifier:engine_disabled", "modifier:fog_bank", "modifier:slipway_scraped", "modifier:manifest_altered", "modifier:salt_on_jacket", "modifier:chain_shortened", "modifier:boot_salt_ring",
-      "action:boat_launched", "action:rope_cut", "action:records_falsified", "action:cave_entered", "action:engine_tampered", "action:permit_revoked", "action:samples_collected", "action:chain_released", "action:logbook_amended",
-      "time:low_slack", "time:rising_flood", "time:dawn_discovery", "time:market_closing", "time:quota_deadline",
-      "motive:overfishing_cover", "motive:survey_suppression", "motive:licence_loss", "motive:subsidy_fraud", "motive:family_livelihood", "motive:fishing_economy",
-      "witness:ferry_captain", "witness:bait_seller", "witness:dock_hand", "witness:pub_landlord", "witness:lifeboat_crew",
-      "event:ellen_cross_discovered", "event:tidal_window", "event:spring_survey"
+      "suspect:piers_dunne",
+      "suspect:gill_rowan",
+      "suspect:harbour_master",
+      "suspect:malcolm_crewe",
+      "suspect:fiona_cross",
+      "suspect:coastguard_bell",
+      "suspect:dr_anne_webb",
+      "location:dunne_harbour",
+      "location:sea_cave",
+      "location:fish_market",
+      "location:coast_path",
+      "location:research_cabin",
+      "location:slipway",
+      "location:breakwater",
+      "location:chandlery",
+      "object:sample_jars",
+      "object:logbook",
+      "object:mooring_rope",
+      "object:quota_records",
+      "object:water_samples",
+      "object:visitor_permit",
+      "object:engine_key",
+      "object:salt_stain",
+      "object:catch_manifest",
+      "object:camera_housing",
+      "object:survey_report",
+      "object:fuel_receipt",
+      "object:anchor_chain",
+      "emotion:salt_roughness",
+      "emotion:steady_gaze",
+      "emotion:clipped_denial",
+      "emotion:practised_sorrow",
+      "emotion:turned_away",
+      "emotion:hard_silence",
+      "modifier:rope_frayed",
+      "modifier:quota_exceeded",
+      "modifier:cave_flooded",
+      "modifier:engine_disabled",
+      "modifier:fog_bank",
+      "modifier:slipway_scraped",
+      "modifier:manifest_altered",
+      "modifier:salt_on_jacket",
+      "modifier:chain_shortened",
+      "modifier:boot_salt_ring",
+      "action:boat_launched",
+      "action:rope_cut",
+      "action:records_falsified",
+      "action:cave_entered",
+      "action:engine_tampered",
+      "action:permit_revoked",
+      "action:samples_collected",
+      "action:chain_released",
+      "action:logbook_amended",
+      "time:low_slack",
+      "time:rising_flood",
+      "time:dawn_discovery",
+      "time:market_closing",
+      "time:quota_deadline",
+      "motive:overfishing_cover",
+      "motive:survey_suppression",
+      "motive:licence_loss",
+      "motive:subsidy_fraud",
+      "motive:family_livelihood",
+      "motive:fishing_economy",
+      "witness:ferry_captain",
+      "witness:bait_seller",
+      "witness:dock_hand",
+      "witness:pub_landlord",
+      "witness:lifeboat_crew",
+      "event:ellen_cross_discovered",
+      "event:tidal_window",
+      "event:spring_survey"
     ],
     "edges": [
-      {"from": "object:quota_records", "to": "suspect:piers_dunne", "weight": 0.48, "tags": ["identity"]},
-      {"from": "object:survey_report", "to": "suspect:piers_dunne", "weight": 0.46, "tags": ["identity"]},
-      {"from": "emotion:salt_roughness", "to": "suspect:piers_dunne", "weight": 0.38, "tags": ["interview"]},
-      {"from": "emotion:clipped_denial", "to": "suspect:piers_dunne", "weight": 0.36, "tags": ["interview"]},
-      {"from": "action:records_falsified", "to": "suspect:piers_dunne", "weight": 0.44, "tags": ["evidence"]},
-      {"from": "action:engine_tampered", "to": "suspect:piers_dunne", "weight": 0.42, "tags": ["evidence"]},
-      {"from": "location:slipway", "to": "suspect:piers_dunne", "weight": 0.36, "tags": ["access"]},
-      {"from": "modifier:manifest_altered", "to": "suspect:piers_dunne", "weight": 0.42, "tags": ["evidence"]},
-      {"from": "modifier:quota_exceeded", "to": "suspect:piers_dunne", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "motive:overfishing_cover", "to": "suspect:piers_dunne", "weight": 0.44, "tags": ["motive"]},
-      {"from": "motive:survey_suppression", "to": "suspect:piers_dunne", "weight": 0.40, "tags": ["motive"]},
-      {"from": "motive:licence_loss", "to": "suspect:piers_dunne", "weight": 0.36, "tags": ["motive"]},
-      {"from": "object:mooring_rope", "to": "event:tidal_window", "weight": 0.44, "tags": ["method"]},
-      {"from": "object:anchor_chain", "to": "event:tidal_window", "weight": 0.42, "tags": ["method"]},
-      {"from": "action:rope_cut", "to": "event:tidal_window", "weight": 0.46, "tags": ["method"]},
-      {"from": "action:chain_released", "to": "event:tidal_window", "weight": 0.40, "tags": ["method"]},
-      {"from": "modifier:rope_frayed", "to": "event:tidal_window", "weight": 0.42, "tags": ["evidence"]},
-      {"from": "modifier:cave_flooded", "to": "event:tidal_window", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "modifier:chain_shortened", "to": "event:tidal_window", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "location:sea_cave", "to": "event:tidal_window", "weight": 0.34, "tags": ["scene"]},
-      {"from": "object:water_samples", "to": "motive:fishing_economy", "weight": 0.46, "tags": ["motive"]},
-      {"from": "object:catch_manifest", "to": "motive:fishing_economy", "weight": 0.44, "tags": ["motive"]},
-      {"from": "object:quota_records", "to": "motive:fishing_economy", "weight": 0.42, "tags": ["motive"]},
-      {"from": "motive:overfishing_cover", "to": "motive:fishing_economy", "weight": 0.40, "tags": ["motive"]},
-      {"from": "action:logbook_amended", "to": "motive:fishing_economy", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "action:samples_collected", "to": "motive:fishing_economy", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "modifier:manifest_altered", "to": "motive:fishing_economy", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "suspect:gill_rowan", "to": "emotion:steady_gaze", "weight": 0.28, "tags": ["interview"]},
-      {"from": "suspect:gill_rowan", "to": "object:salt_stain", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:gill_rowan", "to": "emotion:hard_silence", "weight": 0.26, "tags": ["interview"]},
-      {"from": "suspect:gill_rowan", "to": "location:coast_path", "weight": 0.28, "tags": ["scene"]},
-      {"from": "suspect:fiona_cross", "to": "action:permit_revoked", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:fiona_cross", "to": "location:research_cabin", "weight": 0.28, "tags": ["scene"]},
-      {"from": "suspect:fiona_cross", "to": "modifier:boot_salt_ring", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "suspect:fiona_cross", "to": "location:breakwater", "weight": 0.24, "tags": ["scene"]},
-      {"from": "suspect:harbour_master", "to": "object:logbook", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "suspect:harbour_master", "to": "location:fish_market", "weight": 0.34, "tags": ["access"]},
-      {"from": "suspect:harbour_master", "to": "object:engine_key", "weight": 0.32, "tags": ["access"]},
-      {"from": "suspect:harbour_master", "to": "action:boat_launched", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:malcolm_crewe", "to": "object:catch_manifest", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:malcolm_crewe", "to": "motive:subsidy_fraud", "weight": 0.32, "tags": ["motive"]},
-      {"from": "suspect:malcolm_crewe", "to": "location:chandlery", "weight": 0.28, "tags": ["scene"]},
-      {"from": "suspect:malcolm_crewe", "to": "object:fuel_receipt", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:coastguard_bell", "to": "object:camera_housing", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "suspect:coastguard_bell", "to": "location:sea_cave", "weight": 0.34, "tags": ["access"]},
-      {"from": "suspect:coastguard_bell", "to": "motive:licence_loss", "weight": 0.30, "tags": ["motive"]},
-      {"from": "suspect:coastguard_bell", "to": "object:visitor_permit", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "suspect:dr_anne_webb", "to": "object:water_samples", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:dr_anne_webb", "to": "motive:survey_suppression", "weight": 0.32, "tags": ["motive"]},
-      {"from": "suspect:dr_anne_webb", "to": "location:research_cabin", "weight": 0.30, "tags": ["access"]},
-      {"from": "suspect:dr_anne_webb", "to": "object:survey_report", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "location:dunne_harbour", "to": "event:ellen_cross_discovered", "weight": 0.30, "tags": ["scene"]},
-      {"from": "location:dunne_harbour", "to": "time:low_slack", "weight": 0.28, "tags": ["scene"]},
-      {"from": "location:dunne_harbour", "to": "time:rising_flood", "weight": 0.26, "tags": ["scene"]},
-      {"from": "location:sea_cave", "to": "event:ellen_cross_discovered", "weight": 0.34, "tags": ["scene"]},
-      {"from": "location:sea_cave", "to": "object:sample_jars", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:fish_market", "to": "object:catch_manifest", "weight": 0.34, "tags": ["scene"]},
-      {"from": "location:fish_market", "to": "object:logbook", "weight": 0.30, "tags": ["scene"]},
-      {"from": "location:coast_path", "to": "modifier:fog_bank", "weight": 0.26, "tags": ["scene"]},
-      {"from": "location:coast_path", "to": "event:spring_survey", "weight": 0.28, "tags": ["scene"]},
-      {"from": "location:research_cabin", "to": "object:water_samples", "weight": 0.36, "tags": ["scene"]},
-      {"from": "location:research_cabin", "to": "object:survey_report", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:slipway", "to": "object:mooring_rope", "weight": 0.36, "tags": ["scene"]},
-      {"from": "location:slipway", "to": "modifier:slipway_scraped", "weight": 0.30, "tags": ["scene"]},
-      {"from": "location:breakwater", "to": "modifier:fog_bank", "weight": 0.22, "tags": ["scene"]},
-      {"from": "location:breakwater", "to": "time:rising_flood", "weight": 0.24, "tags": ["scene"]},
-      {"from": "location:chandlery", "to": "object:engine_key", "weight": 0.30, "tags": ["access"]},
-      {"from": "location:chandlery", "to": "object:fuel_receipt", "weight": 0.26, "tags": ["scene"]},
-      {"from": "object:sample_jars", "to": "action:samples_collected", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "object:logbook", "to": "action:logbook_amended", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "object:logbook", "to": "modifier:manifest_altered", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "object:mooring_rope", "to": "modifier:rope_frayed", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "object:mooring_rope", "to": "action:rope_cut", "weight": 0.36, "tags": ["method"]},
-      {"from": "object:anchor_chain", "to": "modifier:chain_shortened", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "object:anchor_chain", "to": "action:chain_released", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "object:quota_records", "to": "modifier:quota_exceeded", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "object:quota_records", "to": "action:records_falsified", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "object:camera_housing", "to": "modifier:engine_disabled", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "object:engine_key", "to": "action:engine_tampered", "weight": 0.34, "tags": ["access"]},
-      {"from": "object:engine_key", "to": "modifier:engine_disabled", "weight": 0.32, "tags": ["access"]},
-      {"from": "object:survey_report", "to": "motive:survey_suppression", "weight": 0.36, "tags": ["motive"]},
-      {"from": "object:visitor_permit", "to": "time:low_slack", "weight": 0.28, "tags": ["timing"]},
-      {"from": "object:fuel_receipt", "to": "time:market_closing", "weight": 0.28, "tags": ["timing"]},
-      {"from": "object:catch_manifest", "to": "modifier:manifest_altered", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "action:boat_launched", "to": "time:market_closing", "weight": 0.30, "tags": ["timing"]},
-      {"from": "action:cave_entered", "to": "time:low_slack", "weight": 0.28, "tags": ["timing"]},
-      {"from": "action:cave_entered", "to": "event:spring_survey", "weight": 0.30, "tags": ["scene"]},
-      {"from": "action:engine_tampered", "to": "time:market_closing", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:low_slack", "to": "event:ellen_cross_discovered", "weight": 0.30, "tags": ["timing"]},
-      {"from": "time:low_slack", "to": "event:spring_survey", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:dawn_discovery", "to": "event:ellen_cross_discovered", "weight": 0.32, "tags": ["timing"]},
-      {"from": "time:dawn_discovery", "to": "location:sea_cave", "weight": 0.28, "tags": ["scene"]},
-      {"from": "time:market_closing", "to": "modifier:slipway_scraped", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:quota_deadline", "to": "motive:overfishing_cover", "weight": 0.38, "tags": ["motive"]},
-      {"from": "time:rising_flood", "to": "modifier:cave_flooded", "weight": 0.28, "tags": ["timing"]},
-      {"from": "motive:subsidy_fraud", "to": "motive:licence_loss", "weight": 0.30, "tags": ["motive"]},
-      {"from": "motive:overfishing_cover", "to": "motive:family_livelihood", "weight": 0.34, "tags": ["motive"]},
-      {"from": "motive:overfishing_cover", "to": "motive:subsidy_fraud", "weight": 0.32, "tags": ["motive"]},
-      {"from": "witness:ferry_captain", "to": "location:dunne_harbour", "weight": 0.28, "tags": ["scene"]},
-      {"from": "witness:ferry_captain", "to": "time:rising_flood", "weight": 0.26, "tags": ["timing"]},
-      {"from": "witness:bait_seller", "to": "location:fish_market", "weight": 0.26, "tags": ["scene"]},
-      {"from": "witness:bait_seller", "to": "time:market_closing", "weight": 0.24, "tags": ["timing"]},
-      {"from": "witness:dock_hand", "to": "location:slipway", "weight": 0.24, "tags": ["scene"]},
-      {"from": "witness:dock_hand", "to": "object:mooring_rope", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "witness:pub_landlord", "to": "location:chandlery", "weight": 0.28, "tags": ["scene"]},
-      {"from": "witness:pub_landlord", "to": "time:dawn_discovery", "weight": 0.26, "tags": ["timing"]},
-      {"from": "witness:lifeboat_crew", "to": "time:rising_flood", "weight": 0.24, "tags": ["timing"]},
-      {"from": "witness:lifeboat_crew", "to": "location:breakwater", "weight": 0.22, "tags": ["scene"]},
-      {"from": "emotion:practised_sorrow", "to": "suspect:coastguard_bell", "weight": 0.26, "tags": ["interview"]},
-      {"from": "emotion:turned_away", "to": "suspect:dr_anne_webb", "weight": 0.28, "tags": ["interview"]},
-      {"from": "emotion:steady_gaze", "to": "location:coast_path", "weight": 0.24, "tags": ["scene"]},
-      {"from": "emotion:hard_silence", "to": "suspect:malcolm_crewe", "weight": 0.24, "tags": ["interview"]},
-      {"from": "emotion:salt_roughness", "to": "location:slipway", "weight": 0.26, "tags": ["scene"]},
-      {"from": "emotion:clipped_denial", "to": "location:fish_market", "weight": 0.24, "tags": ["scene"]},
-      {"from": "modifier:salt_on_jacket", "to": "time:dawn_discovery", "weight": 0.28, "tags": ["timing"]},
-      {"from": "modifier:boot_salt_ring", "to": "object:salt_stain", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "event:spring_survey", "to": "time:dawn_discovery", "weight": 0.30, "tags": ["timing"]},
-      {"from": "motive:family_livelihood", "to": "suspect:gill_rowan", "weight": 0.28, "tags": ["motive"]},
-      {"from": "emotion:practised_sorrow", "to": "location:dunne_harbour", "weight": 0.24, "tags": ["scene"]},
-      {"from": "emotion:turned_away", "to": "location:research_cabin", "weight": 0.24, "tags": ["scene"]},
-      {"from": "modifier:salt_on_jacket", "to": "suspect:piers_dunne", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "action:permit_revoked", "to": "location:chandlery", "weight": 0.26, "tags": ["scene"]},
-      {"from": "time:quota_deadline", "to": "motive:survey_suppression", "weight": 0.34, "tags": ["motive"]}
+      {
+        "from": "object:quota_records",
+        "to": "suspect:piers_dunne",
+        "weight": 0.48,
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "from": "object:survey_report",
+        "to": "suspect:piers_dunne",
+        "weight": 0.46,
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "from": "emotion:salt_roughness",
+        "to": "suspect:piers_dunne",
+        "weight": 0.38,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:clipped_denial",
+        "to": "suspect:piers_dunne",
+        "weight": 0.36,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "action:records_falsified",
+        "to": "suspect:piers_dunne",
+        "weight": 0.44,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:engine_tampered",
+        "to": "suspect:piers_dunne",
+        "weight": 0.42,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "location:slipway",
+        "to": "suspect:piers_dunne",
+        "weight": 0.36,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "modifier:manifest_altered",
+        "to": "suspect:piers_dunne",
+        "weight": 0.42,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:quota_exceeded",
+        "to": "suspect:piers_dunne",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "motive:overfishing_cover",
+        "to": "suspect:piers_dunne",
+        "weight": 0.44,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:survey_suppression",
+        "to": "suspect:piers_dunne",
+        "weight": 0.4,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:licence_loss",
+        "to": "suspect:piers_dunne",
+        "weight": 0.36,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:mooring_rope",
+        "to": "event:tidal_window",
+        "weight": 0.44,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "object:anchor_chain",
+        "to": "event:tidal_window",
+        "weight": 0.42,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "action:rope_cut",
+        "to": "event:tidal_window",
+        "weight": 0.46,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "action:chain_released",
+        "to": "event:tidal_window",
+        "weight": 0.4,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "modifier:rope_frayed",
+        "to": "event:tidal_window",
+        "weight": 0.42,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:cave_flooded",
+        "to": "event:tidal_window",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:chain_shortened",
+        "to": "event:tidal_window",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "location:sea_cave",
+        "to": "event:tidal_window",
+        "weight": 0.34,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "object:water_samples",
+        "to": "motive:fishing_economy",
+        "weight": 0.46,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:catch_manifest",
+        "to": "motive:fishing_economy",
+        "weight": 0.44,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:quota_records",
+        "to": "motive:fishing_economy",
+        "weight": 0.42,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:overfishing_cover",
+        "to": "motive:fishing_economy",
+        "weight": 0.4,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "action:logbook_amended",
+        "to": "motive:fishing_economy",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:samples_collected",
+        "to": "motive:fishing_economy",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:manifest_altered",
+        "to": "motive:fishing_economy",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:gill_rowan",
+        "to": "emotion:steady_gaze",
+        "weight": 0.28,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "suspect:gill_rowan",
+        "to": "object:salt_stain",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:gill_rowan",
+        "to": "emotion:hard_silence",
+        "weight": 0.26,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "suspect:gill_rowan",
+        "to": "location:coast_path",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:fiona_cross",
+        "to": "action:permit_revoked",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:fiona_cross",
+        "to": "location:research_cabin",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:fiona_cross",
+        "to": "modifier:boot_salt_ring",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:fiona_cross",
+        "to": "location:breakwater",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:harbour_master",
+        "to": "object:logbook",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:harbour_master",
+        "to": "location:fish_market",
+        "weight": 0.34,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:harbour_master",
+        "to": "object:engine_key",
+        "weight": 0.32,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:harbour_master",
+        "to": "action:boat_launched",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:malcolm_crewe",
+        "to": "object:catch_manifest",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:malcolm_crewe",
+        "to": "motive:subsidy_fraud",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:malcolm_crewe",
+        "to": "location:chandlery",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:malcolm_crewe",
+        "to": "object:fuel_receipt",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:coastguard_bell",
+        "to": "object:camera_housing",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:coastguard_bell",
+        "to": "location:sea_cave",
+        "weight": 0.34,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:coastguard_bell",
+        "to": "motive:licence_loss",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:coastguard_bell",
+        "to": "object:visitor_permit",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:dr_anne_webb",
+        "to": "object:water_samples",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:dr_anne_webb",
+        "to": "motive:survey_suppression",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:dr_anne_webb",
+        "to": "location:research_cabin",
+        "weight": 0.3,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:dr_anne_webb",
+        "to": "object:survey_report",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "location:dunne_harbour",
+        "to": "event:ellen_cross_discovered",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:dunne_harbour",
+        "to": "time:low_slack",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:dunne_harbour",
+        "to": "time:rising_flood",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:sea_cave",
+        "to": "event:ellen_cross_discovered",
+        "weight": 0.34,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:sea_cave",
+        "to": "object:sample_jars",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:fish_market",
+        "to": "object:catch_manifest",
+        "weight": 0.34,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:fish_market",
+        "to": "object:logbook",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:coast_path",
+        "to": "modifier:fog_bank",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:coast_path",
+        "to": "event:spring_survey",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:research_cabin",
+        "to": "object:water_samples",
+        "weight": 0.36,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:research_cabin",
+        "to": "object:survey_report",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:slipway",
+        "to": "object:mooring_rope",
+        "weight": 0.36,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:slipway",
+        "to": "modifier:slipway_scraped",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:breakwater",
+        "to": "modifier:fog_bank",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:breakwater",
+        "to": "time:rising_flood",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:chandlery",
+        "to": "object:engine_key",
+        "weight": 0.3,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "location:chandlery",
+        "to": "object:fuel_receipt",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "object:sample_jars",
+        "to": "action:samples_collected",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:logbook",
+        "to": "action:logbook_amended",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:logbook",
+        "to": "modifier:manifest_altered",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:mooring_rope",
+        "to": "modifier:rope_frayed",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:mooring_rope",
+        "to": "action:rope_cut",
+        "weight": 0.36,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "object:anchor_chain",
+        "to": "modifier:chain_shortened",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:anchor_chain",
+        "to": "action:chain_released",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:quota_records",
+        "to": "modifier:quota_exceeded",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:quota_records",
+        "to": "action:records_falsified",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:camera_housing",
+        "to": "modifier:engine_disabled",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:engine_key",
+        "to": "action:engine_tampered",
+        "weight": 0.34,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "object:engine_key",
+        "to": "modifier:engine_disabled",
+        "weight": 0.32,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "object:survey_report",
+        "to": "motive:survey_suppression",
+        "weight": 0.36,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:visitor_permit",
+        "to": "time:low_slack",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:fuel_receipt",
+        "to": "time:market_closing",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:catch_manifest",
+        "to": "modifier:manifest_altered",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:boat_launched",
+        "to": "time:market_closing",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:cave_entered",
+        "to": "time:low_slack",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:cave_entered",
+        "to": "event:spring_survey",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:engine_tampered",
+        "to": "time:market_closing",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:low_slack",
+        "to": "event:ellen_cross_discovered",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:low_slack",
+        "to": "event:spring_survey",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:dawn_discovery",
+        "to": "event:ellen_cross_discovered",
+        "weight": 0.32,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:dawn_discovery",
+        "to": "location:sea_cave",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "time:market_closing",
+        "to": "modifier:slipway_scraped",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:quota_deadline",
+        "to": "motive:overfishing_cover",
+        "weight": 0.38,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "time:rising_flood",
+        "to": "modifier:cave_flooded",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "motive:subsidy_fraud",
+        "to": "motive:licence_loss",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:overfishing_cover",
+        "to": "motive:family_livelihood",
+        "weight": 0.34,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:overfishing_cover",
+        "to": "motive:subsidy_fraud",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "witness:ferry_captain",
+        "to": "location:dunne_harbour",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:ferry_captain",
+        "to": "time:rising_flood",
+        "weight": 0.26,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:bait_seller",
+        "to": "location:fish_market",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:bait_seller",
+        "to": "time:market_closing",
+        "weight": 0.24,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:dock_hand",
+        "to": "location:slipway",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:dock_hand",
+        "to": "object:mooring_rope",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "witness:pub_landlord",
+        "to": "location:chandlery",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:pub_landlord",
+        "to": "time:dawn_discovery",
+        "weight": 0.26,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:lifeboat_crew",
+        "to": "time:rising_flood",
+        "weight": 0.24,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:lifeboat_crew",
+        "to": "location:breakwater",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:practised_sorrow",
+        "to": "suspect:coastguard_bell",
+        "weight": 0.26,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:turned_away",
+        "to": "suspect:dr_anne_webb",
+        "weight": 0.28,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:steady_gaze",
+        "to": "location:coast_path",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:hard_silence",
+        "to": "suspect:malcolm_crewe",
+        "weight": 0.24,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:salt_roughness",
+        "to": "location:slipway",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:clipped_denial",
+        "to": "location:fish_market",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "modifier:salt_on_jacket",
+        "to": "time:dawn_discovery",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "modifier:boot_salt_ring",
+        "to": "object:salt_stain",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "event:spring_survey",
+        "to": "time:dawn_discovery",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "motive:family_livelihood",
+        "to": "suspect:gill_rowan",
+        "weight": 0.28,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "emotion:practised_sorrow",
+        "to": "location:dunne_harbour",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:turned_away",
+        "to": "location:research_cabin",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "modifier:salt_on_jacket",
+        "to": "suspect:piers_dunne",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:permit_revoked",
+        "to": "location:chandlery",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "time:quota_deadline",
+        "to": "motive:survey_suppression",
+        "weight": 0.34,
+        "tags": [
+          "motive"
+        ]
+      }
     ]
   },
   "attractor": {
     "dimensions": [
-      {"id": "killer_dimension", "invariant_token": "suspect:piers_dunne", "threshold": 0.75, "label": "who acted"},
-      {"id": "mechanism_dimension", "invariant_token": "event:tidal_window", "threshold": 0.75, "label": "how it was done"},
-      {"id": "motive_dimension", "invariant_token": "motive:fishing_economy", "threshold": 0.75, "label": "why it happened"}
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:piers_dunne",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:tidal_window",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:fishing_economy",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
     ],
     "convergence_display": "minimum"
   },

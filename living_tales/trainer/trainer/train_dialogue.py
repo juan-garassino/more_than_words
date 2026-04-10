@@ -1291,8 +1291,31 @@ def train_scene_supervised(
                 if n_dims > 0:
                     entropy_bonus = entropy_bonus / n_dims
 
+            # Batch diversity loss (per-head) — penalize all heads predicting same thing
+            diversity_loss = torch.tensor(0.0, device=device)
+            if warmup_done:
+                for d in range(n_dims):
+                    logits_d = all_logits[d]
+                    probs_d = F.softmax(logits_d, dim=-1)
+                    avg_pred = probs_d.mean(dim=(0, 1))  # (V,) batch-average prediction
+                    batch_ent = -(avg_pred * avg_pred.clamp(min=1e-12).log()).sum()
+                    n_valid = float(model.head_vocab_masks[d].sum()) if hasattr(model, 'head_vocab_masks') else float(logits_d.shape[-1])
+                    max_ent = math.log(max(n_valid, 2.0))
+                    diversity_loss = diversity_loss + (1.0 - batch_ent / max_ent)
+                diversity_loss = diversity_loss / max(n_dims, 1)
+
+            # Per-head collapse penalty — penalize heads with >80% top-1 probability
+            collapse_penalty = torch.tensor(0.0, device=device)
+            if warmup_done:
+                for d in range(n_dims):
+                    probs_d = F.softmax(all_logits[d], dim=-1)
+                    top_prob = probs_d.max(dim=-1).values.mean()
+                    if top_prob.item() > 0.80:
+                        collapse_penalty = collapse_penalty + (top_prob - 0.80)
+                collapse_penalty = collapse_penalty / max(n_dims, 1)
+
             # --- Total loss ---
-            total = (1 - kd_alpha) * total_ce - entropy_bonus
+            total = (1 - profile.kd_alpha) * total_ce - entropy_bonus + profile.diversity_coef * diversity_loss + 0.5 * collapse_penalty
 
             optimizer.zero_grad()
             total.backward()
@@ -1310,7 +1333,7 @@ def train_scene_supervised(
         if epoch % 10 == 0 or epoch == n_epochs - 1:
             frozen_tag = " [emb frozen]" if freeze else ""
             cur_lr = scheduler.get_last_lr()[0]
-            _log(f"Epoch {epoch:>3d}/{n_epochs}  loss={avg_loss:.4f}  lr={cur_lr:.2e}{frozen_tag}")
+            _log(f"Epoch {epoch:>3d}/{n_epochs}  loss={avg_loss:.4f}  lr={cur_lr:.2e}  div={diversity_loss.item():.4f}  col={collapse_penalty.item():.4f}{frozen_tag}")
 
         # --- Scene probe every 25 epochs ---
         if (epoch == 10) or (epoch % 25 == 0 and epoch > 0):

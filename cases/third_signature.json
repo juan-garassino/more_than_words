@@ -14,226 +14,2565 @@
     "motive:1921_scandal"
   ],
   "tokens": [
-    {"id": "suspect:agnes_vail", "class": "SUSPECT", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [1.0, 0.0, 0.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "event:evening_port", "class": "EVENT", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [0.0, 1.0, 0.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "motive:1921_scandal", "class": "MOTIVE", "phase": "INVARIANT", "is_invariant": true, "attractor_weights": [0.0, 0.0, 1.0], "affinity_tags": [], "repulsion_tags": [], "temperature": 0.5, "stream": "INVARIANT", "agency": "SHARED"},
-    {"id": "suspect:hugh_emberly", "class": "SUSPECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.08], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:colonel_norris", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:dr_pryce", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.14], "affinity_tags": ["access", "concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:lillian_march", "class": "SUSPECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:percival_dent", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.12], "affinity_tags": ["access", "concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "suspect:walter_kemp", "class": "SUSPECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.16], "affinity_tags": ["concealment", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "location:blackwood_club", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.1, 0.09, 0.09], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "location:reading_room", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.09], "affinity_tags": ["physical", "method", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:archive_vault", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.16], "affinity_tags": ["concealment", "secret", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:dining_hall", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.1], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:committee_room", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.12, 0.14], "affinity_tags": ["concealment", "access", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:port_cellar", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:rear_garden", "class": "LOCATION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["physical", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "location:cloakroom", "class": "LOCATION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.12], "affinity_tags": ["access", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "object:port_decanter", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.08], "affinity_tags": ["physical", "method", "access"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:deed_of_trust", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.24, 0.12, 0.28], "affinity_tags": ["concealment", "secret", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:forged_signature", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.22, 0.1, 0.24], "affinity_tags": ["concealment", "secret", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:toxicology_report", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.22, 0.12], "affinity_tags": ["physical", "method", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:guest_book", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.1, 0.08, 0.09], "affinity_tags": ["physical", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:committee_minutes", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.18], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:writing_sample", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.14, 0.2], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:cellar_key", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["access", "method", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:port_glass", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["physical", "method", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:monogram_ring", "class": "OBJECT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:photograph_1921", "class": "OBJECT", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.26], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:blotting_paper", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["physical", "method", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "object:archive_folder", "class": "OBJECT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.1, 0.12, 0.14], "affinity_tags": ["concealment", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "emotion:studied_composure", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.16, 0.1, 0.14], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:startled_glance", "class": "EMOTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:careful_diction", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:rigid_courtesy", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:prolonged_silence", "class": "EMOTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.14], "affinity_tags": ["guilt", "concealment"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "emotion:forced_lightness", "class": "EMOTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.08], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:sediment_clouded", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.12], "affinity_tags": ["physical", "method", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:seal_broken", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.14, 0.2], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:ink_dated", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.12, 0.22], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:glass_wiped", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:rain_tracked", "class": "MODIFIER", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["physical", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "modifier:vault_unlocked", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["access", "method", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:nib_match", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.1, 0.26], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:blot_transferred", "class": "MODIFIER", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.12], "affinity_tags": ["physical", "time_window", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:dose_measured", "class": "MODIFIER", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.22, 0.14], "affinity_tags": ["physical", "method", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "modifier:ring_imprint", "class": "MODIFIER", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"},
-    {"id": "action:port_decanted", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.14], "affinity_tags": ["physical", "method", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:vault_accessed", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.14, 0.16], "affinity_tags": ["concealment", "error", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:deed_removed", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.1, 0.26], "affinity_tags": ["concealment", "guilt", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:glass_replaced", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.22, 0.14], "affinity_tags": ["method", "physical", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:letter_burned", "class": "ACTION", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.12, 0.24], "affinity_tags": ["concealment", "guilt", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:garden_crossed", "class": "ACTION", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["surface", "plausible", "visible", "dramatic"], "repulsion_tags": ["access", "guilt"], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:minutes_consulted", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.1, 0.12, 0.14], "affinity_tags": ["concealment", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:sample_compared", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["physical", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "action:cellar_visited", "class": "ACTION", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.14], "affinity_tags": ["access", "method", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "time:after_dinner_hour", "class": "TIME", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.09], "affinity_tags": ["time_window", "constraint"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "time:rain_began", "class": "TIME", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.08, 0.09], "affinity_tags": ["time_window", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "ATMOSPHERE", "agency": "ENGINE"},
-    {"id": "time:body_found_morning", "class": "TIME", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["time_window", "physical"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "time:port_served", "class": "TIME", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.16, 0.12], "affinity_tags": ["time_window", "access", "error"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "time:deed_deadline", "class": "TIME", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.14, 0.2], "affinity_tags": ["time_window", "constraint", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "motive:family_honour", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.2, 0.14, 0.3], "affinity_tags": ["buried", "financial", "secret", "guilt"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:trust_fraud", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.18, 0.12, 0.28], "affinity_tags": ["concealment", "secret", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:executor_discovery", "class": "MOTIVE", "phase": "MID", "is_invariant": false, "attractor_weights": [0.14, 0.12, 0.16], "affinity_tags": ["concealment", "prior"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:property_claim", "class": "MOTIVE", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.16], "affinity_tags": ["buried", "financial", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "motive:blackmail_fear", "class": "MOTIVE", "phase": "LATE", "is_invariant": false, "attractor_weights": [0.16, 0.12, 0.24], "affinity_tags": ["buried", "financial", "prior", "secret"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "PLAYER"},
-    {"id": "witness:club_steward", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.1, 0.08], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:cloakroom_girl", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.08, 0.09, 0.09], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:night_watchman", "class": "WITNESS", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.08, 0.09], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:kitchen_staff", "class": "WITNESS", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.14, 0.12], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "witness:cab_driver", "class": "WITNESS", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.12, 0.14], "affinity_tags": ["fragment", "partial", "silent", "present"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "ENGINE"},
-    {"id": "event:arthur_crisp_discovered", "class": "EVENT", "phase": "EARLY", "is_invariant": false, "attractor_weights": [0.09, 0.09, 0.1], "affinity_tags": ["physical", "time_window"], "repulsion_tags": [], "temperature": 0.5, "stream": "OPENING", "agency": "ENGINE"},
-    {"id": "event:port_ceremony", "class": "EVENT", "phase": "MID", "is_invariant": false, "attractor_weights": [0.12, 0.16, 0.14], "affinity_tags": ["physical", "time_window", "method"], "repulsion_tags": [], "temperature": 0.5, "stream": "EVIDENCE", "agency": "SHARED"}
+    {
+      "id": "suspect:agnes_vail",
+      "class": "SUSPECT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "event:evening_port",
+      "class": "EVENT",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "motive:1921_scandal",
+      "class": "MOTIVE",
+      "phase": "INVARIANT",
+      "is_invariant": true,
+      "attractor_weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "affinity_tags": [],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "INVARIANT",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:hugh_emberly",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:colonel_norris",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:dr_pryce",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:lillian_march",
+      "class": "SUSPECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:percival_dent",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "suspect:walter_kemp",
+      "class": "SUSPECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "location:blackwood_club",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.10,
+        0.10,
+        0.10
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:reading_room",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:archive_vault",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.25,
+        0.05,
+        0.25
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:dining_hall",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:committee_room",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.25,
+        0.25,
+        0.05
+      ],
+      "affinity_tags": [
+        "concealment",
+        "access",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:port_cellar",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.25,
+        0.25,
+        0.05
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:rear_garden",
+      "class": "LOCATION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "location:cloakroom",
+      "class": "LOCATION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "object:port_decanter",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:deed_of_trust",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:forged_signature",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:toxicology_report",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:guest_book",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:committee_minutes",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:writing_sample",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:cellar_key",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:port_glass",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:monogram_ring",
+      "class": "OBJECT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:photograph_1921",
+      "class": "OBJECT",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:blotting_paper",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "object:archive_folder",
+      "class": "OBJECT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "emotion:studied_composure",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.25,
+        0.25,
+        0.05
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:startled_glance",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.07,
+        0.07,
+        0.07
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:careful_diction",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.25,
+        0.25,
+        0.05
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:rigid_courtesy",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:prolonged_silence",
+      "class": "EMOTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "guilt",
+        "concealment"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "emotion:forced_lightness",
+      "class": "EMOTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.07,
+        0.07,
+        0.07
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:sediment_clouded",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:seal_broken",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:ink_dated",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:glass_wiped",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:rain_tracked",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "modifier:vault_unlocked",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:nib_match",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:blot_transferred",
+      "class": "MODIFIER",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:dose_measured",
+      "class": "MODIFIER",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "modifier:ring_imprint",
+      "class": "MODIFIER",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    },
+    {
+      "id": "action:port_decanted",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "physical",
+        "method",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:vault_accessed",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "error",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:deed_removed",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:glass_replaced",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "method",
+        "physical",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:letter_burned",
+      "class": "ACTION",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "guilt",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:garden_crossed",
+      "class": "ACTION",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "surface",
+        "plausible",
+        "visible",
+        "dramatic"
+      ],
+      "repulsion_tags": [
+        "access",
+        "guilt"
+      ],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:minutes_consulted",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:sample_compared",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "action:cellar_visited",
+      "class": "ACTION",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "access",
+        "method",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "time:after_dinner_hour",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:rain_began",
+      "class": "TIME",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "ATMOSPHERE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:body_found_morning",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "physical"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:port_served",
+      "class": "TIME",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "access",
+        "error"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "time:deed_deadline",
+      "class": "TIME",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "time_window",
+        "constraint",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "motive:family_honour",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "secret",
+        "guilt"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:trust_fraud",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "secret",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:executor_discovery",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "concealment",
+        "prior"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:property_claim",
+      "class": "MOTIVE",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "motive:blackmail_fear",
+      "class": "MOTIVE",
+      "phase": "LATE",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.06,
+        0.35
+      ],
+      "affinity_tags": [
+        "buried",
+        "financial",
+        "prior",
+        "secret"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "PLAYER"
+    },
+    {
+      "id": "witness:club_steward",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:cloakroom_girl",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:night_watchman",
+      "class": "WITNESS",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:kitchen_staff",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "witness:cab_driver",
+      "class": "WITNESS",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.35,
+        0.06,
+        0.06
+      ],
+      "affinity_tags": [
+        "fragment",
+        "partial",
+        "silent",
+        "present"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:arthur_crisp_discovered",
+      "class": "EVENT",
+      "phase": "EARLY",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "OPENING",
+      "agency": "ENGINE"
+    },
+    {
+      "id": "event:port_ceremony",
+      "class": "EVENT",
+      "phase": "MID",
+      "is_invariant": false,
+      "attractor_weights": [
+        0.06,
+        0.35,
+        0.06
+      ],
+      "affinity_tags": [
+        "physical",
+        "time_window",
+        "method"
+      ],
+      "repulsion_tags": [],
+      "temperature": 0.5,
+      "stream": "EVIDENCE",
+      "agency": "SHARED"
+    }
   ],
   "graph": {
     "nodes": [
-      "suspect:agnes_vail", "suspect:hugh_emberly", "suspect:colonel_norris", "suspect:dr_pryce", "suspect:lillian_march", "suspect:percival_dent", "suspect:walter_kemp",
-      "location:blackwood_club", "location:reading_room", "location:archive_vault", "location:dining_hall", "location:committee_room", "location:port_cellar", "location:rear_garden", "location:cloakroom",
-      "object:port_decanter", "object:deed_of_trust", "object:forged_signature", "object:toxicology_report", "object:guest_book", "object:committee_minutes", "object:writing_sample", "object:cellar_key", "object:port_glass", "object:monogram_ring", "object:photograph_1921", "object:blotting_paper", "object:archive_folder",
-      "emotion:studied_composure", "emotion:startled_glance", "emotion:careful_diction", "emotion:rigid_courtesy", "emotion:prolonged_silence", "emotion:forced_lightness",
-      "modifier:sediment_clouded", "modifier:seal_broken", "modifier:ink_dated", "modifier:glass_wiped", "modifier:rain_tracked", "modifier:vault_unlocked", "modifier:nib_match", "modifier:blot_transferred", "modifier:dose_measured", "modifier:ring_imprint",
-      "action:port_decanted", "action:vault_accessed", "action:deed_removed", "action:glass_replaced", "action:letter_burned", "action:garden_crossed", "action:minutes_consulted", "action:sample_compared", "action:cellar_visited",
-      "time:after_dinner_hour", "time:rain_began", "time:body_found_morning", "time:port_served", "time:deed_deadline",
-      "motive:family_honour", "motive:trust_fraud", "motive:executor_discovery", "motive:property_claim", "motive:blackmail_fear", "motive:1921_scandal",
-      "witness:club_steward", "witness:cloakroom_girl", "witness:night_watchman", "witness:kitchen_staff", "witness:cab_driver",
-      "event:arthur_crisp_discovered", "event:evening_port", "event:port_ceremony"
+      "suspect:agnes_vail",
+      "suspect:hugh_emberly",
+      "suspect:colonel_norris",
+      "suspect:dr_pryce",
+      "suspect:lillian_march",
+      "suspect:percival_dent",
+      "suspect:walter_kemp",
+      "location:blackwood_club",
+      "location:reading_room",
+      "location:archive_vault",
+      "location:dining_hall",
+      "location:committee_room",
+      "location:port_cellar",
+      "location:rear_garden",
+      "location:cloakroom",
+      "object:port_decanter",
+      "object:deed_of_trust",
+      "object:forged_signature",
+      "object:toxicology_report",
+      "object:guest_book",
+      "object:committee_minutes",
+      "object:writing_sample",
+      "object:cellar_key",
+      "object:port_glass",
+      "object:monogram_ring",
+      "object:photograph_1921",
+      "object:blotting_paper",
+      "object:archive_folder",
+      "emotion:studied_composure",
+      "emotion:startled_glance",
+      "emotion:careful_diction",
+      "emotion:rigid_courtesy",
+      "emotion:prolonged_silence",
+      "emotion:forced_lightness",
+      "modifier:sediment_clouded",
+      "modifier:seal_broken",
+      "modifier:ink_dated",
+      "modifier:glass_wiped",
+      "modifier:rain_tracked",
+      "modifier:vault_unlocked",
+      "modifier:nib_match",
+      "modifier:blot_transferred",
+      "modifier:dose_measured",
+      "modifier:ring_imprint",
+      "action:port_decanted",
+      "action:vault_accessed",
+      "action:deed_removed",
+      "action:glass_replaced",
+      "action:letter_burned",
+      "action:garden_crossed",
+      "action:minutes_consulted",
+      "action:sample_compared",
+      "action:cellar_visited",
+      "time:after_dinner_hour",
+      "time:rain_began",
+      "time:body_found_morning",
+      "time:port_served",
+      "time:deed_deadline",
+      "motive:family_honour",
+      "motive:trust_fraud",
+      "motive:executor_discovery",
+      "motive:property_claim",
+      "motive:blackmail_fear",
+      "motive:1921_scandal",
+      "witness:club_steward",
+      "witness:cloakroom_girl",
+      "witness:night_watchman",
+      "witness:kitchen_staff",
+      "witness:cab_driver",
+      "event:arthur_crisp_discovered",
+      "event:evening_port",
+      "event:port_ceremony"
     ],
     "edges": [
-      {"from": "object:forged_signature", "to": "suspect:agnes_vail", "weight": 0.48, "tags": ["identity"]},
-      {"from": "object:writing_sample", "to": "suspect:agnes_vail", "weight": 0.46, "tags": ["identity"]},
-      {"from": "emotion:studied_composure", "to": "suspect:agnes_vail", "weight": 0.38, "tags": ["interview"]},
-      {"from": "emotion:careful_diction", "to": "suspect:agnes_vail", "weight": 0.36, "tags": ["interview"]},
-      {"from": "action:deed_removed", "to": "suspect:agnes_vail", "weight": 0.44, "tags": ["evidence"]},
-      {"from": "action:letter_burned", "to": "suspect:agnes_vail", "weight": 0.42, "tags": ["evidence"]},
-      {"from": "location:committee_room", "to": "suspect:agnes_vail", "weight": 0.36, "tags": ["access"]},
-      {"from": "modifier:nib_match", "to": "suspect:agnes_vail", "weight": 0.42, "tags": ["evidence"]},
-      {"from": "modifier:ink_dated", "to": "suspect:agnes_vail", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "motive:family_honour", "to": "suspect:agnes_vail", "weight": 0.44, "tags": ["motive"]},
-      {"from": "motive:trust_fraud", "to": "suspect:agnes_vail", "weight": 0.40, "tags": ["motive"]},
-      {"from": "motive:blackmail_fear", "to": "suspect:agnes_vail", "weight": 0.38, "tags": ["motive"]},
-      {"from": "object:port_decanter", "to": "event:evening_port", "weight": 0.44, "tags": ["method"]},
-      {"from": "object:port_glass", "to": "event:evening_port", "weight": 0.42, "tags": ["method"]},
-      {"from": "object:toxicology_report", "to": "event:evening_port", "weight": 0.46, "tags": ["method"]},
-      {"from": "action:port_decanted", "to": "event:evening_port", "weight": 0.40, "tags": ["method"]},
-      {"from": "modifier:sediment_clouded", "to": "event:evening_port", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "modifier:dose_measured", "to": "event:evening_port", "weight": 0.42, "tags": ["evidence"]},
-      {"from": "action:glass_replaced", "to": "event:evening_port", "weight": 0.36, "tags": ["method"]},
-      {"from": "event:port_ceremony", "to": "event:evening_port", "weight": 0.34, "tags": ["timing"]},
-      {"from": "object:deed_of_trust", "to": "motive:1921_scandal", "weight": 0.46, "tags": ["motive"]},
-      {"from": "object:photograph_1921", "to": "motive:1921_scandal", "weight": 0.44, "tags": ["motive"]},
-      {"from": "object:forged_signature", "to": "motive:1921_scandal", "weight": 0.42, "tags": ["motive"]},
-      {"from": "motive:trust_fraud", "to": "motive:1921_scandal", "weight": 0.40, "tags": ["motive"]},
-      {"from": "action:vault_accessed", "to": "motive:1921_scandal", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "action:minutes_consulted", "to": "motive:1921_scandal", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "modifier:seal_broken", "to": "motive:1921_scandal", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "suspect:hugh_emberly", "to": "emotion:startled_glance", "weight": 0.28, "tags": ["interview"]},
-      {"from": "suspect:hugh_emberly", "to": "object:monogram_ring", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:hugh_emberly", "to": "emotion:forced_lightness", "weight": 0.26, "tags": ["interview"]},
-      {"from": "suspect:hugh_emberly", "to": "location:reading_room", "weight": 0.28, "tags": ["scene"]},
-      {"from": "suspect:lillian_march", "to": "action:garden_crossed", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:lillian_march", "to": "location:rear_garden", "weight": 0.28, "tags": ["scene"]},
-      {"from": "suspect:lillian_march", "to": "modifier:ring_imprint", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "suspect:lillian_march", "to": "location:dining_hall", "weight": 0.24, "tags": ["scene"]},
-      {"from": "suspect:colonel_norris", "to": "object:port_decanter", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "suspect:colonel_norris", "to": "location:port_cellar", "weight": 0.34, "tags": ["access"]},
-      {"from": "suspect:colonel_norris", "to": "object:cellar_key", "weight": 0.32, "tags": ["access"]},
-      {"from": "suspect:colonel_norris", "to": "action:port_decanted", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "suspect:dr_pryce", "to": "object:toxicology_report", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:dr_pryce", "to": "motive:executor_discovery", "weight": 0.32, "tags": ["motive"]},
-      {"from": "suspect:dr_pryce", "to": "object:committee_minutes", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "suspect:dr_pryce", "to": "location:reading_room", "weight": 0.26, "tags": ["scene"]},
-      {"from": "suspect:percival_dent", "to": "object:deed_of_trust", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "suspect:percival_dent", "to": "location:archive_vault", "weight": 0.34, "tags": ["access"]},
-      {"from": "suspect:percival_dent", "to": "motive:property_claim", "weight": 0.30, "tags": ["motive"]},
-      {"from": "suspect:percival_dent", "to": "object:archive_folder", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "suspect:walter_kemp", "to": "object:photograph_1921", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "suspect:walter_kemp", "to": "motive:blackmail_fear", "weight": 0.32, "tags": ["motive"]},
-      {"from": "suspect:walter_kemp", "to": "location:archive_vault", "weight": 0.30, "tags": ["access"]},
-      {"from": "suspect:walter_kemp", "to": "object:committee_minutes", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "location:blackwood_club", "to": "event:arthur_crisp_discovered", "weight": 0.30, "tags": ["scene"]},
-      {"from": "location:blackwood_club", "to": "time:after_dinner_hour", "weight": 0.28, "tags": ["scene"]},
-      {"from": "location:blackwood_club", "to": "time:rain_began", "weight": 0.26, "tags": ["scene"]},
-      {"from": "location:reading_room", "to": "event:arthur_crisp_discovered", "weight": 0.34, "tags": ["scene"]},
-      {"from": "location:reading_room", "to": "object:port_decanter", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:archive_vault", "to": "object:deed_of_trust", "weight": 0.36, "tags": ["scene"]},
-      {"from": "location:archive_vault", "to": "object:photograph_1921", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:dining_hall", "to": "event:port_ceremony", "weight": 0.30, "tags": ["scene"]},
-      {"from": "location:dining_hall", "to": "action:port_decanted", "weight": 0.28, "tags": ["scene"]},
-      {"from": "location:committee_room", "to": "object:committee_minutes", "weight": 0.36, "tags": ["scene"]},
-      {"from": "location:committee_room", "to": "object:forged_signature", "weight": 0.34, "tags": ["scene"]},
-      {"from": "location:port_cellar", "to": "object:port_decanter", "weight": 0.34, "tags": ["scene"]},
-      {"from": "location:port_cellar", "to": "object:cellar_key", "weight": 0.30, "tags": ["access"]},
-      {"from": "location:port_cellar", "to": "action:cellar_visited", "weight": 0.32, "tags": ["scene"]},
-      {"from": "location:rear_garden", "to": "modifier:rain_tracked", "weight": 0.24, "tags": ["scene"]},
-      {"from": "location:rear_garden", "to": "time:rain_began", "weight": 0.22, "tags": ["scene"]},
-      {"from": "location:cloakroom", "to": "modifier:rain_tracked", "weight": 0.26, "tags": ["scene"]},
-      {"from": "location:cloakroom", "to": "time:after_dinner_hour", "weight": 0.24, "tags": ["timing"]},
-      {"from": "object:port_decanter", "to": "modifier:sediment_clouded", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "object:port_glass", "to": "modifier:glass_wiped", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "object:deed_of_trust", "to": "modifier:seal_broken", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "object:deed_of_trust", "to": "action:deed_removed", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "object:forged_signature", "to": "modifier:nib_match", "weight": 0.40, "tags": ["evidence"]},
-      {"from": "object:forged_signature", "to": "modifier:ink_dated", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "object:writing_sample", "to": "action:sample_compared", "weight": 0.36, "tags": ["evidence"]},
-      {"from": "object:writing_sample", "to": "modifier:nib_match", "weight": 0.34, "tags": ["evidence"]},
-      {"from": "object:toxicology_report", "to": "modifier:dose_measured", "weight": 0.38, "tags": ["evidence"]},
-      {"from": "object:guest_book", "to": "time:after_dinner_hour", "weight": 0.28, "tags": ["timing"]},
-      {"from": "object:committee_minutes", "to": "action:minutes_consulted", "weight": 0.32, "tags": ["evidence"]},
-      {"from": "object:cellar_key", "to": "modifier:vault_unlocked", "weight": 0.32, "tags": ["access"]},
-      {"from": "object:blotting_paper", "to": "modifier:blot_transferred", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "object:photograph_1921", "to": "motive:family_honour", "weight": 0.36, "tags": ["motive"]},
-      {"from": "object:archive_folder", "to": "action:vault_accessed", "weight": 0.28, "tags": ["evidence"]},
-      {"from": "action:port_decanted", "to": "time:port_served", "weight": 0.30, "tags": ["timing"]},
-      {"from": "action:vault_accessed", "to": "time:port_served", "weight": 0.28, "tags": ["timing"]},
-      {"from": "action:glass_replaced", "to": "modifier:glass_wiped", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "action:cellar_visited", "to": "time:port_served", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:after_dinner_hour", "to": "event:arthur_crisp_discovered", "weight": 0.30, "tags": ["timing"]},
-      {"from": "time:after_dinner_hour", "to": "event:port_ceremony", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:body_found_morning", "to": "event:arthur_crisp_discovered", "weight": 0.32, "tags": ["timing"]},
-      {"from": "time:body_found_morning", "to": "location:reading_room", "weight": 0.28, "tags": ["scene"]},
-      {"from": "time:port_served", "to": "modifier:sediment_clouded", "weight": 0.28, "tags": ["timing"]},
-      {"from": "time:deed_deadline", "to": "motive:family_honour", "weight": 0.38, "tags": ["motive"]},
-      {"from": "time:rain_began", "to": "modifier:rain_tracked", "weight": 0.24, "tags": ["scene"]},
-      {"from": "motive:property_claim", "to": "motive:executor_discovery", "weight": 0.30, "tags": ["motive"]},
-      {"from": "motive:family_honour", "to": "motive:trust_fraud", "weight": 0.34, "tags": ["motive"]},
-      {"from": "motive:family_honour", "to": "motive:blackmail_fear", "weight": 0.32, "tags": ["motive"]},
-      {"from": "witness:club_steward", "to": "location:dining_hall", "weight": 0.28, "tags": ["scene"]},
-      {"from": "witness:club_steward", "to": "event:port_ceremony", "weight": 0.26, "tags": ["timing"]},
-      {"from": "witness:cloakroom_girl", "to": "location:cloakroom", "weight": 0.26, "tags": ["scene"]},
-      {"from": "witness:cloakroom_girl", "to": "time:after_dinner_hour", "weight": 0.24, "tags": ["timing"]},
-      {"from": "witness:night_watchman", "to": "location:rear_garden", "weight": 0.24, "tags": ["scene"]},
-      {"from": "witness:night_watchman", "to": "object:guest_book", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "witness:kitchen_staff", "to": "location:port_cellar", "weight": 0.28, "tags": ["scene"]},
-      {"from": "witness:kitchen_staff", "to": "time:port_served", "weight": 0.26, "tags": ["timing"]},
-      {"from": "witness:cab_driver", "to": "time:rain_began", "weight": 0.24, "tags": ["timing"]},
-      {"from": "witness:cab_driver", "to": "location:rear_garden", "weight": 0.22, "tags": ["scene"]},
-      {"from": "emotion:rigid_courtesy", "to": "suspect:colonel_norris", "weight": 0.26, "tags": ["interview"]},
-      {"from": "emotion:prolonged_silence", "to": "suspect:walter_kemp", "weight": 0.28, "tags": ["interview"]},
-      {"from": "emotion:startled_glance", "to": "location:reading_room", "weight": 0.24, "tags": ["scene"]},
-      {"from": "emotion:forced_lightness", "to": "suspect:percival_dent", "weight": 0.24, "tags": ["interview"]},
-      {"from": "emotion:studied_composure", "to": "location:committee_room", "weight": 0.26, "tags": ["scene"]},
-      {"from": "emotion:careful_diction", "to": "location:archive_vault", "weight": 0.24, "tags": ["scene"]},
-      {"from": "modifier:blot_transferred", "to": "time:body_found_morning", "weight": 0.28, "tags": ["timing"]},
-      {"from": "modifier:ring_imprint", "to": "object:monogram_ring", "weight": 0.26, "tags": ["evidence"]},
-      {"from": "event:port_ceremony", "to": "time:body_found_morning", "weight": 0.30, "tags": ["timing"]},
-      {"from": "motive:executor_discovery", "to": "object:committee_minutes", "weight": 0.28, "tags": ["motive"]},
-      {"from": "object:blotting_paper", "to": "location:committee_room", "weight": 0.26, "tags": ["scene"]},
-      {"from": "emotion:rigid_courtesy", "to": "location:dining_hall", "weight": 0.24, "tags": ["scene"]},
-      {"from": "emotion:prolonged_silence", "to": "location:archive_vault", "weight": 0.24, "tags": ["scene"]},
-      {"from": "modifier:vault_unlocked", "to": "location:archive_vault", "weight": 0.28, "tags": ["access"]},
-      {"from": "action:letter_burned", "to": "location:reading_room", "weight": 0.28, "tags": ["scene"]},
-      {"from": "action:garden_crossed", "to": "location:rear_garden", "weight": 0.26, "tags": ["scene"]},
-      {"from": "action:sample_compared", "to": "object:forged_signature", "weight": 0.30, "tags": ["evidence"]},
-      {"from": "time:deed_deadline", "to": "motive:trust_fraud", "weight": 0.30, "tags": ["motive"]}
+      {
+        "from": "object:forged_signature",
+        "to": "suspect:agnes_vail",
+        "weight": 0.48,
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "from": "object:writing_sample",
+        "to": "suspect:agnes_vail",
+        "weight": 0.46,
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "from": "emotion:studied_composure",
+        "to": "suspect:agnes_vail",
+        "weight": 0.38,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:careful_diction",
+        "to": "suspect:agnes_vail",
+        "weight": 0.36,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "action:deed_removed",
+        "to": "suspect:agnes_vail",
+        "weight": 0.44,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:letter_burned",
+        "to": "suspect:agnes_vail",
+        "weight": 0.42,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "location:committee_room",
+        "to": "suspect:agnes_vail",
+        "weight": 0.36,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "modifier:nib_match",
+        "to": "suspect:agnes_vail",
+        "weight": 0.42,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:ink_dated",
+        "to": "suspect:agnes_vail",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "motive:family_honour",
+        "to": "suspect:agnes_vail",
+        "weight": 0.44,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:trust_fraud",
+        "to": "suspect:agnes_vail",
+        "weight": 0.4,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:blackmail_fear",
+        "to": "suspect:agnes_vail",
+        "weight": 0.38,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:port_decanter",
+        "to": "event:evening_port",
+        "weight": 0.44,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "object:port_glass",
+        "to": "event:evening_port",
+        "weight": 0.42,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "object:toxicology_report",
+        "to": "event:evening_port",
+        "weight": 0.46,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "action:port_decanted",
+        "to": "event:evening_port",
+        "weight": 0.4,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "modifier:sediment_clouded",
+        "to": "event:evening_port",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:dose_measured",
+        "to": "event:evening_port",
+        "weight": 0.42,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:glass_replaced",
+        "to": "event:evening_port",
+        "weight": 0.36,
+        "tags": [
+          "method"
+        ]
+      },
+      {
+        "from": "event:port_ceremony",
+        "to": "event:evening_port",
+        "weight": 0.34,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:deed_of_trust",
+        "to": "motive:1921_scandal",
+        "weight": 0.46,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:photograph_1921",
+        "to": "motive:1921_scandal",
+        "weight": 0.44,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:forged_signature",
+        "to": "motive:1921_scandal",
+        "weight": 0.42,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:trust_fraud",
+        "to": "motive:1921_scandal",
+        "weight": 0.4,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "action:vault_accessed",
+        "to": "motive:1921_scandal",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:minutes_consulted",
+        "to": "motive:1921_scandal",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "modifier:seal_broken",
+        "to": "motive:1921_scandal",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:hugh_emberly",
+        "to": "emotion:startled_glance",
+        "weight": 0.28,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "suspect:hugh_emberly",
+        "to": "object:monogram_ring",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:hugh_emberly",
+        "to": "emotion:forced_lightness",
+        "weight": 0.26,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "suspect:hugh_emberly",
+        "to": "location:reading_room",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:lillian_march",
+        "to": "action:garden_crossed",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:lillian_march",
+        "to": "location:rear_garden",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:lillian_march",
+        "to": "modifier:ring_imprint",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:lillian_march",
+        "to": "location:dining_hall",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:colonel_norris",
+        "to": "object:port_decanter",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:colonel_norris",
+        "to": "location:port_cellar",
+        "weight": 0.34,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:colonel_norris",
+        "to": "object:cellar_key",
+        "weight": 0.32,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:colonel_norris",
+        "to": "action:port_decanted",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:dr_pryce",
+        "to": "object:toxicology_report",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:dr_pryce",
+        "to": "motive:executor_discovery",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:dr_pryce",
+        "to": "object:committee_minutes",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:dr_pryce",
+        "to": "location:reading_room",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "suspect:percival_dent",
+        "to": "object:deed_of_trust",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:percival_dent",
+        "to": "location:archive_vault",
+        "weight": 0.34,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:percival_dent",
+        "to": "motive:property_claim",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:percival_dent",
+        "to": "object:archive_folder",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:walter_kemp",
+        "to": "object:photograph_1921",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "suspect:walter_kemp",
+        "to": "motive:blackmail_fear",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "suspect:walter_kemp",
+        "to": "location:archive_vault",
+        "weight": 0.3,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "suspect:walter_kemp",
+        "to": "object:committee_minutes",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "location:blackwood_club",
+        "to": "event:arthur_crisp_discovered",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:blackwood_club",
+        "to": "time:after_dinner_hour",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:blackwood_club",
+        "to": "time:rain_began",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:reading_room",
+        "to": "event:arthur_crisp_discovered",
+        "weight": 0.34,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:reading_room",
+        "to": "object:port_decanter",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:archive_vault",
+        "to": "object:deed_of_trust",
+        "weight": 0.36,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:archive_vault",
+        "to": "object:photograph_1921",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:dining_hall",
+        "to": "event:port_ceremony",
+        "weight": 0.3,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:dining_hall",
+        "to": "action:port_decanted",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:committee_room",
+        "to": "object:committee_minutes",
+        "weight": 0.36,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:committee_room",
+        "to": "object:forged_signature",
+        "weight": 0.34,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:port_cellar",
+        "to": "object:port_decanter",
+        "weight": 0.34,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:port_cellar",
+        "to": "object:cellar_key",
+        "weight": 0.3,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "location:port_cellar",
+        "to": "action:cellar_visited",
+        "weight": 0.32,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:rear_garden",
+        "to": "modifier:rain_tracked",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:rear_garden",
+        "to": "time:rain_began",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:cloakroom",
+        "to": "modifier:rain_tracked",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "location:cloakroom",
+        "to": "time:after_dinner_hour",
+        "weight": 0.24,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:port_decanter",
+        "to": "modifier:sediment_clouded",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:port_glass",
+        "to": "modifier:glass_wiped",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:deed_of_trust",
+        "to": "modifier:seal_broken",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:deed_of_trust",
+        "to": "action:deed_removed",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:forged_signature",
+        "to": "modifier:nib_match",
+        "weight": 0.4,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:forged_signature",
+        "to": "modifier:ink_dated",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:writing_sample",
+        "to": "action:sample_compared",
+        "weight": 0.36,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:writing_sample",
+        "to": "modifier:nib_match",
+        "weight": 0.34,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:toxicology_report",
+        "to": "modifier:dose_measured",
+        "weight": 0.38,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:guest_book",
+        "to": "time:after_dinner_hour",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "object:committee_minutes",
+        "to": "action:minutes_consulted",
+        "weight": 0.32,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:cellar_key",
+        "to": "modifier:vault_unlocked",
+        "weight": 0.32,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "object:blotting_paper",
+        "to": "modifier:blot_transferred",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "object:photograph_1921",
+        "to": "motive:family_honour",
+        "weight": 0.36,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:archive_folder",
+        "to": "action:vault_accessed",
+        "weight": 0.28,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:port_decanted",
+        "to": "time:port_served",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:vault_accessed",
+        "to": "time:port_served",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "action:glass_replaced",
+        "to": "modifier:glass_wiped",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "action:cellar_visited",
+        "to": "time:port_served",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:after_dinner_hour",
+        "to": "event:arthur_crisp_discovered",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:after_dinner_hour",
+        "to": "event:port_ceremony",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:body_found_morning",
+        "to": "event:arthur_crisp_discovered",
+        "weight": 0.32,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:body_found_morning",
+        "to": "location:reading_room",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "time:port_served",
+        "to": "modifier:sediment_clouded",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "time:deed_deadline",
+        "to": "motive:family_honour",
+        "weight": 0.38,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "time:rain_began",
+        "to": "modifier:rain_tracked",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "motive:property_claim",
+        "to": "motive:executor_discovery",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:family_honour",
+        "to": "motive:trust_fraud",
+        "weight": 0.34,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "motive:family_honour",
+        "to": "motive:blackmail_fear",
+        "weight": 0.32,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "witness:club_steward",
+        "to": "location:dining_hall",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:club_steward",
+        "to": "event:port_ceremony",
+        "weight": 0.26,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:cloakroom_girl",
+        "to": "location:cloakroom",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:cloakroom_girl",
+        "to": "time:after_dinner_hour",
+        "weight": 0.24,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:night_watchman",
+        "to": "location:rear_garden",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:night_watchman",
+        "to": "object:guest_book",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "witness:kitchen_staff",
+        "to": "location:port_cellar",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "witness:kitchen_staff",
+        "to": "time:port_served",
+        "weight": 0.26,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:cab_driver",
+        "to": "time:rain_began",
+        "weight": 0.24,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "witness:cab_driver",
+        "to": "location:rear_garden",
+        "weight": 0.22,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:rigid_courtesy",
+        "to": "suspect:colonel_norris",
+        "weight": 0.26,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:prolonged_silence",
+        "to": "suspect:walter_kemp",
+        "weight": 0.28,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:startled_glance",
+        "to": "location:reading_room",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:forced_lightness",
+        "to": "suspect:percival_dent",
+        "weight": 0.24,
+        "tags": [
+          "interview"
+        ]
+      },
+      {
+        "from": "emotion:studied_composure",
+        "to": "location:committee_room",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:careful_diction",
+        "to": "location:archive_vault",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "modifier:blot_transferred",
+        "to": "time:body_found_morning",
+        "weight": 0.28,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "modifier:ring_imprint",
+        "to": "object:monogram_ring",
+        "weight": 0.26,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "event:port_ceremony",
+        "to": "time:body_found_morning",
+        "weight": 0.3,
+        "tags": [
+          "timing"
+        ]
+      },
+      {
+        "from": "motive:executor_discovery",
+        "to": "object:committee_minutes",
+        "weight": 0.28,
+        "tags": [
+          "motive"
+        ]
+      },
+      {
+        "from": "object:blotting_paper",
+        "to": "location:committee_room",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:rigid_courtesy",
+        "to": "location:dining_hall",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "emotion:prolonged_silence",
+        "to": "location:archive_vault",
+        "weight": 0.24,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "modifier:vault_unlocked",
+        "to": "location:archive_vault",
+        "weight": 0.28,
+        "tags": [
+          "access"
+        ]
+      },
+      {
+        "from": "action:letter_burned",
+        "to": "location:reading_room",
+        "weight": 0.28,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:garden_crossed",
+        "to": "location:rear_garden",
+        "weight": 0.26,
+        "tags": [
+          "scene"
+        ]
+      },
+      {
+        "from": "action:sample_compared",
+        "to": "object:forged_signature",
+        "weight": 0.3,
+        "tags": [
+          "evidence"
+        ]
+      },
+      {
+        "from": "time:deed_deadline",
+        "to": "motive:trust_fraud",
+        "weight": 0.3,
+        "tags": [
+          "motive"
+        ]
+      }
     ]
   },
   "attractor": {
     "dimensions": [
-      {"id": "killer_dimension", "invariant_token": "suspect:agnes_vail", "threshold": 0.75, "label": "who acted"},
-      {"id": "mechanism_dimension", "invariant_token": "event:evening_port", "threshold": 0.75, "label": "how it was done"},
-      {"id": "motive_dimension", "invariant_token": "motive:1921_scandal", "threshold": 0.75, "label": "why it happened"}
+      {
+        "id": "killer_dimension",
+        "invariant_token": "suspect:agnes_vail",
+        "threshold": 0.75,
+        "label": "who acted"
+      },
+      {
+        "id": "mechanism_dimension",
+        "invariant_token": "event:evening_port",
+        "threshold": 0.75,
+        "label": "how it was done"
+      },
+      {
+        "id": "motive_dimension",
+        "invariant_token": "motive:1921_scandal",
+        "threshold": 0.75,
+        "label": "why it happened"
+      }
     ],
     "convergence_display": "minimum"
   },

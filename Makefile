@@ -524,6 +524,11 @@ ac-fit-play-report: ac-s02-pack colab-install
 # Train all valid cases (batch)
 # =============================================================================
 
+# OUTPUT_DIR: set to save outputs incrementally (e.g. Google Drive)
+# Usage: make train-all OUTPUT_DIR=/content/drive/MyDrive/living_tales_outputs
+OUTPUT_DIR ?=
+_OUTPUT_FLAG = $(if $(OUTPUT_DIR),--output-dir $(OUTPUT_DIR),)
+
 train-all-fast: colab-install
 	@echo ""
 	@echo "################################################################"
@@ -531,7 +536,7 @@ train-all-fast: colab-install
 	@echo "  500 paths · 30 epochs · 100 RL · 3 games"
 	@echo "################################################################"
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
-	python3 tools/train_all_cases.py --paths 500 --epochs 30 --rl-episodes 100 --games 3 --device cuda
+	python3 tools/train_all_cases.py --paths 500 --epochs 30 --rl-episodes 100 --games 3 --device cuda $(_OUTPUT_FLAG)
 
 train-all: colab-install
 	@echo ""
@@ -543,7 +548,8 @@ train-all: colab-install
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
 	python3 tools/train_all_cases.py --production --device cuda \
 	  --scale-sizes amber_cipher_L=L \
-	  --scale-experiment dust_and_verdict little_creature_M little_creature_XL
+	  --scale-experiment dust_and_verdict little_creature_M little_creature_XL \
+	  $(_OUTPUT_FLAG)
 
 train-all-production: colab-install
 	@echo ""
@@ -551,7 +557,7 @@ train-all-production: colab-install
 	@echo "  LIVING TALES — TRAIN ALL CASES (production)"
 	@echo "################################################################"
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
-	python3 tools/train_all_cases.py --production --device cuda
+	python3 tools/train_all_cases.py --production --device cuda $(_OUTPUT_FLAG)
 
 train-creatures: colab-install
 	@echo ""
@@ -561,7 +567,8 @@ train-creatures: colab-install
 	@echo "################################################################"
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
 	python3 tools/train_all_cases.py --production --device cuda \
-	  --cases little_creature little_creature_M little_creature_L little_creature_XL
+	  --cases little_creature little_creature_M little_creature_L little_creature_XL \
+	  $(_OUTPUT_FLAG)
 
 train-mysteries: colab-install
 	@echo ""
@@ -573,4 +580,5 @@ train-mysteries: colab-install
 	  --cases amber_cipher amber_cipher_L amber_cipher_M \
 	  attended_hour black_ledger dust_and_verdict fog_over_brussels \
 	  hollow_season neon_blackout orchard_at_dusk resonance_test \
-	  sulphur_line third_signature tidal_interval venetian_mirror
+	  sulphur_line third_signature tidal_interval venetian_mirror \
+	  $(_OUTPUT_FLAG)

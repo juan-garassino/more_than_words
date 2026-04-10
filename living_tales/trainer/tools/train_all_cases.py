@@ -41,6 +41,31 @@ _CASES_PACKED = _TRAINER / "cases"
 _OUTPUTS = _TRAINER / "outputs"
 _LOGS = _OUTPUTS / "logs"
 
+# External save directory (e.g. Google Drive) — set via --output-dir
+_SAVE_DIR: Path | None = None
+
+
+def _save_case_to_external(case_id: str):
+    """Incrementally copy a case's outputs to the external save directory.
+    Called after each case finishes so nothing is lost on disconnect."""
+    if _SAVE_DIR is None:
+        return
+    src = _OUTPUTS / case_id
+    dst = _SAVE_DIR / case_id
+    if not src.exists():
+        return
+    dst.mkdir(parents=True, exist_ok=True)
+    for f in src.iterdir():
+        if f.is_file():
+            shutil.copy2(str(f), str(dst / f.name))
+    # Also copy the log if it exists
+    log_src = _LOGS / f"{case_id}.log"
+    log_dst = _SAVE_DIR / "logs"
+    if log_src.exists():
+        log_dst.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(str(log_src), str(log_dst / log_src.name))
+    _log(f"  Saved to: {dst}")
+
 sys.path.insert(0, str(_TRAINER))
 
 from core.cartridge import CartridgeSpec
@@ -324,6 +349,8 @@ def main():
                         help="Case IDs to train at S/M/L model sizes (e.g. dust_and_verdict)")
     parser.add_argument("--scale-sizes", nargs="*", default=None,
                         help="Model size overrides for specific cases (e.g. amber_cipher_L=L little_creature_M=L)")
+    parser.add_argument("--output-dir", type=str, default=None,
+                        help="External save directory (e.g. Google Drive path). Outputs are copied here after each case.")
     args = parser.parse_args()
 
     if args.production:
@@ -331,6 +358,13 @@ def main():
         args.epochs = 200
         args.rl_episodes = 500
         args.games = 5
+
+    # Set external save directory
+    global _SAVE_DIR
+    if args.output_dir:
+        _SAVE_DIR = Path(args.output_dir)
+        _SAVE_DIR.mkdir(parents=True, exist_ok=True)
+        (_SAVE_DIR / "logs").mkdir(parents=True, exist_ok=True)
 
     torch.set_num_threads(1)
     torch.set_num_interop_threads(1)
@@ -340,6 +374,8 @@ def main():
 
     _banner("LIVING TALES — TRAIN ALL CASES")
     _log(f"Settings: paths={args.paths} epochs={args.epochs} rl={args.rl_episodes} games={args.games} device={args.device}")
+    if _SAVE_DIR:
+        _log(f"External save: {_SAVE_DIR} (incremental after each case)")
 
     t0 = time.time()
 
@@ -450,6 +486,9 @@ def main():
                 f"avg turns {report['avg_turns']:.1f}"
             )
 
+            # Incremental save to external directory (e.g. Google Drive)
+            _save_case_to_external(case_id)
+
     # ── Phase 3: Scale experiments ────────────────────────────────────────
     scale_trained = []
     if args.scale_experiment:
@@ -495,6 +534,9 @@ def main():
                 converged = sum(1 for g in games if g["converged"])
                 _log(f"Done: {converged}/{len(games)} converged | avg turns {report['avg_turns']:.1f}")
 
+                # Incremental save to external directory
+                _save_case_to_external(output_id)
+
     # ── Final summary ───────────────────────────────────────────────────────
     elapsed = time.time() - t0
     _banner("FINAL SUMMARY")
@@ -525,6 +567,13 @@ def main():
         _banner("PACKAGING")
         zip_path = zip_outputs(trained_mysteries, trained_creatures, scale_trained)
         print(f"\n  Download: {zip_path}")
+
+        # Copy zip + summary to external save directory
+        if _SAVE_DIR is not None:
+            shutil.copy2(zip_path, str(_SAVE_DIR / Path(zip_path).name))
+            shutil.copy2(str(_LOGS / "summary.txt"), str(_SAVE_DIR / "logs" / "summary.txt"))
+            shutil.copy2(str(_LOGS / "reports.json"), str(_SAVE_DIR / "logs" / "reports.json"))
+            _log(f"  Final zip saved to: {_SAVE_DIR / Path(zip_path).name}")
     print()
 
 
