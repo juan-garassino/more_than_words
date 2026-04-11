@@ -383,21 +383,24 @@ def main():
         existing_runs = sorted(output_base.glob("run_*"), reverse=True)
 
         if args.resume and existing_runs:
-            # Check if latest run is incomplete (has some but not all checkpoints)
             latest = existing_runs[0]
+            has_zip = any(latest.glob("*.zip"))
             n_checkpoints = sum(1 for d in latest.iterdir()
                                 if d.is_dir() and d.name != "logs"
                                 and (d / "dialogue_model.pt").exists())
-            if n_checkpoints > 0:
-                # Resume into the same dir
+            if has_zip:
+                # Latest run is complete (has zip) — start fresh
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                _SAVE_DIR = output_base / f"run_{timestamp}"
+                _log(f"Previous run complete ({latest.name}). Starting fresh run.")
+            elif n_checkpoints > 0:
+                # Incomplete — resume into same dir
                 _SAVE_DIR = latest
                 _log(f"Resuming into: {_SAVE_DIR} ({n_checkpoints} checkpoints found)")
             else:
-                # Empty run dir or no checkpoints — create fresh
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 _SAVE_DIR = output_base / f"run_{timestamp}"
         else:
-            # No resume or no existing runs — create fresh
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             _SAVE_DIR = output_base / f"run_{timestamp}"
 
