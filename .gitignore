@@ -1,2 +1,15 @@
 # Training data (uploaded separately to Colab)
 **/data/
+
+# Training outputs (checkpoints, logs, zips)
+living_tales/trainer/outputs/
+living_tales/trainer/outputs_run*/
+living_tales_all_*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
