@@ -370,10 +370,11 @@ def main():
         args.rl_episodes = 500
         args.games = 5
 
-    # Set external save directory
+    # Set external save directory (timestamped for versioning)
     global _SAVE_DIR
     if args.output_dir:
-        _SAVE_DIR = Path(args.output_dir)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        _SAVE_DIR = Path(args.output_dir) / f"run_{timestamp}"
         _SAVE_DIR.mkdir(parents=True, exist_ok=True)
         (_SAVE_DIR / "logs").mkdir(parents=True, exist_ok=True)
 
