@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "com.unity.sentis": "2.1.0",
+    "com.unity.textmeshpro": "3.0.9",
+    "com.unity.render-pipelines.universal": "14.0.11",
+    "com.unity.ugui": "1.0.0",
+    "com.unity.modules.ui": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0"
+  }
+}

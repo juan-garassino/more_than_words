@@ -37,7 +37,9 @@ def make_flat_material(name, color):
     bsdf = mat.node_tree.nodes["Principled BSDF"]
     bsdf.inputs["Base Color"].default_value = color
     bsdf.inputs["Roughness"].default_value = 1.0
-    bsdf.inputs["Specular IOR Level"].default_value = 0.0
+    # Blender 3.x uses "Specular", 4.x uses "Specular IOR Level"
+    spec_key = "Specular IOR Level" if "Specular IOR Level" in bsdf.inputs else "Specular"
+    bsdf.inputs[spec_key].default_value = 0.0
     return mat
 
 
@@ -278,7 +280,7 @@ def generate_creature():
     light.data.color = (1.0, 0.95, 0.85)  # warm
 
     # --- Render settings ---
-    bpy.context.scene.render.engine = 'BLENDER_EEVEE_NEXT'
+    bpy.context.scene.render.engine = 'BLENDER_EEVEE'
     bpy.context.scene.render.resolution_x = 1024
     bpy.context.scene.render.resolution_y = 1024
     bpy.context.scene.world.node_tree.nodes["Background"].inputs[0].default_value = (0.85, 0.9, 0.95, 1)
@@ -309,12 +311,11 @@ def export_glb(filepath="creature.glb"):
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
+    import os
+    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "unity", "Assets", "Models", "Creature")
+    os.makedirs(out_dir, exist_ok=True)
+
     creature, armature = generate_creature()
 
-    # Render a preview
-    bpy.context.scene.render.filepath = "//creature_preview.png"
-    bpy.ops.render.render(write_still=True)
-    print("Preview rendered: creature_preview.png")
-
     # Export
-    export_glb("//creature.glb")
+    export_glb(os.path.join(out_dir, "creature.glb"))

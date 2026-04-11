@@ -1,0 +1,2713 @@
+{
+  "nodes": [
+    "state:well_fed",
+    "state:content",
+    "state:rested",
+    "state:bonded",
+    "state:groomed",
+    "state:healthy",
+    "state:in_season",
+    "state:self_known",
+    "state:remembered",
+    "action:fill_bowl",
+    "action:give_treat",
+    "action:pour_water",
+    "action:toss_ball",
+    "action:tug_rope",
+    "action:scratch_chin",
+    "action:brush_coat",
+    "action:clean_paws",
+    "action:dim_lamp",
+    "action:sing_low",
+    "action:open_door",
+    "action:wrap_blanket",
+    "action:give_medicine",
+    "action:check_pulse",
+    "action:warm_compress",
+    "action:clear_snow",
+    "action:plant_seeds",
+    "action:encourage_gently",
+    "action:wait_patiently",
+    "action:firm_command",
+    "action:reward_success",
+    "action:revisit_spot",
+    "action:offer_old_toy",
+    "action:repeat_routine",
+    "mood:happy_wag",
+    "mood:calm_sigh",
+    "mood:eager_bounce",
+    "mood:low_whine",
+    "mood:drowsy_blink",
+    "mood:curious_sniff",
+    "mood:anxious_pace",
+    "mood:playful_crouch",
+    "mood:warm_lean",
+    "mood:proud_prance",
+    "mood:sick_shiver",
+    "mood:slow_recovery",
+    "mood:spring_excitement",
+    "mood:winter_huddle",
+    "mood:autumn_mellow",
+    "mood:shy_retreat",
+    "mood:confident_strut",
+    "mood:stubborn_stand",
+    "mood:gentle_acceptance",
+    "mood:recognition_spark",
+    "mood:nostalgic_sigh",
+    "mood:wary_recall",
+    "location:cozy_den",
+    "location:sunny_garden",
+    "location:kitchen_corner",
+    "location:warm_hearth",
+    "location:muddy_path",
+    "location:wash_basin",
+    "location:front_step",
+    "location:soft_bed",
+    "location:vet_clinic",
+    "location:winter_room",
+    "location:garden_shed",
+    "location:porch_swing",
+    "location:training_yard",
+    "location:old_walking_route",
+    "context:rain_outside",
+    "context:warm_sun",
+    "context:cool_breeze",
+    "context:quiet_house",
+    "context:visitor_knock",
+    "context:snow_falling",
+    "context:fresh_air",
+    "context:thunder_rumble",
+    "context:birdsong",
+    "context:firelight",
+    "context:spring_bloom",
+    "context:autumn_chill",
+    "context:first_frost",
+    "context:morning_dew",
+    "context:familiar_scent",
+    "context:new_place_smell",
+    "object:food_bowl",
+    "object:water_dish",
+    "object:rubber_ball",
+    "object:knotted_rope",
+    "object:soft_blanket",
+    "object:bristle_brush",
+    "object:small_bone",
+    "object:worn_collar",
+    "object:squeaky_duck",
+    "object:pillow_nest",
+    "object:medicine_dropper",
+    "object:wool_scarf",
+    "object:fallen_leaf",
+    "object:old_toy",
+    "object:worn_path",
+    "object:familiar_bowl",
+    "object:training_clicker",
+    "need:belly_rumble",
+    "need:restless_pacing",
+    "need:lonely_cry",
+    "need:itchy_scratch",
+    "need:yawn_stretch",
+    "need:play_nudge",
+    "need:runny_nose",
+    "need:bright_fever",
+    "need:cold_snap_ache",
+    "need:approval_seeking",
+    "need:comfort_seeking",
+    "trait:gentle_nature",
+    "trait:stubborn_streak",
+    "trait:eager_learner",
+    "trait:cautious_step",
+    "trait:bold_approach",
+    "trait:loyal_shadow",
+    "memory:favorite_spot",
+    "memory:feared_sound",
+    "memory:trusted_hand",
+    "memory:learned_trick",
+    "memory:old_comfort",
+    "memory:recalled_walk",
+    "companion:park_dog",
+    "companion:window_bird",
+    "companion:child_visitor",
+    "companion:calm_cat",
+    "companion:vet_nurse",
+    "companion:robin_on_fence",
+    "companion:old_friend_dog",
+    "companion:patient_trainer",
+    "time:sunrise",
+    "time:midday_warmth",
+    "time:golden_hour",
+    "time:dusk_settling",
+    "time:deep_night",
+    "time:early_spring",
+    "time:late_autumn",
+    "event:creature_discovered",
+    "event:meal_served",
+    "event:walk_begun",
+    "event:vet_visit",
+    "event:season_changed",
+    "event:trick_performed",
+    "event:remembered_place",
+    "decay:got_hungry",
+    "decay:grew_bored",
+    "decay:grew_tired",
+    "decay:felt_lonely",
+    "decay:coat_matted",
+    "decay:caught_chill",
+    "decay:season_shock",
+    "decay:lost_confidence",
+    "decay:stubborn_refusal",
+    "decay:reverted_to_shy",
+    "decay:ignored_command",
+    "decay:forgot_briefly",
+    "decay:wrong_path_chosen",
+    "decay:startled_by_familiar",
+    "decay:routine_confused",
+    "mischief:raided_bin",
+    "mischief:chewed_shoe",
+    "mischief:rolled_in_mud",
+    "mischief:stole_sock",
+    "mischief:pretended_not_to_hear",
+    "mischief:hid_favourite_toy",
+    "mischief:went_wrong_way",
+    "decline:empty_stare_at_bowl",
+    "decline:dramatic_sigh",
+    "decline:door_watching",
+    "decline:confused_pause",
+    "decline:backing_away",
+    "combo:guilty_face",
+    "combo:zoomies",
+    "combo:selective_deafness",
+    "combo:wrong_route_joy",
+    "combo:sulky_corner",
+    "context:left_alone",
+    "context:skipped_meal",
+    "context:unfamiliar_noise",
+    "recovery:grateful_lick",
+    "recovery:forgiven_wag",
+    "recovery:confidence_rebuilt",
+    "recovery:remembered_again",
+    "recovery:fresh_and_clean"
+  ],
+  "edges": [
+    {
+      "from": "action:fill_bowl",
+      "to": "state:well_fed",
+      "weight": 0.38,
+      "tags": [
+        "care"
+      ]
+    },
+    {
+      "from": "action:give_treat",
+      "to": "state:well_fed",
+      "weight": 0.34,
+      "tags": [
+        "care"
+      ]
+    },
+    {
+      "from": "action:toss_ball",
+      "to": "state:content",
+      "weight": 0.36,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "mood:happy_wag",
+      "to": "state:content",
+      "weight": 0.34,
+      "tags": [
+        "joy"
+      ]
+    },
+    {
+      "from": "action:dim_lamp",
+      "to": "state:rested",
+      "weight": 0.36,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "mood:drowsy_blink",
+      "to": "state:rested",
+      "weight": 0.34,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "action:scratch_chin",
+      "to": "state:bonded",
+      "weight": 0.36,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "mood:warm_lean",
+      "to": "state:bonded",
+      "weight": 0.34,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "action:brush_coat",
+      "to": "state:groomed",
+      "weight": 0.38,
+      "tags": [
+        "groom"
+      ]
+    },
+    {
+      "from": "action:clean_paws",
+      "to": "state:groomed",
+      "weight": 0.34,
+      "tags": [
+        "groom"
+      ]
+    },
+    {
+      "from": "action:give_medicine",
+      "to": "state:healthy",
+      "weight": 0.38,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "mood:slow_recovery",
+      "to": "state:healthy",
+      "weight": 0.34,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "context:spring_bloom",
+      "to": "state:in_season",
+      "weight": 0.36,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "event:season_changed",
+      "to": "state:in_season",
+      "weight": 0.34,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "action:encourage_gently",
+      "to": "state:self_known",
+      "weight": 0.36,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "mood:confident_strut",
+      "to": "state:self_known",
+      "weight": 0.34,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "trait:eager_learner",
+      "to": "state:self_known",
+      "weight": 0.32,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "action:revisit_spot",
+      "to": "state:remembered",
+      "weight": 0.36,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "mood:recognition_spark",
+      "to": "state:remembered",
+      "weight": 0.34,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "memory:favorite_spot",
+      "to": "state:remembered",
+      "weight": 0.32,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "action:fill_bowl",
+      "to": "object:food_bowl",
+      "weight": 0.4,
+      "tags": [
+        "care"
+      ]
+    },
+    {
+      "from": "action:fill_bowl",
+      "to": "need:belly_rumble",
+      "weight": 0.36,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:fill_bowl",
+      "to": "location:kitchen_corner",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:pour_water",
+      "to": "object:water_dish",
+      "weight": 0.36,
+      "tags": [
+        "care"
+      ]
+    },
+    {
+      "from": "action:toss_ball",
+      "to": "object:rubber_ball",
+      "weight": 0.38,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "action:toss_ball",
+      "to": "mood:eager_bounce",
+      "weight": 0.34,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:toss_ball",
+      "to": "location:sunny_garden",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:tug_rope",
+      "to": "object:knotted_rope",
+      "weight": 0.36,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "action:tug_rope",
+      "to": "mood:playful_crouch",
+      "weight": 0.32,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:scratch_chin",
+      "to": "mood:warm_lean",
+      "weight": 0.36,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "action:scratch_chin",
+      "to": "mood:calm_sigh",
+      "weight": 0.28,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:brush_coat",
+      "to": "object:bristle_brush",
+      "weight": 0.38,
+      "tags": [
+        "groom"
+      ]
+    },
+    {
+      "from": "action:brush_coat",
+      "to": "need:itchy_scratch",
+      "weight": 0.32,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:clean_paws",
+      "to": "location:wash_basin",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:dim_lamp",
+      "to": "mood:drowsy_blink",
+      "weight": 0.34,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:dim_lamp",
+      "to": "location:cozy_den",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:sing_low",
+      "to": "mood:calm_sigh",
+      "weight": 0.32,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:sing_low",
+      "to": "memory:old_comfort",
+      "weight": 0.28,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "action:open_door",
+      "to": "mood:eager_bounce",
+      "weight": 0.3,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:open_door",
+      "to": "location:front_step",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:wrap_blanket",
+      "to": "object:soft_blanket",
+      "weight": 0.36,
+      "tags": [
+        "care"
+      ]
+    },
+    {
+      "from": "action:give_medicine",
+      "to": "object:medicine_dropper",
+      "weight": 0.38,
+      "tags": [
+        "medical"
+      ]
+    },
+    {
+      "from": "action:give_medicine",
+      "to": "need:runny_nose",
+      "weight": 0.34,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:check_pulse",
+      "to": "mood:sick_shiver",
+      "weight": 0.32,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:check_pulse",
+      "to": "companion:vet_nurse",
+      "weight": 0.28,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "action:warm_compress",
+      "to": "mood:slow_recovery",
+      "weight": 0.32,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:clear_snow",
+      "to": "context:snow_falling",
+      "weight": 0.32,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "action:plant_seeds",
+      "to": "context:spring_bloom",
+      "weight": 0.3,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "action:encourage_gently",
+      "to": "mood:shy_retreat",
+      "weight": 0.32,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:encourage_gently",
+      "to": "trait:gentle_nature",
+      "weight": 0.3,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "action:encourage_gently",
+      "to": "companion:patient_trainer",
+      "weight": 0.26,
+      "tags": [
+        "training"
+      ]
+    },
+    {
+      "from": "action:wait_patiently",
+      "to": "mood:stubborn_stand",
+      "weight": 0.32,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:wait_patiently",
+      "to": "trait:stubborn_streak",
+      "weight": 0.28,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "action:firm_command",
+      "to": "mood:stubborn_stand",
+      "weight": 0.3,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:firm_command",
+      "to": "location:training_yard",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:reward_success",
+      "to": "mood:proud_prance",
+      "weight": 0.34,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:reward_success",
+      "to": "memory:learned_trick",
+      "weight": 0.3,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "action:reward_success",
+      "to": "object:training_clicker",
+      "weight": 0.28,
+      "tags": [
+        "training"
+      ]
+    },
+    {
+      "from": "action:revisit_spot",
+      "to": "mood:recognition_spark",
+      "weight": 0.34,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "action:revisit_spot",
+      "to": "location:old_walking_route",
+      "weight": 0.3,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "action:revisit_spot",
+      "to": "memory:recalled_walk",
+      "weight": 0.28,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "action:offer_old_toy",
+      "to": "object:old_toy",
+      "weight": 0.36,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "action:offer_old_toy",
+      "to": "mood:nostalgic_sigh",
+      "weight": 0.3,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "action:repeat_routine",
+      "to": "mood:recognition_spark",
+      "weight": 0.3,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "action:repeat_routine",
+      "to": "object:familiar_bowl",
+      "weight": 0.28,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "mood:happy_wag",
+      "to": "location:sunny_garden",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "mood:happy_wag",
+      "to": "companion:child_visitor",
+      "weight": 0.24,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "mood:calm_sigh",
+      "to": "location:warm_hearth",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "mood:calm_sigh",
+      "to": "context:firelight",
+      "weight": 0.24,
+      "tags": [
+        "comfort"
+      ]
+    },
+    {
+      "from": "mood:eager_bounce",
+      "to": "event:walk_begun",
+      "weight": 0.3,
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "from": "mood:eager_bounce",
+      "to": "companion:park_dog",
+      "weight": 0.26,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "mood:low_whine",
+      "to": "need:belly_rumble",
+      "weight": 0.32,
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "from": "mood:drowsy_blink",
+      "to": "location:soft_bed",
+      "weight": 0.3,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "mood:drowsy_blink",
+      "to": "need:yawn_stretch",
+      "weight": 0.26,
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "from": "mood:curious_sniff",
+      "to": "location:front_step",
+      "weight": 0.26,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "mood:curious_sniff",
+      "to": "companion:window_bird",
+      "weight": 0.22,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "mood:anxious_pace",
+      "to": "need:lonely_cry",
+      "weight": 0.3,
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "from": "mood:anxious_pace",
+      "to": "context:thunder_rumble",
+      "weight": 0.26,
+      "tags": [
+        "stress"
+      ]
+    },
+    {
+      "from": "mood:playful_crouch",
+      "to": "object:squeaky_duck",
+      "weight": 0.24,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "mood:warm_lean",
+      "to": "location:warm_hearth",
+      "weight": 0.28,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "mood:warm_lean",
+      "to": "companion:calm_cat",
+      "weight": 0.22,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "mood:sick_shiver",
+      "to": "need:bright_fever",
+      "weight": 0.32,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "mood:sick_shiver",
+      "to": "location:soft_bed",
+      "weight": 0.26,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "mood:slow_recovery",
+      "to": "location:warm_hearth",
+      "weight": 0.26,
+      "tags": [
+        "comfort"
+      ]
+    },
+    {
+      "from": "mood:spring_excitement",
+      "to": "context:spring_bloom",
+      "weight": 0.26,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "mood:winter_huddle",
+      "to": "location:winter_room",
+      "weight": 0.28,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "mood:autumn_mellow",
+      "to": "object:fallen_leaf",
+      "weight": 0.24,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "mood:shy_retreat",
+      "to": "location:cozy_den",
+      "weight": 0.28,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "mood:shy_retreat",
+      "to": "trait:cautious_step",
+      "weight": 0.26,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "mood:confident_strut",
+      "to": "trait:bold_approach",
+      "weight": 0.28,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "mood:confident_strut",
+      "to": "location:training_yard",
+      "weight": 0.24,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "mood:stubborn_stand",
+      "to": "trait:stubborn_streak",
+      "weight": 0.28,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "mood:gentle_acceptance",
+      "to": "trait:gentle_nature",
+      "weight": 0.28,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "mood:gentle_acceptance",
+      "to": "memory:trusted_hand",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "mood:recognition_spark",
+      "to": "memory:favorite_spot",
+      "weight": 0.28,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "mood:recognition_spark",
+      "to": "context:familiar_scent",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "mood:nostalgic_sigh",
+      "to": "memory:old_comfort",
+      "weight": 0.28,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "mood:nostalgic_sigh",
+      "to": "location:old_walking_route",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "mood:wary_recall",
+      "to": "memory:feared_sound",
+      "weight": 0.3,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "mood:wary_recall",
+      "to": "context:thunder_rumble",
+      "weight": 0.24,
+      "tags": [
+        "stress"
+      ]
+    },
+    {
+      "from": "location:cozy_den",
+      "to": "event:creature_discovered",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:cozy_den",
+      "to": "time:sunrise",
+      "weight": 0.24,
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "from": "location:sunny_garden",
+      "to": "context:warm_sun",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:sunny_garden",
+      "to": "context:birdsong",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:kitchen_corner",
+      "to": "event:meal_served",
+      "weight": 0.3,
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "from": "location:warm_hearth",
+      "to": "context:firelight",
+      "weight": 0.28,
+      "tags": [
+        "comfort"
+      ]
+    },
+    {
+      "from": "location:muddy_path",
+      "to": "event:walk_begun",
+      "weight": 0.28,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "location:wash_basin",
+      "to": "need:itchy_scratch",
+      "weight": 0.26,
+      "tags": [
+        "groom"
+      ]
+    },
+    {
+      "from": "location:front_step",
+      "to": "context:fresh_air",
+      "weight": 0.2,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:soft_bed",
+      "to": "time:deep_night",
+      "weight": 0.28,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "location:soft_bed",
+      "to": "object:pillow_nest",
+      "weight": 0.26,
+      "tags": [
+        "comfort"
+      ]
+    },
+    {
+      "from": "location:vet_clinic",
+      "to": "event:vet_visit",
+      "weight": 0.32,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "location:vet_clinic",
+      "to": "companion:vet_nurse",
+      "weight": 0.28,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "location:winter_room",
+      "to": "context:snow_falling",
+      "weight": 0.26,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "location:garden_shed",
+      "to": "context:morning_dew",
+      "weight": 0.2,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "location:porch_swing",
+      "to": "time:golden_hour",
+      "weight": 0.22,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "location:training_yard",
+      "to": "event:trick_performed",
+      "weight": 0.28,
+      "tags": [
+        "training"
+      ]
+    },
+    {
+      "from": "location:training_yard",
+      "to": "companion:patient_trainer",
+      "weight": 0.24,
+      "tags": [
+        "training"
+      ]
+    },
+    {
+      "from": "location:old_walking_route",
+      "to": "event:remembered_place",
+      "weight": 0.3,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "location:old_walking_route",
+      "to": "memory:recalled_walk",
+      "weight": 0.26,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "context:rain_outside",
+      "to": "mood:anxious_pace",
+      "weight": 0.24,
+      "tags": [
+        "stress"
+      ]
+    },
+    {
+      "from": "context:warm_sun",
+      "to": "mood:happy_wag",
+      "weight": 0.24,
+      "tags": [
+        "joy"
+      ]
+    },
+    {
+      "from": "context:quiet_house",
+      "to": "mood:drowsy_blink",
+      "weight": 0.26,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "context:visitor_knock",
+      "to": "mood:eager_bounce",
+      "weight": 0.26,
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "from": "context:snow_falling",
+      "to": "mood:winter_huddle",
+      "weight": 0.26,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "context:thunder_rumble",
+      "to": "need:lonely_cry",
+      "weight": 0.26,
+      "tags": [
+        "stress"
+      ]
+    },
+    {
+      "from": "context:thunder_rumble",
+      "to": "memory:feared_sound",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "context:birdsong",
+      "to": "mood:curious_sniff",
+      "weight": 0.24,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "context:firelight",
+      "to": "mood:warm_lean",
+      "weight": 0.26,
+      "tags": [
+        "comfort"
+      ]
+    },
+    {
+      "from": "context:autumn_chill",
+      "to": "need:cold_snap_ache",
+      "weight": 0.2,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "context:first_frost",
+      "to": "need:cold_snap_ache",
+      "weight": 0.26,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "context:familiar_scent",
+      "to": "memory:favorite_spot",
+      "weight": 0.26,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "context:new_place_smell",
+      "to": "trait:cautious_step",
+      "weight": 0.24,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "context:new_place_smell",
+      "to": "mood:curious_sniff",
+      "weight": 0.22,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "object:food_bowl",
+      "to": "event:meal_served",
+      "weight": 0.3,
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "from": "object:food_bowl",
+      "to": "need:belly_rumble",
+      "weight": 0.26,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "object:rubber_ball",
+      "to": "mood:playful_crouch",
+      "weight": 0.26,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "object:soft_blanket",
+      "to": "mood:calm_sigh",
+      "weight": 0.26,
+      "tags": [
+        "comfort"
+      ]
+    },
+    {
+      "from": "object:bristle_brush",
+      "to": "need:itchy_scratch",
+      "weight": 0.28,
+      "tags": [
+        "groom"
+      ]
+    },
+    {
+      "from": "object:small_bone",
+      "to": "mood:happy_wag",
+      "weight": 0.24,
+      "tags": [
+        "hunger"
+      ]
+    },
+    {
+      "from": "object:worn_collar",
+      "to": "event:walk_begun",
+      "weight": 0.24,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "object:worn_collar",
+      "to": "memory:recalled_walk",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "object:squeaky_duck",
+      "to": "mood:eager_bounce",
+      "weight": 0.24,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "object:pillow_nest",
+      "to": "need:yawn_stretch",
+      "weight": 0.26,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "object:medicine_dropper",
+      "to": "need:runny_nose",
+      "weight": 0.28,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "object:wool_scarf",
+      "to": "need:cold_snap_ache",
+      "weight": 0.22,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "object:fallen_leaf",
+      "to": "context:autumn_chill",
+      "weight": 0.24,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "object:old_toy",
+      "to": "mood:nostalgic_sigh",
+      "weight": 0.28,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "object:old_toy",
+      "to": "memory:old_comfort",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "object:worn_path",
+      "to": "memory:recalled_walk",
+      "weight": 0.28,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "object:worn_path",
+      "to": "location:old_walking_route",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "object:familiar_bowl",
+      "to": "memory:favorite_spot",
+      "weight": 0.26,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "object:familiar_bowl",
+      "to": "need:belly_rumble",
+      "weight": 0.22,
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "from": "object:training_clicker",
+      "to": "event:trick_performed",
+      "weight": 0.28,
+      "tags": [
+        "training"
+      ]
+    },
+    {
+      "from": "object:training_clicker",
+      "to": "memory:learned_trick",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "need:belly_rumble",
+      "to": "time:sunrise",
+      "weight": 0.24,
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "from": "need:restless_pacing",
+      "to": "mood:anxious_pace",
+      "weight": 0.24,
+      "tags": [
+        "stress"
+      ]
+    },
+    {
+      "from": "need:lonely_cry",
+      "to": "companion:calm_cat",
+      "weight": 0.24,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "need:yawn_stretch",
+      "to": "time:dusk_settling",
+      "weight": 0.26,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "need:play_nudge",
+      "to": "mood:playful_crouch",
+      "weight": 0.26,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "need:runny_nose",
+      "to": "location:vet_clinic",
+      "weight": 0.24,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "need:bright_fever",
+      "to": "location:soft_bed",
+      "weight": 0.26,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "need:cold_snap_ache",
+      "to": "location:winter_room",
+      "weight": 0.24,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "need:approval_seeking",
+      "to": "mood:shy_retreat",
+      "weight": 0.26,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "need:approval_seeking",
+      "to": "trait:eager_learner",
+      "weight": 0.24,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "need:comfort_seeking",
+      "to": "memory:old_comfort",
+      "weight": 0.26,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "need:comfort_seeking",
+      "to": "mood:nostalgic_sigh",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "trait:gentle_nature",
+      "to": "companion:calm_cat",
+      "weight": 0.22,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "trait:eager_learner",
+      "to": "mood:confident_strut",
+      "weight": 0.26,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "trait:eager_learner",
+      "to": "event:trick_performed",
+      "weight": 0.24,
+      "tags": [
+        "training"
+      ]
+    },
+    {
+      "from": "trait:cautious_step",
+      "to": "mood:wary_recall",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "trait:bold_approach",
+      "to": "mood:eager_bounce",
+      "weight": 0.22,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "trait:loyal_shadow",
+      "to": "mood:warm_lean",
+      "weight": 0.26,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "trait:loyal_shadow",
+      "to": "memory:trusted_hand",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "memory:favorite_spot",
+      "to": "location:warm_hearth",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "memory:trusted_hand",
+      "to": "companion:child_visitor",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "memory:learned_trick",
+      "to": "mood:proud_prance",
+      "weight": 0.26,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "memory:learned_trick",
+      "to": "event:trick_performed",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "memory:old_comfort",
+      "to": "object:soft_blanket",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "memory:old_comfort",
+      "to": "location:cozy_den",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "memory:recalled_walk",
+      "to": "event:remembered_place",
+      "weight": 0.28,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "memory:recalled_walk",
+      "to": "mood:nostalgic_sigh",
+      "weight": 0.24,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "companion:park_dog",
+      "to": "location:muddy_path",
+      "weight": 0.24,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "companion:window_bird",
+      "to": "location:front_step",
+      "weight": 0.2,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "companion:child_visitor",
+      "to": "location:sunny_garden",
+      "weight": 0.24,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "companion:calm_cat",
+      "to": "location:warm_hearth",
+      "weight": 0.22,
+      "tags": [
+        "comfort"
+      ]
+    },
+    {
+      "from": "companion:robin_on_fence",
+      "to": "context:birdsong",
+      "weight": 0.22,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "companion:old_friend_dog",
+      "to": "mood:recognition_spark",
+      "weight": 0.26,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "companion:old_friend_dog",
+      "to": "location:old_walking_route",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "companion:patient_trainer",
+      "to": "trait:eager_learner",
+      "weight": 0.22,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "time:sunrise",
+      "to": "event:creature_discovered",
+      "weight": 0.26,
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "from": "time:midday_warmth",
+      "to": "context:warm_sun",
+      "weight": 0.24,
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "from": "time:golden_hour",
+      "to": "event:walk_begun",
+      "weight": 0.24,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "time:dusk_settling",
+      "to": "context:firelight",
+      "weight": 0.24,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "time:deep_night",
+      "to": "context:quiet_house",
+      "weight": 0.26,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "time:early_spring",
+      "to": "context:spring_bloom",
+      "weight": 0.26,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "time:early_spring",
+      "to": "event:season_changed",
+      "weight": 0.22,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "time:late_autumn",
+      "to": "context:autumn_chill",
+      "weight": 0.24,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "event:creature_discovered",
+      "to": "need:belly_rumble",
+      "weight": 0.24,
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "from": "event:meal_served",
+      "to": "mood:happy_wag",
+      "weight": 0.26,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "event:walk_begun",
+      "to": "mood:proud_prance",
+      "weight": 0.24,
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "from": "event:vet_visit",
+      "to": "mood:anxious_pace",
+      "weight": 0.22,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "event:vet_visit",
+      "to": "memory:feared_sound",
+      "weight": 0.2,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "event:season_changed",
+      "to": "mood:spring_excitement",
+      "weight": 0.24,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "event:trick_performed",
+      "to": "mood:proud_prance",
+      "weight": 0.26,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "event:remembered_place",
+      "to": "mood:recognition_spark",
+      "weight": 0.26,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "event:remembered_place",
+      "to": "context:familiar_scent",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "need:lonely_cry",
+      "to": "action:scratch_chin",
+      "weight": 0.24,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "mood:proud_prance",
+      "to": "location:sunny_garden",
+      "weight": 0.22,
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "from": "object:water_dish",
+      "to": "location:kitchen_corner",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "object:knotted_rope",
+      "to": "mood:playful_crouch",
+      "weight": 0.24,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "mood:autumn_mellow",
+      "to": "context:autumn_chill",
+      "weight": 0.22,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "action:warm_compress",
+      "to": "location:soft_bed",
+      "weight": 0.22,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "action:plant_seeds",
+      "to": "location:sunny_garden",
+      "weight": 0.22,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "mood:low_whine",
+      "to": "location:kitchen_corner",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "need:play_nudge",
+      "to": "time:golden_hour",
+      "weight": 0.22,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "context:cool_breeze",
+      "to": "mood:curious_sniff",
+      "weight": 0.2,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "context:rain_outside",
+      "to": "need:itchy_scratch",
+      "weight": 0.2,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "need:restless_pacing",
+      "to": "time:midday_warmth",
+      "weight": 0.22,
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "from": "action:give_treat",
+      "to": "mood:happy_wag",
+      "weight": 0.3,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "action:give_treat",
+      "to": "location:kitchen_corner",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:pour_water",
+      "to": "location:kitchen_corner",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:wrap_blanket",
+      "to": "location:soft_bed",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:clear_snow",
+      "to": "location:garden_shed",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:porch_swing",
+      "to": "context:cool_breeze",
+      "weight": 0.22,
+      "tags": [
+        "comfort"
+      ]
+    },
+    {
+      "from": "location:porch_swing",
+      "to": "mood:calm_sigh",
+      "weight": 0.22,
+      "tags": [
+        "rest"
+      ]
+    },
+    {
+      "from": "context:cool_breeze",
+      "to": "location:front_step",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "context:visitor_knock",
+      "to": "companion:child_visitor",
+      "weight": 0.24,
+      "tags": [
+        "bond"
+      ]
+    },
+    {
+      "from": "context:fresh_air",
+      "to": "mood:curious_sniff",
+      "weight": 0.24,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "context:fresh_air",
+      "to": "location:sunny_garden",
+      "weight": 0.2,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "context:first_frost",
+      "to": "location:winter_room",
+      "weight": 0.22,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "context:morning_dew",
+      "to": "location:sunny_garden",
+      "weight": 0.22,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "context:morning_dew",
+      "to": "mood:curious_sniff",
+      "weight": 0.2,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "object:small_bone",
+      "to": "location:cozy_den",
+      "weight": 0.2,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "object:wool_scarf",
+      "to": "context:snow_falling",
+      "weight": 0.24,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "object:wool_scarf",
+      "to": "location:winter_room",
+      "weight": 0.2,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "companion:robin_on_fence",
+      "to": "location:sunny_garden",
+      "weight": 0.22,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "companion:robin_on_fence",
+      "to": "mood:curious_sniff",
+      "weight": 0.2,
+      "tags": [
+        "explore"
+      ]
+    },
+    {
+      "from": "time:late_autumn",
+      "to": "mood:autumn_mellow",
+      "weight": 0.2,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "object:small_bone",
+      "to": "need:belly_rumble",
+      "weight": 0.22,
+      "tags": [
+        "hunger"
+      ]
+    },
+    {
+      "from": "time:late_autumn",
+      "to": "context:first_frost",
+      "weight": 0.22,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "decay:got_hungry",
+      "to": "need:belly_rumble",
+      "weight": 0.3,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:got_hungry",
+      "to": "decline:empty_stare_at_bowl",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:grew_bored",
+      "to": "need:play_nudge",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:grew_bored",
+      "to": "decline:dramatic_sigh",
+      "weight": 0.24,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:grew_tired",
+      "to": "need:yawn_stretch",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:felt_lonely",
+      "to": "need:lonely_cry",
+      "weight": 0.28,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:felt_lonely",
+      "to": "decline:door_watching",
+      "weight": 0.24,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:coat_matted",
+      "to": "need:itchy_scratch",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:caught_chill",
+      "to": "need:runny_nose",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:lost_confidence",
+      "to": "need:approval_seeking",
+      "weight": 0.28,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:lost_confidence",
+      "to": "decline:backing_away",
+      "weight": 0.24,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:stubborn_refusal",
+      "to": "mood:stubborn_stand",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:stubborn_refusal",
+      "to": "trait:stubborn_streak",
+      "weight": 0.22,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "decay:reverted_to_shy",
+      "to": "mood:shy_retreat",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:reverted_to_shy",
+      "to": "trait:cautious_step",
+      "weight": 0.22,
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "from": "decay:ignored_command",
+      "to": "combo:selective_deafness",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:ignored_command",
+      "to": "location:training_yard",
+      "weight": 0.2,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "decay:forgot_briefly",
+      "to": "need:comfort_seeking",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:forgot_briefly",
+      "to": "decline:confused_pause",
+      "weight": 0.24,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:wrong_path_chosen",
+      "to": "combo:wrong_route_joy",
+      "weight": 0.26,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:wrong_path_chosen",
+      "to": "location:old_walking_route",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "decay:startled_by_familiar",
+      "to": "memory:feared_sound",
+      "weight": 0.24,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:startled_by_familiar",
+      "to": "mood:wary_recall",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "decay:routine_confused",
+      "to": "decline:confused_pause",
+      "weight": 0.24,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:routine_confused",
+      "to": "location:kitchen_corner",
+      "weight": 0.2,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "mischief:raided_bin",
+      "to": "combo:guilty_face",
+      "weight": 0.28,
+      "tags": [
+        "mischief"
+      ]
+    },
+    {
+      "from": "mischief:chewed_shoe",
+      "to": "combo:guilty_face",
+      "weight": 0.26,
+      "tags": [
+        "mischief"
+      ]
+    },
+    {
+      "from": "mischief:chewed_shoe",
+      "to": "decay:grew_bored",
+      "weight": 0.22,
+      "tags": [
+        "mischief"
+      ]
+    },
+    {
+      "from": "mischief:rolled_in_mud",
+      "to": "decay:coat_matted",
+      "weight": 0.26,
+      "tags": [
+        "mischief"
+      ]
+    },
+    {
+      "from": "mischief:stole_sock",
+      "to": "combo:zoomies",
+      "weight": 0.26,
+      "tags": [
+        "mischief"
+      ]
+    },
+    {
+      "from": "mischief:pretended_not_to_hear",
+      "to": "combo:selective_deafness",
+      "weight": 0.26,
+      "tags": [
+        "mischief"
+      ]
+    },
+    {
+      "from": "mischief:pretended_not_to_hear",
+      "to": "decay:ignored_command",
+      "weight": 0.22,
+      "tags": [
+        "mischief"
+      ]
+    },
+    {
+      "from": "mischief:hid_favourite_toy",
+      "to": "decay:forgot_briefly",
+      "weight": 0.22,
+      "tags": [
+        "mischief"
+      ]
+    },
+    {
+      "from": "mischief:hid_favourite_toy",
+      "to": "object:old_toy",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "mischief:went_wrong_way",
+      "to": "combo:wrong_route_joy",
+      "weight": 0.26,
+      "tags": [
+        "mischief"
+      ]
+    },
+    {
+      "from": "mischief:went_wrong_way",
+      "to": "decay:wrong_path_chosen",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "decline:empty_stare_at_bowl",
+      "to": "action:fill_bowl",
+      "weight": 0.26,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "decline:dramatic_sigh",
+      "to": "action:toss_ball",
+      "weight": 0.22,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "decline:door_watching",
+      "to": "action:scratch_chin",
+      "weight": 0.24,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "decline:confused_pause",
+      "to": "action:repeat_routine",
+      "weight": 0.24,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "decline:confused_pause",
+      "to": "action:encourage_gently",
+      "weight": 0.22,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "decline:backing_away",
+      "to": "action:encourage_gently",
+      "weight": 0.24,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "decline:backing_away",
+      "to": "action:wait_patiently",
+      "weight": 0.22,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "combo:guilty_face",
+      "to": "recovery:forgiven_wag",
+      "weight": 0.26,
+      "tags": [
+        "combo"
+      ]
+    },
+    {
+      "from": "combo:zoomies",
+      "to": "location:sunny_garden",
+      "weight": 0.22,
+      "tags": [
+        "combo"
+      ]
+    },
+    {
+      "from": "combo:selective_deafness",
+      "to": "action:firm_command",
+      "weight": 0.24,
+      "tags": [
+        "response"
+      ]
+    },
+    {
+      "from": "combo:wrong_route_joy",
+      "to": "mood:happy_wag",
+      "weight": 0.22,
+      "tags": [
+        "combo"
+      ]
+    },
+    {
+      "from": "combo:sulky_corner",
+      "to": "location:cozy_den",
+      "weight": 0.2,
+      "tags": [
+        "combo"
+      ]
+    },
+    {
+      "from": "context:left_alone",
+      "to": "decay:felt_lonely",
+      "weight": 0.26,
+      "tags": [
+        "context"
+      ]
+    },
+    {
+      "from": "context:left_alone",
+      "to": "decline:door_watching",
+      "weight": 0.22,
+      "tags": [
+        "context"
+      ]
+    },
+    {
+      "from": "context:skipped_meal",
+      "to": "decay:got_hungry",
+      "weight": 0.26,
+      "tags": [
+        "context"
+      ]
+    },
+    {
+      "from": "context:unfamiliar_noise",
+      "to": "decay:lost_confidence",
+      "weight": 0.24,
+      "tags": [
+        "context"
+      ]
+    },
+    {
+      "from": "context:unfamiliar_noise",
+      "to": "memory:feared_sound",
+      "weight": 0.22,
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "from": "recovery:grateful_lick",
+      "to": "mood:warm_lean",
+      "weight": 0.24,
+      "tags": [
+        "recovery"
+      ]
+    },
+    {
+      "from": "recovery:forgiven_wag",
+      "to": "mood:happy_wag",
+      "weight": 0.24,
+      "tags": [
+        "recovery"
+      ]
+    },
+    {
+      "from": "recovery:confidence_rebuilt",
+      "to": "mood:confident_strut",
+      "weight": 0.26,
+      "tags": [
+        "recovery"
+      ]
+    },
+    {
+      "from": "recovery:confidence_rebuilt",
+      "to": "trait:bold_approach",
+      "weight": 0.22,
+      "tags": [
+        "recovery"
+      ]
+    },
+    {
+      "from": "recovery:remembered_again",
+      "to": "mood:recognition_spark",
+      "weight": 0.26,
+      "tags": [
+        "recovery"
+      ]
+    },
+    {
+      "from": "recovery:remembered_again",
+      "to": "memory:favorite_spot",
+      "weight": 0.22,
+      "tags": [
+        "recovery"
+      ]
+    },
+    {
+      "from": "recovery:fresh_and_clean",
+      "to": "mood:proud_prance",
+      "weight": 0.22,
+      "tags": [
+        "recovery"
+      ]
+    },
+    {
+      "from": "decay:season_shock",
+      "to": "location:front_step",
+      "weight": 0.2,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "combo:sulky_corner",
+      "to": "decay:grew_bored",
+      "weight": 0.22,
+      "tags": [
+        "decay"
+      ]
+    },
+    {
+      "from": "decay:grew_tired",
+      "to": "location:soft_bed",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "decay:caught_chill",
+      "to": "location:soft_bed",
+      "weight": 0.22,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "decay:caught_chill",
+      "to": "mood:sick_shiver",
+      "weight": 0.22,
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "from": "decay:season_shock",
+      "to": "mood:curious_sniff",
+      "weight": 0.2,
+      "tags": [
+        "season"
+      ]
+    },
+    {
+      "from": "decay:season_shock",
+      "to": "location:cozy_den",
+      "weight": 0.2,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "mischief:raided_bin",
+      "to": "location:kitchen_corner",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "mischief:rolled_in_mud",
+      "to": "location:muddy_path",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "mischief:stole_sock",
+      "to": "mood:playful_crouch",
+      "weight": 0.22,
+      "tags": [
+        "play"
+      ]
+    },
+    {
+      "from": "context:skipped_meal",
+      "to": "decline:empty_stare_at_bowl",
+      "weight": 0.22,
+      "tags": [
+        "context"
+      ]
+    },
+    {
+      "from": "context:skipped_meal",
+      "to": "location:kitchen_corner",
+      "weight": 0.2,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "recovery:grateful_lick",
+      "to": "mood:happy_wag",
+      "weight": 0.22,
+      "tags": [
+        "recovery"
+      ]
+    },
+    {
+      "from": "recovery:fresh_and_clean",
+      "to": "mood:happy_wag",
+      "weight": 0.2,
+      "tags": [
+        "recovery"
+      ]
+    }
+  ]
+}

@@ -27,7 +27,8 @@ def mat(name, color):
     bsdf = m.node_tree.nodes["Principled BSDF"]
     bsdf.inputs["Base Color"].default_value = color
     bsdf.inputs["Roughness"].default_value = 1.0
-    bsdf.inputs["Specular IOR Level"].default_value = 0.0
+    spec_key = "Specular IOR Level" if "Specular IOR Level" in bsdf.inputs else "Specular"
+    bsdf.inputs[spec_key].default_value = 0.0
     return m
 
 
@@ -181,7 +182,7 @@ def generate_station():
     sun.rotation_euler = (math.radians(45), 0, math.radians(30))
 
     # --- Render settings ---
-    bpy.context.scene.render.engine = 'BLENDER_EEVEE_NEXT'
+    bpy.context.scene.render.engine = 'BLENDER_EEVEE'
     bpy.context.scene.render.resolution_x = 1920
     bpy.context.scene.render.resolution_y = 1080
     world = bpy.context.scene.world
@@ -193,16 +194,15 @@ def generate_station():
 
 
 if __name__ == "__main__":
-    generate_station()
+    import os
+    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "unity", "Assets", "Models", "Mysteries")
+    os.makedirs(out_dir, exist_ok=True)
 
-    # Render preview
-    bpy.context.scene.render.filepath = "//station_preview.png"
-    bpy.ops.render.render(write_still=True)
-    print("Preview: station_preview.png")
+    generate_station()
 
     # Export
     bpy.ops.export_scene.gltf(
-        filepath="//amber_cipher_station.glb",
+        filepath=os.path.join(out_dir, "amber_cipher_station.glb"),
         export_format='GLB',
         use_selection=False,
     )

@@ -34,7 +34,8 @@ def mat(name, color):
     bsdf = m.node_tree.nodes["Principled BSDF"]
     bsdf.inputs["Base Color"].default_value = color
     bsdf.inputs["Roughness"].default_value = 1.0
-    bsdf.inputs["Specular IOR Level"].default_value = 0.0
+    spec_key = "Specular IOR Level" if "Specular IOR Level" in bsdf.inputs else "Specular"
+    bsdf.inputs[spec_key].default_value = 0.0
     return m
 
 
@@ -265,7 +266,7 @@ def generate_all_environments():
     bpy.context.scene.camera = cam
 
     # Render settings
-    bpy.context.scene.render.engine = 'BLENDER_EEVEE_NEXT'
+    bpy.context.scene.render.engine = 'BLENDER_EEVEE'
     bpy.context.scene.render.resolution_x = 1920
     bpy.context.scene.render.resolution_y = 1080
 
@@ -279,12 +280,19 @@ def generate_all_environments():
 
 
 if __name__ == "__main__":
+    import os
+    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "unity", "Assets", "Models", "Creature")
+    os.makedirs(out_dir, exist_ok=True)
+
     generate_all_environments()
 
-    # Render preview
-    bpy.context.scene.render.filepath = "//environment_preview.png"
-    bpy.ops.render.render(write_still=True)
-    print("Preview: environment_preview.png")
+    # Export
+    bpy.ops.export_scene.gltf(
+        filepath=os.path.join(out_dir, "environment.glb"),
+        export_format='GLB',
+        use_selection=False,
+    )
+    print(f"Exported: {os.path.join(out_dir, 'environment.glb')}")
 
     # Export
     bpy.ops.export_scene.gltf(

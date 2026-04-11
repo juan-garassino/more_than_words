@@ -1,0 +1,1054 @@
+{
+  "nodes": [
+    "suspect:kessler_vane",
+    "suspect:rina_cade",
+    "suspect:marshal_cross",
+    "suspect:juno_park",
+    "suspect:dex_millard",
+    "suspect:overseer_lang",
+    "suspect:ada_strand",
+    "location:server_farm",
+    "location:neural_lab",
+    "location:transit_corridor",
+    "location:command_deck",
+    "location:data_vault",
+    "location:cooling_bay",
+    "location:neon_market",
+    "location:private_node",
+    "object:neural_implant",
+    "object:access_log",
+    "object:wipe_residue",
+    "object:backdoor_code",
+    "object:biometric_scan",
+    "object:data_fragment",
+    "object:cooling_fluid",
+    "object:encrypted_chip",
+    "object:broken_visor",
+    "object:power_grid_log",
+    "object:surveillance_feed",
+    "object:comm_transcript",
+    "object:signal_trace",
+    "emotion:flat_affect",
+    "emotion:quick_deflection",
+    "emotion:coded_language",
+    "emotion:micro_delay",
+    "emotion:hollow_calm",
+    "emotion:forced_cooperation",
+    "modifier:log_overwritten",
+    "modifier:power_spike",
+    "modifier:signal_masked",
+    "modifier:rain_static",
+    "modifier:node_isolated",
+    "modifier:implant_signature",
+    "modifier:coolant_stain",
+    "modifier:visor_crack_pattern",
+    "modifier:code_remnant",
+    "modifier:port_scorched",
+    "action:exploit_deployed",
+    "action:power_cut_staged",
+    "action:vault_breached",
+    "action:feed_looped",
+    "action:scan_forged",
+    "action:chip_planted",
+    "action:visor_removed",
+    "action:signal_rerouted",
+    "action:node_accessed",
+    "time:blackout_hour",
+    "time:grid_cycle",
+    "time:body_located",
+    "time:access_window",
+    "time:audit_pending",
+    "motive:contract_profit",
+    "motive:corporate_espionage",
+    "motive:exposure_panic",
+    "motive:rival_network",
+    "motive:data_ransom",
+    "motive:surveillance_backdoor",
+    "witness:grid_operator",
+    "witness:courier_drone",
+    "witness:maintenance_bot",
+    "witness:shift_analyst",
+    "witness:vendor_ai",
+    "event:yuki_tanaka_discovered",
+    "event:memory_wipe_exploit",
+    "event:grid_surge"
+  ],
+  "edges": [
+    {
+      "from": "object:neural_implant",
+      "to": "suspect:kessler_vane",
+      "weight": 0.48,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "object:backdoor_code",
+      "to": "suspect:kessler_vane",
+      "weight": 0.46,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "emotion:flat_affect",
+      "to": "suspect:kessler_vane",
+      "weight": 0.38,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:coded_language",
+      "to": "suspect:kessler_vane",
+      "weight": 0.36,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "action:exploit_deployed",
+      "to": "suspect:kessler_vane",
+      "weight": 0.44,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:feed_looped",
+      "to": "suspect:kessler_vane",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "location:private_node",
+      "to": "suspect:kessler_vane",
+      "weight": 0.36,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "modifier:implant_signature",
+      "to": "suspect:kessler_vane",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:log_overwritten",
+      "to": "suspect:kessler_vane",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "motive:contract_profit",
+      "to": "suspect:kessler_vane",
+      "weight": 0.44,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:exposure_panic",
+      "to": "suspect:kessler_vane",
+      "weight": 0.4,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:rival_network",
+      "to": "suspect:kessler_vane",
+      "weight": 0.36,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:wipe_residue",
+      "to": "event:memory_wipe_exploit",
+      "weight": 0.46,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "object:neural_implant",
+      "to": "event:memory_wipe_exploit",
+      "weight": 0.44,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "action:exploit_deployed",
+      "to": "event:memory_wipe_exploit",
+      "weight": 0.42,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "action:power_cut_staged",
+      "to": "event:memory_wipe_exploit",
+      "weight": 0.4,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "modifier:power_spike",
+      "to": "event:memory_wipe_exploit",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:code_remnant",
+      "to": "event:memory_wipe_exploit",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:power_grid_log",
+      "to": "event:memory_wipe_exploit",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "event:grid_surge",
+      "to": "event:memory_wipe_exploit",
+      "weight": 0.32,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:surveillance_feed",
+      "to": "motive:surveillance_backdoor",
+      "weight": 0.46,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:data_fragment",
+      "to": "motive:surveillance_backdoor",
+      "weight": 0.42,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:backdoor_code",
+      "to": "motive:surveillance_backdoor",
+      "weight": 0.44,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:exposure_panic",
+      "to": "motive:surveillance_backdoor",
+      "weight": 0.4,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "action:vault_breached",
+      "to": "motive:surveillance_backdoor",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:signal_rerouted",
+      "to": "motive:surveillance_backdoor",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:signal_masked",
+      "to": "motive:surveillance_backdoor",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:rina_cade",
+      "to": "emotion:quick_deflection",
+      "weight": 0.28,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "suspect:rina_cade",
+      "to": "object:broken_visor",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:rina_cade",
+      "to": "emotion:forced_cooperation",
+      "weight": 0.26,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "suspect:rina_cade",
+      "to": "location:neural_lab",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:dex_millard",
+      "to": "action:visor_removed",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:dex_millard",
+      "to": "location:neon_market",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:dex_millard",
+      "to": "modifier:visor_crack_pattern",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:dex_millard",
+      "to": "location:command_deck",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:marshal_cross",
+      "to": "object:access_log",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:marshal_cross",
+      "to": "location:cooling_bay",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:marshal_cross",
+      "to": "object:comm_transcript",
+      "weight": 0.32,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:marshal_cross",
+      "to": "action:scan_forged",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:juno_park",
+      "to": "object:data_fragment",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:juno_park",
+      "to": "motive:corporate_espionage",
+      "weight": 0.32,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:juno_park",
+      "to": "object:signal_trace",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:juno_park",
+      "to": "location:data_vault",
+      "weight": 0.3,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:overseer_lang",
+      "to": "object:power_grid_log",
+      "weight": 0.38,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:overseer_lang",
+      "to": "location:command_deck",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:overseer_lang",
+      "to": "motive:rival_network",
+      "weight": 0.3,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:overseer_lang",
+      "to": "object:biometric_scan",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:ada_strand",
+      "to": "object:encrypted_chip",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:ada_strand",
+      "to": "motive:data_ransom",
+      "weight": 0.32,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:ada_strand",
+      "to": "location:data_vault",
+      "weight": 0.3,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:ada_strand",
+      "to": "object:surveillance_feed",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "location:server_farm",
+      "to": "event:yuki_tanaka_discovered",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:server_farm",
+      "to": "time:blackout_hour",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:server_farm",
+      "to": "time:grid_cycle",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:neural_lab",
+      "to": "event:yuki_tanaka_discovered",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:neural_lab",
+      "to": "object:cooling_fluid",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:transit_corridor",
+      "to": "modifier:rain_static",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:transit_corridor",
+      "to": "action:node_accessed",
+      "weight": 0.28,
+      "tags": [
+        "movement"
+      ]
+    },
+    {
+      "from": "location:data_vault",
+      "to": "object:data_fragment",
+      "weight": 0.36,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:data_vault",
+      "to": "object:surveillance_feed",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:cooling_bay",
+      "to": "object:cooling_fluid",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:cooling_bay",
+      "to": "object:wipe_residue",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:neon_market",
+      "to": "modifier:rain_static",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:neon_market",
+      "to": "time:grid_cycle",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:private_node",
+      "to": "object:backdoor_code",
+      "weight": 0.38,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:private_node",
+      "to": "object:neural_implant",
+      "weight": 0.36,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:command_deck",
+      "to": "event:grid_surge",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:command_deck",
+      "to": "object:power_grid_log",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "object:neural_implant",
+      "to": "modifier:implant_signature",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:wipe_residue",
+      "to": "modifier:code_remnant",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:access_log",
+      "to": "time:access_window",
+      "weight": 0.34,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:encrypted_chip",
+      "to": "action:chip_planted",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:encrypted_chip",
+      "to": "modifier:log_overwritten",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:backdoor_code",
+      "to": "action:exploit_deployed",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:power_grid_log",
+      "to": "modifier:power_spike",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:surveillance_feed",
+      "to": "action:feed_looped",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:data_fragment",
+      "to": "action:vault_breached",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:biometric_scan",
+      "to": "action:scan_forged",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:signal_trace",
+      "to": "action:signal_rerouted",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:comm_transcript",
+      "to": "modifier:signal_masked",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:cooling_fluid",
+      "to": "modifier:coolant_stain",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:scan_forged",
+      "to": "time:access_window",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:power_cut_staged",
+      "to": "time:blackout_hour",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:vault_breached",
+      "to": "time:access_window",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:node_accessed",
+      "to": "modifier:node_isolated",
+      "weight": 0.26,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "time:blackout_hour",
+      "to": "event:yuki_tanaka_discovered",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:blackout_hour",
+      "to": "event:grid_surge",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:body_located",
+      "to": "event:yuki_tanaka_discovered",
+      "weight": 0.32,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:body_located",
+      "to": "location:neural_lab",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "time:access_window",
+      "to": "modifier:node_isolated",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:audit_pending",
+      "to": "motive:contract_profit",
+      "weight": 0.38,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "time:grid_cycle",
+      "to": "modifier:rain_static",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "motive:corporate_espionage",
+      "to": "motive:data_ransom",
+      "weight": 0.3,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:contract_profit",
+      "to": "motive:exposure_panic",
+      "weight": 0.34,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:contract_profit",
+      "to": "motive:corporate_espionage",
+      "weight": 0.32,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "witness:grid_operator",
+      "to": "location:command_deck",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:grid_operator",
+      "to": "time:grid_cycle",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:courier_drone",
+      "to": "location:transit_corridor",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:courier_drone",
+      "to": "time:blackout_hour",
+      "weight": 0.24,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:maintenance_bot",
+      "to": "location:cooling_bay",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:maintenance_bot",
+      "to": "object:cooling_fluid",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "witness:shift_analyst",
+      "to": "object:access_log",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "witness:shift_analyst",
+      "to": "location:data_vault",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:vendor_ai",
+      "to": "time:grid_cycle",
+      "weight": 0.24,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:vendor_ai",
+      "to": "location:neon_market",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:micro_delay",
+      "to": "suspect:marshal_cross",
+      "weight": 0.26,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:hollow_calm",
+      "to": "suspect:ada_strand",
+      "weight": 0.28,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:quick_deflection",
+      "to": "location:neural_lab",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:forced_cooperation",
+      "to": "suspect:overseer_lang",
+      "weight": 0.24,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:flat_affect",
+      "to": "location:private_node",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:coded_language",
+      "to": "location:data_vault",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "modifier:coolant_stain",
+      "to": "time:body_located",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "modifier:visor_crack_pattern",
+      "to": "object:broken_visor",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "event:grid_surge",
+      "to": "time:body_located",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "motive:data_ransom",
+      "to": "suspect:juno_park",
+      "weight": 0.28,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "modifier:port_scorched",
+      "to": "object:neural_implant",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:port_scorched",
+      "to": "event:memory_wipe_exploit",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "emotion:micro_delay",
+      "to": "location:cooling_bay",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:hollow_calm",
+      "to": "location:data_vault",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:chip_planted",
+      "to": "location:data_vault",
+      "weight": 0.28,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "action:visor_removed",
+      "to": "location:transit_corridor",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "time:audit_pending",
+      "to": "motive:exposure_panic",
+      "weight": 0.34,
+      "tags": [
+        "motive"
+      ]
+    }
+  ]
+}
