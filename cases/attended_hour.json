@@ -5,7 +5,7 @@
   "difficulty": "hard",
   "min_turns": 40,
   "max_turns": 100,
-  "convergence_rate": 0.06,
+  "convergence_rate": 0.09,
   "opening_token_ids": [
     "location:briar_clinic",
     "event:harold_stroud_discovered",

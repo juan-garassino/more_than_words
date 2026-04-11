@@ -238,7 +238,7 @@ class SceneTransformer(nn.Module):
         n_layers: int = 6,
         n_output_heads: int = 3,
         head_vocab_masks: Optional[torch.Tensor] = None,  # (N, V) bool
-        max_seq_len: int = 128,
+        max_seq_len: int = 256,
         dropout: float = 0.0,
     ):
         super().__init__()

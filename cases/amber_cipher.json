@@ -5,7 +5,7 @@
   "difficulty": "medium",
   "min_turns": 40,
   "max_turns": 100,
-  "convergence_rate": 0.06,
+  "convergence_rate": 0.09,
   "opening_token_ids": [
     "location:thornfield_crossing",
     "event:aldous_verne_discovered",

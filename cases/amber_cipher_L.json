@@ -5,7 +5,7 @@
   "difficulty": "hard",
   "min_turns": 40,
   "max_turns": 100,
-  "convergence_rate": 0.06,
+  "convergence_rate": 0.09,
   "convergence_threshold": 0.75,
   "opening_token_ids": [
     "location:thornfield_crossing",
@@ -6064,7 +6064,7 @@
     "event:platform_two_scene": "Platform two was cleared after the last arrival. Only one suitcase remained.",
     "event:window_between_trains": "The thirty-two minute window between trains is recorded. The office was unoccupied then.",
     "location:stationmasters_office": "The stationmaster's private office overlooks the main hall. The inner lock is a different pattern to the outer door.",
-    "accomplice:elara_voss": "Elara Voss \u2014 her monogram appears on the scarf left in the upper corridor. The access register shows a second hand in the entry for 11:10.",
+    "accomplice:elara_voss": "Elara Voss — her monogram appears on the scarf left in the upper corridor. The access register shows a second hand in the entry for 11:10.",
     "suspect:marco_laine": "Marco Laine arrived on the 10:45 from the city. His briefcase has a broken latch and a new lock.",
     "suspect:vera_holt": "Vera Holt spoke briefly at the booking window. Her gloves are the same cut as those found in the office.",
     "suspect:elara_voss": "A woman matching the description of Elara Voss was seen near the upper corridor at 11:10. She left no name at the desk.",

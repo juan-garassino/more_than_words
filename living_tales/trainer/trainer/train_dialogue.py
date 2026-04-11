@@ -431,7 +431,7 @@ def train_dialogue_supervised(
         context_dim=profile.context_dim,
         n_layers=profile.n_layers,
         n_heads=profile.n_heads,
-        max_seq_len=128,
+        max_seq_len=256,
     ).to(device)
 
     param_count = sum(p.numel() for p in model.parameters())
@@ -1211,7 +1211,7 @@ def train_scene_supervised(
         n_layers=profile.n_layers,
         n_output_heads=n_dims,
         head_vocab_masks=head_masks,
-        max_seq_len=128,
+        max_seq_len=256,
     ).to(device)
 
     param_count = sum(p.numel() for p in model.parameters())
