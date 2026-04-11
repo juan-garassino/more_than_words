@@ -139,10 +139,14 @@ def _load_model_and_spec(case_id: str, model_path: Optional[str]):
         ckpt = torch.load(model_path, map_location="cpu", weights_only=False)
         model_type = ckpt.get("model_type", "dialogue")
 
+        sd = ckpt["state_dict"]
+        # Infer actual max_seq_len from position encoding in state_dict
+        pe_key = "position_encoding.pe"
+        actual_seq_len = sd[pe_key].shape[1] if pe_key in sd else ckpt.get("max_seq_len", 256)
+
         if model_type == "scene":
             from trainer.dialogue_model import SceneTransformer
-            # Extract head_vocab_masks from state_dict (stored as a buffer)
-            head_vocab_masks = ckpt["state_dict"].get("head_vocab_masks")
+            head_vocab_masks = sd.get("head_vocab_masks")
             model = SceneTransformer(
                 vocab_size=ckpt["vocab_size"],
                 embedding_dim=ckpt["embedding_dim"],
@@ -151,7 +155,7 @@ def _load_model_and_spec(case_id: str, model_path: Optional[str]):
                 n_layers=ckpt.get("n_layers", 6),
                 n_output_heads=ckpt.get("n_output_heads", 3),
                 head_vocab_masks=head_vocab_masks,
-                max_seq_len=ckpt.get("max_seq_len", 128),
+                max_seq_len=actual_seq_len,
             )
         else:
             from trainer.dialogue_model import DialogueTransformer
@@ -161,10 +165,10 @@ def _load_model_and_spec(case_id: str, model_path: Optional[str]):
                 context_dim=ckpt["context_dim"],
                 n_layers=ckpt.get("n_layers", 4),
                 n_heads=ckpt.get("n_heads", 4),
-                max_seq_len=ckpt.get("max_seq_len", 64),
+                max_seq_len=actual_seq_len,
             )
 
-        model.load_state_dict(ckpt["state_dict"])
+        model.load_state_dict(sd)
         model.eval()
         mappings = {
             "id_to_idx": ckpt["id_to_idx"],

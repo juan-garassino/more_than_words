@@ -233,6 +233,14 @@ def play_games(case_id: str, n_games: int, output_id: str | None = None) -> list
     ckpt = torch.load(str(model_path), map_location="cpu", weights_only=False)
 
     model_type = ckpt.get("model_type", "dialogue")
+    sd = ckpt["state_dict"]
+    # Infer actual max_seq_len from position encoding in state_dict
+    pe_key = "position_encoding.pe"
+    if pe_key in sd:
+        actual_seq_len = sd[pe_key].shape[1]
+    else:
+        actual_seq_len = ckpt.get("max_seq_len", 256)
+
     if model_type == "scene":
         head_masks = build_head_vocab_masks(spec)
         model = SceneTransformer(
@@ -243,7 +251,7 @@ def play_games(case_id: str, n_games: int, output_id: str | None = None) -> list
             n_heads=ckpt.get("n_heads", 6),
             n_output_heads=ckpt.get("n_output_heads", spec.n_attractor_dims),
             head_vocab_masks=head_masks,
-            max_seq_len=ckpt.get("max_seq_len", 128),
+            max_seq_len=actual_seq_len,
         )
     else:
         model = DialogueTransformer(
@@ -252,9 +260,9 @@ def play_games(case_id: str, n_games: int, output_id: str | None = None) -> list
             context_dim=ckpt["context_dim"],
             n_layers=ckpt.get("n_layers", 4),
             n_heads=ckpt.get("n_heads", 4),
-            max_seq_len=ckpt.get("max_seq_len", 64),
+            max_seq_len=actual_seq_len,
         )
-    model.load_state_dict(ckpt["state_dict"])
+    model.load_state_dict(sd)
     model.eval()
 
     mappings = dict(zip(
