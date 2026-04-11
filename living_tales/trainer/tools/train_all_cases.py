@@ -360,6 +360,8 @@ def main():
                         help="Model size overrides for specific cases (e.g. amber_cipher_L=L little_creature_M=L)")
     parser.add_argument("--output-dir", type=str, default=None,
                         help="External save directory (e.g. Google Drive path). Outputs are copied here after each case.")
+    parser.add_argument("--max-turns", type=int, default=None,
+                        help="Override max_turns in packed specs (e.g. 200 for longer games). Applied after packing.")
     args = parser.parse_args()
 
     if args.production:
@@ -424,6 +426,19 @@ def main():
     if ready_total == 0:
         _log("No cases ready for training.")
         sys.exit(1)
+
+    # Apply --max-turns override to packed specs
+    if args.max_turns:
+        _log(f"  Overriding max_turns={args.max_turns} in all packed specs")
+        for case_id in ready_mysteries + ready_creatures:
+            spec_path = _CASES_PACKED / case_id / "spec.json"
+            if spec_path.exists():
+                with open(spec_path) as f:
+                    spec_data = json.load(f)
+                spec_data["max_turns"] = args.max_turns
+                with open(spec_path, "w") as f:
+                    json.dump(spec_data, f, indent=2)
+                    f.write("\n")
 
     # Parse --scale-sizes overrides (e.g. amber_cipher_L=L little_creature_M=L)
     size_overrides: dict[str, str] = {}
