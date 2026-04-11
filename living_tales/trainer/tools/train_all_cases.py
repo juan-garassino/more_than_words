@@ -498,12 +498,9 @@ def main():
             case_num += 1
             _banner(f"[{group_label}] {case_num}/{ready_total}: {case_id}")
 
-            # Resume: skip if checkpoint already exists
-            if args.resume:
-                found = (_OUTPUTS / case_id / "dialogue_model.pt").exists()
-                if not found and _SAVE_DIR:
-                    found = (_SAVE_DIR / case_id / "dialogue_model.pt").exists()
-                if found:
+            # Resume: skip if checkpoint already exists in the Drive save dir
+            if args.resume and _SAVE_DIR:
+                if (_SAVE_DIR / case_id / "dialogue_model.pt").exists():
                     _log(f"  SKIP (checkpoint exists)")
                     trained_list.append(case_id)
                     continue
@@ -568,12 +565,9 @@ def main():
 
                 _banner(f"SCALE: {case_id} @ {size} → {output_id}")
 
-                # Resume: skip if checkpoint already exists
-                if args.resume:
-                    found = (_OUTPUTS / output_id / "dialogue_model.pt").exists()
-                    if not found and _SAVE_DIR:
-                        found = (_SAVE_DIR / output_id / "dialogue_model.pt").exists()
-                    if found:
+                # Resume: skip if checkpoint already exists in Drive save dir
+                if args.resume and _SAVE_DIR:
+                    if (_SAVE_DIR / output_id / "dialogue_model.pt").exists():
                         _log(f"  SKIP (checkpoint exists)")
                         scale_trained.append(output_id)
                         continue
