@@ -3,6 +3,9 @@
   "title": "Fog Over Brussels",
   "convergence_shape": "late_break",
   "difficulty": "medium",
+  "min_turns": 40,
+  "max_turns": 100,
+  "convergence_rate": 0.06,
   "opening_token_ids": [
     "location:belgian_embassy",
     "event:aldric_poel_discovered",

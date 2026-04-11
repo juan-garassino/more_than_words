@@ -3,7 +3,7 @@
   "title": "Little Creature (A Life)",
   "convergence_shape": "gradual",
   "difficulty": "hard",
-  "convergence_rate": 0.65,
+  "convergence_rate": 0.3,
   "max_turns": 80,
   "opening_token_ids": [
     "location:cozy_den",

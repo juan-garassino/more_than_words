@@ -3,7 +3,7 @@
   "title": "Little Creature (Seasons)",
   "convergence_shape": "gradual",
   "difficulty": "medium",
-  "convergence_rate": 0.75,
+  "convergence_rate": 0.3,
   "max_turns": 60,
   "opening_token_ids": [
     "location:cozy_den",

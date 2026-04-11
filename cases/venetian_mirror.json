@@ -3,6 +3,9 @@
   "title": "The Venetian Mirror",
   "convergence_shape": "false_plateau",
   "difficulty": "hard",
+  "min_turns": 40,
+  "max_turns": 100,
+  "convergence_rate": 0.06,
   "opening_token_ids": [
     "location:palazzo_contarini",
     "event:luca_marini_discovered",

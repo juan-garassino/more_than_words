@@ -4291,7 +4291,7 @@
     "recovery:fresh_and_clean": "The coat lies smooth after the brush. The creature shakes once and struts as if wearing new clothes.",
     "recovery:deep_relief_sleep": "After the walk, the meal, and the chin scratch, the creature sleeps with a depth that says everything is right."
   },
-  "convergence_rate": 0.8,
+  "convergence_rate": 0.3,
   "max_turns": 45,
   "mode": "oscillating",
   "convergence_threshold": 0.65

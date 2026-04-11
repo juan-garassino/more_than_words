@@ -3,7 +3,7 @@
   "title": "Little Creature (Personality)",
   "convergence_shape": "gradual",
   "difficulty": "hard",
-  "convergence_rate": 0.7,
+  "convergence_rate": 0.3,
   "max_turns": 65,
   "opening_token_ids": [
     "location:cozy_den",

@@ -226,7 +226,7 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
 
     is_creature = getattr(spec, "mode", "converging") == "oscillating"
     # Creatures: longer auto-play to show the loop; mysteries: stop at convergence
-    effective_max = max_turns * 2 if is_creature else max_turns
+    effective_max = max_turns if not is_creature else max_turns * 10  # creatures run much longer
     # Rolling context window size for the transformer
     context_window = 64
 
@@ -331,7 +331,7 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
                         1.0, convergence_dims + chosen_tok.attractor_weights * spec.convergence_rate,
                     )
                     if is_creature:
-                        convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+                        convergence_dims = np.maximum(0.0, convergence_dims - 0.04)
 
                     enc = _encode_token(chosen_tok, mappings)
                     seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
@@ -375,7 +375,7 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
         )
         # Creature mode: dimensions also decay naturally over time
         if is_creature:
-            convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+            convergence_dims = np.maximum(0.0, convergence_dims - 0.04)
 
         enc = _encode_token(chosen, mappings)
         seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])

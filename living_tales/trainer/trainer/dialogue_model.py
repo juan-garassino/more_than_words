@@ -371,13 +371,20 @@ class SceneTransformer(nn.Module):
         )
 
         results = []
+        # Track tokens already chosen by earlier heads for deduplication
+        used_indices: List[int] = []
+
         for i, logits in enumerate(all_logits):
-            last = logits[0, -1, :]  # (V,)
+            last = logits[0, -1, :].clone()  # (V,)
 
             # Apply extra validity mask if provided
             if per_head_valid is not None and per_head_valid[i] is not None:
                 extra_mask = per_head_valid[i].to(device, dtype=torch.bool)
                 last = last.masked_fill(~extra_mask, float("-inf"))
+
+            # Mask out tokens already chosen by previous heads
+            for idx in used_indices:
+                last[idx] = float("-inf")
 
             if temperature <= 0:
                 chosen = last.argmax().item()
@@ -392,6 +399,8 @@ class SceneTransformer(nn.Module):
                 else:
                     chosen = torch.multinomial(probs, 1).item()
 
+            if chosen >= 0:
+                used_indices.append(chosen)
             results.append((chosen, probs))
 
         return results

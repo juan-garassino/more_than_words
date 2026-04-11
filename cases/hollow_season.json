@@ -3,6 +3,9 @@
   "title": "The Hollow Season",
   "convergence_shape": "false_plateau",
   "difficulty": "medium",
+  "min_turns": 40,
+  "max_turns": 100,
+  "convergence_rate": 0.06,
   "opening_token_ids": [
     "location:carrow_hall",
     "event:archibald_discovered",

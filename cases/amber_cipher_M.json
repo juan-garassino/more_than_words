@@ -3,9 +3,9 @@
   "title": "The Amber Cipher: The Long Case",
   "convergence_shape": "late_break",
   "difficulty": "hard",
-  "min_turns": 15,
-  "max_turns": 28,
-  "convergence_rate": 0.38,
+  "min_turns": 40,
+  "max_turns": 100,
+  "convergence_rate": 0.06,
   "convergence_threshold": 0.75,
   "opening_token_ids": [
     "location:thornfield_crossing",
