@@ -526,11 +526,15 @@ ac-fit-play-report: ac-s02-pack colab-install
 
 # OUTPUT_DIR: set to save outputs incrementally (e.g. Google Drive)
 # MAX_TURNS: override max game turns (e.g. 200 for longer games)
+# RESUME: set to 1 to skip already-trained cases (resume interrupted runs)
 # Usage: make train-all OUTPUT_DIR=/content/drive/MyDrive/living_tales_outputs MAX_TURNS=200
+# Resume: make train-all OUTPUT_DIR=/content/drive/MyDrive/living_tales_outputs RESUME=1
 OUTPUT_DIR ?=
 MAX_TURNS ?=
+RESUME ?=
 _OUTPUT_FLAG = $(if $(OUTPUT_DIR),--output-dir $(OUTPUT_DIR),)
 _MAX_TURNS_FLAG = $(if $(MAX_TURNS),--max-turns $(MAX_TURNS),)
+_RESUME_FLAG = $(if $(RESUME),--resume,)
 
 train-all-fast: colab-install
 	@echo ""
@@ -539,7 +543,7 @@ train-all-fast: colab-install
 	@echo "  500 paths · 30 epochs · 100 RL · 3 games"
 	@echo "################################################################"
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
-	python3 tools/train_all_cases.py --paths 500 --epochs 30 --rl-episodes 100 --games 3 --device cuda $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG)
+	python3 tools/train_all_cases.py --paths 500 --epochs 30 --rl-episodes 100 --games 3 --device cuda $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG) $(_RESUME_FLAG)
 
 train-all: colab-install
 	@echo ""
@@ -552,7 +556,7 @@ train-all: colab-install
 	python3 tools/train_all_cases.py --production --device cuda \
 	  --scale-sizes amber_cipher_L=L \
 	  --scale-experiment dust_and_verdict little_creature_M little_creature_XL \
-	  $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG)
+	  $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG) $(_RESUME_FLAG)
 
 train-all-production: colab-install
 	@echo ""
@@ -560,7 +564,7 @@ train-all-production: colab-install
 	@echo "  LIVING TALES — TRAIN ALL CASES (production)"
 	@echo "################################################################"
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
-	python3 tools/train_all_cases.py --production --device cuda $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG)
+	python3 tools/train_all_cases.py --production --device cuda $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG) $(_RESUME_FLAG)
 
 train-creatures: colab-install
 	@echo ""
@@ -571,7 +575,7 @@ train-creatures: colab-install
 	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
 	python3 tools/train_all_cases.py --production --device cuda \
 	  --cases little_creature little_creature_M little_creature_L little_creature_XL \
-	  $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG)
+	  $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG) $(_RESUME_FLAG)
 
 train-mysteries: colab-install
 	@echo ""
@@ -584,4 +588,4 @@ train-mysteries: colab-install
 	  attended_hour black_ledger dust_and_verdict fog_over_brussels \
 	  hollow_season neon_blackout orchard_at_dusk resonance_test \
 	  sulphur_line third_signature tidal_interval venetian_mirror \
-	  $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG)
+	  $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG) $(_RESUME_FLAG)

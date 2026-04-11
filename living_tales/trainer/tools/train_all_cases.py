@@ -362,6 +362,8 @@ def main():
                         help="External save directory (e.g. Google Drive path). Outputs are copied here after each case.")
     parser.add_argument("--max-turns", type=int, default=None,
                         help="Override max_turns in packed specs (e.g. 200 for longer games). Applied after packing.")
+    parser.add_argument("--resume", action="store_true",
+                        help="Skip cases that already have a checkpoint (in outputs/ or --output-dir). Resumes interrupted runs.")
     args = parser.parse_args()
 
     if args.production:
@@ -372,9 +374,14 @@ def main():
 
     # Set external save directory (timestamped for versioning)
     global _SAVE_DIR
+    _resume_dirs: list[Path] = []  # previous run dirs to check for --resume
     if args.output_dir:
+        output_base = Path(args.output_dir)
+        # Collect existing run dirs for --resume
+        if args.resume and output_base.exists():
+            _resume_dirs = sorted(output_base.glob("run_*"), reverse=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        _SAVE_DIR = Path(args.output_dir) / f"run_{timestamp}"
+        _SAVE_DIR = output_base / f"run_{timestamp}"
         _SAVE_DIR.mkdir(parents=True, exist_ok=True)
         (_SAVE_DIR / "logs").mkdir(parents=True, exist_ok=True)
 
@@ -472,6 +479,19 @@ def main():
             case_num += 1
             _banner(f"[{group_label}] {case_num}/{ready_total}: {case_id}")
 
+            # Resume: skip if checkpoint already exists
+            if args.resume:
+                found = (_OUTPUTS / case_id / "dialogue_model.pt").exists()
+                if not found:
+                    for prev_dir in _resume_dirs:
+                        if (prev_dir / case_id / "dialogue_model.pt").exists():
+                            found = True
+                            break
+                if found:
+                    _log(f"  SKIP (checkpoint exists, --resume)")
+                    trained_list.append(case_id)
+                    continue
+
             # Train with log capture
             override = size_overrides.get(case_id)
             _log(f"Training...{f' (model size override: {override})' if override else ''}")
@@ -531,6 +551,20 @@ def main():
                     continue
 
                 _banner(f"SCALE: {case_id} @ {size} → {output_id}")
+
+                # Resume: skip if checkpoint already exists
+                if args.resume:
+                    found = (_OUTPUTS / output_id / "dialogue_model.pt").exists()
+                    if not found:
+                        for prev_dir in _resume_dirs:
+                            if (prev_dir / output_id / "dialogue_model.pt").exists():
+                                found = True
+                                break
+                    if found:
+                        _log(f"  SKIP (checkpoint exists, --resume)")
+                        scale_trained.append(output_id)
+                        continue
+
                 _log(f"Training {case_id} with model size {size}...")
                 tee = TeeCapture()
                 try:
