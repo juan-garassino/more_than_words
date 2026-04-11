@@ -5,7 +5,7 @@
   "difficulty": "medium",
   "min_turns": 40,
   "max_turns": 100,
-  "convergence_rate": 0.09,
+  "convergence_rate": 0.15,
   "opening_token_ids": [
     "location:dunne_harbour",
     "event:ellen_cross_discovered",

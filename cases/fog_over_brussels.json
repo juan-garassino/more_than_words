@@ -5,7 +5,7 @@
   "difficulty": "medium",
   "min_turns": 40,
   "max_turns": 100,
-  "convergence_rate": 0.09,
+  "convergence_rate": 0.15,
   "opening_token_ids": [
     "location:belgian_embassy",
     "event:aldric_poel_discovered",
