@@ -9,6 +9,8 @@ Usage:
     cd living_tales/trainer
     python3 tools/fit_play_report.py amber_cipher
     python3 tools/fit_play_report.py amber_cipher --paths 200 --epochs 20 --rl-episodes 50 --games 5
+    python3 tools/fit_play_report.py amber_cipher --load
+    python3 tools/fit_play_report.py amber_cipher --load --model-path outputs_run3/mysteries/amber_cipher/dialogue_model.pt
 """
 from __future__ import annotations
 
@@ -108,6 +110,91 @@ def train_model(case_id: str, args) -> tuple:
     ))
 
     return model, spec, mappings, history
+
+
+def load_model(case_id: str, model_path: str | None = None) -> tuple:
+    """Load a pre-trained model from checkpoint. Returns (model, spec, mappings)."""
+    from trainer.dialogue_model import DialogueTransformer, SceneTransformer
+    from trainer.training_profile import build_head_vocab_masks
+    from trainer.train_dialogue import _build_mappings
+
+    # ── Auto-detect model path ──
+    if model_path:
+        ckpt_path = Path(model_path)
+        if not ckpt_path.is_absolute():
+            ckpt_path = _HERE.parent / ckpt_path
+    else:
+        candidates = [
+            _HERE.parent / "outputs" / case_id / "dialogue_model.pt",
+            _HERE.parent / "outputs_run3" / "mysteries" / case_id / "dialogue_model.pt",
+            _HERE.parent / "outputs_run3" / "creatures" / case_id / "dialogue_model.pt",
+        ]
+        ckpt_path = None
+        for c in candidates:
+            if c.exists():
+                ckpt_path = c
+                break
+        if ckpt_path is None:
+            print(f"Error: no checkpoint found for '{case_id}'. Searched:")
+            for c in candidates:
+                print(f"  {c}")
+            sys.exit(1)
+
+    if not ckpt_path.exists():
+        print(f"Error: checkpoint not found at {ckpt_path}")
+        sys.exit(1)
+
+    print(f"Loading checkpoint: {ckpt_path}")
+    ckpt = torch.load(str(ckpt_path), map_location="cpu", weights_only=False)
+
+    # ── Load CartridgeSpec from sibling spec.json or cartridge/ subdir ──
+    ckpt_dir = ckpt_path.parent
+    spec_path = ckpt_dir / "spec.json"
+    if not spec_path.exists():
+        spec_path = ckpt_dir / "cartridge" / "spec.json"
+    if not spec_path.exists():
+        # Fall back to packed cases directory
+        spec_path = _HERE.parent / "cases" / case_id / "spec.json"
+    if not spec_path.exists():
+        print(f"Error: spec.json not found for '{case_id}'")
+        sys.exit(1)
+
+    spec = CartridgeSpec.load(str(spec_path))
+
+    # ── Instantiate model based on type ──
+    model_type = ckpt.get("model_type", "dialogue")
+    if model_type == "scene":
+        head_masks = build_head_vocab_masks(spec)
+        model = SceneTransformer(
+            vocab_size=ckpt["vocab_size"],
+            embedding_dim=ckpt["embedding_dim"],
+            context_dim=ckpt["context_dim"],
+            n_layers=ckpt.get("n_layers", 6),
+            n_heads=ckpt.get("n_heads", 6),
+            n_output_heads=ckpt.get("n_output_heads", spec.n_attractor_dims),
+            head_vocab_masks=head_masks,
+            max_seq_len=ckpt.get("max_seq_len", 128),
+        )
+    else:
+        model = DialogueTransformer(
+            vocab_size=ckpt["vocab_size"],
+            embedding_dim=ckpt["embedding_dim"],
+            context_dim=ckpt["context_dim"],
+            n_layers=ckpt.get("n_layers", 4),
+            n_heads=ckpt.get("n_heads", 4),
+            max_seq_len=ckpt.get("max_seq_len", 64),
+        )
+
+    model.load_state_dict(ckpt["state_dict"])
+    model.eval()
+
+    # ── Build mappings ──
+    mappings = dict(zip(
+        ["id_to_idx", "class_to_idx", "phase_to_idx", "stream_to_idx", "agency_to_idx"],
+        _build_mappings(spec.tokens),
+    ))
+
+    return model, spec, mappings
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -250,7 +337,7 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
                     seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
                     seq_s.append(enc[3]); seq_a.append(enc[4])
 
-                    role = "FIELD"
+                    role = f"ENGINE_{d}"
                     transcript.append((role, chosen_tok, float(convergence_dims.min())))
                     scene_tokens_placed += 1
 
@@ -354,10 +441,15 @@ def print_report(games: list, spec, history: dict):
 
         # Transcript
         for role, tok, conv in game["transcript"]:
-            if role == "FIELD":
-                tag = "[cyan]FIELD[/cyan]"
+            if role.startswith("ENGINE_"):
+                head_label = role.replace("ENGINE_", "HEAD_")
+                tag = f"[cyan]{head_label:<6s}[/cyan]"
+            elif role == "FIELD":
+                tag = "[cyan]FIELD [/cyan]"
+            elif role == "YOU":
+                tag = "[blue]YOU   [/blue]"
             else:
-                tag = "[blue]YOU  [/blue]"
+                tag = f"[dim]{role:<6s}[/dim]"
             bar = "█" * int(conv * 10) + "░" * (10 - int(conv * 10))
             console.print(f"    {tag}  {_tok_display(tok)}  [{bar}]")
 
@@ -399,7 +491,8 @@ def print_report(games: list, spec, history: dict):
     for g in games:
         trans = g["transcript"]
         for j in range(1, len(trans)):
-            if trans[j][0] == "FIELD" and trans[j-1][0] == "YOU":
+            engine_role = trans[j][0] == "FIELD" or trans[j][0].startswith("ENGINE_")
+            if engine_role and trans[j-1][0] == "YOU":
                 p_tags = set(trans[j-1][1].affinity_tags)
                 e_tags = set(trans[j][1].affinity_tags)
                 union = p_tags | e_tags
@@ -454,7 +547,11 @@ def _print_report_plain(games, spec, history):
         print(f"\n  Game {i+1} (seed={g['seed']}) [{status}] turns={g['n_turns']} conv={g['final_convergence']:.2f}")
         for role, tok, conv in g["transcript"]:
             name = tok.surface_expression or tok.id
-            print(f"    {role:>5s}  {name:<40s}  {tok.token_class.value:<10s}  conv={conv:.2f}")
+            if role.startswith("ENGINE_"):
+                label = role.replace("ENGINE_", "HEAD_")
+            else:
+                label = role
+            print(f"    {label:>7s}  {name:<40s}  {tok.token_class.value:<10s}  conv={conv:.2f}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -464,6 +561,10 @@ def _print_report_plain(games, spec, history):
 def main():
     parser = argparse.ArgumentParser(description="Living Tales: Fit → Play → Report")
     parser.add_argument("case_id", help="Case ID (e.g. amber_cipher)")
+    parser.add_argument("--load", action="store_true",
+                        help="Skip training, load a pre-trained checkpoint instead")
+    parser.add_argument("--model-path", default=None,
+                        help="Explicit checkpoint path (used with --load)")
     parser.add_argument("--paths", type=int, default=500, help="Dialogue paths for KD training")
     parser.add_argument("--epochs", type=int, default=30, help="KD training epochs")
     parser.add_argument("--rl-episodes", type=int, default=100, help="REINFORCE episodes")
@@ -473,12 +574,19 @@ def main():
 
     t0 = time.time()
 
-    # ── TRAIN ──
-    model, spec, mappings, history = train_model(args.case_id, args)
-
-    train_time = time.time() - t0
-    if console:
-        console.print(f"\n  [dim]Training took {train_time:.0f}s[/dim]")
+    if args.load:
+        # ── LOAD ──
+        model, spec, mappings = load_model(args.case_id, model_path=args.model_path)
+        history = {}  # no training history when loading
+        load_time = time.time() - t0
+        if console:
+            console.print(f"\n  [dim]Model loaded in {load_time:.1f}s[/dim]")
+    else:
+        # ── TRAIN ──
+        model, spec, mappings, history = train_model(args.case_id, args)
+        train_time = time.time() - t0
+        if console:
+            console.print(f"\n  [dim]Training took {train_time:.0f}s[/dim]")
 
     # ── PLAY ──
     games = []

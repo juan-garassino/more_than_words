@@ -134,17 +134,36 @@ def _load_model_and_spec(case_id: str, model_path: Optional[str]):
 
     model = None
     mappings = None
+    model_type = None
     if model_path and HAS_TORCH:
         ckpt = torch.load(model_path, map_location="cpu", weights_only=False)
-        from trainer.dialogue_model import DialogueTransformer
-        model = DialogueTransformer(
-            vocab_size=ckpt["vocab_size"],
-            embedding_dim=ckpt["embedding_dim"],
-            context_dim=ckpt["context_dim"],
-            n_layers=ckpt.get("n_layers", 4),
-            n_heads=ckpt.get("n_heads", 4),
-            max_seq_len=ckpt.get("max_seq_len", 64),
-        )
+        model_type = ckpt.get("model_type", "dialogue")
+
+        if model_type == "scene":
+            from trainer.dialogue_model import SceneTransformer
+            # Extract head_vocab_masks from state_dict (stored as a buffer)
+            head_vocab_masks = ckpt["state_dict"].get("head_vocab_masks")
+            model = SceneTransformer(
+                vocab_size=ckpt["vocab_size"],
+                embedding_dim=ckpt["embedding_dim"],
+                context_dim=ckpt["context_dim"],
+                n_heads=ckpt.get("n_heads", 6),
+                n_layers=ckpt.get("n_layers", 6),
+                n_output_heads=ckpt.get("n_output_heads", 3),
+                head_vocab_masks=head_vocab_masks,
+                max_seq_len=ckpt.get("max_seq_len", 128),
+            )
+        else:
+            from trainer.dialogue_model import DialogueTransformer
+            model = DialogueTransformer(
+                vocab_size=ckpt["vocab_size"],
+                embedding_dim=ckpt["embedding_dim"],
+                context_dim=ckpt["context_dim"],
+                n_layers=ckpt.get("n_layers", 4),
+                n_heads=ckpt.get("n_heads", 4),
+                max_seq_len=ckpt.get("max_seq_len", 64),
+            )
+
         model.load_state_dict(ckpt["state_dict"])
         model.eval()
         mappings = {
@@ -154,6 +173,7 @@ def _load_model_and_spec(case_id: str, model_path: Optional[str]):
             "stream_to_idx": ckpt["stream_to_idx"],
             "agency_to_idx": ckpt["agency_to_idx"],
         }
+        print(f"Loaded {model_type} model from {model_path}")
     elif model_path and not HAS_TORCH:
         print("Warning: torch not available, running without model.")
 
@@ -345,6 +365,7 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
 
         # ── Engine response ──
         engine_tok = None
+        scene_already_placed = False
         game_turn_engine = turn // 2
 
         if model is not None and mappings is not None and HAS_TORCH:
@@ -363,8 +384,46 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
                 if t.id not in placed_ids and t.is_available_at_turn(game_turn_engine):
                     valid_mask[id_to_idx[t.id]] = True
 
-            if valid_mask.any():
-                idx_to_id = {v: k for k, v in id_to_idx.items()}
+            idx_to_id = {v: k for k, v in id_to_idx.items()}
+            is_scene = hasattr(model, "predict_scene")
+
+            if is_scene and valid_mask.any():
+                # SceneTransformer: predict N tokens in parallel (one per head)
+                n_heads = model.n_output_heads
+                per_head_valid = [valid_mask.clone() for _ in range(n_heads)]
+                scene_results = model.predict_scene(
+                    inp_t, inp_c, inp_p, inp_s, inp_a,
+                    per_head_valid=per_head_valid, temperature=0.8,
+                )
+                # Collect all scene tokens (skip heads with no valid token)
+                scene_tokens = []
+                for head_idx, (chosen_idx, probs) in enumerate(scene_results):
+                    if chosen_idx < 0:
+                        continue
+                    chosen_id = idx_to_id.get(chosen_idx)
+                    if chosen_id is None or chosen_id in placed_ids:
+                        continue
+                    scene_tok = spec.get_token(chosen_id)
+                    scene_tokens.append(scene_tok)
+                    placed_ids.add(scene_tok.id)
+                if scene_tokens:
+                    engine_tok = scene_tokens[0]  # primary response token
+                    scene_already_placed = True
+                    # Place all scene tokens
+                    for stok in scene_tokens:
+                        context_ids.append(stok.id)
+                        convergence_dims = np.minimum(
+                            1.0, convergence_dims + stok.attractor_weights * spec.convergence_rate,
+                        )
+                        dialogue_history.append(("FIELD", stok))
+                        if stok != engine_tok:
+                            console.print(f"  FIELD:  {_token_rich(stok)}")
+                        if mappings:
+                            enc = _encode_token(stok, mappings)
+                            seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
+                            seq_s.append(enc[3]); seq_a.append(enc[4])
+            elif not is_scene and valid_mask.any():
+                # DialogueTransformer: single next-token prediction
                 chosen_idx, probs = model.predict_next(
                     inp_t, inp_c, inp_p, inp_s, inp_a,
                     valid_mask=valid_mask, temperature=0.8,
@@ -379,18 +438,20 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
             )
 
         if engine_tok is not None:
-            placed_ids.add(engine_tok.id)
-            context_ids.append(engine_tok.id)
-            convergence_dims = np.minimum(
-                1.0, convergence_dims + engine_tok.attractor_weights * spec.convergence_rate,
-            )
-            dialogue_history.append(("FIELD", engine_tok))
+            if not scene_already_placed:
+                # DialogueTransformer / fallback: place single token
+                placed_ids.add(engine_tok.id)
+                context_ids.append(engine_tok.id)
+                convergence_dims = np.minimum(
+                    1.0, convergence_dims + engine_tok.attractor_weights * spec.convergence_rate,
+                )
+                dialogue_history.append(("FIELD", engine_tok))
+                if mappings:
+                    enc = _encode_token(engine_tok, mappings)
+                    seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
+                    seq_s.append(enc[3]); seq_a.append(enc[4])
+            # Print primary engine token (scene extras already printed above)
             console.print(f"  FIELD:  {_token_rich(engine_tok)}")
-
-            if mappings:
-                enc = _encode_token(engine_tok, mappings)
-                seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
-                seq_s.append(enc[3]); seq_a.append(enc[4])
             turn += 1
         else:
             console.print("  [dim]The field is silent.[/dim]")
