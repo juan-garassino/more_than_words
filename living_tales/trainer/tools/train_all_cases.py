@@ -368,7 +368,7 @@ def main():
 
     if args.production:
         args.paths = 3000
-        args.epochs = 200
+        args.epochs = 400
         args.rl_episodes = 500
         args.games = 5
 

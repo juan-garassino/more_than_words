@@ -1224,6 +1224,8 @@ def train_scene_supervised(
     # --- Training loop ---
     _section("Training")
     history = {"epoch_losses": [], "loss": 0.0}
+    best_loss = float("inf")
+    patience_counter = 0
 
     for epoch in range(n_epochs):
         model.train()
@@ -1339,6 +1341,18 @@ def train_scene_supervised(
         if (epoch == 10) or (epoch % 25 == 0 and epoch > 0):
             _scene_probe(model, spec, id_to_idx, class_to_idx, phase_to_idx,
                         stream_to_idx, agency_to_idx, device)
+
+        # --- Early stopping: patience 50 epochs after warmup ---
+        if epoch > profile.warmup_epochs:
+            if avg_loss < best_loss - 0.001:
+                best_loss = avg_loss
+                patience_counter = 0
+            else:
+                patience_counter += 1
+            if patience_counter >= 50:
+                _log(f"Early stopping at epoch {epoch} (no improvement for 50 epochs, best={best_loss:.4f})")
+                history["early_stopped"] = epoch
+                break
 
     # Unfreeze
     for p in model.parameters():
