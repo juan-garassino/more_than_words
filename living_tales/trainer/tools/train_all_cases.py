@@ -362,8 +362,8 @@ def main():
                         help="External save directory (e.g. Google Drive path). Outputs are copied here after each case.")
     parser.add_argument("--max-turns", type=int, default=None,
                         help="Override max_turns in packed specs (e.g. 200 for longer games). Applied after packing.")
-    parser.add_argument("--resume", action="store_true",
-                        help="Skip cases that already have a checkpoint (in outputs/ or --output-dir). Resumes interrupted runs.")
+    parser.add_argument("--no-resume", action="store_true",
+                        help="Force fresh training even if checkpoints exist. Default: auto-resume incomplete runs.")
     args = parser.parse_args()
 
     if args.production:
@@ -372,16 +372,35 @@ def main():
         args.rl_episodes = 500
         args.games = 5
 
-    # Set external save directory (timestamped for versioning)
+    # Set external save directory (timestamped for versioning, auto-resume)
     global _SAVE_DIR
-    _resume_dirs: list[Path] = []  # previous run dirs to check for --resume
+    args.resume = not args.no_resume  # resume by default
     if args.output_dir:
         output_base = Path(args.output_dir)
-        # Collect existing run dirs for --resume
-        if args.resume and output_base.exists():
-            _resume_dirs = sorted(output_base.glob("run_*"), reverse=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        _SAVE_DIR = output_base / f"run_{timestamp}"
+        output_base.mkdir(parents=True, exist_ok=True)
+
+        # Find latest run dir
+        existing_runs = sorted(output_base.glob("run_*"), reverse=True)
+
+        if args.resume and existing_runs:
+            # Check if latest run is incomplete (has some but not all checkpoints)
+            latest = existing_runs[0]
+            n_checkpoints = sum(1 for d in latest.iterdir()
+                                if d.is_dir() and d.name != "logs"
+                                and (d / "dialogue_model.pt").exists())
+            if n_checkpoints > 0:
+                # Resume into the same dir
+                _SAVE_DIR = latest
+                _log(f"Resuming into: {_SAVE_DIR} ({n_checkpoints} checkpoints found)")
+            else:
+                # Empty run dir or no checkpoints — create fresh
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                _SAVE_DIR = output_base / f"run_{timestamp}"
+        else:
+            # No resume or no existing runs — create fresh
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            _SAVE_DIR = output_base / f"run_{timestamp}"
+
         _SAVE_DIR.mkdir(parents=True, exist_ok=True)
         (_SAVE_DIR / "logs").mkdir(parents=True, exist_ok=True)
 
@@ -482,13 +501,10 @@ def main():
             # Resume: skip if checkpoint already exists
             if args.resume:
                 found = (_OUTPUTS / case_id / "dialogue_model.pt").exists()
-                if not found:
-                    for prev_dir in _resume_dirs:
-                        if (prev_dir / case_id / "dialogue_model.pt").exists():
-                            found = True
-                            break
+                if not found and _SAVE_DIR:
+                    found = (_SAVE_DIR / case_id / "dialogue_model.pt").exists()
                 if found:
-                    _log(f"  SKIP (checkpoint exists, --resume)")
+                    _log(f"  SKIP (checkpoint exists)")
                     trained_list.append(case_id)
                     continue
 
@@ -555,13 +571,10 @@ def main():
                 # Resume: skip if checkpoint already exists
                 if args.resume:
                     found = (_OUTPUTS / output_id / "dialogue_model.pt").exists()
-                    if not found:
-                        for prev_dir in _resume_dirs:
-                            if (prev_dir / output_id / "dialogue_model.pt").exists():
-                                found = True
-                                break
+                    if not found and _SAVE_DIR:
+                        found = (_SAVE_DIR / output_id / "dialogue_model.pt").exists()
                     if found:
-                        _log(f"  SKIP (checkpoint exists, --resume)")
+                        _log(f"  SKIP (checkpoint exists)")
                         scale_trained.append(output_id)
                         continue
 
