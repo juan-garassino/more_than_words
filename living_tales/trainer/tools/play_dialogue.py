@@ -298,11 +298,11 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
         conv_score = float(convergence_dims.min())
 
         # ── Display state ──
-        console.print(Rule(f"Turn {turn}/{max_turns}"))
-
-        # Convergence / Wellbeing
-        _conv_label = "Wellbeing" if is_creature else "Convergence"
-        console.print(f"  {_conv_label}: {_convergence_bar(conv_score)}")
+        if is_creature:
+            console.print(Rule(f"Turn {turn}"))
+            console.print(f"  Wellbeing: {_convergence_bar(conv_score)}")
+        else:
+            console.print(Rule(f"Turn {turn}/{max_turns}"))
 
         # Creature token recycling: reset placed_ids every 10 steps
         step = turn // 2
@@ -331,12 +331,9 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
             console.print("  [dim]No tokens available.[/dim]")
             break
 
-        # Check if accusation available (mysteries only)
-        if not is_creature and conv_score >= spec.convergence_threshold:
-            console.print(
-                f"\n  [bold green]The field has converged ({conv_score:.0%}). "
-                f"You may [bold]accuse[/bold] or keep investigating.[/bold green]"
-            )
+        # Subtle hint when evidence is strong (no numbers shown)
+        if not is_creature and conv_score >= 0.6:
+            console.print("\n  [dim italic]You feel the shape of the truth forming...[/dim italic]")
 
         # ── Player input ──
         console.print()
@@ -523,13 +520,10 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
         console.print(Rule("SESSION OVER"))
         console.print(f"  Final wellbeing: {_convergence_bar(conv_score)}")
     else:
-        if conv_score < spec.convergence_threshold:
-            console.print(Rule("THE TRAIL HAS GONE COLD"))
-            console.print("  [bold red]The trail has gone cold. The case remains unsolved.[/bold red]")
-        else:
-            console.print(Rule("CASE CLOSED"))
-        console.print(f"  Final convergence: {_convergence_bar(conv_score)}")
-    console.print(f"  Tokens exchanged: {len(dialogue_history)}")
+        console.print(Rule("THE TRAIL HAS GONE COLD"))
+        console.print("  [bold red]The trail has gone cold. The case remains unsolved.[/bold red]")
+        console.print(f"  [dim]You walked away after {len(dialogue_history)} exchanges.[/dim]")
+    console.print()
     console.print()
 
     console.print("[bold]DIALOGUE TRANSCRIPT[/bold]")
@@ -539,16 +533,14 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
 
 
 def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: Console):
-    """Accusation prompt -- wrong guess ends the game immediately."""
-    # All suspects in the case (including invariant, for the list)
+    """Accusation prompt — convergence score grades the quality of the accusation."""
     suspects = [t for t in spec.tokens if t.token_class == TokenClass.SUSPECT]
-
-    # The correct culprit is the first invariant token
     correct_id = spec.invariant_token_ids[0] if spec.invariant_token_ids else None
     correct_tok = spec.get_token(correct_id) if correct_id else None
+    conv_score = float(convergence_dims.min())
 
     con.print("\n[bold]ACCUSATION[/bold]")
-    con.print("[dim]Name the culprit.[/dim]\n")
+    con.print("[dim]Name the culprit. Choose carefully.[/dim]\n")
 
     con.print("  [bold]Suspects:[/bold]")
     for i, t in enumerate(suspects):
@@ -567,15 +559,25 @@ def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: C
 
     chosen = suspects[s]
     chosen_name = _token_name(chosen)
+    correct_name = _token_name(correct_tok) if correct_tok else "unknown"
 
     if chosen.id == correct_id:
-        con.print(f"\n[bold green]CORRECT! {chosen_name} is the culprit. Case solved![/bold green]")
+        # Grade based on hidden convergence score
+        if conv_score >= 0.7:
+            con.print(f"\n[bold green]CORRECT. {chosen_name} is the culprit.[/bold green]")
+            con.print("[green]Your case was airtight. The evidence spoke for itself.[/green]")
+        elif conv_score >= 0.4:
+            con.print(f"\n[bold yellow]CORRECT. {chosen_name} is the culprit.[/bold yellow]")
+            con.print("[yellow]Your instinct was right, but the evidence was thin. A good lawyer might have walked.[/yellow]")
+        else:
+            con.print(f"\n[bold yellow]CORRECT. {chosen_name} is the culprit.[/bold yellow]")
+            con.print("[yellow]A lucky guess. You had almost nothing. The case barely held together.[/yellow]")
     else:
-        correct_name = _token_name(correct_tok) if correct_tok else "unknown"
-        con.print(
-            f"\n[bold red]WRONG ACCUSATION -- CASE DISMISSED. "
-            f"The real culprit was {correct_name}.[/bold red]"
-        )
+        con.print(f"\n[bold red]WRONG. {chosen_name} is not the culprit.[/bold red]")
+        if conv_score >= 0.5:
+            con.print(f"[red]You had good evidence but drew the wrong conclusion. The truth pointed to {correct_name}.[/red]")
+        else:
+            con.print(f"[red]You accused too early. The real culprit was {correct_name}.[/red]")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
