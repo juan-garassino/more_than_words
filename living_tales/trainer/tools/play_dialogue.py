@@ -509,9 +509,41 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
                 # SceneTransformer: predict N tokens in parallel (one per head)
                 n_heads = model.n_output_heads
                 per_head_valid = [valid_mask.clone() for _ in range(n_heads)]
+
+                # ── Graph-driven logit bias ──
+                GRAPH_BOOST = 5.0
+                REPULSION_PENALTY = 3.0
+
+                recent_player_ids = [tok.id for role, tok in dialogue_history if role == "YOU"][-5:]
+                logit_bias = None
+                if recent_player_ids:
+                    # Accumulate active affinity tags from all player tokens
+                    active_tags = set()
+                    for role, tok in dialogue_history:
+                        if role == "YOU":
+                            active_tags.update(getattr(tok, 'affinity_tags', []))
+
+                    graph = spec.token_graph
+                    idx_to_id_map = {v: k for k, v in id_to_idx.items()}
+                    logit_bias = []
+                    for d in range(n_heads):
+                        bias = torch.zeros(spec.vocab_size)
+                        for tok_idx in range(spec.vocab_size):
+                            tok_id = idx_to_id_map.get(tok_idx, "")
+                            # Graph affinity: boost tokens connected to recent player choices
+                            affinity = sum(graph.weight(tok_id, pid) for pid in recent_player_ids)
+                            bias[tok_idx] += affinity * GRAPH_BOOST
+
+                            # Repulsion: penalize tokens whose repulsion_tags clash with active tags
+                            tok_obj = spec.get_token(tok_id) if tok_id else None
+                            if tok_obj and set(getattr(tok_obj, 'repulsion_tags', [])) & active_tags:
+                                bias[tok_idx] -= REPULSION_PENALTY
+                        logit_bias.append(bias)
+
                 scene_results = model.predict_scene(
                     inp_t, inp_c, inp_p, inp_s, inp_a,
                     per_head_valid=per_head_valid, temperature=0.8,
+                    logit_bias=logit_bias,
                 )
                 # Collect all scene tokens (skip heads with no valid token)
                 scene_tokens = []
@@ -642,6 +674,21 @@ def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: C
     chosen_name = _token_name(chosen)
     correct_name = _token_name(correct_tok) if correct_tok else "unknown"
 
+    # Load dimension labels for per-dim feedback
+    dim_labels = ["who acted", "how it was done", "why it happened"]  # default
+    try:
+        import json as _json_acc
+        for try_path in [Path(f"cases/{spec.case_id}/attractor.json"), Path(f"../../cases/{spec.case_id}.json")]:
+            if try_path.exists():
+                with open(try_path) as f:
+                    ad = _json_acc.load(f)
+                if 'attractor' in ad:
+                    ad = ad['attractor']
+                dim_labels = [d.get('label', f'dim{i}') for i, d in enumerate(ad.get('dimensions', []))]
+                break
+    except Exception:
+        pass
+
     if chosen.id == correct_id:
         # Grade based on hidden convergence score
         if conv_score >= 0.7:
@@ -659,6 +706,19 @@ def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: C
             con.print(f"[red]You had good evidence but drew the wrong conclusion. The truth pointed to {correct_name}.[/red]")
         else:
             con.print(f"[red]You accused too early. The real culprit was {correct_name}.[/red]")
+
+    # Per-dimension narrative feedback
+    con.print()
+    con.print("[bold]Evidence by dimension:[/bold]")
+    for d in range(len(convergence_dims)):
+        val = float(convergence_dims[d])
+        label = dim_labels[d] if d < len(dim_labels) else f"dimension {d}"
+        if val >= 0.7:
+            con.print(f"  [green]✓ {label}: strong evidence[/green]")
+        elif val >= 0.4:
+            con.print(f"  [yellow]~ {label}: partial evidence[/yellow]")
+        else:
+            con.print(f"  [red]✗ {label}: weak evidence[/red]")
 
 
 # ─────────────────────────────────────────────────────────────────────────────

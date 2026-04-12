@@ -322,9 +322,39 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
 
             if is_scene_model:
                 # SceneTransformer: predict N tokens (one per head/dimension)
+
+                # ── Graph-driven logit bias ──
+                GRAPH_BOOST = 5.0
+                REPULSION_PENALTY = 3.0
+
+                # Gather recent player token IDs from transcript
+                recent_player_ids = [tok.id for role, tok, _ in transcript if role == "YOU"][-5:]
+                graph_logit_bias = None
+                if recent_player_ids:
+                    active_tags = set()
+                    for role, tok, _ in transcript:
+                        if role == "YOU":
+                            active_tags.update(getattr(tok, 'affinity_tags', []))
+
+                    graph = spec.token_graph
+                    n_heads = model.n_output_heads
+                    graph_logit_bias = []
+                    for d in range(n_heads):
+                        bias = torch.zeros(spec.vocab_size)
+                        for tok_idx in range(spec.vocab_size):
+                            tok_id = idx_to_id.get(tok_idx, "")
+                            affinity = sum(graph.weight(tok_id, pid) for pid in recent_player_ids)
+                            bias[tok_idx] += affinity * GRAPH_BOOST
+
+                            tok_obj = spec.get_token(tok_id) if tok_id else None
+                            if tok_obj and set(getattr(tok_obj, 'repulsion_tags', [])) & active_tags:
+                                bias[tok_idx] -= REPULSION_PENALTY
+                        graph_logit_bias.append(bias)
+
                 with torch.no_grad():
                     results = model.predict_scene(
                         inp_t, inp_c, inp_p, inp_s, inp_a, temperature=0.8,
+                        logit_bias=graph_logit_bias,
                     )
 
                 # Place all scene tokens

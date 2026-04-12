@@ -346,6 +346,7 @@ class SceneTransformer(nn.Module):
         agency_ids: torch.Tensor,      # (1, S)
         per_head_valid: Optional[List[torch.Tensor]] = None,  # list of N (V,) bool
         temperature: float = 0.8,
+        logit_bias: Optional[List[torch.Tensor]] = None,  # list of N (V,) float
     ) -> List[Tuple[int, torch.Tensor]]:
         """
         Predict a full scene — N tokens in parallel, one per head.
@@ -376,6 +377,10 @@ class SceneTransformer(nn.Module):
 
         for i, logits in enumerate(all_logits):
             last = logits[0, -1, :].clone()  # (V,)
+
+            # Apply graph-driven logit bias if provided
+            if logit_bias is not None and i < len(logit_bias):
+                last = last + logit_bias[i].to(device)
 
             # Apply extra validity mask if provided
             if per_head_valid is not None and per_head_valid[i] is not None:
