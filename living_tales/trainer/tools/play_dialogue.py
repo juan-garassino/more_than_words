@@ -101,12 +101,28 @@ def _token_name(tok: Token) -> str:
     return raw
 
 
-def _token_rich(tok: Token) -> str:
+def _token_rich(tok: Token, show_label: bool = True) -> str:
     """Rich markup for a symbolic token: icon + name + class tag."""
     name = _token_name(tok)
     color = _CLASS_COLORS.get(tok.token_class.value, "white")
     icon = _CLASS_ICONS.get(tok.token_class.value, "·")
-    return f"[{color}]{icon} {name}[/{color}]  [dim]{tok.token_class.value}[/dim]"
+    if show_label:
+        return f"[{color}]{icon} {name}[/{color}]  [dim]{tok.token_class.value}[/dim]"
+    return f"[{color}]{name}[/{color}]"
+
+
+def _token_narrative(tok: Token) -> str:
+    """Clean narrative text — no icons, no labels. Just the expression."""
+    return _token_name(tok)
+
+
+def _token_with_speaker(tok: Token) -> str:
+    """For suspects/witnesses: prefix with speaker name for context."""
+    name = _token_name(tok)
+    if tok.token_class in (TokenClass.SUSPECT, TokenClass.WITNESS):
+        speaker = tok.id.split(":")[1].replace("_", " ").title()
+        return f"[bold]{speaker}[/bold]: {name}"
+    return name
 
 
 def _convergence_bar(score: float, width: int = 20) -> str:
@@ -335,7 +351,8 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         )
     console.print(Panel(_intro, border_style="bright_blue"))
 
-    console.print(f"\n[bold]{txt['opening']}[/bold]")
+    console.print(Rule(f" {spec.title} ", style="dim"))
+    console.print()
     for tid in spec.opening_token_ids:
         tok = spec.get_token(tid)
         placed_ids.add(tok.id)
@@ -344,14 +361,14 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
             1.0, convergence_dims + tok.attractor_weights * spec.convergence_rate,
         )
         dialogue_history.append(("FIELD", tok))
-        console.print(f"  FIELD:  {_token_rich(tok)}")
+        # Clean prose — no labels, no symbols
+        console.print(f"  [dim]{_token_narrative(tok)}[/dim]")
+        console.print()
         if mappings:
             enc = _encode_token(tok, mappings)
             seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
             seq_s.append(enc[3]); seq_a.append(enc[4])
         turn += 1
-
-    console.print()
 
     # ── Main loop ──
     while turn < max_turns:
@@ -392,7 +409,7 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         console.print()
         console.print(f"[bold]{txt['your_hand']}[/bold]")
         for i, tok in enumerate(valid_hand):
-            console.print(f"  [{i + 1}] {_token_rich(tok)}")
+            console.print(f"  [{i + 1}] {_token_rich(tok, show_label=False)}")
 
         if not valid_hand:
             console.print("  [dim]No tokens available.[/dim]")
@@ -469,12 +486,8 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
             )
 
         dialogue_history.append(("YOU", player_tok))
-        # Display player action with narrative framing
-        expr_text = getattr(player_tok, 'surface_expression', '') or ''
-        if is_creature:
-            console.print(f"\n  [bold blue]YOU[/bold blue]    {_token_rich(player_tok)}")
-        else:
-            console.print(f"\n  [bold blue]YOU[/bold blue]    {_token_rich(player_tok)}")
+        # Display player action — clean narrative, no labels
+        console.print(f"\n  [bold blue]YOU[/bold blue]    {_token_narrative(player_tok)}")
 
         if mappings:
             enc = _encode_token(player_tok, mappings)
@@ -565,18 +578,16 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
                     engine_tok = scene_tokens[0]  # primary response token
                     scene_already_placed = True
 
-                    # Display scene response with narrative framing
+                    # Display scene response — clean narrative
                     if is_creature:
-                        # First token is the creature's direct reaction
-                        console.print(f"\n  [bold cyan]IT[/bold cyan]     {_token_rich(scene_tokens[0])}")
-                        # Remaining tokens are the scene/atmosphere
+                        console.print(f"\n  [bold cyan]IT[/bold cyan]     {_token_narrative(scene_tokens[0])}")
                         for stok in scene_tokens[1:]:
-                            console.print(f"  [dim cyan]SCENE[/dim cyan]  {_token_rich(stok)}")
+                            console.print(f"  [dim]{_token_narrative(stok)}[/dim]")
                     else:
-                        # Mystery: first is primary clue, rest are atmosphere
-                        console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_token_rich(scene_tokens[0])}")
+                        # Mystery: use speaker names for suspects/witnesses/emotions
+                        console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_token_with_speaker(scene_tokens[0])}")
                         for stok in scene_tokens[1:]:
-                            console.print(f"  [dim cyan]SCENE[/dim cyan]  {_token_rich(stok)}")
+                            console.print(f"  [dim]       {_token_with_speaker(stok)}[/dim]")
 
                     # Place all scene tokens in game state
                     for stok in scene_tokens:
@@ -620,9 +631,9 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
             # Print primary engine token (scene extras already printed above)
             if not scene_already_placed:
                 if is_creature:
-                    console.print(f"\n  [bold cyan]IT[/bold cyan]     {_token_rich(engine_tok)}")
+                    console.print(f"\n  [bold cyan]IT[/bold cyan]     {_token_narrative(engine_tok)}")
                 else:
-                    console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_token_rich(engine_tok)}")
+                    console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_token_with_speaker(engine_tok)}")
             turn += 1
         else:
             console.print("  [dim]The field is silent.[/dim]")
