@@ -115,13 +115,13 @@ namespace LivingTales.Engine
                 int vocabSize = cartridge.Spec.vocab_size;
                 float[] logits = new float[vocabSize];
                 var floatOutput = output as Unity.InferenceEngine.Tensor<float>;
-                floatOutput.MakeReadable();
-                var outputSpan = floatOutput.ToReadOnlySpan();
+                floatOutput.CompleteAllPendingOperations();
+                float[] outputData = floatOutput.DownloadToArray();
                 int lastPosOffset = (seqLen - 1) * vocabSize;
 
                 for (int v = 0; v < vocabSize; v++)
                 {
-                    logits[v] = outputSpan[lastPosOffset + v];
+                    logits[v] = outputData[lastPosOffset + v];
 
                     // Apply head mask
                     if (!headMasks[d][v])
