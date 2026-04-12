@@ -224,10 +224,50 @@ def _fallback_engine_pick(
 
 RED_HERRING_TAGS = {'surface', 'plausible', 'dramatic'}
 
+TUI_TEXT = {
+    "en": {
+        "mystery_intro": "You are the detective. Play symbolic tokens.\nThe field responds. The truth converges.",
+        "creature_intro": "You care for a creature. Feed, play, comfort.\nThe creature responds. Wellbeing oscillates.",
+        "your_hand": "YOUR HAND",
+        "play_prompt_mystery": "Play a token (number), accuse, or quit",
+        "play_prompt_creature": "Play a token (number), rest, or quit",
+        "opening": "OPENING SCENE",
+        "accuse": "ACCUSATION",
+        "cold_trail": "The trail has gone cold. The case remains unsolved.",
+        "creature_quit": "You step away. The creature watches you go.",
+        "truth_forming": "You feel the shape of the truth forming...",
+    },
+    "es": {
+        "mystery_intro": "Eres el detective. Juega fichas simbólicas.\nEl campo responde. La verdad converge.",
+        "creature_intro": "Cuidas a una criatura. Alimenta, juega, conforta.\nLa criatura responde. El bienestar oscila.",
+        "your_hand": "TU MANO",
+        "play_prompt_mystery": "Juega una ficha (número), acusar, o salir",
+        "play_prompt_creature": "Juega una ficha (número), descansar, o salir",
+        "opening": "ESCENA INICIAL",
+        "accuse": "ACUSACIÓN",
+        "cold_trail": "La pista se ha enfriado. El caso queda sin resolver.",
+        "creature_quit": "Te alejas. La criatura te observa partir.",
+        "truth_forming": "Sientes la forma de la verdad tomando cuerpo...",
+    },
+    "fr": {
+        "mystery_intro": "Vous êtes le détective. Jouez des jetons symboliques.\nLe terrain répond. La vérité converge.",
+        "creature_intro": "Vous prenez soin d'une créature. Nourrissez, jouez, réconfortez.\nLa créature répond. Le bien-être oscille.",
+        "your_hand": "VOTRE MAIN",
+        "play_prompt_mystery": "Jouez un jeton (numéro), accuser, ou quitter",
+        "play_prompt_creature": "Jouez un jeton (numéro), repos, ou quitter",
+        "opening": "SCÈNE D'OUVERTURE",
+        "accuse": "ACCUSATION",
+        "cold_trail": "La piste s'est refroidie. L'affaire reste non résolue.",
+        "creature_quit": "Vous vous éloignez. La créature vous regarde partir.",
+        "truth_forming": "Vous sentez la forme de la vérité se dessiner...",
+    },
+}
 
-def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
+
+def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = "en"):
     assert console is not None, "Rich library required. pip install rich"
 
+    txt = TUI_TEXT.get(lang, TUI_TEXT["en"])
     is_creature = getattr(spec, 'mode', 'converging') == 'oscillating'
 
     # Partition tokens
@@ -255,26 +295,47 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
     # Model inference sequences
     seq_t, seq_c, seq_p, seq_s, seq_a = [], [], [], [], []
 
-    max_turns = spec.max_turns * 2
+    max_turns = 999999 if is_creature else spec.max_turns * 2
     turn = 0
+
+    # Load dimension labels for per-dim bars
+    dim_labels = []
+    try:
+        import json as _json
+        _attr_path = Path(spec_path).parent / "attractor.json" if 'spec_path' in dir() else None
+        # Try from packed cases
+        _case_id = spec.case_id
+        for _try_path in [
+            Path(f"cases/{_case_id}/attractor.json"),
+            Path(f"../../cases/{_case_id}.json"),
+        ]:
+            if _try_path.exists():
+                with open(_try_path) as _f:
+                    _ad = _json.load(_f)
+                if 'attractor' in _ad:
+                    _ad = _ad['attractor']
+                dim_labels = [d.get('label', f'dim{i}') for i, d in enumerate(_ad.get('dimensions', []))]
+                break
+    except Exception:
+        pass
+    if not dim_labels:
+        dim_labels = [f"dim{i}" for i in range(spec.n_attractor_dims)]
 
     # ── Opening ──
     console.print()
     if is_creature:
         _intro = (
             f"[bold]{spec.title}[/bold]\n\n"
-            f"[dim]You care for a creature. Feed, play, comfort.\n"
-            f"The creature responds. Wellbeing oscillates.[/dim]"
+            f"[dim]{txt['creature_intro']}[/dim]"
         )
     else:
         _intro = (
             f"[bold]{spec.title}[/bold]\n\n"
-            f"[dim]You are the detective. Play symbolic tokens.\n"
-            f"The field responds. The truth converges.[/dim]"
+            f"[dim]{txt['mystery_intro']}[/dim]"
         )
     console.print(Panel(_intro, border_style="bright_blue"))
 
-    console.print("\n[bold]OPENING SCENE[/bold]")
+    console.print(f"\n[bold]{txt['opening']}[/bold]")
     for tid in spec.opening_token_ids:
         tok = spec.get_token(tid)
         placed_ids.add(tok.id)
@@ -300,7 +361,13 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
         # ── Display state ──
         if is_creature:
             console.print(Rule(f"Turn {turn}"))
-            console.print(f"  Wellbeing: {_convergence_bar(conv_score)}")
+            # Per-dimension bars for creature
+            for d in range(spec.n_attractor_dims):
+                val = float(convergence_dims[d])
+                label = dim_labels[d] if d < len(dim_labels) else f"dim{d}"
+                filled = int(val * 15)
+                bar = "█" * filled + "░" * (15 - filled)
+                console.print(f"  {label:<20s} [{bar}] {val:.0%}")
         else:
             console.print(Rule(f"Turn {turn}/{max_turns}"))
 
@@ -323,7 +390,7 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
                     hand.append(card)
 
         console.print()
-        console.print("[bold]YOUR HAND[/bold]")
+        console.print(f"[bold]{txt['your_hand']}[/bold]")
         for i, tok in enumerate(valid_hand):
             console.print(f"  [{i + 1}] {_token_rich(tok)}")
 
@@ -333,41 +400,42 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
 
         # Subtle hint when evidence is strong (no numbers shown)
         if not is_creature and conv_score >= 0.6:
-            console.print("\n  [dim italic]You feel the shape of the truth forming...[/dim italic]")
+            console.print(f"\n  [dim italic]{txt['truth_forming']}[/dim italic]")
 
         # ── Player input ──
         console.print()
         if is_creature:
             choice = Prompt.ask(
-                "[bold]Play a token[/bold] (number), [dim]rest[/dim], or [dim]quit[/dim]",
+                f"[bold]{txt['play_prompt_creature']}[/bold]",
                 default="1",
             )
         else:
             choice = Prompt.ask(
-                "[bold]Play a token[/bold] (number), [dim]accuse[/dim], or [dim]quit[/dim]",
+                f"[bold]{txt['play_prompt_mystery']}[/bold]",
                 default="1",
             )
 
-        if choice.lower() in ("q", "quit"):
+        if choice.lower() in ("q", "quit", "salir", "quitter"):
             if is_creature:
-                console.print("\n[dim]You step away. The creature watches you go.[/dim]")
+                console.print(f"\n[dim]{txt['creature_quit']}[/dim]")
             else:
                 console.print("\n[dim]You walk away from the case.[/dim]")
             break
 
-        if choice.lower() == "rest" and is_creature:
-            # Skip turn, apply decay
-            convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+        if choice.lower() in ("rest", "descansar", "repos") and is_creature:
+            # Skip turn, apply adaptive decay
+            decay = 0.02 + convergence_dims * 0.06
+            convergence_dims = np.maximum(0.0, convergence_dims - decay)
             console.print("\n  [dim]You rest. The creature stirs quietly.[/dim]")
             turn += 2  # skip both player and engine turn
             console.print()
             continue
 
-        if choice.lower() == "accuse":
+        if choice.lower() in ("accuse", "acusar", "accuser"):
             if is_creature:
                 console.print("[yellow]No accusations here -- tend to your creature.[/yellow]")
                 continue
-            _handle_accusation(spec, convergence_dims, console)
+            _handle_accusation(spec, convergence_dims, console, txt)
             break
 
         # Parse card selection
@@ -507,9 +575,15 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
             console.print("  [dim]The field is silent.[/dim]")
             turn += 1
 
-        # Mystery dimension decay (0.01/step)
-        if not is_creature:
-            convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+        # Passive decay
+        if is_creature:
+            # Adaptive decay: high dimensions decay faster
+            decay = 0.02 + convergence_dims * 0.06
+            convergence_dims = np.maximum(0.0, convergence_dims - decay)
+        else:
+            # Evidence going cold: adaptive decay
+            decay = 0.005 + convergence_dims * 0.01
+            convergence_dims = np.maximum(0.0, convergence_dims - decay)
 
         console.print()
 
@@ -518,10 +592,15 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
     console.print()
     if is_creature:
         console.print(Rule("SESSION OVER"))
-        console.print(f"  Final wellbeing: {_convergence_bar(conv_score)}")
+        for d in range(spec.n_attractor_dims):
+            val = float(convergence_dims[d])
+            label = dim_labels[d] if d < len(dim_labels) else f"dim{d}"
+            filled = int(val * 15)
+            bar = "█" * filled + "░" * (15 - filled)
+            console.print(f"  {label:<20s} [{bar}] {val:.0%}")
     else:
         console.print(Rule("THE TRAIL HAS GONE COLD"))
-        console.print("  [bold red]The trail has gone cold. The case remains unsolved.[/bold red]")
+        console.print(f"  [bold red]{txt['cold_trail']}[/bold red]")
         console.print(f"  [dim]You walked away after {len(dialogue_history)} exchanges.[/dim]")
     console.print()
     console.print()
@@ -532,14 +611,16 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
         console.print(f"  {tag}  {_token_rich(tok)}")
 
 
-def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: Console):
+def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: Console, txt: dict = None):
     """Accusation prompt — convergence score grades the quality of the accusation."""
+    if txt is None:
+        txt = TUI_TEXT["en"]
     suspects = [t for t in spec.tokens if t.token_class == TokenClass.SUSPECT]
     correct_id = spec.invariant_token_ids[0] if spec.invariant_token_ids else None
     correct_tok = spec.get_token(correct_id) if correct_id else None
     conv_score = float(convergence_dims.min())
 
-    con.print("\n[bold]ACCUSATION[/bold]")
+    con.print(f"\n[bold]{txt['accuse']}[/bold]")
     con.print("[dim]Name the culprit. Choose carefully.[/dim]\n")
 
     con.print("  [bold]Suspects:[/bold]")
@@ -588,6 +669,7 @@ def main():
     parser = argparse.ArgumentParser(description="Play a Living Tales dialogue.")
     parser.add_argument("case_id", help="Case ID (e.g. amber_cipher)")
     parser.add_argument("--model-path", help="Path to dialogue_model.pt")
+    parser.add_argument("--lang", default="en", help="Language for expressions (en, es, fr)")
     args = parser.parse_args()
 
     # Auto-detect model if not specified
@@ -603,7 +685,24 @@ def main():
         sys.exit(1)
 
     spec, model, mappings = _load_model_and_spec(args.case_id, model_path)
-    game_loop(spec, model, mappings)
+
+    # Load language-specific expressions and overlay onto spec tokens
+    lang = args.lang
+    cases_dir = _HERE.parent / "cases"
+    expr_filename = f"expressions_{lang}.json" if lang != "en" else "expressions.json"
+    # Try language-specific file, fall back to English
+    expr_path = cases_dir / args.case_id / expr_filename
+    if not expr_path.exists():
+        expr_path = cases_dir / args.case_id / "expressions.json"
+    if expr_path.exists():
+        import json as _json
+        with open(expr_path) as _f:
+            _expr_map = _json.load(_f)
+        for tok in spec.tokens:
+            if tok.id in _expr_map:
+                tok.surface_expression = _expr_map[tok.id]
+
+    game_loop(spec, model, mappings, lang=lang)
 
 
 if __name__ == "__main__":

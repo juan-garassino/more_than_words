@@ -346,7 +346,9 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
                     if hasattr(chosen_tok, 'affinity_tags') and set(chosen_tok.affinity_tags) & RED_HERRING_TAGS:
                         convergence_dims = np.maximum(0.0, convergence_dims - abs(np.array(chosen_tok.attractor_weights)) * spec.convergence_rate * 0.5)
                     if is_creature:
-                        convergence_dims = np.maximum(0.0, convergence_dims - 0.04)
+                        # Adaptive decay: high dimensions decay faster
+                        decay = 0.02 + convergence_dims * 0.06
+                        convergence_dims = np.maximum(0.0, convergence_dims - decay)
 
                     enc = _encode_token(chosen_tok, mappings)
                     seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
@@ -358,9 +360,10 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
 
                 if scene_tokens_placed == 0:
                     break
-                # Mystery dimension decay: passive convergence loss each step
+                # Mystery decay: evidence goes cold, faster when case is strong
                 if not is_creature:
-                    convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+                    decay = 0.005 + convergence_dims * 0.01
+                    convergence_dims = np.maximum(0.0, convergence_dims - decay)
                 is_player = not is_player
                 continue  # skip the single-token placement below
 
@@ -397,7 +400,9 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
             convergence_dims = np.maximum(0.0, convergence_dims - abs(np.array(chosen.attractor_weights)) * spec.convergence_rate * 0.5)
         # Creature mode: dimensions also decay naturally over time
         if is_creature:
-            convergence_dims = np.maximum(0.0, convergence_dims - 0.04)
+            # Adaptive decay: high dimensions decay faster
+            decay = 0.02 + convergence_dims * 0.06
+            convergence_dims = np.maximum(0.0, convergence_dims - decay)
 
         enc = _encode_token(chosen, mappings)
         seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
@@ -407,9 +412,10 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
         transcript.append((role, chosen, float(convergence_dims.min())))
         is_player = not is_player
 
-        # Mystery dimension decay: passive convergence loss each step
+        # Mystery decay: evidence goes cold, faster when case is strong
         if not is_creature:
-            convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+            decay = 0.005 + convergence_dims * 0.01
+            convergence_dims = np.maximum(0.0, convergence_dims - decay)
 
     final_conv = float(convergence_dims.min())
     energy = spec.token_graph.subgraph_energy(context_ids[-30:]) if context_ids else 0.0
