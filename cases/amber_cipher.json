@@ -3,9 +3,9 @@
   "title": "The Amber Cipher",
   "convergence_shape": "late_break",
   "difficulty": "medium",
-  "min_turns": 40,
-  "max_turns": 100,
-  "convergence_rate": 0.15,
+  "min_turns": 50,
+  "max_turns": 120,
+  "convergence_rate": 0.08,
   "opening_token_ids": [
     "location:thornfield_crossing",
     "event:aldous_verne_discovered",

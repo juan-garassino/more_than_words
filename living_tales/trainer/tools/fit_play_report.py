@@ -275,23 +275,29 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
         if not is_creature and conv_score >= spec.convergence_threshold and game_turn >= spec.min_turns:
             break
 
-        # Creature mode: reset placed_ids periodically so tokens can replay
-        # (the creature's needs recur — you feed it again, play again, etc.)
-        if is_creature and step > 0 and step % 20 == 0:
-            # Keep opening tokens placed, reset everything else
-            placed_ids = set(spec.opening_token_ids)
+        # Reset placed_ids periodically so tokens can replay
+        # Creatures: every 20 steps (needs recur)
+        # Mysteries: every 15 steps (re-investigate, revisit clues)
+        if step > 0:
+            if is_creature and step % 20 == 0:
+                placed_ids = set(spec.opening_token_ids)
+            elif not is_creature and step % 15 == 0:
+                # Keep invariant and opening tokens placed, reset everything else
+                placed_ids = set(spec.opening_token_ids) | set(spec.invariant_token_ids)
 
         if is_player:
+            # After min_turns, relax phase gating — all tokens available (re-investigate)
+            relaxed = game_turn >= getattr(spec, 'min_turns', 10) // 2
             candidates = [
                 t for t in player_pool
-                if t.id not in placed_ids and t.is_available_at_turn(game_turn)
+                if t.id not in placed_ids and (relaxed or t.is_available_at_turn(game_turn))
             ]
-            if not candidates and is_creature:
-                # Creature: reset placed_ids and try again
-                placed_ids = set(spec.opening_token_ids)
+            if not candidates:
+                # Reset placed_ids and try again (tokens can be revisited)
+                placed_ids = set(spec.opening_token_ids) | set(getattr(spec, 'invariant_token_ids', []))
                 candidates = [
                     t for t in player_pool
-                    if t.id not in placed_ids and t.is_available_at_turn(game_turn)
+                    if t.id not in placed_ids and (relaxed or t.is_available_at_turn(game_turn))
                 ]
             if not candidates:
                 break
