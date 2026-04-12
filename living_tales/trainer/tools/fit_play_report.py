@@ -341,6 +341,10 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
                     convergence_dims = np.minimum(
                         1.0, convergence_dims + chosen_tok.attractor_weights * spec.convergence_rate,
                     )
+                    # Red herring penalty: tokens with deceptive affinity tags push convergence back
+                    RED_HERRING_TAGS = {'surface', 'plausible', 'dramatic'}
+                    if hasattr(chosen_tok, 'affinity_tags') and set(chosen_tok.affinity_tags) & RED_HERRING_TAGS:
+                        convergence_dims = np.maximum(0.0, convergence_dims - abs(np.array(chosen_tok.attractor_weights)) * spec.convergence_rate * 0.5)
                     if is_creature:
                         convergence_dims = np.maximum(0.0, convergence_dims - 0.04)
 
@@ -354,6 +358,9 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
 
                 if scene_tokens_placed == 0:
                     break
+                # Mystery dimension decay: passive convergence loss each step
+                if not is_creature:
+                    convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
                 is_player = not is_player
                 continue  # skip the single-token placement below
 
@@ -384,6 +391,10 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
         convergence_dims = np.minimum(
             1.0, convergence_dims + chosen.attractor_weights * spec.convergence_rate,
         )
+        # Red herring penalty: tokens with deceptive affinity tags push convergence back
+        RED_HERRING_TAGS = {'surface', 'plausible', 'dramatic'}
+        if hasattr(chosen, 'affinity_tags') and set(chosen.affinity_tags) & RED_HERRING_TAGS:
+            convergence_dims = np.maximum(0.0, convergence_dims - abs(np.array(chosen.attractor_weights)) * spec.convergence_rate * 0.5)
         # Creature mode: dimensions also decay naturally over time
         if is_creature:
             convergence_dims = np.maximum(0.0, convergence_dims - 0.04)
@@ -396,16 +407,29 @@ def play_game(model, spec, mappings, seed: int, max_turns: int = 60):
         transcript.append((role, chosen, float(convergence_dims.min())))
         is_player = not is_player
 
+        # Mystery dimension decay: passive convergence loss each step
+        if not is_creature:
+            convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+
     final_conv = float(convergence_dims.min())
     energy = spec.token_graph.subgraph_energy(context_ids[-30:]) if context_ids else 0.0
+
+    converged = final_conv >= spec.convergence_threshold
+    if is_creature:
+        outcome = "ongoing"
+    elif converged:
+        outcome = "solved"
+    else:
+        outcome = "cold_case"
 
     return {
         "seed": seed,
         "transcript": transcript,
-        "converged": final_conv >= spec.convergence_threshold,
+        "converged": converged,
         "final_convergence": final_conv,
         "final_energy": energy,
         "n_turns": len(transcript),
+        "outcome": outcome,
     }
 
 
@@ -442,7 +466,13 @@ def print_report(games: list, spec, history: dict):
 
     for i, game in enumerate(games):
         console.print()
-        status = "[green]CONVERGED[/green]" if game["converged"] else "[red]TIMEOUT[/red]"
+        outcome = game.get("outcome", "solved" if game["converged"] else "cold_case")
+        if outcome == "solved":
+            status = "[green]SOLVED[/green]"
+        elif outcome == "cold_case":
+            status = "[red]CASE GONE COLD[/red]"
+        else:
+            status = "[yellow]ONGOING[/yellow]"
         console.print(
             f"  [bold]Game {i+1}[/bold] (seed={game['seed']})  "
             f"{status}  "
@@ -554,7 +584,13 @@ def _print_report_plain(games, spec, history):
     print(f"\n  {converged}/{len(games)} games converged")
 
     for i, g in enumerate(games):
-        status = "CONVERGED" if g["converged"] else "TIMEOUT"
+        outcome = g.get("outcome", "solved" if g["converged"] else "cold_case")
+        if outcome == "solved":
+            status = "SOLVED"
+        elif outcome == "cold_case":
+            status = "CASE GONE COLD"
+        else:
+            status = "ONGOING"
         print(f"\n  Game {i+1} (seed={g['seed']}) [{status}] turns={g['n_turns']} conv={g['final_convergence']:.2f}")
         for role, tok, conv in g["transcript"]:
             name = tok.surface_expression or tok.id

@@ -222,8 +222,13 @@ def _fallback_engine_pick(
 # Main game loop
 # ─────────────────────────────────────────────────────────────────────────────
 
+RED_HERRING_TAGS = {'surface', 'plausible', 'dramatic'}
+
+
 def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
     assert console is not None, "Rich library required. pip install rich"
+
+    is_creature = getattr(spec, 'mode', 'converging') == 'oscillating'
 
     # Partition tokens
     player_tokens = [
@@ -255,12 +260,19 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
 
     # ── Opening ──
     console.print()
-    console.print(Panel(
-        f"[bold]{spec.title}[/bold]\n\n"
-        f"[dim]You are the detective. Play symbolic tokens.\n"
-        f"The field responds. The truth converges.[/dim]",
-        border_style="bright_blue",
-    ))
+    if is_creature:
+        _intro = (
+            f"[bold]{spec.title}[/bold]\n\n"
+            f"[dim]You care for a creature. Feed, play, comfort.\n"
+            f"The creature responds. Wellbeing oscillates.[/dim]"
+        )
+    else:
+        _intro = (
+            f"[bold]{spec.title}[/bold]\n\n"
+            f"[dim]You are the detective. Play symbolic tokens.\n"
+            f"The field responds. The truth converges.[/dim]"
+        )
+    console.print(Panel(_intro, border_style="bright_blue"))
 
     console.print("\n[bold]OPENING SCENE[/bold]")
     for tid in spec.opening_token_ids:
@@ -288,16 +300,25 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
         # ── Display state ──
         console.print(Rule(f"Turn {turn}/{max_turns}"))
 
-        # Convergence
-        console.print(f"  Convergence: {_convergence_bar(conv_score)}")
+        # Convergence / Wellbeing
+        _conv_label = "Wellbeing" if is_creature else "Convergence"
+        console.print(f"  {_conv_label}: {_convergence_bar(conv_score)}")
 
-        # Hand (only phase-valid tokens)
-        valid_hand = [t for t in hand if t.is_available_at_turn(game_turn)]
+        # Creature token recycling: reset placed_ids every 10 steps
+        step = turn // 2
+        if is_creature and step > 0 and step % 10 == 0:
+            placed_ids = set(spec.opening_token_ids)
+
+        # Hand (creatures skip phase gating for more variety)
+        if is_creature:
+            valid_hand = [t for t in hand if t.id not in placed_ids]
+        else:
+            valid_hand = [t for t in hand if t.is_available_at_turn(game_turn)]
         if not valid_hand:
             # Try refilling from deck
             while len(valid_hand) < HAND_SIZE and deck:
                 card = deck.pop(0)
-                if card.is_available_at_turn(game_turn):
+                if is_creature or card.is_available_at_turn(game_turn):
                     valid_hand.append(card)
                     hand.append(card)
 
@@ -310,8 +331,8 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
             console.print("  [dim]No tokens available.[/dim]")
             break
 
-        # Check if accusation available
-        if conv_score >= spec.convergence_threshold:
+        # Check if accusation available (mysteries only)
+        if not is_creature and conv_score >= spec.convergence_threshold:
             console.print(
                 f"\n  [bold green]The field has converged ({conv_score:.0%}). "
                 f"You may [bold]accuse[/bold] or keep investigating.[/bold green]"
@@ -319,20 +340,37 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
 
         # ── Player input ──
         console.print()
-        choice = Prompt.ask(
-            "[bold]Play a token[/bold] (number), [dim]accuse[/dim], or [dim]quit[/dim]",
-            default="1",
-        )
+        if is_creature:
+            choice = Prompt.ask(
+                "[bold]Play a token[/bold] (number), [dim]rest[/dim], or [dim]quit[/dim]",
+                default="1",
+            )
+        else:
+            choice = Prompt.ask(
+                "[bold]Play a token[/bold] (number), [dim]accuse[/dim], or [dim]quit[/dim]",
+                default="1",
+            )
 
         if choice.lower() in ("q", "quit"):
-            console.print("\n[dim]You walk away from the case.[/dim]")
+            if is_creature:
+                console.print("\n[dim]You step away. The creature watches you go.[/dim]")
+            else:
+                console.print("\n[dim]You walk away from the case.[/dim]")
             break
 
+        if choice.lower() == "rest" and is_creature:
+            # Skip turn, apply decay
+            convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+            console.print("\n  [dim]You rest. The creature stirs quietly.[/dim]")
+            turn += 2  # skip both player and engine turn
+            console.print()
+            continue
+
         if choice.lower() == "accuse":
-            if conv_score < spec.convergence_threshold:
-                console.print("[yellow]The field hasn't converged yet. Keep investigating.[/yellow]")
+            if is_creature:
+                console.print("[yellow]No accusations here -- tend to your creature.[/yellow]")
                 continue
-            _handle_accusation(spec, console)
+            _handle_accusation(spec, convergence_dims, console)
             break
 
         # Parse card selection
@@ -342,7 +380,10 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
                 console.print("[red]Invalid card number.[/red]")
                 continue
         except ValueError:
-            console.print("[red]Enter a number, 'accuse', or 'quit'.[/red]")
+            if is_creature:
+                console.print("[red]Enter a number, 'rest', or 'quit'.[/red]")
+            else:
+                console.print("[red]Enter a number, 'accuse', or 'quit'.[/red]")
             continue
 
         player_tok = valid_hand[idx]
@@ -354,6 +395,14 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
         convergence_dims = np.minimum(
             1.0, convergence_dims + player_tok.attractor_weights * spec.convergence_rate,
         )
+
+        # Red herring penalty (mysteries only)
+        if not is_creature and set(getattr(player_tok, 'affinity_tags', [])) & RED_HERRING_TAGS:
+            convergence_dims = np.maximum(
+                0.0,
+                convergence_dims - abs(np.array(player_tok.attractor_weights)) * spec.convergence_rate * 0.5,
+            )
+
         dialogue_history.append(("YOU", player_tok))
         console.print(f"\n  YOU:    {_token_rich(player_tok)}")
 
@@ -461,13 +510,25 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
             console.print("  [dim]The field is silent.[/dim]")
             turn += 1
 
+        # Mystery dimension decay (0.01/step)
+        if not is_creature:
+            convergence_dims = np.maximum(0.0, convergence_dims - 0.01)
+
         console.print()
 
     # ── End ──
     conv_score = float(convergence_dims.min())
     console.print()
-    console.print(Rule("CASE CLOSED"))
-    console.print(f"  Final convergence: {_convergence_bar(conv_score)}")
+    if is_creature:
+        console.print(Rule("SESSION OVER"))
+        console.print(f"  Final wellbeing: {_convergence_bar(conv_score)}")
+    else:
+        if conv_score < spec.convergence_threshold:
+            console.print(Rule("THE TRAIL HAS GONE COLD"))
+            console.print("  [bold red]The trail has gone cold. The case remains unsolved.[/bold red]")
+        else:
+            console.print(Rule("CASE CLOSED"))
+        console.print(f"  Final convergence: {_convergence_bar(conv_score)}")
     console.print(f"  Tokens exchanged: {len(dialogue_history)}")
     console.print()
 
@@ -477,49 +538,44 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict]):
         console.print(f"  {tag}  {_token_rich(tok)}")
 
 
-def _handle_accusation(spec: CartridgeSpec, con: Console):
-    """Simple accusation prompt."""
-    suspects = [t for t in spec.tokens if t.token_class == TokenClass.SUSPECT and not t.is_invariant]
-    events = [t for t in spec.tokens if t.token_class == TokenClass.EVENT and not t.is_invariant]
-    motives = [t for t in spec.tokens if t.token_class == TokenClass.MOTIVE and not t.is_invariant]
+def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: Console):
+    """Accusation prompt -- wrong guess ends the game immediately."""
+    # All suspects in the case (including invariant, for the list)
+    suspects = [t for t in spec.tokens if t.token_class == TokenClass.SUSPECT]
+
+    # The correct culprit is the first invariant token
+    correct_id = spec.invariant_token_ids[0] if spec.invariant_token_ids else None
+    correct_tok = spec.get_token(correct_id) if correct_id else None
 
     con.print("\n[bold]ACCUSATION[/bold]")
-    con.print("[dim]Name the killer, the mechanism, and the motive.[/dim]\n")
+    con.print("[dim]Name the culprit.[/dim]\n")
 
-    for label, pool, dim in [("Suspect", suspects, 0), ("Event", events, 1), ("Motive", motives, 2)]:
-        con.print(f"  [bold]{label}s:[/bold]")
-        for i, t in enumerate(pool):
-            con.print(f"    [{i + 1}] {_token_rich(t)}")
+    con.print("  [bold]Suspects:[/bold]")
+    for i, t in enumerate(suspects):
+        con.print(f"    [{i + 1}] {_token_rich(t)}")
 
     con.print()
     try:
         s = int(Prompt.ask("Suspect #")) - 1
-        e = int(Prompt.ask("Event #")) - 1
-        m = int(Prompt.ask("Motive #")) - 1
     except (ValueError, IndexError):
         con.print("[red]Invalid input.[/red]")
         return
 
-    guesses = []
-    for idx, pool in [(s, suspects), (e, events), (m, motives)]:
-        if 0 <= idx < len(pool):
-            guesses.append(pool[idx].id)
-        else:
-            con.print("[red]Invalid selection.[/red]")
-            return
+    if s < 0 or s >= len(suspects):
+        con.print("[red]Invalid selection.[/red]")
+        return
 
-    correct = list(spec.invariant_token_ids)
-    if guesses == correct:
-        con.print("\n[bold green]CORRECT. The case is solved.[/bold green]")
-        for tid in correct:
-            tok = spec.get_token(tid)
-            con.print(f"  {_token_rich(tok)}")
+    chosen = suspects[s]
+    chosen_name = _token_name(chosen)
+
+    if chosen.id == correct_id:
+        con.print(f"\n[bold green]CORRECT! {chosen_name} is the culprit. Case solved![/bold green]")
     else:
-        con.print("\n[bold red]WRONG.[/bold red]")
-        wrong = [i for i, (g, c) in enumerate(zip(guesses, correct)) if g != c]
-        dims = ["Suspect", "Event", "Motive"]
-        for i in wrong:
-            con.print(f"  [red]{dims[i]} is incorrect.[/red]")
+        correct_name = _token_name(correct_tok) if correct_tok else "unknown"
+        con.print(
+            f"\n[bold red]WRONG ACCUSATION -- CASE DISMISSED. "
+            f"The real culprit was {correct_name}.[/bold red]"
+        )
 
 
 # ─────────────────────────────────────────────────────────────────────────────
