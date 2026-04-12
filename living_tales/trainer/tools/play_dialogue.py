@@ -469,7 +469,12 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
             )
 
         dialogue_history.append(("YOU", player_tok))
-        console.print(f"\n  YOU:    {_token_rich(player_tok)}")
+        # Display player action with narrative framing
+        expr_text = getattr(player_tok, 'surface_expression', '') or ''
+        if is_creature:
+            console.print(f"\n  [bold blue]YOU[/bold blue]    {_token_rich(player_tok)}")
+        else:
+            console.print(f"\n  [bold blue]YOU[/bold blue]    {_token_rich(player_tok)}")
 
         if mappings:
             enc = _encode_token(player_tok, mappings)
@@ -559,15 +564,27 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
                 if scene_tokens:
                     engine_tok = scene_tokens[0]  # primary response token
                     scene_already_placed = True
-                    # Place all scene tokens
+
+                    # Display scene response with narrative framing
+                    if is_creature:
+                        # First token is the creature's direct reaction
+                        console.print(f"\n  [bold cyan]IT[/bold cyan]     {_token_rich(scene_tokens[0])}")
+                        # Remaining tokens are the scene/atmosphere
+                        for stok in scene_tokens[1:]:
+                            console.print(f"  [dim cyan]SCENE[/dim cyan]  {_token_rich(stok)}")
+                    else:
+                        # Mystery: first is primary clue, rest are atmosphere
+                        console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_token_rich(scene_tokens[0])}")
+                        for stok in scene_tokens[1:]:
+                            console.print(f"  [dim cyan]SCENE[/dim cyan]  {_token_rich(stok)}")
+
+                    # Place all scene tokens in game state
                     for stok in scene_tokens:
                         context_ids.append(stok.id)
                         convergence_dims = np.minimum(
                             1.0, convergence_dims + stok.attractor_weights * spec.convergence_rate,
                         )
                         dialogue_history.append(("FIELD", stok))
-                        if stok != engine_tok:
-                            console.print(f"  FIELD:  {_token_rich(stok)}")
                         if mappings:
                             enc = _encode_token(stok, mappings)
                             seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
@@ -601,7 +618,11 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
                     seq_t.append(enc[0]); seq_c.append(enc[1]); seq_p.append(enc[2])
                     seq_s.append(enc[3]); seq_a.append(enc[4])
             # Print primary engine token (scene extras already printed above)
-            console.print(f"  FIELD:  {_token_rich(engine_tok)}")
+            if not scene_already_placed:
+                if is_creature:
+                    console.print(f"\n  [bold cyan]IT[/bold cyan]     {_token_rich(engine_tok)}")
+                else:
+                    console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_token_rich(engine_tok)}")
             turn += 1
         else:
             console.print("  [dim]The field is silent.[/dim]")
