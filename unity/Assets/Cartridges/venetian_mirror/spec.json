@@ -1,7 +1,7 @@
 {
   "cartridge_type": "MYSTERY",
-  "case_id": "amber_cipher",
-  "title": "The Amber Cipher",
+  "case_id": "venetian_mirror",
+  "title": "The Venetian Mirror",
   "mode": "converging",
   "version": "1.0.0",
   "vocab_size": 72,
@@ -16,13 +16,13 @@
   "dimension_lower_bound": 0.0,
   "dimension_upper_bound": 1.0,
   "opening_token_ids": [
-    "location:thornfield_crossing",
-    "event:aldous_verne_discovered",
-    "time:between_trains"
+    "location:palazzo_contarini",
+    "event:luca_marini_discovered",
+    "time:carnival_evening"
   ],
   "invariant_token_ids": [
-    "suspect:renard_voss",
-    "event:window_between_trains",
-    "motive:fraud_concealment"
+    "suspect:countess_morvaine",
+    "event:balcony_fall",
+    "motive:forgery_operation"
   ]
 }

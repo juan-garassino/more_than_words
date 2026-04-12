@@ -1,0 +1,1054 @@
+{
+  "nodes": [
+    "suspect:cole_bridger",
+    "suspect:clara_moss",
+    "suspect:deputy_vickers",
+    "suspect:reverend_pike",
+    "suspect:jack_tull",
+    "suspect:maude_bridger",
+    "suspect:doc_calloway",
+    "location:silver_creek_saloon",
+    "location:judges_quarters",
+    "location:land_office",
+    "location:main_street",
+    "location:bridger_ranch",
+    "location:livery_stable",
+    "location:cemetery_hill",
+    "location:back_alley",
+    "object:bourbon_bottle",
+    "object:land_deed",
+    "object:forged_survey",
+    "object:poison_vial",
+    "object:court_docket",
+    "object:judges_notebook",
+    "object:whiskey_glass",
+    "object:spur_mark",
+    "object:brand_register",
+    "object:ink_pot",
+    "object:boot_print",
+    "object:telegram",
+    "object:saddle_bag",
+    "emotion:iron_composure",
+    "emotion:raw_fury",
+    "emotion:careful_drawl",
+    "emotion:stiff_courtesy",
+    "emotion:cold_stare",
+    "emotion:hollow_sympathy",
+    "modifier:glass_rinsed",
+    "modifier:seal_cracked",
+    "modifier:ink_wrong_batch",
+    "modifier:residue_ring",
+    "modifier:dust_storm",
+    "modifier:door_unlatched",
+    "modifier:survey_discrepancy",
+    "modifier:strychnine_trace",
+    "modifier:spur_scratch",
+    "modifier:candle_melted",
+    "action:bourbon_poured",
+    "action:deed_filed",
+    "action:vial_disposed",
+    "action:alley_crossed",
+    "action:survey_altered",
+    "action:horse_saddled",
+    "action:notebook_removed",
+    "action:door_opened",
+    "action:claim_argued",
+    "time:sundown_hour",
+    "time:dust_dark",
+    "time:dawn_found",
+    "time:last_round",
+    "time:court_morning",
+    "motive:ranch_debt",
+    "motive:water_rights",
+    "motive:ruling_fear",
+    "motive:old_grudge",
+    "motive:cattle_loss",
+    "motive:forged_land_claim",
+    "witness:barkeep",
+    "witness:stagecoach_driver",
+    "witness:stable_hand",
+    "witness:general_store_clerk",
+    "witness:ranch_hand",
+    "event:judge_harlan_discovered",
+    "event:poisoned_bourbon",
+    "event:saloon_evening"
+  ],
+  "edges": [
+    {
+      "from": "object:forged_survey",
+      "to": "suspect:cole_bridger",
+      "weight": 0.48,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "object:land_deed",
+      "to": "suspect:cole_bridger",
+      "weight": 0.46,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "emotion:iron_composure",
+      "to": "suspect:cole_bridger",
+      "weight": 0.38,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:careful_drawl",
+      "to": "suspect:cole_bridger",
+      "weight": 0.36,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "action:deed_filed",
+      "to": "suspect:cole_bridger",
+      "weight": 0.44,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:survey_altered",
+      "to": "suspect:cole_bridger",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "location:bridger_ranch",
+      "to": "suspect:cole_bridger",
+      "weight": 0.36,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "modifier:ink_wrong_batch",
+      "to": "suspect:cole_bridger",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:survey_discrepancy",
+      "to": "suspect:cole_bridger",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "motive:ranch_debt",
+      "to": "suspect:cole_bridger",
+      "weight": 0.44,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:ruling_fear",
+      "to": "suspect:cole_bridger",
+      "weight": 0.4,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:old_grudge",
+      "to": "suspect:cole_bridger",
+      "weight": 0.36,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:bourbon_bottle",
+      "to": "event:poisoned_bourbon",
+      "weight": 0.44,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "object:whiskey_glass",
+      "to": "event:poisoned_bourbon",
+      "weight": 0.42,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "object:poison_vial",
+      "to": "event:poisoned_bourbon",
+      "weight": 0.46,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "action:bourbon_poured",
+      "to": "event:poisoned_bourbon",
+      "weight": 0.4,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "modifier:strychnine_trace",
+      "to": "event:poisoned_bourbon",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:residue_ring",
+      "to": "event:poisoned_bourbon",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:vial_disposed",
+      "to": "event:poisoned_bourbon",
+      "weight": 0.38,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "event:saloon_evening",
+      "to": "event:poisoned_bourbon",
+      "weight": 0.34,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:judges_notebook",
+      "to": "motive:forged_land_claim",
+      "weight": 0.46,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:telegram",
+      "to": "motive:forged_land_claim",
+      "weight": 0.44,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:forged_survey",
+      "to": "motive:forged_land_claim",
+      "weight": 0.42,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:ruling_fear",
+      "to": "motive:forged_land_claim",
+      "weight": 0.4,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "action:notebook_removed",
+      "to": "motive:forged_land_claim",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:claim_argued",
+      "to": "motive:forged_land_claim",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:seal_cracked",
+      "to": "motive:forged_land_claim",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:clara_moss",
+      "to": "emotion:raw_fury",
+      "weight": 0.28,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "suspect:clara_moss",
+      "to": "object:spur_mark",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:clara_moss",
+      "to": "emotion:hollow_sympathy",
+      "weight": 0.26,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "suspect:clara_moss",
+      "to": "location:judges_quarters",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:jack_tull",
+      "to": "action:horse_saddled",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:jack_tull",
+      "to": "location:cemetery_hill",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:jack_tull",
+      "to": "modifier:spur_scratch",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:jack_tull",
+      "to": "location:main_street",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:deputy_vickers",
+      "to": "object:boot_print",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:deputy_vickers",
+      "to": "location:livery_stable",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:deputy_vickers",
+      "to": "object:brand_register",
+      "weight": 0.32,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:deputy_vickers",
+      "to": "action:alley_crossed",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:reverend_pike",
+      "to": "object:court_docket",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:reverend_pike",
+      "to": "motive:water_rights",
+      "weight": 0.32,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:reverend_pike",
+      "to": "object:judges_notebook",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:reverend_pike",
+      "to": "location:land_office",
+      "weight": 0.3,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:maude_bridger",
+      "to": "motive:old_grudge",
+      "weight": 0.34,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:maude_bridger",
+      "to": "location:bridger_ranch",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:maude_bridger",
+      "to": "object:telegram",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:maude_bridger",
+      "to": "motive:cattle_loss",
+      "weight": 0.26,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:doc_calloway",
+      "to": "object:poison_vial",
+      "weight": 0.38,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:doc_calloway",
+      "to": "location:back_alley",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:doc_calloway",
+      "to": "modifier:strychnine_trace",
+      "weight": 0.32,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "suspect:doc_calloway",
+      "to": "object:saddle_bag",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "location:silver_creek_saloon",
+      "to": "event:judge_harlan_discovered",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:silver_creek_saloon",
+      "to": "time:sundown_hour",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:silver_creek_saloon",
+      "to": "time:dust_dark",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:judges_quarters",
+      "to": "event:judge_harlan_discovered",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:judges_quarters",
+      "to": "object:bourbon_bottle",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:judges_quarters",
+      "to": "object:whiskey_glass",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:land_office",
+      "to": "object:land_deed",
+      "weight": 0.36,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:land_office",
+      "to": "object:forged_survey",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:main_street",
+      "to": "event:saloon_evening",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:main_street",
+      "to": "modifier:dust_storm",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:bridger_ranch",
+      "to": "object:land_deed",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:bridger_ranch",
+      "to": "object:telegram",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:livery_stable",
+      "to": "object:boot_print",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:livery_stable",
+      "to": "object:saddle_bag",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:cemetery_hill",
+      "to": "modifier:dust_storm",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:cemetery_hill",
+      "to": "time:dust_dark",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:back_alley",
+      "to": "action:alley_crossed",
+      "weight": 0.34,
+      "tags": [
+        "movement"
+      ]
+    },
+    {
+      "from": "location:back_alley",
+      "to": "modifier:door_unlatched",
+      "weight": 0.28,
+      "tags": [
+        "constraint"
+      ]
+    },
+    {
+      "from": "object:bourbon_bottle",
+      "to": "modifier:residue_ring",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:whiskey_glass",
+      "to": "modifier:glass_rinsed",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:land_deed",
+      "to": "modifier:seal_cracked",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:land_deed",
+      "to": "action:deed_filed",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:forged_survey",
+      "to": "modifier:survey_discrepancy",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:forged_survey",
+      "to": "modifier:ink_wrong_batch",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:poison_vial",
+      "to": "action:vial_disposed",
+      "weight": 0.38,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "object:judges_notebook",
+      "to": "action:notebook_removed",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:ink_pot",
+      "to": "modifier:ink_wrong_batch",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:ink_pot",
+      "to": "action:survey_altered",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:court_docket",
+      "to": "time:court_morning",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:brand_register",
+      "to": "action:claim_argued",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:telegram",
+      "to": "motive:ruling_fear",
+      "weight": 0.36,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:saddle_bag",
+      "to": "action:horse_saddled",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:boot_print",
+      "to": "action:alley_crossed",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:bourbon_poured",
+      "to": "time:last_round",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:alley_crossed",
+      "to": "time:last_round",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:door_opened",
+      "to": "modifier:door_unlatched",
+      "weight": 0.28,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "action:notebook_removed",
+      "to": "location:judges_quarters",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "time:sundown_hour",
+      "to": "event:judge_harlan_discovered",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:sundown_hour",
+      "to": "event:saloon_evening",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:dawn_found",
+      "to": "event:judge_harlan_discovered",
+      "weight": 0.32,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:dawn_found",
+      "to": "location:judges_quarters",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "time:last_round",
+      "to": "modifier:candle_melted",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:court_morning",
+      "to": "motive:ranch_debt",
+      "weight": 0.38,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "time:dust_dark",
+      "to": "modifier:dust_storm",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "motive:water_rights",
+      "to": "motive:cattle_loss",
+      "weight": 0.3,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:ranch_debt",
+      "to": "motive:ruling_fear",
+      "weight": 0.34,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:ranch_debt",
+      "to": "motive:water_rights",
+      "weight": 0.32,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "witness:barkeep",
+      "to": "location:silver_creek_saloon",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:barkeep",
+      "to": "event:saloon_evening",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:stagecoach_driver",
+      "to": "location:main_street",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:stagecoach_driver",
+      "to": "time:sundown_hour",
+      "weight": 0.24,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:stable_hand",
+      "to": "location:livery_stable",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:stable_hand",
+      "to": "object:spur_mark",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "witness:general_store_clerk",
+      "to": "location:main_street",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:general_store_clerk",
+      "to": "time:last_round",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:ranch_hand",
+      "to": "time:dust_dark",
+      "weight": 0.24,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:ranch_hand",
+      "to": "location:bridger_ranch",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:stiff_courtesy",
+      "to": "suspect:deputy_vickers",
+      "weight": 0.26,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:cold_stare",
+      "to": "suspect:maude_bridger",
+      "weight": 0.28,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:raw_fury",
+      "to": "location:silver_creek_saloon",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:hollow_sympathy",
+      "to": "suspect:doc_calloway",
+      "weight": 0.24,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:iron_composure",
+      "to": "location:bridger_ranch",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:careful_drawl",
+      "to": "location:land_office",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "modifier:candle_melted",
+      "to": "time:dawn_found",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "modifier:spur_scratch",
+      "to": "object:spur_mark",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:glass_rinsed",
+      "to": "action:bourbon_poured",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "event:saloon_evening",
+      "to": "time:dawn_found",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "motive:cattle_loss",
+      "to": "suspect:jack_tull",
+      "weight": 0.28,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "emotion:stiff_courtesy",
+      "to": "location:back_alley",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:cold_stare",
+      "to": "location:bridger_ranch",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:door_opened",
+      "to": "location:judges_quarters",
+      "weight": 0.28,
+      "tags": [
+        "access"
+      ]
+    }
+  ]
+}

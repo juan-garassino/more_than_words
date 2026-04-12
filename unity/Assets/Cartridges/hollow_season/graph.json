@@ -1,0 +1,1078 @@
+{
+  "nodes": [
+    "suspect:edmund_carrow",
+    "suspect:flora_marsh",
+    "suspect:gideon_cobb",
+    "suspect:robert_carrow",
+    "suspect:dr_fenwick",
+    "suspect:margaret_wells",
+    "suspect:silas_greer",
+    "location:carrow_hall",
+    "location:main_study",
+    "location:servants_corridor",
+    "location:dining_room",
+    "location:library_wing",
+    "location:dispensary_room",
+    "location:stable_yard",
+    "location:east_parlour",
+    "object:brandy_decanter",
+    "object:brandy_glass",
+    "object:chloral_bottle",
+    "object:entailment_deed",
+    "object:estate_ledger",
+    "object:camphor_tin",
+    "object:fireplace_ash",
+    "object:returned_mail",
+    "object:stable_receipt",
+    "object:prescription_pad",
+    "object:study_key",
+    "object:will_fragment",
+    "object:clock_face",
+    "emotion:controlled_grief",
+    "emotion:frayed_composure",
+    "emotion:cold_precision",
+    "emotion:silent_watching",
+    "emotion:measured_patience",
+    "emotion:bitter_silence",
+    "modifier:cloudiness_visible",
+    "modifier:re_pressed_seal",
+    "modifier:ink_mismatch",
+    "modifier:grate_cleaned",
+    "modifier:autumn_damp",
+    "modifier:locked_drawer",
+    "modifier:camphor_scent",
+    "modifier:fresh_stitching",
+    "modifier:candle_stubs",
+    "modifier:mud_prints",
+    "action:brandy_poured",
+    "action:grate_swept",
+    "action:deed_examined",
+    "action:clock_wound",
+    "action:corridor_used",
+    "action:prescription_signed",
+    "action:ledger_altered",
+    "action:horse_hired",
+    "action:will_concealed",
+    "time:late_october",
+    "time:evening_visit",
+    "time:dawn_discovery",
+    "time:clock_stopped",
+    "time:january_deadline",
+    "motive:estate_ruin",
+    "motive:old_will_claim",
+    "motive:deadline_pressure",
+    "motive:succession_rivalry",
+    "motive:ward_resentment",
+    "motive:inheritance_entailed",
+    "witness:parlour_maid",
+    "witness:village_postman",
+    "witness:stable_boy",
+    "witness:cook",
+    "witness:gardener",
+    "event:archibald_discovered",
+    "event:sleeping_brandy",
+    "event:evening_brandy_served"
+  ],
+  "edges": [
+    {
+      "from": "object:camphor_tin",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.48,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "object:estate_ledger",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.46,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "emotion:controlled_grief",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.38,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:cold_precision",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.36,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "action:ledger_altered",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.44,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:grate_swept",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "location:east_parlour",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.36,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "modifier:camphor_scent",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:ink_mismatch",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "motive:deadline_pressure",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.44,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:estate_ruin",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.38,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:succession_rivalry",
+      "to": "suspect:edmund_carrow",
+      "weight": 0.36,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:brandy_decanter",
+      "to": "event:sleeping_brandy",
+      "weight": 0.44,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "object:brandy_glass",
+      "to": "event:sleeping_brandy",
+      "weight": 0.42,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "object:chloral_bottle",
+      "to": "event:sleeping_brandy",
+      "weight": 0.46,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "action:brandy_poured",
+      "to": "event:sleeping_brandy",
+      "weight": 0.4,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "modifier:cloudiness_visible",
+      "to": "event:sleeping_brandy",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "event:evening_brandy_served",
+      "to": "event:sleeping_brandy",
+      "weight": 0.36,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:prescription_pad",
+      "to": "event:sleeping_brandy",
+      "weight": 0.34,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "location:dispensary_room",
+      "to": "event:sleeping_brandy",
+      "weight": 0.32,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "object:entailment_deed",
+      "to": "motive:inheritance_entailed",
+      "weight": 0.46,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:will_fragment",
+      "to": "motive:inheritance_entailed",
+      "weight": 0.42,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "time:january_deadline",
+      "to": "motive:inheritance_entailed",
+      "weight": 0.44,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:deadline_pressure",
+      "to": "motive:inheritance_entailed",
+      "weight": 0.4,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "action:deed_examined",
+      "to": "motive:inheritance_entailed",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:will_concealed",
+      "to": "motive:inheritance_entailed",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:re_pressed_seal",
+      "to": "motive:inheritance_entailed",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:flora_marsh",
+      "to": "emotion:frayed_composure",
+      "weight": 0.28,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "suspect:flora_marsh",
+      "to": "location:main_study",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:flora_marsh",
+      "to": "emotion:bitter_silence",
+      "weight": 0.26,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "suspect:flora_marsh",
+      "to": "time:dawn_discovery",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "suspect:dr_fenwick",
+      "to": "object:chloral_bottle",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:dr_fenwick",
+      "to": "object:prescription_pad",
+      "weight": 0.32,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:dr_fenwick",
+      "to": "action:prescription_signed",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:dr_fenwick",
+      "to": "location:dispensary_room",
+      "weight": 0.28,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:gideon_cobb",
+      "to": "object:entailment_deed",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:gideon_cobb",
+      "to": "location:library_wing",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:gideon_cobb",
+      "to": "motive:old_will_claim",
+      "weight": 0.32,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:gideon_cobb",
+      "to": "object:will_fragment",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:robert_carrow",
+      "to": "object:stable_receipt",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:robert_carrow",
+      "to": "location:stable_yard",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:robert_carrow",
+      "to": "action:horse_hired",
+      "weight": 0.32,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:robert_carrow",
+      "to": "motive:succession_rivalry",
+      "weight": 0.3,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:margaret_wells",
+      "to": "object:returned_mail",
+      "weight": 0.32,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:margaret_wells",
+      "to": "motive:ward_resentment",
+      "weight": 0.34,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:margaret_wells",
+      "to": "motive:old_will_claim",
+      "weight": 0.3,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:margaret_wells",
+      "to": "location:dining_room",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:silas_greer",
+      "to": "object:study_key",
+      "weight": 0.38,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:silas_greer",
+      "to": "object:fireplace_ash",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:silas_greer",
+      "to": "location:servants_corridor",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:silas_greer",
+      "to": "action:grate_swept",
+      "weight": 0.32,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "location:carrow_hall",
+      "to": "event:archibald_discovered",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:carrow_hall",
+      "to": "time:late_october",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:carrow_hall",
+      "to": "time:evening_visit",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:main_study",
+      "to": "event:archibald_discovered",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:main_study",
+      "to": "object:brandy_decanter",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:main_study",
+      "to": "object:brandy_glass",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:main_study",
+      "to": "object:clock_face",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:servants_corridor",
+      "to": "action:corridor_used",
+      "weight": 0.34,
+      "tags": [
+        "movement"
+      ]
+    },
+    {
+      "from": "location:servants_corridor",
+      "to": "modifier:locked_drawer",
+      "weight": 0.28,
+      "tags": [
+        "constraint"
+      ]
+    },
+    {
+      "from": "location:library_wing",
+      "to": "object:entailment_deed",
+      "weight": 0.36,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:library_wing",
+      "to": "object:will_fragment",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:dispensary_room",
+      "to": "object:chloral_bottle",
+      "weight": 0.36,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:dispensary_room",
+      "to": "object:prescription_pad",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:east_parlour",
+      "to": "object:estate_ledger",
+      "weight": 0.38,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:east_parlour",
+      "to": "modifier:camphor_scent",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:stable_yard",
+      "to": "object:stable_receipt",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:stable_yard",
+      "to": "modifier:mud_prints",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:dining_room",
+      "to": "event:evening_brandy_served",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:dining_room",
+      "to": "action:brandy_poured",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "object:brandy_decanter",
+      "to": "modifier:cloudiness_visible",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:brandy_glass",
+      "to": "modifier:cloudiness_visible",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:chloral_bottle",
+      "to": "action:prescription_signed",
+      "weight": 0.34,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "object:entailment_deed",
+      "to": "modifier:re_pressed_seal",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:entailment_deed",
+      "to": "action:deed_examined",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:estate_ledger",
+      "to": "action:ledger_altered",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:estate_ledger",
+      "to": "modifier:ink_mismatch",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:fireplace_ash",
+      "to": "modifier:grate_cleaned",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:fireplace_ash",
+      "to": "action:grate_swept",
+      "weight": 0.32,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:will_fragment",
+      "to": "action:will_concealed",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:clock_face",
+      "to": "time:clock_stopped",
+      "weight": 0.34,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:clock_face",
+      "to": "action:clock_wound",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:returned_mail",
+      "to": "motive:ward_resentment",
+      "weight": 0.3,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:camphor_tin",
+      "to": "modifier:camphor_scent",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:study_key",
+      "to": "modifier:locked_drawer",
+      "weight": 0.32,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "action:corridor_used",
+      "to": "time:clock_stopped",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:brandy_poured",
+      "to": "time:evening_visit",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:brandy_poured",
+      "to": "event:evening_brandy_served",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "time:late_october",
+      "to": "event:archibald_discovered",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:late_october",
+      "to": "modifier:autumn_damp",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "time:dawn_discovery",
+      "to": "event:archibald_discovered",
+      "weight": 0.32,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:dawn_discovery",
+      "to": "location:main_study",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "time:clock_stopped",
+      "to": "modifier:candle_stubs",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:january_deadline",
+      "to": "motive:deadline_pressure",
+      "weight": 0.38,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "time:evening_visit",
+      "to": "modifier:autumn_damp",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "motive:estate_ruin",
+      "to": "motive:old_will_claim",
+      "weight": 0.3,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:deadline_pressure",
+      "to": "motive:ward_resentment",
+      "weight": 0.28,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:deadline_pressure",
+      "to": "motive:estate_ruin",
+      "weight": 0.34,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "witness:parlour_maid",
+      "to": "location:dining_room",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:parlour_maid",
+      "to": "event:evening_brandy_served",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:village_postman",
+      "to": "object:returned_mail",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "witness:village_postman",
+      "to": "location:carrow_hall",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:stable_boy",
+      "to": "location:stable_yard",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:stable_boy",
+      "to": "object:stable_receipt",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "witness:cook",
+      "to": "location:servants_corridor",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:cook",
+      "to": "time:evening_visit",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:gardener",
+      "to": "modifier:autumn_damp",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:gardener",
+      "to": "location:stable_yard",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:silent_watching",
+      "to": "suspect:silas_greer",
+      "weight": 0.26,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:measured_patience",
+      "to": "suspect:margaret_wells",
+      "weight": 0.28,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:frayed_composure",
+      "to": "location:main_study",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:bitter_silence",
+      "to": "suspect:robert_carrow",
+      "weight": 0.24,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:controlled_grief",
+      "to": "location:east_parlour",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:cold_precision",
+      "to": "location:library_wing",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "modifier:fresh_stitching",
+      "to": "time:dawn_discovery",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "modifier:mud_prints",
+      "to": "suspect:robert_carrow",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:grate_cleaned",
+      "to": "suspect:silas_greer",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "emotion:silent_watching",
+      "to": "location:stable_yard",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:measured_patience",
+      "to": "location:dining_room",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "modifier:fresh_stitching",
+      "to": "object:camphor_tin",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:candle_stubs",
+      "to": "location:main_study",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:clock_wound",
+      "to": "location:main_study",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:horse_hired",
+      "to": "location:stable_yard",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "event:evening_brandy_served",
+      "to": "time:clock_stopped",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "motive:old_will_claim",
+      "to": "object:will_fragment",
+      "weight": 0.28,
+      "tags": [
+        "motive"
+      ]
+    }
+  ]
+}

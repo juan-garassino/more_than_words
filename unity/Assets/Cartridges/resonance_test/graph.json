@@ -1,0 +1,1054 @@
+{
+  "nodes": [
+    "suspect:marta_solis",
+    "suspect:karl_brennan",
+    "suspect:dr_irina_voss",
+    "suspect:felix_morel",
+    "suspect:anna_czerny",
+    "suspect:director_pask",
+    "suspect:jan_kovar",
+    "location:royal_conservatory",
+    "location:main_stairwell",
+    "location:practice_room_six",
+    "location:recital_hall",
+    "location:archive_room",
+    "location:faculty_office",
+    "location:loading_dock",
+    "location:corridor_landing",
+    "object:manuscript_score",
+    "object:exam_report",
+    "object:broken_railing",
+    "object:programme_notes",
+    "object:rosin_smear",
+    "object:key_card_log",
+    "object:recording_disc",
+    "object:scarf_fragment",
+    "object:stair_polish",
+    "object:visitors_book",
+    "object:comparison_folio",
+    "object:ink_analysis",
+    "object:practice_log",
+    "emotion:brittle_poise",
+    "emotion:sudden_pallor",
+    "emotion:evasive_phrasing",
+    "emotion:practised_calm",
+    "emotion:visible_tremor",
+    "emotion:forced_warmth",
+    "modifier:railing_loosened",
+    "modifier:polish_applied",
+    "modifier:scarf_snagged",
+    "modifier:ink_mismatch",
+    "modifier:corridor_dark",
+    "modifier:door_ajar",
+    "modifier:rosin_on_rail",
+    "modifier:page_missing",
+    "modifier:handwriting_copied",
+    "modifier:fresh_polish",
+    "action:score_submitted",
+    "action:stair_polished",
+    "action:archive_visited",
+    "action:railing_tampered",
+    "action:exam_confronted",
+    "action:recording_erased",
+    "action:bouquet_delivered",
+    "action:folio_compared",
+    "action:door_locked",
+    "time:recital_interval",
+    "time:evening_rehearsal",
+    "time:body_found_dawn",
+    "time:archive_access",
+    "time:submission_deadline",
+    "motive:prize_ambition",
+    "motive:faculty_rivalry",
+    "motive:plagiarism_exposure",
+    "motive:funding_loss",
+    "motive:personal_vendetta",
+    "motive:stolen_composition",
+    "witness:stage_manager",
+    "witness:piano_tuner",
+    "witness:cleaning_woman",
+    "witness:front_desk",
+    "witness:page_turner",
+    "event:professor_lang_discovered",
+    "event:stairwell_fall",
+    "event:evening_recital"
+  ],
+  "edges": [
+    {
+      "from": "object:manuscript_score",
+      "to": "suspect:marta_solis",
+      "weight": 0.48,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "object:ink_analysis",
+      "to": "suspect:marta_solis",
+      "weight": 0.46,
+      "tags": [
+        "identity"
+      ]
+    },
+    {
+      "from": "emotion:brittle_poise",
+      "to": "suspect:marta_solis",
+      "weight": 0.38,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:evasive_phrasing",
+      "to": "suspect:marta_solis",
+      "weight": 0.36,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "action:score_submitted",
+      "to": "suspect:marta_solis",
+      "weight": 0.44,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:recording_erased",
+      "to": "suspect:marta_solis",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "location:practice_room_six",
+      "to": "suspect:marta_solis",
+      "weight": 0.36,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "modifier:handwriting_copied",
+      "to": "suspect:marta_solis",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:ink_mismatch",
+      "to": "suspect:marta_solis",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "motive:prize_ambition",
+      "to": "suspect:marta_solis",
+      "weight": 0.44,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:plagiarism_exposure",
+      "to": "suspect:marta_solis",
+      "weight": 0.4,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:faculty_rivalry",
+      "to": "suspect:marta_solis",
+      "weight": 0.36,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:broken_railing",
+      "to": "event:stairwell_fall",
+      "weight": 0.44,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "object:stair_polish",
+      "to": "event:stairwell_fall",
+      "weight": 0.42,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "action:railing_tampered",
+      "to": "event:stairwell_fall",
+      "weight": 0.46,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "action:stair_polished",
+      "to": "event:stairwell_fall",
+      "weight": 0.4,
+      "tags": [
+        "method"
+      ]
+    },
+    {
+      "from": "modifier:railing_loosened",
+      "to": "event:stairwell_fall",
+      "weight": 0.42,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:polish_applied",
+      "to": "event:stairwell_fall",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:rosin_on_rail",
+      "to": "event:stairwell_fall",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "location:main_stairwell",
+      "to": "event:stairwell_fall",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "object:manuscript_score",
+      "to": "motive:stolen_composition",
+      "weight": 0.46,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:recording_disc",
+      "to": "motive:stolen_composition",
+      "weight": 0.42,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "object:comparison_folio",
+      "to": "motive:stolen_composition",
+      "weight": 0.44,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:plagiarism_exposure",
+      "to": "motive:stolen_composition",
+      "weight": 0.4,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "action:archive_visited",
+      "to": "motive:stolen_composition",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "action:folio_compared",
+      "to": "motive:stolen_composition",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "modifier:page_missing",
+      "to": "motive:stolen_composition",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:karl_brennan",
+      "to": "emotion:sudden_pallor",
+      "weight": 0.28,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "suspect:karl_brennan",
+      "to": "object:scarf_fragment",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:karl_brennan",
+      "to": "emotion:forced_warmth",
+      "weight": 0.26,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "suspect:karl_brennan",
+      "to": "location:recital_hall",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:anna_czerny",
+      "to": "action:bouquet_delivered",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:anna_czerny",
+      "to": "location:loading_dock",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:anna_czerny",
+      "to": "modifier:scarf_snagged",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:anna_czerny",
+      "to": "location:recital_hall",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "suspect:dr_irina_voss",
+      "to": "object:exam_report",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:dr_irina_voss",
+      "to": "location:faculty_office",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:dr_irina_voss",
+      "to": "action:exam_confronted",
+      "weight": 0.32,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:dr_irina_voss",
+      "to": "object:comparison_folio",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:felix_morel",
+      "to": "object:recording_disc",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:felix_morel",
+      "to": "motive:personal_vendetta",
+      "weight": 0.32,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:felix_morel",
+      "to": "object:visitors_book",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:felix_morel",
+      "to": "location:archive_room",
+      "weight": 0.3,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:director_pask",
+      "to": "object:key_card_log",
+      "weight": 0.38,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:director_pask",
+      "to": "location:faculty_office",
+      "weight": 0.34,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:director_pask",
+      "to": "motive:funding_loss",
+      "weight": 0.3,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:director_pask",
+      "to": "object:programme_notes",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:jan_kovar",
+      "to": "object:manuscript_score",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "suspect:jan_kovar",
+      "to": "location:archive_room",
+      "weight": 0.32,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "suspect:jan_kovar",
+      "to": "motive:faculty_rivalry",
+      "weight": 0.28,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "suspect:jan_kovar",
+      "to": "object:practice_log",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "location:royal_conservatory",
+      "to": "event:professor_lang_discovered",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:royal_conservatory",
+      "to": "time:recital_interval",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:royal_conservatory",
+      "to": "time:evening_rehearsal",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:main_stairwell",
+      "to": "event:professor_lang_discovered",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:main_stairwell",
+      "to": "object:broken_railing",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:corridor_landing",
+      "to": "modifier:corridor_dark",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:corridor_landing",
+      "to": "action:door_locked",
+      "weight": 0.26,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "location:archive_room",
+      "to": "object:manuscript_score",
+      "weight": 0.36,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:archive_room",
+      "to": "object:recording_disc",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:faculty_office",
+      "to": "object:exam_report",
+      "weight": 0.34,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:faculty_office",
+      "to": "object:practice_log",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:loading_dock",
+      "to": "modifier:corridor_dark",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:loading_dock",
+      "to": "time:evening_rehearsal",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:recital_hall",
+      "to": "event:evening_recital",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:recital_hall",
+      "to": "object:programme_notes",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:practice_room_six",
+      "to": "object:rosin_smear",
+      "weight": 0.32,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "location:practice_room_six",
+      "to": "modifier:door_ajar",
+      "weight": 0.28,
+      "tags": [
+        "access"
+      ]
+    },
+    {
+      "from": "object:broken_railing",
+      "to": "modifier:railing_loosened",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:stair_polish",
+      "to": "modifier:polish_applied",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:stair_polish",
+      "to": "modifier:fresh_polish",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:rosin_smear",
+      "to": "modifier:rosin_on_rail",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:exam_report",
+      "to": "action:exam_confronted",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:exam_report",
+      "to": "modifier:page_missing",
+      "weight": 0.3,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:manuscript_score",
+      "to": "modifier:handwriting_copied",
+      "weight": 0.4,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:manuscript_score",
+      "to": "modifier:ink_mismatch",
+      "weight": 0.38,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:key_card_log",
+      "to": "time:archive_access",
+      "weight": 0.34,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:recording_disc",
+      "to": "action:recording_erased",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:comparison_folio",
+      "to": "action:folio_compared",
+      "weight": 0.34,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:ink_analysis",
+      "to": "modifier:ink_mismatch",
+      "weight": 0.36,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "object:visitors_book",
+      "to": "time:archive_access",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:practice_log",
+      "to": "time:evening_rehearsal",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "object:programme_notes",
+      "to": "event:evening_recital",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:exam_confronted",
+      "to": "time:recital_interval",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:stair_polished",
+      "to": "time:archive_access",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:archive_visited",
+      "to": "time:archive_access",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:door_locked",
+      "to": "time:body_found_dawn",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:recital_interval",
+      "to": "event:professor_lang_discovered",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:recital_interval",
+      "to": "event:evening_recital",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:body_found_dawn",
+      "to": "event:professor_lang_discovered",
+      "weight": 0.32,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:body_found_dawn",
+      "to": "location:main_stairwell",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "time:archive_access",
+      "to": "modifier:door_ajar",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "time:submission_deadline",
+      "to": "motive:prize_ambition",
+      "weight": 0.38,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "time:evening_rehearsal",
+      "to": "modifier:corridor_dark",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "motive:funding_loss",
+      "to": "motive:personal_vendetta",
+      "weight": 0.3,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:prize_ambition",
+      "to": "motive:plagiarism_exposure",
+      "weight": 0.34,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "motive:prize_ambition",
+      "to": "motive:funding_loss",
+      "weight": 0.32,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "witness:stage_manager",
+      "to": "location:recital_hall",
+      "weight": 0.28,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:stage_manager",
+      "to": "time:recital_interval",
+      "weight": 0.26,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:piano_tuner",
+      "to": "location:recital_hall",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:piano_tuner",
+      "to": "object:programme_notes",
+      "weight": 0.24,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "witness:cleaning_woman",
+      "to": "location:main_stairwell",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "witness:cleaning_woman",
+      "to": "object:stair_polish",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "witness:front_desk",
+      "to": "object:key_card_log",
+      "weight": 0.28,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "witness:front_desk",
+      "to": "object:visitors_book",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "witness:page_turner",
+      "to": "time:evening_rehearsal",
+      "weight": 0.24,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "witness:page_turner",
+      "to": "location:practice_room_six",
+      "weight": 0.22,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:practised_calm",
+      "to": "suspect:director_pask",
+      "weight": 0.26,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:visible_tremor",
+      "to": "suspect:jan_kovar",
+      "weight": 0.28,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:sudden_pallor",
+      "to": "location:main_stairwell",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:forced_warmth",
+      "to": "suspect:felix_morel",
+      "weight": 0.24,
+      "tags": [
+        "interview"
+      ]
+    },
+    {
+      "from": "emotion:brittle_poise",
+      "to": "location:practice_room_six",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:evasive_phrasing",
+      "to": "location:archive_room",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "modifier:fresh_polish",
+      "to": "time:body_found_dawn",
+      "weight": 0.28,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "modifier:scarf_snagged",
+      "to": "object:scarf_fragment",
+      "weight": 0.26,
+      "tags": [
+        "evidence"
+      ]
+    },
+    {
+      "from": "event:evening_recital",
+      "to": "time:body_found_dawn",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "motive:personal_vendetta",
+      "to": "object:recording_disc",
+      "weight": 0.28,
+      "tags": [
+        "motive"
+      ]
+    },
+    {
+      "from": "emotion:practised_calm",
+      "to": "location:faculty_office",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "emotion:visible_tremor",
+      "to": "location:archive_room",
+      "weight": 0.24,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:score_submitted",
+      "to": "time:submission_deadline",
+      "weight": 0.3,
+      "tags": [
+        "timing"
+      ]
+    },
+    {
+      "from": "action:railing_tampered",
+      "to": "location:corridor_landing",
+      "weight": 0.3,
+      "tags": [
+        "scene"
+      ]
+    },
+    {
+      "from": "action:bouquet_delivered",
+      "to": "location:recital_hall",
+      "weight": 0.26,
+      "tags": [
+        "scene"
+      ]
+    }
+  ]
+}

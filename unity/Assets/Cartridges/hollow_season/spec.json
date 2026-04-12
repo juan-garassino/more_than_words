@@ -1,7 +1,7 @@
 {
   "cartridge_type": "MYSTERY",
-  "case_id": "amber_cipher",
-  "title": "The Amber Cipher",
+  "case_id": "hollow_season",
+  "title": "The Hollow Season",
   "mode": "converging",
   "version": "1.0.0",
   "vocab_size": 72,
@@ -16,13 +16,13 @@
   "dimension_lower_bound": 0.0,
   "dimension_upper_bound": 1.0,
   "opening_token_ids": [
-    "location:thornfield_crossing",
-    "event:aldous_verne_discovered",
-    "time:between_trains"
+    "location:carrow_hall",
+    "event:archibald_discovered",
+    "time:late_october"
   ],
   "invariant_token_ids": [
-    "suspect:renard_voss",
-    "event:window_between_trains",
-    "motive:fraud_concealment"
+    "suspect:edmund_carrow",
+    "event:sleeping_brandy",
+    "motive:inheritance_entailed"
   ]
 }

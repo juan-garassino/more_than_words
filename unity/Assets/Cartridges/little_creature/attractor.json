@@ -1,0 +1,9 @@
+{
+  "invariants": [
+    "state:well_fed",
+    "state:content",
+    "state:rested",
+    "state:bonded",
+    "state:groomed"
+  ]
+}

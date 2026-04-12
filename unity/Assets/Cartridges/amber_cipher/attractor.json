@@ -1,0 +1,7 @@
+{
+  "invariants": [
+    "suspect:renard_voss",
+    "event:window_between_trains",
+    "motive:fraud_concealment"
+  ]
+}

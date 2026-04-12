@@ -1,0 +1,7 @@
+{
+  "invariants": [
+    "suspect:kessler_vane",
+    "event:memory_wipe_exploit",
+    "motive:surveillance_backdoor"
+  ]
+}
