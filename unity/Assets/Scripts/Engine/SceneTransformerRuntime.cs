@@ -111,15 +111,17 @@ namespace LivingTales.Engine
                 var output = worker.PeekOutput(outputName);
 
                 // Output shape: (1, seqLen, vocabSize)
-                // Take last position — download tensor to CPU array
+                // Take last position — download tensor to CPU
                 int vocabSize = cartridge.Spec.vocab_size;
                 float[] logits = new float[vocabSize];
-                var outputData = output.ToReadOnlyArray();
+                var floatOutput = output as Unity.InferenceEngine.Tensor<float>;
+                floatOutput.MakeReadable();
+                var outputSpan = floatOutput.ToReadOnlySpan();
                 int lastPosOffset = (seqLen - 1) * vocabSize;
 
                 for (int v = 0; v < vocabSize; v++)
                 {
-                    logits[v] = outputData[lastPosOffset + v];
+                    logits[v] = outputSpan[lastPosOffset + v];
 
                     // Apply head mask
                     if (!headMasks[d][v])
