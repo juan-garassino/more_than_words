@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Sentis;
+
 
 namespace LivingTales.Engine
 {
@@ -28,8 +28,8 @@ namespace LivingTales.Engine
         }
 
         private Cartridge cartridge;
-        private Model model;
-        private Worker worker;
+        private Unity.InferenceEngine.Model model;
+        private Unity.InferenceEngine.Worker worker;
         private bool isLoaded = false;
 
         // Encoding maps (mirroring Python's _build_mappings)
@@ -58,8 +58,8 @@ namespace LivingTales.Engine
         {
             try
             {
-                model = ModelLoader.Load(onnxPath);
-                worker = new Worker(model, BackendType.CPU);
+                model = Unity.InferenceEngine.ModelLoader.Load(onnxPath);
+                worker = new Unity.InferenceEngine.Worker(model, Unity.InferenceEngine.BackendType.CPU);
                 isLoaded = true;
                 Debug.Log($"SceneTransformer loaded: {onnxPath} ({NumHeads} heads)");
             }
@@ -111,13 +111,15 @@ namespace LivingTales.Engine
                 var output = worker.PeekOutput(outputName);
 
                 // Output shape: (1, seqLen, vocabSize)
-                // Take last position
+                // Take last position — download tensor to CPU array
                 int vocabSize = cartridge.Spec.vocab_size;
                 float[] logits = new float[vocabSize];
+                var outputData = output.ToReadOnlyArray();
+                int lastPosOffset = (seqLen - 1) * vocabSize;
 
                 for (int v = 0; v < vocabSize; v++)
                 {
-                    logits[v] = output[0, seqLen - 1, v];
+                    logits[v] = outputData[lastPosOffset + v];
 
                     // Apply head mask
                     if (!headMasks[d][v])
@@ -215,17 +217,17 @@ namespace LivingTales.Engine
         // Tensor builders
         // ─────────────────────────────────────────────────────────────
 
-        private Tensor<int> BuildIntTensor(int[] values, int seqLen)
+        private Unity.InferenceEngine.Tensor<int> BuildIntTensor(int[] values, int seqLen)
         {
-            var tensor = new Tensor<int>(new TensorShape(1, seqLen));
+            var tensor = new Unity.InferenceEngine.Tensor<int>(new Unity.InferenceEngine.TensorShape(1, seqLen));
             for (int i = 0; i < seqLen; i++)
                 tensor[0, i] = values[i];
             return tensor;
         }
 
-        private Tensor<int> BuildClassIds(int[] tokenIds, int seqLen)
+        private Unity.InferenceEngine.Tensor<int> BuildClassIds(int[] tokenIds, int seqLen)
         {
-            var tensor = new Tensor<int>(new TensorShape(1, seqLen));
+            var tensor = new Unity.InferenceEngine.Tensor<int>(new Unity.InferenceEngine.TensorShape(1, seqLen));
             for (int i = 0; i < seqLen; i++)
             {
                 if (cartridge.IdxToId.TryGetValue(tokenIds[i], out string id))
@@ -238,9 +240,9 @@ namespace LivingTales.Engine
             return tensor;
         }
 
-        private Tensor<int> BuildPhaseIds(int[] tokenIds, int seqLen)
+        private Unity.InferenceEngine.Tensor<int> BuildPhaseIds(int[] tokenIds, int seqLen)
         {
-            var tensor = new Tensor<int>(new TensorShape(1, seqLen));
+            var tensor = new Unity.InferenceEngine.Tensor<int>(new Unity.InferenceEngine.TensorShape(1, seqLen));
             for (int i = 0; i < seqLen; i++)
             {
                 if (cartridge.IdxToId.TryGetValue(tokenIds[i], out string id))
@@ -253,9 +255,9 @@ namespace LivingTales.Engine
             return tensor;
         }
 
-        private Tensor<int> BuildStreamIds(int[] tokenIds, int seqLen)
+        private Unity.InferenceEngine.Tensor<int> BuildStreamIds(int[] tokenIds, int seqLen)
         {
-            var tensor = new Tensor<int>(new TensorShape(1, seqLen));
+            var tensor = new Unity.InferenceEngine.Tensor<int>(new Unity.InferenceEngine.TensorShape(1, seqLen));
             for (int i = 0; i < seqLen; i++)
             {
                 if (cartridge.IdxToId.TryGetValue(tokenIds[i], out string id))
@@ -268,9 +270,9 @@ namespace LivingTales.Engine
             return tensor;
         }
 
-        private Tensor<int> BuildAgencyIds(int[] tokenIds, int seqLen)
+        private Unity.InferenceEngine.Tensor<int> BuildAgencyIds(int[] tokenIds, int seqLen)
         {
-            var tensor = new Tensor<int>(new TensorShape(1, seqLen));
+            var tensor = new Unity.InferenceEngine.Tensor<int>(new Unity.InferenceEngine.TensorShape(1, seqLen));
             for (int i = 0; i < seqLen; i++)
             {
                 if (cartridge.IdxToId.TryGetValue(tokenIds[i], out string id))
@@ -283,10 +285,10 @@ namespace LivingTales.Engine
             return tensor;
         }
 
-        private Tensor<int> BuildPaddingMask(int seqLen)
+        private Unity.InferenceEngine.Tensor<int> BuildPaddingMask(int seqLen)
         {
             // No padding — all positions are valid
-            var tensor = new Tensor<int>(new TensorShape(1, seqLen));
+            var tensor = new Unity.InferenceEngine.Tensor<int>(new Unity.InferenceEngine.TensorShape(1, seqLen));
             // 0 = not padded (Sentis uses int, not bool)
             return tensor;
         }
@@ -365,7 +367,7 @@ namespace LivingTales.Engine
         public void Dispose()
         {
             worker?.Dispose();
-            model?.Dispose();
+            // Model is a data class in Sentis 2.2+, no Dispose needed
         }
     }
 }
