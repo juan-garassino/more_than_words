@@ -450,11 +450,32 @@ class DialogueSampler:
         dialogue_pos = len(all_tokens)
         role_counts: Dict[str, int] = {}
 
+        # Token recycling interval (reset placed_ids to allow replaying tokens)
+        recycle_interval = 15
+        # After this many steps, relax phase gating (all tokens available)
+        relax_after = (self.min_turns // 2) * 2 if self.min_turns > 10 else 999
+
         for step in range(self.max_turns):
             game_turn = dialogue_pos // 2
 
+            # Recycle: reset placed_ids periodically (keep opening + invariant)
+            if step > 0 and step % recycle_interval == 0:
+                keep = set(self.spec.opening_token_ids) | set(self.spec.invariant_token_ids)
+                placed_ids = keep
+
             # --- Player turn: 1 token ---
-            candidates = self._get_candidates(self._player_tokens, placed_ids, dialogue_pos)
+            relaxed = dialogue_pos >= relax_after
+            if relaxed:
+                candidates = [
+                    t for t in self._player_tokens
+                    if t.id not in placed_ids
+                ]
+            else:
+                candidates = self._get_candidates(self._player_tokens, placed_ids, dialogue_pos)
+            if not candidates:
+                # Fallback: reset and try again
+                placed_ids = set(self.spec.opening_token_ids) | set(self.spec.invariant_token_ids)
+                candidates = [t for t in self._player_tokens if t.id not in placed_ids]
             if not candidates:
                 break
             chosen = self._sample_from_pool(
@@ -486,15 +507,21 @@ class DialogueSampler:
             scene_tokens = []
             scene_dims = []
             for d in range(n_dims):
-                dim_candidates = [
-                    t for t in dim_pools[d]
-                    if t.id not in placed_ids and self._phase_valid(t, dialogue_pos)
-                ]
+                if relaxed:
+                    dim_candidates = [
+                        t for t in dim_pools[d]
+                        if t.id not in placed_ids
+                    ]
+                else:
+                    dim_candidates = [
+                        t for t in dim_pools[d]
+                        if t.id not in placed_ids and self._phase_valid(t, dialogue_pos)
+                    ]
                 if not dim_candidates:
                     # Allow replaying tokens for this dimension
                     dim_candidates = [
                         t for t in dim_pools[d]
-                        if self._phase_valid(t, dialogue_pos)
+                        if self._phase_valid(t, dialogue_pos) or relaxed
                     ]
                 if not dim_candidates:
                     continue
