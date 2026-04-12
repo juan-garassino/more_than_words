@@ -386,15 +386,19 @@ class SceneTransformer(nn.Module):
             for idx in used_indices:
                 last[idx] = float("-inf")
 
-            if temperature <= 0:
+            # Check if any valid logits remain after masking
+            valid = (last > float("-inf")).any()
+            if not valid or last.isnan().any():
+                chosen = -1
+                probs = torch.zeros_like(last)
+            elif temperature <= 0:
                 chosen = last.argmax().item()
                 probs = F.softmax(last, dim=-1)
             else:
                 scaled = last / temperature
                 probs = F.softmax(scaled, dim=-1)
-                # Handle case where all logits are -inf (no valid tokens for this head)
-                if probs.sum() < 1e-8:
-                    chosen = -1  # no valid token
+                if probs.isnan().any() or probs.sum() < 1e-8:
+                    chosen = -1
                     probs = torch.zeros_like(probs)
                 else:
                     chosen = torch.multinomial(probs, 1).item()
