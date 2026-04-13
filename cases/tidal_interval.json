@@ -16,6 +16,74 @@
     "event:tidal_window",
     "motive:fishing_economy"
   ],
+  "briefing": {
+    "en": {
+      "setting": "Dunne Harbour sits in a granite cove facing west, where the slipway drops steeply and the sea wall holds back spring tides. The fishing fleet dominates the local economy, and a marine survey has been measuring stock levels that the fleet owner would rather not see published. At low slack, the sea cave at the base of the headland opens for forty minutes.",
+      "crime": "Ellen Cross, a marine researcher, was found in the sea cave at dawn after the tide receded. Her sample jars sat beside her, her research cabin stood empty on the cliff above, and the forty-minute window of low slack had become her tomb.",
+      "suspects": [
+        {"id": "suspect:piers_dunne", "name": "Piers Dunne", "intro": "Fleet owner whose boats exceeded the annual quota by three hundred tonnes, his oilskin dry but his boots carrying a tide line."},
+        {"id": "suspect:gill_rowan", "name": "Gill Rowan", "intro": "Dunne's lead crewman who knows the cave passages, his salt-stained jacket hanging in the chandlery."},
+        {"id": "suspect:harbour_master", "name": "The Harbour Master", "intro": "Signed the daily logbook and controlled slipway access, his entries for the night unusually brief."},
+        {"id": "suspect:malcolm_crewe", "name": "Malcolm Crewe", "intro": "Fish market operator who handled the catch manifests, his fuel receipts showing a boat trip that night."},
+        {"id": "suspect:fiona_cross", "name": "Fiona Cross", "intro": "The victim's sister, who argued with Dunne over access permits, her boots carrying salt from the breakwater."},
+        {"id": "suspect:coastguard_bell", "name": "Coastguard Bell", "intro": "Patrolled the coast path and logged vessel movements, his camera housing found empty in the research cabin."},
+        {"id": "suspect:dr_anne_webb", "name": "Dr Anne Webb", "intro": "Supervised the marine survey whose report was due at the ministry by month's end."}
+      ]
+    },
+    "es": {
+      "setting": "El Puerto Dunne se asienta en una ensenada de granito orientada al oeste, donde la rampa cae en pendiente y el dique contiene las mareas vivas. La flota pesquera domina la economia local, y un estudio marino ha estado midiendo niveles de poblacion que el dueno de la flota preferiria no ver publicados. En la calma baja, la cueva marina al pie del promontorio se abre durante cuarenta minutos.",
+      "crime": "Ellen Cross, una investigadora marina, fue encontrada en la cueva marina al amanecer tras retirarse la marea. Sus frascos de muestras estaban a su lado, su cabana de investigacion vacia en el acantilado, y la ventana de cuarenta minutos de calma baja se habia convertido en su tumba.",
+      "suspects": [
+        {"id": "suspect:piers_dunne", "name": "Piers Dunne", "intro": "Dueno de la flota cuyos barcos excedieron la cuota anual en trescientas toneladas, su impermeable seco pero sus botas con una marca de marea."},
+        {"id": "suspect:gill_rowan", "name": "Gill Rowan", "intro": "Tripulante principal de Dunne que conoce los pasajes de la cueva, su chaqueta manchada de sal colgando en la tienda nautica."},
+        {"id": "suspect:harbour_master", "name": "El Capitan de Puerto", "intro": "Firmo el libro diario y controlaba el acceso a la rampa, sus anotaciones de esa noche inusualmente breves."},
+        {"id": "suspect:malcolm_crewe", "name": "Malcolm Crewe", "intro": "Operador del mercado de pescado que manejaba los manifiestos de captura, sus recibos de combustible mostrando un viaje en barco esa noche."},
+        {"id": "suspect:fiona_cross", "name": "Fiona Cross", "intro": "La hermana de la victima, que discutio con Dunne sobre permisos de acceso, sus botas con sal del rompeolas."},
+        {"id": "suspect:coastguard_bell", "name": "Guardacostas Bell", "intro": "Patrullaba el sendero costero y registraba movimientos de embarcaciones, la carcasa de su camara encontrada vacia en la cabana de investigacion."},
+        {"id": "suspect:dr_anne_webb", "name": "Dra. Anne Webb", "intro": "Supervisaba el estudio marino cuyo informe debia entregarse al ministerio a fin de mes."}
+      ]
+    },
+    "fr": {
+      "setting": "Le Port Dunne se niche dans une crique de granit face a l'ouest, ou la cale descend abruptement et la digue retient les marees de vive-eau. La flotte de peche domine l'economie locale, et une etude marine mesure les niveaux de stocks que le proprietaire de la flotte prefererait ne pas voir publies. A l'etale de basse mer, la grotte marine au pied du promontoire s'ouvre pendant quarante minutes.",
+      "crime": "Ellen Cross, chercheuse marine, a ete retrouvee dans la grotte marine a l'aube apres le retrait de la maree. Ses bocaux d'echantillons etaient a cote d'elle, sa cabane de recherche vide sur la falaise au-dessus, et la fenetre de quarante minutes d'etale de basse mer etait devenue sa tombe.",
+      "suspects": [
+        {"id": "suspect:piers_dunne", "name": "Piers Dunne", "intro": "Proprietaire de la flotte dont les bateaux ont depasse le quota annuel de trois cents tonnes, son ciret sec mais ses bottes portant une ligne de maree."},
+        {"id": "suspect:gill_rowan", "name": "Gill Rowan", "intro": "Premier equipier de Dunne qui connait les passages de la grotte, sa veste tachee de sel accrochee dans la shipchandler."},
+        {"id": "suspect:harbour_master", "name": "Le Capitaine du Port", "intro": "A signe le journal quotidien et controlait l'acces a la cale, ses entrees pour la nuit inhabituellement breves."},
+        {"id": "suspect:malcolm_crewe", "name": "Malcolm Crewe", "intro": "Exploitant du marche aux poissons qui gerait les manifestes de capture, ses recus de carburant montrant une sortie en bateau cette nuit-la."},
+        {"id": "suspect:fiona_cross", "name": "Fiona Cross", "intro": "La soeur de la victime, qui s'est disputee avec Dunne au sujet des permis d'acces, ses bottes portant du sel de la digue."},
+        {"id": "suspect:coastguard_bell", "name": "Garde-cote Bell", "intro": "Patrouillait le sentier cotier et enregistrait les mouvements de navires, le boitier de son appareil photo trouve vide dans la cabane de recherche."},
+        {"id": "suspect:dr_anne_webb", "name": "Dr Anne Webb", "intro": "Supervisait l'etude marine dont le rapport devait etre remis au ministere avant la fin du mois."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Piers Dunne launched a boat in the dark, cut the mooring rope to strand Ellen Cross in the cave, and let the tide do the rest. Three hundred tonnes of excess catch, falsified landing records, and a marine survey that would have ended his fleet's licence — the evidence flowed in as surely as the water that filled the cave at 02:54. The keel scrapes on the slipway, the shortened anchor chain, the disabled engine ignition: each piece locked together like the tidal tables that governed the forty-minute window. The sea gave up its proof at dawn, and the harbour had its reckoning.",
+      "es": "Piers Dunne lanzo un barco en la oscuridad, corto la cuerda de amarre para dejar a Ellen Cross varada en la cueva, y dejo que la marea hiciera el resto. Trescientas toneladas de captura excedente, registros de desembarque falsificados, y un estudio marino que habria revocado la licencia de su flota — las pruebas llegaron tan seguramente como el agua que lleno la cueva a las 02:54. Las marcas de quilla en la rampa, la cadena de ancla acortada, el encendido del motor deshabilitado: cada pieza encajaba como las tablas de mareas que gobernaban la ventana de cuarenta minutos. El mar entrego sus pruebas al amanecer, y el puerto tuvo su ajuste de cuentas.",
+      "fr": "Piers Dunne a mis un bateau a l'eau dans l'obscurite, coupe l'amarre pour laisser Ellen Cross echouee dans la grotte, et laisse la maree faire le reste. Trois cents tonnes de captures excedentaires, des registres de debarquement falsifies, et une etude marine qui aurait mis fin a la licence de sa flotte — les preuves sont arrivees aussi surement que l'eau qui a rempli la grotte a 02h54. Les raclures de quille sur la cale, la chaine d'ancre raccourcie, le demarreur du moteur desactive : chaque piece s'emboitait comme les tables de marees qui gouvernaient la fenetre de quarante minutes. La mer a livre ses preuves a l'aube, et le port a eu ses comptes."
+    },
+    "who_strong_rest_weak": {
+      "en": "Dunne's name rode every wave that came ashore that morning. His fleet, his quota, his harbour — the motive was as wide as the cove. But the tidal window left no footprints, the cut rope looked like wear, and the disabled engine could not be pinned to any particular hand. He was arrested because the harbour economy began and ended with his name, and that was enough for a town that had already made up its mind. The conviction floated on inference, not evidence.",
+      "es": "El nombre de Dunne cabalgaba cada ola que llego a la orilla esa manana. Su flota, su cuota, su puerto — el motivo era tan amplio como la ensenada. Pero la ventana de mareas no dejo huellas, la cuerda cortada parecia desgaste, y el motor deshabilitado no pudo ser atribuido a ninguna mano en particular. Fue arrestado porque la economia del puerto empezaba y terminaba con su nombre, y eso fue suficiente para un pueblo que ya habia tomado su decision. La condena floto sobre inferencia, no sobre evidencia.",
+      "fr": "Le nom de Dunne chevauchait chaque vague qui a atteint le rivage ce matin-la. Sa flotte, son quota, son port — le mobile etait aussi large que la crique. Mais la fenetre de maree n'a laisse aucune empreinte, la corde coupee ressemblait a de l'usure, et le moteur desactive n'a pu etre attribue a aucune main en particulier. Il a ete arrete parce que l'economie du port commencait et finissait par son nom, et cela a suffi pour une ville qui avait deja pris sa decision. La condamnation flottait sur l'inference, pas sur les preuves."
+    },
+    "wrong_accusation": {
+      "en": "The wrong fisherman was netted, and Piers Dunne's boats put out at dawn as they always had. The quota records were rewritten, the survey report delayed, and Ellen Cross's sample jars were shelved in a research cabin that the ministry never inspected. The harbour economy continued to exceed its limits, the sea cave flooded and drained with each tide, and the truth lay at the bottom of it all, buried under salt and granite and forty minutes of rising water.",
+      "es": "El pescador equivocado fue atrapado en la red, y los barcos de Piers Dunne zarparon al amanecer como siempre. Los registros de cuotas fueron reescritos, el informe del estudio retrasado, y los frascos de muestras de Ellen Cross archivados en una cabana de investigacion que el ministerio nunca inspeccion. La economia del puerto siguio excediendo sus limites, la cueva marina se inundaba y drenaba con cada marea, y la verdad yacia en el fondo de todo, enterrada bajo sal y granito y cuarenta minutos de agua creciente.",
+      "fr": "Le mauvais pecheur a ete pris dans le filet, et les bateaux de Piers Dunne sont sortis a l'aube comme toujours. Les registres de quotas ont ete reecrits, le rapport d'etude retarde, et les bocaux d'echantillons d'Ellen Cross ranges dans une cabane de recherche que le ministere n'a jamais inspectee. L'economie portuaire a continue de depasser ses limites, la grotte marine se remplissait et se vidait a chaque maree, et la verite gisait au fond de tout cela, ensevelie sous le sel et le granit et quarante minutes d'eau montante."
+    },
+    "cold_case": {
+      "en": "The tide came and went, and the case went with it. Ellen Cross's research was filed incomplete, the marine survey was never published, and the ministry extended the quota deadline without comment. Dunne Harbour continued to land its catch by night, the slipway scraped by keels that left no names, and the sea cave opened and closed with each cycle as if it had never held anyone at all. The sample jars sat on a shelf in an empty cabin, measuring nothing.",
+      "es": "La marea iba y venia, y el caso se fue con ella. La investigacion de Ellen Cross fue archivada como incompleta, el estudio marino nunca fue publicado, y el ministerio extendio el plazo de cuotas sin comentarios. El Puerto Dunne continuo desembarcando su captura de noche, la rampa raspada por quillas que no dejaban nombres, y la cueva marina se abria y cerraba con cada ciclo como si nunca hubiera contenido a nadie. Los frascos de muestras se quedaron en un estante de una cabana vacia, sin medir nada.",
+      "fr": "La maree allait et venait, et l'affaire est partie avec elle. La recherche d'Ellen Cross a ete classee incomplete, l'etude marine n'a jamais ete publiee, et le ministere a prolonge le delai de quota sans commentaire. Le Port Dunne a continue de debarquer ses prises de nuit, la cale raclee par des quilles qui ne laissaient aucun nom, et la grotte marine s'ouvrait et se fermait a chaque cycle comme si elle n'avait jamais retenu personne. Les bocaux d'echantillons restaient sur une etagere dans une cabane vide, ne mesurant rien."
+    },
+    "lucky_guess": {
+      "en": "Dunne's name washed ashore on the morning tide like driftwood — present, plausible, but proving nothing on its own. The tide line on his boots, the fuel receipt in the chandlery, the harbour log overwritten in darker ink: each detail suggested without confirming. He was charged because the cove belonged to him and the dead woman had threatened his livelihood. The sea, as always, offered no testimony, and the verdict rested on the rhythm of suspicion rather than the weight of fact.",
+      "es": "El nombre de Dunne llego a la orilla con la marea matutina como madera a la deriva — presente, plausible, pero sin probar nada por si solo. La marca de marea en sus botas, el recibo de combustible en la tienda nautica, el libro de puerto sobrescrito con tinta mas oscura: cada detalle sugeria sin confirmar. Fue acusado porque la ensenada le pertenecia y la mujer muerta habia amenazado su sustento. El mar, como siempre, no ofrecio testimonio, y el veredicto descanso en el ritmo de la sospecha mas que en el peso de los hechos.",
+      "fr": "Le nom de Dunne a ete rejete sur le rivage par la maree du matin comme du bois flotte — present, plausible, mais ne prouvant rien en soi. La ligne de maree sur ses bottes, le recu de carburant dans la shipchandler, le journal du port recouvert d'encre plus foncee : chaque detail suggerait sans confirmer. Il a ete inculpe parce que la crique lui appartenait et que la femme morte avait menace son gagne-pain. La mer, comme toujours, n'a offert aucun temoignage, et le verdict reposait sur le rythme du soupcon plutot que sur le poids des faits."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:piers_dunne",

@@ -16,6 +16,74 @@
     "event:altered_path",
     "motive:boundary_fraud"
   ],
+  "briefing": {
+    "en": {
+      "setting": "Crale Orchard lies at the edge of a quiet English village, its stone walls and hedgerows dividing land that has been fought over for generations. The evening light fades early here, and the boundary markers cast long shadows across disputed ground.",
+      "crime": "Jonas Fell, a land surveyor, was found dead beside the western boundary stone at dawn. His notebook lay open and his lamp glass was broken.",
+      "suspects": [
+        {"id": "suspect:thomas_crale", "name": "Thomas Crale", "intro": "Owner of the orchard and farmhouse, burdened by debts that exceed the value of his land."},
+        {"id": "suspect:amos_webb", "name": "Amos Webb", "intro": "A neighbouring farmer who filed the complaint that triggered the boundary inspection."},
+        {"id": "suspect:ruth_crale", "name": "Ruth Crale", "intro": "Thomas's wife, quiet and guarded, with knowledge of the family's financial ruin."},
+        {"id": "suspect:mr_hadley", "name": "Mr Hadley", "intro": "A local man with physical access to the orchard and familiarity with its tools."},
+        {"id": "suspect:ned_garvey", "name": "Ned Garvey", "intro": "A villager seen drinking with Fell at the inn on the afternoon of his death."},
+        {"id": "suspect:eliza_banks", "name": "Eliza Banks", "intro": "A prospective buyer who had offered to purchase the orchard at auction."},
+        {"id": "suspect:constable_price", "name": "Constable Price", "intro": "The local constable who discovered the body, with access to the scene before anyone else."}
+      ]
+    },
+    "es": {
+      "setting": "El huerto de Crale se encuentra en las afueras de un tranquilo pueblo ingles, con muros de piedra y setos que dividen tierras disputadas durante generaciones. La luz del atardecer se desvanece temprano, y los mojones proyectan largas sombras sobre el terreno en litigio.",
+      "crime": "Jonas Fell, un agrimensor, fue hallado muerto junto a la piedra del lindero oeste al amanecer. Su cuaderno estaba abierto y el cristal de su lampara, roto.",
+      "suspects": [
+        {"id": "suspect:thomas_crale", "name": "Thomas Crale", "intro": "Propietario del huerto y la granja, agobiado por deudas que superan el valor de su tierra."},
+        {"id": "suspect:amos_webb", "name": "Amos Webb", "intro": "Un granjero vecino que presento la queja que desencadeno la inspeccion de linderos."},
+        {"id": "suspect:ruth_crale", "name": "Ruth Crale", "intro": "La esposa de Thomas, reservada y cautelosa, conocedora de la ruina financiera familiar."},
+        {"id": "suspect:mr_hadley", "name": "Mr Hadley", "intro": "Un hombre local con acceso fisico al huerto y familiaridad con sus herramientas."},
+        {"id": "suspect:ned_garvey", "name": "Ned Garvey", "intro": "Un aldeano visto bebiendo con Fell en la posada la tarde de su muerte."},
+        {"id": "suspect:eliza_banks", "name": "Eliza Banks", "intro": "Una compradora potencial que habia ofrecido adquirir el huerto en subasta."},
+        {"id": "suspect:constable_price", "name": "Constable Price", "intro": "El agente local que descubrio el cuerpo, con acceso a la escena antes que nadie."}
+      ]
+    },
+    "fr": {
+      "setting": "Le verger de Crale se trouve en bordure d'un paisible village anglais, ses murs de pierre et ses haies divisant des terres disputees depuis des generations. La lumiere du soir s'estompe tot ici, et les bornes projettent de longues ombres sur le terrain conteste.",
+      "crime": "Jonas Fell, un geometre, a ete retrouve mort a l'aube pres de la borne ouest. Son carnet etait ouvert et le verre de sa lampe, brise.",
+      "suspects": [
+        {"id": "suspect:thomas_crale", "name": "Thomas Crale", "intro": "Proprietaire du verger et de la ferme, accable par des dettes depassant la valeur de ses terres."},
+        {"id": "suspect:amos_webb", "name": "Amos Webb", "intro": "Un fermier voisin qui a depose la plainte ayant declenche l'inspection des limites."},
+        {"id": "suspect:ruth_crale", "name": "Ruth Crale", "intro": "L'epouse de Thomas, discrete et sur ses gardes, au fait de la ruine financiere familiale."},
+        {"id": "suspect:mr_hadley", "name": "Mr Hadley", "intro": "Un homme du coin ayant acces au verger et connaissant bien ses outils."},
+        {"id": "suspect:ned_garvey", "name": "Ned Garvey", "intro": "Un villageois vu en train de boire avec Fell a l'auberge l'apres-midi de sa mort."},
+        {"id": "suspect:eliza_banks", "name": "Eliza Banks", "intro": "Une acheteuse potentielle qui avait propose d'acquerir le verger aux encheres."},
+        {"id": "suspect:constable_price", "name": "Constable Price", "intro": "L'agent local qui a decouvert le corps, ayant eu acces a la scene avant quiconque."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Thomas Crale broke under the weight of the parish ledger and the iron pry bar found in his shed. He had moved the boundary stones by night, redrawn the map, and killed the one man whose measurements would have exposed the fraud. The debt, the forged deed, the altered path — every thread led back to the farmhouse at the edge of the orchard. The jury deliberated for less than an hour.",
+      "es": "Thomas Crale se derrumbo bajo el peso del libro parroquial y la palanca de hierro hallada en su cobertizo. Habia movido los mojones de noche, redibujado el mapa y matado al unico hombre cuyas mediciones habrian expuesto el fraude. La deuda, la escritura falsificada, el sendero alterado: cada hilo conducia a la granja al borde del huerto. El jurado delibero menos de una hora.",
+      "fr": "Thomas Crale a craque sous le poids du registre paroissial et de la barre de fer trouvee dans sa remise. Il avait deplace les bornes de nuit, redessine la carte et tue le seul homme dont les mesures auraient revele la fraude. La dette, l'acte falsifie, le chemin modifie — chaque fil ramenait a la ferme en bordure du verger. Le jury a delibere moins d'une heure."
+    },
+    "who_strong_rest_weak": {
+      "en": "Everyone in the village knew Thomas Crale had reason to fear the surveyor's report. But knowing and proving are different matters. The boundary stones told one story, the parish records another, and neither could be made to speak clearly in court. Crale was charged, but the case rested on suspicion more than evidence. The conviction came thin and unsatisfying, like winter light through orchard branches.",
+      "es": "Todos en el pueblo sabian que Thomas Crale tenia razones para temer el informe del agrimensor. Pero saber y probar son cosas distintas. Los mojones contaban una historia, los registros parroquiales otra, y ninguno pudo hablar con claridad ante el tribunal. Crale fue acusado, pero el caso se sostuvo mas en sospechas que en pruebas. La condena llego debil e insatisfactoria, como la luz invernal entre las ramas del huerto.",
+      "fr": "Tout le village savait que Thomas Crale avait des raisons de craindre le rapport du geometre. Mais savoir et prouver sont deux choses differentes. Les bornes racontaient une histoire, les registres paroissiaux une autre, et aucun ne put parler clairement devant le tribunal. Crale fut inculpe, mais l'affaire reposait davantage sur des soupcons que sur des preuves. La condamnation tomba, mince et insatisfaisante, comme la lumiere d'hiver a travers les branches du verger."
+    },
+    "wrong_accusation": {
+      "en": "The inspector pointed the finger at the wrong man, and the real killer watched from the farmhouse window as an innocent was led away. Thomas Crale remained free, the boundary stayed where he had moved it, and Jonas Fell's notebook gathered dust in an evidence locker. The orchard kept its stolen acres, and the truth sank into the soil like autumn rain.",
+      "es": "El inspector senalo al hombre equivocado, y el verdadero asesino observo desde la ventana de la granja mientras se llevaban a un inocente. Thomas Crale quedo libre, el lindero permanecio donde el lo habia movido, y el cuaderno de Jonas Fell acumulo polvo en un deposito de pruebas. El huerto conservo sus acres robados, y la verdad se hundio en la tierra como la lluvia de otono.",
+      "fr": "L'inspecteur a designe le mauvais homme, et le veritable tueur a regarde depuis la fenetre de la ferme tandis qu'un innocent etait emmene. Thomas Crale est reste libre, la limite est restee la ou il l'avait deplacee, et le carnet de Jonas Fell a pris la poussiere dans un casier a preuves. Le verger a garde ses acres voles, et la verite s'est enfoncee dans le sol comme la pluie d'automne."
+    },
+    "cold_case": {
+      "en": "The file on Jonas Fell's death was never closed, merely set aside. The boundary dispute faded from parish conversation, the orchard changed hands quietly, and the surveyor's name was forgotten by everyone except the postman who had seen him walk toward the trees that last afternoon. The stones stood where they had been placed, and no one measured the distance again.",
+      "es": "El expediente sobre la muerte de Jonas Fell nunca se cerro, simplemente se archivo. La disputa de linderos se desvanecio de las conversaciones parroquiales, el huerto cambio de manos en silencio, y el nombre del agrimensor fue olvidado por todos excepto el cartero que lo vio caminar hacia los arboles aquella ultima tarde. Las piedras permanecieron donde habian sido colocadas, y nadie volvio a medir la distancia.",
+      "fr": "Le dossier sur la mort de Jonas Fell n'a jamais ete clos, simplement mis de cote. Le litige foncier s'est efface des conversations paroissiales, le verger a change de mains discretement, et le nom du geometre a ete oublie par tous sauf le facteur qui l'avait vu marcher vers les arbres cet ultime apres-midi. Les pierres sont restees la ou elles avaient ete placees, et personne n'a mesure la distance a nouveau."
+    },
+    "lucky_guess": {
+      "en": "Thomas Crale's name came up almost by accident, and there was just enough to hold him. But the case was gossamer — a hunch dressed in circumstance. The parish whispered that justice had been done, but the evidence locker held more questions than answers. Crale went to trial on the strength of a guess, and the orchard stood silent on the matter.",
+      "es": "El nombre de Thomas Crale surgio casi por accidente, y habia justo lo suficiente para retenerlo. Pero el caso era fragil como una telarana: una corazonada vestida de circunstancia. La parroquia susurraba que se habia hecho justicia, pero el deposito de pruebas guardaba mas preguntas que respuestas. Crale fue a juicio por la fuerza de una suposicion, y el huerto guardo silencio al respecto.",
+      "fr": "Le nom de Thomas Crale est apparu presque par accident, et il y avait tout juste assez pour le retenir. Mais l'affaire etait fragile comme une toile d'araignee — une intuition habillee de circonstances. La paroisse murmurait que justice avait ete rendue, mais le casier a preuves contenait plus de questions que de reponses. Crale est passe en jugement sur la force d'une supposition, et le verger est reste muet sur la question."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:thomas_crale",

@@ -16,6 +16,74 @@
     "event:evening_port",
     "motive:1921_scandal"
   ],
+  "briefing": {
+    "en": {
+      "setting": "The Blackwood Club occupies a Georgian house behind a wrought-iron gate, where leather chairs face a fireplace and the port ceremony follows Thursday dinner as it has for decades. The archive vault below holds trust deeds and committee minutes dating back to 1870, and tonight a literary executor has requested the originals.",
+      "crime": "Arthur Crisp was found in his reading room chair with a port glass beside him. The fire had burned to ash, the room was cold, and the antimony dissolved in his evening port had done its work before midnight.",
+      "suspects": [
+        {"id": "suspect:agnes_vail", "name": "Agnes Vail", "intro": "Wore black gloves throughout the evening and signed the guest book with a leftward slope matching the forged signature on the trust deed."},
+        {"id": "suspect:hugh_emberly", "name": "Hugh Emberly", "intro": "Took his usual chair by the fire, his monogram ring leaving an imprint on the leather armrest."},
+        {"id": "suspect:colonel_norris", "name": "Colonel Norris", "intro": "Decanted and served the port himself, as he has done for twenty years."},
+        {"id": "suspect:dr_pryce", "name": "Dr Pryce", "intro": "Pronounced death at half past seven and completed a detailed toxicology report by nine."},
+        {"id": "suspect:lillian_march", "name": "Lillian March", "intro": "Crossed the rear garden to speak with the night watchman, her coat carrying rain and her hem muddied."},
+        {"id": "suspect:percival_dent", "name": "Percival Dent", "intro": "Accessed the archive vault that afternoon, claiming he was cataloguing the 1920s minutes."},
+        {"id": "suspect:walter_kemp", "name": "Walter Kemp", "intro": "Sat in the far corner and said nothing until asked, having known the Vail family from his years at the trust office."}
+      ]
+    },
+    "es": {
+      "setting": "El Club Blackwood ocupa una casa georgiana detras de una verja de hierro forjado, donde sillones de cuero miran a una chimenea y la ceremonia del oporto sigue a la cena del jueves como lo ha hecho durante decadas. La boveda del archivo debajo guarda escrituras fiduciarias y actas del comite que datan de 1870, y esta noche un albacea literario ha solicitado los originales.",
+      "crime": "Arthur Crisp fue encontrado en su sillon de la sala de lectura con una copa de oporto a su lado. El fuego se habia consumido en cenizas, la habitacion estaba fria, y el antimonio disuelto en su oporto vespertino habia hecho su trabajo antes de la medianoche.",
+      "suspects": [
+        {"id": "suspect:agnes_vail", "name": "Agnes Vail", "intro": "Llevo guantes negros durante toda la velada y firmo el libro de invitados con una inclinacion a la izquierda que coincide con la firma falsificada en la escritura fiduciaria."},
+        {"id": "suspect:hugh_emberly", "name": "Hugh Emberly", "intro": "Ocupo su sillon habitual junto al fuego, su anillo con monograma dejando una huella en el reposabrazos de cuero."},
+        {"id": "suspect:colonel_norris", "name": "Coronel Norris", "intro": "Decanto y sirvio el oporto el mismo, como lo ha hecho durante veinte anos."},
+        {"id": "suspect:dr_pryce", "name": "Dr Pryce", "intro": "Declaro la muerte a las siete y media y completo un informe toxicologico detallado a las nueve."},
+        {"id": "suspect:lillian_march", "name": "Lillian March", "intro": "Cruzo el jardin trasero para hablar con el vigilante nocturno, su abrigo con lluvia y su dobladillo embarrado."},
+        {"id": "suspect:percival_dent", "name": "Percival Dent", "intro": "Accedio a la boveda del archivo esa tarde, alegando que catalogaba las actas de los anos 20."},
+        {"id": "suspect:walter_kemp", "name": "Walter Kemp", "intro": "Se sento en el rincon mas alejado y no dijo nada hasta que se le pregunto, habiendo conocido a la familia Vail por sus anos en la oficina fiduciaria."}
+      ]
+    },
+    "fr": {
+      "setting": "Le Club Blackwood occupe une maison georgienne derriere une grille en fer forge, ou des fauteuils en cuir font face a une cheminee et la ceremonie du porto suit le diner du jeudi comme depuis des decennies. La chambre forte des archives en dessous conserve des actes fiduciaires et des proces-verbaux du comite remontant a 1870, et ce soir un executeur literaire a demande les originaux.",
+      "crime": "Arthur Crisp a ete retrouve dans son fauteuil de la salle de lecture avec un verre de porto a cote de lui. Le feu s'etait consume en cendres, la piece etait froide, et l'antimoine dissous dans son porto du soir avait fait son oeuvre avant minuit.",
+      "suspects": [
+        {"id": "suspect:agnes_vail", "name": "Agnes Vail", "intro": "A porte des gants noirs toute la soiree et signe le livre d'or avec une inclinaison vers la gauche correspondant a la signature falsifiee sur l'acte fiduciaire."},
+        {"id": "suspect:hugh_emberly", "name": "Hugh Emberly", "intro": "A pris son fauteuil habituel pres du feu, sa chevaliere a monogramme laissant une empreinte sur l'accoudoir en cuir."},
+        {"id": "suspect:colonel_norris", "name": "Colonel Norris", "intro": "A decante et servi le porto lui-meme, comme il le fait depuis vingt ans."},
+        {"id": "suspect:dr_pryce", "name": "Dr Pryce", "intro": "A prononce le deces a sept heures et demie et complete un rapport toxicologique detaille a neuf heures."},
+        {"id": "suspect:lillian_march", "name": "Lillian March", "intro": "A traverse le jardin arriere pour parler au veilleur de nuit, son manteau portant la pluie et son ourlet boueux."},
+        {"id": "suspect:percival_dent", "name": "Percival Dent", "intro": "A accede a la chambre forte des archives cet apres-midi, pretendant cataloguer les proces-verbaux des annees 1920."},
+        {"id": "suspect:walter_kemp", "name": "Walter Kemp", "intro": "S'est assis dans le coin le plus eloigne et n'a rien dit jusqu'a ce qu'on le lui demande, ayant connu la famille Vail depuis ses annees au bureau fiduciaire."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Agnes Vail had forged the third signature on the trust deed in 1935 and lived in fear of its discovery for decades. When Arthur Crisp found the ink discrepancy and requested an independent analysis, she switched his port glass in the kitchen passage and dissolved the antimony that would silence him before the committee met. The nib matched her Waterman pen, the blotting paper held the reverse of the forged signature, and the measured dose spoke of pharmaceutical precision. The third signature had held for forty years. It took one evening of port and poison to bring it down.",
+      "es": "Agnes Vail habia falsificado la tercera firma en la escritura fiduciaria en 1935 y vivio con el temor de su descubrimiento durante decadas. Cuando Arthur Crisp encontro la discrepancia de tinta y solicito un analisis independiente, ella cambio su copa de oporto en el pasillo de la cocina y disolvio el antimonio que lo silenciaria antes de la reunion del comite. La plumilla coincidia con su pluma Waterman, el papel secante guardaba el reverso de la firma falsificada, y la dosis medida hablaba de precision farmaceutica. La tercera firma se habia mantenido durante cuarenta anos. Basto una velada de oporto y veneno para derribarla.",
+      "fr": "Agnes Vail avait falsifie la troisieme signature sur l'acte fiduciaire en 1935 et vecut dans la crainte de sa decouverte pendant des decennies. Quand Arthur Crisp decouvrit l'anomalie d'encre et demanda une analyse independante, elle echangea son verre de porto dans le passage de la cuisine et y dissolut l'antimoine qui le reduirait au silence avant la reunion du comite. La plume correspondait a son Waterman, le buvard portait l'envers de la signature falsifiee, et la dose mesuree temoignait d'une precision pharmaceutique. La troisieme signature avait tenu quarante ans. Il a suffi d'une soiree de porto et de poison pour la faire tomber."
+    },
+    "who_strong_rest_weak": {
+      "en": "Agnes Vail's name settled over the Blackwood Club like the ash in the reading room grate. The handwriting matched, the motive was clear, and everyone recalled the way she set down her glass before answering questions. But the port glass had been wiped clean, the antimony source was never traced, and the kitchen passage offered no witnesses. She was tried on the strength of a forged signature and the weight of forty years of silence. The conviction held, but the club never served port on Thursday again.",
+      "es": "El nombre de Agnes Vail se poso sobre el Club Blackwood como las cenizas en la rejilla de la sala de lectura. La escritura coincidia, el motivo era claro, y todos recordaban como dejaba su copa antes de responder preguntas. Pero la copa de oporto habia sido limpiada, la fuente del antimonio nunca fue rastreada, y el pasillo de la cocina no ofrecio testigos. Fue juzgada por la fuerza de una firma falsificada y el peso de cuarenta anos de silencio. La condena se sostuvo, pero el club nunca volvio a servir oporto los jueves.",
+      "fr": "Le nom d'Agnes Vail s'est depose sur le Club Blackwood comme la cendre dans la grille de la salle de lecture. L'ecriture correspondait, le mobile etait clair, et tous se souvenaient de la facon dont elle posait son verre avant de repondre aux questions. Mais le verre de porto avait ete essuye, la source de l'antimoine n'a jamais ete retracee, et le passage de la cuisine n'offrait aucun temoin. Elle fut jugee sur la force d'une signature falsifiee et le poids de quarante ans de silence. La condamnation a tenu, mais le club n'a plus jamais servi de porto le jeudi."
+    },
+    "wrong_accusation": {
+      "en": "The wrong member was accused, and Agnes Vail left the Blackwood Club with her gloves on and her family's trust intact. The forged deed remained in the archive vault, the property stayed in Vail hands, and Arthur Crisp's discovery was quietly filed among the committee minutes that no one read. The third signature endured, and the truth lay pressed between the pages of a leather folder that gathered dust behind a steel door.",
+      "es": "El miembro equivocado fue acusado, y Agnes Vail dejo el Club Blackwood con sus guantes puestos y la confianza de su familia intacta. La escritura falsificada permanecio en la boveda del archivo, la propiedad quedo en manos de los Vail, y el descubrimiento de Arthur Crisp fue discretamente archivado entre las actas del comite que nadie leia. La tercera firma perduro, y la verdad quedo prensada entre las paginas de una carpeta de cuero que acumulaba polvo detras de una puerta de acero.",
+      "fr": "Le mauvais membre a ete accuse, et Agnes Vail a quitte le Club Blackwood avec ses gants et la fiducie de sa famille intacte. L'acte falsifie est reste dans la chambre forte des archives, la propriete est restee aux mains des Vail, et la decouverte d'Arthur Crisp a ete discretement classee parmi les proces-verbaux du comite que personne ne lisait. La troisieme signature a perdure, et la verite est restee pressee entre les pages d'un dossier en cuir qui prenait la poussiere derriere une porte d'acier."
+    },
+    "cold_case": {
+      "en": "The Blackwood Club filed Arthur Crisp's death under natural causes and resumed its Thursday dinners without him. The trust deed was returned to the vault, the archive key rehung on its peg, and the port decanter was rinsed and refilled. No independent analysis was ever conducted, no committee meeting convened to discuss the ink discrepancy. The third signature remained unchallenged, and the club carried its secret in the same silence with which it carried its port — carefully, through panelled corridors, without spilling a drop.",
+      "es": "El Club Blackwood archivo la muerte de Arthur Crisp como causas naturales y reanudo sus cenas de los jueves sin el. La escritura fiduciaria fue devuelta a la boveda, la llave del archivo colgada de nuevo en su gancho, y el decantador de oporto fue enjuagado y rellenado. Nunca se realizo un analisis independiente, ningun comite se reunio para discutir la discrepancia de tinta. La tercera firma quedo sin cuestionar, y el club llevo su secreto en el mismo silencio con que llevaba su oporto — con cuidado, por pasillos revestidos de madera, sin derramar una gota.",
+      "fr": "Le Club Blackwood a classe la mort d'Arthur Crisp en causes naturelles et a repris ses diners du jeudi sans lui. L'acte fiduciaire a ete rendu a la chambre forte, la cle des archives raccrochee a son crochet, et le carafon de porto rince et rempli a nouveau. Aucune analyse independante n'a jamais ete menee, aucune reunion du comite convoquee pour discuter de l'anomalie d'encre. La troisieme signature est restee incontestee, et le club a porte son secret dans le meme silence avec lequel il portait son porto — avec precaution, a travers des couloirs lambrises, sans en renverser une goutte."
+    },
+    "lucky_guess": {
+      "en": "Agnes Vail's name was spoken because the handwriting leaned left and the trust bore her family's name. It was suspicion built on penmanship and inheritance, not forensics. The port glass offered no prints, the antimony no provenance, and the kitchen passage no footsteps. She was convicted because the story fit, and at the Blackwood Club, a good story has always been enough to settle an account.",
+      "es": "El nombre de Agnes Vail fue pronunciado porque la escritura se inclinaba a la izquierda y la escritura fiduciaria llevaba el nombre de su familia. Era sospecha construida sobre caligrafia y herencia, no sobre forense. La copa de oporto no ofrecio huellas, el antimonio ninguna procedencia, y el pasillo de la cocina ningun paso. Fue condenada porque la historia encajaba, y en el Club Blackwood, una buena historia siempre ha sido suficiente para saldar una cuenta.",
+      "fr": "Le nom d'Agnes Vail a ete prononce parce que l'ecriture penchait a gauche et que la fiducie portait le nom de sa famille. C'etait un soupcon bati sur la calligraphie et l'heritage, pas sur la medecine legale. Le verre de porto n'offrait pas d'empreintes, l'antimoine aucune provenance, et le passage de la cuisine aucun pas. Elle a ete condamnee parce que l'histoire cadrait, et au Club Blackwood, une bonne histoire a toujours suffi pour regler un compte."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:agnes_vail",

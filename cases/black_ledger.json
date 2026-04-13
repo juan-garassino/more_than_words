@@ -16,6 +16,74 @@
     "event:halyard_strangling",
     "motive:prize_money_fraud"
   ],
+  "briefing": {
+    "en": {
+      "setting": "A warship rides at anchor three days from port, her decks creaking in the dark swell. The gun deck lanterns are doused for the middle watch, and below in the orlop hold, prize chests sit in rows between barrels and shadows. The cargo count is due at dawn.",
+      "crime": "Quartermaster Cole was found in the orlop hold between two prize chests. A signal halyard was wrapped around his neck and his eyes were open.",
+      "suspects": [
+        {"id": "suspect:surgeon_graves", "name": "Surgeon Graves", "intro": "The ship's surgeon, whose clean hands still carry ink and whose cabin holds a second set of accounts."},
+        {"id": "suspect:bosun_flint", "name": "Bosun Flint", "intro": "Quarrelled with Cole over ration weights the previous watch, belaying pin in hand."},
+        {"id": "suspect:captain_hale", "name": "Captain Hale", "intro": "Keeps the prize ledger locked in his cabin chest, claims not to have opened it since port."},
+        {"id": "suspect:navigator_reid", "name": "Navigator Reid", "intro": "Charted a course two points off heading, with a folded note in his compass case."},
+        {"id": "suspect:powder_monkey_sam", "name": "Powder Monkey Sam", "intro": "Carried rum to the gun deck at the start of the watch and heard nothing from below."},
+        {"id": "suspect:first_mate_darcy", "name": "First Mate Darcy", "intro": "Had the watch and was responsible for all movement on deck, his log entry four lines short."},
+        {"id": "suspect:carpenter_hook", "name": "Carpenter Hook", "intro": "Had patched a seam in the hold that afternoon, his tools still below when the body was found."}
+      ]
+    },
+    "es": {
+      "setting": "Un buque de guerra fondea a tres dias de puerto, sus cubiertas crujiendo en la marejada oscura. Las linternas de la cubierta de canones estan apagadas para la guardia media, y abajo en la bodega, los cofres de botin se alinean entre barriles y sombras. El conteo de carga esta previsto al amanecer.",
+      "crime": "El contramaestre Cole fue encontrado en la bodega entre dos cofres de botin. Un driza de senales estaba enrollada alrededor de su cuello y sus ojos estaban abiertos.",
+      "suspects": [
+        {"id": "suspect:surgeon_graves", "name": "Cirujano Graves", "intro": "El cirujano del barco, cuyas manos limpias aun llevan tinta y cuya cabina guarda un segundo juego de cuentas."},
+        {"id": "suspect:bosun_flint", "name": "Contramaestre Flint", "intro": "Discutio con Cole sobre los pesos de las raciones en la guardia anterior, cabilla en mano."},
+        {"id": "suspect:captain_hale", "name": "Capitan Hale", "intro": "Guarda el libro de presas bajo llave en su cofre de camarote, afirma no haberlo abierto desde el puerto."},
+        {"id": "suspect:navigator_reid", "name": "Navegante Reid", "intro": "Trazo un rumbo dos puntos desviado, con una nota doblada en su estuche de brujula."},
+        {"id": "suspect:powder_monkey_sam", "name": "Grumete Sam", "intro": "Llevo ron a la cubierta de canones al inicio de la guardia y no oyo nada desde abajo."},
+        {"id": "suspect:first_mate_darcy", "name": "Primer Oficial Darcy", "intro": "Estaba de guardia y era responsable de todo movimiento en cubierta, su registro cuatro lineas mas corto de lo habitual."},
+        {"id": "suspect:carpenter_hook", "name": "Carpintero Hook", "intro": "Habia reparado una costura en la bodega esa tarde, sus herramientas aun abajo cuando se encontro el cuerpo."}
+      ]
+    },
+    "fr": {
+      "setting": "Un navire de guerre mouille a trois jours du port, ses ponts craquant dans la houle sombre. Les lanternes du pont des canons sont eteintes pour le quart de minuit, et en bas dans la cale, les coffres de prises s'alignent entre les tonneaux et les ombres. Le comptage de la cargaison est prevu a l'aube.",
+      "crime": "Le quartier-maitre Cole a ete trouve dans la cale entre deux coffres de prises. Une drisse de signaux etait enroulee autour de son cou et ses yeux etaient ouverts.",
+      "suspects": [
+        {"id": "suspect:surgeon_graves", "name": "Chirurgien Graves", "intro": "Le chirurgien du navire, dont les mains propres portent encore de l'encre et dont la cabine abrite un second jeu de comptes."},
+        {"id": "suspect:bosun_flint", "name": "Maitre d'Equipage Flint", "intro": "S'est querelle avec Cole au sujet des poids de rations lors du quart precedent, cabillot en main."},
+        {"id": "suspect:captain_hale", "name": "Capitaine Hale", "intro": "Garde le registre des prises verrouille dans son coffre de cabine, affirme ne pas l'avoir ouvert depuis le port."},
+        {"id": "suspect:navigator_reid", "name": "Navigateur Reid", "intro": "A trace une route deviee de deux points, avec une note pliee dans son etui a compas."},
+        {"id": "suspect:powder_monkey_sam", "name": "Mousse Sam", "intro": "A apporte le rhum au pont des canons au debut du quart et n'a rien entendu d'en bas."},
+        {"id": "suspect:first_mate_darcy", "name": "Second Darcy", "intro": "Etait de quart et responsable de tout mouvement sur le pont, son journal de quatre lignes plus court que d'habitude."},
+        {"id": "suspect:carpenter_hook", "name": "Charpentier Hook", "intro": "Avait repare une couture dans la cale cet apres-midi, ses outils encore en bas quand le corps a ete trouve."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Surgeon Graves had skimmed four hundred pounds across three prize captures, and Quartermaster Cole's cargo count would have exposed every doctored entry. The halyard was coiled wrong — left-handed, not sailor's fashion — and the knot was a surgeon's bend. The false accounts in his cabin, the ink under his nails, the gold dust on the coin pouch: each piece drew the noose tighter than the one around Cole's neck. Three days from port, the ship had its answer.",
+      "es": "El Cirujano Graves habia desviado cuatrocientas libras de tres capturas de presas, y el conteo de carga del Contramaestre Cole habria expuesto cada entrada manipulada. La driza estaba enrollada al reves — a izquierdas, no al estilo marinero — y el nudo era un nudo de cirujano. Las cuentas falsas en su cabina, la tinta bajo sus unas, el polvo de oro en la bolsa de monedas: cada pieza apretaba la soga mas que la que rodeaba el cuello de Cole. A tres dias de puerto, el barco tuvo su respuesta.",
+      "fr": "Le Chirurgien Graves avait detourne quatre cents livres sur trois prises, et le comptage du Quartier-maitre Cole aurait revele chaque ecriture falsifiee. La drisse etait lovee a l'envers — a gauche, pas a la maniere des marins — et le noeud etait un noeud de chirurgien. Les faux comptes dans sa cabine, l'encre sous ses ongles, la poussiere d'or sur la bourse : chaque piece serrait le noeud plus fort que celui autour du cou de Cole. A trois jours du port, le navire avait sa reponse."
+    },
+    "who_strong_rest_weak": {
+      "en": "Every man aboard suspected the surgeon, but the sea has a way of swallowing proof. The rope told one story, the ledger another, and neither spoke clearly enough for a court martial. Graves was confined to his cabin for the remaining three days, and the captain wrote a report that satisfied the admiralty without satisfying justice. The prize shares were paid out, and the matter was buried at sea.",
+      "es": "Todos a bordo sospechaban del cirujano, pero el mar tiene una forma de tragarse las pruebas. La cuerda contaba una historia, el libro de cuentas otra, y ninguno hablaba con suficiente claridad para un consejo de guerra. Graves fue confinado en su cabina los tres dias restantes, y el capitan escribio un informe que satisfizo al almirantazgo sin satisfacer a la justicia. Las partes del botin fueron pagadas, y el asunto fue sepultado en el mar.",
+      "fr": "Chaque homme a bord soupconnait le chirurgien, mais la mer a une maniere d'engloutir les preuves. La corde racontait une histoire, le registre une autre, et aucun ne parlait assez clairement pour un conseil de guerre. Graves fut confine dans sa cabine pour les trois jours restants, et le capitaine redigea un rapport qui satisfit l'amiraute sans satisfaire la justice. Les parts de prise furent versees, et l'affaire fut ensevelie en mer."
+    },
+    "wrong_accusation": {
+      "en": "The wrong man was clapped in irons, and Surgeon Graves kept his hands clean for the remainder of the voyage. The bosun or the carpenter — it hardly mattered which innocent wore the chains. The false accounts stayed hidden beneath the surgery cabin floor, the coin pouch undiscovered, and the prize shares were divided with Graves receiving his and Cole's portion besides. The sea tells no tales.",
+      "es": "Al hombre equivocado le pusieron los grilletes, y el Cirujano Graves mantuvo sus manos limpias el resto del viaje. El contramaestre o el carpintero — poco importaba cual inocente llevara las cadenas. Las cuentas falsas permanecieron ocultas bajo el suelo de la cabina de cirugia, la bolsa de monedas sin descubrir, y las partes del botin se dividieron con Graves recibiendo la suya y la de Cole ademas. El mar no cuenta historias.",
+      "fr": "Le mauvais homme fut mis aux fers, et le Chirurgien Graves garda les mains propres pour le reste du voyage. Le maitre d'equipage ou le charpentier — peu importait quel innocent portait les chaines. Les faux comptes resterent caches sous le plancher de la cabine de chirurgie, la bourse non decouverte, et les parts de prise furent reparties avec Graves recevant la sienne et celle de Cole en plus. La mer ne raconte pas d'histoires."
+    },
+    "cold_case": {
+      "en": "The ship made port and the matter was handed to shore authorities who had no taste for naval disputes. The orlop hold was scrubbed, the prize chests counted and dispersed, and Quartermaster Cole's name was struck from the muster roll. The halyard was returned to the rigging, the false accounts never found, and the surgeon walked ashore with the rest of the crew. The black ledger sank with the ship's reputation.",
+      "es": "El barco llego a puerto y el asunto fue entregado a las autoridades de tierra, que no tenian apetito por disputas navales. La bodega fue fregada, los cofres de presas contados y dispersados, y el nombre del Contramaestre Cole fue tachado del registro de tripulacion. La driza fue devuelta a la jarcia, las cuentas falsas nunca encontradas, y el cirujano desembarco con el resto de la tripulacion. El libro negro se hundio con la reputacion del barco.",
+      "fr": "Le navire accosta et l'affaire fut confiee aux autorites a terre qui n'avaient aucun gout pour les differends navals. La cale fut recuree, les coffres de prises comptes et disperses, et le nom du Quartier-maitre Cole fut raye du role d'equipage. La drisse fut rendue au greement, les faux comptes jamais trouves, et le chirurgien debarqua avec le reste de l'equipage. Le registre noir sombra avec la reputation du navire."
+    },
+    "lucky_guess": {
+      "en": "The surgeon's name was spoken more from the crew's distrust of medical men than from any solid proof. A left-handed coil, an ink stain — circumstance, not evidence. But the captain needed a name before port, and Graves fit the shape of guilt well enough. The court martial was brief, the verdict contested, and the sea kept whatever certainty it had to itself.",
+      "es": "El nombre del cirujano fue pronunciado mas por la desconfianza de la tripulacion hacia los hombres de medicina que por alguna prueba solida. Un enrollado a izquierdas, una mancha de tinta — circunstancia, no evidencia. Pero el capitan necesitaba un nombre antes de llegar a puerto, y Graves encajaba en la forma de la culpa lo suficientemente bien. El consejo de guerra fue breve, el veredicto disputado, y el mar guardo para si cualquier certeza que tuviera.",
+      "fr": "Le nom du chirurgien fut prononce davantage par la mefiance de l'equipage envers les hommes de medecine que par une preuve solide. Un lovage a gauche, une tache d'encre — des circonstances, pas des preuves. Mais le capitaine avait besoin d'un nom avant le port, et Graves correspondait assez bien a la forme de la culpabilite. Le conseil de guerre fut bref, le verdict conteste, et la mer garda pour elle toute certitude qu'elle possedait."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:surgeon_graves",

@@ -16,6 +16,74 @@
     "event:stairwell_fall",
     "motive:stolen_composition"
   ],
+  "briefing": {
+    "en": {
+      "setting": "The Royal Conservatory occupies a stone building on a cobbled square, where the stairwell rises four floors around a central void and the overhead lamps go dark after nine. A prize-winning sonata is to be performed tonight, and the archive in the basement holds manuscripts that could rewrite its credits.",
+      "crime": "Professor Lang was found at the base of the main stairwell at dawn. The railing on the third-floor landing had broken at two bolt points, the stairs were slick with fresh polish, and his briefcase lay open with an exam report beside him.",
+      "suspects": [
+        {"id": "suspect:marta_solis", "name": "Marta Solis", "intro": "The prize-winning violinist who submitted the sonata under her own name, her bow hand steady and her wrist bearing a fresh rosin burn."},
+        {"id": "suspect:karl_brennan", "name": "Karl Brennan", "intro": "Waited in the recital hall after intermission, his scarf torn and snagged on the stair rail."},
+        {"id": "suspect:dr_irina_voss", "name": "Dr Irina Voss", "intro": "External examiner whose report on the submission was due the following morning."},
+        {"id": "suspect:felix_morel", "name": "Felix Morel", "intro": "Visited the archive six times in a month, claiming research on the Kovar sonata."},
+        {"id": "suspect:anna_czerny", "name": "Anna Czerny", "intro": "Delivered flowers to the recital hall and left through the loading dock, not seen again until morning."},
+        {"id": "suspect:director_pask", "name": "Director Pask", "intro": "Holds the master keycard and secured conservatory funding based on the prize winner's reputation."},
+        {"id": "suspect:jan_kovar", "name": "Jan Kovar", "intro": "Taught composition for thirty years and whose manuscript notebooks are stored under restricted access."}
+      ]
+    },
+    "es": {
+      "setting": "El Real Conservatorio ocupa un edificio de piedra en una plaza adoquinada, donde la escalera sube cuatro pisos alrededor de un vacio central y las lamparas superiores se apagan despues de las nueve. Una sonata ganadora de premio sera interpretada esta noche, y el archivo en el sotano guarda manuscritos que podrian reescribir sus creditos.",
+      "crime": "El Profesor Lang fue encontrado al pie de la escalera principal al amanecer. La barandilla del rellano del tercer piso se habia roto en dos puntos de anclaje, los escalones estaban resbaladizos con cera fresca, y su maletin yacia abierto con un informe de examen a su lado.",
+      "suspects": [
+        {"id": "suspect:marta_solis", "name": "Marta Solis", "intro": "La violinista ganadora del premio que presento la sonata bajo su propio nombre, su mano de arco firme y su muneca con una quemadura fresca de resina."},
+        {"id": "suspect:karl_brennan", "name": "Karl Brennan", "intro": "Espero en la sala de recitales despues del intermedio, su bufanda rasgada y enganchada en la barandilla."},
+        {"id": "suspect:dr_irina_voss", "name": "Dra. Irina Voss", "intro": "Examinadora externa cuyo informe sobre la presentacion debia entregarse a la manana siguiente."},
+        {"id": "suspect:felix_morel", "name": "Felix Morel", "intro": "Visito el archivo seis veces en un mes, alegando investigacion sobre la sonata de Kovar."},
+        {"id": "suspect:anna_czerny", "name": "Anna Czerny", "intro": "Entrego flores a la sala de recitales y salio por el muelle de carga, no vista de nuevo hasta la manana."},
+        {"id": "suspect:director_pask", "name": "Director Pask", "intro": "Posee la tarjeta maestra y aseguro la financiacion del conservatorio basandose en la reputacion de la ganadora del premio."},
+        {"id": "suspect:jan_kovar", "name": "Jan Kovar", "intro": "Enseno composicion durante treinta anos y cuyos cuadernos de manuscritos se guardan bajo acceso restringido."}
+      ]
+    },
+    "fr": {
+      "setting": "Le Conservatoire Royal occupe un batiment de pierre sur une place pavee, ou la cage d'escalier monte sur quatre etages autour d'un vide central et les lampes s'eteignent apres neuf heures. Une sonate primee doit etre jouee ce soir, et les archives au sous-sol conservent des manuscrits qui pourraient en reecrire les credits.",
+      "crime": "Le Professeur Lang a ete retrouve au pied de l'escalier principal a l'aube. La rampe du palier du troisieme etage s'etait brisee a deux points de fixation, les marches etaient glissantes de cire fraiche, et sa serviette etait ouverte avec un rapport d'examen a cote de lui.",
+      "suspects": [
+        {"id": "suspect:marta_solis", "name": "Marta Solis", "intro": "La violoniste primee qui a soumis la sonate sous son propre nom, sa main d'archet ferme et son poignet portant une brulure fraiche de colophane."},
+        {"id": "suspect:karl_brennan", "name": "Karl Brennan", "intro": "A attendu dans la salle de recital apres l'entracte, son echarpe dechiree et accrochee a la rampe d'escalier."},
+        {"id": "suspect:dr_irina_voss", "name": "Dr Irina Voss", "intro": "Examinatrice externe dont le rapport sur la soumission etait attendu le lendemain matin."},
+        {"id": "suspect:felix_morel", "name": "Felix Morel", "intro": "A visite les archives six fois en un mois, pretextant des recherches sur la sonate de Kovar."},
+        {"id": "suspect:anna_czerny", "name": "Anna Czerny", "intro": "A livre des fleurs a la salle de recital et est partie par le quai de chargement, non revue jusqu'au matin."},
+        {"id": "suspect:director_pask", "name": "Directeur Pask", "intro": "Detient le badge maitre et a obtenu le financement du conservatoire sur la reputation de la laureat du prix."},
+        {"id": "suspect:jan_kovar", "name": "Jan Kovar", "intro": "A enseigne la composition pendant trente ans et dont les cahiers de manuscrits sont conserves sous acces restreint."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Marta Solis had filed the railing bolts, polished the stairs, and waited for Professor Lang to confront her on the darkened landing. The prize sonata was Jan Kovar's work — the manuscript proved it, the ink analysis confirmed it, and Lang's exam report laid the plagiarism bare. She killed him to keep the prize, the recording contract, and the career she had built on a stolen composition. The rosin on the railing, the loosened bolts, the polished steps: every note of evidence played in tune.",
+      "es": "Marta Solis habia limado los pernos de la barandilla, encerado las escaleras, y esperado a que el Profesor Lang la confrontara en el rellano oscurecido. La sonata premiada era obra de Jan Kovar — el manuscrito lo probaba, el analisis de tinta lo confirmaba, y el informe del Profesor Lang dejaba el plagio al descubierto. Lo mato para conservar el premio, el contrato de grabacion y la carrera que habia construido sobre una composicion robada. La resina en la barandilla, los pernos aflojados, los escalones encerados: cada nota de evidencia sonaba afinada.",
+      "fr": "Marta Solis avait lime les boulons de la rampe, cire les marches et attendu que le Professeur Lang la confronte sur le palier assombri. La sonate primee etait l'oeuvre de Jan Kovar — le manuscrit le prouvait, l'analyse d'encre le confirmait, et le rapport d'examen de Lang mettait le plagiat a nu. Elle l'a tue pour garder le prix, le contrat d'enregistrement et la carriere qu'elle avait batie sur une composition volee. La colophane sur la rampe, les boulons desserres, les marches cirees : chaque note de preuve jouait juste."
+    },
+    "who_strong_rest_weak": {
+      "en": "Solis was the name on everyone's lips after the recital, but for the wrong reasons. The plagiarism was suspected, the confrontation overheard, and her rosin on the rail placed her at the scene. Yet the filed bolts could have been anyone's work, the polish anyone's hand, and the darkened corridor hid more than it revealed. She was charged on the strength of motive alone, and the conservatory's reputation cracked along with the case.",
+      "es": "Solis era el nombre en los labios de todos despues del recital, pero por las razones equivocadas. Se sospechaba el plagio, la confrontacion fue escuchada, y su resina en la barandilla la situaba en la escena. Sin embargo, los pernos limados podian haber sido obra de cualquiera, la cera de cualquier mano, y el corredor oscurecido ocultaba mas de lo que revelaba. Fue acusada por la fuerza del motivo solamente, y la reputacion del conservatorio se agrieto junto con el caso.",
+      "fr": "Solis etait le nom sur toutes les levres apres le recital, mais pour les mauvaises raisons. Le plagiat etait soupconne, la confrontation entendue, et sa colophane sur la rampe la placait sur les lieux. Pourtant, les boulons limes auraient pu etre l'oeuvre de n'importe qui, la cire de n'importe quelle main, et le couloir assombri cachait plus qu'il ne revelait. Elle fut inculpee sur la seule force du mobile, et la reputation du conservatoire s'est fissuree en meme temps que l'affaire."
+    },
+    "wrong_accusation": {
+      "en": "The wrong musician was named, and Marta Solis took her bow to a standing ovation the following season. The Kovar manuscript remained in the archive, the exam report was filed without action, and Professor Lang's death was recorded as an accidental fall on polished stairs. The prize sonata continued to be performed under her name, and the truth lay buried in a basement archive that no one had reason to visit again.",
+      "es": "Se nombro al musico equivocado, y Marta Solis hizo su reverencia ante una ovacion de pie la temporada siguiente. El manuscrito de Kovar permanecio en el archivo, el informe de examen fue archivado sin accion, y la muerte del Profesor Lang fue registrada como una caida accidental en escaleras enceradas. La sonata premiada continuo interpretandose bajo su nombre, y la verdad quedo enterrada en un archivo de sotano que nadie tenia razon para visitar de nuevo.",
+      "fr": "Le mauvais musicien a ete designe, et Marta Solis a salue sous les ovations debout la saison suivante. Le manuscrit de Kovar est reste aux archives, le rapport d'examen a ete classe sans suite, et la mort du Professeur Lang a ete enregistree comme une chute accidentelle dans un escalier cire. La sonate primee a continue d'etre jouee sous son nom, et la verite est restee ensevelie dans des archives de sous-sol que personne n'avait de raison de revisiter."
+    },
+    "cold_case": {
+      "en": "The stairwell was repaired, the railing re-bolted, and the conservatory resumed its season without Professor Lang. The exam report was never submitted, the manuscript comparison never completed, and the prize committee saw no reason to revisit a decision already celebrated. The cleaning woman who found the body remembered the slippery stairs and the broken rail, but no one asked her twice. The resonance of the truth faded into the stone walls and was heard by no one.",
+      "es": "La escalera fue reparada, la barandilla reatornillada, y el conservatorio reanudo su temporada sin el Profesor Lang. El informe de examen nunca fue presentado, la comparacion de manuscritos nunca completada, y el comite del premio no vio razon para reconsiderar una decision ya celebrada. La mujer de la limpieza que encontro el cuerpo recordaba las escaleras resbaladizas y la barandilla rota, pero nadie le pregunto dos veces. La resonancia de la verdad se desvanecio en los muros de piedra y no fue escuchada por nadie.",
+      "fr": "L'escalier a ete repare, la rampe reboulonnee, et le conservatoire a repris sa saison sans le Professeur Lang. Le rapport d'examen n'a jamais ete soumis, la comparaison des manuscrits jamais achevee, et le comite du prix n'a vu aucune raison de revenir sur une decision deja celebree. La femme de menage qui a trouve le corps se souvenait des marches glissantes et de la rampe cassee, mais personne ne l'a interrogee deux fois. La resonance de la verite s'est perdue dans les murs de pierre et n'a ete entendue par personne."
+    },
+    "lucky_guess": {
+      "en": "Solis was named because she had the most to lose and the rosin on her fingers matched the smear on the rail. It was circumstance more than proof, instinct more than investigation. The filed bolts were never traced to her hand, the polish never sourced, and the darkened corridor offered no witnesses. She was convicted on the shape of the story rather than its substance, and the conservatory closed the case the way it tunes a piano — by adjusting until it sounds right.",
+      "es": "Solis fue nombrada porque era quien mas tenia que perder y la resina en sus dedos coincidia con la marca en la barandilla. Era mas circunstancia que prueba, mas instinto que investigacion. Los pernos limados nunca fueron rastreados hasta su mano, la cera nunca fue identificada, y el corredor oscurecido no ofrecio testigos. Fue condenada por la forma de la historia mas que por su sustancia, y el conservatorio cerro el caso como afina un piano — ajustando hasta que suena bien.",
+      "fr": "Solis a ete designee parce qu'elle avait le plus a perdre et que la colophane sur ses doigts correspondait a la trace sur la rampe. C'etait de la circonstance plus que de la preuve, de l'instinct plus que de l'investigation. Les boulons limes n'ont jamais ete retracees a sa main, la cire jamais identifiee, et le couloir assombri n'offrait aucun temoin. Elle a ete condamnee sur la forme de l'histoire plutot que sur sa substance, et le conservatoire a clos l'affaire comme on accorde un piano — en ajustant jusqu'a ce que ca sonne juste."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:marta_solis",

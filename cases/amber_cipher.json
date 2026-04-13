@@ -16,6 +16,74 @@
     "event:window_between_trains",
     "motive:fraud_concealment"
   ],
+  "briefing": {
+    "en": {
+      "setting": "Thornfield Crossing is a two-platform junction station shrouded in November fog. The clock above the gate has stopped, the lamps burn low, and the thirty-two minutes between the last arrival and the first departure belong to no one.",
+      "crime": "Aldous Verne was found dead on platform two. His watch stopped at 11:16 and a cipher sheet lay pinned beneath his blotter.",
+      "suspects": [
+        {"id": "suspect:renard_voss", "name": "Renard Voss", "intro": "A man with a damp coat and tight handwriting in the station ledger, carrying a satchel marked with his initials."},
+        {"id": "suspect:estranged_daughter", "name": "The Estranged Daughter", "intro": "A young woman waiting on platform two with a small bouquet wrapped in railway paper."},
+        {"id": "suspect:stationmaster", "name": "The Stationmaster", "intro": "On duty for the 11pm watch, his brass watch chain tucked away and his name in the log."},
+        {"id": "suspect:night_porter", "name": "The Night Porter", "intro": "Carries a brass key ring with three keys missing and boots clean of coal dust."},
+        {"id": "suspect:platform_guard", "name": "The Platform Guard", "intro": "His lantern hook is empty and his gloves are dry despite the fog."},
+        {"id": "suspect:railway_clerk", "name": "The Railway Clerk", "intro": "Fresh ink on two fingers and cuffs neatly folded back at the station office."},
+        {"id": "suspect:travelling_broker", "name": "The Travelling Broker", "intro": "A man in a grey coat with an unused first-class ticket, waiting in the lounge."}
+      ]
+    },
+    "es": {
+      "setting": "Thornfield Crossing es una estacion de empalme de dos andenes envuelta en niebla de noviembre. El reloj sobre la puerta se ha detenido, las lamparas arden con poca luz, y los treinta y dos minutos entre la ultima llegada y la primera salida no pertenecen a nadie.",
+      "crime": "Aldous Verne fue encontrado muerto en el anden dos. Su reloj se detuvo a las 11:16 y una hoja cifrada yacia bajo su secante.",
+      "suspects": [
+        {"id": "suspect:renard_voss", "name": "Renard Voss", "intro": "Un hombre con abrigo humedo y escritura apretada en el registro de la estacion, con un maletin marcado con sus iniciales."},
+        {"id": "suspect:estranged_daughter", "name": "La Hija Distanciada", "intro": "Una joven esperando en el anden dos con un pequeno ramo envuelto en papel de ferrocarril."},
+        {"id": "suspect:stationmaster", "name": "El Jefe de Estacion", "intro": "De guardia en el turno de las 11pm, su cadena de reloj de laton guardada y su nombre en el registro."},
+        {"id": "suspect:night_porter", "name": "El Portero Nocturno", "intro": "Lleva un llavero de laton con tres llaves faltantes y botas limpias de polvo de carbon."},
+        {"id": "suspect:platform_guard", "name": "El Guardia de Anden", "intro": "Su gancho de linterna esta vacio y sus guantes secos a pesar de la niebla."},
+        {"id": "suspect:railway_clerk", "name": "El Empleado Ferroviario", "intro": "Tinta fresca en dos dedos y punos cuidadosamente doblados en la oficina de la estacion."},
+        {"id": "suspect:travelling_broker", "name": "El Corredor Viajero", "intro": "Un hombre con abrigo gris y un billete de primera clase sin usar, esperando en el salon."}
+      ]
+    },
+    "fr": {
+      "setting": "Thornfield Crossing est une gare de jonction a deux quais enveloppee dans le brouillard de novembre. L'horloge au-dessus du portail s'est arretee, les lampes brulent bas, et les trente-deux minutes entre la derniere arrivee et le premier depart n'appartiennent a personne.",
+      "crime": "Aldous Verne a ete retrouve mort sur le quai deux. Sa montre s'est arretee a 11h16 et une feuille chiffree etait epinglee sous son buvard.",
+      "suspects": [
+        {"id": "suspect:renard_voss", "name": "Renard Voss", "intro": "Un homme au manteau humide et a l'ecriture serree dans le registre de la gare, portant une sacoche marquee de ses initiales."},
+        {"id": "suspect:estranged_daughter", "name": "La Fille Eloignee", "intro": "Une jeune femme attendant sur le quai deux avec un petit bouquet enveloppe dans du papier de chemin de fer."},
+        {"id": "suspect:stationmaster", "name": "Le Chef de Gare", "intro": "De service pour le quart de 23h, sa chaine de montre en laiton rangee et son nom dans le registre."},
+        {"id": "suspect:night_porter", "name": "Le Porteur de Nuit", "intro": "Porte un trousseau de cles en laiton avec trois cles manquantes et des bottes propres de poussiere de charbon."},
+        {"id": "suspect:platform_guard", "name": "Le Garde de Quai", "intro": "Son crochet de lanterne est vide et ses gants sont secs malgre le brouillard."},
+        {"id": "suspect:railway_clerk", "name": "L'Employe de Chemin de Fer", "intro": "De l'encre fraiche sur deux doigts et des manchettes soigneusement repliees au bureau de la gare."},
+        {"id": "suspect:travelling_broker", "name": "Le Courtier Voyageur", "intro": "Un homme en manteau gris avec un billet de premiere classe inutilise, attendant dans le salon."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Renard Voss had thirty-two minutes between trains, and he used every one. The cipher sheet, the doctored ledger, the satchel swap — each piece locked into place like a signal lever thrown to danger. Verne had carried proof of the fraud in a sealed envelope, and Voss killed him for it on a fog-blind platform. The telegram confirmed everything. The case was closed before the morning departure.",
+      "es": "Renard Voss tuvo treinta y dos minutos entre trenes, y uso cada uno. La hoja cifrada, el libro de cuentas manipulado, el intercambio de maletines: cada pieza encajo como una palanca de senales puesta en peligro. Verne llevaba la prueba del fraude en un sobre sellado, y Voss lo mato por ello en un anden cegado por la niebla. El telegrama lo confirmo todo. El caso se cerro antes de la salida matutina.",
+      "fr": "Renard Voss a eu trente-deux minutes entre les trains, et il les a toutes utilisees. La feuille chiffree, le registre falsifie, l'echange de sacoches — chaque piece s'est emboitee comme un levier de signal mis au danger. Verne portait la preuve de la fraude dans une enveloppe scellee, et Voss l'a tue pour cela sur un quai aveugle par le brouillard. Le telegramme a tout confirme. L'affaire etait classee avant le depart du matin."
+    },
+    "who_strong_rest_weak": {
+      "en": "Voss was the man — everyone at the crossing knew it by morning. But the how and the why dissolved into fog like breath on a cold platform. The cipher sheet was never fully decoded, the ledger contradictions never resolved. He stood trial with his name on every lip and almost nothing in the evidence box. The conviction held, but only just.",
+      "es": "Voss era el hombre; todos en el cruce lo sabian por la manana. Pero el como y el por que se disolvieron en la niebla como el aliento en un anden frio. La hoja cifrada nunca fue completamente descifrada, las contradicciones del libro nunca se resolvieron. Fue a juicio con su nombre en todos los labios y casi nada en la caja de pruebas. La condena se sostuvo, pero apenas.",
+      "fr": "Voss etait l'homme — tout le monde au croisement le savait des le matin. Mais le comment et le pourquoi se sont dissous dans le brouillard comme un souffle sur un quai froid. La feuille chiffree n'a jamais ete entierement decodee, les contradictions du registre jamais resolues. Il a comparu avec son nom sur toutes les levres et presque rien dans la boite a preuves. La condamnation a tenu, mais de justesse."
+    },
+    "wrong_accusation": {
+      "en": "The wrong name was spoken, and the real killer boarded the first morning train without a backward glance. Renard Voss watched the platform recede from a first-class window while an innocent man answered questions in the station office. The cipher sheet remained unread, the fraud unchallenged, and Aldous Verne's death became a footnote in a railway logbook.",
+      "es": "Se pronuncio el nombre equivocado, y el verdadero asesino abordo el primer tren de la manana sin mirar atras. Renard Voss observo como el anden se alejaba desde una ventana de primera clase mientras un hombre inocente respondia preguntas en la oficina de la estacion. La hoja cifrada quedo sin leer, el fraude sin cuestionar, y la muerte de Aldous Verne se convirtio en una nota al pie en un libro de registro ferroviario.",
+      "fr": "Le mauvais nom a ete prononce, et le veritable tueur a pris le premier train du matin sans un regard en arriere. Renard Voss a regarde le quai s'eloigner depuis une fenetre de premiere classe tandis qu'un innocent repondait aux questions dans le bureau de la gare. La feuille chiffree est restee non lue, la fraude incontestee, et la mort d'Aldous Verne est devenue une note de bas de page dans un registre ferroviaire."
+    },
+    "cold_case": {
+      "en": "The fog never lifted on the Verne case. The platform was swept, the schedule resumed, and the thirty-two-minute window closed as if nothing had passed through it. The cipher sheet was filed, the ledger shelved, and Thornfield Crossing returned to its routine of arrivals and departures. No one asked about the man on platform two again.",
+      "es": "La niebla nunca se levanto sobre el caso Verne. El anden fue barrido, el horario se reanudo, y la ventana de treinta y dos minutos se cerro como si nada hubiera pasado por ella. La hoja cifrada fue archivada, el libro guardado en un estante, y Thornfield Crossing volvio a su rutina de llegadas y salidas. Nadie volvio a preguntar por el hombre del anden dos.",
+      "fr": "Le brouillard ne s'est jamais leve sur l'affaire Verne. Le quai a ete balaye, l'horaire a repris, et la fenetre de trente-deux minutes s'est refermee comme si rien ne l'avait traversee. La feuille chiffree a ete classee, le registre range, et Thornfield Crossing est retourne a sa routine d'arrivees et de departs. Personne n'a plus demande apres l'homme du quai deux."
+    },
+    "lucky_guess": {
+      "en": "Voss was named almost on instinct — a damp coat, a monogrammed satchel, a signature that came too late. It was barely enough to hold him, let alone convict. The inspector had guessed right but could not explain how. The fog had given him the answer and swallowed the proof.",
+      "es": "Voss fue nombrado casi por instinto: un abrigo humedo, un maletin con monograma, una firma que llego demasiado tarde. Apenas era suficiente para retenerlo, mucho menos para condenarlo. El inspector habia adivinado bien pero no podia explicar como. La niebla le habia dado la respuesta y se habia tragado las pruebas.",
+      "fr": "Voss a ete designe presque par instinct — un manteau humide, une sacoche monogrammee, une signature arrivee trop tard. C'etait a peine suffisant pour le retenir, encore moins pour le condamner. L'inspecteur avait devine juste mais ne pouvait expliquer comment. Le brouillard lui avait donne la reponse et avale les preuves."
+    }
+  },
   "tokens": [
     {
       "id": "motive:sealed_proof",

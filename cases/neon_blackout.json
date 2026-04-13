@@ -16,6 +16,74 @@
     "event:memory_wipe_exploit",
     "motive:surveillance_backdoor"
   ],
+  "briefing": {
+    "en": {
+      "setting": "The server farm occupies four sublevels beneath a transit hub, where cooling fans run constantly and the air tastes of ozone. Above, the neon market flickers under ventilation gaps. Below, data vaults and neural labs hum behind biometric locks, and a scheduled grid reset at 02:00 plunges everything into twelve minutes of darkness.",
+      "crime": "Yuki Tanaka, a neural calibration technician, was found at her station on sublevel two. Her neural port was open, her implant partially wiped, and forty-eight hours of her memory had been erased by a targeted exploit.",
+      "suspects": [
+        {"id": "suspect:kessler_vane", "name": "Kessler Vane", "intro": "A developer whose neural log shows a three-hour gap and whose compiler signature appears on the exploit code."},
+        {"id": "suspect:rina_cade", "name": "Rina Cade", "intro": "Runs the neural calibration lab with access to every implant in the district, her visor cracked across the left lens."},
+        {"id": "suspect:marshal_cross", "name": "Marshal Cross", "intro": "Maintains cooling systems with a master access badge, his shift log showing a fourteen-minute gap."},
+        {"id": "suspect:juno_park", "name": "Juno Park", "intro": "Data recovery specialist who visited the vault six times that month, claiming standard integrity checks."},
+        {"id": "suspect:dex_millard", "name": "Dex Millard", "intro": "Black-market firmware dealer whose visor was found on the transit corridor floor after the blackout."},
+        {"id": "suspect:overseer_lang", "name": "Overseer Lang", "intro": "Controls power grid allocation for the district, his authorization required for any planned outage."},
+        {"id": "suspect:ada_strand", "name": "Ada Strand", "intro": "Contract analyst with surveillance feed clearance, carrying an encrypted personal chip containing suspicious metadata."}
+      ]
+    },
+    "es": {
+      "setting": "La granja de servidores ocupa cuatro subniveles bajo un nodo de transito, donde los ventiladores de refrigeracion funcionan constantemente y el aire sabe a ozono. Arriba, el mercado de neon parpadea bajo los huecos de ventilacion. Abajo, bovedas de datos y laboratorios neuronales zumban detras de cerraduras biometricas, y un reinicio programado de la red a las 02:00 sumerge todo en doce minutos de oscuridad.",
+      "crime": "Yuki Tanaka, tecnica de calibracion neuronal, fue encontrada en su estacion en el subnivel dos. Su puerto neuronal estaba abierto, su implante parcialmente borrado, y cuarenta y ocho horas de su memoria habian sido eliminadas por un exploit dirigido.",
+      "suspects": [
+        {"id": "suspect:kessler_vane", "name": "Kessler Vane", "intro": "Un desarrollador cuyo registro neuronal muestra un vacio de tres horas y cuya firma de compilador aparece en el codigo del exploit."},
+        {"id": "suspect:rina_cade", "name": "Rina Cade", "intro": "Dirige el laboratorio de calibracion neuronal con acceso a cada implante del distrito, su visor agrietado en la lente izquierda."},
+        {"id": "suspect:marshal_cross", "name": "Marshal Cross", "intro": "Mantiene los sistemas de refrigeracion con una credencial de acceso maestro, su registro de turno mostrando un vacio de catorce minutos."},
+        {"id": "suspect:juno_park", "name": "Juno Park", "intro": "Especialista en recuperacion de datos que visito la boveda seis veces ese mes, alegando verificaciones de integridad estandar."},
+        {"id": "suspect:dex_millard", "name": "Dex Millard", "intro": "Traficante de firmware del mercado negro cuyo visor fue encontrado en el suelo del corredor de transito tras el apagon."},
+        {"id": "suspect:overseer_lang", "name": "Supervisor Lang", "intro": "Controla la asignacion de la red electrica del distrito, su autorizacion requerida para cualquier corte planificado."},
+        {"id": "suspect:ada_strand", "name": "Ada Strand", "intro": "Analista contratada con autorizacion para feeds de vigilancia, portando un chip personal encriptado con metadatos sospechosos."}
+      ]
+    },
+    "fr": {
+      "setting": "La ferme de serveurs occupe quatre sous-niveaux sous un hub de transit, ou les ventilateurs de refroidissement tournent en permanence et l'air a un gout d'ozone. Au-dessus, le marche neon scintille sous les bouches d'aeration. En dessous, des coffres de donnees et des laboratoires neuronaux bourdonnent derriere des verrous biometriques, et une reinitialisation programmee du reseau a 02h00 plonge tout dans douze minutes d'obscurite.",
+      "crime": "Yuki Tanaka, technicienne de calibration neuronale, a ete retrouvee a son poste au sous-niveau deux. Son port neural etait ouvert, son implant partiellement efface, et quarante-huit heures de sa memoire avaient ete supprimees par un exploit cible.",
+      "suspects": [
+        {"id": "suspect:kessler_vane", "name": "Kessler Vane", "intro": "Un developpeur dont le journal neural montre un trou de trois heures et dont la signature de compilateur apparait sur le code de l'exploit."},
+        {"id": "suspect:rina_cade", "name": "Rina Cade", "intro": "Dirige le laboratoire de calibration neuronale avec acces a chaque implant du district, son viseur fissure sur la lentille gauche."},
+        {"id": "suspect:marshal_cross", "name": "Marshal Cross", "intro": "Maintient les systemes de refroidissement avec un badge d'acces maitre, son journal de service montrant un trou de quatorze minutes."},
+        {"id": "suspect:juno_park", "name": "Juno Park", "intro": "Specialiste en recuperation de donnees ayant visite le coffre six fois ce mois-ci, pretextant des verifications d'integrite standard."},
+        {"id": "suspect:dex_millard", "name": "Dex Millard", "intro": "Revendeur de firmware au marche noir dont le viseur a ete trouve sur le sol du couloir de transit apres la panne."},
+        {"id": "suspect:overseer_lang", "name": "Superviseur Lang", "intro": "Controle l'allocation du reseau electrique du district, son autorisation requise pour toute coupure planifiee."},
+        {"id": "suspect:ada_strand", "name": "Ada Strand", "intro": "Analyste contractuelle avec autorisation d'acces aux flux de surveillance, portant une puce personnelle chiffree contenant des metadonnees suspectes."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Kessler Vane had built the backdoor, brokered the contract, and killed the one person whose audit would have exposed everything. The compiler signature on the exploit was his, the private node behind the cooling bay panel connected to his uplink, and the power spike at 02:14 matched the forced neural purge to the millisecond. Tanaka had found the surveillance routing and flagged it for review. Vane erased her memory and her life in the same twelve-minute window. The neon market buzzed on above, oblivious. Below, the data told everything.",
+      "es": "Kessler Vane habia construido la puerta trasera, negociado el contrato y matado a la unica persona cuya auditoria habria expuesto todo. La firma del compilador en el exploit era suya, el nodo privado detras del panel de la bahia de refrigeracion se conectaba a su enlace ascendente, y el pico de potencia a las 02:14 coincidia con la purga neuronal forzada al milisegundo. Tanaka habia encontrado el enrutamiento de vigilancia y lo habia marcado para revision. Vane borro su memoria y su vida en la misma ventana de doce minutos. El mercado de neon zumbaba arriba, ajeno. Abajo, los datos lo contaban todo.",
+      "fr": "Kessler Vane avait construit la porte derobee, negocie le contrat et tue la seule personne dont l'audit aurait tout revele. La signature du compilateur sur l'exploit etait la sienne, le noeud prive derriere le panneau de la baie de refroidissement se connectait a sa liaison montante, et le pic de puissance a 02h14 correspondait a la purge neuronale forcee a la milliseconde pres. Tanaka avait decouvert le routage de surveillance et l'avait signale pour examen. Vane a efface sa memoire et sa vie dans la meme fenetre de douze minutes. Le marche neon bourdonnait au-dessus, inconscient. En dessous, les donnees disaient tout."
+    },
+    "who_strong_rest_weak": {
+      "en": "Vane's name surfaced from the access logs and the compiler signature, but the digital trail was as fragmented as Tanaka's wiped memory. The exploit code pointed one way, the encrypted communications another, and the surveillance feed loop covered the crucial minutes in recycled footage. He was flagged, detained, and charged on the weight of his name in the system. The conviction relied on metadata where it needed machine-readable proof.",
+      "es": "El nombre de Vane surgio de los registros de acceso y la firma del compilador, pero el rastro digital estaba tan fragmentado como la memoria borrada de Tanaka. El codigo del exploit senalaba en una direccion, las comunicaciones encriptadas en otra, y el bucle del feed de vigilancia cubria los minutos cruciales con metraje reciclado. Fue senalado, detenido y acusado por el peso de su nombre en el sistema. La condena se apoyo en metadatos donde necesitaba pruebas legibles por maquina.",
+      "fr": "Le nom de Vane est apparu des journaux d'acces et de la signature du compilateur, mais la piste numerique etait aussi fragmentee que la memoire effacee de Tanaka. Le code de l'exploit pointait dans une direction, les communications chiffrees dans une autre, et la boucle du flux de surveillance couvrait les minutes cruciales avec des images recyclees. Il a ete signale, detenu et inculpe sur le poids de son nom dans le systeme. La condamnation reposait sur des metadonnees la ou il fallait des preuves lisibles par machine."
+    },
+    "wrong_accusation": {
+      "en": "The encrypted chip planted in Ada Strand's storage did its job perfectly. She was detained, her clearance revoked, and Kessler Vane continued his contract with the private buyer without interruption. The surveillance backdoor remained active, the data flowed, and Yuki Tanaka's wiped memory became just another maintenance anomaly in a system that generated thousands. The neon market flickered on, and the real killer walked its corridors in plain sight.",
+      "es": "El chip encriptado plantado en el almacenamiento de Ada Strand cumplio su funcion perfectamente. Fue detenida, su autorizacion revocada, y Kessler Vane continuo su contrato con el comprador privado sin interrupcion. La puerta trasera de vigilancia permanecio activa, los datos fluyeron, y la memoria borrada de Yuki Tanaka se convirtio en otra anomalia de mantenimiento en un sistema que generaba miles. El mercado de neon siguio parpadeando, y el verdadero asesino caminaba por sus corredores a plena vista.",
+      "fr": "La puce chiffree plantee dans le stockage d'Ada Strand a parfaitement rempli son role. Elle a ete detenue, son habilitation revoquee, et Kessler Vane a poursuivi son contrat avec l'acheteur prive sans interruption. La porte derobee de surveillance est restee active, les donnees ont continue de circuler, et la memoire effacee de Yuki Tanaka est devenue juste une autre anomalie de maintenance dans un systeme qui en generait des milliers. Le marche neon a continue de scintiller, et le veritable tueur arpentait ses couloirs en pleine lumiere."
+    },
+    "cold_case": {
+      "en": "The security audit was postponed, then cancelled, then forgotten. The access logs were overwritten in the next maintenance cycle, the private node was dismantled before anyone checked behind the panel, and Yuki Tanaka's neural implant was catalogued and shelved in an evidence locker that lost power twice a year. The server farm hummed on, the blackout window came and went every seventy-two hours, and the surveillance data continued to flow through channels that no one was watching anymore.",
+      "es": "La auditoria de seguridad fue pospuesta, luego cancelada, luego olvidada. Los registros de acceso fueron sobrescritos en el siguiente ciclo de mantenimiento, el nodo privado fue desmantelado antes de que nadie revisara detras del panel, y el implante neuronal de Yuki Tanaka fue catalogado y guardado en un deposito de pruebas que perdia energia dos veces al ano. La granja de servidores siguio zumbando, la ventana de apagon iba y venia cada setenta y dos horas, y los datos de vigilancia continuaron fluyendo por canales que ya nadie vigilaba.",
+      "fr": "L'audit de securite a ete reporte, puis annule, puis oublie. Les journaux d'acces ont ete ecrases lors du prochain cycle de maintenance, le noeud prive a ete demonte avant que quiconque ne verifie derriere le panneau, et l'implant neural de Yuki Tanaka a ete catalogue et range dans un casier a preuves qui perdait l'alimentation deux fois par an. La ferme de serveurs a continue de bourdonner, la fenetre de panne allait et venait toutes les soixante-douze heures, et les donnees de surveillance ont continue de circuler par des canaux que plus personne ne surveillait."
+    },
+    "lucky_guess": {
+      "en": "Vane's name was flagged by an algorithm, not an investigator. The compiler signature matched, the timing aligned, but the chain of evidence was held together by correlation rather than causation. He was arrested on probability, convicted on pattern recognition, and the question of whether justice or statistics carried the day was one that the system preferred not to answer.",
+      "es": "El nombre de Vane fue senalado por un algoritmo, no por un investigador. La firma del compilador coincidia, el momento se alineaba, pero la cadena de pruebas se sostenia por correlacion mas que por causalidad. Fue arrestado por probabilidad, condenado por reconocimiento de patrones, y la cuestion de si la justicia o las estadisticas ganaron el dia fue una que el sistema prefirio no responder.",
+      "fr": "Le nom de Vane a ete signale par un algorithme, pas par un enqueteur. La signature du compilateur correspondait, le timing s'alignait, mais la chaine de preuves tenait par correlation plutot que par causalite. Il a ete arrete sur probabilite, condamne par reconnaissance de motifs, et la question de savoir si c'est la justice ou les statistiques qui l'ont emporte est une question que le systeme a prefere ne pas trancher."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:kessler_vane",

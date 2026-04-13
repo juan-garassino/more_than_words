@@ -16,6 +16,74 @@
     "event:poisoned_bourbon",
     "motive:forged_land_claim"
   ],
+  "briefing": {
+    "en": {
+      "setting": "Silver Creek is a dusty crossroads town where the saloon faces west and the wind blows grit under every door. A land dispute has divided the settlement for months, and the judge who rode in to settle it sleeps in a room above the bar. The dust storm that rolled through at sundown made ghosts of everyone on Main Street.",
+      "crime": "Judge Harlan was found dead in his chair with a bourbon glass beside him. The room smelled of spirits, the window was shut, and the ruling he was to deliver in the morning would never be read.",
+      "suspects": [
+        {"id": "suspect:cole_bridger", "name": "Cole Bridger", "intro": "A rancher whose land claim depends on a survey map that does not match the original."},
+        {"id": "suspect:clara_moss", "name": "Clara Moss", "intro": "Runs the boarding house above the saloon and was the last person seen entering the judge's quarters."},
+        {"id": "suspect:deputy_vickers", "name": "Deputy Vickers", "intro": "Patrolled Main Street that evening, his boot prints crossing the back alley twice."},
+        {"id": "suspect:reverend_pike", "name": "Reverend Pike", "intro": "Disputed the Bridger claim on behalf of the church and visited the judge that afternoon."},
+        {"id": "suspect:jack_tull", "name": "Jack Tull", "intro": "A rancher who rode in at dusk and lost thirty head when the Bridger fence cut off his creek access."},
+        {"id": "suspect:maude_bridger", "name": "Maude Bridger", "intro": "Kept the ranch accounts, signed the claim papers, and had not spoken to the judge since the hearing."},
+        {"id": "suspect:doc_calloway", "name": "Doc Calloway", "intro": "Examined the body and noted the time, his medical bag containing a labelled vial of strychnine."}
+      ]
+    },
+    "es": {
+      "setting": "Silver Creek es un polvoriento pueblo de encrucijada donde el salon mira al oeste y el viento mete arena bajo cada puerta. Una disputa de tierras ha dividido al asentamiento durante meses, y el juez que llego para resolverla duerme en una habitacion sobre el bar. La tormenta de polvo que arraso al atardecer convirtio en fantasmas a todos en la calle principal.",
+      "crime": "El Juez Harlan fue encontrado muerto en su silla con un vaso de bourbon a su lado. La habitacion olia a licor, la ventana estaba cerrada, y el fallo que debia dictar por la manana nunca seria leido.",
+      "suspects": [
+        {"id": "suspect:cole_bridger", "name": "Cole Bridger", "intro": "Un ranchero cuya reclamacion de tierras depende de un mapa que no coincide con el original."},
+        {"id": "suspect:clara_moss", "name": "Clara Moss", "intro": "Dirige la pension sobre el salon y fue la ultima persona vista entrando en los aposentos del juez."},
+        {"id": "suspect:deputy_vickers", "name": "Alguacil Vickers", "intro": "Patrullaba la calle principal esa noche, sus huellas cruzando el callejon trasero dos veces."},
+        {"id": "suspect:reverend_pike", "name": "Reverendo Pike", "intro": "Disputaba la reclamacion Bridger en nombre de la iglesia y visito al juez esa tarde."},
+        {"id": "suspect:jack_tull", "name": "Jack Tull", "intro": "Un ranchero que llego al atardecer y perdio treinta cabezas cuando la cerca Bridger corto su acceso al arroyo."},
+        {"id": "suspect:maude_bridger", "name": "Maude Bridger", "intro": "Llevaba las cuentas del rancho, firmo los papeles de la reclamacion, y no habia hablado con el juez desde la audiencia."},
+        {"id": "suspect:doc_calloway", "name": "Doc Calloway", "intro": "Examino el cuerpo y anoto la hora, su maletin medico conteniendo un vial etiquetado de estricnina."}
+      ]
+    },
+    "fr": {
+      "setting": "Silver Creek est un bourg poussiereux a la croisee des chemins ou le saloon fait face a l'ouest et le vent pousse du sable sous chaque porte. Un litige foncier divise la bourgade depuis des mois, et le juge venu pour le trancher dort dans une chambre au-dessus du bar. La tempete de poussiere qui s'est levee au crepuscule a fait des fantomes de tous ceux dans la rue principale.",
+      "crime": "Le Juge Harlan a ete trouve mort dans son fauteuil, un verre de bourbon a cote de lui. La chambre sentait l'alcool, la fenetre etait fermee, et le verdict qu'il devait rendre le matin ne serait jamais lu.",
+      "suspects": [
+        {"id": "suspect:cole_bridger", "name": "Cole Bridger", "intro": "Un eleveur dont la revendication fonciere depend d'un plan cadastral qui ne correspond pas a l'original."},
+        {"id": "suspect:clara_moss", "name": "Clara Moss", "intro": "Tient la pension au-dessus du saloon et fut la derniere personne vue entrant dans les quartiers du juge."},
+        {"id": "suspect:deputy_vickers", "name": "Adjoint Vickers", "intro": "Patrouillait la rue principale ce soir-la, ses empreintes de bottes traversant la ruelle arriere deux fois."},
+        {"id": "suspect:reverend_pike", "name": "Reverend Pike", "intro": "Contestait la revendication Bridger au nom de l'eglise et a rendu visite au juge cet apres-midi."},
+        {"id": "suspect:jack_tull", "name": "Jack Tull", "intro": "Un eleveur arrive au crepuscule qui a perdu trente tetes quand la cloture Bridger a coupe son acces au ruisseau."},
+        {"id": "suspect:maude_bridger", "name": "Maude Bridger", "intro": "Tenait les comptes du ranch, a signe les papiers de la revendication, et n'avait pas parle au juge depuis l'audience."},
+        {"id": "suspect:doc_calloway", "name": "Doc Calloway", "intro": "A examine le corps et note l'heure, sa sacoche medicale contenant un flacon etiquete de strychnine."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Cole Bridger had poured the strychnine into the bourbon himself, on a night when the dust storm made him invisible. The forged survey, the wrong ink at the land office, the telegram confirming the original boundary — every trail led back to a rancher who would lose everything if the judge ruled at nine. The vial in the alley, the boot prints in the mud, the horse saddled after dark: the frontier delivered its own verdict before the court had its chance.",
+      "es": "Cole Bridger habia vertido la estricnina en el bourbon el mismo, en una noche en que la tormenta de polvo lo hizo invisible. El plano falsificado, la tinta equivocada en la oficina de tierras, el telegrama confirmando el lindero original — cada rastro conducia a un ranchero que lo perderia todo si el juez dictaba sentencia a las nueve. El vial en el callejon, las huellas en el barro, el caballo ensillado en la oscuridad: la frontera dicto su propio veredicto antes de que el tribunal tuviera su oportunidad.",
+      "fr": "Cole Bridger avait verse la strychnine dans le bourbon lui-meme, par une nuit ou la tempete de poussiere le rendait invisible. Le plan falsifie, la mauvaise encre au bureau des terres, le telegramme confirmant la limite originale — chaque piste ramenait a un eleveur qui perdrait tout si le juge statuait a neuf heures. Le flacon dans la ruelle, les empreintes dans la boue, le cheval selle apres la tombee de la nuit : la frontiere a rendu son propre verdict avant que le tribunal n'ait sa chance."
+    },
+    "who_strong_rest_weak": {
+      "en": "Everyone in Silver Creek knew Bridger had the most to lose, and the dust storm gave him the cover to do it. But the bourbon bottle told no clear story, the vial could have been anyone's, and the forged survey was never fully proven in open court. Bridger was arrested on the strength of his motive alone. The town called it justice; the law called it thin.",
+      "es": "Todos en Silver Creek sabian que Bridger era quien mas tenia que perder, y la tormenta de polvo le dio la cobertura para hacerlo. Pero la botella de bourbon no contaba una historia clara, el vial podia haber sido de cualquiera, y el plano falsificado nunca fue completamente probado en juicio abierto. Bridger fue arrestado por la fuerza de su motivo solamente. El pueblo lo llamo justicia; la ley lo llamo debil.",
+      "fr": "Tout le monde a Silver Creek savait que Bridger avait le plus a perdre, et la tempete de poussiere lui a donne la couverture pour agir. Mais la bouteille de bourbon ne racontait aucune histoire claire, le flacon aurait pu etre a n'importe qui, et le plan falsifie n'a jamais ete pleinement prouve en audience publique. Bridger fut arrete sur la seule force de son mobile. La ville appela cela justice ; la loi appela cela mince."
+    },
+    "wrong_accusation": {
+      "en": "The wrong man swung for it, and Cole Bridger tipped his hat to the marshal on his way out of town. The forged claim stood, the ranch kept its stolen acres, and the judge's notebook pages stayed torn from the spine. Silver Creek moved on — it always does — and the dust covered the tracks of the man who should have hanged.",
+      "es": "El hombre equivocado pago por ello, y Cole Bridger se toco el sombrero ante el alguacil al salir del pueblo. La reclamacion falsificada se mantuvo, el rancho conservo sus acres robados, y las paginas del cuaderno del juez siguieron arrancadas del lomo. Silver Creek siguio adelante — siempre lo hace — y el polvo cubrio las huellas del hombre que debio haber colgado.",
+      "fr": "Le mauvais homme a paye pour cela, et Cole Bridger a salue le marshal de son chapeau en quittant la ville. La revendication falsifiee a tenu, le ranch a garde ses acres voles, et les pages du carnet du juge sont restees arrachees de la reliure. Silver Creek est passe a autre chose — comme toujours — et la poussiere a couvert les traces de l'homme qui aurait du etre pendu."
+    },
+    "cold_case": {
+      "en": "The dust settled on Judge Harlan's grave and on the file that bore his name. The land claim was never resolved, the bourbon bottle was emptied and shelved, and the stagecoach brought a new judge who chose not to reopen the matter. Silver Creek dried up a little more each year, and the truth dried with it, cracking like mud in the sun.",
+      "es": "El polvo se asento sobre la tumba del Juez Harlan y sobre el expediente que llevaba su nombre. La reclamacion de tierras nunca se resolvio, la botella de bourbon fue vaciada y archivada, y la diligencia trajo un nuevo juez que eligio no reabrir el asunto. Silver Creek se seco un poco mas cada ano, y la verdad se seco con el, agrietandose como barro al sol.",
+      "fr": "La poussiere s'est deposee sur la tombe du Juge Harlan et sur le dossier qui portait son nom. La revendication fonciere n'a jamais ete resolue, la bouteille de bourbon a ete videe et rangee, et la diligence a amene un nouveau juge qui a choisi de ne pas rouvrir l'affaire. Silver Creek s'est asseche un peu plus chaque annee, et la verite s'est assechee avec lui, se fissurant comme de la boue au soleil."
+    },
+    "lucky_guess": {
+      "en": "Bridger's name came up because his horse was tied outside the saloon at sundown and gone by morning. It was barely enough, but in a frontier town, barely enough will do. The trial was swift, the evidence circumstantial, and the verdict carried the weight of public opinion more than legal proof. The dust storm had hidden everything, and the guess that named Bridger was as good as anyone's.",
+      "es": "El nombre de Bridger surgio porque su caballo estaba atado frente al salon al atardecer y habia desaparecido por la manana. Apenas era suficiente, pero en un pueblo fronterizo, apenas suficiente basta. El juicio fue rapido, la evidencia circunstancial, y el veredicto llevo el peso de la opinion publica mas que de la prueba legal. La tormenta de polvo habia ocultado todo, y la suposicion que nombro a Bridger era tan buena como la de cualquiera.",
+      "fr": "Le nom de Bridger est apparu parce que son cheval etait attache devant le saloon au crepuscule et avait disparu au matin. C'etait a peine suffisant, mais dans une ville de frontiere, a peine suffisant fait l'affaire. Le proces fut rapide, les preuves circonstancielles, et le verdict portait le poids de l'opinion publique plus que de la preuve legale. La tempete de poussiere avait tout cache, et la supposition qui designa Bridger valait celle de n'importe qui."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:cole_bridger",

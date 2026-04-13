@@ -16,6 +16,74 @@
     "event:canal_path",
     "motive:safety_falsification"
   ],
+  "briefing": {
+    "en": {
+      "setting": "Oake Chemical Works sits in a brick compound beside the canal, its chimney releasing pale yellow smoke that drifts over the towpath. The mixing shed ventilation has not worked since March, and a thin yellow film covers everything in the workers' yard. An independent safety inspection was due on Monday.",
+      "crime": "Frank Buckley, an independent safety inspector, was found in the canal below the works at dawn. His inspection case lay on the towpath beside his visitor badge, and a canal hook nearby matched the wound pattern.",
+      "suspects": [
+        {"id": "suspect:silas_oake", "name": "Silas Oake", "intro": "Owner of the chemical works, whose scrubbed hands still carry a sulphur stain under the left thumbnail."},
+        {"id": "suspect:mary_dunlop", "name": "Mary Dunlop", "intro": "Mixing line worker who complained about fumes twice and whose pay was docked the week before."},
+        {"id": "suspect:foreman_craggs", "name": "Foreman Craggs", "intro": "Signed the daily safety log, his signature appearing on entries he claims not to have seen."},
+        {"id": "suspect:dr_poole", "name": "Dr Poole", "intro": "Conducted annual health checks but omitted symptoms of chronic sulphur exposure from his reports."},
+        {"id": "suspect:ned_buckley", "name": "Ned Buckley", "intro": "The inspector's younger brother, employed at the loading wharf, who collected his pay that evening."},
+        {"id": "suspect:mrs_oake", "name": "Mrs Oake", "intro": "Manages the works accounts and personally signed the denials on three workers' compensation claims."},
+        {"id": "suspect:alderman_hicks", "name": "Alderman Hicks", "intro": "Licensing committee member who deferred the works inspection twice, his campaign funded by the Oake family."}
+      ]
+    },
+    "es": {
+      "setting": "La Fabrica Quimica Oake ocupa un recinto de ladrillo junto al canal, su chimenea liberando un humo amarillo palido que se desplaza sobre el camino de sirga. La ventilacion del cobertizo de mezclas no funciona desde marzo, y una fina pelicula amarilla cubre todo en el patio de los trabajadores. Una inspeccion de seguridad independiente estaba prevista para el lunes.",
+      "crime": "Frank Buckley, un inspector de seguridad independiente, fue encontrado en el canal debajo de la fabrica al amanecer. Su maletin de inspeccion yacia en el camino de sirga junto a su credencial de visitante, y un gancho de canal cercano coincidia con el patron de la herida.",
+      "suspects": [
+        {"id": "suspect:silas_oake", "name": "Silas Oake", "intro": "Propietario de la fabrica quimica, cuyas manos restregadas aun llevan una mancha de azufre bajo la una del pulgar izquierdo."},
+        {"id": "suspect:mary_dunlop", "name": "Mary Dunlop", "intro": "Trabajadora de la linea de mezcla que se quejo de los gases dos veces y cuyo salario fue recortado la semana anterior."},
+        {"id": "suspect:foreman_craggs", "name": "Capataz Craggs", "intro": "Firmo el registro diario de seguridad, su firma apareciendo en entradas que afirma no haber visto."},
+        {"id": "suspect:dr_poole", "name": "Dr Poole", "intro": "Realizo chequeos anuales de salud pero omitio sintomas de exposicion cronica al azufre en sus informes."},
+        {"id": "suspect:ned_buckley", "name": "Ned Buckley", "intro": "El hermano menor del inspector, empleado en el muelle de carga, que cobro su salario esa noche."},
+        {"id": "suspect:mrs_oake", "name": "Sra. Oake", "intro": "Gestiona las cuentas de la fabrica y firmo personalmente las denegaciones de tres reclamaciones de compensacion."},
+        {"id": "suspect:alderman_hicks", "name": "Concejal Hicks", "intro": "Miembro del comite de licencias que aplaz la inspeccion dos veces, su campana financiada por la familia Oake."}
+      ]
+    },
+    "fr": {
+      "setting": "L'Usine Chimique Oake occupe un enclos de briques au bord du canal, sa cheminee liberant une fumee jaune pale qui derive sur le chemin de halage. La ventilation de l'atelier de melange ne fonctionne plus depuis mars, et un fin film jaune recouvre tout dans la cour des ouvriers. Une inspection de securite independante etait prevue pour lundi.",
+      "crime": "Frank Buckley, un inspecteur de securite independant, a ete retrouve dans le canal en contrebas de l'usine a l'aube. Sa mallette d'inspection reposait sur le chemin de halage a cote de son badge de visiteur, et un croc de canal a proximite correspondait au schema de la blessure.",
+      "suspects": [
+        {"id": "suspect:silas_oake", "name": "Silas Oake", "intro": "Proprietaire de l'usine chimique, dont les mains lavees portent encore une tache de soufre sous l'ongle du pouce gauche."},
+        {"id": "suspect:mary_dunlop", "name": "Mary Dunlop", "intro": "Ouvriere de la ligne de melange qui s'est plainte des vapeurs deux fois et dont la paie a ete reduite la semaine precedente."},
+        {"id": "suspect:foreman_craggs", "name": "Contremaitre Craggs", "intro": "A signe le registre de securite quotidien, sa signature apparaissant sur des entrees qu'il pretend ne pas avoir vues."},
+        {"id": "suspect:dr_poole", "name": "Dr Poole", "intro": "A effectue les bilans de sante annuels mais a omis les symptomes d'exposition chronique au soufre dans ses rapports."},
+        {"id": "suspect:ned_buckley", "name": "Ned Buckley", "intro": "Le frere cadet de l'inspecteur, employe au quai de chargement, qui a touche sa paie ce soir-la."},
+        {"id": "suspect:mrs_oake", "name": "Mme Oake", "intro": "Gere les comptes de l'usine et a personnellement signe les refus de trois demandes d'indemnisation."},
+        {"id": "suspect:alderman_hicks", "name": "Echevin Hicks", "intro": "Membre du comite des licences qui a reporte l'inspection deux fois, sa campagne financee par la famille Oake."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Silas Oake walked the canal path after shift end, met Buckley in the dark, and struck him with the hook that hung by the towpath gate. Three years of falsified safety logs, the backdated ink, the missing pages, the sulphur readings that would have closed the works forever — all of it pointed to a man who killed to keep his chimney smoking. The bargeman saw him at the gate, the gatekeeper saw him walk toward the canal, and the hook carried his bruise pattern on its handle. The sulphur line ran straight from the mixing shed to the courtroom.",
+      "es": "Silas Oake camino por el sendero del canal despues del fin del turno, encontro a Buckley en la oscuridad, y lo golpeo con el gancho que colgaba junto a la puerta del camino de sirga. Tres anos de registros de seguridad falsificados, la tinta antedatada, las paginas faltantes, las lecturas de azufre que habrian cerrado la fabrica para siempre — todo senalaba a un hombre que mato para mantener su chimenea humeando. El barquero lo vio en la puerta, el guardia lo vio caminar hacia el canal, y el gancho llevaba su patron de contusion en el mango. La linea de azufre iba directa desde el cobertizo de mezclas hasta la sala del tribunal.",
+      "fr": "Silas Oake a emprunte le chemin de halage apres la fin du quart, a rencontre Buckley dans l'obscurite et l'a frappe avec le croc qui pendait pres de la porte du halage. Trois ans de registres de securite falsifies, l'encre antidatee, les pages manquantes, les releves de soufre qui auraient ferme l'usine a jamais — tout designait un homme qui a tue pour garder sa cheminee fumante. Le batelier l'a vu a la porte, le gardien l'a vu marcher vers le canal, et le croc portait son schema de contusion sur le manche. La ligne de soufre allait droit de l'atelier de melange a la salle d'audience."
+    },
+    "who_strong_rest_weak": {
+      "en": "Everyone along the canal knew Oake had reason to fear the inspector, and the yellow dust that covered the works covered his guilt in equal measure. But the safety logs were ambiguous, the ink analysis contested, and the canal hook could have been swung by any desperate hand. Oake was arrested on the strength of his name above the factory gate. The workers watched him go and said nothing, and the verdict carried the weight of a town's resentment more than a prosecutor's proof.",
+      "es": "Todos a lo largo del canal sabian que Oake tenia razones para temer al inspector, y el polvo amarillo que cubria la fabrica cubria su culpa en igual medida. Pero los registros de seguridad eran ambiguos, el analisis de tinta fue cuestionado, y el gancho del canal pudo haber sido blandido por cualquier mano desesperada. Oake fue arrestado por la fuerza de su nombre sobre la puerta de la fabrica. Los trabajadores lo vieron irse y no dijeron nada, y el veredicto llevo el peso del resentimiento de un pueblo mas que la prueba de un fiscal.",
+      "fr": "Tout le monde le long du canal savait qu'Oake avait des raisons de craindre l'inspecteur, et la poussiere jaune qui couvrait l'usine couvrait sa culpabilite en egale mesure. Mais les registres de securite etaient ambigus, l'analyse d'encre contestee, et le croc du canal aurait pu etre balance par n'importe quelle main desesperee. Oake a ete arrete sur la force de son nom au-dessus du portail de l'usine. Les ouvriers l'ont regarde partir sans rien dire, et le verdict portait le poids du ressentiment d'une ville plus que la preuve d'un procureur."
+    },
+    "wrong_accusation": {
+      "en": "The wrong man was charged, and Silas Oake reopened the works the following Monday without an inspection. The safety logs were rebound with clean pages, the sulphur readings disposed of, and Frank Buckley's draft report was removed from the records room before the inquest. The workers kept coughing, the chimney kept smoking, and the canal flowed on past the towpath where an inspector had died for nothing.",
+      "es": "El hombre equivocado fue acusado, y Silas Oake reabrio la fabrica el lunes siguiente sin inspeccion. Los registros de seguridad fueron reencuadernados con paginas limpias, las lecturas de azufre eliminadas, y el borrador del informe de Frank Buckley fue retirado de la sala de archivos antes de la investigacion judicial. Los trabajadores siguieron tosiendo, la chimenea siguio humeando, y el canal siguio fluyendo junto al camino de sirga donde un inspector habia muerto por nada.",
+      "fr": "Le mauvais homme a ete inculpe, et Silas Oake a rouvert l'usine le lundi suivant sans inspection. Les registres de securite ont ete relies avec des pages propres, les releves de soufre elimines, et le rapport preliminaire de Frank Buckley a ete retire de la salle des archives avant l'enquete. Les ouvriers ont continue de tousser, la cheminee de fumer, et le canal de couler le long du chemin de halage ou un inspecteur etait mort pour rien."
+    },
+    "cold_case": {
+      "en": "The file on Frank Buckley was closed without a name. The canal gave up nothing else, the towpath was walked by barges and workers who kept their eyes ahead, and the quarterly audit was deferred again. The mixing shed ventilation was never repaired, the safety log continued in its new ink, and the Oake family chimney stood against the sky like an accusation that no one was willing to read. The sulphur settled on everything, and the truth settled with it.",
+      "es": "El expediente sobre Frank Buckley fue cerrado sin un nombre. El canal no entrego nada mas, el camino de sirga fue transitado por barcazas y trabajadores que mantenian la vista al frente, y la auditoria trimestral fue aplazada de nuevo. La ventilacion del cobertizo de mezclas nunca fue reparada, el registro de seguridad continuo con su nueva tinta, y la chimenea de la familia Oake se erguia contra el cielo como una acusacion que nadie estaba dispuesto a leer. El azufre se deposito sobre todo, y la verdad se deposito con el.",
+      "fr": "Le dossier sur Frank Buckley a ete clos sans un nom. Le canal n'a rien livre d'autre, le chemin de halage etait parcouru par des peniches et des ouvriers qui gardaient les yeux devant eux, et l'audit trimestriel a ete reporte a nouveau. La ventilation de l'atelier de melange n'a jamais ete reparee, le registre de securite a continue avec sa nouvelle encre, et la cheminee de la famille Oake se dressait contre le ciel comme une accusation que personne n'etait dispose a lire. Le soufre s'est depose sur tout, et la verite s'est deposee avec lui."
+    },
+    "lucky_guess": {
+      "en": "Oake's name came up because his works stood over the canal and his gate faced the towpath. It was geography more than evidence. The sulphur stain under his nail, the gatekeeper's half-remembered sighting, the timing of the shift — none of it would have held alone, but stacked together it formed something that resembled a case. The jury smelled the sulphur and convicted on the fumes.",
+      "es": "El nombre de Oake surgio porque su fabrica se erguia sobre el canal y su puerta daba al camino de sirga. Era mas geografia que evidencia. La mancha de azufre bajo su una, el avistamiento a medias recordado del guardia, el momento del turno — nada de eso se habria sostenido solo, pero apilado formaba algo que se asemejaba a un caso. El jurado olio el azufre y condeno por los vapores.",
+      "fr": "Le nom d'Oake est apparu parce que son usine surplombait le canal et que son portail faisait face au chemin de halage. C'etait de la geographie plus que des preuves. La tache de soufre sous son ongle, l'observation a demi retenue du gardien, le moment du quart — rien de tout cela n'aurait tenu seul, mais empile ensemble, cela formait quelque chose qui ressemblait a une affaire. Le jury a senti le soufre et a condamne sur les vapeurs."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:silas_oake",

@@ -16,6 +16,74 @@
     "event:champagne_compound",
     "motive:double_agent_exposure"
   ],
+  "briefing": {
+    "en": {
+      "setting": "The Belgian Embassy stands behind an iron gate on a tree-lined avenue, its chandeliers burning against a November fog that pressed against the windows by eight o'clock. A diplomatic reception is underway, champagne circulates on silver trays, and the cipher office upstairs holds secrets that several nations would prefer to remain unread.",
+      "crime": "Aldric Poel, a Belgian cipher clerk, was found seated in the conservatory during the intermission. His champagne glass was half-full, his eyes were closed, and he would not open them again.",
+      "suspects": [
+        {"id": "suspect:gregor_veronese", "name": "Gregor Veronese", "intro": "An Italian diplomat who signed the guest register at 19:42 and whose jacket lining concealed a coded dispatch."},
+        {"id": "suspect:marguerite_devaux", "name": "Marguerite Devaux", "intro": "Argued with Poel before intermission, stood near the orchids with her glass untouched and chalk on her gloves."},
+        {"id": "suspect:sergeant_linden", "name": "Sergeant Linden", "intro": "Embassy security, one hand on his radio, with a twelve-minute gap in his transmission log."},
+        {"id": "suspect:commander_holt", "name": "Commander Holt", "intro": "British military attache who asked about Baltic frequencies over dinner."},
+        {"id": "suspect:daniil_orlov", "name": "Daniil Orlov", "intro": "Press photographer whose camera held six frames of the cipher ledger shot from above."},
+        {"id": "suspect:henri_maes", "name": "Henri Maes", "intro": "The wine steward whose apron pocket held two small stoppered vials."},
+        {"id": "suspect:eva_brandt", "name": "Eva Brandt", "intro": "Transferred from the Vienna office six weeks ago, her personnel file arriving three days late."}
+      ]
+    },
+    "es": {
+      "setting": "La Embajada Belga se erige detras de una verja de hierro en una avenida arbolada, sus candelabros ardiendo contra una niebla de noviembre que presionaba las ventanas desde las ocho. Una recepcion diplomatica esta en curso, el champan circula en bandejas de plata, y la oficina de cifrado en el piso de arriba guarda secretos que varias naciones preferirian que permanecieran sin leer.",
+      "crime": "Aldric Poel, un empleado de cifrado belga, fue encontrado sentado en el invernadero durante el intermedio. Su copa de champan estaba medio llena, sus ojos cerrados, y no volveria a abrirlos.",
+      "suspects": [
+        {"id": "suspect:gregor_veronese", "name": "Gregor Veronese", "intro": "Un diplomatico italiano que firmo el registro de invitados a las 19:42 y cuyo forro de chaqueta ocultaba un despacho cifrado."},
+        {"id": "suspect:marguerite_devaux", "name": "Marguerite Devaux", "intro": "Discutio con Poel antes del intermedio, de pie junto a las orquideas con su copa intacta y tiza en los guantes."},
+        {"id": "suspect:sergeant_linden", "name": "Sargento Linden", "intro": "Seguridad de la embajada, una mano en su radio, con un vacio de doce minutos en su registro de transmisiones."},
+        {"id": "suspect:commander_holt", "name": "Comandante Holt", "intro": "Agregado militar britanico que pregunto sobre frecuencias balticas durante la cena."},
+        {"id": "suspect:daniil_orlov", "name": "Daniil Orlov", "intro": "Fotografo de prensa cuya camara contenia seis fotogramas del libro de cifrado tomados desde arriba."},
+        {"id": "suspect:henri_maes", "name": "Henri Maes", "intro": "El sommelier cuyo bolsillo del delantal contenia dos pequenos viales con tapon."},
+        {"id": "suspect:eva_brandt", "name": "Eva Brandt", "intro": "Transferida desde la oficina de Viena seis semanas antes, su expediente personal llego tres dias tarde."}
+      ]
+    },
+    "fr": {
+      "setting": "L'Ambassade de Belgique se dresse derriere une grille en fer sur une avenue bordee d'arbres, ses lustres brillant contre un brouillard de novembre qui pressait les vitres des huit heures. Une reception diplomatique bat son plein, le champagne circule sur des plateaux d'argent, et le bureau du chiffre a l'etage garde des secrets que plusieurs nations prefereraient voir rester non lus.",
+      "crime": "Aldric Poel, un employe du chiffre belge, a ete retrouve assis dans le jardin d'hiver pendant l'entracte. Sa coupe de champagne etait a moitie pleine, ses yeux fermes, et il ne les rouvrirait plus.",
+      "suspects": [
+        {"id": "suspect:gregor_veronese", "name": "Gregor Veronese", "intro": "Un diplomate italien qui a signe le registre des invites a 19h42 et dont la doublure de veste dissimulait une depeche codee."},
+        {"id": "suspect:marguerite_devaux", "name": "Marguerite Devaux", "intro": "S'est disputee avec Poel avant l'entracte, debout pres des orchidees avec son verre intact et de la craie sur ses gants."},
+        {"id": "suspect:sergeant_linden", "name": "Sergent Linden", "intro": "Securite de l'ambassade, une main sur sa radio, avec un trou de douze minutes dans son journal de transmissions."},
+        {"id": "suspect:commander_holt", "name": "Commandant Holt", "intro": "Attache militaire britannique qui s'est renseigne sur les frequences baltiques pendant le diner."},
+        {"id": "suspect:daniil_orlov", "name": "Daniil Orlov", "intro": "Photographe de presse dont l'appareil contenait six cliches du registre de chiffrement pris d'en haut."},
+        {"id": "suspect:henri_maes", "name": "Henri Maes", "intro": "Le sommelier dont la poche de tablier contenait deux petits flacons bouchonnes."},
+        {"id": "suspect:eva_brandt", "name": "Eva Brandt", "intro": "Transferee du bureau de Vienne six semaines plus tot, son dossier personnel arrive trois jours en retard."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Gregor Veronese had switched the champagne glass during the toast, the compound dissolving without trace beneath the bubbles. The coded dispatch in his jacket, the tampered diplomatic pouch, the substitution cipher matching intercepted messages from October — each strand of evidence wound tight as a diplomatic cable. Poel had decoded three dispatches that named Veronese as the source, and by morning the name would have reached London. The fog concealed many things that evening, but not the truth.",
+      "es": "Gregor Veronese habia cambiado la copa de champan durante el brindis, el compuesto disolviendose sin rastro bajo las burbujas. El despacho cifrado en su chaqueta, la valija diplomatica manipulada, el cifrado por sustitucion coincidiendo con mensajes interceptados de octubre — cada hebra de evidencia se tensaba como un cable diplomatico. Poel habia descifrado tres despachos que nombraban a Veronese como la fuente, y por la manana el nombre habria llegado a Londres. La niebla ocultaba muchas cosas esa noche, pero no la verdad.",
+      "fr": "Gregor Veronese avait echange la coupe de champagne pendant le toast, le compose se dissolvant sans trace sous les bulles. La depeche codee dans sa veste, la valise diplomatique alteree, le chiffre par substitution correspondant aux messages interceptes d'octobre — chaque fil de preuve se tendait comme un cable diplomatique. Poel avait decode trois depeches designant Veronese comme la source, et au matin le nom aurait atteint Londres. Le brouillard dissimulait bien des choses ce soir-la, mais pas la verite."
+    },
+    "who_strong_rest_weak": {
+      "en": "Veronese's name surfaced from the guest register and the coded dispatch, but diplomacy has a way of blurring edges. The champagne compound was never conclusively identified, the cipher connection remained classified, and the fog that obscured the garden obscured the evidence as well. He was recalled to Rome under a cloud of suspicion rather than the weight of proof. The embassy filed the matter as unresolved, and the avenue returned to silence.",
+      "es": "El nombre de Veronese surgio del registro de invitados y del despacho cifrado, pero la diplomacia tiene una forma de difuminar los bordes. El compuesto en el champan nunca fue identificado de forma concluyente, la conexion del cifrado permanecio clasificada, y la niebla que oscurecio el jardin oscurecio tambien las pruebas. Fue llamado a Roma bajo una nube de sospecha mas que por el peso de las pruebas. La embajada archivo el asunto como no resuelto, y la avenida volvio al silencio.",
+      "fr": "Le nom de Veronese est apparu du registre des invites et de la depeche codee, mais la diplomatie a une maniere d'estomper les contours. Le compose dans le champagne n'a jamais ete identifie de maniere concluante, la connexion du chiffre est restee classifiee, et le brouillard qui obscurcissait le jardin a obscurci les preuves egalement. Il fut rappele a Rome sous un nuage de soupcons plutot que sous le poids des preuves. L'ambassade a classe l'affaire comme non resolue, et l'avenue est retournee au silence."
+    },
+    "wrong_accusation": {
+      "en": "The wrong diplomat was detained, and Gregor Veronese passed through the embassy gate before the fog lifted. The coded dispatches continued, the cipher office remained compromised, and Aldric Poel's decoded work was quietly re-filed in a cabinet that no one checked. The conservatory was cleaned, the champagne glasses washed, and the Belgian Embassy hosted another reception the following month as if nothing had happened between the fern fronds.",
+      "es": "El diplomatico equivocado fue detenido, y Gregor Veronese paso por la puerta de la embajada antes de que se levantara la niebla. Los despachos cifrados continuaron, la oficina de cifrado siguio comprometida, y el trabajo descifrado de Aldric Poel fue discretamente rearchivado en un armario que nadie reviso. El invernadero fue limpiado, las copas de champan lavadas, y la Embajada Belga ofrecio otra recepcion el mes siguiente como si nada hubiera sucedido entre los helechos.",
+      "fr": "Le mauvais diplomate fut detenu, et Gregor Veronese franchit la grille de l'ambassade avant que le brouillard ne se leve. Les depeches codees continuerent, le bureau du chiffre resta compromis, et le travail decode d'Aldric Poel fut discretement reclasse dans une armoire que personne ne verifiait. Le jardin d'hiver fut nettoye, les coupes de champagne lavees, et l'Ambassade de Belgique organisa une autre reception le mois suivant comme si rien ne s'etait passe entre les frondes de fougeres."
+    },
+    "cold_case": {
+      "en": "The fog never lifted on the Poel affair. Diplomatic immunity shielded the suspects, classified channels swallowed the evidence, and the Belgian government closed the file with a notation that satisfied no one. The cipher office was reorganized, the frequency lists changed, and Aldric Poel's name was removed from the embassy directory as quietly as the champagne had been cleared from the conservatory table.",
+      "es": "La niebla nunca se levanto sobre el asunto Poel. La inmunidad diplomatica protegio a los sospechosos, los canales clasificados se tragaron las pruebas, y el gobierno belga cerro el expediente con una anotacion que no satisfizo a nadie. La oficina de cifrado fue reorganizada, las listas de frecuencias cambiadas, y el nombre de Aldric Poel fue eliminado del directorio de la embajada tan silenciosamente como el champan habia sido retirado de la mesa del invernadero.",
+      "fr": "Le brouillard ne s'est jamais leve sur l'affaire Poel. L'immunite diplomatique a protege les suspects, les canaux classifies ont englouti les preuves, et le gouvernement belge a clos le dossier avec une annotation qui n'a satisfait personne. Le bureau du chiffre a ete reorganise, les listes de frequences changees, et le nom d'Aldric Poel a ete retire de l'annuaire de l'ambassade aussi discretement que le champagne avait ete debarrasse de la table du jardin d'hiver."
+    },
+    "lucky_guess": {
+      "en": "Veronese was named on the strength of a guest register signature and a coat that smelled of nowhere in particular. The dispatch was found by chance, the cipher match incomplete, and the diplomatic community regarded the accusation as an embarrassment rather than a breakthrough. He was declared persona non grata and left Brussels on the morning train, guilty in all likelihood but proven in nothing.",
+      "es": "Veronese fue senalado por la fuerza de una firma en el registro de invitados y un abrigo que no olia a ningun lugar en particular. El despacho fue encontrado por casualidad, la coincidencia del cifrado incompleta, y la comunidad diplomatica considero la acusacion como una verguenza mas que un avance. Fue declarado persona non grata y salio de Bruselas en el tren de la manana, culpable con toda probabilidad pero sin nada probado.",
+      "fr": "Veronese fut designe sur la base d'une signature au registre des invites et d'un manteau qui ne sentait nulle part en particulier. La depeche fut trouvee par hasard, la correspondance du chiffre incomplete, et la communaute diplomatique considera l'accusation comme un embarras plutot qu'une percee. Il fut declare persona non grata et quitta Bruxelles par le train du matin, coupable selon toute vraisemblance mais sans rien de prouve."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:gregor_veronese",

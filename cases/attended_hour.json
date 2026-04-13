@@ -16,6 +16,74 @@
     "event:dosage_interaction",
     "motive:negligence_testimony"
   ],
+  "briefing": {
+    "en": {
+      "setting": "Briar Clinic is a converted Victorian house on a quiet road, where the corridors dim after ten and the dispensary hums behind a coded door. The private ward holds four beds separated by curtains, and the night shift belongs to those who know the keycard system.",
+      "crime": "Harold Stroud was found unresponsive in bed three of the private ward. His cardiac monitor had been silenced, his IV disconnected, and two drugs given within the same hour had stopped his heart.",
+      "suspects": [
+        {"id": "suspect:callum_dray", "name": "Callum Dray", "intro": "The attending physician whose pen leaked in his pocket and whose car never left the car park until 5:30 AM."},
+        {"id": "suspect:nurse_aldworth", "name": "Nurse Aldworth", "intro": "Administered the evening medication round, her hands trembling when she signed the chart."},
+        {"id": "suspect:dr_parris", "name": "Dr Parris", "intro": "Covered the night shift but would not enter the ward after the body was removed."},
+        {"id": "suspect:owen_stroud", "name": "Owen Stroud", "intro": "The victim's nephew, sole insurance beneficiary, who visited twice that week and asked about the prognosis."},
+        {"id": "suspect:records_clerk", "name": "The Records Clerk", "intro": "Filed the negligence complaint three days before the death, her badge unsigned on the night in question."},
+        {"id": "suspect:pharmacist_lin", "name": "Pharmacist Lin", "intro": "Dispensed both medications from the same tray, her vial count two short at shift end."},
+        {"id": "suspect:solicitor_pike", "name": "Solicitor Pike", "intro": "Represented the Stroud family in the negligence case and visited the clinic twice that week."}
+      ]
+    },
+    "es": {
+      "setting": "La Clinica Briar es una casa victoriana reconvertida en una calle tranquila, donde los pasillos se oscurecen despues de las diez y el dispensario zumba detras de una puerta con codigo. La sala privada tiene cuatro camas separadas por cortinas, y el turno de noche pertenece a quienes conocen el sistema de tarjetas.",
+      "crime": "Harold Stroud fue encontrado sin respuesta en la cama tres de la sala privada. Su monitor cardiaco habia sido silenciado, su via intravenosa desconectada, y dos medicamentos administrados en la misma hora habian detenido su corazon.",
+      "suspects": [
+        {"id": "suspect:callum_dray", "name": "Callum Dray", "intro": "El medico tratante cuyo boligrafo goteo en su bolsillo y cuyo coche no salio del aparcamiento hasta las 5:30 AM."},
+        {"id": "suspect:nurse_aldworth", "name": "Enfermera Aldworth", "intro": "Administro la ronda de medicacion vespertina, con las manos temblando al firmar la ficha."},
+        {"id": "suspect:dr_parris", "name": "Dr Parris", "intro": "Cubrio el turno de noche pero no quiso entrar en la sala despues de retirar el cuerpo."},
+        {"id": "suspect:owen_stroud", "name": "Owen Stroud", "intro": "El sobrino de la victima, unico beneficiario del seguro, que visito dos veces esa semana y pregunto por el pronostico."},
+        {"id": "suspect:records_clerk", "name": "La Empleada de Registros", "intro": "Archivo la denuncia por negligencia tres dias antes de la muerte, su credencial sin firmar la noche en cuestion."},
+        {"id": "suspect:pharmacist_lin", "name": "Farmaceutica Lin", "intro": "Dispenso ambos medicamentos de la misma bandeja, con dos viales de menos al final del turno."},
+        {"id": "suspect:solicitor_pike", "name": "Abogado Pike", "intro": "Represento a la familia Stroud en el caso de negligencia y visito la clinica dos veces esa semana."}
+      ]
+    },
+    "fr": {
+      "setting": "La Clinique Briar est une maison victorienne reconvertie dans une rue tranquille, ou les couloirs s'assombrissent apres dix heures et la pharmacie bourdonne derriere une porte codee. Le service prive compte quatre lits separes par des rideaux, et le quart de nuit appartient a ceux qui connaissent le systeme de badges.",
+      "crime": "Harold Stroud a ete trouve inconscient dans le lit trois du service prive. Son moniteur cardiaque avait ete coupe, sa perfusion debranchee, et deux medicaments administres dans la meme heure avaient arrete son coeur.",
+      "suspects": [
+        {"id": "suspect:callum_dray", "name": "Callum Dray", "intro": "Le medecin traitant dont le stylo a fui dans sa poche et dont la voiture n'a pas quitte le parking avant 5h30."},
+        {"id": "suspect:nurse_aldworth", "name": "Infirmiere Aldworth", "intro": "A administre la tournee de medicaments du soir, les mains tremblantes en signant la fiche."},
+        {"id": "suspect:dr_parris", "name": "Dr Parris", "intro": "A assure le quart de nuit mais n'est pas entre dans le service apres le retrait du corps."},
+        {"id": "suspect:owen_stroud", "name": "Owen Stroud", "intro": "Le neveu de la victime, seul beneficiaire de l'assurance, qui a visite deux fois cette semaine et demande le pronostic."},
+        {"id": "suspect:records_clerk", "name": "L'Employee des Archives", "intro": "A depose la plainte pour negligence trois jours avant le deces, son badge non signe la nuit en question."},
+        {"id": "suspect:pharmacist_lin", "name": "Pharmacienne Lin", "intro": "A distribue les deux medicaments du meme plateau, avec deux flacons manquants en fin de service."},
+        {"id": "suspect:solicitor_pike", "name": "Avocat Pike", "intro": "Representait la famille Stroud dans l'affaire de negligence et a visite la clinique deux fois cette semaine."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Callum Dray prescribed two drugs whose combined effect would stop a weakened heart, and he knew it. The medication chart bore his signature, the dispensary log his entry time, and the interaction manual lay open to the page he had marked in pencil. Harold Stroud was scheduled to testify against him on Monday. He never made it past Saturday night. The case was surgical in its precision and its cruelty.",
+      "es": "Callum Dray prescribio dos medicamentos cuyo efecto combinado detendria un corazon debilitado, y lo sabia. La ficha de medicacion llevaba su firma, el registro del dispensario su hora de entrada, y el manual de interacciones estaba abierto en la pagina que habia marcado a lapiz. Harold Stroud debia testificar contra el el lunes. No paso del sabado por la noche. El caso fue quirurgico en su precision y su crueldad.",
+      "fr": "Callum Dray a prescrit deux medicaments dont l'effet combine arreterait un coeur affaibli, et il le savait. La fiche de medication portait sa signature, le registre de la pharmacie son heure d'entree, et le manuel d'interactions etait ouvert a la page qu'il avait marquee au crayon. Harold Stroud devait temoigner contre lui lundi. Il n'a pas passe le samedi soir. L'affaire etait chirurgicale dans sa precision et sa cruaute."
+    },
+    "who_strong_rest_weak": {
+      "en": "Dray's name hung over the ward like the smell of disinfectant — impossible to ignore, difficult to trace to its source. The dosage looked routine on paper, the interaction plausible as accident. Everyone knew he had the most to lose from Stroud's testimony, but the line between negligence and murder blurred under fluorescent light. The conviction came, but it tasted of reasonable doubt.",
+      "es": "El nombre de Dray pendia sobre la sala como el olor a desinfectante: imposible de ignorar, dificil de rastrear hasta su origen. La dosis parecia rutinaria sobre el papel, la interaccion plausible como accidente. Todos sabian que el tenia mas que perder con el testimonio de Stroud, pero la linea entre negligencia y asesinato se difuminaba bajo la luz fluorescente. La condena llego, pero sabia a duda razonable.",
+      "fr": "Le nom de Dray planait sur le service comme l'odeur de desinfectant — impossible a ignorer, difficile a remonter jusqu'a sa source. Le dosage semblait routinier sur le papier, l'interaction plausible comme accident. Tout le monde savait qu'il avait le plus a perdre du temoignage de Stroud, mais la frontiere entre negligence et meurtre s'estompait sous la lumiere fluorescente. La condamnation est tombee, mais elle avait un gout de doute raisonnable."
+    },
+    "wrong_accusation": {
+      "en": "The wrong doctor was named, and Callum Dray continued his rounds the next morning with his white coat pressed and his pen freshly filled. The negligence hearing was quietly cancelled, the clinical notes rewritten on clean paper, and Harold Stroud's death recorded as cardiac failure of natural origin. The dispensary inventory was corrected before anyone thought to check it twice.",
+      "es": "Se nombro al medico equivocado, y Callum Dray continuo sus rondas a la manana siguiente con su bata blanca planchada y su boligrafo recien cargado. La audiencia por negligencia fue cancelada discretamente, las notas clinicas reescritas en papel limpio, y la muerte de Harold Stroud registrada como insuficiencia cardiaca de origen natural. El inventario del dispensario fue corregido antes de que alguien pensara en revisarlo dos veces.",
+      "fr": "Le mauvais medecin a ete designe, et Callum Dray a continue ses tournees le lendemain matin avec sa blouse blanche repassee et son stylo fraichement rempli. L'audience pour negligence a ete discretement annulee, les notes cliniques reecrites sur du papier propre, et la mort de Harold Stroud enregistree comme insuffisance cardiaque d'origine naturelle. L'inventaire de la pharmacie a ete corrige avant que quiconque ne pense a le verifier deux fois."
+    },
+    "cold_case": {
+      "en": "The file on Harold Stroud was marked inconclusive and placed in a drawer that no one opened again. The negligence hearing was postponed indefinitely, the clinic resumed its quiet rhythms, and the attended observation hour returned to routine. Two vials remained unaccounted for in the dispensary log, and the cardiac alarm's silence was never explained. Briar Clinic kept its secrets behind coded doors.",
+      "es": "El expediente de Harold Stroud fue marcado como inconcluso y colocado en un cajon que nadie volvio a abrir. La audiencia por negligencia fue aplazada indefinidamente, la clinica retomo sus ritmos tranquilos, y la hora de observacion atendida volvio a la rutina. Dos viales quedaron sin justificar en el registro del dispensario, y el silencio de la alarma cardiaca nunca fue explicado. La Clinica Briar guardo sus secretos detras de puertas con codigo.",
+      "fr": "Le dossier de Harold Stroud a ete marque comme non concluant et place dans un tiroir que personne n'a rouvert. L'audience pour negligence a ete reportee indefiniment, la clinique a repris ses rythmes tranquilles, et l'heure d'observation est redevenue routine. Deux flacons sont restes non comptabilises dans le registre de la pharmacie, et le silence de l'alarme cardiaque n'a jamais ete explique. La Clinique Briar a garde ses secrets derriere des portes codees."
+    },
+    "lucky_guess": {
+      "en": "Dray's name surfaced not from evidence but from the weight of suspicion. A physician with a pending review, a patient who would have ended his career — the arithmetic was simple, even if the proof was not. The jury convicted on instinct and inference, and the medication chart remained as ambiguous as the hour between rounds when no one was watching.",
+      "es": "El nombre de Dray surgio no de las pruebas sino del peso de la sospecha. Un medico con una revision pendiente, un paciente que habria terminado su carrera: la aritmetica era simple, aunque las pruebas no lo fueran. El jurado condeno por instinto e inferencia, y la ficha de medicacion permanecio tan ambigua como la hora entre rondas cuando nadie vigilaba.",
+      "fr": "Le nom de Dray est apparu non pas des preuves mais du poids des soupcons. Un medecin sous examen, un patient qui aurait mis fin a sa carriere — l'arithmetique etait simple, meme si les preuves ne l'etaient pas. Le jury a condamne par instinct et deduction, et la fiche de medication est restee aussi ambigue que l'heure entre les rondes ou personne ne surveillait."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:callum_dray",

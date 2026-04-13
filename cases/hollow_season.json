@@ -16,6 +16,74 @@
     "event:sleeping_brandy",
     "motive:inheritance_entailed"
   ],
+  "briefing": {
+    "en": {
+      "setting": "Carrow Hall stands at the end of a lime avenue above the dale, its roof slates cracked and its west wing shuttered against the autumn damp. The estate has been declining for twelve years, and the study where the old man takes his brandy smells of cold ash and diminished fortunes.",
+      "crime": "Archibald Carrow was found dead in his armchair with a half-drunk brandy beside him. The fire had burned to nothing, the room was cold, and the chloral hydrate in his glass had stopped his weakened heart.",
+      "suspects": [
+        {"id": "suspect:edmund_carrow", "name": "Edmund Carrow", "intro": "Archibald's heir, who arrived a week early and whose coat lining shows fresh stitching near the inner pocket."},
+        {"id": "suspect:flora_marsh", "name": "Flora Marsh", "intro": "The housekeeper who found the body at half past five, though the fire had been cold for hours."},
+        {"id": "suspect:gideon_cobb", "name": "Gideon Cobb", "intro": "A London solicitor whose handwriting matches annotations in the entailment deed."},
+        {"id": "suspect:robert_carrow", "name": "Robert Carrow", "intro": "Next in line after Edmund, arrived from the village two days before with stable mud on his boots."},
+        {"id": "suspect:dr_fenwick", "name": "Dr Fenwick", "intro": "Last examined Archibald that afternoon, his medical bag containing a half-empty bottle of chloral hydrate."},
+        {"id": "suspect:margaret_wells", "name": "Margaret Wells", "intro": "Archibald's former ward, whose letters to him over the past year were all returned unopened."},
+        {"id": "suspect:silas_greer", "name": "Silas Greer", "intro": "Estate caretaker found cleaning the study grate before the body was reported, holding every key on the property."}
+      ]
+    },
+    "es": {
+      "setting": "Carrow Hall se erige al final de una avenida de tilos sobre el valle, sus pizarras de techo agrietadas y su ala oeste cerrada contra la humedad otonal. La finca ha estado en declive durante doce anos, y el estudio donde el anciano toma su brandy huele a cenizas frias y fortunas menguantes.",
+      "crime": "Archibald Carrow fue encontrado muerto en su sillon con un brandy a medio beber a su lado. El fuego se habia consumido, la habitacion estaba fria, y el hidrato de cloral en su vaso habia detenido su corazon debilitado.",
+      "suspects": [
+        {"id": "suspect:edmund_carrow", "name": "Edmund Carrow", "intro": "El heredero de Archibald, que llego una semana antes y cuyo forro del abrigo muestra costuras frescas cerca del bolsillo interior."},
+        {"id": "suspect:flora_marsh", "name": "Flora Marsh", "intro": "El ama de llaves que encontro el cuerpo a las cinco y media, aunque el fuego llevaba horas frio."},
+        {"id": "suspect:gideon_cobb", "name": "Gideon Cobb", "intro": "Un abogado de Londres cuya escritura coincide con las anotaciones en la escritura de vinculacion."},
+        {"id": "suspect:robert_carrow", "name": "Robert Carrow", "intro": "El siguiente en la linea despues de Edmund, llego del pueblo dos dias antes con barro de establo en sus botas."},
+        {"id": "suspect:dr_fenwick", "name": "Dr Fenwick", "intro": "Examino a Archibald por ultima vez esa tarde, su maletin medico conteniendo una botella medio vacia de hidrato de cloral."},
+        {"id": "suspect:margaret_wells", "name": "Margaret Wells", "intro": "La antigua pupila de Archibald, cuyas cartas durante el ultimo ano fueron devueltas sin abrir."},
+        {"id": "suspect:silas_greer", "name": "Silas Greer", "intro": "Cuidador de la finca encontrado limpiando la rejilla del estudio antes de reportar el cuerpo, con todas las llaves de la propiedad."}
+      ]
+    },
+    "fr": {
+      "setting": "Carrow Hall se dresse au bout d'une allee de tilleuls surplombant la vallee, ses ardoises de toit fissurees et son aile ouest condamnee contre l'humidite automnale. Le domaine decline depuis douze ans, et le bureau ou le vieil homme prend son brandy sent la cendre froide et les fortunes amoindries.",
+      "crime": "Archibald Carrow a ete retrouve mort dans son fauteuil avec un brandy a moitie bu a cote de lui. Le feu s'etait eteint, la piece etait froide, et l'hydrate de chloral dans son verre avait arrete son coeur affaibli.",
+      "suspects": [
+        {"id": "suspect:edmund_carrow", "name": "Edmund Carrow", "intro": "L'heritier d'Archibald, arrive une semaine en avance et dont la doublure du manteau montre des coutures fraiches pres de la poche interieure."},
+        {"id": "suspect:flora_marsh", "name": "Flora Marsh", "intro": "La gouvernante qui a trouve le corps a cinq heures et demie, bien que le feu soit froid depuis des heures."},
+        {"id": "suspect:gideon_cobb", "name": "Gideon Cobb", "intro": "Un avocat londonien dont l'ecriture correspond aux annotations de l'acte de substitution."},
+        {"id": "suspect:robert_carrow", "name": "Robert Carrow", "intro": "Le suivant dans l'ordre de succession apres Edmund, arrive du village deux jours avant avec de la boue d'ecurie sur ses bottes."},
+        {"id": "suspect:dr_fenwick", "name": "Dr Fenwick", "intro": "A examine Archibald pour la derniere fois cet apres-midi, sa sacoche medicale contenant une bouteille a moitie vide d'hydrate de chloral."},
+        {"id": "suspect:margaret_wells", "name": "Margaret Wells", "intro": "L'ancienne pupille d'Archibald, dont les lettres de l'annee ecoulee ont toutes ete retournees non ouvertes."},
+        {"id": "suspect:silas_greer", "name": "Silas Greer", "intro": "Le gardien du domaine trouve en train de nettoyer la grille du bureau avant que le corps ne soit signale, detenant toutes les cles de la propriete."}
+      ]
+    }
+  },
+  "endings": {
+    "all_strong": {
+      "en": "Edmund Carrow arrived early because he could not afford to arrive late. The entailment expired on the first of January, and if his uncle lived past that date, the estate would go to auction and Edmund would inherit nothing. The chloral hydrate in the brandy, the camphor on the decanter stopper matching his coat, the burned letter in the grate, the altered ledger in his hand — the evidence drew a portrait of a desperate man who killed the season before it could turn. The hollow hall had claimed its last Carrow.",
+      "es": "Edmund Carrow llego temprano porque no podia permitirse llegar tarde. La vinculacion expiraba el primero de enero, y si su tio vivia mas alla de esa fecha, la finca iria a subasta y Edmund no heredaria nada. El hidrato de cloral en el brandy, el alcanfor en el tapon del decantador coincidiendo con su abrigo, la carta quemada en la rejilla, el libro de cuentas alterado en su mano — las pruebas trazaban el retrato de un hombre desesperado que mato a la estacion antes de que pudiera cambiar. El salon vacio habia reclamado a su ultimo Carrow.",
+      "fr": "Edmund Carrow est arrive en avance parce qu'il ne pouvait pas se permettre d'arriver en retard. La substitution expirait au premier janvier, et si son oncle vivait au-dela de cette date, le domaine irait aux encheres et Edmund n'heriterait de rien. L'hydrate de chloral dans le brandy, le camphre sur le bouchon du carafon correspondant a son manteau, la lettre brulee dans la grille, le registre altere de sa main — les preuves dressaient le portrait d'un homme desespere qui a tue la saison avant qu'elle ne puisse tourner. Le manoir creux avait reclame son dernier Carrow."
+    },
+    "who_strong_rest_weak": {
+      "en": "Edmund's name hung in the cold air of Carrow Hall like pipe smoke that would not clear. The motive was plain — the entailment, the deadline, the debt — but the brandy could have been poured by any hand, and the chloral had a prescription with another man's name on it. The jury saw a man who needed his uncle dead by Christmas, and that was enough, though the method and the motive remained as murky as the autumn damp.",
+      "es": "El nombre de Edmund pendia en el aire frio de Carrow Hall como humo de pipa que no se disipaba. El motivo era claro — la vinculacion, el plazo, la deuda — pero el brandy pudo haber sido servido por cualquier mano, y el cloral tenia una receta con el nombre de otro hombre. El jurado vio a un hombre que necesitaba que su tio muriera antes de Navidad, y eso fue suficiente, aunque el metodo y el motivo permanecieron tan turbios como la humedad otonal.",
+      "fr": "Le nom d'Edmund planait dans l'air froid de Carrow Hall comme une fumee de pipe qui ne se dissipait pas. Le mobile etait evident — la substitution, la date limite, la dette — mais le brandy aurait pu etre verse par n'importe quelle main, et le chloral portait une ordonnance au nom d'un autre. Le jury a vu un homme qui avait besoin que son oncle meure avant Noel, et cela a suffi, bien que la methode et le mobile restent aussi troubles que l'humidite automnale."
+    },
+    "wrong_accusation": {
+      "en": "The wrong Carrow was arrested, and Edmund watched from the east parlour as the constable led his cousin away. The entailment ran its course, the estate passed quietly into Edmund's hands, and Archibald's brandy decanter was put away in a cupboard that no one opened again. Margaret Wells's letters remained sealed in the desk drawer, the older will stayed hidden beneath the floorboards, and the hollow season turned to winter without justice.",
+      "es": "El Carrow equivocado fue arrestado, y Edmund observo desde el salon este mientras el agente se llevaba a su primo. La vinculacion siguio su curso, la finca paso silenciosamente a manos de Edmund, y el decantador de brandy de Archibald fue guardado en un armario que nadie volvio a abrir. Las cartas de Margaret Wells permanecieron selladas en el cajon del escritorio, el viejo testamento oculto bajo las tablas del suelo, y la estacion hueca se convirtio en invierno sin justicia.",
+      "fr": "Le mauvais Carrow a ete arrete, et Edmund a regarde depuis le salon est tandis que le constable emmenait son cousin. La substitution a suivi son cours, le domaine est passe discretement entre les mains d'Edmund, et le carafon de brandy d'Archibald a ete range dans un placard que personne n'a rouvert. Les lettres de Margaret Wells sont restees scellees dans le tiroir du bureau, l'ancien testament cache sous les lattes du plancher, et la saison creuse s'est muee en hiver sans justice."
+    },
+    "cold_case": {
+      "en": "The file on Archibald Carrow's death was marked natural causes and placed beside the estate ledger in a drawer that smelled of camphor. The entailment expired, the auction never came, and the hall passed on through inheritance as the family intended. The study clock was never rewound, the brandy decanter never refilled, and the burned letter in the grate crumbled to nothing before anyone thought to read what remained. Carrow Hall kept its secrets the way old houses do — in silence, behind locked doors, through every hollow season that followed.",
+      "es": "El expediente sobre la muerte de Archibald Carrow fue marcado como causas naturales y colocado junto al libro de cuentas de la finca en un cajon que olia a alcanfor. La vinculacion expiro, la subasta nunca llego, y la mansion paso por herencia como la familia pretendia. El reloj del estudio nunca fue dado cuerda de nuevo, el decantador de brandy nunca rellenado, y la carta quemada en la rejilla se desmorono antes de que alguien pensara en leer lo que quedaba. Carrow Hall guardo sus secretos como lo hacen las casas antiguas — en silencio, detras de puertas cerradas, a traves de cada estacion hueca que siguio.",
+      "fr": "Le dossier sur la mort d'Archibald Carrow a ete marque causes naturelles et place a cote du registre du domaine dans un tiroir qui sentait le camphre. La substitution a expire, la vente aux encheres n'est jamais venue, et le manoir est passe par heritage comme la famille le souhaitait. L'horloge du bureau n'a jamais ete remontee, le carafon de brandy jamais rempli, et la lettre brulee dans la grille s'est effritee avant que quiconque ne pense a lire ce qui restait. Carrow Hall a garde ses secrets comme le font les vieilles maisons — en silence, derriere des portes verrouillees, a travers chaque saison creuse qui a suivi."
+    },
+    "lucky_guess": {
+      "en": "Edmund's name was spoken because he was the heir and he was early and he needed the money. It was not evidence so much as arithmetic. The camphor on his coat might have come from anywhere, the chloral from any medical bag, the burned letter from any hand. But the shape of the thing pointed at Edmund, and in a village where everyone knows the family ledger, shape is enough. He was tried on suspicion dressed as certainty, and the hollow season passed its own quiet verdict.",
+      "es": "El nombre de Edmund fue pronunciado porque era el heredero, habia llegado temprano y necesitaba el dinero. No era tanto evidencia como aritmetica. El alcanfor en su abrigo podia provenir de cualquier parte, el cloral de cualquier maletin medico, la carta quemada de cualquier mano. Pero la forma del asunto senalaba a Edmund, y en un pueblo donde todos conocen el libro de cuentas familiar, la forma es suficiente. Fue juzgado por sospecha vestida de certeza, y la estacion hueca dicto su propio veredicto silencioso.",
+      "fr": "Le nom d'Edmund a ete prononce parce qu'il etait l'heritier, qu'il etait en avance et qu'il avait besoin d'argent. Ce n'etait pas tant des preuves que de l'arithmetique. Le camphre sur son manteau aurait pu venir de n'importe ou, le chloral de n'importe quelle sacoche medicale, la lettre brulee de n'importe quelle main. Mais la forme de l'affaire designait Edmund, et dans un village ou tout le monde connait le registre familial, la forme suffit. Il fut juge sur des soupcons deguises en certitude, et la saison creuse a rendu son propre verdict silencieux."
+    }
+  },
   "tokens": [
     {
       "id": "suspect:edmund_carrow",
