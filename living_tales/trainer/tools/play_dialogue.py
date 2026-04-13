@@ -116,6 +116,31 @@ def _token_narrative(tok: Token) -> str:
     return _token_name(tok)
 
 
+def _get_reaction(tok: Token, prev_tok, reactions: dict, lang: str = "en") -> str:
+    """Get contextual reaction text for a token based on what the player just did."""
+    react_data = reactions.get(tok.id, {})
+    react = react_data.get("reaction", {})
+
+    if prev_tok:
+        # Tier 3: exact previous token match
+        text = react.get(f"after:{prev_tok.id}")
+        if text:
+            return text
+        # Tier 2: previous token class match
+        prev_class = prev_tok.token_class.value if hasattr(prev_tok.token_class, 'value') else str(prev_tok.token_class)
+        text = react.get(f"after_class:{prev_class}")
+        if text:
+            return text
+
+    # Tier 1: default reaction
+    text = react.get("default")
+    if text:
+        return text
+
+    # Fallback: original expression
+    return _token_narrative(tok)
+
+
 def _token_with_speaker(tok: Token) -> str:
     """For suspects/witnesses: prefix with speaker name for context."""
     name = _token_name(tok)
@@ -470,6 +495,7 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
     endings_data = {}
     life_states = {}
     case_data = None
+    reactions = {}
     for _try_path in [
         Path(f"../../cases/{spec.case_id}.json"),
         Path(f"cases/{spec.case_id}.json"),
@@ -480,6 +506,16 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
             briefing = case_data.get("briefing", {}).get(lang, case_data.get("briefing", {}).get("en"))
             endings_data = case_data.get("endings", {})
             life_states = case_data.get("life_states", {})
+            break
+
+    # Load contextual reactions if available
+    for _try_path in [
+        Path(f"cases/{spec.case_id}/reactions.json"),
+        Path(f"../../cases/{spec.case_id}/reactions.json"),
+    ]:
+        if _try_path.exists():
+            with open(_try_path) as _f:
+                reactions = _json.load(_f)
             break
 
     if briefing and not is_creature:
@@ -577,8 +613,10 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         console.print()
         console.print(f"[bold]{txt['your_hand']}[/bold]")
         for i, tok in enumerate(valid_hand):
+            _react = reactions.get(tok.id, {})
             console.print(f"  [{i + 1}] {_token_rich(tok, show_label=True)}")
-            hint = _get_hint(tok, lang)
+            # Prefer reactions hint, fall back to generic
+            hint = _react.get("hint", _get_hint(tok, lang))
             if hint:
                 console.print(f"      [dim italic]{hint}[/dim italic]")
 
@@ -658,7 +696,10 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
 
         dialogue_history.append(("YOU", player_tok))
         # Display player action — clean narrative, no labels
-        console.print(f"\n  [bold blue]YOU[/bold blue]    {_token_narrative(player_tok)}")
+        # Use action text from reactions if available
+        _player_react = reactions.get(player_tok.id, {})
+        _action_text = _player_react.get("action", _token_narrative(player_tok))
+        console.print(f"\n  [bold blue]YOU[/bold blue]    {_action_text}")
 
         if mappings:
             enc = _encode_token(player_tok, mappings)
@@ -751,15 +792,21 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
                     scene_already_placed = True
 
                     # Display scene response — clean narrative
+                    # Get last player token for contextual reactions
+                    _last_player = None
+                    for _r, _t in reversed(dialogue_history):
+                        if _r == "YOU":
+                            _last_player = _t
+                            break
+
                     if is_creature:
-                        console.print(f"\n  [bold cyan]IT[/bold cyan]     {_token_narrative(scene_tokens[0])}")
+                        console.print(f"\n  [bold cyan]IT[/bold cyan]     {_get_reaction(scene_tokens[0], _last_player, reactions, lang)}")
                         for stok in scene_tokens[1:]:
-                            console.print(f"  [dim]{_token_narrative(stok)}[/dim]")
+                            console.print(f"  [dim]{_get_reaction(stok, _last_player, reactions, lang)}[/dim]")
                     else:
-                        # Mystery: use speaker names for suspects/witnesses/emotions
-                        console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_token_with_speaker(scene_tokens[0])}")
+                        console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_get_reaction(scene_tokens[0], _last_player, reactions, lang)}")
                         for stok in scene_tokens[1:]:
-                            console.print(f"  [dim]       {_token_with_speaker(stok)}[/dim]")
+                            console.print(f"  [dim]       {_get_reaction(stok, _last_player, reactions, lang)}[/dim]")
 
                     # Place all scene tokens in game state
                     for stok in scene_tokens:
@@ -802,10 +849,15 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
                     seq_s.append(enc[3]); seq_a.append(enc[4])
             # Print primary engine token (scene extras already printed above)
             if not scene_already_placed:
+                _last_player = None
+                for _r, _t in reversed(dialogue_history[:-1]):
+                    if _r == "YOU":
+                        _last_player = _t
+                        break
                 if is_creature:
-                    console.print(f"\n  [bold cyan]IT[/bold cyan]     {_token_narrative(engine_tok)}")
+                    console.print(f"\n  [bold cyan]IT[/bold cyan]     {_get_reaction(engine_tok, _last_player, reactions, lang)}")
                 else:
-                    console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_token_with_speaker(engine_tok)}")
+                    console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_get_reaction(engine_tok, _last_player, reactions, lang)}")
             turn += 1
         else:
             console.print("  [dim]The field is silent.[/dim]")

@@ -1,0 +1,648 @@
+{
+  "suspect:thomas_crale": {
+    "card": "Thomas Crale leaned on the gate with his arms folded. His boots were clean but the cuffs of his trousers carried dried clay.",
+    "action": "You confront Thomas Crale at the farmhouse gate. You study his posture and the mud on his trousers.",
+    "hint": "(evidence — clean boots but dirty cuffs suggest he changed footwear after the fact)",
+    "reaction": {
+      "default": "Crale doesn't move from the gate. \"I was in bed by nine,\" he says, though you didn't ask about his evening. The clay on his cuffs is orchard clay. The kind that clings when you kneel."
+    }
+  },
+  "event:altered_path": {
+    "card": "The boundary path had been moved twelve feet to the south. The old line was still visible as a depression in the grass.",
+    "action": "You walk the old boundary line, tracing the depression in the grass with your heel.",
+    "hint": "(evidence — the depression proves the path was moved deliberately, not by erosion)",
+    "reaction": {
+      "default": "Twelve feet. You can see where the old markers stood — the grass never quite fills in where a post has been driven. Someone moved this line and hoped the ground would forget."
+    }
+  },
+  "motive:boundary_fraud": {
+    "card": "The altered boundary added four acres to the Crale holding. The extra land covered the shortfall on his debt to the bank.",
+    "action": "You lay the parish map beside the debt notice and measure the discrepancy with Fell's chain.",
+    "hint": "(intent — the fraud was calculated to match the exact shortfall on the bank debt)",
+    "reaction": {
+      "default": "Four acres. Not five, not three. Exactly the number needed to bring the collateral above the outstanding sum. This wasn't greed. It was arithmetic."
+    }
+  },
+  "suspect:amos_webb": {
+    "card": "Amos Webb farmed the adjoining field and had quarrelled with Fell over access. His dog was loose in the orchard that evening.",
+    "action": "You question Amos Webb in his kitchen. You note his boots by the door and the dog sleeping under the table.",
+    "hint": "(contradiction — Webb had motive to quarrel with Fell, but the boundary fraud benefits Crale, not Webb)",
+    "reaction": {
+      "default": "Webb's hands are rough and his temper shorter. \"Fell blocked my access road. I told him to his face.\" He doesn't hide the quarrel. A man with something worse to hide usually does."
+    }
+  },
+  "suspect:ruth_crale": {
+    "card": "Ruth Crale served tea to the inspector and said nothing about the boundary. Her hands were steady but her eyes did not leave the window.",
+    "action": "You accept tea from Ruth Crale and watch where her attention drifts.",
+    "hint": "(intent — her silence about the boundary is deliberate, and her gaze toward the orchard says she knows)",
+    "reaction": {
+      "default": "She pours without spilling. She answers without lying — she simply doesn't answer. Her eyes go to the orchard window three times in five minutes. She knows what's buried in that boundary.",
+      "after_class:OBJECT": "She sets down her cup when you mention the evidence. \"Thomas works hard,\" she says. It's not a defence. It's a warning.",
+      "after_class:SUSPECT": "Her expression doesn't change when you mention another name. But her hand tightens on the saucer. She knows who did what to whom.",
+      "after_class:MOTIVE": "\"We nearly lost the farm twice before,\" she says quietly. \"You don't know what that does to a man.\" She looks at the orchard again."
+    }
+  },
+  "suspect:mr_hadley": {
+    "card": "Mr Hadley was the parish surveyor and had measured the boundary the previous year. His original notes differ from the filed record.",
+    "action": "You visit Hadley at the parish office and lay his original notes beside the filed record.",
+    "hint": "(contradiction — the discrepancy between his notes and the filed record means someone altered the official document)",
+    "reaction": {
+      "default": "Hadley stares at both documents side by side. Twelve seconds of silence. \"That is not what I measured,\" he says. His voice is careful. He knows what the difference means and who it benefits."
+    }
+  },
+  "suspect:ned_garvey": {
+    "card": "Ned Garvey drank with Jonas Fell at the village inn on the afternoon of the death. He said Fell mentioned a discrepancy in the maps.",
+    "action": "You find Garvey at the inn and buy him a pint. You ask him to repeat what Fell said that afternoon.",
+    "hint": "(timeline — Garvey was the last known person to speak with Fell before the survey)",
+    "reaction": {
+      "default": "Garvey drinks half his pint before answering. \"Fell said the numbers didn't add up. Said someone had been clever with the western line.\" He pauses. \"I told him to leave it alone. He didn't.\""
+    }
+  },
+  "suspect:eliza_banks": {
+    "card": "Eliza Banks kept the parish records and filed the land deeds. She had placed a rival bid on the orchard six months earlier.",
+    "action": "You examine the filing records and then question Eliza Banks about the refiled deed.",
+    "hint": "(intent — Banks had both access to alter records and a competing interest in the orchard)",
+    "reaction": {
+      "default": "Banks keeps her ledgers immaculate. \"I filed what was presented to me,\" she says. Her rival bid hangs in the air between you. She wanted that orchard. Whether she helped lose it for Crale or helped him keep it — that's the question."
+    }
+  },
+  "suspect:constable_price": {
+    "card": "Constable Price was first to reach the body at dawn. He noted the position of the stakes before anyone else arrived.",
+    "action": "You review Price's notes and ask him to walk you through what he found at first light.",
+    "hint": "(timeline — Price's account establishes the state of the scene before it could be disturbed)",
+    "reaction": {
+      "default": "Price reads from his notebook without looking up. \"Body beside the western stone. Lamp broken. Notebook open. Stakes in a line running south.\" His account hasn't changed. That either means he's honest or he rehearsed."
+    }
+  },
+  "location:crale_orchard": {
+    "card": "The orchard covers three acres on a south-facing slope above the river. The oldest trees are bare and the grass is long between the rows.",
+    "action": "You walk the rows of the orchard from the gate to the boundary wall, noting sight lines and cover.",
+    "hint": "(movement — the slope and tree cover determine who could see what and from where)",
+    "reaction": {
+      "default": "The grass is knee-high between the old trees. A man could lie here for hours and not be seen from the lane. The slope runs down to the river and sound carries poorly uphill. A private place to die."
+    }
+  },
+  "location:boundary_wall": {
+    "card": "The boundary wall runs along the western edge of the orchard. One section of stone has been rebuilt with fresh mortar.",
+    "action": "You run your hand along the boundary wall, feeling where old mortar ends and new mortar begins.",
+    "hint": "(evidence — the fresh mortar section marks where the stone was moved and reset)",
+    "reaction": {
+      "default": "Your fingers find the seam. Old mortar — grey, hard, crumbling. Then a stretch of pale, soft mortar that hasn't had a winter yet. Someone took this wall apart and put it back. Recently. Quietly.",
+      "after_class:OBJECT": "The fresh mortar tells you more now. The wall was rebuilt to hide the repositioned stone. The evidence was meant to set in place and be forgotten.",
+      "after_class:SUSPECT": "Knowing who you've spoken to, the wall takes on new meaning. Someone had the tools, the time, and the reason to rebuild this section. And the skill to make it look old."
+    }
+  },
+  "location:farm_lane": {
+    "card": "The farm lane connects the orchard gate to the village road. Wheel ruts and boot prints cross in both directions.",
+    "action": "You crouch on the farm lane and study the overlapping tracks in the mud.",
+    "hint": "(movement — the lane is the only approach, so everyone who came or went left a mark)",
+    "reaction": {
+      "default": "The mud is a ledger. Wheel ruts from the morning cart. Boot prints going both ways — at least three different sizes. Someone came to the orchard and someone left. The mud doesn't say who came back."
+    }
+  },
+  "location:parish_office": {
+    "card": "The parish office holds land records going back to 1804. The filing cabinet nearest the window holds current boundary maps.",
+    "action": "You let yourself into the parish office and pull the Crale boundary file from the cabinet by the window.",
+    "hint": "(evidence — the parish records are the official truth, and someone has been editing that truth)",
+    "reaction": {
+      "default": "The cabinet is unlocked. The Crale file is near the front, recently handled. The map inside has been redrawn. Two inks, two hands, one lie."
+    }
+  },
+  "location:crale_farmhouse": {
+    "card": "The farmhouse sits fifty yards from the orchard gate. A light burned in the kitchen window until after midnight.",
+    "action": "You stand at the farmhouse door and measure the distance to the orchard gate with your eye.",
+    "hint": "(timeline — the kitchen light burning past midnight means someone in the house was awake during the hours that matter)",
+    "reaction": {
+      "default": "Fifty yards. You can see the orchard gate from the kitchen window. If the lamp was lit past midnight, someone was either waiting or couldn't sleep. Both are interesting."
+    }
+  },
+  "location:village_inn": {
+    "card": "The village inn serves as courthouse and public house. Jonas Fell signed his last letter there at four in the afternoon.",
+    "action": "You take Fell's usual seat at the inn and ask the landlord to show you where Fell sat that afternoon.",
+    "hint": "(timeline — the inn establishes Fell's last known movements before he went to the orchard)",
+    "reaction": {
+      "default": "The landlord points to the corner table. \"He sat there with Garvey. Wrote a letter, drank one pint, and left at five with his bag.\" The letter has not been found."
+    }
+  },
+  "location:tool_shed": {
+    "card": "The tool shed stands behind the farmhouse wall. An iron pry bar hangs from a nail beside the door.",
+    "action": "You step into the tool shed and examine each tool on the wall, paying attention to what's been moved recently.",
+    "hint": "(evidence — the murder weapon likely came from here and was returned here)",
+    "reaction": {
+      "default": "The shed smells of oil and old iron. Tools hang in order — a man who knows where everything belongs. The pry bar is on its nail, but the dust pattern shows it was taken down and put back. Recently.",
+      "after_class:OBJECT": "With what you've already examined, the shed tells a fuller story. The tools here aren't just for farming. They're for moving stone.",
+      "after_class:SUSPECT": "You think about who has easy access to this shed. It's behind the farmhouse wall. You'd need to know the property to find it in the dark.",
+      "after_class:EMOTION": "The careful order of the shed speaks to the temperament of its owner. Everything in its place. Even the murder weapon, returned to its nail.",
+      "after:modifier:bruise_pattern": "The pry bar hangs at shoulder height. You lift it from the nail. The flat end matches the width of the bruise on Fell's temple exactly. The weight is right. The angle is right. This is the weapon."
+    }
+  },
+  "location:river_crossing": {
+    "card": "The river crossing lies below the orchard at the bottom of the slope. The stepping stones are slippery after rain.",
+    "action": "You descend the slope to the river crossing and check the stepping stones for recent marks.",
+    "hint": "(movement — the river crossing is an alternate route in or out of the orchard, bypassing the lane)",
+    "reaction": {
+      "default": "The stones are wet and the moss is scraped on two of them. Someone crossed here recently and in a hurry. The crossing leads to open country — no village, no witnesses."
+    }
+  },
+  "object:survey_stakes": {
+    "card": "Three wooden survey stakes stand at the new boundary line. The paint is fresh and the wood has not yet weathered.",
+    "action": "You pull one stake from the ground and examine the point. You measure the distance between them with Fell's chain.",
+    "hint": "(evidence — the fresh stakes mark the fraudulent boundary, not the original one)",
+    "reaction": {
+      "default": "The stakes are new. The paint is still tacky in the shade. These mark the line someone wanted Fell to find — or wanted to move before he found the old one. Twelve feet south of where the ground remembers."
+    }
+  },
+  "object:boundary_map": {
+    "card": "The boundary map in the parish office shows the Crale holding twelve feet wider than the 1921 survey. The ink colour differs at the western edge.",
+    "action": "You hold the boundary map to the window light and compare the two ink colours with a magnifying glass.",
+    "hint": "(evidence — two inks on one map means the document was altered after its original filing)",
+    "reaction": {
+      "default": "Under the light, the difference is plain. The original boundary is drawn in iron gall ink, gone brown with age. The western extension is drawn in India ink, still black. Two hands. Two intentions."
+    }
+  },
+  "object:iron_pry_bar": {
+    "card": "An iron pry bar was found in the tool shed with soil on its end. The bar matches the marks on the displaced boundary stone.",
+    "action": "You lift the pry bar from its nail and turn it in the light. You compare the end to the marks on the boundary stone.",
+    "hint": "(evidence — the pry bar connects the tool shed to the boundary stone and possibly to the body)",
+    "reaction": {
+      "default": "The bar is heavy. Soil clings to the flat end — orchard soil, not riverbank clay. The marks on the boundary stone match the bar's width exactly. This tool moved the stone. The question is what else it struck.",
+      "after_class:OBJECT": "With each piece of evidence, the bar tells more. It moved the stone. It was returned to its nail. Someone used it and cleaned it — but not well enough.",
+      "after_class:SUSPECT": "You think about whose hands fit this bar. The grip pattern in the dried mud suggests a bare right hand. A working hand. A hand that knows this tool.",
+      "after_class:WITNESS": "The witnesses place people near the orchard. The pry bar places someone in the tool shed. The shed is behind the farmhouse. Not everyone knew it was there.",
+      "after_class:MOTIVE": "The bar moved the stone that moved the boundary that covered the debt. Every link in the chain passes through this piece of iron."
+    }
+  },
+  "object:parish_ledger": {
+    "card": "The parish ledger records all boundary amendments by date and witness. The latest entry has a single witness signature.",
+    "action": "You open the parish ledger to the latest entry and count the witness signatures.",
+    "hint": "(constraint — boundary amendments require two witnesses; one signature means the process was irregular)",
+    "reaction": {
+      "default": "Every other entry in this ledger has two signatures. The Crale amendment has one. The rules haven't changed. Someone skipped a step, and the person who should have caught it didn't."
+    }
+  },
+  "object:debt_notice": {
+    "card": "A bank notice addressed to Thomas Crale was found in the farmhouse bureau. The outstanding sum matches the value of four acres.",
+    "action": "You unfold the bank notice and compare the outstanding sum to the parish valuation of the disputed strip.",
+    "hint": "(intent — the debt and the acreage match too precisely to be coincidence)",
+    "reaction": {
+      "default": "The numbers align like a confession. The bank wanted its money. Crale needed four more acres to cover the debt. He found those acres on the wrong side of a boundary line. Arithmetic doesn't lie, even when surveyors do."
+    }
+  },
+  "object:fell_notebook": {
+    "card": "Jonas Fell's field notebook was found beside the body with three pages torn out. The remaining pages show measurements that contradict the filed map.",
+    "action": "You hold the notebook open at the torn edges and read the measurements on the surviving pages.",
+    "hint": "(evidence — the torn pages contained proof someone wanted destroyed; the remaining pages still contradict the map)",
+    "reaction": {
+      "default": "Three pages torn out in haste — the edges are ragged, not cut. But the pages that remain are damning enough. Fell's measurements show the boundary twelve feet north of the filed record. Whoever tore out those pages didn't read far enough."
+    }
+  },
+  "object:moved_stone": {
+    "card": "A boundary stone has been levered from its original position and re-seated. The base shows a ring of fresh mortar.",
+    "action": "You kneel beside the boundary stone and dig at the mortar ring with your knife.",
+    "hint": "(evidence — the stone was physically moved to support the fraudulent boundary line)",
+    "reaction": {
+      "default": "The mortar crumbles under your blade. It hasn't set properly — too much sand, mixed in a hurry. Beneath it, the original bed is visible. The stone sat six inches to the north for a hundred years before someone pried it loose."
+    }
+  },
+  "object:boot_scraping": {
+    "card": "Boot scrapings on the orchard gate post match a size eleven sole. Amos Webb wears size eleven.",
+    "action": "You examine the gate post at knee height where the boot scraped the wood.",
+    "hint": "(contradiction — the boot size points to Webb, but size eleven is not uncommon; Garvey also wears eleven)",
+    "reaction": {
+      "default": "The scraping is fresh — raw wood shows through the lichen. Size eleven, worn left heel. Webb wears eleven. So does Garvey. The gate post remembers the boot but not the man inside it."
+    }
+  },
+  "object:rope_fragment": {
+    "card": "A length of rope was found tied to the boundary stone. The fibres match the rope stock in Crale's tool shed.",
+    "action": "You untie the rope from the stone and carry it to the tool shed to compare the fibres.",
+    "hint": "(evidence — the rope connects the boundary stone directly to Crale's property)",
+    "reaction": {
+      "default": "The fibres match. Same stock, same twist, same age. The rope on the stone came from Crale's shed. Someone used his rope to move his stone to extend his boundary. The ownership of the means is not subtle."
+    }
+  },
+  "object:land_deed": {
+    "card": "The land deed for the Crale orchard was refiled at the parish office four months ago. The new filing adds four acres to the western boundary.",
+    "action": "You pull the original and refiled deeds and lay them side by side on the parish desk.",
+    "hint": "(timeline — the deed was refiled four months ago, well before Fell's survey was ordered)",
+    "reaction": {
+      "default": "Four months. The deed was changed before anyone ordered a survey. Someone planned this well in advance. The refiling was quiet, routine, buried in parish paperwork. It would have worked if Fell hadn't been thorough."
+    }
+  },
+  "object:lamp_glass": {
+    "card": "A broken lamp glass was found at the base of the boundary wall. The oil had soaked into the grass beneath it.",
+    "action": "You collect the shards of lamp glass and fit them together on the wall. You sniff the oil stain in the grass.",
+    "hint": "(timeline — the broken lamp places Fell at the boundary wall after dark, when the light failed)",
+    "reaction": {
+      "default": "The glass broke on impact — it fell or was knocked from a height. The oil stain is the size of a dinner plate. Fell was working by lamplight when the light went out. After that, he was in the dark."
+    }
+  },
+  "object:soil_sample": {
+    "card": "Soil from the boundary stone base does not match the surrounding ground. The clay is consistent with the riverbank below the orchard.",
+    "action": "You scrape soil from the stone base into your palm and compare it to the ground around your feet.",
+    "hint": "(evidence — the clay proves the stone was brought from the riverbank, not merely shifted in place)",
+    "reaction": {
+      "default": "The soil under the stone is river clay — blue-grey and dense. The orchard soil is brown loam. The stone didn't slide. It was carried uphill from the river crossing and re-seated. That's labour. That's intent."
+    }
+  },
+  "object:chain_measure": {
+    "card": "Fell's surveyor chain was found fully extended between two stakes. The measurement reads twelve feet longer than the filed record.",
+    "action": "You pick up the end of Fell's chain and read the measurement against the filed record.",
+    "hint": "(evidence — the chain was left mid-measurement, proving Fell found the discrepancy before he died)",
+    "reaction": {
+      "default": "The chain is still taut between the stakes. Fell measured the truth and left it lying in the grass for anyone to read. Twelve feet. The same twelve feet that appear on every document in this case."
+    }
+  },
+  "emotion:guarded_calm": {
+    "card": "He answered each question about the boundary with the same flat tone. His pipe remained unlit in his hand.",
+    "action": "You press Crale on the boundary details and watch his demeanour for any change in composure.",
+    "hint": "(intent — performed calm is harder to maintain than genuine calm; the unlit pipe is a tell)",
+    "reaction": {
+      "default": "Same tone. Same posture. Same unlit pipe turning in his fingers. A man who is calm doesn't need to prove it. Crale is proving it with every measured word."
+    }
+  },
+  "emotion:quick_anger": {
+    "card": "Webb stood up from his chair when the boundary was mentioned. He sat down again without being asked.",
+    "action": "You mention the boundary dispute and watch Webb's body react before his mouth does.",
+    "hint": "(contradiction — genuine anger is uncontrolled; Webb's anger is real but may be misdirected)",
+    "reaction": {
+      "default": "He's on his feet before the sentence ends. Then he sits. Nobody told him to. His anger is real — you can see it in the cords of his neck. But anger about a quarrel is not the same as anger about a killing.",
+      "after_class:OBJECT": "Webb's anger flares hotter when you show him the evidence. \"That's nothing to do with me,\" he says. But he doesn't look away from it.",
+      "after_class:SUSPECT": "When you mention who else you've spoken to, Webb's anger shifts. It becomes defensive. \"Ask Crale,\" he says. \"Ask his wife. Don't ask me.\"",
+      "after_class:MOTIVE": "With the motive laid bare, Webb's anger takes on a different quality. He's not angry about the accusation. He's angry because he sees the shape of it now — and his name is in the frame.",
+      "after:modifier:boot_print": "Webb looks at his own boots. Size eleven. \"Half the men in this parish wear eleven,\" he says. His voice is steady but his hands are not."
+    }
+  },
+  "emotion:false_sympathy": {
+    "card": "Crale spoke of Fell as a thorough man and a loss to the county. He did not mention that Fell had written to the bank.",
+    "action": "You let Crale eulogise Fell and wait for the omission you know is coming.",
+    "hint": "(intent — praising the man you killed is a specific kind of performance; the bank letter omission is the crack)",
+    "reaction": {
+      "default": "\"A thorough man,\" Crale says. \"A loss.\" He means it — thoroughness is exactly what killed Fell. Crale doesn't mention the letter to the bank. The one where Fell wrote that the boundary didn't match. The one that would have ended everything."
+    }
+  },
+  "emotion:stiff_silence": {
+    "card": "Hadley looked at the filed map and said nothing for twelve seconds. He then asked whether the original survey still existed.",
+    "action": "You hand Hadley the filed map and count the seconds of silence before he speaks.",
+    "hint": "(constraint — Hadley's silence means he recognises the alteration; his question about the original survey tells you he knows where the truth is)",
+    "reaction": {
+      "default": "Twelve seconds. You count them. Hadley is not a man who wastes silence. He sees the second ink. He sees the shifted line. His first question — about the original survey — tells you he knows this map is a forgery.",
+      "after_class:OBJECT": "Hadley's silence deepens when you present the physical evidence. He connects it to the map without being told. \"Someone has been very busy,\" he says.",
+      "after_class:WITNESS": "With testimony on the table, Hadley's silence becomes pointed. He knows who had access to the records. He's deciding what to say."
+    }
+  },
+  "emotion:nervous_laughter": {
+    "card": "She laughed once when asked about the refiled deed. The sound stopped abruptly and she reached for her tea.",
+    "action": "You ask Banks directly about the refiled deed and watch her reaction before she can compose herself.",
+    "hint": "(contradiction — the laugh is involuntary and its sudden stop reveals she knows the question is dangerous)",
+    "reaction": {
+      "default": "One laugh. Sharp. Then nothing. Her hand goes to the teacup like a reflex. Banks knows the deed was wrong when she filed it. The laugh is the sound of a woman who's been waiting for this question."
+    }
+  },
+  "emotion:flat_denial": {
+    "card": "He said he arrived at dawn and found the body exactly as it lay. His account did not change across three tellings.",
+    "action": "You ask Price to repeat his account of the discovery for the third time and compare it word for word.",
+    "hint": "(contradiction — a perfect repetition across three tellings suggests rehearsal, not recollection)",
+    "reaction": {
+      "default": "Word for word. Three times and not a detail changes. Real memory drifts — a man adds a colour, forgets a direction, corrects himself. Price's account is fixed. It was written before it was spoken.",
+      "after_class:OBJECT": "With evidence in hand, the flat denial takes on weight. Price's account fits the scene perfectly. Too perfectly. As if he arranged the facts before he reported them.",
+      "after_class:WITNESS": "Other witnesses contradict each other in small ways. Price never contradicts himself. That is the most suspicious consistency of all.",
+      "after_class:MOTIVE": "Knowing the motive, Price's denial reads differently. He had no reason to kill Fell. But he had every reason to describe the scene in a particular way.",
+      "after:motive:land_debt": "With the debt known, Crale's flat denial about the boundary work changes shape entirely. He wasn't denying the survey. He was denying the reason for it. The debt gives every denial a second meaning."
+    }
+  },
+  "modifier:stake_repositioned": {
+    "card": "The western survey stakes stand twelve feet south of the depression left by the original markers. The soil around each stake is loose.",
+    "action": "You pull a repositioned stake and fit it into the original depression. It sits perfectly.",
+    "hint": "(evidence — the stakes were moved from the true line to the false one; the original holes prove intent)",
+    "reaction": {
+      "default": "The stake slides into the old hole like a key into a lock. This is where it stood before someone pulled it and drove it twelve feet south. The soil around the new position is still loose. The old hole is packed firm. Time tells the truth."
+    }
+  },
+  "modifier:fresh_mortar": {
+    "card": "The mortar joining the re-seated boundary stone is a lighter colour than the rest of the wall. It has not yet fully cured.",
+    "action": "You chip at the fresh mortar with your thumbnail and compare its colour and hardness to the old mortar beside it.",
+    "hint": "(timeline — uncured mortar means the stone was re-seated within the last few weeks)",
+    "reaction": {
+      "default": "The new mortar dents under your nail. The old mortar doesn't. Weeks, not months. The stone was moved after the survey was ordered and before Fell arrived. Someone knew he was coming.",
+      "after_class:OBJECT": "Each object you've examined tightens the timeline. The mortar dates the stonework. The deed was filed months before. The plan was layered — documents first, then the physical ground.",
+      "after_class:SUSPECT": "You think about who mixes mortar. Who has a trowel. Who knows how to re-seat a stone so it looks like it's been there for years — almost.",
+      "after:object:iron_pry_bar": "The pry bar levered the stone. The mortar set it back in place. Two steps, one plan. The tool marks in the mortar bed match the flat end of the bar exactly."
+    }
+  },
+  "modifier:mud_on_handle": {
+    "card": "The pry bar handle carries dried mud matching the orchard topsoil. The grip pattern is consistent with a bare right hand.",
+    "action": "You hold the pry bar by its clean end and study the grip pattern in the dried mud.",
+    "hint": "(evidence — bare right hand means no gloves; the mud type places the bar in the orchard, not the shed)",
+    "reaction": {
+      "default": "The mud is orchard topsoil — brown loam, not river clay. Someone carried this bar to the boundary wall with a bare right hand and brought it back. No gloves. Either haste or habit."
+    }
+  },
+  "modifier:lamp_extinguished": {
+    "card": "The lamp was found with its glass broken and the wick cold. Oil pooled beneath it suggests it fell from a height.",
+    "action": "You hold the lamp base at waist height above the wall and estimate the drop that would produce the crack pattern.",
+    "hint": "(timeline — the lamp going out marks the moment Fell lost his light; what happened next happened in darkness)",
+    "reaction": {
+      "default": "The crack pattern says the lamp fell from about three feet — the height of the wall top. Fell set his lamp on the wall while he measured. It fell — or was knocked. After that, the orchard was dark."
+    }
+  },
+  "modifier:gate_unlocked": {
+    "card": "The orchard gate was found unlatched at dawn. Crale stated he locked it at six the previous evening.",
+    "action": "You test the gate latch and the drop bolt, noting how much force each requires.",
+    "hint": "(contradiction — if Crale locked the gate at six, someone unlocked it between six and dawn)",
+    "reaction": {
+      "default": "The drop bolt is stiff. It takes two hands or one strong hand. If Crale locked it at six, someone opened it after. The gate doesn't unlatch itself. Someone went in, or someone went out.",
+      "after_class:SUSPECT": "You think about who knew the gate was bolted. Who knew you need force to lift it. Someone familiar with the property.",
+      "after_class:WITNESS": "The witnesses place various people near the orchard. The unlatched gate means at least one of them went through it."
+    }
+  },
+  "modifier:ink_alteration": {
+    "card": "The boundary line on the parish map is drawn in two inks. The western section is darker and applied with a finer nib.",
+    "action": "You tilt the parish map under the lamp and trace the ink change with a magnifying glass.",
+    "hint": "(evidence — two inks prove the map was altered; the finer nib suggests a different hand or a more careful one)",
+    "reaction": {
+      "default": "The transition is almost invisible in flat light. Under the lamp, it's obvious. The original surveyor used a broad nib and iron gall ink. The amendment is India ink, finer nib, steadier hand. A forger's hand.",
+      "after_class:SUSPECT": "You think about whose hand drew the second line. A surveyor's hand? A clerk's? Someone who files documents and keeps a steady pen.",
+      "after_class:OBJECT": "Combined with the other evidence, the ink alteration anchors the timeline. The map was changed before the stone was moved. Paper first, then ground."
+    }
+  },
+  "modifier:soil_disturbed": {
+    "card": "The soil around the boundary stone base is loose and mixed with clay. The clay does not occur naturally at that elevation.",
+    "action": "You sift the disturbed soil through your fingers and separate the loam from the clay.",
+    "hint": "(evidence — the foreign clay ties the boundary stone to the riverbank below the orchard)",
+    "reaction": {
+      "default": "Blue-grey clay in brown loam. The clay belongs to the riverbank, forty feet below. Someone carried it up — on a stone, on a tool, on their boots. The soil around this stone is a mixture of two places that should never meet.",
+      "after_class:OBJECT": "The disturbed soil connects to everything you've found. The stone was moved. The clay came from below. The evidence is layered in the dirt.",
+      "after_class:SUSPECT": "You think about who walks between the river crossing and the boundary wall. Who has reason to carry stone uphill."
+    }
+  },
+  "modifier:rope_knotted": {
+    "card": "The rope around the boundary stone is tied in a bowline. Crale served in the merchant navy where the bowline is standard.",
+    "action": "You examine the knot on the rope and identify it as a bowline. You ask who in the parish served at sea.",
+    "hint": "(evidence — a bowline is a trained knot; it points directly at someone with nautical experience)",
+    "reaction": {
+      "default": "A bowline. Not a knot you learn on a farm. You learn it on a ship, tying off in weather, when the knot has to hold and release clean. Crale was merchant navy, six years before the mast. His hands remember."
+    }
+  },
+  "modifier:bruise_pattern": {
+    "card": "The bruise on Fell's temple is consistent with the flat end of a pry bar. The angle suggests a blow from the right.",
+    "action": "You study the bruise on Fell's temple and measure its width against the pry bar's flat end.",
+    "hint": "(evidence — the bruise pattern identifies the weapon and the attacker's position — standing to Fell's right)",
+    "reaction": {
+      "default": "The bruise is two inches wide. Flat. The skin split along a straight line. Not a fist, not a stone — something forged. The angle says the blow came from the right and slightly above. The attacker was standing. Fell was kneeling.",
+      "after_class:OBJECT": "The bruise matches the iron. The angle matches a swing from standing height. Fell was on his knees measuring when it happened. He never saw it.",
+      "after_class:SUSPECT": "You think about who is right-handed among the suspects. Who has the strength to swing an iron bar with that precision.",
+      "after_class:WITNESS": "The witnesses describe the scene at dawn. The bruise tells you what happened at dusk. One blow. From the right. While Fell measured the truth."
+    }
+  },
+  "modifier:boot_print": {
+    "card": "Boot prints near the body match a size eleven sole with a worn left heel. Webb and Garvey both wear size eleven.",
+    "action": "You crouch beside the boot prints near the body and measure the sole length and the heel wear pattern.",
+    "hint": "(contradiction — two suspects share the boot size; the worn left heel may narrow it down, or it may be a red herring)",
+    "reaction": {
+      "default": "Size eleven. Worn left heel. The prints are deep — the man was standing still, not walking. Standing over something. Or someone. Webb wears eleven. Garvey wears eleven. The ground doesn't care whose foot made the mark.",
+      "after_class:OBJECT": "The boot prints gain meaning beside the other evidence. Someone stood here, near the body, near the stone, in boots that match two men.",
+      "after_class:SUSPECT": "Two suspects wear size eleven. The worn left heel is distinctive. You need to see both pairs of boots before this print names its owner.",
+      "after_class:EMOTION": "The prints are deep. Whoever stood here stood for a while. Not running. Not pacing. Standing still. That takes a certain kind of nerve — or a certain kind of shock.",
+      "after:suspect:amos_webb": "Webb wears size eleven with a worn left heel. The match is close. Almost too close. A man who wanted to frame Webb would know his boot size. Everyone in the parish does.",
+      "after:object:iron_pry_bar": "The prints are deepest where the left foot braced. A man swinging a heavy bar from the right plants his left foot and pushes. The depth of the print matches the force of the blow."
+    }
+  },
+  "action:stone_levered": {
+    "card": "The boundary stone was levered from its bed using an iron bar. The leverage marks match the tool shed pry bar.",
+    "action": "You fit the pry bar into the leverage marks on the stone bed and test the angle.",
+    "hint": "(evidence — the marks physically connect the pry bar to the stone, confirming the method of the fraud)",
+    "reaction": {
+      "default": "The bar fits the marks like a signature. Same width, same angle, same depth. Someone stood here with this bar and pried a hundred-year-old stone from its bed. It took strength and time and a reason worth the risk."
+    }
+  },
+  "action:map_redrawn": {
+    "card": "The parish map was amended by hand with a darker ink. The amendment was not countersigned by a second surveyor.",
+    "action": "You compare the parish map amendment to Hadley's original survey notes line by line.",
+    "hint": "(constraint — no countersignature means the amendment bypassed official procedure)",
+    "reaction": {
+      "default": "Hadley's notes say one thing. The map says another. The amendment has no second signature because a second surveyor would have measured the ground. And the ground would have told the truth."
+    }
+  },
+  "action:path_cleared": {
+    "card": "The original boundary path was cleared of its markers and the grass combed flat. Only the soil depression remains.",
+    "action": "You walk the line of the soil depression, noting where the original markers were pulled.",
+    "hint": "(evidence — combing the grass flat shows deliberate concealment of the original boundary)",
+    "reaction": {
+      "default": "Someone pulled every marker and raked the grass to hide the line. But soil has memory. The depression runs straight and true where the original path lay. You can erase the posts. You can't erase the ground."
+    }
+  },
+  "action:ledger_amended": {
+    "card": "The parish ledger entry for the Crale boundary shows a correction in different ink. The witness column has one signature instead of two.",
+    "action": "You open the ledger to the Crale entry and hold a lamp behind the page to check for erasure.",
+    "hint": "(constraint — the amended ledger with one witness is a procedural violation that someone allowed to pass)",
+    "reaction": {
+      "default": "The lamp shows ghost marks beneath the new ink. Something was written and overwritten. The witness column has one name where there should be two. The person who keeps this ledger let it pass. That's not carelessness. That's complicity."
+    }
+  },
+  "action:drink_offered": {
+    "card": "Ned Garvey bought Fell a pint at four and they spoke for an hour. Garvey said Fell seemed worried but did not say about what.",
+    "action": "You sit across from Garvey and ask him to tell you everything Fell said over that pint.",
+    "hint": "(timeline — the conversation at four is the last record of Fell's state of mind before the survey)",
+    "reaction": {
+      "default": "Garvey turns his glass. \"He said the numbers were wrong. Said someone had been clever. I told him it was none of my business.\" A pause. \"I should have asked whose business it was.\""
+    }
+  },
+  "action:gate_opened": {
+    "card": "The orchard gate was unlatched from inside using the drop bolt. The bolt is stiff and requires force to lift.",
+    "action": "You test the drop bolt from both sides and measure the force needed to lift it.",
+    "hint": "(movement — unlatched from inside means someone was already in the orchard when the gate was opened)",
+    "reaction": {
+      "default": "The bolt lifts from inside only. You need to reach over and push down, then pull. It takes a strong arm or a familiar hand. Whoever opened this gate was already inside and let someone in — or let themselves out."
+    }
+  },
+  "action:deed_filed": {
+    "card": "The refiled deed was submitted by Eliza Banks on behalf of Crale. The original deed has not been returned.",
+    "action": "You ask Banks to produce the original deed and watch her response when she cannot.",
+    "hint": "(constraint — the missing original means the fraud cannot be easily compared; Banks is the link between Crale and the parish records)",
+    "reaction": {
+      "default": "Banks opens the cabinet. Closes it. Opens it again. \"The original should be here,\" she says. It isn't. A deed doesn't walk away. Someone took it because the original and the copy would tell different stories side by side."
+    }
+  },
+  "action:notebook_removed": {
+    "card": "Three pages were torn from Fell's notebook after the measurements were taken. The tear marks suggest haste.",
+    "action": "You hold the notebook spine open and examine the torn edges under the lamp.",
+    "hint": "(evidence — the torn pages contained Fell's proof; the haste suggests they were removed in the moments after the murder)",
+    "reaction": {
+      "default": "Three pages torn in sequence. The edges are ragged — pulled, not cut. Fell wrote his measurements, then someone took them. In a hurry. In the dark, perhaps, after the lamp broke. But the remaining pages still hold enough truth to damn."
+    }
+  },
+  "action:rope_cut": {
+    "card": "The rope was cut six inches from the knot with a sharp blade. The cut is clean and made in a single stroke.",
+    "action": "You examine the rope end where it was cut and test the blade angle.",
+    "hint": "(evidence — a clean single cut means a sharp tool and a steady hand; the bowline was left intact as evidence)",
+    "reaction": {
+      "default": "One stroke. Clean through. The blade was sharp and the hand was sure. But the knot is still on the stone. Whoever cut the rope didn't untie it — they left the bowline where it lay. Haste again. Or darkness."
+    }
+  },
+  "time:dusk_hour": {
+    "card": "Fell was last seen alive at the boundary wall shortly before dusk. The light was failing and he carried a lamp.",
+    "action": "You stand at the boundary wall at dusk and watch the light fail across the orchard.",
+    "hint": "(timeline — dusk is the window; Fell was working alone in failing light at the murder site)",
+    "reaction": {
+      "default": "The light goes fast on this slope. One minute you can read the chain markings; the next you need a lamp. Fell was measuring in the last good light. When the sun went, he was alone in the dark with the truth and whoever wanted it buried."
+    }
+  },
+  "time:afternoon_survey": {
+    "card": "Fell began his survey of the Crale boundary at two in the afternoon. He worked alone with his chain and notebook.",
+    "action": "You trace Fell's route from the village to the orchard and estimate his working time.",
+    "hint": "(timeline — Fell had three hours of daylight; the survey would have taken about that long to complete)",
+    "reaction": {
+      "default": "Two o'clock. Three hours of good light. Enough to measure the full western boundary if he worked steadily. The postman saw him at two with his chain. The landlord saw him leave the inn at five. Somewhere in those three hours, Fell found the discrepancy."
+    }
+  },
+  "time:morning_discovery": {
+    "card": "Constable Price found the body at first light beside the boundary stone. The dew had settled and the grass was undisturbed around the path.",
+    "action": "You walk the path Price took at dawn and note what the undisturbed dew tells you about the scene.",
+    "hint": "(timeline — undisturbed dew means no one approached the body between the dew falling and Price's arrival)",
+    "reaction": {
+      "default": "The dew settles after midnight in this valley. If the grass was undisturbed, no one walked this path between midnight and dawn. The killer came and went before the dew fell. Or the killer knew a path that doesn't cross grass.",
+      "after_class:SUSPECT": "You think about who Price told first. Who he sent for. The order matters. The first person a constable tells is the first person who can begin adjusting their story.",
+      "after_class:OBJECT": "The undisturbed dew means the evidence at the scene was untouched since before midnight. What Price found is what the killer left. Nothing was moved between the act and the discovery.",
+      "after_class:WITNESS": "Price was the first witness and the first authority. Every other witness statement was given after Price had already described what he found. His account shaped theirs."
+    }
+  },
+  "time:filing_deadline": {
+    "card": "The bank required proof of acreage by the end of the month. Without the extra four acres, the debt exceeded the collateral.",
+    "action": "You check the calendar and count the days between the murder and the bank's deadline.",
+    "hint": "(constraint — the deadline created urgency; Fell's survey would have exposed the fraud before the bank accepted the collateral)",
+    "reaction": {
+      "default": "Eight days. Fell's survey was due the morning after his death. The bank deadline was at the end of the month. If the survey reached the parish office, the amended deed would be exposed. Eight days between Crale and ruin."
+    }
+  },
+  "time:last_light": {
+    "card": "The sun set at half past five and the orchard was dark within the hour. No lamp was seen from the farm lane after six.",
+    "action": "You confirm the sunset time and calculate the window of darkness before the dew settled.",
+    "hint": "(timeline — the murder window is between half past five and midnight, when the dew fell on undisturbed grass)",
+    "reaction": {
+      "default": "Dark by half six. No lamp after six. The milk boy passed at half five in the morning and saw nothing. Between six in the evening and five thirty in the morning, the orchard was dark and the lane was empty. Eleven hours of silence."
+    }
+  },
+  "motive:land_debt": {
+    "card": "Crale owed the bank more than the farm was worth at its current size. The four extra acres brought the collateral above the debt.",
+    "action": "You lay the bank notice beside the parish valuation and let the arithmetic speak.",
+    "hint": "(intent — the debt is the engine of everything; without it, there is no reason to move a boundary)",
+    "reaction": {
+      "default": "The numbers don't require interpretation. Crale owed more than he had. Four acres of bottomland closed the gap exactly. A man facing the loss of three generations of work found his solution in twelve feet of stolen ground.",
+      "after_class:OBJECT": "Every piece of evidence traces back to this debt. The moved stone, the altered map, the refiled deed — all of it was arithmetic. Cold, necessary, desperate arithmetic.",
+      "after_class:SUSPECT": "The debt puts Crale at the centre. Everyone else orbits him. Webb quarrels. Banks files. Garvey drinks. But Crale owes. The debt is his alone.",
+      "after_class:EMOTION": "The emotions you've seen — the calm, the anger, the denial — all make sense now. The debt is the gravity that bends every reaction in this case."
+    }
+  },
+  "motive:acreage_claim": {
+    "card": "The amended boundary gave Crale a strip of rich bottomland along the river. The strip had been common grazing for thirty years.",
+    "action": "You walk the disputed strip and note the quality of the soil compared to the upper orchard.",
+    "hint": "(intent — the strip is the most valuable land in the parish; common grazing means everyone knew it wasn't Crale's)",
+    "reaction": {
+      "default": "The bottomland is dark and rich. The upper orchard is thin soil over stone. Everyone grazed this strip. Everyone knew whose it wasn't. Crale claimed it anyway because the bank doesn't graze cattle — it reads deeds."
+    }
+  },
+  "motive:survey_suppression": {
+    "card": "Fell's survey would have revealed the boundary had been moved. His report was due at the parish office the following morning.",
+    "action": "You read the parish council's survey order and note the deadline for Fell's report.",
+    "hint": "(intent — the survey was the threat; suppressing it was the only way to preserve the fraud before the bank deadline)",
+    "reaction": {
+      "default": "Fell's report was due at nine the next morning. By dawn, Fell was dead and three pages were missing from his notebook. The survey was the one thing that could unravel everything. Someone made sure it never arrived.",
+      "after_class:OBJECT": "The evidence you hold is what the suppression failed to destroy. Fell's remaining measurements, the chain still extended, the stakes still standing. The survey was silenced but not erased.",
+      "after_class:SUSPECT": "Only one person needed the survey suppressed. Everyone else — Webb, Banks, Hadley, Garvey — had nothing to lose from Fell's report. Crale had everything to lose.",
+      "after_class:MOTIVE": "Survey suppression layered on the debt creates a timeline of escalation. First the boundary was moved. Then the records were altered. When Fell threatened to expose it all, the last option was the worst one.",
+      "after:object:fell_notebook": "The notebook is the survey. Three pages torn out, but the rest still holds the measurements. Fell did his job. The proof existed. Someone killed to suppress what couldn't be unwritten."
+    }
+  },
+  "motive:family_name": {
+    "card": "The Crale family had held the orchard for three generations. Losing it to the bank would end a name in the parish register.",
+    "action": "You look at the parish register and trace the Crale name back through three generations of entries.",
+    "hint": "(intent — this motive is emotional, not financial; a man protecting a legacy will go further than a man protecting money)",
+    "reaction": {
+      "default": "Three generations. The name is in the register beside births, marriages, deaths, and land. Lose the orchard and the Crales become tenants. Thomas Crale would rather be a murderer than the man who lost the family name."
+    }
+  },
+  "motive:rival_bid": {
+    "card": "Eliza Banks had offered to buy the orchard at auction six months earlier. If Crale defaulted, she was positioned to acquire it.",
+    "action": "You find Banks's auction bid in the parish records and calculate what she stood to gain from Crale's default.",
+    "hint": "(intent — Banks benefits if Crale fails; this gives her a reason to help the fraud or to expose it, depending on which outcome she preferred)",
+    "reaction": {
+      "default": "Banks bid low — she knew the debt. If Crale defaulted, she'd have the orchard at auction price. But she also filed his amended deed. Either she helped him succeed or she set him up to fail. Both explanations fit. Neither is comfortable."
+    }
+  },
+  "witness:postman_ridge": {
+    "card": "The postman saw Fell walking toward the orchard at two with his chain over his shoulder. He did not see anyone else on the lane.",
+    "action": "You find the postman on his round and ask him to describe exactly what he saw at two o'clock.",
+    "hint": "(timeline — the postman establishes that Fell entered the orchard alone; no one was following him on the lane)",
+    "reaction": {
+      "default": "\"Chain over his shoulder, bag in his left hand. Walking steady, not hurrying.\" The postman saw no one else on the lane. If someone followed Fell to the orchard, they came a different way."
+    }
+  },
+  "witness:milk_boy": {
+    "card": "The milk boy passed the orchard gate at half past five in the morning. The gate was open and he saw no lamp or figure.",
+    "action": "You find the milk boy and ask him to tell you exactly what he saw — and didn't see — at the orchard gate.",
+    "hint": "(timeline — the open gate and absence of lamp or figure at 5:30 AM confirms the killing happened hours earlier)",
+    "reaction": {
+      "default": "\"Gate was open. No light. No one about.\" The boy passed at half five. The gate that Crale says he locked at six the evening before was standing open. Eleven and a half hours. Someone opened it in the dark.",
+      "after_class:OBJECT": "The milk boy's account gains weight beside the physical evidence. The gate was open. The lamp was broken. The body lay undiscovered. The scene had been still for hours before anyone came.",
+      "after_class:SUSPECT": "You ask the boy if he saw anyone on the lane that morning. Anyone at all. He shakes his head. Whoever opened that gate was gone long before dawn."
+    }
+  },
+  "witness:vicar": {
+    "card": "The vicar spoke with Fell at the inn before the survey. Fell said he expected the measurements would not match the filed record.",
+    "action": "You visit the vicar and ask him to repeat Fell's exact words about the survey.",
+    "hint": "(intent — Fell expected to find fraud before he measured; someone may have known he expected it)",
+    "reaction": {
+      "default": "The vicar chooses his words carefully. \"Fell said he'd looked at the maps and the numbers didn't add up. He said he expected to find the boundary had been moved.\" Fell went to the orchard knowing what he'd find. The question is who knew he knew.",
+      "after_class:SUSPECT": "The vicar's testimony places Fell's suspicions in the open. If Fell told the vicar, he may have told others. Word travels in a small parish. The killer may have known Fell was coming armed with doubt.",
+      "after_class:MOTIVE": "Fell expected fraud. He told the vicar. If that expectation reached Crale — through the vicar, through Garvey, through anyone — then Crale knew the survey would expose him. That's not just motive. That's deadline."
+    }
+  },
+  "witness:inn_landlord": {
+    "card": "The inn landlord served Fell and Garvey at four. He said Fell left at five with his bag and did not return.",
+    "action": "You lean on the bar and ask the landlord to walk you through the afternoon — who came, who left, and when.",
+    "hint": "(timeline — the landlord pins Fell's departure at five, giving him thirty minutes of light to reach the orchard)",
+    "reaction": {
+      "default": "\"Fell came at four. Garvey was already here. They sat in the corner and talked low. Fell left at five with his bag. Garvey stayed for another pint.\" The landlord wipes the bar. \"Fell didn't come back.\"",
+      "after_class:SUSPECT": "The landlord watches people for a living. You ask about each suspect. He remembers who drinks, who pays, who talks too much. His bar is a ledger of character.",
+      "after_class:WITNESS": "The landlord confirms what the other witnesses say — and adds the details they leave out. The colour of Fell's mood. The weight of Garvey's silence after.",
+      "after:suspect:ned_garvey": "\"Garvey stayed after Fell left. Ordered another pint and sat there smiling. Not the usual kind of smile. Like a man who's been let off something.\" The landlord frowns. \"I didn't think much of it then.\""
+    }
+  },
+  "witness:ploughman": {
+    "card": "The ploughman worked the field below the river crossing until dark. He heard nothing from the orchard above.",
+    "action": "You find the ploughman and ask him what he heard — and didn't hear — from the orchard that evening.",
+    "hint": "(constraint — the ploughman's silence confirms the orchard was acoustically isolated from the fields below)",
+    "reaction": {
+      "default": "\"I was in the lower field until I couldn't see the furrow. Heard nothing from the orchard.\" The ploughman is certain. Sound doesn't carry uphill from the river. Whatever happened at the boundary wall happened in silence."
+    }
+  },
+  "event:jonas_fell_discovered": {
+    "card": "Jonas Fell was found beside the western boundary stone at dawn. His notebook lay open and his lamp glass was broken.",
+    "action": "You stand where the body was found and reconstruct the scene from Price's report.",
+    "hint": "(evidence — the position of the body beside the boundary stone connects the murder directly to the fraud)",
+    "reaction": {
+      "default": "Fell lay beside the stone he came to measure. His notebook open to the page that would have ended Crale's claim. His lamp broken beside him. He found the truth at the boundary wall and died there with it."
+    }
+  },
+  "event:boundary_inspection": {
+    "card": "The boundary inspection was ordered by the parish council after a complaint from Amos Webb. Fell was appointed to conduct it.",
+    "action": "You read the parish council minutes and trace the chain from Webb's complaint to Fell's appointment.",
+    "hint": "(timeline — Webb's complaint triggered the inspection that threatened Crale; this makes Webb both catalyst and suspect)",
+    "reaction": {
+      "default": "Webb complained. The council ordered an inspection. Fell was appointed. One man's grievance set the chain in motion that ended in another man's death. Webb wanted justice for his access road. What he got was a murder on his doorstep."
+    }
+  },
+  "witness:constable_price": {
+    "card": "Constable Price was first to reach the body at dawn. He noted the position of the stakes before anyone else arrived.",
+    "action": "You ask Price to walk you through the scene exactly as he found it, step by step.",
+    "hint": "(timeline — Price's account is the baseline for the crime scene; everything after him is contaminated)",
+    "reaction": {
+      "default": "Price stands where he stood at dawn and points. \"Body there. Stone there. Notebook open. Lamp broken. Stakes in a line south.\" His voice is flat. Professional. He noted the stakes before touching anything else. A good constable — or a careful one.",
+      "after_class:OBJECT": "Price catalogued the physical evidence before anyone else arrived. His list matches what you've found — which means either he was thorough or he arranged it.",
+      "after_class:SUSPECT": "When you mention the suspects, Price's manner stiffens. \"I report what I find. I don't speculate.\" But his notes are very specific about the stakes. He knew what mattered before he was told.",
+      "after_class:WITNESS": "The other witnesses defer to Price's account. He was first. He was authority. His version became the frame through which everyone else sees the scene.",
+      "after:object:boot_scraping": "\"I saw the boot marks on the gate post,\" Price says. \"Size eleven. I wear a nine. I noted it in my book before I touched the gate.\" He's precise. He wants you to know his boots don't match.",
+      "after:suspect:amos_webb": "Price pauses. \"I saw Webb on the lane the evening before. Coming from the direction of the orchard. It was nearly dark.\" He says it like a man who's been holding the fact in reserve."
+    }
+  }
+}
