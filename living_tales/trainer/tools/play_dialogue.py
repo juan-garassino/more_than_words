@@ -804,9 +804,25 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
                         for stok in scene_tokens[1:]:
                             console.print(f"  [dim]{_get_reaction(stok, _last_player, reactions, lang)}[/dim]")
                     else:
-                        console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_get_reaction(scene_tokens[0], _last_player, reactions, lang)}")
-                        for stok in scene_tokens[1:]:
-                            console.print(f"  [dim]       {_get_reaction(stok, _last_player, reactions, lang)}[/dim]")
+                        # Separate locations (spatial transitions) from clues
+                        clue_tokens = []
+                        scene_bg = []
+                        for stok in scene_tokens:
+                            if stok.token_class == TokenClass.LOCATION:
+                                scene_bg.append(stok)
+                            else:
+                                clue_tokens.append(stok)
+
+                        # Show spatial transition first (if any)
+                        for stok in scene_bg:
+                            text = _get_reaction(stok, _last_player, reactions, lang)
+                            console.print(f"\n  [dim italic]{text}[/dim italic]")
+
+                        # Then show clues
+                        if clue_tokens:
+                            console.print(f"\n  [bold cyan]CLUE[/bold cyan]   {_get_reaction(clue_tokens[0], _last_player, reactions, lang)}")
+                            for stok in clue_tokens[1:]:
+                                console.print(f"  [dim]       {_get_reaction(stok, _last_player, reactions, lang)}[/dim]")
 
                     # Place all scene tokens in game state
                     for stok in scene_tokens:
