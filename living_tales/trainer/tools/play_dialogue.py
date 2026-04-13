@@ -351,6 +351,36 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         )
     console.print(Panel(_intro, border_style="bright_blue"))
 
+    # Load briefing from case JSON
+    import json as _json
+    briefing = None
+    endings_data = {}
+    life_states = {}
+    for _try_path in [
+        Path(f"../../cases/{spec.case_id}.json"),
+        Path(f"cases/{spec.case_id}.json"),
+    ]:
+        if _try_path.exists():
+            with open(_try_path) as _f:
+                _case_data = _json.load(_f)
+            briefing = _case_data.get("briefing", {}).get(lang, _case_data.get("briefing", {}).get("en"))
+            endings_data = _case_data.get("endings", {})
+            life_states = _case_data.get("life_states", {})
+            break
+
+    if briefing and not is_creature:
+        console.print()
+        console.print(f"  [dim]{briefing.get('setting', '')}[/dim]")
+        console.print()
+        console.print(f"  {briefing.get('crime', '')}")
+        console.print()
+        suspects = briefing.get('suspects', [])
+        if suspects:
+            console.print("  [bold]PERSONS OF INTEREST:[/bold]")
+            for s in suspects:
+                console.print(f"    [bold]{s['name']}[/bold] — {s['intro']}")
+        console.print()
+
     console.print(Rule(f" {spec.title} ", style="dim"))
     console.print()
     for tid in spec.opening_token_ids:
@@ -385,8 +415,25 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
                 filled = int(val * 15)
                 bar = "█" * filled + "░" * (15 - filled)
                 console.print(f"  {label:<20s} [{bar}] {val:.0%}")
+
+            # Creature periodic status narration
+            if turn > 0 and turn % 20 == 0 and life_states:
+                avg = float(convergence_dims.mean())
+                min_d = float(convergence_dims.min())
+                if avg >= 0.7:
+                    state_key = "all_high"
+                elif min_d <= 0.2:
+                    lowest_dim = int(convergence_dims.argmin())
+                    label = dim_labels[lowest_dim] if lowest_dim < len(dim_labels) else "unknown"
+                    state_key = f"{label.split()[0].lower()}_low"
+                else:
+                    state_key = "mixed"
+
+                state_text = life_states.get(state_key, {}).get(lang, life_states.get(state_key, {}).get("en", ""))
+                if state_text:
+                    console.print(f"\n  [italic dim]{state_text}[/italic dim]")
         else:
-            console.print(Rule(f"Turn {turn}/{max_turns}"))
+            console.print(Rule(f"Turn {turn}"))
 
         # Creature token recycling: reset placed_ids every 10 steps
         step = turn // 2
@@ -409,7 +456,7 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         console.print()
         console.print(f"[bold]{txt['your_hand']}[/bold]")
         for i, tok in enumerate(valid_hand):
-            console.print(f"  [{i + 1}] {_token_rich(tok, show_label=False)}")
+            console.print(f"  [{i + 1}] {_token_rich(tok, show_label=True)}")
 
         if not valid_hand:
             console.print("  [dim]No tokens available.[/dim]")
@@ -452,7 +499,7 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
             if is_creature:
                 console.print("[yellow]No accusations here -- tend to your creature.[/yellow]")
                 continue
-            _handle_accusation(spec, convergence_dims, console, txt)
+            _handle_accusation(spec, convergence_dims, console, txt, endings_data=endings_data, lang=lang)
             break
 
         # Parse card selection
@@ -666,6 +713,10 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         console.print(Rule("THE TRAIL HAS GONE COLD"))
         console.print(f"  [bold red]{txt['cold_trail']}[/bold red]")
         console.print(f"  [dim]You walked away after {len(dialogue_history)} exchanges.[/dim]")
+        if endings_data:
+            cold_ending = endings_data.get("cold_case", {}).get(lang, endings_data.get("cold_case", {}).get("en", ""))
+            if cold_ending:
+                console.print(f"\n  [italic]{cold_ending}[/italic]")
     console.print()
     console.print()
 
@@ -675,10 +726,12 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         console.print(f"  {tag}  {_token_rich(tok)}")
 
 
-def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: Console, txt: dict = None):
+def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: Console, txt: dict = None, endings_data: dict = None, lang: str = "en"):
     """Accusation prompt — convergence score grades the quality of the accusation."""
     if txt is None:
         txt = TUI_TEXT["en"]
+    if endings_data is None:
+        endings_data = {}
     suspects = [t for t in spec.tokens if t.token_class == TokenClass.SUSPECT]
     correct_id = spec.invariant_token_ids[0] if spec.invariant_token_ids else None
     correct_tok = spec.get_token(correct_id) if correct_id else None
@@ -751,6 +804,23 @@ def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: C
             con.print(f"  [yellow]~ {label}: partial evidence[/yellow]")
         else:
             con.print(f"  [red]✗ {label}: weak evidence[/red]")
+
+    # Select ending based on dimension scores and accusation result
+    if endings_data:
+        conv = convergence_dims
+        if chosen.id == correct_id:
+            if all(float(d) >= 0.7 for d in conv):
+                ending_key = "all_strong"
+            elif float(conv[0]) >= 0.7:
+                ending_key = "who_strong_rest_weak"
+            else:
+                ending_key = "lucky_guess"
+        else:
+            ending_key = "wrong_accusation"
+
+        ending = endings_data.get(ending_key, {}).get(lang, endings_data.get(ending_key, {}).get("en", ""))
+        if ending:
+            con.print(f"\n  [italic]{ending}[/italic]")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
