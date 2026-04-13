@@ -22,7 +22,8 @@ from core.token import Token, TokenAgency, TokenClass, TokenPhase, TokenStream
 ROLE_PLAYER = "player"
 ROLE_ENGINE = "engine"
 
-STRATEGIES = ("energy", "random", "red_herring_first", "location_first", "suspect_first", "object_first")
+STRATEGIES = ("energy", "random", "red_herring_first", "location_first", "suspect_first", "object_first",
+              "follow_suspect_0", "follow_suspect_1", "follow_suspect_2")
 
 _CLASS_BIAS_MAP = {
     "location_first": TokenClass.LOCATION,
@@ -214,6 +215,17 @@ class DialogueSampler:
                         scores[i] *= 0.2
                     elif role_freq > 0.10:
                         scores[i] *= 0.5
+
+        # Suspect-branch strategies: boost candidates connected to a specific suspect
+        if self._strategy.startswith("follow_suspect_"):
+            suspect_idx = int(self._strategy.split("_")[-1])
+            suspects = [t for t in self.spec.tokens if t.token_class == TokenClass.SUSPECT and not t.is_invariant]
+            if suspect_idx < len(suspects):
+                target_id = suspects[suspect_idx].id
+                # Boost candidates connected to this suspect in the graph
+                for i, candidate in enumerate(candidates):
+                    affinity = self.graph.weight(candidate.id, target_id)
+                    scores[i] += affinity * 4.0
 
         scores = scores / max(temp, 1e-8)
         scores -= scores.max()
@@ -545,6 +557,12 @@ class DialogueSampler:
                             for pid in recent_player_ids
                         )
                         scores[idx] += affinity * 3.0  # graph-aware boost
+
+                # Dimension-aware: boost tokens that help underdeveloped dimensions
+                dim_deficit = 1.0 - float(convergence_dims[d])
+                for idx, candidate in enumerate(dim_candidates):
+                    dim_weight = abs(candidate.attractor_weights[d])
+                    scores[idx] += dim_weight * dim_deficit * 2.0
 
                 # Red herring injection: 15% chance to force atmospheric/misleading token
                 RED_HERRING_TAGS = {'surface', 'plausible', 'dramatic'}

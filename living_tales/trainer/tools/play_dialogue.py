@@ -356,16 +356,17 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
     briefing = None
     endings_data = {}
     life_states = {}
+    case_data = None
     for _try_path in [
         Path(f"../../cases/{spec.case_id}.json"),
         Path(f"cases/{spec.case_id}.json"),
     ]:
         if _try_path.exists():
             with open(_try_path) as _f:
-                _case_data = _json.load(_f)
-            briefing = _case_data.get("briefing", {}).get(lang, _case_data.get("briefing", {}).get("en"))
-            endings_data = _case_data.get("endings", {})
-            life_states = _case_data.get("life_states", {})
+                case_data = _json.load(_f)
+            briefing = case_data.get("briefing", {}).get(lang, case_data.get("briefing", {}).get("en"))
+            endings_data = case_data.get("endings", {})
+            life_states = case_data.get("life_states", {})
             break
 
     if briefing and not is_creature:
@@ -508,7 +509,7 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
             if is_creature:
                 console.print("[yellow]No accusations here -- tend to your creature.[/yellow]")
                 continue
-            _handle_accusation(spec, convergence_dims, console, txt, endings_data=endings_data, lang=lang)
+            _handle_accusation(spec, convergence_dims, console, txt, endings_data=endings_data, lang=lang, dialogue_history=dialogue_history, case_data=case_data)
             break
 
         # Parse card selection
@@ -735,7 +736,7 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         console.print(f"  {tag}  {_token_rich(tok)}")
 
 
-def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: Console, txt: dict = None, endings_data: dict = None, lang: str = "en"):
+def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: Console, txt: dict = None, endings_data: dict = None, lang: str = "en", dialogue_history: List[Tuple[str, Token]] = None, case_data: dict = None):
     """Accusation prompt — convergence score grades the quality of the accusation."""
     if txt is None:
         txt = TUI_TEXT["en"]
@@ -814,22 +815,54 @@ def _handle_accusation(spec: CartridgeSpec, convergence_dims: np.ndarray, con: C
         else:
             con.print(f"  [red]✗ {label}: weak evidence[/red]")
 
-    # Select ending based on dimension scores and accusation result
-    if endings_data:
-        conv = convergence_dims
-        if chosen.id == correct_id:
-            if all(float(d) >= 0.7 for d in conv):
-                ending_key = "all_strong"
-            elif float(conv[0]) >= 0.7:
-                ending_key = "who_strong_rest_weak"
-            else:
-                ending_key = "lucky_guess"
-        else:
-            ending_key = "wrong_accusation"
+    # Path-based ending composition: analyze player's investigation path
+    from collections import Counter
 
-        ending = endings_data.get(ending_key, {}).get(lang, endings_data.get(ending_key, {}).get("en", ""))
-        if ending:
-            con.print(f"\n  [italic]{ending}[/italic]")
+    played_classes = Counter()
+    if dialogue_history:
+        for role, tok in dialogue_history:
+            if role == "YOU":
+                played_classes[tok.token_class.value] += 1
+
+    # Determine dominant investigation themes
+    themes = []
+    if played_classes.get("OBJECT", 0) + played_classes.get("MODIFIER", 0) >= 3:
+        themes.append("physical_evidence")
+    if played_classes.get("WITNESS", 0) + played_classes.get("EMOTION", 0) >= 3:
+        themes.append("witness_testimony")
+    if played_classes.get("MOTIVE", 0) + played_classes.get("ACTION", 0) >= 3:
+        themes.append("financial_trail")
+    if played_classes.get("EMOTION", 0) >= 2:
+        themes.append("emotional_tells")
+
+    # Compose ending from fragments matching player's path
+    ending_fragments = case_data.get("ending_fragments", {}) if case_data else {}
+    ending_parts = []
+    if chosen.id == correct_id:
+        # Correct: show path-specific fragments
+        for theme in themes[:3]:
+            frag = ending_fragments.get(theme, {}).get(lang, ending_fragments.get(theme, {}).get("en", ""))
+            if frag:
+                ending_parts.append(frag)
+        # Add overall verdict
+        verdict = endings_data.get("all_strong" if all(float(d) >= 0.7 for d in convergence_dims) else "lucky_guess", {})
+        v_text = verdict.get(lang, verdict.get("en", ""))
+        if v_text:
+            ending_parts.append(v_text)
+    else:
+        # Wrong: show cold case fragments for paths they explored
+        for theme in themes[:2]:
+            cold_key = f"cold_case_{theme.split('_')[0]}"
+            frag = ending_fragments.get(cold_key, {}).get(lang, "")
+            if frag:
+                ending_parts.append(frag)
+        verdict = endings_data.get("wrong_accusation", {})
+        v_text = verdict.get(lang, verdict.get("en", ""))
+        if v_text:
+            ending_parts.append(v_text)
+
+    for part in ending_parts:
+        con.print(f"\n  [italic]{part}[/italic]")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
