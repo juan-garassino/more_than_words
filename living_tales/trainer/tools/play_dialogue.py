@@ -279,6 +279,119 @@ TUI_TEXT = {
     },
 }
 
+HINT_TEMPLATES = {
+    "OBJECT": [
+        {"en": "A physical trace that anchors the sequence.", "es": "Un rastro físico que ancla la secuencia.", "fr": "Une trace physique qui ancre la séquence."},
+        {"en": "Something left behind that shouldn't be here.", "es": "Algo dejado atrás que no debería estar aquí.", "fr": "Quelque chose laissé derrière qui ne devrait pas être là."},
+        {"en": "An object that narrows the possible.", "es": "Un objeto que estrecha lo posible.", "fr": "Un objet qui resserre le possible."},
+    ],
+    "SUSPECT": [
+        {"en": "Opens a line of inquiry toward someone.", "es": "Abre una línea de investigación hacia alguien.", "fr": "Ouvre une piste vers quelqu'un."},
+        {"en": "A presence that demands explanation.", "es": "Una presencia que exige explicación.", "fr": "Une présence qui exige explication."},
+    ],
+    "WITNESS": [
+        {"en": "Someone saw something. The question is what.", "es": "Alguien vio algo. La pregunta es qué.", "fr": "Quelqu'un a vu quelque chose. La question est quoi."},
+        {"en": "A testimony that places or displaces.", "es": "Un testimonio que sitúa o desplaza.", "fr": "Un témoignage qui situe ou déplace."},
+    ],
+    "EMOTION": [
+        {"en": "A reaction that reveals more than words.", "es": "Una reacción que revela más que las palabras.", "fr": "Une réaction qui révèle plus que les mots."},
+        {"en": "Behavior under pressure tells its own truth.", "es": "El comportamiento bajo presión cuenta su propia verdad.", "fr": "Le comportement sous pression dit sa propre vérité."},
+    ],
+    "MOTIVE": [
+        {"en": "The reason behind the reason.", "es": "La razón detrás de la razón.", "fr": "La raison derrière la raison."},
+        {"en": "What someone stood to gain or lose.", "es": "Lo que alguien tenía que ganar o perder.", "fr": "Ce que quelqu'un avait à gagner ou à perdre."},
+    ],
+    "ACTION": [
+        {"en": "A move that changes what was possible.", "es": "Un movimiento que cambia lo que era posible.", "fr": "Un geste qui change ce qui était possible."},
+        {"en": "Something done that can't be undone.", "es": "Algo hecho que no se puede deshacer.", "fr": "Quelque chose fait qui ne peut être défait."},
+    ],
+    "MODIFIER": [
+        {"en": "A detail that shifts what you thought you knew.", "es": "Un detalle que altera lo que creías saber.", "fr": "Un détail qui change ce que vous pensiez savoir."},
+        {"en": "The small thing that doesn't fit.", "es": "Lo pequeño que no encaja.", "fr": "Le petit détail qui ne colle pas."},
+    ],
+    "LOCATION": [
+        {"en": "A place holds memory of what happened there.", "es": "Un lugar guarda memoria de lo que allí sucedió.", "fr": "Un lieu garde mémoire de ce qui s'y est passé."},
+        {"en": "Geography constrains possibility.", "es": "La geografía limita la posibilidad.", "fr": "La géographie contraint le possible."},
+    ],
+    "TIME": [
+        {"en": "The clock narrows everything.", "es": "El reloj lo estrecha todo.", "fr": "L'horloge resserre tout."},
+        {"en": "When it happened changes who could have done it.", "es": "Cuándo sucedió cambia quién pudo hacerlo.", "fr": "Quand c'est arrivé change qui a pu le faire."},
+    ],
+    "EVENT": [
+        {"en": "Something happened. The order matters.", "es": "Algo sucedió. El orden importa.", "fr": "Quelque chose s'est passé. L'ordre compte."},
+    ],
+}
+
+TAG_HINTS = {
+    "forensic": {"en": "A mark that speaks without words.", "es": "Una marca que habla sin palabras.", "fr": "Une marque qui parle sans mots."},
+    "trace": {"en": "A mark that speaks without words.", "es": "Una marca que habla sin palabras.", "fr": "Une marque qui parle sans mots."},
+    "financial": {"en": "Paper remembers what people deny.", "es": "El papel recuerda lo que las personas niegan.", "fr": "Le papier se souvient de ce que les gens nient."},
+    "document": {"en": "Paper remembers what people deny.", "es": "El papel recuerda lo que las personas niegan.", "fr": "Le papier se souvient de ce que les gens nient."},
+    "identity": {"en": "Something that belongs to someone specific.", "es": "Algo que pertenece a alguien específico.", "fr": "Quelque chose qui appartient à quelqu'un en particulier."},
+    "personal": {"en": "Something that belongs to someone specific.", "es": "Algo que pertenece a alguien específico.", "fr": "Quelque chose qui appartient à quelqu'un en particulier."},
+    "contradiction": {"en": "This doesn't match what was said.", "es": "Esto no coincide con lo declarado.", "fr": "Cela ne correspond pas à ce qui a été dit."},
+    "suspicious": {"en": "This doesn't match what was said.", "es": "Esto no coincide con lo declarado.", "fr": "Cela ne correspond pas à ce qui a été dit."},
+}
+
+PROGRESS_SIGNALS = {
+    "who_advanced": [
+        {"en": "A shape is forming where a name should be.", "es": "Una forma se dibuja donde debería haber un nombre.", "fr": "Une forme se dessine là où il devrait y avoir un nom."},
+        {"en": "The circle of faces tightens.", "es": "El círculo de rostros se estrecha.", "fr": "Le cercle des visages se resserre."},
+    ],
+    "how_advanced": [
+        {"en": "The sequence gains a new edge.", "es": "La secuencia gana un borde nuevo.", "fr": "La séquence gagne un nouveau bord."},
+        {"en": "Two things that seemed separate now touch.", "es": "Dos cosas que parecían separadas ahora se tocan.", "fr": "Deux choses qui semblaient séparées se touchent."},
+    ],
+    "why_advanced": [
+        {"en": "The motive surfaces like a stone in low tide.", "es": "El móvil emerge como una piedra en marea baja.", "fr": "Le mobile émerge comme une pierre à marée basse."},
+        {"en": "Now you see what someone stood to lose.", "es": "Ahora ves lo que alguien tenía que perder.", "fr": "Maintenant vous voyez ce que quelqu'un risquait de perdre."},
+    ],
+    "red_herring": [
+        {"en": "This path leads somewhere, but maybe not where you need.", "es": "Este camino lleva a algún sitio, pero quizá no donde necesitas.", "fr": "Ce chemin mène quelque part, mais peut-être pas où vous en avez besoin."},
+        {"en": "A possibility loses strength.", "es": "Una posibilidad pierde fuerza.", "fr": "Une possibilité perd de sa force."},
+    ],
+    "stagnant": [
+        {"en": "The fog holds.", "es": "La niebla se mantiene.", "fr": "Le brouillard tient."},
+        {"en": "Nothing new. But absence is also information.", "es": "Nada nuevo. Pero la ausencia también es información.", "fr": "Rien de nouveau. Mais l'absence est aussi une information."},
+    ],
+}
+
+CREATURE_SIGNALS = {
+    "hunger": [
+        {"en": "The bowl is empty. The tail says thank you.", "es": "El cuenco está vacío. La cola da las gracias.", "fr": "Le bol est vide. La queue dit merci."},
+    ],
+    "happiness": [
+        {"en": "Something in the creature softens.", "es": "Algo en la criatura se ablanda.", "fr": "Quelque chose dans la créature s'adoucit."},
+    ],
+    "energy": [
+        {"en": "The pace slows. Rest is calling.", "es": "El ritmo se frena. El descanso llama.", "fr": "Le rythme ralentit. Le repos appelle."},
+    ],
+    "bond": [
+        {"en": "It looks at you differently now.", "es": "Te mira de otra forma ahora.", "fr": "Il vous regarde différemment maintenant."},
+    ],
+    "comfort": [
+        {"en": "It settles deeper into itself.", "es": "Se acomoda más en sí misma.", "fr": "Elle s'installe plus profondément en elle-même."},
+    ],
+}
+
+
+def _get_hint(tok, lang="en"):
+    """Get intuition hint for a token based on class and tags."""
+    # Check affinity tags first for more specific hint
+    tags = set(getattr(tok, 'affinity_tags', []))
+    for tag_key, hint in TAG_HINTS.items():
+        if tag_key in tags:
+            return hint.get(lang, hint.get("en", ""))
+
+    # Fall back to class-based hint
+    cls = tok.token_class.value if hasattr(tok.token_class, 'value') else str(tok.token_class)
+    templates = HINT_TEMPLATES.get(cls, [])
+    if not templates:
+        return ""
+    # Rotate by token ID hash to vary
+    idx = hash(tok.id) % len(templates)
+    return templates[idx].get(lang, templates[idx].get("en", ""))
+
 
 def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = "en"):
     assert console is not None, "Rich library required. pip install rich"
@@ -465,6 +578,9 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         console.print(f"[bold]{txt['your_hand']}[/bold]")
         for i, tok in enumerate(valid_hand):
             console.print(f"  [{i + 1}] {_token_rich(tok, show_label=True)}")
+            hint = _get_hint(tok, lang)
+            if hint:
+                console.print(f"      [dim italic]{hint}[/dim italic]")
 
         if not valid_hand:
             console.print("  [dim]No tokens available.[/dim]")
@@ -555,6 +671,7 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
             hand.append(deck.pop(0))
 
         # ── Engine response ──
+        prev_convergence = convergence_dims.copy()
         engine_tok = None
         scene_already_placed = False
         game_turn_engine = turn // 2
@@ -693,6 +810,37 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
         else:
             console.print("  [dim]The field is silent.[/dim]")
             turn += 1
+
+        # Progress signal
+        delta = convergence_dims - prev_convergence
+        max_dim = int(delta.argmax()) if delta.max() > 0 else -1
+        max_delta = float(delta.max())
+
+        if is_creature:
+            # Creature: signal based on which dimension changed most
+            if max_delta > 0.02 and max_dim < len(dim_labels):
+                label_word = dim_labels[max_dim].split()[0].lower() if max_dim < len(dim_labels) else "unknown"
+                signals = CREATURE_SIGNALS.get(label_word, [])
+                if signals:
+                    sig = signals[hash(str(turn)) % len(signals)]
+                    console.print(f"\n         [dim italic]{sig.get(lang, sig.get('en', ''))}[/dim italic]")
+        else:
+            # Mystery: signal based on dimension progress
+            if max_delta < -0.005:
+                signal_key = "red_herring"
+            elif max_delta < 0.01:
+                signal_key = "stagnant"
+            elif max_dim == 0:
+                signal_key = "who_advanced"
+            elif max_dim == 1:
+                signal_key = "how_advanced"
+            else:
+                signal_key = "why_advanced"
+
+            signals = PROGRESS_SIGNALS.get(signal_key, [])
+            if signals:
+                sig = signals[hash(str(turn)) % len(signals)]
+                console.print(f"\n         [dim italic]{sig.get(lang, sig.get('en', ''))}[/dim italic]")
 
         # Passive decay
         if is_creature:
