@@ -415,6 +415,15 @@ def game_loop(spec: CartridgeSpec, model, mappings: Optional[dict], lang: str = 
                 filled = int(val * 15)
                 bar = "█" * filled + "░" * (15 - filled)
                 console.print(f"  {label:<20s} [{bar}] {val:.0%}")
+        else:
+            console.print(Rule(f"Turn {turn}"))
+            # Dev mode: show per-dimension convergence
+            for d in range(spec.n_attractor_dims):
+                val = float(convergence_dims[d])
+                label = dim_labels[d] if d < len(dim_labels) else f"dim{d}"
+                filled = int(val * 15)
+                bar = "█" * filled + "░" * (15 - filled)
+                console.print(f"  [dim]{label:<20s} [{bar}] {val:.0%}[/dim]")
 
             # Creature periodic status narration
             if turn > 0 and turn % 20 == 0 and life_states:
