@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The cipher sheet pinned beneath Verne's blotter carried ink that matched the satchel's interior lining. The stopped watch at 11:16 placed the killing inside the thirty-two-minute window, and the damp coat left a water trail from platform two to the station gate.",
+      "es": "La hoja cifrada bajo el secante de Verne llevaba tinta que coincidia con el forro interior del maletin. El reloj detenido a las 11:16 situaba el crimen dentro de la ventana de treinta y dos minutos, y el abrigo humedo dejo un rastro de agua desde el anden dos hasta la puerta de la estacion.",
+      "fr": "La feuille chiffree sous le buvard de Verne portait une encre correspondant a la doublure de la sacoche. La montre arretee a 11h16 placait le meurtre dans la fenetre de trente-deux minutes, et le manteau humide laissait une trainee d'eau du quai deux au portail de la gare."
+    },
+    "witness_testimony": {
+      "en": "The stationmaster saw Voss sign the ledger with tight handwriting and leave through the fog toward platform two. The night porter confirmed three keys missing from his ring, and the railway clerk's fresh ink placed him at the office window during the crucial half hour.",
+      "es": "El jefe de estacion vio a Voss firmar el registro con escritura apretada y salir por la niebla hacia el anden dos. El portero nocturno confirmo tres llaves faltantes de su llavero, y la tinta fresca del empleado ferroviario lo situaba en la ventana de la oficina durante la media hora crucial.",
+      "fr": "Le chef de gare a vu Voss signer le registre d'une ecriture serree et partir dans le brouillard vers le quai deux. Le porteur de nuit a confirme trois cles manquantes sur son trousseau, et l'encre fraiche de l'employe placait celui-ci a la fenetre du bureau pendant la demi-heure cruciale."
+    },
+    "financial_trail": {
+      "en": "The doctored ledger showed entries in two hands, and the telegram from the bank confirmed Verne carried proof of the fraud in a sealed envelope. Voss's monogrammed satchel held the duplicate accounts that would have ended his brokerage.",
+      "es": "El libro de cuentas manipulado mostraba entradas de dos manos, y el telegrama del banco confirmo que Verne llevaba pruebas del fraude en un sobre sellado. El maletin con monograma de Voss contenia las cuentas duplicadas que habrian terminado con su correduria.",
+      "fr": "Le registre falsifie montrait des ecritures de deux mains, et le telegramme de la banque confirmait que Verne portait la preuve de la fraude dans une enveloppe scellee. La sacoche monogrammee de Voss contenait les doubles comptes qui auraient mis fin a son courtage."
+    },
+    "emotional_tells": {
+      "en": "Voss kept his hands in his coat pockets and his voice level, but the satchel swap betrayed haste. The estranged daughter's bouquet was still wrapped in railway paper when she was told. The platform guard's dry gloves said he had not been outside at all.",
+      "es": "Voss mantuvo las manos en los bolsillos del abrigo y la voz serena, pero el intercambio de maletines delataba prisa. El ramo de la hija distanciada aun estaba envuelto en papel de ferrocarril cuando le avisaron. Los guantes secos del guardia de anden decian que no habia salido en absoluto.",
+      "fr": "Voss gardait les mains dans les poches de son manteau et la voix posee, mais l'echange de sacoches trahissait la hate. Le bouquet de la fille eloignee etait encore enveloppe de papier de chemin de fer quand on l'a prevenue. Les gants secs du garde de quai disaient qu'il n'etait pas sorti du tout."
+    },
+    "cold_case_physical": {
+      "en": "The platform was swept before the morning departure. The cipher sheet was filed in a drawer no one opened, and the fog that blinded the platform erased every footprint between the tracks. Thornfield Crossing returned to its schedule.",
+      "es": "El anden fue barrido antes de la salida matutina. La hoja cifrada fue archivada en un cajon que nadie abrio, y la niebla que cegaba el anden borro cada huella entre las vias. Thornfield Crossing volvio a su horario.",
+      "fr": "Le quai a ete balaye avant le depart du matin. La feuille chiffree a ete classee dans un tiroir que personne n'a ouvert, et le brouillard qui aveuglait le quai a efface chaque empreinte entre les voies. Thornfield Crossing est retourne a ses horaires."
+    },
+    "cold_case_financial": {
+      "en": "The sealed envelope was never recovered from the satchel. The doctored ledger was shelved with the station's quarterly accounts, and the telegram confirming the fraud expired unclaimed at the post office. The brokerage continued its business without interruption.",
+      "es": "El sobre sellado nunca fue recuperado del maletin. El libro manipulado fue archivado con las cuentas trimestrales de la estacion, y el telegrama que confirmaba el fraude expiro sin reclamar en la oficina de correos. La correduria continuo sus negocios sin interrupcion.",
+      "fr": "L'enveloppe scellee n'a jamais ete retrouvee dans la sacoche. Le registre falsifie a ete range avec les comptes trimestriels de la gare, et le telegramme confirmant la fraude a expire non reclame au bureau de poste. Le courtage a poursuivi ses affaires sans interruption."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Renard Voss had thirty-two minutes between trains, and he used every one. The cipher sheet, the doctored ledger, the satchel swap — each piece locked into place like a signal lever thrown to danger. Verne had carried proof of the fraud in a sealed envelope, and Voss killed him for it on a fog-blind platform. The telegram confirmed everything. The case was closed before the morning departure.",

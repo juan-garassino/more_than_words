@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The railing bolts on the third-floor landing had been filed down to shear under weight. The stairs were slick with fresh polish applied after hours. Rosin from a violin bow was found smeared on the railing where it broke, and Lang's briefcase lay open with the exam report beside him at the base of the stairwell.",
+      "es": "Los pernos de la barandilla del rellano del tercer piso habian sido limados para romperse bajo el peso. Las escaleras estaban resbaladizas con cera fresca aplicada fuera de horario. Resina de un arco de violin fue encontrada en la barandilla donde se rompio, y el maletin de Lang yacia abierto con el informe de examen junto a el al pie de la escalera.",
+      "fr": "Les boulons de la rampe du palier du troisieme etage avaient ete limes pour ceder sous le poids. Les marches etaient glissantes de cire fraiche appliquee apres les heures. De la colophane d'archet de violon a ete trouvee sur la rampe a l'endroit de la rupture, et la serviette de Lang etait ouverte avec le rapport d'examen a cote de lui au pied de l'escalier."
+    },
+    "witness_testimony": {
+      "en": "Karl Brennan waited in the recital hall after intermission, his scarf torn and snagged on the stair rail. Anna Czerny left through the loading dock and was not seen again until morning. Felix Morel visited the archive six times in a month, and each time the Kovar manuscripts were moved from their shelf.",
+      "es": "Karl Brennan espero en la sala de recitales despues del intermedio, su bufanda rasgada y enganchada en la barandilla. Anna Czerny salio por el muelle de carga y no fue vista de nuevo hasta la manana. Felix Morel visito el archivo seis veces en un mes, y cada vez los manuscritos de Kovar habian sido movidos de su estante.",
+      "fr": "Karl Brennan a attendu dans la salle de recital apres l'entracte, son echarpe dechiree et accrochee a la rampe d'escalier. Anna Czerny est partie par le quai de chargement et n'a pas ete revue jusqu'au matin. Felix Morel a visite les archives six fois en un mois, et chaque fois les manuscrits de Kovar avaient ete deplaces de leur etagere."
+    },
+    "financial_trail": {
+      "en": "The prize sonata was Jan Kovar's work. The manuscript in the archive proved it, and the ink analysis confirmed the original predated Solis's submission by thirty years. Lang's exam report laid the plagiarism bare, and Director Pask's conservatory funding depended on the prize winner's reputation.",
+      "es": "La sonata premiada era obra de Jan Kovar. El manuscrito en el archivo lo probaba, y el analisis de tinta confirmo que el original era treinta anos anterior a la presentacion de Solis. El informe de Lang dejaba el plagio al descubierto, y la financiacion del conservatorio del Director Pask dependia de la reputacion de la ganadora del premio.",
+      "fr": "La sonate primee etait l'oeuvre de Jan Kovar. Le manuscrit aux archives le prouvait, et l'analyse d'encre a confirme que l'original predatait la soumission de Solis de trente ans. Le rapport d'examen de Lang mettait le plagiat a nu, et le financement du conservatoire du Directeur Pask dependait de la reputation de la laureat."
+    },
+    "emotional_tells": {
+      "en": "Solis's wrist bore a fresh rosin burn, and her bow hand was steady when she denied everything. Dr Irina Voss refused to submit her external report after the death. Director Pask locked the archive with the master keycard and said the matter was closed.",
+      "es": "La muneca de Solis tenia una quemadura fresca de resina, y su mano de arco era firme cuando lo nego todo. La Dra. Irina Voss se nego a presentar su informe externo despues de la muerte. El Director Pask cerro el archivo con la tarjeta maestra y dijo que el asunto estaba cerrado.",
+      "fr": "Le poignet de Solis portait une brulure fraiche de colophane, et sa main d'archet etait ferme quand elle a tout nie. Le Dr Irina Voss a refuse de soumettre son rapport externe apres le deces. Le Directeur Pask a verrouille les archives avec le badge maitre et declare l'affaire close."
+    },
+    "cold_case_physical": {
+      "en": "The stairwell was repaired and the railing re-bolted within the week. The polish was cleaned, the rosin wiped away, and the cleaning woman who found the body remembered the slippery stairs but no one asked her twice. The exam report was never submitted.",
+      "es": "La escalera fue reparada y la barandilla reatornillada en una semana. La cera fue limpiada, la resina eliminada, y la mujer de la limpieza que encontro el cuerpo recordaba las escaleras resbaladizas pero nadie le pregunto dos veces. El informe de examen nunca fue presentado.",
+      "fr": "L'escalier a ete repare et la rampe reboulonnee dans la semaine. La cire a ete nettoyee, la colophane essuyee, et la femme de menage qui a trouve le corps se souvenait des marches glissantes mais personne ne l'a interrogee deux fois. Le rapport d'examen n'a jamais ete soumis."
+    },
+    "cold_case_financial": {
+      "en": "The manuscript comparison was never completed, and the prize committee saw no reason to revisit a decision already celebrated. The recording contract stood, the conservatory funding continued, and the Kovar notebooks remained under restricted access in the basement archive, gathering dust beside a truth that no one wanted to hear.",
+      "es": "La comparacion de manuscritos nunca fue completada, y el comite del premio no vio razon para reconsiderar una decision ya celebrada. El contrato de grabacion se mantuvo, la financiacion del conservatorio continuo, y los cuadernos de Kovar permanecieron bajo acceso restringido en el archivo del sotano, acumulando polvo junto a una verdad que nadie queria escuchar.",
+      "fr": "La comparaison des manuscrits n'a jamais ete achevee, et le comite du prix n'a vu aucune raison de revenir sur une decision deja celebree. Le contrat d'enregistrement a tenu, le financement du conservatoire a continue, et les cahiers de Kovar sont restes sous acces restreint dans les archives du sous-sol, prenant la poussiere a cote d'une verite que personne ne voulait entendre."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Marta Solis had filed the railing bolts, polished the stairs, and waited for Professor Lang to confront her on the darkened landing. The prize sonata was Jan Kovar's work — the manuscript proved it, the ink analysis confirmed it, and Lang's exam report laid the plagiarism bare. She killed him to keep the prize, the recording contract, and the career she had built on a stolen composition. The rosin on the railing, the loosened bolts, the polished steps: every note of evidence played in tune.",

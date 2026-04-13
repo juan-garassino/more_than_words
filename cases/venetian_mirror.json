@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The stone railing above the courtyard showed deep score marks from a masonry chisel. The cadmium yellow in the Titian was wrong for the period, and Marini's restoration notebook identified the forgery on every page. Silk residue on the scored railing matched fabric from the carnival, and the servants' stair was bolted from inside.",
+      "es": "La balaustrada de piedra sobre el patio mostraba profundas marcas de cincel de albanileria. El amarillo de cadmio en el Ticiano era incorrecto para el periodo, y el cuaderno de restauracion de Marini identificaba la falsificacion en cada pagina. El residuo de seda en la balaustrada marcada coincidia con tela del carnaval, y la escalera de servicio estaba cerrada desde dentro.",
+      "fr": "La balustrade en pierre au-dessus de la cour montrait de profondes marques de ciseau de macon. Le jaune de cadmium dans le Titien etait anachronique, et le carnet de restauration de Marini identifiait le faux sur chaque page. Le residu de soie sur la balustrade entaillee correspondait a du tissu du carnaval, et l'escalier de service etait verrouille de l'interieur."
+    },
+    "witness_testimony": {
+      "en": "Carlo Bassi arrived by gondola with an invitation addressed to someone else and a torn glove. Marco Dandolo waited in the courtyard after midnight with no explanation. Signora Pelosi kept every key to the palazzo and heard the balcony door open during the carnival, but she told no one until dawn.",
+      "es": "Carlo Bassi llego en gondola con una invitacion dirigida a otra persona y un guante rasgado. Marco Dandolo esperaba en el patio despues de medianoche sin explicacion. Signora Pelosi guardaba todas las llaves del palacio y oyo la puerta del balcon abrirse durante el carnaval, pero no se lo dijo a nadie hasta el amanecer.",
+      "fr": "Carlo Bassi est arrive en gondole avec une invitation adressee a quelqu'un d'autre et un gant dechire. Marco Dandolo attendait dans la cour apres minuit sans explication. Signora Pelosi gardait toutes les cles du palais et a entendu la porte du balcon s'ouvrir pendant le carnaval, mais elle n'en a parle a personne avant l'aube."
+    },
+    "financial_trail": {
+      "en": "Fourteen paintings had been replaced over six years, and the originals sold through Zurich under false provenance. Elena Rizzoli managed the private sales, her commission exceeding her annual salary. Dr Klaus Winter's appraisal report on the Titian was due at the insurance office by Friday, and it would have collapsed the entire scheme.",
+      "es": "Catorce pinturas habian sido reemplazadas en seis anos, y los originales vendidos a traves de Zurich con procedencia falsa. Elena Rizzoli gestionaba las ventas privadas, su comision superando su salario anual. El informe de tasacion del Dr Klaus Winter sobre el Ticiano debia entregarse en la oficina de seguros el viernes, y habria derrumbado todo el esquema.",
+      "fr": "Quatorze tableaux avaient ete remplaces en six ans, et les originaux vendus par Zurich sous fausse provenance. Elena Rizzoli gerait les ventes privees, sa commission depassant son salaire annuel. Le rapport d'expertise du Dr Klaus Winter sur le Titien devait etre remis au bureau d'assurance vendredi, et il aurait fait s'effondrer tout le stratageme."
+    },
+    "emotional_tells": {
+      "en": "The Countess received the inspector in the mirror gallery with her gloves on and her composure intact. Inspector Bruno had investigated her once before in Milan and recognized the stillness of a woman who has rehearsed her innocence. The restorer's brushes on the third floor were still wet, and his notebook told the truth the mirrors would not.",
+      "es": "La Condesa recibio al inspector en la galeria de espejos con los guantes puestos y su compostura intacta. El Inspector Bruno la habia investigado antes en Milan y reconocio la quietud de una mujer que ha ensayado su inocencia. Los pinceles del restaurador en el tercer piso aun estaban humedos, y su cuaderno contaba la verdad que los espejos no contarian.",
+      "fr": "La Comtesse a recu l'inspecteur dans la galerie des miroirs, gants aux mains et sang-froid intact. L'Inspecteur Bruno l'avait enquetee une fois auparavant a Milan et reconnaissait l'immobilite d'une femme qui a repete son innocence. Les pinceaux du restaurateur au troisieme etage etaient encore humides, et son carnet disait la verite que les miroirs ne diraient pas."
+    },
+    "cold_case_physical": {
+      "en": "The courtyard flagstones were scrubbed, and the weakened railing was repaired before the cultural crimes division completed its survey. Marini's restoration notes disappeared from the studio desk. The carnival lanterns burned down to stubs, and the fourteen paintings hung in their frames, each one reflecting nothing true.",
+      "es": "Las losas del patio fueron fregadas, y la balaustrada debilitada fue reparada antes de que la division de crimenes culturales completara su inspeccion. Las notas de restauracion de Marini desaparecieron del escritorio del estudio. Los farolillos de carnaval se consumieron, y las catorce pinturas colgaban en sus marcos, cada una sin reflejar nada verdadero.",
+      "fr": "Les dalles de la cour ont ete recurees, et la balustrade affaiblie reparee avant que la division des crimes culturels n'acheve son releve. Les notes de restauration de Marini ont disparu du bureau de l'atelier. Les lanternes de carnaval se sont consumees, et les quatorze tableaux pendaient dans leurs cadres, chacun ne refletant rien de vrai."
+    },
+    "cold_case_financial": {
+      "en": "The insurance appraisal was quietly withdrawn, and the Zurich auction was postponed indefinitely. The forged collection remained in the mirror gallery, each provenance card a lie in gilt lettering. The Countess closed the palazzo to visitors for the season, and the Grand Canal flowed on past a facade of pink stone that hid everything.",
+      "es": "La tasacion del seguro fue retirada discretamente, y la subasta de Zurich aplazada indefinidamente. La coleccion falsificada permanecio en la galeria de espejos, cada tarjeta de procedencia una mentira en letras doradas. La Condesa cerro el palacio a visitantes por la temporada, y el Gran Canal siguio fluyendo junto a una fachada de piedra rosa que lo ocultaba todo.",
+      "fr": "L'expertise d'assurance a ete discretement retiree, et la vente aux encheres de Zurich reportee indefiniment. La collection falsifiee est restee dans la galerie des miroirs, chaque fiche de provenance un mensonge en lettres dorees. La Comtesse a ferme le palais aux visiteurs pour la saison, et le Grand Canal a continue de couler devant une facade de pierre rose qui cachait tout."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Countess Morvaine had replaced fourteen paintings over six years, sold the originals through Zurich, and built her fortune on forgery as surely as the palazzo was built on water. When Luca Marini's restoration notes identified the fakes, she scored the balcony railing with a masonry chisel and waited for carnival to provide the crowd, the masks, and the darkness. The cadmium yellow in the Titian, the silk residue on the railing, the servants' stair bolted from inside, Marini's destroyed report — each reflection in the Venetian mirror showed the same face. The masks came off at midnight, and so did hers.",

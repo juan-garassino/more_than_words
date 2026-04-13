@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The champagne glass held a compound that dissolved without trace beneath the bubbles. The coded dispatch in Veronese's jacket lining matched intercepted messages from October. The guest register placed his signature at 19:42, and the conservatory orchids carried a residue consistent with the compound's preparation.",
+      "es": "La copa de champan contenia un compuesto que se disolvia sin rastro bajo las burbujas. El despacho cifrado en el forro de la chaqueta de Veronese coincidia con mensajes interceptados de octubre. El registro de invitados situaba su firma a las 19:42, y las orquideas del invernadero llevaban un residuo consistente con la preparacion del compuesto.",
+      "fr": "La coupe de champagne contenait un compose qui se dissolvait sans trace sous les bulles. La depeche codee dans la doublure de la veste de Veronese correspondait aux messages interceptes d'octobre. Le registre des invites placait sa signature a 19h42, et les orchidees du jardin d'hiver portaient un residu compatible avec la preparation du compose."
+    },
+    "witness_testimony": {
+      "en": "Marguerite Devaux argued with Poel before intermission and stood near the orchids with chalk on her gloves. Sergeant Linden's transmission log showed a twelve-minute gap. Henri Maes, the wine steward, carried two small stoppered vials in his apron pocket and could not explain them.",
+      "es": "Marguerite Devaux discutio con Poel antes del intermedio y permanecio junto a las orquideas con tiza en los guantes. El registro de transmisiones del Sargento Linden mostraba un vacio de doce minutos. Henri Maes, el sommelier, llevaba dos pequenos viales con tapon en el bolsillo del delantal y no pudo explicarlos.",
+      "fr": "Marguerite Devaux s'est disputee avec Poel avant l'entracte et se tenait pres des orchidees avec de la craie sur ses gants. Le journal de transmissions du Sergent Linden montrait un trou de douze minutes. Henri Maes, le sommelier, portait deux petits flacons bouchonnes dans sa poche de tablier et ne put les expliquer."
+    },
+    "financial_trail": {
+      "en": "The tampered diplomatic pouch contained documents routed through three capitals. Poel had decoded three dispatches naming Veronese as the source, and by morning the intelligence would have reached London. Eva Brandt's personnel file from Vienna arrived three days late, its transfer stamps inconsistent.",
+      "es": "La valija diplomatica manipulada contenia documentos encaminados a traves de tres capitales. Poel habia descifrado tres despachos que nombraban a Veronese como la fuente, y por la manana la inteligencia habria llegado a Londres. El expediente de Eva Brandt desde Viena llego tres dias tarde, con sellos de transferencia inconsistentes.",
+      "fr": "La valise diplomatique alteree contenait des documents achemines par trois capitales. Poel avait decode trois depeches designant Veronese comme la source, et au matin le renseignement aurait atteint Londres. Le dossier d'Eva Brandt de Vienne est arrive trois jours en retard, ses tampons de transfert incoherents."
+    },
+    "emotional_tells": {
+      "en": "Veronese signed the guest register with a steady hand but left through the garden before the body was found. Commander Holt asked about Baltic frequencies over dinner with the calm of a man collecting information. Daniil Orlov's camera held six frames of the cipher ledger shot from above, and he did not try to hide them.",
+      "es": "Veronese firmo el registro de invitados con mano firme pero salio por el jardin antes de que se encontrara el cuerpo. El Comandante Holt pregunto sobre frecuencias balticas durante la cena con la calma de un hombre recopilando informacion. La camara de Daniil Orlov contenia seis fotogramas del libro de cifrado tomados desde arriba, y no intento ocultarlos.",
+      "fr": "Veronese a signe le registre des invites d'une main ferme mais est parti par le jardin avant la decouverte du corps. Le Commandant Holt s'est renseigne sur les frequences baltiques pendant le diner avec le calme d'un homme qui collecte des informations. L'appareil de Daniil Orlov contenait six cliches du registre de chiffrement pris d'en haut, et il n'a pas tente de les cacher."
+    },
+    "cold_case_physical": {
+      "en": "The conservatory was cleaned, the champagne glasses washed, and the compound was never identified by the embassy laboratory. Diplomatic immunity shielded every suspect behind the iron gate. The orchids were replaced the following week, and the cipher office was reorganized without ceremony.",
+      "es": "El invernadero fue limpiado, las copas de champan lavadas, y el compuesto nunca fue identificado por el laboratorio de la embajada. La inmunidad diplomatica protegio a cada sospechoso detras de la verja de hierro. Las orquideas fueron reemplazadas la semana siguiente, y la oficina de cifrado fue reorganizada sin ceremonia.",
+      "fr": "Le jardin d'hiver a ete nettoye, les coupes de champagne lavees, et le compose n'a jamais ete identifie par le laboratoire de l'ambassade. L'immunite diplomatique a protege chaque suspect derriere la grille de fer. Les orchidees ont ete remplacees la semaine suivante, et le bureau du chiffre a ete reorganise sans ceremonie."
+    },
+    "cold_case_financial": {
+      "en": "The classified channels swallowed the evidence, and the frequency lists were changed before the decoded dispatches could be acted upon. Poel's name was removed from the embassy directory, his decoded work filed in a cabinet that no one checked. The diplomatic pouch continued its route between capitals without interruption.",
+      "es": "Los canales clasificados se tragaron las pruebas, y las listas de frecuencias fueron cambiadas antes de que los despachos descifrados pudieran ser utilizados. El nombre de Poel fue eliminado del directorio de la embajada, su trabajo descifrado archivado en un armario que nadie reviso. La valija diplomatica continuo su ruta entre capitales sin interrupcion.",
+      "fr": "Les canaux classifies ont englouti les preuves, et les listes de frequences ont ete changees avant que les depeches decodees ne puissent etre exploitees. Le nom de Poel a ete retire de l'annuaire de l'ambassade, son travail decode classe dans une armoire que personne ne verifiait. La valise diplomatique a poursuivi sa route entre les capitales sans interruption."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Gregor Veronese had switched the champagne glass during the toast, the compound dissolving without trace beneath the bubbles. The coded dispatch in his jacket, the tampered diplomatic pouch, the substitution cipher matching intercepted messages from October — each strand of evidence wound tight as a diplomatic cable. Poel had decoded three dispatches that named Veronese as the source, and by morning the name would have reached London. The fog concealed many things that evening, but not the truth.",

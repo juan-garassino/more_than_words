@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The signal halyard was coiled left-handed, not sailor's fashion, and the knot was a surgeon's bend. Gold dust lined the coin pouch beneath the surgery cabin floor. The ink under Graves's nails matched the false entries in the second set of accounts.",
+      "es": "La driza de senales estaba enrollada a izquierdas, no al estilo marinero, y el nudo era un nudo de cirujano. Polvo de oro cubria la bolsa de monedas bajo el suelo de la cabina de cirugia. La tinta bajo las unas de Graves coincidia con las entradas falsas en el segundo juego de cuentas.",
+      "fr": "La drisse de signaux etait lovee a gauche, pas a la maniere des marins, et le noeud etait un noeud de chirurgien. De la poussiere d'or tapissait la bourse sous le plancher de la cabine de chirurgie. L'encre sous les ongles de Graves correspondait aux fausses ecritures du second jeu de comptes."
+    },
+    "witness_testimony": {
+      "en": "Powder Monkey Sam carried rum to the gun deck and heard nothing from the orlop hold. First Mate Darcy's watch log was four lines short, and Bosun Flint placed Graves on the companion ladder at the start of the middle watch.",
+      "es": "El Grumete Sam llevo ron a la cubierta de canones y no oyo nada de la bodega. El registro de guardia del Primer Oficial Darcy tenia cuatro lineas menos, y el Contramaestre Flint situo a Graves en la escalera al inicio de la guardia media.",
+      "fr": "Le Mousse Sam a apporte le rhum au pont des canons et n'a rien entendu de la cale. Le journal de quart du Second Darcy etait de quatre lignes plus court, et le Maitre d'Equipage Flint a place Graves a l'echelle de descente au debut du quart de minuit."
+    },
+    "financial_trail": {
+      "en": "Four hundred pounds had been skimmed across three prize captures. The captain's locked ledger showed entries in Graves's hand, and Cole's cargo count would have exposed every doctored figure before the ship made port.",
+      "es": "Cuatrocientas libras habian sido desviadas de tres capturas de presas. El libro de presas bajo llave del capitan mostraba entradas de la mano de Graves, y el conteo de carga de Cole habria expuesto cada cifra manipulada antes de que el barco llegara a puerto.",
+      "fr": "Quatre cents livres avaient ete detournees sur trois prises. Le registre verrouille du capitaine montrait des ecritures de la main de Graves, et le comptage de Cole aurait revele chaque chiffre falsifie avant que le navire n'accoste."
+    },
+    "emotional_tells": {
+      "en": "Graves kept his hands clean and his cabin locked, but the second set of accounts betrayed a careful man's panic. Navigator Reid's folded note in the compass case hinted at divided loyalties. Carpenter Hook left his tools below the night Cole died and would not go back for them.",
+      "es": "Graves mantenia las manos limpias y su cabina cerrada, pero el segundo juego de cuentas delataba el panico de un hombre cuidadoso. La nota doblada del Navegante Reid en el estuche de brujula sugeria lealtades divididas. El Carpintero Hook dejo sus herramientas abajo la noche que murio Cole y no quiso volver por ellas.",
+      "fr": "Graves gardait les mains propres et sa cabine verrouillee, mais le second jeu de comptes trahissait la panique d'un homme minutieux. La note pliee du Navigateur Reid dans l'etui a compas laissait entrevoir des loyautes divisees. Le Charpentier Hook a laisse ses outils en bas la nuit de la mort de Cole et n'est pas retourne les chercher."
+    },
+    "cold_case_physical": {
+      "en": "The orlop hold was scrubbed before port, and the halyard was returned to the rigging without examination. Cole's name was struck from the muster roll, and Carpenter Hook's tools were collected without anyone noting where they had lain.",
+      "es": "La bodega fue fregada antes de llegar a puerto, y la driza fue devuelta a la jarcia sin examen. El nombre de Cole fue tachado del registro de tripulacion, y las herramientas del Carpintero Hook fueron recogidas sin que nadie anotara donde habian estado.",
+      "fr": "La cale a ete recuree avant le port, et la drisse a ete rendue au greement sans examen. Le nom de Cole a ete raye du role d'equipage, et les outils du Charpentier Hook ont ete ramasses sans que personne ne note ou ils se trouvaient."
+    },
+    "cold_case_financial": {
+      "en": "The prize shares were paid out at port and the matter buried at sea. The false accounts stayed hidden beneath the surgery cabin floor, the coin pouch undiscovered, and Surgeon Graves walked ashore with his portion and Cole's besides.",
+      "es": "Las partes del botin fueron pagadas en puerto y el asunto fue sepultado en el mar. Las cuentas falsas permanecieron ocultas bajo el suelo de la cabina de cirugia, la bolsa de monedas sin descubrir, y el Cirujano Graves desembarco con su porcion y la de Cole ademas.",
+      "fr": "Les parts de prise ont ete versees au port et l'affaire ensevelie en mer. Les faux comptes sont restes caches sous le plancher de la cabine de chirurgie, la bourse non decouverte, et le Chirurgien Graves a debarque avec sa part et celle de Cole en plus."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Surgeon Graves had skimmed four hundred pounds across three prize captures, and Quartermaster Cole's cargo count would have exposed every doctored entry. The halyard was coiled wrong — left-handed, not sailor's fashion — and the knot was a surgeon's bend. The false accounts in his cabin, the ink under his nails, the gold dust on the coin pouch: each piece drew the noose tighter than the one around Cole's neck. Three days from port, the ship had its answer.",

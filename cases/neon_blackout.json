@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The compiler signature on the exploit code matched Vane's developer credentials. A private node behind the cooling bay panel connected to his uplink, and the power spike at 02:14 matched the forced neural purge to the millisecond. Tanaka's neural port was open and her implant partially wiped.",
+      "es": "La firma del compilador en el codigo del exploit coincidia con las credenciales de desarrollador de Vane. Un nodo privado detras del panel de la bahia de refrigeracion se conectaba a su enlace ascendente, y el pico de potencia a las 02:14 coincidia con la purga neuronal forzada al milisegundo. El puerto neuronal de Tanaka estaba abierto y su implante parcialmente borrado.",
+      "fr": "La signature du compilateur sur le code de l'exploit correspondait aux identifiants de developpeur de Vane. Un noeud prive derriere le panneau de la baie de refroidissement se connectait a sa liaison montante, et le pic de puissance a 02h14 correspondait a la purge neuronale forcee a la milliseconde pres. Le port neural de Tanaka etait ouvert et son implant partiellement efface."
+    },
+    "witness_testimony": {
+      "en": "Marshal Cross's shift log showed a fourteen-minute gap during the blackout. Rina Cade confirmed access to every implant in the district from her neural calibration lab. Dex Millard's visor was found on the transit corridor floor, and he could not account for the twelve minutes of darkness.",
+      "es": "El registro de turno de Marshal Cross mostraba un vacio de catorce minutos durante el apagon. Rina Cade confirmo acceso a cada implante del distrito desde su laboratorio de calibracion neuronal. El visor de Dex Millard fue encontrado en el suelo del corredor de transito, y no pudo justificar los doce minutos de oscuridad.",
+      "fr": "Le journal de service de Marshal Cross montrait un trou de quatorze minutes pendant la panne. Rina Cade a confirme l'acces a chaque implant du district depuis son laboratoire de calibration neuronale. Le viseur de Dex Millard a ete trouve sur le sol du couloir de transit, et il n'a pu justifier les douze minutes d'obscurite."
+    },
+    "financial_trail": {
+      "en": "The surveillance backdoor contract was brokered through an encrypted channel that Vane's personal chip could decrypt. Ada Strand's chip contained metadata linking to the private buyer, but the routing pointed through Vane's uplink node. Tanaka had flagged the surveillance routing for review the day before she was wiped.",
+      "es": "El contrato de la puerta trasera de vigilancia fue negociado a traves de un canal encriptado que el chip personal de Vane podia descifrar. El chip de Ada Strand contenia metadatos vinculados al comprador privado, pero el enrutamiento pasaba por el nodo de enlace de Vane. Tanaka habia marcado el enrutamiento de vigilancia para revision el dia antes de ser borrada.",
+      "fr": "Le contrat de la porte derobee de surveillance a ete negocie par un canal chiffre que la puce personnelle de Vane pouvait dechiffrer. La puce d'Ada Strand contenait des metadonnees menant a l'acheteur prive, mais le routage passait par le noeud de liaison de Vane. Tanaka avait signale le routage de surveillance pour examen la veille de son effacement."
+    },
+    "emotional_tells": {
+      "en": "Vane's neural log showed a three-hour gap he could not explain. Overseer Lang authorized the planned outage without questioning the timing. Juno Park visited the data vault six times that month, each visit longer than the last, and her recovery reports grew shorter.",
+      "es": "El registro neuronal de Vane mostraba un vacio de tres horas que no pudo explicar. El Supervisor Lang autorizo el corte planificado sin cuestionar el momento. Juno Park visito la boveda de datos seis veces ese mes, cada visita mas larga que la anterior, y sus informes de recuperacion se acortaron.",
+      "fr": "Le journal neural de Vane montrait un trou de trois heures qu'il ne pouvait expliquer. Le Superviseur Lang a autorise la coupure planifiee sans questionner le moment. Juno Park a visite le coffre de donnees six fois ce mois-la, chaque visite plus longue que la precedente, et ses rapports de recuperation se sont raccourcis."
+    },
+    "cold_case_physical": {
+      "en": "The access logs were overwritten in the next maintenance cycle. The private node was dismantled before anyone checked behind the cooling bay panel. Tanaka's neural implant was catalogued and shelved in an evidence locker that lost power twice a year.",
+      "es": "Los registros de acceso fueron sobrescritos en el siguiente ciclo de mantenimiento. El nodo privado fue desmantelado antes de que nadie revisara detras del panel de la bahia de refrigeracion. El implante neuronal de Tanaka fue catalogado y guardado en un deposito de pruebas que perdia energia dos veces al ano.",
+      "fr": "Les journaux d'acces ont ete ecrases lors du prochain cycle de maintenance. Le noeud prive a ete demonte avant que quiconque ne verifie derriere le panneau de la baie de refroidissement. L'implant neural de Tanaka a ete catalogue et range dans un casier a preuves qui perdait l'alimentation deux fois par an."
+    },
+    "cold_case_financial": {
+      "en": "The security audit was postponed, then cancelled. The surveillance data continued to flow through channels that no one was watching. The backdoor contract was fulfilled, the private buyer paid, and Kessler Vane's uplink node hummed on beneath the neon market without interruption.",
+      "es": "La auditoria de seguridad fue pospuesta, luego cancelada. Los datos de vigilancia continuaron fluyendo por canales que ya nadie vigilaba. El contrato de la puerta trasera fue cumplido, el comprador privado pago, y el nodo de enlace de Kessler Vane siguio zumbando bajo el mercado de neon sin interrupcion.",
+      "fr": "L'audit de securite a ete reporte, puis annule. Les donnees de surveillance ont continue de circuler par des canaux que plus personne ne surveillait. Le contrat de la porte derobee a ete rempli, l'acheteur prive a paye, et le noeud de liaison de Kessler Vane a continue de bourdonner sous le marche neon sans interruption."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Kessler Vane had built the backdoor, brokered the contract, and killed the one person whose audit would have exposed everything. The compiler signature on the exploit was his, the private node behind the cooling bay panel connected to his uplink, and the power spike at 02:14 matched the forced neural purge to the millisecond. Tanaka had found the surveillance routing and flagged it for review. Vane erased her memory and her life in the same twelve-minute window. The neon market buzzed on above, oblivious. Below, the data told everything.",

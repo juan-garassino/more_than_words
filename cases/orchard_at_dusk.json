@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The iron pry bar in Crale's shed matched the wound on Fell's skull. The boundary stones had been moved by night, their mortar fresh beneath the lichen. Fell's lamp glass was broken at the western marker, and his notebook lay open to a page showing the original survey line.",
+      "es": "La palanca de hierro en el cobertizo de Crale coincidia con la herida en el craneo de Fell. Los mojones habian sido movidos de noche, su mortero fresco bajo el liquen. El cristal de la lampara de Fell estaba roto junto al mojn oeste, y su cuaderno abierto en una pagina que mostraba la linea de levantamiento original.",
+      "fr": "La barre de fer dans la remise de Crale correspondait a la blessure sur le crane de Fell. Les bornes avaient ete deplacees de nuit, leur mortier frais sous le lichen. Le verre de la lampe de Fell etait brise pres de la borne ouest, et son carnet etait ouvert a une page montrant la ligne d'arpentage originale."
+    },
+    "witness_testimony": {
+      "en": "Ned Garvey drank with Fell at the inn that afternoon and watched him walk toward the orchard at dusk. Constable Price discovered the body at dawn but touched the scene before anyone else arrived. Amos Webb filed the boundary complaint and swore the stones had moved ten yards since spring.",
+      "es": "Ned Garvey bebio con Fell en la posada esa tarde y lo vio caminar hacia el huerto al anochecer. El Agente Price descubrio el cuerpo al amanecer pero toco la escena antes de que llegara nadie mas. Amos Webb presento la queja del lindero y juro que las piedras se habian movido diez yardas desde la primavera.",
+      "fr": "Ned Garvey a bu avec Fell a l'auberge cet apres-midi et l'a regarde marcher vers le verger au crepuscule. Le Constable Price a decouvert le corps a l'aube mais a touche la scene avant l'arrivee de quiconque. Amos Webb a depose la plainte pour les limites et a jure que les bornes avaient bouge de dix yards depuis le printemps."
+    },
+    "financial_trail": {
+      "en": "The forged deed in the parish records used ink that did not match the original entries. Crale's debts exceeded the value of his land, and Eliza Banks's auction offer would have settled them. Fell's measurements would have proven the boundary fraud and stripped the orchard of its stolen acres.",
+      "es": "La escritura falsificada en los registros parroquiales usaba tinta que no coincidia con las entradas originales. Las deudas de Crale superaban el valor de su tierra, y la oferta de subasta de Eliza Banks las habria saldado. Las mediciones de Fell habrian probado el fraude del lindero y despojado al huerto de sus acres robados.",
+      "fr": "L'acte falsifie dans les registres paroissiaux utilisait une encre ne correspondant pas aux ecritures originales. Les dettes de Crale depassaient la valeur de ses terres, et l'offre aux encheres d'Eliza Banks les aurait reglees. Les mesures de Fell auraient prouve la fraude des limites et prive le verger de ses acres voles."
+    },
+    "emotional_tells": {
+      "en": "Ruth Crale knew the family's financial ruin and said nothing at the inquest. Thomas kept his hands in his pockets when asked about the pry bar. Mr Hadley knew every tool in the orchard and would not look the constable in the eye.",
+      "es": "Ruth Crale conocia la ruina financiera familiar y no dijo nada en la investigacion. Thomas mantuvo las manos en los bolsillos cuando le preguntaron por la palanca. Mr Hadley conocia cada herramienta del huerto y no quiso mirar al agente a los ojos.",
+      "fr": "Ruth Crale connaissait la ruine financiere de la famille et n'a rien dit a l'enquete. Thomas gardait les mains dans ses poches quand on l'a interroge sur la barre de fer. Mr Hadley connaissait chaque outil du verger et ne voulait pas regarder le constable dans les yeux."
+    },
+    "cold_case_physical": {
+      "en": "The boundary stones stood where they had been placed, and no one measured the distance again. Fell's notebook gathered dust in an evidence locker, and the pry bar was returned to the shed without being tested. The orchard changed hands quietly, and the western marker cast its long shadow over undisputed ground.",
+      "es": "Los mojones permanecieron donde habian sido colocados, y nadie volvio a medir la distancia. El cuaderno de Fell acumulo polvo en un deposito de pruebas, y la palanca fue devuelta al cobertizo sin ser examinada. El huerto cambio de manos en silencio, y el mojn oeste proyecto su larga sombra sobre terreno indiscutido.",
+      "fr": "Les bornes sont restees la ou elles avaient ete placees, et personne n'a mesure la distance a nouveau. Le carnet de Fell a pris la poussiere dans un casier a preuves, et la barre de fer a ete rendue a la remise sans etre testee. Le verger a change de mains discretement, et la borne ouest a projete sa longue ombre sur un terrain inconteste."
+    },
+    "cold_case_financial": {
+      "en": "The boundary dispute faded from parish conversation, and the forged deed remained in the records unchallenged. Crale's debts were quietly restructured, the auction never came, and Eliza Banks withdrew her offer. The surveyor's measurements died with him, and the stolen acres stayed stolen.",
+      "es": "La disputa de linderos se desvanecio de las conversaciones parroquiales, y la escritura falsificada permanecio en los registros sin cuestionar. Las deudas de Crale fueron reestructuradas discretamente, la subasta nunca llego, y Eliza Banks retiro su oferta. Las mediciones del agrimensor murieron con el, y los acres robados siguieron robados.",
+      "fr": "Le litige foncier s'est efface des conversations paroissiales, et l'acte falsifie est reste dans les registres sans etre conteste. Les dettes de Crale ont ete discretement restructurees, la vente aux encheres n'est jamais venue, et Eliza Banks a retire son offre. Les mesures du geometre sont mortes avec lui, et les acres voles sont restes voles."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Thomas Crale broke under the weight of the parish ledger and the iron pry bar found in his shed. He had moved the boundary stones by night, redrawn the map, and killed the one man whose measurements would have exposed the fraud. The debt, the forged deed, the altered path — every thread led back to the farmhouse at the edge of the orchard. The jury deliberated for less than an hour.",

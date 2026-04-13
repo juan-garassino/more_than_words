@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The medication chart bore Dray's signature at both administration times. The dispensary log showed his keycard entry at 22:47, and the interaction manual in his office lay open to the page he had marked in pencil. Two vials were missing from Pharmacist Lin's tray.",
+      "es": "La ficha de medicacion llevaba la firma de Dray en ambos horarios de administracion. El registro del dispensario mostraba su entrada con tarjeta a las 22:47, y el manual de interacciones en su oficina estaba abierto en la pagina que habia marcado a lapiz. Dos viales faltaban de la bandeja de la Farmaceutica Lin.",
+      "fr": "La fiche de medication portait la signature de Dray aux deux heures d'administration. Le registre de la pharmacie montrait son entree par badge a 22h47, et le manuel d'interactions dans son bureau etait ouvert a la page qu'il avait marquee au crayon. Deux flacons manquaient du plateau de la Pharmacienne Lin."
+    },
+    "witness_testimony": {
+      "en": "Nurse Aldworth's hands trembled when she signed the chart, and she placed Dray in the corridor outside bed three at eleven. Owen Stroud confirmed his uncle feared the attending physician. The records clerk filed the negligence complaint three days before the death.",
+      "es": "Las manos de la Enfermera Aldworth temblaron al firmar la ficha, y situo a Dray en el pasillo frente a la cama tres a las once. Owen Stroud confirmo que su tio temia al medico tratante. La empleada de registros archivo la denuncia por negligencia tres dias antes de la muerte.",
+      "fr": "Les mains de l'Infirmiere Aldworth tremblaient en signant la fiche, et elle a place Dray dans le couloir devant le lit trois a onze heures. Owen Stroud a confirme que son oncle craignait le medecin traitant. L'employee des archives a depose la plainte pour negligence trois jours avant le deces."
+    },
+    "financial_trail": {
+      "en": "Stroud's testimony would have ended Dray's career and triggered a malpractice settlement worth six figures. The insurance policy named Owen Stroud as sole beneficiary. Solicitor Pike's briefcase held the hearing schedule dated for Monday morning.",
+      "es": "El testimonio de Stroud habria terminado la carrera de Dray y desencadenado un acuerdo por negligencia de seis cifras. La poliza de seguro nombraba a Owen Stroud como unico beneficiario. El maletin del Abogado Pike contenia el calendario de la audiencia programada para el lunes por la manana.",
+      "fr": "Le temoignage de Stroud aurait mis fin a la carriere de Dray et declenche un reglement pour faute professionnelle a six chiffres. La police d'assurance designait Owen Stroud comme seul beneficiaire. La serviette de l'Avocat Pike contenait le calendrier de l'audience prevue pour lundi matin."
+    },
+    "emotional_tells": {
+      "en": "Dray's pen leaked in his pocket the night of the death, and his car never left the car park until 5:30 AM. Dr Parris would not enter the ward after the body was removed. The cardiac monitor had been silenced by someone who knew the keycard system.",
+      "es": "El boligrafo de Dray goteo en su bolsillo la noche de la muerte, y su coche no salio del aparcamiento hasta las 5:30 AM. El Dr Parris no quiso entrar en la sala despues de retirar el cuerpo. El monitor cardiaco habia sido silenciado por alguien que conocia el sistema de tarjetas.",
+      "fr": "Le stylo de Dray a fui dans sa poche la nuit du deces, et sa voiture n'a pas quitte le parking avant 5h30. Le Dr Parris n'a pas voulu entrer dans le service apres le retrait du corps. Le moniteur cardiaque avait ete coupe par quelqu'un qui connaissait le systeme de badges."
+    },
+    "cold_case_physical": {
+      "en": "The medication chart was rewritten on clean paper, and the dispensary inventory was corrected before the inquest. The cardiac monitor was reset to factory settings, and the two unaccounted vials were never found. Briar Clinic resumed its quiet rhythms behind coded doors.",
+      "es": "La ficha de medicacion fue reescrita en papel limpio, y el inventario del dispensario fue corregido antes de la investigacion judicial. El monitor cardiaco fue restablecido a configuracion de fabrica, y los dos viales sin justificar nunca fueron encontrados. La Clinica Briar retomo sus ritmos tranquilos detras de puertas con codigo.",
+      "fr": "La fiche de medication a ete reecrite sur du papier propre, et l'inventaire de la pharmacie corrige avant l'enquete. Le moniteur cardiaque a ete reinitialise aux parametres d'usine, et les deux flacons non comptabilises n'ont jamais ete retrouves. La Clinique Briar a repris ses rythmes tranquilles derriere des portes codees."
+    },
+    "cold_case_financial": {
+      "en": "The negligence hearing was postponed indefinitely, and the malpractice file was sealed by the clinic's solicitors. Owen Stroud collected the insurance without challenge. Dray continued his rounds the next morning with his white coat pressed and his name still on the ward door.",
+      "es": "La audiencia por negligencia fue aplazada indefinidamente, y el expediente por mala praxis fue sellado por los abogados de la clinica. Owen Stroud cobro el seguro sin cuestionamiento. Dray continuo sus rondas a la manana siguiente con su bata blanca planchada y su nombre aun en la puerta de la sala.",
+      "fr": "L'audience pour negligence a ete reportee indefiniment, et le dossier de faute professionnelle a ete scelle par les avocats de la clinique. Owen Stroud a touche l'assurance sans contestation. Dray a continue ses tournees le lendemain matin avec sa blouse blanche repassee et son nom encore sur la porte du service."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Callum Dray prescribed two drugs whose combined effect would stop a weakened heart, and he knew it. The medication chart bore his signature, the dispensary log his entry time, and the interaction manual lay open to the page he had marked in pencil. Harold Stroud was scheduled to testify against him on Monday. He never made it past Saturday night. The case was surgical in its precision and its cruelty.",

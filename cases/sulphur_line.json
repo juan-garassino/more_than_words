@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The canal hook by the towpath gate matched the wound pattern on Buckley's skull. The sulphur stain under Oake's left thumbnail would not wash clean. Buckley's inspection case lay open on the towpath beside his visitor badge, and the mixing shed ventilation had not worked since March.",
+      "es": "El gancho del canal junto a la puerta del camino de sirga coincidia con el patron de la herida en el craneo de Buckley. La mancha de azufre bajo la una del pulgar izquierdo de Oake no se limpiaba. El maletin de inspeccion de Buckley yacia abierto en el camino de sirga junto a su credencial de visitante, y la ventilacion del cobertizo de mezclas no funcionaba desde marzo.",
+      "fr": "Le croc du canal pres de la porte du halage correspondait au schema de la blessure sur le crane de Buckley. La tache de soufre sous l'ongle du pouce gauche d'Oake ne partait pas au lavage. La mallette d'inspection de Buckley reposait ouverte sur le chemin de halage a cote de son badge de visiteur, et la ventilation de l'atelier de melange ne fonctionnait plus depuis mars."
+    },
+    "witness_testimony": {
+      "en": "The bargeman saw Oake at the towpath gate after shift end. The gatekeeper watched him walk toward the canal in the dark. Mary Dunlop complained about fumes twice and had her pay docked for it. Foreman Craggs signed safety entries he claims never to have seen.",
+      "es": "El barquero vio a Oake en la puerta del camino de sirga despues del fin del turno. El guardia lo vio caminar hacia el canal en la oscuridad. Mary Dunlop se quejo de los gases dos veces y le recortaron el salario por ello. El Capataz Craggs firmo registros de seguridad que afirma no haber visto.",
+      "fr": "Le batelier a vu Oake a la porte du halage apres la fin du quart. Le gardien l'a vu marcher vers le canal dans l'obscurite. Mary Dunlop s'est plainte des vapeurs deux fois et a vu sa paie reduite pour cela. Le Contremaitre Craggs a signe des registres de securite qu'il pretend ne pas avoir vus."
+    },
+    "financial_trail": {
+      "en": "Three years of falsified safety logs kept the works open. The backdated ink did not match the quarterly entries. Mrs Oake personally signed the denials on three workers' compensation claims, and Alderman Hicks deferred the licensing inspection twice with campaign money from the Oake family.",
+      "es": "Tres anos de registros de seguridad falsificados mantuvieron la fabrica abierta. La tinta antedatada no coincidia con las entradas trimestrales. La Sra. Oake firmo personalmente las denegaciones de tres reclamaciones de compensacion, y el Concejal Hicks aplazn la inspeccion de licencias dos veces con dinero de campana de la familia Oake.",
+      "fr": "Trois ans de registres de securite falsifies ont maintenu l'usine ouverte. L'encre antidatee ne correspondait pas aux ecritures trimestrielles. Mme Oake a personnellement signe les refus de trois demandes d'indemnisation, et l'Echevin Hicks a reporte l'inspection des licences deux fois avec l'argent de campagne de la famille Oake."
+    },
+    "emotional_tells": {
+      "en": "Oake scrubbed his hands but the sulphur stayed under his nail. Ned Buckley collected his brother's pay that evening and said nothing to the foreman. Dr Poole omitted symptoms of chronic sulphur exposure from his annual reports and would not meet the workers' eyes at the inquest.",
+      "es": "Oake se restreg las manos pero el azufre permanecio bajo su una. Ned Buckley cobro el salario de su hermano esa noche y no dijo nada al capataz. El Dr Poole omitio sintomas de exposicion cronica al azufre en sus informes anuales y no quiso mirar a los trabajadores a los ojos en la investigacion.",
+      "fr": "Oake s'est frotte les mains mais le soufre est reste sous son ongle. Ned Buckley a touche la paie de son frere ce soir-la et n'a rien dit au contremaitre. Le Dr Poole a omis les symptomes d'exposition chronique au soufre dans ses rapports annuels et n'a pas voulu croiser le regard des ouvriers a l'enquete."
+    },
+    "cold_case_physical": {
+      "en": "The canal hook was rehung by the towpath gate without being tested. The mixing shed ventilation was never repaired. The thin yellow film covered everything in the workers' yard, and Buckley's inspection case was filed in a back room that smelled of sulphur and damp brick.",
+      "es": "El gancho del canal fue colgado de nuevo en la puerta del camino de sirga sin ser examinado. La ventilacion del cobertizo de mezclas nunca fue reparada. La fina pelicula amarilla cubria todo en el patio de los trabajadores, y el maletin de inspeccion de Buckley fue archivado en un cuarto trasero que olia a azufre y ladrillo humedo.",
+      "fr": "Le croc du canal a ete raccroche a la porte du halage sans etre teste. La ventilation de l'atelier de melange n'a jamais ete reparee. Le fin film jaune recouvrait tout dans la cour des ouvriers, et la mallette d'inspection de Buckley a ete rangee dans une arriere-salle qui sentait le soufre et la brique humide."
+    },
+    "cold_case_financial": {
+      "en": "The safety logs were rebound with clean pages, and the quarterly audit was deferred again. The sulphur readings that would have closed the works were disposed of before the inquest. The Oake family chimney stood against the sky, and the workers kept coughing through every shift that followed.",
+      "es": "Los registros de seguridad fueron reencuadernados con paginas limpias, y la auditoria trimestral fue aplazada de nuevo. Las lecturas de azufre que habrian cerrado la fabrica fueron eliminadas antes de la investigacion. La chimenea de la familia Oake se erguia contra el cielo, y los trabajadores siguieron tosiendo en cada turno que siguio.",
+      "fr": "Les registres de securite ont ete relies avec des pages propres, et l'audit trimestriel a ete reporte a nouveau. Les releves de soufre qui auraient ferme l'usine ont ete elimines avant l'enquete. La cheminee de la famille Oake se dressait contre le ciel, et les ouvriers ont continue de tousser a chaque quart qui a suivi."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Silas Oake walked the canal path after shift end, met Buckley in the dark, and struck him with the hook that hung by the towpath gate. Three years of falsified safety logs, the backdated ink, the missing pages, the sulphur readings that would have closed the works forever — all of it pointed to a man who killed to keep his chimney smoking. The bargeman saw him at the gate, the gatekeeper saw him walk toward the canal, and the hook carried his bruise pattern on its handle. The sulphur line ran straight from the mixing shed to the courtroom.",

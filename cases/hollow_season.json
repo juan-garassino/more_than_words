@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The brandy glass held chloral hydrate, and the decanter stopper carried camphor matching Edmund's coat lining. A burned letter lay in the study grate, its surviving fragment bearing the solicitor's letterhead. The altered ledger in the study desk showed entries in two hands.",
+      "es": "El vaso de brandy contenia hidrato de cloral, y el tapon del decantador llevaba alcanfor que coincidia con el forro del abrigo de Edmund. Una carta quemada yacia en la rejilla del estudio, su fragmento sobreviviente con el membrete del abogado. El libro de cuentas alterado en el escritorio del estudio mostraba entradas de dos manos.",
+      "fr": "Le verre de brandy contenait de l'hydrate de chloral, et le bouchon du carafon portait du camphre correspondant a la doublure du manteau d'Edmund. Une lettre brulee gisait dans la grille du bureau, son fragment survivant portant l'en-tete de l'avocat. Le registre altere dans le bureau montrait des ecritures de deux mains."
+    },
+    "witness_testimony": {
+      "en": "Flora Marsh found the body at half past five, but the fire had been cold for hours. Silas Greer was cleaning the study grate before the body was reported, holding every key on the property. Dr Fenwick's half-empty bottle of chloral hydrate sat in his medical bag from the afternoon visit.",
+      "es": "Flora Marsh encontro el cuerpo a las cinco y media, pero el fuego llevaba horas frio. Silas Greer estaba limpiando la rejilla del estudio antes de reportar el cuerpo, con todas las llaves de la propiedad. La botella medio vacia de hidrato de cloral del Dr Fenwick estaba en su maletin medico de la visita de la tarde.",
+      "fr": "Flora Marsh a trouve le corps a cinq heures et demie, mais le feu etait froid depuis des heures. Silas Greer nettoyait la grille du bureau avant que le corps ne soit signale, detenant toutes les cles de la propriete. La bouteille a moitie vide d'hydrate de chloral du Dr Fenwick se trouvait dans sa sacoche medicale de la visite de l'apres-midi."
+    },
+    "financial_trail": {
+      "en": "The entailment expired on the first of January, and Edmund's debts exceeded the estate's value. Gideon Cobb's handwriting matched annotations in the entailment deed. Margaret Wells's returned letters hinted at a prior claim the family wanted buried.",
+      "es": "La vinculacion expiraba el primero de enero, y las deudas de Edmund superaban el valor de la finca. La escritura de Gideon Cobb coincidia con las anotaciones en la escritura de vinculacion. Las cartas devueltas de Margaret Wells insinuaban una reclamacion previa que la familia queria enterrar.",
+      "fr": "La substitution expirait au premier janvier, et les dettes d'Edmund depassaient la valeur du domaine. L'ecriture de Gideon Cobb correspondait aux annotations de l'acte de substitution. Les lettres retournees de Margaret Wells laissaient entrevoir une reclamation anterieure que la famille voulait ensevelir."
+    },
+    "emotional_tells": {
+      "en": "Edmund arrived a week early with fresh stitching in his coat lining. Robert Carrow came from the village two days before with stable mud on his boots and said nothing at dinner. Margaret Wells's letters were all returned unopened, and her silence spoke louder than any testimony.",
+      "es": "Edmund llego una semana antes con costuras frescas en el forro de su abrigo. Robert Carrow vino del pueblo dos dias antes con barro de establo en sus botas y no dijo nada en la cena. Las cartas de Margaret Wells fueron devueltas sin abrir, y su silencio hablo mas fuerte que cualquier testimonio.",
+      "fr": "Edmund est arrive une semaine en avance avec des coutures fraiches dans la doublure de son manteau. Robert Carrow est venu du village deux jours avant avec de la boue d'ecurie sur ses bottes et n'a rien dit au diner. Les lettres de Margaret Wells ont toutes ete retournees non ouvertes, et son silence parlait plus fort que tout temoignage."
+    },
+    "cold_case_physical": {
+      "en": "The study clock was never rewound, and the brandy decanter was never refilled. The burned letter in the grate crumbled to nothing before anyone thought to read what remained. Carrow Hall kept its secrets behind locked doors, through every hollow season that followed.",
+      "es": "El reloj del estudio nunca fue dado cuerda de nuevo, y el decantador de brandy nunca fue rellenado. La carta quemada en la rejilla se desmorono antes de que alguien pensara en leer lo que quedaba. Carrow Hall guardo sus secretos detras de puertas cerradas, a traves de cada estacion hueca que siguio.",
+      "fr": "L'horloge du bureau n'a jamais ete remontee, et le carafon de brandy jamais rempli. La lettre brulee dans la grille s'est effritee avant que quiconque ne pense a lire ce qui restait. Carrow Hall a garde ses secrets derriere des portes verrouillees, a travers chaque saison creuse qui a suivi."
+    },
+    "cold_case_financial": {
+      "en": "The entailment expired without challenge, and the estate passed through inheritance as the family intended. The file was marked natural causes and placed beside the estate ledger in a drawer that smelled of camphor. The older will stayed hidden beneath the floorboards, and no solicitor came to Carrow Hall again.",
+      "es": "La vinculacion expiro sin cuestionamiento, y la finca paso por herencia como la familia pretendia. El expediente fue marcado como causas naturales y colocado junto al libro de cuentas de la finca en un cajon que olia a alcanfor. El viejo testamento permanecio oculto bajo las tablas del suelo, y ningun abogado volvio a Carrow Hall.",
+      "fr": "La substitution a expire sans contestation, et le domaine est passe par heritage comme la famille le souhaitait. Le dossier a ete marque causes naturelles et place a cote du registre du domaine dans un tiroir qui sentait le camphre. L'ancien testament est reste cache sous les lattes du plancher, et aucun avocat n'est revenu a Carrow Hall."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Edmund Carrow arrived early because he could not afford to arrive late. The entailment expired on the first of January, and if his uncle lived past that date, the estate would go to auction and Edmund would inherit nothing. The chloral hydrate in the brandy, the camphor on the decanter stopper matching his coat, the burned letter in the grate, the altered ledger in his hand — the evidence drew a portrait of a desperate man who killed the season before it could turn. The hollow hall had claimed its last Carrow.",

@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The bourbon glass held traces of strychnine, and a vial was found in the alley behind the saloon. Boot prints in the mud crossed the back entrance twice. The judge's notebook lay open to a page with the original boundary line drawn in his own hand.",
+      "es": "El vaso de bourbon contenia rastros de estricnina, y un vial fue encontrado en el callejon detras del salon. Las huellas de botas en el barro cruzaban la entrada trasera dos veces. El cuaderno del juez estaba abierto en una pagina con la linea del lindero original dibujada de su propia mano.",
+      "fr": "Le verre de bourbon contenait des traces de strychnine, et un flacon a ete trouve dans la ruelle derriere le saloon. Des empreintes de bottes dans la boue traversaient l'entree arriere deux fois. Le carnet du juge etait ouvert a une page avec la ligne de limite originale tracee de sa propre main."
+    },
+    "witness_testimony": {
+      "en": "Clara Moss was the last person seen entering the judge's quarters above the saloon. Deputy Vickers's boot prints crossed the back alley twice that night. Reverend Pike visited the judge that afternoon and left before the dust storm rolled in.",
+      "es": "Clara Moss fue la ultima persona vista entrando en los aposentos del juez sobre el salon. Las huellas del Alguacil Vickers cruzaron el callejon trasero dos veces esa noche. El Reverendo Pike visito al juez esa tarde y se fue antes de que llegara la tormenta de polvo.",
+      "fr": "Clara Moss a ete la derniere personne vue entrant dans les quartiers du juge au-dessus du saloon. Les empreintes de bottes de l'Adjoint Vickers traversaient la ruelle arriere deux fois cette nuit-la. Le Reverend Pike a rendu visite au juge cet apres-midi et est parti avant l'arrivee de la tempete de poussiere."
+    },
+    "financial_trail": {
+      "en": "The forged survey map used ink that did not match the land office originals. A telegram confirmed the original boundary would have stripped Bridger's ranch of forty acres. Maude Bridger signed the claim papers herself, and the ranch accounts showed debts that exceeded the land's value.",
+      "es": "El mapa falsificado usaba tinta que no coincidia con los originales de la oficina de tierras. Un telegrama confirmaba que el lindero original habria despojado al rancho de Bridger de cuarenta acres. Maude Bridger firmo los papeles de la reclamacion ella misma, y las cuentas del rancho mostraban deudas que superaban el valor de la tierra.",
+      "fr": "Le plan cadastral falsifie utilisait une encre ne correspondant pas aux originaux du bureau des terres. Un telegramme confirmait que la limite originale aurait prive le ranch de Bridger de quarante acres. Maude Bridger a signe elle-meme les papiers de la revendication, et les comptes du ranch montraient des dettes depassant la valeur des terres."
+    },
+    "emotional_tells": {
+      "en": "Bridger's horse was tied outside the saloon at sundown and gone by morning. Doc Calloway's medical bag held a labelled vial of strychnine, and his hands shook when he noted the time of death. Jack Tull rode in at dusk with the look of a man who had already lost everything.",
+      "es": "El caballo de Bridger estaba atado frente al salon al atardecer y habia desaparecido por la manana. El maletin medico de Doc Calloway contenia un vial etiquetado de estricnina, y sus manos temblaron al anotar la hora de la muerte. Jack Tull llego al atardecer con la mirada de un hombre que ya lo habia perdido todo.",
+      "fr": "Le cheval de Bridger etait attache devant le saloon au crepuscule et avait disparu au matin. La sacoche medicale de Doc Calloway contenait un flacon etiquete de strychnine, et ses mains tremblaient en notant l'heure du deces. Jack Tull est arrive au crepuscule avec l'air d'un homme qui avait deja tout perdu."
+    },
+    "cold_case_physical": {
+      "en": "The dust storm covered every track on Main Street. The bourbon bottle was emptied and shelved, the vial in the alley washed clean by rain. The judge's notebook pages were torn from the spine, and the room above the saloon was swept before the new judge arrived by stagecoach.",
+      "es": "La tormenta de polvo cubrio cada huella en la calle principal. La botella de bourbon fue vaciada y archivada, el vial en el callejon lavado por la lluvia. Las paginas del cuaderno del juez fueron arrancadas del lomo, y la habitacion sobre el salon fue barrida antes de que el nuevo juez llegara en diligencia.",
+      "fr": "La tempete de poussiere a couvert chaque trace dans la rue principale. La bouteille de bourbon a ete videe et rangee, le flacon dans la ruelle lave par la pluie. Les pages du carnet du juge ont ete arrachees de la reliure, et la chambre au-dessus du saloon a ete balayee avant l'arrivee du nouveau juge par diligence."
+    },
+    "cold_case_financial": {
+      "en": "The land claim was never resolved, and the forged survey stayed in the county records unchallenged. The ranch kept its stolen acres, the boundary fence stood where Bridger had built it, and the stagecoach brought a new judge who chose not to reopen the matter.",
+      "es": "La reclamacion de tierras nunca se resolvio, y el plano falsificado permanecio en los registros del condado sin cuestionar. El rancho conservo sus acres robados, la cerca del lindero permanecio donde Bridger la habia construido, y la diligencia trajo un nuevo juez que eligio no reabrir el asunto.",
+      "fr": "La revendication fonciere n'a jamais ete resolue, et le plan falsifie est reste dans les registres du comte sans etre conteste. Le ranch a garde ses acres voles, la cloture est restee ou Bridger l'avait construite, et la diligence a amene un nouveau juge qui a choisi de ne pas rouvrir l'affaire."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Cole Bridger had poured the strychnine into the bourbon himself, on a night when the dust storm made him invisible. The forged survey, the wrong ink at the land office, the telegram confirming the original boundary — every trail led back to a rancher who would lose everything if the judge ruled at nine. The vial in the alley, the boot prints in the mud, the horse saddled after dark: the frontier delivered its own verdict before the court had its chance.",

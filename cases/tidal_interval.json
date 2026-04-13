@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "Keel scrapes on the slipway matched Dunne's boat hull. The mooring rope in the sea cave had been cut, not worn through, and the anchor chain was shortened to prevent escape. Ellen Cross's sample jars sat beside her in the cave, and her research cabin stood empty on the cliff above.",
+      "es": "Las marcas de quilla en la rampa coincidian con el casco del barco de Dunne. La cuerda de amarre en la cueva marina habia sido cortada, no desgastada, y la cadena de ancla acortada para impedir la huida. Los frascos de muestras de Ellen Cross estaban junto a ella en la cueva, y su cabana de investigacion permanecia vacia en el acantilado.",
+      "fr": "Les raclures de quille sur la cale correspondaient a la coque du bateau de Dunne. L'amarre dans la grotte marine avait ete coupee, pas usee, et la chaine d'ancre raccourcie pour empecher toute fuite. Les bocaux d'echantillons d'Ellen Cross etaient a cote d'elle dans la grotte, et sa cabane de recherche etait vide sur la falaise au-dessus."
+    },
+    "witness_testimony": {
+      "en": "Gill Rowan knew the cave passages and placed Dunne at the harbour after dark. The harbour master's logbook entries for the night were unusually brief. Malcolm Crewe's fuel receipts showed a boat trip that night, and Coastguard Bell's camera housing was found empty in the research cabin.",
+      "es": "Gill Rowan conocia los pasajes de la cueva y situo a Dunne en el puerto despues del anochecer. Las anotaciones del libro del capitan de puerto para esa noche eran inusualmente breves. Los recibos de combustible de Malcolm Crewe mostraban un viaje en barco esa noche, y la carcasa de la camara del Guardacostas Bell fue encontrada vacia en la cabana de investigacion.",
+      "fr": "Gill Rowan connaissait les passages de la grotte et a place Dunne au port apres la tombee de la nuit. Les entrees du journal du capitaine du port pour la nuit etaient inhabituellement breves. Les recus de carburant de Malcolm Crewe montraient une sortie en bateau cette nuit-la, et le boitier de l'appareil photo du Garde-cote Bell a ete trouve vide dans la cabane de recherche."
+    },
+    "financial_trail": {
+      "en": "Dunne's fleet exceeded the annual quota by three hundred tonnes. The falsified landing records in the fish market showed catches that never matched the manifests. Ellen Cross's marine survey would have revoked his fleet's licence, and Dr Anne Webb's report was due at the ministry by month's end.",
+      "es": "La flota de Dunne excedio la cuota anual en trescientas toneladas. Los registros de desembarque falsificados en el mercado de pescado mostraban capturas que nunca coincidian con los manifiestos. El estudio marino de Ellen Cross habria revocado la licencia de su flota, y el informe de la Dra. Anne Webb debia entregarse al ministerio a fin de mes.",
+      "fr": "La flotte de Dunne avait depasse le quota annuel de trois cents tonnes. Les registres de debarquement falsifies au marche aux poissons montraient des prises qui ne correspondaient jamais aux manifestes. L'etude marine d'Ellen Cross aurait revoque la licence de sa flotte, et le rapport du Dr Anne Webb devait etre remis au ministere avant la fin du mois."
+    },
+    "emotional_tells": {
+      "en": "Dunne's oilskin was dry but his boots carried a tide line that placed him at the water's edge. Fiona Cross argued with Dunne over access permits, her voice carrying across the harbour. The harbour master wrote his briefest log entry on the night a woman died in his cove.",
+      "es": "El impermeable de Dunne estaba seco pero sus botas llevaban una marca de marea que lo situaba al borde del agua. Fiona Cross discutio con Dunne sobre permisos de acceso, su voz resonando por el puerto. El capitan de puerto escribio su anotacion mas breve la noche que una mujer murio en su ensenada.",
+      "fr": "Le ciret de Dunne etait sec mais ses bottes portaient une ligne de maree qui le placait au bord de l'eau. Fiona Cross s'est disputee avec Dunne au sujet des permis d'acces, sa voix portant a travers le port. Le capitaine du port a ecrit son entree de journal la plus breve la nuit ou une femme est morte dans sa crique."
+    },
+    "cold_case_physical": {
+      "en": "The sea cave flooded and drained with each tide, washing away whatever the granite walls had witnessed. The cut mooring rope was taken by the current. The slipway was scraped by keels that left no names, and Ellen Cross's sample jars sat on a shelf in an empty cabin, measuring nothing.",
+      "es": "La cueva marina se inundaba y drenaba con cada marea, lavando lo que los muros de granito habian presenciado. La cuerda de amarre cortada fue llevada por la corriente. La rampa fue raspada por quillas que no dejaban nombres, y los frascos de muestras de Ellen Cross se quedaron en un estante de una cabana vacia, sin medir nada.",
+      "fr": "La grotte marine se remplissait et se vidait a chaque maree, emportant tout ce que les murs de granit avaient vu. L'amarre coupee a ete emportee par le courant. La cale etait raclee par des quilles qui ne laissaient aucun nom, et les bocaux d'echantillons d'Ellen Cross restaient sur une etagere dans une cabane vide, ne mesurant rien."
+    },
+    "cold_case_financial": {
+      "en": "The marine survey was filed incomplete, and the ministry extended the quota deadline without comment. The falsified landing records were rewritten, and Dunne Harbour continued to land its catch by night. The fleet licence was renewed, and the three hundred tonnes of excess catch vanished into the books like the tide into the granite cove.",
+      "es": "El estudio marino fue archivado como incompleto, y el ministerio extendio el plazo de cuotas sin comentarios. Los registros de desembarque falsificados fueron reescritos, y el Puerto Dunne continuo desembarcando su captura de noche. La licencia de la flota fue renovada, y las trescientas toneladas de captura excedente desaparecieron en los libros como la marea en la ensenada de granito.",
+      "fr": "L'etude marine a ete classee incomplete, et le ministere a prolonge le delai de quota sans commentaire. Les registres de debarquement falsifies ont ete reecrits, et le Port Dunne a continue de debarquer ses prises de nuit. La licence de la flotte a ete renouvelee, et les trois cents tonnes de captures excedentaires ont disparu dans les livres comme la maree dans la crique de granit."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Piers Dunne launched a boat in the dark, cut the mooring rope to strand Ellen Cross in the cave, and let the tide do the rest. Three hundred tonnes of excess catch, falsified landing records, and a marine survey that would have ended his fleet's licence — the evidence flowed in as surely as the water that filled the cave at 02:54. The keel scrapes on the slipway, the shortened anchor chain, the disabled engine ignition: each piece locked together like the tidal tables that governed the forty-minute window. The sea gave up its proof at dawn, and the harbour had its reckoning.",

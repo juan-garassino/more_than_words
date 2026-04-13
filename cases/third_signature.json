@@ -57,6 +57,38 @@
       ]
     }
   },
+  "ending_fragments": {
+    "physical_evidence": {
+      "en": "The port glass held antimony in a measured dose that spoke of pharmaceutical precision. The blotting paper in the archive vault carried the reverse impression of the forged signature. The nib that wrote it matched Agnes Vail's Waterman pen, and the ink discrepancy on the trust deed dated the forgery to 1935.",
+      "es": "La copa de oporto contenia antimonio en una dosis medida que hablaba de precision farmaceutica. El papel secante en la boveda del archivo llevaba la impresion inversa de la firma falsificada. La plumilla que la escribio coincidia con la pluma Waterman de Agnes Vail, y la discrepancia de tinta en la escritura fiduciaria databa la falsificacion en 1935.",
+      "fr": "Le verre de porto contenait de l'antimoine en une dose mesuree temoignant d'une precision pharmaceutique. Le buvard dans la chambre forte des archives portait l'impression inversee de la signature falsifiee. La plume qui l'avait tracee correspondait au Waterman d'Agnes Vail, et l'anomalie d'encre sur l'acte fiduciaire datait le faux de 1935."
+    },
+    "witness_testimony": {
+      "en": "Colonel Norris decanted and served the port himself, as he has for twenty years. Lillian March crossed the rear garden to speak with the night watchman, her coat carrying rain. Percival Dent accessed the archive vault that afternoon, and Walter Kemp sat in the far corner knowing the Vail family's business from his years at the trust office.",
+      "es": "El Coronel Norris decanto y sirvio el oporto el mismo, como lo ha hecho durante veinte anos. Lillian March cruzo el jardin trasero para hablar con el vigilante nocturno, su abrigo con lluvia. Percival Dent accedio a la boveda del archivo esa tarde, y Walter Kemp se sento en el rincon mas alejado conociendo los asuntos de la familia Vail por sus anos en la oficina fiduciaria.",
+      "fr": "Le Colonel Norris a decante et servi le porto lui-meme, comme il le fait depuis vingt ans. Lillian March a traverse le jardin arriere pour parler au veilleur de nuit, son manteau portant la pluie. Percival Dent a accede a la chambre forte des archives cet apres-midi, et Walter Kemp s'est assis dans le coin le plus eloigne, connaissant les affaires de la famille Vail depuis ses annees au bureau fiduciaire."
+    },
+    "financial_trail": {
+      "en": "The third signature on the trust deed secured the Vail family's property claim for forty years. Arthur Crisp found the ink discrepancy and requested an independent analysis that would have unravelled the forgery. The trust bore the Vail name, and its collapse would have stripped the family of everything.",
+      "es": "La tercera firma en la escritura fiduciaria aseguro la reclamacion de propiedad de la familia Vail durante cuarenta anos. Arthur Crisp encontro la discrepancia de tinta y solicito un analisis independiente que habria desenmascarado la falsificacion. La escritura llevaba el nombre de los Vail, y su derrumbe habria despojado a la familia de todo.",
+      "fr": "La troisieme signature sur l'acte fiduciaire avait assure la revendication de propriete des Vail pendant quarante ans. Arthur Crisp a decouvert l'anomalie d'encre et demande une analyse independante qui aurait demonte le faux. La fiducie portait le nom des Vail, et son effondrement aurait depouille la famille de tout."
+    },
+    "emotional_tells": {
+      "en": "Agnes Vail wore black gloves throughout the evening and signed the guest book with a leftward slope. Hugh Emberly's monogram ring left an imprint on the leather armrest, and he watched the port ceremony without drinking. Dr Pryce pronounced death at half past seven and completed his toxicology report with unusual speed.",
+      "es": "Agnes Vail llevo guantes negros durante toda la velada y firmo el libro de invitados con una inclinacion a la izquierda. El anillo con monograma de Hugh Emberly dejo una huella en el reposabrazos de cuero, y observo la ceremonia del oporto sin beber. El Dr Pryce declaro la muerte a las siete y media y completo su informe toxicologico con inusual rapidez.",
+      "fr": "Agnes Vail a porte des gants noirs toute la soiree et signe le livre d'or avec une inclinaison vers la gauche. La chevaliere a monogramme de Hugh Emberly a laisse une empreinte sur l'accoudoir en cuir, et il a regarde la ceremonie du porto sans boire. Le Dr Pryce a prononce le deces a sept heures et demie et complete son rapport toxicologique avec une rapidite inhabituelle."
+    },
+    "cold_case_physical": {
+      "en": "The port glass was rinsed and the decanter refilled. The archive key was rehung on its peg, and the blotting paper was filed among committee minutes that no one read. The reading room fire was relit on Thursday, and the club carried on as if Arthur Crisp had simply declined to attend.",
+      "es": "La copa de oporto fue enjuagada y el decantador rellenado. La llave del archivo fue colgada de nuevo en su gancho, y el papel secante fue archivado entre actas del comite que nadie leia. El fuego de la sala de lectura fue reencendido el jueves, y el club continuo como si Arthur Crisp simplemente hubiera declinado asistir.",
+      "fr": "Le verre de porto a ete rince et le carafon rempli a nouveau. La cle des archives a ete raccrochee a son crochet, et le buvard a ete classe parmi les proces-verbaux du comite que personne ne lisait. Le feu de la salle de lecture a ete rallume le jeudi, et le club a continue comme si Arthur Crisp avait simplement decline l'invitation."
+    },
+    "cold_case_financial": {
+      "en": "No independent analysis was ever conducted, and the trust deed was returned to the vault unchallenged. The Vail family's property claim endured, the committee never convened to discuss the ink discrepancy, and the third signature held for another generation. The Blackwood Club kept its secret in the same silence with which it carried its port.",
+      "es": "Nunca se realizo un analisis independiente, y la escritura fiduciaria fue devuelta a la boveda sin cuestionar. La reclamacion de propiedad de la familia Vail perduro, el comite nunca se reunio para discutir la discrepancia de tinta, y la tercera firma se mantuvo durante otra generacion. El Club Blackwood guardo su secreto en el mismo silencio con que llevaba su oporto.",
+      "fr": "Aucune analyse independante n'a jamais ete menee, et l'acte fiduciaire a ete rendu a la chambre forte sans etre conteste. La revendication de propriete des Vail a perdure, le comite ne s'est jamais reuni pour discuter de l'anomalie d'encre, et la troisieme signature a tenu une generation de plus. Le Club Blackwood a garde son secret dans le meme silence avec lequel il portait son porto."
+    }
+  },
   "endings": {
     "all_strong": {
       "en": "Agnes Vail had forged the third signature on the trust deed in 1935 and lived in fear of its discovery for decades. When Arthur Crisp found the ink discrepancy and requested an independent analysis, she switched his port glass in the kitchen passage and dissolved the antimony that would silence him before the committee met. The nib matched her Waterman pen, the blotting paper held the reverse of the forged signature, and the measured dose spoke of pharmaceutical precision. The third signature had held for forty years. It took one evening of port and poison to bring it down.",
