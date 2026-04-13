@@ -266,7 +266,7 @@ class DialogueSampler:
             attractor_norm = float(np.linalg.norm(tok.attractor_weights))
 
             # Combine: edges dominate, attractor is a tiebreaker
-            scores[i] = edge_to_last * 3.0 + context_affinity * 1.0 + attractor_norm * 0.3
+            scores[i] = edge_to_last * 5.0 + context_affinity * 2.0 + attractor_norm * 0.3
 
         # Softmax with temperature
         scores = scores / T
@@ -532,6 +532,30 @@ class DialogueSampler:
                     abs(t.attractor_weights[d]) * 2.0  # boost tokens strong on this dim
                     for t in dim_candidates
                 ])
+
+                # Graph-aware boost: reward candidates connected to recent player tokens
+                recent_player_ids = [
+                    tok.id for tok, role in zip(all_tokens, all_roles)
+                    if role == ROLE_PLAYER
+                ][-5:]
+                if recent_player_ids:
+                    for idx, candidate in enumerate(dim_candidates):
+                        affinity = sum(
+                            self.graph.weight(candidate.id, pid)
+                            for pid in recent_player_ids
+                        )
+                        scores[idx] += affinity * 3.0  # graph-aware boost
+
+                # Red herring injection: 15% chance to force atmospheric/misleading token
+                RED_HERRING_TAGS = {'surface', 'plausible', 'dramatic'}
+                if np.random.random() < 0.15:
+                    rh_mask = np.array([
+                        bool(set(getattr(t, 'affinity_tags', [])) & RED_HERRING_TAGS)
+                        for t in dim_candidates
+                    ])
+                    if rh_mask.any():
+                        scores[~rh_mask] = -1e9  # force red herring selection this turn
+
                 temp = self.engine_temperature
                 if self._temperature_jitter > 0:
                     temp += np.random.uniform(-self._temperature_jitter, self._temperature_jitter)
