@@ -9,7 +9,7 @@
   "context_dim": 128,
   "n_attractor_dims": 7,
   "convergence_threshold": 0.65,
-  "convergence_rate": 0.75,
+  "convergence_rate": 0.3,
   "min_turns": 10,
   "max_turns": 60,
   "initial_dimension_value": 0.15,
