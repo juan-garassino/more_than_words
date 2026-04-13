@@ -2,7 +2,7 @@
   "suspect:renard_voss": {
     "card": "Renard Voss firmó el libro de la estación con letra apretada. El bajo de su abrigo está húmedo de la niebla del andén.",
     "action": "Interrogas a Renard Voss. Le pides que explique la firma en el registro y el estado de su abrigo.",
-    "hint": "(intención — quién tenía motivo para estar en el andén dos después de la última llegada)",
+    "hint": "(la firma apretada y el abrigo húmedo no cuadran con un pasajero normal)",
     "reaction": {
       "default": "Voss responde sin levantar la vista del reloj de la estación. 'Llegué con el último tren. Firmé el libro como cualquier pasajero.' El bajo de su abrigo gotea sobre las baldosas."
     }
@@ -10,7 +10,7 @@
   "suspect:estranged_daughter": {
     "card": "Una joven esperaba en el andén dos con un pequeño ramo. Los tallos están envueltos en papel del ferrocarril.",
     "action": "Te acercas a la hija distanciada. Le preguntas por qué esperaba en el andén dos a esa hora.",
-    "hint": "(intención — presencia en la escena sin motivo aparente de viaje)",
+    "hint": "(flores a medianoche en un andén vacío)",
     "reaction": {
       "default": "Ella sostiene el ramo contra el pecho. 'Venía a verlo. No sabía que ya era tarde para eso.' Los tallos crujen bajo el papel.",
       "after_class:OBJECT": "El ramo tiembla cuando le muestras la evidencia. 'Eso no es mío. Yo solo traje flores.'",
@@ -23,7 +23,7 @@
   "suspect:stationmaster": {
     "card": "El nombre del jefe de estación consta en el turno de las once de la noche. Su cadena de reloj de latón está guardada.",
     "action": "Preguntas al jefe de estación por el turno de las once y por qué su reloj está guardado.",
-    "hint": "(cronología — quién controlaba el acceso a la estación durante la ventana de treinta y dos minutos)",
+    "hint": "(veinte años en la estación y esa noche no vio nada)",
     "reaction": {
       "default": "El jefe de estación saca la cadena del bolsillo y la deja sobre el escritorio. 'Mi turno empezó a las once en punto. No vi nada fuera de lo normal hasta que el mozo gritó.'",
       "after_class:OBJECT": "Mira el objeto y asiente despacio. 'Todo lo que hay en esta estación pasa por mi registro. Si no está anotado, no ocurrió.'",
@@ -36,7 +36,7 @@
   "suspect:night_porter": {
     "card": "El portero nocturno lleva un llavero de latón con tres llaves de menos. Sus botas están limpias de polvo de carbón.",
     "action": "Examinas el llavero del portero nocturno y le preguntas por las llaves que faltan.",
-    "hint": "(acceso — tres llaves ausentes abren tres cerraduras sin forzar)",
+    "hint": "(tres huecos en el llavero)",
     "reaction": {
       "default": "El portero hace girar el llavero entre los dedos. 'Las llaves las devuelvo al final del turno. Tres puertas, tres llaves. Todas vuelven.' Pero el aro tiene tres huecos vacíos.",
       "after_class:OBJECT": "Mira el objeto y retrocede medio paso. 'No he tocado nada que no me corresponda. Las llaves abren almacenes, no oficinas.'",
@@ -49,7 +49,7 @@
   "suspect:platform_guard": {
     "card": "El gancho de la linterna del guardia de andén está vacío. Sus guantes están secos pese a la niebla.",
     "action": "Señalas el gancho vacío y los guantes secos del guardia. Le pides una explicación.",
-    "hint": "(contradicción — guantes secos en una noche de niebla, linterna ausente en un andén oscuro)",
+    "hint": "(guantes secos, niebla espesa — algo no encaja)",
     "reaction": {
       "default": "El guardia mira sus propias manos como si las viera por primera vez. 'La linterna se la llevaron para repararla. Los guantes... no salí al andén durante la niebla.'"
     }
@@ -57,7 +57,7 @@
   "suspect:railway_clerk": {
     "card": "El empleado del ferrocarril tiene tinta fresca en dos dedos. Sus puños están pulcramente doblados hacia atrás.",
     "action": "Observas la tinta en los dedos del empleado y le preguntas qué escribía a esas horas.",
-    "hint": "(evidencia — tinta fresca implica actividad reciente en la oficina durante la ventana)",
+    "hint": "(tinta fresca a las once de la noche)",
     "reaction": {
       "default": "El empleado se mira los dedos y se los frota con un pañuelo. 'El registro de la noche. Siempre anoto las llegadas tardías.' La tinta no sale.",
       "after_class:OBJECT": "Esconde las manos tras la espalda. 'Si la tinta coincide con algo, es porque uso el mismo tintero que toda la estación.'",
@@ -70,7 +70,7 @@
   "suspect:travelling_broker": {
     "card": "Un corredor con abrigo gris esperaba en el salón. Su billete es de primera clase y no ha sido usado.",
     "action": "Preguntas al corredor viajero por qué su billete de primera clase sigue sin perforar.",
-    "hint": "(contradicción — billete sin usar sugiere que nunca pretendió viajar)",
+    "hint": "(un billete de primera que nadie perforó)",
     "reaction": {
       "default": "El corredor se acomoda el cuello del abrigo. 'Cambié de planes. El tren de la mañana me convenía más.' El billete asoma del bolsillo, inmaculado.",
       "after_class:OBJECT": "Aprieta los labios. 'Mis asuntos son comerciales. No tengo por qué explicar cada papel que llevo encima.'",
@@ -83,7 +83,7 @@
   "location:thornfield_crossing": {
     "card": "Thornfield Crossing es un empalme de dos andenes con una sola puerta de oficina. El reloj sobre la verja marca las 11:07.",
     "action": "Observas Thornfield Crossing en su conjunto. Dos andenes, una oficina, niebla y un reloj detenido.",
-    "hint": "(restricción — una sola entrada de oficina limita el movimiento entre andenes)",
+    "hint": "(una sola puerta de oficina entre los dos andenes)",
     "reaction": {
       "default": "La estación respira niebla. Dos andenes, un reloj parado, una puerta que conecta todo. Quien cruzó de un lado a otro tuvo que pasar por aquí."
     }
@@ -91,7 +91,7 @@
   "location:platform_two": {
     "card": "El andén dos está iluminado por tres farolas. El banco del fondo está mojado.",
     "action": "Recorres el andén dos bajo la luz escasa de las farolas. Examinas el banco mojado.",
-    "hint": "(movimiento — el banco mojado indica presencia reciente pese a la niebla)",
+    "hint": "(el banco mojado — alguien estuvo sentado pese a la niebla)",
     "reaction": {
       "default": "Tres farolas y un banco empapado. Alguien se sentó aquí después de la última llegada. El agua no es solo niebla: hay un rastro que lleva hacia la oficina."
     }
@@ -99,7 +99,7 @@
   "location:platform_one": {
     "card": "El andén uno da a la cabina de señales. Un carro de equipaje bloquea el extremo este.",
     "action": "Cruzas al andén uno y examinas el carro de equipaje que bloquea el paso.",
-    "hint": "(movimiento — el carro bloquea una ruta de escape o de acceso)",
+    "hint": "(un carro bloquea el paso al extremo este)",
     "reaction": {
       "default": "El carro está atravesado como si alguien lo hubiera empujado con prisa. Desde aquí se ve la cabina de señales, pero el paso al este está cortado."
     }
@@ -107,20 +107,21 @@
   "location:station_office": {
     "card": "La oficina de la estación tiene un escritorio y un armario cerrado con llave. El pestillo de la ventana está suelto.",
     "action": "Entras en la oficina de la estación. Revisas el escritorio, el armario y el pestillo de la ventana.",
-    "hint": "(acceso — el pestillo suelto permite entrada sin llave)",
+    "hint": "(el pestillo de la ventana no está echado)",
     "reaction": {
       "default": "El escritorio tiene marcas de uso reciente. El armario está cerrado, pero el pestillo de la ventana gira con un dedo. Alguien pudo entrar sin tocar la puerta.",
       "after_class:OBJECT": "El objeto encaja con algo que falta en el escritorio. El cajón tiene un hueco del tamaño exacto.",
       "after_class:SUSPECT": "Después de hablar con el sospechoso, la oficina cobra otro sentido. La silla está apartada del escritorio, como si alguien se hubiera levantado deprisa.",
       "after_class:WITNESS": "El testimonio sitúa a alguien en esta oficina. La huella en el felpudo lo confirma.",
       "after_class:EMOTION": "La tensión del interrogatorio se siente aquí. La oficina es pequeña, las paredes absorben los secretos.",
-      "after_class:MOTIVE": "El móvil lleva al escritorio. El cajón del armario, al sobre. La ventana, a la huida."
+      "after_class:MOTIVE": "El móvil lleva al escritorio. El cajón del armario, al sobre. La ventana, a la huida.",
+      "after:object:sealed_envelope": "El sobre estaba en el escritorio. El pestillo de la ventana, sin cerrar."
     }
   },
   "location:signal_box": {
     "card": "La palanca de la cabina de señales para el apartadero está bajada. Una taza de té frío reposa junto al panel.",
     "action": "Subes a la cabina de señales y examinas la palanca bajada y la taza de té abandonada.",
-    "hint": "(cronología — la palanca bajada detuvo el tráfico en un momento preciso)",
+    "hint": "(la palanca de la cabina, bajada)",
     "reaction": {
       "default": "La palanca está en posición de peligro. La taza de té se enfrió hace rato. Quien estuvo aquí se marchó sin terminar su turno ni su bebida."
     }
@@ -128,7 +129,7 @@
   "location:waiting_room": {
     "card": "La estufa de la sala de espera está fría. Dos sillas están acercadas.",
     "action": "Entras en la sala de espera. Tocas la estufa fría y observas las dos sillas juntas.",
-    "hint": "(evidencia — dos sillas juntas sugieren una conversación privada)",
+    "hint": "(dos sillas muy juntas — alguien conversó en privado)",
     "reaction": {
       "default": "La estufa lleva horas apagada. Pero dos sillas están acercadas como para una conversación en voz baja. Alguien habló aquí antes de que todo sucediera."
     }
@@ -136,7 +137,7 @@
   "location:goods_shed": {
     "card": "El suelo del almacén de mercancías está cubierto de polvo de carbón. La tapa de un cajón está entreabierta.",
     "action": "Entras en el almacén de mercancías. Examinas el polvo de carbón y el cajón entreabierto.",
-    "hint": "(evidencia — el polvo de carbón registra las pisadas de quien entró)",
+    "hint": "(polvo de carbón en el suelo — registra cada pisada)",
     "reaction": {
       "default": "El polvo de carbón cubre el suelo como nieve negra. Hay huellas claras: alguien entró y salió. El cajón entreabierto contiene una cuerda enrollada y nada más.",
       "after_class:OBJECT": "El objeto encontrado antes encaja con el contenido del cajón. La cuerda tiene el mismo tipo de nudo.",
@@ -149,7 +150,7 @@
   "location:carriage_siding": {
     "card": "El apartadero de vagones alberga un coche vacío. Los estribos están húmedos.",
     "action": "Caminas hasta el apartadero. Subes al vagón vacío y examinas los estribos mojados.",
-    "hint": "(movimiento — los estribos húmedos indican que alguien subió o bajó recientemente)",
+    "hint": "(los estribos del vagón vacío, húmedos)",
     "reaction": {
       "default": "El vagón está vacío pero no abandonado. Los estribos tienen marcas frescas de humedad. Alguien usó este vagón como escondite o como paso."
     }
@@ -157,7 +158,7 @@
   "object:telegram": {
     "card": "Un telegrama doblado reposa sobre el escritorio de la oficina. El sello está roto y el papel arrugado.",
     "action": "Desdoblas el telegrama y lees su contenido. Observas el sello roto y las arrugas del papel.",
-    "hint": "(evidencia — alguien leyó este telegrama con urgencia antes que tú)",
+    "hint": "(el sello roto y el papel doblado dos veces)",
     "reaction": {
       "default": "El telegrama lleva el membrete del banco. Las palabras son escuetas: confirman una transferencia y mencionan pruebas documentales. El sello fue roto con prisa."
     }
@@ -165,7 +166,7 @@
   "object:cipher_sheet": {
     "card": "Una hoja cifrada está sujeta bajo el secante. Varias columnas están marcadas a lápiz.",
     "action": "Retiras el secante y examinas la hoja cifrada. Pasas el dedo por las columnas marcadas.",
-    "hint": "(evidencia — las marcas a lápiz señalan qué columnas importan para descifrar el fraude)",
+    "hint": "(marcas a lápiz sobre columnas específicas)",
     "reaction": {
       "default": "Las columnas de la hoja cifrada corresponden a fechas y cantidades. Alguien marcó con lápiz las que no cuadraban. Este papel es la clave del fraude que Verne descubrió."
     }
@@ -173,7 +174,7 @@
   "object:satchel": {
     "card": "Una cartera marrón descansa junto al banco. El cierre lleva las iniciales RV en latón.",
     "action": "Recoges la cartera del banco y examinas las iniciales RV en el cierre de latón.",
-    "hint": "(evidencia — las iniciales vinculan el maletín directamente con Renard Voss)",
+    "hint": "(las iniciales en el cierre: R.V.)",
     "reaction": {
       "default": "RV en latón. La cartera es de cuero bueno, gastado por el uso. Dentro hay un compartimento vacío donde algo rectangular estuvo guardado."
     }
@@ -181,7 +182,7 @@
   "object:initialed_cufflink": {
     "card": "Un gemelo con las letras RV está en el suelo de la oficina. La bisagra está doblada.",
     "action": "Recoges el gemelo del suelo de la oficina. Las iniciales RV brillan bajo la luz.",
-    "hint": "(evidencia — un gemelo perdido indica forcejeo o prisa dentro de la oficina)",
+    "hint": "(un gemelo con las letras R.V. en el suelo de la oficina)",
     "reaction": {
       "default": "El gemelo cayó durante algo brusco. La bisagra doblada dice que no se soltó solo. RV: las mismas iniciales que en la cartera."
     }
@@ -189,7 +190,7 @@
   "object:station_key": {
     "card": "Una pesada llave de estación está en el cajón. Su etiqueta dice OFICINA.",
     "action": "Sacas la llave del cajón y lees la etiqueta. Pruebas si encaja en la cerradura de la oficina.",
-    "hint": "(acceso — la llave en el cajón significa que la oficina se abrió con otra llave o sin ninguna)",
+    "hint": "(la llave estaba en el cajón — entonces ¿cómo se abrió?)",
     "reaction": {
       "default": "La llave está en su sitio, lo cual significa que nadie la usó. La oficina se abrió de otra manera. El pestillo de la ventana, tal vez."
     }
@@ -197,7 +198,7 @@
   "object:ledger_book": {
     "card": "El libro de registro está abierto en la página de cuentas. Una línea de cifras está tachada.",
     "action": "Examinas el libro de registro abierto. Pasas el dedo por la línea de cifras tachada.",
-    "hint": "(evidencia — las cifras tachadas son la prueba del fraude que Verne descubrió)",
+    "hint": "(una columna de cifras que no suma)",
     "reaction": {
       "default": "La línea tachada no borra los números: los esconde. Debajo, las cifras originales cuentan otra historia. Dos caligrafías distintas, dos versiones de las cuentas."
     }
@@ -205,7 +206,7 @@
   "object:sealed_envelope": {
     "card": "Un sobre lacrado está metido dentro del registro. La cera está estampada con un escudo.",
     "action": "Extraes el sobre lacrado del libro de registro. Examinas el sello de cera sin romperlo.",
-    "hint": "(evidencia — un sobre sellado dentro del registro es una prueba que alguien intentó ocultar)",
+    "hint": "(lacre intacto pero templado al tacto)",
     "reaction": {
       "default": "El sobre está dirigido a las autoridades. La cera aún conserva tibieza residual. Alguien lo escondió aquí hace poco, como última defensa contra la destrucción."
     }
@@ -213,7 +214,7 @@
   "object:cash_tin": {
     "card": "Una caja de caudales está medio llena de monedas. La tapa tiene un arañazo reciente.",
     "action": "Abres la caja de caudales y cuentas las monedas. Observas el arañazo en la tapa.",
-    "hint": "(evidencia — el arañazo y el conteo incompleto sugieren manipulación reciente)",
+    "hint": "(el conteo no coincide — faltan monedas)",
     "reaction": {
       "default": "Las monedas no cuadran con el recuento del registro. Faltan varias columnas de peniques. El arañazo en la tapa es de una herramienta, no de una llave."
     }
@@ -221,7 +222,7 @@
   "object:platform_lantern": {
     "card": "Una linterna de andén está apagada sobre el banco. La mecha está recortada al mínimo.",
     "action": "Recoges la linterna apagada del banco. Examinas la mecha recortada.",
-    "hint": "(restricción — sin linterna, el andén quedó a oscuras durante la ventana entre trenes)",
+    "hint": "(la mecha recortada pero sin encender)",
     "reaction": {
       "default": "La mecha fue cortada a propósito. Alguien quería oscuridad en el andén dos. Sin esta linterna, los treinta y dos minutos entre trenes fueron treinta y dos minutos de niebla ciega."
     }
@@ -229,7 +230,7 @@
   "object:torn_ticket": {
     "card": "Medio billete rasgado está clavado en el tablón. La fecha dice 12 de noviembre.",
     "action": "Desclavas el medio billete del tablón y lees la fecha: 12 de noviembre.",
-    "hint": "(cronología — la fecha del billete sitúa un viaje previo que conecta con los hechos)",
+    "hint": "(la fecha conecta con un viaje anterior)",
     "reaction": {
       "default": "Medio billete. La otra mitad falta. La fecha es anterior al crimen: alguien hizo este trayecto antes y volvió para terminarlo."
     }
@@ -237,7 +238,7 @@
   "object:telegraph_form": {
     "card": "Un formulario de telégrafo está en la papelera. Las líneas del mensaje están en blanco.",
     "action": "Sacas el formulario de la papelera. Las líneas del mensaje están vacías.",
-    "hint": "(contradicción — un formulario en blanco en la papelera implica un mensaje abortado o destruido)",
+    "hint": "(un formulario en blanco en la papelera)",
     "reaction": {
       "default": "El formulario está en blanco pero arrugado. Alguien lo tomó, pensó en escribir y cambió de idea. O peor: escribió, arrancó la parte escrita y dejó el resto."
     }
@@ -245,7 +246,7 @@
   "object:ink_blotter": {
     "card": "El secante está húmedo en una esquina. La mancha tiene un borde nítido.",
     "action": "Examinas el secante húmedo. El borde nítido de la mancha indica escritura reciente.",
-    "hint": "(cronología — la tinta húmeda establece que alguien escribió en la oficina poco antes del crimen)",
+    "hint": "(la tinta del borde aún no se ha secado)",
     "reaction": {
       "default": "El borde de la mancha es limpio: tinta fresca absorbida hace menos de una hora. Alguien estuvo sentado en este escritorio escribiendo mientras Verne moría en el andén."
     }
@@ -253,7 +254,7 @@
   "object:coal_dust": {
     "card": "Polvo de carbón está esparcido en las escaleras del andén. El patrón forma una huella de zapato clara.",
     "action": "Te agachas sobre las escaleras y examinas la huella de zapato en el polvo de carbón.",
-    "hint": "(movimiento — la huella marca la dirección y el tamaño del zapato de quien cruzó)",
+    "hint": "(una huella en el polvo de carbón)",
     "reaction": {
       "default": "La huella apunta del almacén hacia el andén dos. El tamaño es de un zapato de hombre, no de una bota de trabajo. Alguien que no pertenecía al almacén pasó por aquí."
     }
@@ -261,20 +262,21 @@
   "emotion:fixed_stare": {
     "card": "Ella no miró el cuerpo. Miró la vía más allá.",
     "action": "Observas la mirada fija. No se dirige al cuerpo, sino a las vías que se pierden en la niebla.",
-    "hint": "(intención — evitar mirar el cuerpo puede ser dolor, culpa o distancia calculada)",
+    "hint": "(no miró al cuerpo — miró las vías)",
     "reaction": {
       "default": "La mirada atraviesa el andén sin detenerse en lo que importa. Quien no mira el cuerpo ya sabe lo que hay. O no quiere confirmarlo.",
       "after_class:OBJECT": "Después de ver la evidencia, la mirada fija cobra otro peso. No es distracción: es evasión.",
       "after_class:SUSPECT": "El sospechoso habló, pero esta mirada dice más que cualquier palabra. Hay algo al final de esas vías que solo ella conoce.",
       "after_class:WITNESS": "El testigo señaló una dirección. La mirada fija señala otra. Alguien miente.",
       "after_class:EMOTION": "Dos comportamientos extraños seguidos. La tensión se acumula como la niebla sobre los raíles.",
-      "after_class:MOTIVE": "Después de descubrir el móvil, la mirada fija es una confesión silenciosa. Ella sabía más de lo que dice."
+      "after_class:MOTIVE": "Después de descubrir el móvil, la mirada fija es una confesión silenciosa. Ella sabía más de lo que dice.",
+      "after:suspect:travelling_broker": "Ella no miró al cuerpo. Miró las vías más allá."
     }
   },
   "emotion:avoided_contact": {
     "card": "Respondió sin encontrar los ojos del inspector. Su mirada permaneció en el horario.",
     "action": "Notas que el interrogado evita tu mirada. Sus ojos se quedan fijos en el horario de trenes.",
-    "hint": "(intención — evitar el contacto visual bajo interrogatorio señala incomodidad o engaño)",
+    "hint": "(la mirada fue a todas partes menos a tus ojos)",
     "reaction": {
       "default": "Los ojos buscan el horario como si fuera un salvavidas. Las respuestas llegan puntuales, pero la mirada no. Algo en esa tabla de horarios es más cómodo que la verdad."
     }
@@ -282,7 +284,7 @@
   "emotion:measured_breath": {
     "card": "Su respiración se calmó a medida que se hacían las preguntas. La respuesta llegó tras dos compases.",
     "action": "Observas cómo la respiración del interrogado se vuelve lenta y controlada. Cada respuesta tarda exactamente dos compases.",
-    "hint": "(intención — la calma artificial bajo presión delata ensayo o autocontrol extremo)",
+    "hint": "(la pausa antes de cada respuesta fue exacta)",
     "reaction": {
       "default": "Respira como quien cuenta los segundos. La calma no es natural: es construida, compás a compás. Las personas inocentes no necesitan medir su aliento.",
       "after_class:OBJECT": "Tras ver la prueba, la respiración se mantuvo igual. Ni un temblor. Eso no es inocencia: es preparación.",
@@ -295,7 +297,7 @@
   "emotion:steady_hands": {
     "card": "Sus manos no temblaron al entregar las llaves. El llavero no tintineó.",
     "action": "Observas las manos firmes al entregar las llaves. Ni un temblor, ni un tintineo del latón.",
-    "hint": "(intención — manos firmes en una noche de muerte pueden ser fortaleza o frialdad)",
+    "hint": "(ni un temblor — a las once de la noche, junto a un muerto)",
     "reaction": {
       "default": "El latón no suena. Las manos están secas y firmes. En una noche como esta, la calma absoluta es tan extraña como el miedo."
     }
@@ -303,7 +305,7 @@
   "emotion:paused_reply": {
     "card": "Una pausa precedió a la hora indicada. La respuesta fue corta y exacta.",
     "action": "Notas la pausa antes de que diga la hora. La respuesta es demasiado precisa, demasiado rápida después.",
-    "hint": "(cronología — la pausa antes de dar una hora sugiere cálculo, no recuerdo)",
+    "hint": "(contó antes de hablar)",
     "reaction": {
       "default": "La pausa duró un segundo de más. Luego la hora salió perfecta: minutos, sin dudas. Quien recuerda calcula; quien inventa, también."
     }
@@ -311,7 +313,7 @@
   "emotion:closed_posture": {
     "card": "Los brazos se mantuvieron pegados al cuerpo. El abrigo permaneció abrochado en el interior.",
     "action": "Observas la postura cerrada: brazos pegados, abrigo abrochado dentro de la estación.",
-    "hint": "(intención — una postura cerrada en interior indica protección de algo oculto o defensa emocional)",
+    "hint": "(el abrigo no se abrió en toda la noche)",
     "reaction": {
       "default": "El abrigo no se desabrochó ni dentro de la estación. Los brazos forman una barrera. Hay algo debajo de esa tela o debajo de esa calma que no quiere salir.",
       "after_class:OBJECT": "Después de examinar la evidencia, la postura cerrada parece proteger algo más que el frío. Quizá lo que falta del maletín.",
@@ -325,7 +327,7 @@
   "modifier:initialed_RV": {
     "card": "Las iniciales RV aparecen en dos objetos distintos. El estilo de la letra es el mismo.",
     "action": "Comparas las iniciales RV en ambos objetos. La caligrafía es idéntica.",
-    "hint": "(evidencia — dos objetos con las mismas iniciales vinculan a una sola persona con la escena)",
+    "hint": "(las mismas iniciales en dos objetos distintos)",
     "reaction": {
       "default": "RV. Dos veces. En el gemelo y en la cartera. El mismo trazo, el mismo latón. Renard Voss dejó su nombre grabado donde no debía.",
       "after_class:OBJECT": "Otro objeto, las mismas iniciales. La red de evidencia física se cierra alrededor de un solo nombre.",
@@ -339,7 +341,7 @@
   "modifier:paid_off": {
     "card": "Se encontraron monedas apiladas en una columna ordenada. La pila no coincide con el recuento de la caja.",
     "action": "Cuentas las monedas apiladas y las comparas con el registro de la caja. No coinciden.",
-    "hint": "(intención — monedas fuera de registro implican un pago no documentado, un soborno)",
+    "hint": "(monedas apiladas que no cuadran con la caja)",
     "reaction": {
       "default": "Las monedas forman una columna perfecta. Nadie apila monedas así por accidente. Esto es un pago: limpio, discreto y fuera de cualquier libro de cuentas.",
       "after_class:OBJECT": "Las monedas se suman a la evidencia física. Cada objeto cuenta una parte: el soborno completa la historia.",
@@ -353,7 +355,7 @@
   "modifier:unlocked": {
     "card": "El pestillo de la oficina gira sin resistencia. La cerradura no muestra marcas de herramienta.",
     "action": "Giras el pestillo de la oficina. No hay resistencia. Examinas la cerradura: sin marcas de fuerza.",
-    "hint": "(acceso — sin forzar la cerradura, alguien dejó la oficina abierta a propósito)",
+    "hint": "(la cerradura gira sin resistencia)",
     "reaction": {
       "default": "El pestillo gira como mantequilla. No hay arañazos, no hay fuerza. La oficina estaba abierta para quien supiera llegar. Un gesto deliberado, no un descuido.",
       "after_class:OBJECT": "La cerradura sin marcas confirma lo que el objeto sugiere: el acceso fue planificado, no improvisado.",
@@ -366,7 +368,7 @@
   "modifier:misplaced": {
     "card": "Un objeto está donde no se dejaría en el uso habitual. La ubicación bloquea un paso libre.",
     "action": "Observas que algo está fuera de su sitio habitual. Su posición bloquea un paso o una salida.",
-    "hint": "(movimiento — un objeto fuera de lugar indica prisa, distracción o sabotaje deliberado)",
+    "hint": "(esto no debería estar aquí)",
     "reaction": {
       "default": "Las cosas tienen su sitio en una estación. Cuando algo se mueve, alguien lo movió. Y este objeto bloquea exactamente el camino que alguien habría usado para huir."
     }
@@ -374,7 +376,7 @@
   "modifier:unclaimed": {
     "card": "No hay nombre escrito en la etiqueta de propiedad. La cuerda es recién atada.",
     "action": "Examinas la etiqueta sin nombre. La cuerda que la ata es nueva, sin desgaste.",
-    "hint": "(evidencia — un objeto sin dueño en una estación nocturna es un objeto abandonado a propósito)",
+    "hint": "(nadie lo reclama — alguien lo dejó a propósito)",
     "reaction": {
       "default": "Sin nombre, sin dueño, sin reclamación. La cuerda nueva dice que esto se preparó para esta noche. Alguien dejó algo aquí sabiendo que no volvería a buscarlo."
     }
@@ -382,7 +384,7 @@
   "modifier:smudged": {
     "card": "Una línea de tinta está emborronada en el margen. El manchón corre de izquierda a derecha.",
     "action": "Pasas el dedo junto al manchón de tinta en el margen. La dirección del trazo es clara.",
-    "hint": "(evidencia — el emborronado indica que alguien zurdo o con prisa arrastró la mano sobre tinta fresca)",
+    "hint": "(alguien arrastró la mano sobre tinta fresca)",
     "reaction": {
       "default": "El manchón corre hacia la derecha. Una mano izquierda, o una mano con prisa. La tinta estaba fresca cuando alguien pasó la mano. No hubo tiempo de esperar a que secara."
     }
@@ -390,7 +392,7 @@
   "modifier:damp": {
     "card": "Gotas de humedad perlan el borde del papel. El resto de la hoja está seco.",
     "action": "Tocas el borde húmedo del papel. Solo el borde tiene gotas; el centro está seco.",
-    "hint": "(cronología — la humedad parcial indica que el papel estuvo expuesto a la niebla brevemente)",
+    "hint": "(húmedo — pero solo por un lado)",
     "reaction": {
       "default": "El papel pasó por la niebla, pero no mucho rato. Alguien lo llevó del interior al andén y de vuelta. Un viaje corto, quizá de la oficina al andén dos."
     }
@@ -398,7 +400,7 @@
   "modifier:late_arrival": {
     "card": "El registro muestra una firma después de la última hora de llegada. La tinta es fresca.",
     "action": "Señalas la firma tardía en el registro. La tinta aún brilla bajo la luz.",
-    "hint": "(cronología — una firma después de la última llegada significa que alguien entró a la estación fuera de horario)",
+    "hint": "(una firma después del cierre del registro)",
     "reaction": {
       "default": "La firma es posterior a las 10:58. El último tren ya había llegado. Quien firmó después no vino en tren: vino a pie, por la niebla, con un propósito.",
       "after_class:OBJECT": "La firma tardía y la evidencia física coinciden en el tiempo. Todo ocurrió después de que la estación debería haber cerrado.",
@@ -412,7 +414,7 @@
   "modifier:lamps_dimmed": {
     "card": "Las farolas del andén arden más bajo de lo habitual. El cristal está limpio.",
     "action": "Examinas las farolas atenuadas. El cristal está limpio: no es suciedad, es la mecha.",
-    "hint": "(restricción — farolas atenuadas reducen la visibilidad en el andén, creando cobertura)",
+    "hint": "(poca luz en el andén, justo esa noche)",
     "reaction": {
       "default": "Las mechas fueron bajadas a propósito. El cristal limpio lo confirma: no es descuido, es sabotaje. Alguien necesitaba que el andén dos estuviera más oscuro de lo normal."
     }
@@ -420,7 +422,7 @@
   "modifier:ticket_punched": {
     "card": "El billete está perforado dos veces en el mismo sitio. La segunda perforación es más profunda.",
     "action": "Examinas las dos perforaciones del billete. La segunda es más profunda, como hecha con más fuerza.",
-    "hint": "(contradicción — una doble perforación es un error o una falsificación del registro de viaje)",
+    "hint": "(dos perforaciones en el mismo punto)",
     "reaction": {
       "default": "Un billete se perfora una vez. Dos perforaciones en el mismo punto no es error: es una corrección. Alguien quiso que el registro mostrara un viaje que no existió.",
       "after_class:OBJECT": "La doble perforación se suma al patrón de documentos manipulados. El billete, el libro, la firma: todo fue alterado.",
@@ -434,7 +436,7 @@
   "action:office_entered": {
     "card": "La puerta de la oficina fue usada; la grasa de la bisagra está alterada. Una huella marca el felpudo.",
     "action": "Examinas la bisagra engrasada y la huella en el felpudo. Alguien entró por esta puerta.",
-    "hint": "(movimiento — la bisagra alterada confirma que la puerta se abrió recientemente)",
+    "hint": "(la bisagra aceitada muestra uso reciente)",
     "reaction": {
       "default": "La grasa de la bisagra tiene una marca fresca. La huella en el felpudo es de un zapato de calle, no de una bota de trabajo. Alguien que no pertenecía a la oficina entró por esta puerta."
     }
@@ -442,7 +444,7 @@
   "action:telegram_handled": {
     "card": "El telegrama está desdoblado y vuelto a doblar. Una huella dactilar se encuentra junto a la cabecera del código.",
     "action": "Examinas los pliegues del telegrama y la huella dactilar junto al código.",
-    "hint": "(evidencia — la huella dactilar identifica a quien manipuló el telegrama después de su entrega)",
+    "hint": "(una huella dactilar junto al encabezado)",
     "reaction": {
       "default": "El telegrama fue leído y vuelto a doblar. La huella junto al código dice que alguien buscaba la clave, no el mensaje. Sabía lo que contenía y necesitaba verificar un número."
     }
@@ -450,7 +452,7 @@
   "action:satchel_swapped": {
     "card": "Había dos carteras; una ha desaparecido. La hebilla de la correa quedó atrás.",
     "action": "Notas la hebilla suelta en el suelo. Había dos carteras y ahora solo queda una.",
-    "hint": "(evidencia — el intercambio de carteras indica que el asesino se llevó documentos y dejó los suyos)",
+    "hint": "(una cartera se fue, otra se quedó)",
     "reaction": {
       "default": "La hebilla es de latón barato: no pertenece a la cartera de Voss. Hubo un intercambio. El asesino se llevó los documentos de Verne y dejó su propia cartera por error o por prisa."
     }
@@ -458,7 +460,7 @@
   "action:ledger_checked": {
     "card": "El libro de registro tiene un pliegue nuevo en la columna de fraudes. La esquina de la página está doblada.",
     "action": "Abres el libro en la página marcada. El pliegue nuevo señala directamente la columna de fraudes.",
-    "hint": "(evidencia — alguien consultó esta columna específica antes del crimen)",
+    "hint": "(alguien dobló la página por la columna del fraude)",
     "reaction": {
       "default": "La página se abre sola en el pliegue. Alguien estuvo aquí antes, buscando exactamente esta columna. Los números hablan de cantidades desviadas durante meses."
     }
@@ -466,7 +468,7 @@
   "action:platform_crossed": {
     "card": "Huellas cruzan del andén uno al dos. Las marcas pisan sobre polvo fresco.",
     "action": "Sigues las huellas que cruzan de un andén al otro. El polvo fresco registra cada paso.",
-    "hint": "(movimiento — las huellas establecen la ruta del asesino entre andenes)",
+    "hint": "(huellas sobre polvo fresco entre andenes)",
     "reaction": {
       "default": "Las huellas van del uno al dos sin vacilar. Quien cruzó sabía exactamente adónde iba. No hay pasos de vuelta: regresó por otro camino."
     }
@@ -474,7 +476,7 @@
   "action:signal_paused": {
     "card": "La palanca de señales fue retenida en peligro. La marca de tiza está borrada.",
     "action": "Examinas la palanca de señales. Fue retenida en posición de peligro y la marca de tiza del registro está borrada.",
-    "hint": "(cronología — retener la señal detuvo el tráfico y amplió la ventana de oportunidad)",
+    "hint": "(alguien retuvo la palanca a propósito)",
     "reaction": {
       "default": "La señal en peligro detuvo cualquier movimiento en la vía. La marca de tiza borrada dice que alguien quiso ocultar cuándo se retuvo. Minutos extra, comprados con una palanca."
     }
@@ -482,7 +484,7 @@
   "action:guard_bribed": {
     "card": "Se encontró una bolsa de monedas bajo el banco del guardia. La cuerda está desatada.",
     "action": "Recoges la bolsa de monedas de debajo del banco del guardia. La cuerda está suelta.",
-    "hint": "(intención — un soborno al guardia garantiza que nadie vigile el andén durante la ventana)",
+    "hint": "(una bolsa de monedas bajo el banco del guardia)",
     "reaction": {
       "default": "Las monedas son de curso corriente, sin marcas. La bolsa estaba atada pero ya no. El guardia de andén tiene guantes secos y una linterna ausente. Fue comprado."
     }
@@ -490,7 +492,7 @@
   "action:door_left_open": {
     "card": "La puerta de la oficina quedó entornada. El pestillo no encajó del todo.",
     "action": "Empujas la puerta entornada. El pestillo no encajó: alguien salió con prisa.",
-    "hint": "(movimiento — una puerta mal cerrada indica una salida apresurada de la oficina)",
+    "hint": "(la puerta de la oficina, entreabierta al amanecer)",
     "reaction": {
       "default": "El pestillo quedó a medio camino. Quien salió no se detuvo a cerrar. La prisa dice que algo urgente esperaba fuera. O que algo terrible acababa de pasar dentro."
     }
@@ -498,15 +500,16 @@
   "action:footsteps_faded": {
     "card": "Pasos llevan del banco hacia la niebla. El rastro termina en el borde del andén.",
     "action": "Sigues los pasos que llevan del banco hacia la niebla. El rastro se desvanece en el borde del andén.",
-    "hint": "(movimiento — el rastro que desaparece en la niebla indica la ruta de huida del asesino)",
+    "hint": "(el rastro se pierde donde ya nadie puede ver)",
     "reaction": {
-      "default": "Los pasos son firmes al principio y se pierden donde la niebla se espesa. Quien se marchó sabía que la niebla borraría su rastro. Caminó hacia el apartadero."
+      "default": "Los pasos son firmes al principio y se pierden donde la niebla se espesa. Quien se marchó sabía que la niebla borraría su rastro. Caminó hacia el apartadero.",
+      "after:witness:porter": "El mozo señala la niebla. 'Los pasos iban hacia el apartadero.'"
     }
   },
   "time:between_trains": {
     "card": "El intervalo entre el último y el primer tren es de treinta y dos minutos. No hay tráfico de pasajeros en ese lapso.",
     "action": "Consultas el horario. Treinta y dos minutos entre el último tren y el primero. La estación queda vacía.",
-    "hint": "(restricción — la ventana de treinta y dos minutos es el único momento posible para el crimen)",
+    "hint": "(treinta y dos minutos sin un solo pasajero)",
     "reaction": {
       "default": "Treinta y dos minutos. Tiempo suficiente para matar, intercambiar carteras y desaparecer en la niebla. La estación se convierte en un escenario privado."
     }
@@ -514,7 +517,7 @@
   "time:last_arrival": {
     "card": "El último tren llegó a las 10:58. El andén quedó despejado a las 11:03.",
     "action": "Verificas la hora de la última llegada: 10:58. El andén se vació cinco minutos después.",
-    "hint": "(cronología — cinco minutos entre la llegada y el andén vacío es el margen de normalidad)",
+    "hint": "(el andén se vació a las 11:03)",
     "reaction": {
       "default": "A las 11:03 el andén estaba vacío. Todo lo que ocurrió después fue fuera de horario, fuera de registro, fuera de testigos."
     }
@@ -522,7 +525,7 @@
   "time:first_departure": {
     "card": "La primera salida matutina está prevista a las 11:30. La señal se fija a las 11:25.",
     "action": "Consultas la primera salida: 11:30. La señal se prepara a las 11:25. Es el límite final.",
-    "hint": "(restricción — a las 11:25 la señal se activa y el andén vuelve a tener testigos)",
+    "hint": "(a las 11:30 vuelven los testigos)",
     "reaction": {
       "default": "A las 11:25 la señal se fija y el guardavía retoma su puesto. El asesino tenía hasta ese momento. Ni un minuto más."
     }
@@ -530,7 +533,7 @@
   "time:fog_thickens": {
     "card": "La niebla se espesó tras la última llegada. La visibilidad se redujo a diez metros.",
     "action": "Observas la niebla que se cierra sobre los andenes. Diez metros de visibilidad. Nada más.",
-    "hint": "(restricción — la niebla es cómplice: reduce testigos visuales a cero)",
+    "hint": "(la niebla cubrió todo después de la última llegada)",
     "reaction": {
       "default": "Diez metros. Más allá, nada. La niebla convirtió el andén dos en una isla. Nadie ve, nadie es visto. El crimen perfecto necesita buen tiempo: niebla cerrada."
     }
@@ -538,7 +541,7 @@
   "time:signal_reset": {
     "card": "La señal fue restablecida a las 11:24. La palanca muestra una marca fresca de grasa.",
     "action": "Verificas el restablecimiento de la señal: 11:24. La grasa en la palanca es reciente.",
-    "hint": "(cronología — el restablecimiento a las 11:24 cierra la ventana de oportunidad por un minuto antes de lo previsto)",
+    "hint": "(la señal se restableció a las 11:24)",
     "reaction": {
       "default": "Once y veinticuatro. Un minuto antes de lo programado. Alguien restableció la señal con prisa, como si necesitara que todo pareciera normal antes de que llegara el siguiente turno."
     }
@@ -546,7 +549,7 @@
   "motive:fraud_concealment": {
     "card": "El telegrama contiene pruebas de un fraude sistemático. Los nombres están escritos en su totalidad.",
     "action": "Lees el telegrama que detalla el fraude. Los nombres completos no dejan lugar a dudas.",
-    "hint": "(intención — el fraude documentado es el móvil del asesinato: matar para silenciar la prueba)",
+    "hint": "(un fraude documentado que alguien necesita que desaparezca)",
     "reaction": {
       "default": "Los nombres están ahí, sin iniciales, sin códigos. El fraude está documentado con fechas y cantidades. Verne tenía la prueba, y alguien mató para que nunca llegara a las autoridades."
     }
@@ -554,7 +557,7 @@
   "motive:third_party_link": {
     "card": "Una tercera persona de posición social aparece en el cifrado. El nombre está subrayado.",
     "action": "Descifras el nombre subrayado en la hoja cifrada. Una tercera persona con posición social está implicada.",
-    "hint": "(intención — un tercer implicado amplía el móvil más allá de Voss: hay alguien más que proteger)",
+    "hint": "(un tercer nombre subrayado en el cifrado)",
     "reaction": {
       "default": "El nombre subrayado no es de nadie que esté en la estación. Alguien con poder está detrás de las cifras. Voss no actuó solo por su propio fraude: protegía a alguien más arriba."
     }
@@ -562,7 +565,7 @@
   "motive:partnership_ruin": {
     "card": "Las cuentas de la sociedad muestran un déficit final. El saldo hundiría la firma.",
     "action": "Revisas las cuentas de la sociedad. El déficit es terminal: la firma no sobreviviría a la exposición.",
-    "hint": "(intención — la ruina financiera es el detonante: matar o perderlo todo)",
+    "hint": "(el déficit final — matar o perderlo todo)",
     "reaction": {
       "default": "Las cifras no mienten. La firma está en quiebra encubierta. Si Verne presentaba el sobre sellado, todo se derrumbaba. La ruina es el gatillo; el andén, el escenario."
     }
@@ -570,7 +573,7 @@
   "motive:ledger_exposure": {
     "card": "Una columna del libro titulada dividendos no coincide con los recibos. La discrepancia tiene fecha.",
     "action": "Comparas la columna de dividendos con los recibos. Las cifras no coinciden y la discrepancia tiene fecha exacta.",
-    "hint": "(evidencia — la discrepancia fechada prueba cuándo empezó el fraude)",
+    "hint": "(la discrepancia en las cifras — fechada)",
     "reaction": {
       "default": "La columna de dividendos miente. Los recibos dicen una cosa; el libro, otra. La fecha marca el inicio del desvío. Alguien lleva meses cocinando las cuentas."
     }
@@ -578,7 +581,7 @@
   "motive:debt_pressure": {
     "card": "Un pagaré está sujeto dentro del libro de registro. La fecha de vencimiento ha pasado.",
     "action": "Extraes el pagaré del libro de registro. La fecha de vencimiento ya pasó: la deuda es exigible.",
-    "hint": "(intención — una deuda vencida crea urgencia: el tiempo para actuar se acabó)",
+    "hint": "(una deuda vencida — el tiempo se acabó)",
     "reaction": {
       "default": "El pagaré venció hace tres días. La deuda es exigible. Quien debía este dinero estaba contra la pared. Matar era más barato que pagar.",
       "after:object:ledger_book": "El libro de cuentas lo dice todo. La deuda vencía esta semana."
@@ -587,7 +590,7 @@
   "motive:sealed_proof": {
     "card": "La prueba lacrada está dirigida a las autoridades. El sello está intacto pero tibio.",
     "action": "Examinas el sobre lacrado dirigido a las autoridades. El sello está intacto pero la cera conserva calor.",
-    "hint": "(evidencia — la prueba sellada es lo que Verne iba a entregar y lo que el asesino necesitaba destruir)",
+    "hint": "(lo que Verne iba a entregar y alguien necesitaba destruir)",
     "reaction": {
       "default": "El sello está intacto. Verne nunca llegó a entregarlo. La cera tibia dice que lo selló esta misma noche, quizá minutos antes de morir. La prueba sobrevivió a su portador."
     }
@@ -595,7 +598,7 @@
   "witness:ticket_clerk": {
     "card": "El taquillero registró una perforación tardía. La anotación indica andén dos.",
     "action": "Interrogas al taquillero sobre la perforación tardía que anotó. Le pides detalles del andén dos.",
-    "hint": "(cronología — la perforación tardía sitúa a alguien en el andén dos después de la última llegada)",
+    "hint": "(una perforación tardía en el registro)",
     "reaction": {
       "default": "El taquillero consulta su libro. 'Perforé un billete después de las once. El pasajero venía del salón, no del tren. Dijo que cambiaba de andén.' La anotación señala el dos.",
       "after_class:OBJECT": "El taquillero mira el objeto. 'No he visto eso antes. Yo solo perforo billetes y anoto andenes.'",
@@ -608,7 +611,7 @@
   "witness:porter": {
     "card": "El mozo movió equipaje a las 11:05. La huella de su carro termina junto al banco.",
     "action": "Preguntas al mozo qué equipaje movió a las 11:05 y por qué su carro terminó junto al banco.",
-    "hint": "(cronología — el mozo sitúa actividad en el andén dos siete minutos antes de la muerte de Verne)",
+    "hint": "(el mozo estuvo en el andén siete minutos antes)",
     "reaction": {
       "default": "El mozo se seca las manos en el delantal. 'Llevé un baúl al almacén y volví por el andén dos. El carro se paró junto al banco porque la rueda se atascó.' Mira hacia la niebla.",
       "after_class:OBJECT": "Señala el objeto. 'Eso estaba ahí cuando pasé con el carro. O no estaba. La niebla no dejaba ver bien.'",
@@ -621,20 +624,21 @@
   "witness:signalman": {
     "card": "El guardavía anotó una pausa a las 11:12. La entrada está rubricada.",
     "action": "Preguntas al guardavía por la pausa anotada a las 11:12. Le pides ver la rúbrica.",
-    "hint": "(cronología — la pausa a las 11:12 coincide con la ventana del crimen, cuatro minutos antes del reloj de Verne)",
+    "hint": "(una pausa anotada a las 11:12)",
     "reaction": {
       "default": "El guardavía abre su libro de señales. 'A las 11:12 la palanca se retuvo. No fui yo. Cuando subí a comprobar, alguien ya la había soltado.' La rúbrica es firme.",
       "after_class:OBJECT": "Mira el objeto y luego su libro. 'Yo registro señales, no evidencias. Pero la hora coincide.'",
       "after_class:SUSPECT": "Entrecierra los ojos. 'No vi a nadie en la cabina. Pero alguien estuvo allí. La palanca no se mueve sola.'",
       "after_class:WITNESS": "Compara notas. 'Si el mozo dice 11:05 y yo digo 11:12, hay siete minutos sin cubrir. Siete minutos de niebla.'",
       "after_class:EMOTION": "Se cruza de brazos. 'No estoy nervioso. Estoy molesto. Mi cabina fue usada sin permiso.'",
-      "after_class:MOTIVE": "Silba entre dientes. 'Retener la señal compra tiempo. Quien lo hizo sabía exactamente cuánto necesitaba.'"
+      "after_class:MOTIVE": "Silba entre dientes. 'Retener la señal compra tiempo. Quien lo hizo sabía exactamente cuánto necesitaba.'",
+      "after:action:signal_paused": "El guardavía revisa su libro. 'La pausa fue a las 11:12. Alguien retuvo la palanca.'"
     }
   },
   "witness:carriage_cleaner": {
     "card": "El limpiador de vagones fregó los estribos del apartadero a las 11:15. El trapo aún está húmedo.",
     "action": "Preguntas al limpiador de vagones qué vio a las 11:15 mientras fregaba los estribos.",
-    "hint": "(cronología — 11:15 es un minuto antes del reloj de Verne; el limpiador estaba cerca del apartadero)",
+    "hint": "(11:15 — un minuto antes de que el reloj se detuviera)",
     "reaction": {
       "default": "El limpiador escurre el trapo. 'Estaba en el apartadero a las once y cuarto. Oí algo en el andén dos, como un golpe sordo. Pensé que era equipaje.' El trapo gotea agua sucia.",
       "after_class:OBJECT": "Mira el objeto con curiosidad. 'No vi nada así en el apartadero. Solo el vagón vacío y los estribos sucios.'",
@@ -647,7 +651,7 @@
   "witness:telegraph_operator": {
     "card": "El telegrafista tramitó un formulario en blanco a las 11:02. La bandeja está vacía ahora.",
     "action": "Preguntas al telegrafista por el formulario en blanco tramitado a las 11:02.",
-    "hint": "(contradicción — tramitar un formulario en blanco no tiene sentido salvo para cubrir un envío real)",
+    "hint": "(un formulario en blanco tramitado — ¿para qué?)",
     "reaction": {
       "default": "El telegrafista se ajusta las gafas. 'El formulario llegó sin mensaje. Lo tramité porque tenía sello. A veces los pasajeros cambian de opinión.' La bandeja vacía lo mira desde el escritorio.",
       "after_class:OBJECT": "Examina el objeto de cerca. 'El sello coincide con los que uso. Pero el formulario no lo escribí yo.'",
@@ -660,7 +664,7 @@
   "event:aldous_verne_discovered": {
     "card": "Aldous Verne fue hallado en el andén dos. Su reloj se detuvo a las 11:16.",
     "action": "Examinas el cuerpo de Aldous Verne en el andén dos. Su reloj marca las 11:16, inmóvil.",
-    "hint": "(cronología — 11:16 fija la hora de la muerte dentro de la ventana de treinta y dos minutos)",
+    "hint": "(el reloj de Verne se detuvo a las 11:16)",
     "reaction": {
       "default": "Verne yace junto al banco. El reloj dice 11:16. Dieciocho minutos después de la última llegada, catorce antes de la primera salida. El asesino tuvo tiempo de sobra y niebla de sobra."
     }
@@ -668,7 +672,7 @@
   "event:platform_two_scene": {
     "card": "El andén dos fue despejado tras la última llegada. Solo quedó una maleta.",
     "action": "Recorres la escena del andén dos. Tras la última llegada, solo quedó una maleta abandonada.",
-    "hint": "(evidencia — una maleta sola en un andén vacío es una anomalía que señala al crimen)",
+    "hint": "(una sola maleta en un andén vacío)",
     "reaction": {
       "default": "El andén debería estar vacío. Pero la maleta queda, como un testigo mudo. Nadie recogió lo que dejó. O nadie pudo volver a hacerlo."
     }
@@ -676,7 +680,7 @@
   "event:window_between_trains": {
     "card": "La ventana de treinta y dos minutos entre trenes consta en el registro. La oficina estaba vacía entonces.",
     "action": "Verificas la ventana de treinta y dos minutos en el registro. La oficina estuvo vacía durante ese lapso.",
-    "hint": "(restricción — la oficina vacía durante la ventana significa que nadie supervisó la estación cuando ocurrió el crimen)",
+    "hint": "(nadie supervisaba la estación cuando ocurrió)",
     "reaction": {
       "default": "Treinta y dos minutos sin jefe, sin registro, sin supervisión. La estación entera quedó a merced de quien conociera el horario. Y alguien lo conocía perfectamente."
     }
@@ -684,7 +688,7 @@
   "witness:platform_guard": {
     "card": "El gancho de la linterna del guardia de andén está vacío. Sus guantes están secos pese a la niebla.",
     "action": "Interrogas al guardia de andén como testigo. Le preguntas por la linterna ausente y los guantes secos.",
-    "hint": "(contradicción — un guardia sin linterna y con guantes secos no estuvo haciendo su ronda)",
+    "hint": "(ronda sin linterna, guantes limpios)",
     "reaction": {
       "default": "El guardia se mira las manos vacías. 'La linterna se la llevaron para cambiar la mecha. Los guantes... no salí. No había motivo.' La niebla dice lo contrario.",
       "after_class:OBJECT": "Mira el objeto sin tocarlo. 'No es mío. No he tocado nada del andén dos esta noche.'",
@@ -692,38 +696,6 @@
       "after_class:WITNESS": "Se remueve incómodo. 'Si los demás dicen que debería haber estado en el andén, tienen razón. Pero no estaba.'",
       "after_class:EMOTION": "Sus manos buscan los guantes que ya tiene puestos. El gesto es automático, nervioso.",
       "after_class:MOTIVE": "Baja la mirada. 'No sé nada de dinero ni de libros. Solo sé que me dijeron que no saliera.'"
-    }
-  },
-  "action:footsteps_faded|after:witness:porter": {
-    "card": "Pasos llevan del banco hacia la niebla. El rastro termina en el borde del andén.",
-    "action": "Sigues los pasos que llevan del banco hacia la niebla, teniendo en cuenta lo que dijo el mozo.",
-    "hint": "(movimiento — el testimonio del mozo da dirección a las huellas que se desvanecen)",
-    "reaction": {
-      "default": "El mozo señala la niebla. 'Los pasos iban hacia el apartadero.'"
-    }
-  },
-  "emotion:fixed_stare|after:suspect:travelling_broker": {
-    "card": "Ella no miró el cuerpo. Miró la vía más allá.",
-    "action": "Observas la mirada fija después de hablar con el corredor viajero.",
-    "hint": "(intención — la mirada hacia las vías tras el interrogatorio del corredor revela una conexión)",
-    "reaction": {
-      "default": "Ella no miró al cuerpo. Miró las vías más allá."
-    }
-  },
-  "location:station_office|after:object:sealed_envelope": {
-    "card": "La oficina de la estación tiene un escritorio y un armario cerrado con llave. El pestillo de la ventana está suelto.",
-    "action": "Vuelves a la oficina después de encontrar el sobre sellado. Todo cobra otro sentido.",
-    "hint": "(acceso — el sobre estaba aquí; el pestillo suelto explica cómo alguien intentó llevárselo)",
-    "reaction": {
-      "default": "El sobre estaba en el escritorio. El pestillo de la ventana, sin cerrar."
-    }
-  },
-  "witness:signalman|after:action:signal_paused": {
-    "card": "El guardavía anotó una pausa a las 11:12. La entrada está rubricada.",
-    "action": "Vuelves a hablar con el guardavía después de examinar la palanca retenida.",
-    "hint": "(cronología — la palanca confirma el testimonio; alguien más estuvo en la cabina)",
-    "reaction": {
-      "default": "El guardavía revisa su libro. 'La pausa fue a las 11:12. Alguien retuvo la palanca.'"
     }
   }
 }
