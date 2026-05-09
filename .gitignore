@@ -5,6 +5,21 @@
 living_tales/trainer/outputs/
 living_tales/trainer/outputs_run*/
 living_tales_all_*.zip
+run_*.zip
+structured_models_*.zip
+
+# Binary game assets — kept locally, distributed via Drive
+art/
+living_tales_sprites/
+review_240x240/
+review_320x320/
+*.png
+
+# Unity (project removed; ignore any stray files)
+unity/
+
+# Workspace-level tools (not part of living_tales runtime)
+/tools/
 
 # Python
 __pycache__/
