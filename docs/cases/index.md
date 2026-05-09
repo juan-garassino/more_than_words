@@ -123,5 +123,6 @@ Adventure cases differ in one essential way: the player is an actor, not an obse
 
 - Narrative specifications: `docs/cases/NN_case_id.md`
 - Case JSON (vocabulary + graph): `cases/case_id.json`
+- Direct pixel-art background workspaces: `art/case_id/direct_pixel_art_v1/`
 - Packed spec (after s02): `living_tales/trainer/cases/case_id/`
 - Trained transformer (after s04): `living_tales/trainer/outputs/case_id/policy.pt`

@@ -1,0 +1,1231 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "cold_trail_studio_loop",
+  "case_id": "venetian_mirror",
+  "description": "The detective spends the night in the studio room, returning over and over to Marini's bench, the forged canvas, the wrong-period linen. Witnesses pass through; nothing connects. Convergence stalls under 0.45 and the dawn comes without a verdict.",
+  "outcome": "cold_trail",
+  "starting_hypothesis": "circular_studio",
+  "tags": [
+    "cold_trail",
+    "studio_fixation",
+    "no_progress"
+  ],
+  "opening": {
+    "tokens": [
+      "location:palazzo_contarini",
+      "event:luca_marini_discovered",
+      "time:carnival_evening"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.05,
+        0.055,
+        0.060000000000000005
+      ]
+    },
+    {
+      "turn": 2,
+      "_note": "",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.058,
+        0.063,
+        0.068
+      ]
+    },
+    {
+      "turn": 3,
+      "_note": "",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.066,
+        0.07100000000000001,
+        0.076
+      ]
+    },
+    {
+      "turn": 4,
+      "_note": "",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.07400000000000001,
+        0.07900000000000001,
+        0.084
+      ]
+    },
+    {
+      "turn": 5,
+      "_note": "",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.08200000000000002,
+        0.08700000000000002,
+        0.09200000000000001
+      ]
+    },
+    {
+      "turn": 6,
+      "_note": "",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.09000000000000002,
+        0.09500000000000003,
+        0.10000000000000002
+      ]
+    },
+    {
+      "turn": 7,
+      "_note": "",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.09800000000000003,
+        0.10300000000000004,
+        0.10800000000000003
+      ]
+    },
+    {
+      "turn": 8,
+      "_note": "",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.10600000000000004,
+        0.11100000000000004,
+        0.11600000000000003
+      ]
+    },
+    {
+      "turn": 9,
+      "_note": "",
+      "player_card": "modifier:canvas_aged",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.11400000000000005,
+        0.11900000000000005,
+        0.12400000000000004
+      ]
+    },
+    {
+      "turn": 10,
+      "_note": "",
+      "player_card": "modifier:modern_pigment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.12200000000000005,
+        0.12700000000000006,
+        0.13200000000000006
+      ]
+    },
+    {
+      "turn": 11,
+      "_note": "",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.13000000000000006,
+        0.13500000000000006,
+        0.14000000000000007
+      ]
+    },
+    {
+      "turn": 12,
+      "_note": "",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.13800000000000007,
+        0.14300000000000007,
+        0.14800000000000008
+      ]
+    },
+    {
+      "turn": 13,
+      "_note": "",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.14600000000000007,
+        0.15100000000000008,
+        0.15600000000000008
+      ]
+    },
+    {
+      "turn": 14,
+      "_note": "",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.15400000000000008,
+        0.15900000000000009,
+        0.1640000000000001
+      ]
+    },
+    {
+      "turn": 15,
+      "_note": "",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1620000000000001,
+        0.1670000000000001,
+        0.1720000000000001
+      ]
+    },
+    {
+      "turn": 16,
+      "_note": "",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1700000000000001,
+        0.1750000000000001,
+        0.1800000000000001
+      ]
+    },
+    {
+      "turn": 17,
+      "_note": "",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1780000000000001,
+        0.1830000000000001,
+        0.1880000000000001
+      ]
+    },
+    {
+      "turn": 18,
+      "_note": "",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1860000000000001,
+        0.19100000000000011,
+        0.19600000000000012
+      ]
+    },
+    {
+      "turn": 19,
+      "_note": "",
+      "player_card": "modifier:canvas_aged",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.19400000000000012,
+        0.19900000000000012,
+        0.20400000000000013
+      ]
+    },
+    {
+      "turn": 20,
+      "_note": "",
+      "player_card": "modifier:modern_pigment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.20200000000000012,
+        0.20700000000000013,
+        0.21200000000000013
+      ]
+    },
+    {
+      "turn": 21,
+      "_note": "",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.21000000000000013,
+        0.21500000000000014,
+        0.22000000000000014
+      ]
+    },
+    {
+      "turn": 22,
+      "_note": "",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.21800000000000014,
+        0.22300000000000014,
+        0.22800000000000015
+      ]
+    },
+    {
+      "turn": 23,
+      "_note": "",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.22600000000000015,
+        0.23100000000000015,
+        0.23600000000000015
+      ]
+    },
+    {
+      "turn": 24,
+      "_note": "",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.23400000000000015,
+        0.23900000000000016,
+        0.24400000000000016
+      ]
+    },
+    {
+      "turn": 25,
+      "_note": "",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.24200000000000016,
+        0.24700000000000016,
+        0.25200000000000017
+      ]
+    },
+    {
+      "turn": 26,
+      "_note": "",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.25000000000000017,
+        0.25500000000000017,
+        0.2600000000000002
+      ]
+    },
+    {
+      "turn": 27,
+      "_note": "",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2580000000000002,
+        0.2630000000000002,
+        0.2680000000000002
+      ]
+    },
+    {
+      "turn": 28,
+      "_note": "",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2660000000000002,
+        0.2710000000000002,
+        0.2760000000000002
+      ]
+    },
+    {
+      "turn": 29,
+      "_note": "",
+      "player_card": "modifier:canvas_aged",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2740000000000002,
+        0.2790000000000002,
+        0.2840000000000002
+      ]
+    },
+    {
+      "turn": 30,
+      "_note": "",
+      "player_card": "modifier:modern_pigment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2820000000000002,
+        0.2870000000000002,
+        0.2920000000000002
+      ]
+    },
+    {
+      "turn": 31,
+      "_note": "",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2900000000000002,
+        0.2950000000000002,
+        0.3000000000000002
+      ]
+    },
+    {
+      "turn": 32,
+      "_note": "",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2980000000000002,
+        0.3030000000000002,
+        0.3080000000000002
+      ]
+    },
+    {
+      "turn": 33,
+      "_note": "",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3060000000000002,
+        0.3110000000000002,
+        0.3160000000000002
+      ]
+    },
+    {
+      "turn": 34,
+      "_note": "",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3140000000000002,
+        0.31900000000000023,
+        0.32400000000000023
+      ]
+    },
+    {
+      "turn": 35,
+      "_note": "",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.32200000000000023,
+        0.32700000000000023,
+        0.33200000000000024
+      ]
+    },
+    {
+      "turn": 36,
+      "_note": "",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.33000000000000024,
+        0.33500000000000024,
+        0.34000000000000025
+      ]
+    },
+    {
+      "turn": 37,
+      "_note": "",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.33800000000000024,
+        0.34300000000000025,
+        0.34800000000000025
+      ]
+    },
+    {
+      "turn": 38,
+      "_note": "",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.34600000000000025,
+        0.35100000000000026,
+        0.35600000000000026
+      ]
+    },
+    {
+      "turn": 39,
+      "_note": "",
+      "player_card": "modifier:canvas_aged",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.35400000000000026,
+        0.35900000000000026,
+        0.36400000000000027
+      ]
+    },
+    {
+      "turn": 40,
+      "_note": "",
+      "player_card": "modifier:modern_pigment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.36200000000000027,
+        0.36700000000000027,
+        0.3720000000000003
+      ]
+    },
+    {
+      "turn": 41,
+      "_note": "",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3700000000000003,
+        0.3750000000000003,
+        0.3800000000000003
+      ]
+    },
+    {
+      "turn": 42,
+      "_note": "",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3780000000000003,
+        0.3830000000000003,
+        0.3880000000000003
+      ]
+    },
+    {
+      "turn": 43,
+      "_note": "",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3860000000000003,
+        0.3910000000000003,
+        0.3960000000000003
+      ]
+    },
+    {
+      "turn": 44,
+      "_note": "",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3940000000000003,
+        0.3990000000000003,
+        0.4040000000000003
+      ]
+    },
+    {
+      "turn": 45,
+      "_note": "",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.4020000000000003,
+        0.4070000000000003,
+        0.4120000000000003
+      ]
+    },
+    {
+      "turn": 46,
+      "_note": "",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.4100000000000003,
+        0.4150000000000003,
+        0.4200000000000003
+      ]
+    },
+    {
+      "turn": 47,
+      "_note": "",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.4180000000000003,
+        0.4230000000000003,
+        0.4280000000000003
+      ]
+    },
+    {
+      "turn": 48,
+      "_note": "",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.42,
+        0.425,
+        0.43
+      ]
+    },
+    {
+      "turn": 49,
+      "_note": "",
+      "player_card": "modifier:canvas_aged",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.42,
+        0.425,
+        0.43
+      ]
+    },
+    {
+      "turn": 50,
+      "_note": "",
+      "player_card": "modifier:modern_pigment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.42,
+        0.425,
+        0.43
+      ]
+    }
+  ],
+  "ending": {
+    "type": "cold_trail",
+    "accused": null,
+    "final_convergence": [
+      0.42,
+      0.425,
+      0.43
+    ]
+  }
+}

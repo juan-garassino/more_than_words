@@ -1,166 +1,535 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "case_id": "attended_hour",
   "voice": "third_person_past",
-  "_comment": "Slot-fill phrase set for the structured-scene engine. Phrases compose deterministically per the grammar in SCHEMA.md. Voice: third-person past, Obra-Dinn-style — cold, observational, terse. Gender-neutral wherever a body or stance is described (no he/she pronouns in STANCE/TELL phrases). The detective is referred to as 'the detective' (en) / 'la detective' (es). Hospital case: clinical setting, fluorescent light, the long night.",
+  "_comment": "Variant phrase set for the structured-scene engine. Each token may be a string, a list of 3-5 variants, or a staged dict (cold/warming/breaking/broken) for top NPCs (Lin, Aldworth, Dray). Voice: third-person past, Obra-Dinn-style — cold, clinical, observational. Hospital register dominates: medication charts, vital signs, dispensary logs, pharmacist verifications.",
 
   "LOCATION": {
-    "location:cardiac_ward_crime_space":     {"en": "the cardiac ward, bed three",         "es": "la sala cardíaca, cama tres"},
-    "location:doctor_office":                {"en": "the doctor's office",                  "es": "la consulta del médico"},
-    "location:family_waiting_room":          {"en": "the family waiting room",              "es": "la sala de familias"},
-    "location:hospital_exterior":            {"en": "the clinic forecourt",                 "es": "la entrada de la clínica"},
-    "location:medication_charting_area":     {"en": "the medication charting area",         "es": "la zona de la hoja de medicación"},
-    "location:nurse_station_vantage":        {"en": "the nurse station",                    "es": "el puesto de enfermería"},
-    "location:rear_clinical_corridor":       {"en": "the rear corridor",                    "es": "el pasillo posterior"},
-    "location:reception_threshold":          {"en": "the reception threshold",              "es": "el umbral de recepción"},
-    "location:service_elevator_zone":        {"en": "the service-elevator alcove",          "es": "la antesala del montacargas"},
-    "location:staff_break_or_overnight_desk_area": {"en": "the staff break room",           "es": "la sala de descanso del personal"},
-    "location:none":                         {"en": "",                                      "es": ""}
+    "location:cardiac_ward_crime_space": {
+      "en": ["the cardiac ward, bed three", "the ward, by bed three", "bed three on the cardiac ward", "the cardiac bay, third bed"],
+      "es": ["la sala cardíaca, cama tres", "la sala, junto a la cama tres", "la cama tres del ala cardíaca", "el box cardíaco, tercera cama"]
+    },
+    "location:doctor_office": {
+      "en": ["the doctor's office", "the consulting room", "the attending's office", "the office at the end of the corridor"],
+      "es": ["la consulta del médico", "el despacho del facultativo", "la consulta del adjunto", "el despacho al fondo del pasillo"]
+    },
+    "location:family_waiting_room": {
+      "en": ["the family waiting room", "the relatives' waiting area", "the waiting room off reception", "the small waiting room"],
+      "es": ["la sala de familias", "la sala de espera de familiares", "la sala de espera junto a recepción", "la salita de espera"]
+    },
+    "location:hospital_exterior": {
+      "en": ["the clinic forecourt", "the forecourt outside the clinic", "the gravel forecourt", "the entrance court"],
+      "es": ["la entrada de la clínica", "la explanada de la clínica", "el patio delantero de la clínica", "el acceso exterior"]
+    },
+    "location:medication_charting_area": {
+      "en": ["the medication charting area", "the charting bench", "the chart desk by the dispensary", "the medication board"],
+      "es": ["la zona de la hoja de medicación", "el mostrador de hojas", "el escritorio de gráficas junto a farmacia", "el tablón de medicación"]
+    },
+    "location:nurse_station_vantage": {
+      "en": ["the nurse station", "the nursing desk", "the nurses' station", "the central nurses' counter"],
+      "es": ["el puesto de enfermería", "el control de enfermería", "el mostrador del personal de enfermería", "el control central"]
+    },
+    "location:rear_clinical_corridor": {
+      "en": ["the rear corridor", "the back clinical corridor", "the rear staff corridor", "the corridor behind the ward"],
+      "es": ["el pasillo posterior", "el pasillo trasero del área clínica", "el corredor de personal en la trasera", "el pasillo detrás de la sala"]
+    },
+    "location:reception_threshold": {
+      "en": ["the reception threshold", "the reception desk", "the threshold at reception", "the front desk"],
+      "es": ["el umbral de recepción", "el mostrador de recepción", "la entrada de recepción", "la mesa de admisión"]
+    },
+    "location:service_elevator_zone": {
+      "en": ["the service-elevator alcove", "the service lift bay", "the alcove by the service elevator", "the goods-lift recess"],
+      "es": ["la antesala del montacargas", "el hueco del montacargas", "el rellano del montacargas", "el nicho junto al ascensor de servicio"]
+    },
+    "location:staff_break_or_overnight_desk_area": {
+      "en": ["the staff break room", "the overnight desk", "the staff room", "the night desk by the lockers"],
+      "es": ["la sala de descanso del personal", "el escritorio de guardia", "la sala del personal", "el puesto nocturno junto a los casilleros"]
+    },
+    "location:none": {"en": "", "es": ""}
   },
 
   "TRANSITION": {
-    "transition:stayed":             {"en": "Still at",                    "es": "Aún en"},
-    "transition:crossed_to":         {"en": "Crossed to",                  "es": "Cruzó hasta"},
-    "transition:entered":            {"en": "Entered",                     "es": "Entró en"},
-    "transition:exited":             {"en": "Stepped out of",              "es": "Salió de"},
-    "transition:returned":           {"en": "Returned to",                 "es": "Volvió a"},
-    "transition:pursued_to":         {"en": "Followed the lead to",        "es": "Siguió la pista hasta"},
-    "transition:called_away_to":     {"en": "Was summoned to",             "es": "Fue llamada a"},
-    "transition:descended_to":       {"en": "Descended into",              "es": "Bajó a"},
-    "transition:none":               {"en": "Began at",                    "es": "Comenzó en"}
+    "transition:stayed": {
+      "en": ["Still at", "Remained at", "Held position at", "Stayed within"],
+      "es": ["Aún en", "Permaneció en", "Se mantuvo en", "Siguió en"]
+    },
+    "transition:crossed_to": {
+      "en": ["Crossed to", "Walked over to", "Moved across to", "Stepped through to"],
+      "es": ["Cruzó hasta", "Caminó hasta", "Se desplazó a", "Atravesó hacia"]
+    },
+    "transition:entered": {
+      "en": ["Entered", "Stepped into", "Came into", "Pushed through into"],
+      "es": ["Entró en", "Pasó a", "Ingresó en", "Accedió a"]
+    },
+    "transition:exited": {
+      "en": ["Stepped out of", "Walked out of", "Exited", "Left"],
+      "es": ["Salió de", "Se retiró de", "Abandonó", "Dejó atrás"]
+    },
+    "transition:returned": {
+      "en": ["Returned to", "Came back to", "Stepped back into", "Went back to"],
+      "es": ["Volvió a", "Regresó a", "Entró de nuevo en", "Retornó a"]
+    },
+    "transition:pursued_to": {
+      "en": ["Followed the lead to", "Tracked the lead to", "Pursued the thread to", "Followed the trail to"],
+      "es": ["Siguió la pista hasta", "Persiguió el hilo hasta", "Rastreó el indicio hasta", "Siguió el rastro a"]
+    },
+    "transition:called_away_to": {
+      "en": ["Was summoned to", "Was called away to", "Was paged to", "Was sent for to"],
+      "es": ["Fue llamada a", "Fue requerida en", "La llamaron a", "Fue convocada a"]
+    },
+    "transition:descended_to": {
+      "en": ["Descended into", "Took the stairs down to", "Went down to", "Made her way down to"],
+      "es": ["Bajó a", "Descendió hasta", "Tomó la escalera hasta", "Bajó hacia"]
+    },
+    "transition:none": {
+      "en": ["Began at", "Started at", "Opened at", "First stood at"],
+      "es": ["Comenzó en", "Empezó en", "Inició en", "Se detuvo primero en"]
+    }
   },
 
   "CAUSE": {
-    "cause:following_witness_lead":  {"en": "On the witness's word,",      "es": "Por la palabra del testigo,"},
-    "cause:examining_evidence":      {"en": "Tracing the evidence,",       "es": "Siguiendo la evidencia,"},
-    "cause:recognized_object":       {"en": "Something about the object struck the detective;", "es": "Algo del objeto detuvo a la detective;"},
-    "cause:noticed_inconsistency":   {"en": "A detail did not match;",     "es": "Un detalle no encajaba;"},
-    "cause:pursued_suspicion":       {"en": "On a hunch,",                 "es": "Por una corazonada,"},
-    "cause:revisiting_scene":        {"en": "Returning to confirm,",       "es": "Volviendo para confirmar,"},
-    "cause:summoned":                {"en": "Called by name,",             "es": "Llamada por su nombre,"},
-    "cause:chronological_drift":     {"en": "As the hour wore on,",        "es": "Mientras la hora se alargaba,"},
-    "cause:reading_chart_signal":    {"en": "Reading the chart's signal,", "es": "Leyendo la señal del registro,"},
-    "cause:none":                    {"en": "",                            "es": ""}
+    "cause:following_witness_lead": {
+      "en": ["On the witness's word,", "Acting on what the witness had said,", "Following the witness's account,", "Taking the witness at their word,"],
+      "es": ["Por la palabra del testigo,", "Actuando según el testigo,", "Siguiendo lo dicho por el testigo,", "Conforme al relato del testigo,"]
+    },
+    "cause:examining_evidence": {
+      "en": ["Tracing the evidence,", "Following the chart trail,", "Reading the paperwork forward,", "Working the evidence in order,"],
+      "es": ["Siguiendo la evidencia,", "Trazando la pista clínica,", "Leyendo la documentación,", "Recorriendo las pruebas en orden,"]
+    },
+    "cause:recognized_object": {
+      "en": ["Something about the object struck the detective;", "The object held the detective's attention;", "An item caught the eye;", "The object refused to be set down;"],
+      "es": ["Algo del objeto detuvo a la detective;", "El objeto retuvo su atención;", "Un detalle del objeto la sostuvo;", "Aquel objeto no quería soltarse;"]
+    },
+    "cause:noticed_inconsistency": {
+      "en": ["A detail did not match;", "Something in the record did not align;", "The figures failed to reconcile;", "An entry refused to agree with the next;"],
+      "es": ["Un detalle no encajaba;", "Algo del registro no cuadraba;", "Las cifras no concordaban;", "Una anotación contradecía a la siguiente;"]
+    },
+    "cause:pursued_suspicion": {
+      "en": ["On a hunch,", "Following a suspicion,", "On the strength of a doubt,", "Acting on a quiet doubt,"],
+      "es": ["Por una corazonada,", "Siguiendo una sospecha,", "Apoyándose en una duda,", "Por una intuición callada,"]
+    },
+    "cause:revisiting_scene": {
+      "en": ["Returning to confirm,", "Coming back to verify,", "To check the prior reading,", "To re-examine what had been left,"],
+      "es": ["Volviendo para confirmar,", "Regresando para verificar,", "Para cotejar la lectura previa,", "Para revisar lo dejado atrás,"]
+    },
+    "cause:summoned": {
+      "en": ["Called by name,", "Summoned by the page,", "Called over by staff,", "Asked for by name,"],
+      "es": ["Llamada por su nombre,", "Convocada por aviso,", "Reclamada por el personal,", "Solicitada por su nombre,"]
+    },
+    "cause:chronological_drift": {
+      "en": ["As the hour wore on,", "As the night extended,", "As the shift drew on,", "Hours into the watch,"],
+      "es": ["Mientras la hora se alargaba,", "A medida que avanzaba la noche,", "Conforme se prolongaba el turno,", "Horas dentro de la guardia,"]
+    },
+    "cause:reading_chart_signal": {
+      "en": ["Reading the chart's signal,", "Following the figures on the chart,", "Tracing the entries on the medication chart,", "Working back through the chart,"],
+      "es": ["Leyendo la señal del registro,", "Siguiendo las cifras de la hoja,", "Rastreando las anotaciones de la hoja de medicación,", "Recorriendo la hoja hacia atrás,"]
+    },
+    "cause:none": {"en": "", "es": ""}
   },
 
   "PRESENCE": {
-    "presence:with_callum_dray":     {"en": "Dr Dray was at the chart",                     "es": "el doctor Dray estaba con la hoja"},
-    "presence:with_nurse_aldworth":  {"en": "Nurse Aldworth was at the bedside",            "es": "la enfermera Aldworth estaba junto a la cama"},
-    "presence:with_dr_parris":       {"en": "Dr Parris stood by the corridor",              "es": "el doctor Parris estaba junto al pasillo"},
-    "presence:with_owen_stroud":     {"en": "Owen Stroud waited in the chairs",             "es": "Owen Stroud esperaba en las sillas"},
-    "presence:with_records_clerk":   {"en": "the records clerk was at her cabinet",         "es": "la archivista estaba junto a su archivador"},
-    "presence:with_pharmacist_lin":  {"en": "Pharmacist Lin stood by the dispensary tray",  "es": "la farmacéutica Lin estaba junto a la bandeja"},
-    "presence:with_solicitor_pike":  {"en": "Solicitor Pike was already seated",            "es": "el abogado Pike ya estaba sentado"},
-    "presence:with_night_porter":    {"en": "the night porter watched from the door",       "es": "el portero nocturno vigilaba desde la puerta"},
-    "presence:with_ward_orderly":    {"en": "the ward orderly was rolling a cart",          "es": "el celador empujaba un carrito"},
-    "presence:with_lab_assistant":   {"en": "the lab assistant stood with a slip in hand",  "es": "la auxiliar de laboratorio sostenía un volante"},
-    "presence:with_duty_nurse":      {"en": "the duty nurse was at her clipboard",          "es": "la enfermera de turno estaba con su tablilla"},
-    "presence:with_ambulance_driver":{"en": "the ambulance driver leaned on the doorframe", "es": "el conductor de la ambulancia se apoyaba en el marco"},
-    "presence:alone":                {"en": "no one else was there",                        "es": "no había nadie más"}
+    "presence:with_callum_dray": {
+      "en": {
+        "cold": ["Dr Dray was at the chart", "Dr Dray stood at the medication chart", "Dr Dray waited by the chart, pen uncapped"],
+        "warming": ["Dr Dray held the chart in both hands", "Dr Dray turned the chart toward the light", "Dr Dray set the chart down between them"],
+        "breaking": ["Dr Dray's pen had stopped above the page", "Dr Dray held the chart but no longer read from it", "Dr Dray kept the chart raised, the ink stain dark on his pocket"],
+        "broken": ["Dr Dray let the chart fall against the bench", "Dr Dray no longer carried the chart at all", "Dr Dray's hands stayed empty on the desk"]
+      },
+      "es": {
+        "cold": ["el doctor Dray estaba con la hoja", "el doctor Dray se mantenía junto a la hoja de medicación", "el doctor Dray esperaba con la pluma destapada"],
+        "warming": ["el doctor Dray sostenía la hoja con ambas manos", "el doctor Dray giró la hoja hacia la luz", "el doctor Dray dejó la hoja sobre la mesa"],
+        "breaking": ["la pluma del doctor Dray se había detenido sobre el papel", "el doctor Dray sostenía la hoja pero ya no la leía", "el doctor Dray mantenía la hoja en alto, la mancha de tinta oscura en el bolsillo"],
+        "broken": ["el doctor Dray dejó caer la hoja contra el banco", "el doctor Dray ya no llevaba la hoja", "las manos del doctor Dray quedaban vacías sobre la mesa"]
+      }
+    },
+    "presence:with_nurse_aldworth": {
+      "en": {
+        "cold": ["Nurse Aldworth was at the bedside", "Nurse Aldworth stood by the bedside", "Nurse Aldworth waited at bed three with the round-sheet"],
+        "warming": ["Nurse Aldworth held the medication tray a fraction off-level", "Nurse Aldworth had set the tray down between them", "Nurse Aldworth's hand had moved to the watch pinned at her chest"],
+        "breaking": ["Nurse Aldworth's pen was already in her hand and waiting", "Nurse Aldworth's signature loop had begun to shake", "Nurse Aldworth held the round-sheet but no longer read from it"],
+        "broken": ["Nurse Aldworth had stopped reaching for the chart", "Nurse Aldworth let the tray rest at the foot of the bed", "Nurse Aldworth's hands stayed folded over the round-sheet"]
+      },
+      "es": {
+        "cold": ["la enfermera Aldworth estaba junto a la cama", "la enfermera Aldworth esperaba en la cabecera", "la enfermera Aldworth aguardaba en la cama tres con la hoja de ronda"],
+        "warming": ["la enfermera Aldworth sostenía la bandeja un poco desnivelada", "la enfermera Aldworth había dejado la bandeja entre ambas", "la mano de la enfermera Aldworth había buscado el reloj prendido en el pecho"],
+        "breaking": ["la enfermera Aldworth ya tenía la pluma en la mano, esperando", "el trazo de la firma de la enfermera Aldworth había empezado a temblar", "la enfermera Aldworth sostenía la hoja de ronda sin leerla"],
+        "broken": ["la enfermera Aldworth había dejado de buscar la hoja", "la enfermera Aldworth dejó la bandeja a los pies de la cama", "las manos de la enfermera Aldworth quedaban cruzadas sobre la hoja"]
+      }
+    },
+    "presence:with_dr_parris": {
+      "en": ["Dr Parris stood by the corridor", "Dr Parris waited at the corridor wall, stethoscope around his neck", "Dr Parris held the corridor doorframe with one hand", "Dr Parris kept his eyes on the floor by the corridor"],
+      "es": ["el doctor Parris estaba junto al pasillo", "el doctor Parris esperaba contra la pared del pasillo, con el estetoscopio al cuello", "el doctor Parris se apoyaba en el marco del pasillo", "el doctor Parris mantenía la mirada en el suelo del pasillo"]
+    },
+    "presence:with_owen_stroud": {
+      "en": ["Owen Stroud waited in the chairs", "Owen Stroud sat in the waiting chairs, briefcase across his knees", "Owen Stroud was in the third chair, the visitor slip folded between his fingers", "Owen Stroud rose from the waiting chairs as she came in"],
+      "es": ["Owen Stroud esperaba en las sillas", "Owen Stroud estaba sentado en las sillas, el maletín sobre las rodillas", "Owen Stroud ocupaba la tercera silla, el volante de visita doblado entre los dedos", "Owen Stroud se levantó de las sillas al verla entrar"]
+    },
+    "presence:with_records_clerk": {
+      "en": ["the records clerk was at her cabinet", "the records clerk stood with one hand flat on the cabinet", "the records clerk waited beside the open drawer", "the records clerk had already pulled the file"],
+      "es": ["la archivista estaba junto a su archivador", "la archivista se mantenía con la mano sobre el cajón", "la archivista esperaba junto al cajón abierto", "la archivista ya había sacado el expediente"]
+    },
+    "presence:with_pharmacist_lin": {
+      "en": {
+        "cold": ["Pharmacist Lin stood by the dispensary tray", "Pharmacist Lin waited at the dispensary counter with the inventory sheet", "Pharmacist Lin held the dispensary log open at the day's page"],
+        "warming": ["Pharmacist Lin had laid the inventory sheet down between them", "Pharmacist Lin's hand rested on the page of cardiac combinations", "Pharmacist Lin had pulled the second page out before it was asked for"],
+        "breaking": ["Pharmacist Lin held the inventory sheet but had stopped reading from it", "Pharmacist Lin had begun to apologise before the question came", "Pharmacist Lin's voice had dropped to the dispensary counter"],
+        "broken": ["Pharmacist Lin had set the inventory sheet down for the last time", "Pharmacist Lin's hands stayed flat on the counter", "Pharmacist Lin no longer reached for the log"]
+      },
+      "es": {
+        "cold": ["la farmacéutica Lin estaba junto a la bandeja", "la farmacéutica Lin esperaba en el mostrador con la hoja de inventario", "la farmacéutica Lin sostenía el libro de la dispensaría abierto en la página del día"],
+        "warming": ["la farmacéutica Lin había dejado la hoja de inventario entre ambas", "la mano de la farmacéutica Lin descansaba sobre la página de combinaciones cardíacas", "la farmacéutica Lin había sacado la segunda página antes de que se pidiera"],
+        "breaking": ["la farmacéutica Lin sostenía la hoja sin leerla", "la farmacéutica Lin había empezado a disculparse antes de la pregunta", "la voz de la farmacéutica Lin había bajado hasta el mostrador"],
+        "broken": ["la farmacéutica Lin había dejado la hoja por última vez", "las manos de la farmacéutica Lin quedaban sobre el mostrador", "la farmacéutica Lin ya no buscaba el libro"]
+      }
+    },
+    "presence:with_solicitor_pike": {
+      "en": ["Solicitor Pike was already seated", "Solicitor Pike sat with his briefcase upright at his knee", "Solicitor Pike had taken the chair nearest the door", "Solicitor Pike waited with the witness statements ready"],
+      "es": ["el abogado Pike ya estaba sentado", "el abogado Pike estaba sentado con el maletín apoyado en la rodilla", "el abogado Pike había ocupado la silla más cercana a la puerta", "el abogado Pike esperaba con las declaraciones preparadas"]
+    },
+    "presence:with_night_porter": {
+      "en": ["the night porter watched from the door", "the night porter stood in the doorway of the side entrance", "the night porter leaned on the desk by the side door", "the night porter kept his place at the entry log"],
+      "es": ["el portero nocturno vigilaba desde la puerta", "el portero nocturno se mantenía en el quicio de la entrada lateral", "el portero nocturno se apoyaba en el mostrador junto a la puerta", "el portero nocturno seguía junto al libro de entradas"]
+    },
+    "presence:with_ward_orderly": {
+      "en": ["the ward orderly was rolling a cart", "the ward orderly stopped his cart at the bay", "the ward orderly waited with the linen cart at the door", "the ward orderly stood at the foot of the bed"],
+      "es": ["el celador empujaba un carrito", "el celador detuvo el carrito en el box", "el celador esperaba con el carro de ropa junto a la puerta", "el celador se mantenía a los pies de la cama"]
+    },
+    "presence:with_lab_assistant": {
+      "en": ["the lab assistant stood with a slip in hand", "the lab assistant waited with the laboratory file tapped against the bench", "the lab assistant held the order sheet in one hand", "the lab assistant kept the request slip folded between her fingers"],
+      "es": ["la auxiliar de laboratorio sostenía un volante", "la auxiliar de laboratorio esperaba golpeando suavemente el archivo contra el banco", "la auxiliar de laboratorio sostenía la hoja de solicitud", "la auxiliar de laboratorio mantenía el volante doblado entre los dedos"]
+    },
+    "presence:with_duty_nurse": {
+      "en": ["the duty nurse was at her clipboard", "the duty nurse stood beside the cardiac monitor", "the duty nurse waited with the vitals sheet", "the duty nurse kept her hand near the patient's wrist"],
+      "es": ["la enfermera de turno estaba con su tablilla", "la enfermera de turno se mantenía junto al monitor cardíaco", "la enfermera de turno esperaba con la hoja de constantes", "la enfermera de turno mantenía la mano cerca de la muñeca del paciente"]
+    },
+    "presence:with_ambulance_driver": {
+      "en": ["the ambulance driver leaned on the doorframe", "the ambulance driver stood at the side entrance, kit at his feet", "the ambulance driver waited by the trolley", "the ambulance driver kept one hand at his hip-clip"],
+      "es": ["el conductor de la ambulancia se apoyaba en el marco", "el conductor de la ambulancia esperaba en la entrada lateral, con el equipo a sus pies", "el conductor de la ambulancia aguardaba junto a la camilla", "el conductor de la ambulancia mantenía una mano en la cartuchera del cinto"]
+    },
+    "presence:alone": {
+      "en": ["no one else was there", "the room was empty otherwise", "no other staff were present", "the bay held no one else"],
+      "es": ["no había nadie más", "la sala estaba por lo demás vacía", "no había más personal presente", "el box no contenía a nadie más"]
+    }
   },
 
   "STANCE": {
-    "stance:cooperative":  {"en": "the posture open, the words within reach", "es": "la postura abierta, las palabras al alcance"},
-    "stance:defensive":    {"en": "the hands flat against the chart",         "es": "con las manos sobre la hoja"},
-    "stance:evasive":      {"en": "the eyes finding the floor",               "es": "con los ojos en el suelo"},
-    "stance:hostile":      {"en": "the jaw set, the voice low",               "es": "con la mandíbula tensa, la voz baja"},
-    "stance:unaware":      {"en": "still unaware of the visit's purpose",     "es": "aún ignorando el propósito de la visita"},
-    "stance:none":         {"en": "",                                         "es": ""}
+    "stance:cooperative": {
+      "en": ["the posture open, the words within reach", "the stance open, the answers offered", "the hands resting where they could be seen", "the voice steady, the answers ready"],
+      "es": ["la postura abierta, las palabras al alcance", "la postura abierta, las respuestas dispuestas", "las manos a la vista, sin ocultarse", "la voz firme, las respuestas a mano"]
+    },
+    "stance:defensive": {
+      "en": ["the hands flat against the chart", "the chart held close against the chest", "the arms folded over the clipboard", "the elbow braced against the cabinet"],
+      "es": ["con las manos sobre la hoja", "con la hoja apretada contra el pecho", "con los brazos cruzados sobre la tablilla", "con el codo apoyado en el archivador"]
+    },
+    "stance:evasive": {
+      "en": ["the eyes finding the floor", "the gaze drifting toward the corridor", "the answers arriving sideways", "the eyes staying on the cardiac monitor instead"],
+      "es": ["con los ojos en el suelo", "con la mirada deslizándose hacia el pasillo", "con las respuestas llegando de soslayo", "con los ojos puestos en el monitor cardíaco"]
+    },
+    "stance:hostile": {
+      "en": ["the jaw set, the voice low", "the consonants clipped, the shoulders squared", "the answers arriving sharp at the edges", "the voice held just above a whisper"],
+      "es": ["con la mandíbula tensa, la voz baja", "con las consonantes recortadas, los hombros firmes", "con las respuestas llegando afiladas en los bordes", "con la voz apenas por encima del susurro"]
+    },
+    "stance:unaware": {
+      "en": ["still unaware of the visit's purpose", "yet unaware why she had been called", "the question's weight not yet registered", "still unaware that the round was the matter"],
+      "es": ["aún ignorando el propósito de la visita", "aún sin saber por qué la habían llamado", "sin haber medido aún el peso de la pregunta", "aún ignorando que la ronda era el asunto"]
+    },
+    "stance:none": {"en": "", "es": ""}
   },
 
   "ACTION": {
-    "action:examines":     {"en": "examined",   "es": "examinó"},
-    "action:questions":    {"en": "questioned", "es": "interrogó"},
-    "action:notices":      {"en": "noticed",    "es": "advirtió"},
-    "action:discovers":    {"en": "found",      "es": "halló"},
-    "action:confronts":    {"en": "confronted", "es": "confrontó"},
-    "action:follows":      {"en": "followed",   "es": "siguió"},
-    "action:waits":        {"en": "waited",     "es": "esperó"},
-    "action:leaves":       {"en": "stepped away from", "es": "se alejó de"},
-    "action:arrives":      {"en": "stepped into", "es": "entró en"},
-    "action:recalls":      {"en": "recalled",   "es": "recordó"},
-    "action:auscultates":  {"en": "auscultated", "es": "auscultó"},
-    "action:none":         {"en": "stood",      "es": "se detuvo"}
+    "action:examines": {
+      "en": ["examined", "studied", "read across", "looked closely at"],
+      "es": ["examinó", "estudió", "recorrió", "observó de cerca"]
+    },
+    "action:questions": {
+      "en": ["questioned", "interviewed", "took the statement of", "put the question to"],
+      "es": ["interrogó", "entrevistó", "tomó declaración a", "planteó la pregunta a"]
+    },
+    "action:notices": {
+      "en": ["noticed", "marked", "took note of", "registered"],
+      "es": ["advirtió", "anotó", "tomó nota de", "registró"]
+    },
+    "action:discovers": {
+      "en": ["found", "uncovered", "located", "came upon"],
+      "es": ["halló", "descubrió", "localizó", "dio con"]
+    },
+    "action:confronts": {
+      "en": ["confronted", "named the matter to", "pressed the question with", "put the contradiction to"],
+      "es": ["confrontó", "puso el asunto frente a", "apretó la pregunta a", "planteó la contradicción a"]
+    },
+    "action:follows": {
+      "en": ["followed", "tracked", "kept pace with", "trailed"],
+      "es": ["siguió", "rastreó", "fue tras", "fue al paso de"]
+    },
+    "action:waits": {
+      "en": ["waited", "held the silence", "let the moment stand", "kept still"],
+      "es": ["esperó", "sostuvo el silencio", "dejó pasar el momento", "se mantuvo quieta"]
+    },
+    "action:leaves": {
+      "en": ["stepped away from", "walked out of", "withdrew from", "moved away from"],
+      "es": ["se alejó de", "salió de", "se retiró de", "se apartó de"]
+    },
+    "action:arrives": {
+      "en": ["stepped into", "came through into", "moved into", "set foot in"],
+      "es": ["entró en", "pasó a", "se adentró en", "pisó"]
+    },
+    "action:recalls": {
+      "en": ["recalled", "remembered", "brought back to mind", "set the earlier note against this one"],
+      "es": ["recordó", "trajo a la memoria", "rescató del recuerdo", "cotejó con la nota previa"]
+    },
+    "action:auscultates": {
+      "en": ["auscultated", "took the sound of", "placed the stethoscope to", "listened to the chest of"],
+      "es": ["auscultó", "tomó el sonido de", "apoyó el estetoscopio sobre", "escuchó el pecho de"]
+    },
+    "action:none": {
+      "en": ["stood", "held her place", "stayed still", "kept her stand"],
+      "es": ["se detuvo", "se mantuvo en su sitio", "permaneció quieta", "no se movió"]
+    }
   },
 
   "OBJECT_FOCUS": {
-    "object:medication_chart":     {"en": "the medication chart",        "es": "la hoja de medicación"},
-    "object:syringe_tray":         {"en": "the syringe tray",            "es": "la bandeja de jeringas"},
-    "object:drug_ledger":          {"en": "the drug ledger",             "es": "el libro de la dispensaría"},
-    "object:interaction_manual":   {"en": "the drug interaction manual", "es": "el manual de interacciones"},
-    "object:visitor_log":          {"en": "the visitor log",             "es": "el registro de visitas"},
-    "object:autopsy_report":       {"en": "the autopsy report",          "es": "el informe de la autopsia"},
-    "object:prescription_carbon":  {"en": "the prescription carbon",     "es": "la copia carbónica de la receta"},
-    "object:insurance_form":       {"en": "the insurance form",          "es": "el formulario del seguro"},
-    "object:corridor_badge":       {"en": "the corridor badge",          "es": "la credencial del pasillo"},
-    "object:ward_keycard":         {"en": "the ward keycard log",        "es": "el registro de la tarjeta de sala"},
-    "object:clinical_notes":       {"en": "the clinical notes",          "es": "las notas clínicas"},
-    "object:lab_slip":             {"en": "the laboratory slip",         "es": "el volante de laboratorio"},
-    "object:complaint_filing":     {"en": "the complaint filing",        "es": "la denuncia archivada"},
-    "object:cardiac_monitor":      {"en": "the cardiac monitor",         "es": "el monitor cardíaco"},
-    "object_focus:none":           {"en": "",                             "es": ""}
+    "object:medication_chart": {
+      "en": ["the medication chart", "the medication record", "the chart of evening doses", "the patient's medication sheet"],
+      "es": ["la hoja de medicación", "el registro de medicación", "la hoja de las dosis de la tarde", "la hoja de fármacos del paciente"]
+    },
+    "object:syringe_tray": {
+      "en": ["the syringe tray", "the dispensary tray", "the tray of prepared syringes", "the metal syringe tray"],
+      "es": ["la bandeja de jeringas", "la bandeja de la dispensaría", "la bandeja con las jeringas preparadas", "la bandeja metálica de jeringas"]
+    },
+    "object:drug_ledger": {
+      "en": ["the drug ledger", "the dispensary ledger", "the controlled-drugs book", "the register of dispensed medication"],
+      "es": ["el libro de la dispensaría", "el libro de fármacos", "el registro de estupefacientes", "el libro de medicación dispensada"]
+    },
+    "object:interaction_manual": {
+      "en": ["the drug interaction manual", "the interactions reference", "the cardiac combinations page", "the dog-eared interaction page"],
+      "es": ["el manual de interacciones", "la referencia de interacciones", "la página de combinaciones cardíacas", "la página de interacciones con la esquina doblada"]
+    },
+    "object:visitor_log": {
+      "en": ["the visitor log", "the visitor sign-in book", "the entry register at reception", "the visitor slip"],
+      "es": ["el registro de visitas", "el libro de firmas de visitas", "el registro de entrada de recepción", "el volante de visita"]
+    },
+    "object:autopsy_report": {
+      "en": ["the autopsy report", "the post-mortem findings", "the pathologist's report", "the autopsy summary"],
+      "es": ["el informe de la autopsia", "los hallazgos post mortem", "el informe del patólogo", "el resumen de la autopsia"]
+    },
+    "object:prescription_carbon": {
+      "en": ["the prescription carbon", "the carbon copy of the prescription", "the duplicate prescription slip", "the carbon of the evening order"],
+      "es": ["la copia carbónica de la receta", "la calca de la receta", "el duplicado de la prescripción", "la copia de la orden de la tarde"]
+    },
+    "object:insurance_form": {
+      "en": ["the insurance form", "the half-completed insurance form", "the policy paperwork", "the claim form"],
+      "es": ["el formulario del seguro", "el formulario del seguro a medio rellenar", "los papeles de la póliza", "el impreso de reclamación"]
+    },
+    "object:corridor_badge": {
+      "en": ["the corridor badge", "the badge dropped in the waiting room", "the staff badge with the corridor swipe", "the dropped clinical badge"],
+      "es": ["la credencial del pasillo", "la credencial caída en la sala de espera", "la tarjeta del personal con el paso del pasillo", "la credencial clínica perdida"]
+    },
+    "object:ward_keycard": {
+      "en": ["the ward keycard log", "the keycard access log", "the ward access record", "the swipe-card register"],
+      "es": ["el registro de la tarjeta de sala", "el registro de accesos por tarjeta", "el listado de entradas a la sala", "el libro de la tarjeta magnética"]
+    },
+    "object:clinical_notes": {
+      "en": ["the clinical notes", "the case notes", "the bedside notes", "the patient's clinical file"],
+      "es": ["las notas clínicas", "el historial clínico", "las notas de cabecera", "el expediente clínico del paciente"]
+    },
+    "object:lab_slip": {
+      "en": ["the laboratory slip", "the lab request slip", "the enzyme order slip", "the unfilled lab order"],
+      "es": ["el volante de laboratorio", "la solicitud de laboratorio", "el volante de la enzima", "la orden de laboratorio sin cumplimentar"]
+    },
+    "object:complaint_filing": {
+      "en": ["the complaint filing", "the filed complaint", "the complaint paperwork", "the prior complaint on file"],
+      "es": ["la denuncia archivada", "la queja presentada", "el expediente de la denuncia", "la denuncia previa archivada"]
+    },
+    "object:cardiac_monitor": {
+      "en": ["the cardiac monitor", "the bedside monitor", "the cardiac trace on the monitor", "the monitor at bed three"],
+      "es": ["el monitor cardíaco", "el monitor de cabecera", "el trazado cardíaco del monitor", "el monitor de la cama tres"]
+    },
+    "object_focus:none": {"en": "", "es": ""}
   },
 
   "TELL": {
-    "emotion:steady_hands":     {"en": "the hands stayed steady",                              "es": "las manos no temblaron"},
-    "emotion:fixed_stare":      {"en": "the stare did not waver",                              "es": "la mirada no se desvió"},
-    "emotion:avoided_contact":  {"en": "the eyes did not lift to meet the question",           "es": "los ojos no se alzaron al cruzar la pregunta"},
-    "emotion:measured_breath":  {"en": "the breathing stayed measured",                        "es": "la respiración se mantuvo medida"},
-    "emotion:paused_reply":     {"en": "the answer paused before coming",                      "es": "la respuesta tardó en llegar"},
-    "emotion:closed_posture":   {"en": "the coat stayed buttoned",                             "es": "la bata siguió cerrada"},
-    "emotion:professional_calm":{"en": "the bedside manner held its even register",            "es": "el trato clínico mantuvo su registro parejo"},
-    "emotion:shaking_hands":    {"en": "a small tremor ran through the writing hand",          "es": "un pequeño temblor recorrió la mano que escribía"},
-    "emotion:clipped_answers":  {"en": "each reply arrived already trimmed",                   "es": "cada respuesta llegaba ya recortada"},
-    "emotion:avoided_ward":     {"en": "the gaze stopped short of the ward door",              "es": "la mirada se detenía antes de la puerta de la sala"},
-    "emotion:rehearsed_grief":  {"en": "the grief arrived in its rehearsed cadence",           "es": "el duelo llegó con su cadencia ensayada"},
-    "emotion:rigid_composure":  {"en": "the composure held, mirror-rehearsed",                 "es": "la compostura se mantuvo, ensayada en el espejo"},
-    "tell:paled":               {"en": "all colour drained at the question",                   "es": "todo el color se retiró ante la pregunta"},
-    "tell:tightened":           {"en": "the shoulders tightened",                              "es": "los hombros se tensaron"},
-    "tell:glanced_aside":       {"en": "the eyes broke from the question",                     "es": "los ojos se apartaron de la pregunta"},
-    "tell:silent":              {"en": "no answer came",                                       "es": "ninguna respuesta llegó"},
-    "tell:hesitated":           {"en": "a pause came before the answer",                       "es": "una pausa precedió a la respuesta"},
-    "tell:over_explained":      {"en": "the detail spilled past the question asked",           "es": "los detalles se desbordaron de la pregunta hecha"},
-    "tell:softened":            {"en": "the stance eased a fraction",                          "es": "la postura cedió una fracción"},
-    "tell:none":                {"en": "",                                                     "es": ""}
+    "emotion:steady_hands": {
+      "en": ["the hands stayed steady", "the hands did not tremble", "the writing hand kept its line", "no tremor reached the fingers"],
+      "es": ["las manos no temblaron", "las manos se mantuvieron firmes", "la mano que escribía no se quebró", "ningún temblor llegó a los dedos"]
+    },
+    "emotion:fixed_stare": {
+      "en": ["the stare did not waver", "the gaze held without break", "the eyes kept on the question", "the look did not slip"],
+      "es": ["la mirada no se desvió", "la mirada se mantuvo sin quiebro", "los ojos no abandonaron la pregunta", "la mirada no resbaló"]
+    },
+    "emotion:avoided_contact": {
+      "en": ["the eyes did not lift to meet the question", "the gaze did not rise from the chart", "the eyes stayed on the floor through the answer", "the eyes never crossed the detective's"],
+      "es": ["los ojos no se alzaron al cruzar la pregunta", "la mirada no se separó de la hoja", "los ojos siguieron en el suelo durante la respuesta", "la mirada nunca cruzó la de la detective"]
+    },
+    "emotion:measured_breath": {
+      "en": ["the breathing stayed measured", "the breath kept its even count", "the chest rose and fell at its trained pace", "the respiration did not lift"],
+      "es": ["la respiración se mantuvo medida", "el aliento conservó su cadencia", "el pecho subía y bajaba a su ritmo entrenado", "la respiración no se aceleró"]
+    },
+    "emotion:paused_reply": {
+      "en": ["the answer paused before coming", "the reply held back a beat", "a small silence preceded the answer", "the response arrived a fraction late"],
+      "es": ["la respuesta tardó en llegar", "la réplica se contuvo un instante", "un breve silencio precedió a la respuesta", "la respuesta llegó con una fracción de retraso"]
+    },
+    "emotion:closed_posture": {
+      "en": ["the coat stayed buttoned", "the white coat remained closed at the front", "the arms stayed folded across the chest", "the stance stayed sealed"],
+      "es": ["la bata siguió cerrada", "la bata blanca se mantuvo abrochada", "los brazos siguieron cruzados sobre el pecho", "la postura siguió clausurada"]
+    },
+    "emotion:professional_calm": {
+      "en": ["the bedside manner held its even register", "the clinical calm did not falter", "the practised composure stayed in place", "the professional voice held"],
+      "es": ["el trato clínico mantuvo su registro parejo", "la calma profesional no flaqueó", "la compostura ensayada se sostuvo", "la voz profesional se mantuvo"]
+    },
+    "emotion:shaking_hands": {
+      "en": ["a small tremor ran through the writing hand", "the writing hand shook on the loop of the signature", "the fingers trembled at the pen", "the hand could not keep the line steady"],
+      "es": ["un pequeño temblor recorrió la mano que escribía", "la mano que firmaba tembló en el trazo", "los dedos temblaban al sostener la pluma", "la mano no pudo mantener la línea firme"]
+    },
+    "emotion:clipped_answers": {
+      "en": ["each reply arrived already trimmed", "every answer was cut to the bone", "the responses came short and unadorned", "each answer ended before its breath did"],
+      "es": ["cada respuesta llegaba ya recortada", "cada respuesta venía cortada al hueso", "las respuestas llegaban breves y sin adorno", "cada respuesta acababa antes que el aliento"]
+    },
+    "emotion:avoided_ward": {
+      "en": ["the gaze stopped short of the ward door", "the eyes refused the corridor to bed three", "the look halted before it reached the ward", "the attention turned aside at the threshold"],
+      "es": ["la mirada se detenía antes de la puerta de la sala", "los ojos se negaban al pasillo de la cama tres", "la mirada se paraba antes de llegar a la sala", "la atención se desviaba en el umbral"]
+    },
+    "emotion:rehearsed_grief": {
+      "en": ["the grief arrived in its rehearsed cadence", "the sorrow ran its prepared line", "the mourning came too smoothly", "the eulogy phrase arrived polished"],
+      "es": ["el duelo llegó con su cadencia ensayada", "la tristeza siguió su línea preparada", "el luto llegó demasiado pulido", "la frase de duelo llegó ya bruñida"]
+    },
+    "emotion:rigid_composure": {
+      "en": ["the composure held, mirror-rehearsed", "the stillness was the kind practised in mirrors", "the posture stayed rehearsed and rigid", "the calm did not yield, mirror-set"],
+      "es": ["la compostura se mantuvo, ensayada en el espejo", "la quietud era de las que se practican ante el espejo", "la postura siguió ensayada y rígida", "la calma no cedió, marcada al espejo"]
+    },
+    "tell:paled": {
+      "en": ["all colour drained at the question", "the face went white at the name", "the colour left at the next word", "the cheeks lost their colour"],
+      "es": ["todo el color se retiró ante la pregunta", "el rostro se volvió blanco al oír el nombre", "el color se fue con la siguiente palabra", "las mejillas perdieron el color"]
+    },
+    "tell:tightened": {
+      "en": ["the shoulders tightened", "the jaw closed a fraction", "the hands locked on the chart", "the shoulders rose by a hair"],
+      "es": ["los hombros se tensaron", "la mandíbula se cerró un poco", "las manos se cerraron sobre la hoja", "los hombros subieron una pizca"]
+    },
+    "tell:glanced_aside": {
+      "en": ["the eyes broke from the question", "the gaze slid past the question", "the look glanced toward the corridor", "the eyes turned to the cardiac monitor"],
+      "es": ["los ojos se apartaron de la pregunta", "la mirada se deslizó fuera de la pregunta", "la mirada miró de reojo al pasillo", "los ojos buscaron el monitor cardíaco"]
+    },
+    "tell:silent": {
+      "en": ["no answer came", "the silence took the place of the reply", "no word followed the question", "the answer never arrived"],
+      "es": ["ninguna respuesta llegó", "el silencio ocupó el lugar de la respuesta", "ninguna palabra siguió a la pregunta", "la respuesta no llegó"]
+    },
+    "tell:hesitated": {
+      "en": ["a pause came before the answer", "the answer was held back a beat", "the reply waited a moment before coming", "the breath held before the answer"],
+      "es": ["una pausa precedió a la respuesta", "la respuesta se contuvo un momento", "la réplica aguardó antes de llegar", "el aliento se sostuvo antes de la respuesta"]
+    },
+    "tell:over_explained": {
+      "en": ["the detail spilled past the question asked", "more was offered than had been requested", "the answer ran past its question and kept going", "the explanation overflowed the question"],
+      "es": ["los detalles se desbordaron de la pregunta hecha", "se ofreció más de lo que se había pedido", "la respuesta sobrepasó la pregunta y siguió", "la explicación rebasó la pregunta"]
+    },
+    "tell:softened": {
+      "en": ["the stance eased a fraction", "the shoulders dropped by a hair", "the posture released a small measure", "the held breath went out"],
+      "es": ["la postura cedió una fracción", "los hombros bajaron una pizca", "la postura aflojó un punto", "el aliento contenido salió"]
+    },
+    "tell:none": {"en": "", "es": ""}
   },
 
   "ATMOSPHERE": {
-    "atmosphere:corridor_dims":         {"en": "The corridor lights dimmed for the night ward.",  "es": "Las luces del pasillo se atenuaron para la sala nocturna."},
-    "atmosphere:fluorescent_flickers":  {"en": "A fluorescent tube flickered overhead.",          "es": "Un tubo fluorescente parpadeó arriba."},
-    "atmosphere:fluorescent_steady":    {"en": "The fluorescents held steady.",                    "es": "Los fluorescentes mantenían su luz."},
-    "atmosphere:silence_holds":         {"en": "Silence held between them.",                       "es": "El silencio se mantuvo entre ellos."},
-    "atmosphere:silence_breaks":        {"en": "Silence broke with a distant page.",               "es": "El silencio se rompió con un aviso lejano."},
-    "atmosphere:elevator_arrives":      {"en": "The service elevator arrived with a chime.",       "es": "El montacargas llegó con un timbre."},
-    "atmosphere:dawn_approaches":       {"en": "The first grey of dawn pressed at the windows.",   "es": "El primer gris del alba presionaba en las ventanas."},
-    "atmosphere:wind_rises":            {"en": "Wind rose against the side door.",                 "es": "El viento se alzó contra la puerta lateral."},
-    "atmosphere:none":                  {"en": "",                                                  "es": ""}
+    "atmosphere:corridor_dims": {
+      "en": ["The corridor lights dimmed for the night ward.", "The overhead corridor strip dimmed to its night setting.", "The ward lights stepped down to their night level.", "The corridor went into its night-shift dim."],
+      "es": ["Las luces del pasillo se atenuaron para la sala nocturna.", "Los fluorescentes del pasillo bajaron al modo de noche.", "Las luces de la sala descendieron a su nivel nocturno.", "El pasillo entró en su penumbra de turno de noche."]
+    },
+    "atmosphere:fluorescent_flickers": {
+      "en": ["A fluorescent tube flickered overhead.", "One fluorescent strip stuttered above the bench.", "A tube flickered, steadied, flickered again.", "The fluorescent overhead pulsed once and held."],
+      "es": ["Un tubo fluorescente parpadeó arriba.", "Un fluorescente sobre el banco titiló.", "Un tubo parpadeó, se afirmó, volvió a parpadear.", "El fluorescente del techo pulsó una vez y se sostuvo."]
+    },
+    "atmosphere:fluorescent_steady": {
+      "en": ["The fluorescents held steady.", "The overhead lights stayed even.", "The corridor strip lights gave no flicker.", "The fluorescents kept their flat white."],
+      "es": ["Los fluorescentes mantenían su luz.", "Las luces del techo se mantenían parejas.", "Los tubos del pasillo no parpadearon.", "Los fluorescentes conservaban su blanco plano."]
+    },
+    "atmosphere:silence_holds": {
+      "en": ["Silence held between them.", "The silence sat between the two.", "No sound passed between them.", "Quiet kept its place in the room."],
+      "es": ["El silencio se mantuvo entre ellos.", "El silencio se acomodó entre ambos.", "Ningún sonido cruzó entre los dos.", "La quietud se sostuvo en la sala."]
+    },
+    "atmosphere:silence_breaks": {
+      "en": ["Silence broke with a distant page.", "A pager sounded somewhere down the corridor.", "An overhead page cut into the quiet.", "A distant call broke the silence."],
+      "es": ["El silencio se rompió con un aviso lejano.", "Un buscapersonas sonó al fondo del pasillo.", "Un aviso por megafonía cortó la quietud.", "Una llamada lejana rompió el silencio."]
+    },
+    "atmosphere:elevator_arrives": {
+      "en": ["The service elevator arrived with a chime.", "The service lift settled with its small bell.", "The goods lift came up and chimed.", "The service elevator opened its doors with a tone."],
+      "es": ["El montacargas llegó con un timbre.", "El montacargas se asentó con su campanilla.", "El ascensor de servicio subió y sonó.", "El montacargas abrió sus puertas con un tono."]
+    },
+    "atmosphere:dawn_approaches": {
+      "en": ["The first grey of dawn pressed at the windows.", "Dawn began to lift behind the blinds.", "The grey of morning gathered against the glass.", "First light pushed at the window frames."],
+      "es": ["El primer gris del alba presionaba en las ventanas.", "El alba comenzaba a alzarse tras las persianas.", "El gris de la mañana se juntaba contra el cristal.", "La primera luz empujaba contra los marcos."]
+    },
+    "atmosphere:wind_rises": {
+      "en": ["Wind rose against the side door.", "A gust pressed at the side entrance.", "The wind found the side door and pushed.", "Wind moved at the back of the building."],
+      "es": ["El viento se alzó contra la puerta lateral.", "Una ráfaga presionó la entrada lateral.", "El viento halló la puerta lateral y empujó.", "El viento se movió en la trasera del edificio."]
+    },
+    "atmosphere:none": {"en": "", "es": ""}
   },
 
   "REVELATION": {
-    "revelation:contradiction_surfaces": {"en": "The two accounts no longer agreed.",        "es": "Los dos relatos ya no concordaban."},
-    "revelation:alibi_holds":            {"en": "The alibi held.",                            "es": "La coartada se sostuvo."},
-    "revelation:name_uncovered":         {"en": "A name became legible at last.",             "es": "Un nombre se hizo legible al fin."},
-    "revelation:motive_emerges":         {"en": "A reason rose to the surface.",              "es": "Un motivo salió a la superficie."},
-    "revelation:dead_end":               {"en": "The line went nowhere.",                     "es": "La línea no llevaba a ninguna parte."},
-    "revelation:partial_match":          {"en": "Close — but not certain.",                   "es": "Cercano — pero no seguro."},
-    "revelation:confirmation":           {"en": "An earlier hypothesis was confirmed.",       "es": "Se confirmó una hipótesis anterior."},
-    "revelation:none":                   {"en": "",                                            "es": ""}
+    "revelation:contradiction_surfaces": {
+      "en": ["The two accounts no longer agreed.", "The records refused to align.", "Two entries said different things.", "The two timings would not reconcile."],
+      "es": ["Los dos relatos ya no concordaban.", "Los registros se negaban a coincidir.", "Dos anotaciones decían cosas distintas.", "Las dos horas no se podían reconciliar."]
+    },
+    "revelation:alibi_holds": {
+      "en": ["The alibi held.", "The alibi did not break.", "The account stood up to the records.", "The story matched the log entries."],
+      "es": ["La coartada se sostuvo.", "La coartada no se quebró.", "El relato resistió los registros.", "La historia encajaba con los libros."]
+    },
+    "revelation:name_uncovered": {
+      "en": ["A name became legible at last.", "A name surfaced from the paperwork.", "The name on the form became readable.", "A name appeared in clear handwriting."],
+      "es": ["Un nombre se hizo legible al fin.", "Un nombre emergió del papeleo.", "El nombre en el formulario se hizo legible.", "Un nombre apareció en letra clara."]
+    },
+    "revelation:motive_emerges": {
+      "en": ["A reason rose to the surface.", "A motive came up out of the records.", "The reason for it became visible.", "A reason for the act surfaced."],
+      "es": ["Un motivo salió a la superficie.", "Un motivo emergió de los registros.", "La razón se hizo visible.", "Un motivo del acto salió a la luz."]
+    },
+    "revelation:dead_end": {
+      "en": ["The line went nowhere.", "The thread ran out.", "The trail closed off.", "The lead returned nothing."],
+      "es": ["La línea no llevaba a ninguna parte.", "El hilo se agotó.", "La pista se cerró.", "La pista no devolvió nada."]
+    },
+    "revelation:partial_match": {
+      "en": ["Close — but not certain.", "Close enough to mark, not enough to settle.", "A partial match, no more.", "A near-fit, but not the fit."],
+      "es": ["Cercano — pero no seguro.", "Cerca para marcarlo, no para cerrarlo.", "Una coincidencia parcial, nada más.", "Casi un encaje, pero no el encaje."]
+    },
+    "revelation:confirmation": {
+      "en": ["An earlier hypothesis was confirmed.", "The earlier reading proved out.", "The prior suspicion was borne out.", "What had been guessed at was now shown."],
+      "es": ["Se confirmó una hipótesis anterior.", "La lectura previa se confirmó.", "La sospecha anterior se ratificó.", "Lo que se había supuesto quedó demostrado."]
+    },
+    "revelation:none": {"en": "", "es": ""}
   },
 
   "BEAT": {
-    "beat:orientation":   {"en": "",                                       "es": ""},
-    "beat:investigation": {"en": "",                                       "es": ""},
-    "beat:closing_in":    {"en": "The shape of it was visible now.",      "es": "Su forma ya era visible."},
-    "beat:verdict_ready": {"en": "Time to name them.",                     "es": "Era hora de nombrarlos."}
+    "beat:orientation": {"en": "", "es": ""},
+    "beat:investigation": {"en": "", "es": ""},
+    "beat:closing_in": {
+      "en": ["The shape of it was visible now.", "The outline of the matter showed clearly.", "The case was beginning to take its shape.", "The pattern had become visible."],
+      "es": ["Su forma ya era visible.", "El contorno del asunto se mostraba claro.", "El caso comenzaba a tomar su forma.", "El patrón se había hecho visible."]
+    },
+    "beat:verdict_ready": {
+      "en": ["Time to name them.", "The naming could be done.", "It was time to put the name to the page.", "The hour had come to name the responsible party."],
+      "es": ["Era hora de nombrarlos.", "Podía hacerse el señalamiento.", "Era el momento de poner el nombre en la hoja.", "Había llegado la hora de nombrar al responsable."]
+    }
   },
 
   "MEDICAL_TELL": {
-    "medical_tell:pulse_irregular": {"en": "the pulse skipped at the wrist",                    "es": "el pulso saltaba en la muñeca"},
-    "medical_tell:pupil_response":  {"en": "the pupils responded slowly to the penlight",       "es": "las pupilas respondieron lentas a la luz"},
-    "medical_tell:hand_tremor":     {"en": "a tremor crossed the writing hand",                 "es": "un temblor cruzó la mano que escribía"},
-    "medical_tell:pallor_visible":  {"en": "the pallor was unmistakable",                       "es": "la palidez era inconfundible"},
-    "medical_tell:steady_pulse":    {"en": "the pulse stayed steady",                           "es": "el pulso se mantuvo firme"},
-    "medical_tell:none":            {"en": "",                                                   "es": ""}
+    "medical_tell:pulse_irregular": {
+      "en": ["the pulse skipped at the wrist", "the radial pulse ran uneven under the fingers", "a missed beat showed at the wrist", "the pulse staggered between counts"],
+      "es": ["el pulso saltaba en la muñeca", "el pulso radial corría desigual bajo los dedos", "un latido perdido se notaba en la muñeca", "el pulso titubeaba entre cuentas"]
+    },
+    "medical_tell:pupil_response": {
+      "en": ["the pupils dilated slightly", "pupillary response slowed under the penlight", "the pupils failed to constrict", "the pupils took the light slowly"],
+      "es": ["las pupilas se dilataron levemente", "la respuesta pupilar se enlenteció ante la linterna", "las pupilas no llegaron a contraerse", "las pupilas tomaban la luz con lentitud"]
+    },
+    "medical_tell:hand_tremor": {
+      "en": ["a tremor crossed the writing hand", "a fine tremor showed in the fingers at the chart", "the hand shook on the loop of the signature", "the writing hand could not hold its line"],
+      "es": ["un temblor cruzó la mano que escribía", "un temblor fino se mostraba en los dedos sobre la hoja", "la mano tembló en el trazo de la firma", "la mano que escribía no sostenía la línea"]
+    },
+    "medical_tell:pallor_visible": {
+      "en": ["the pallor was unmistakable", "the skin had the grey of poor perfusion", "the colour had gone from the face", "the cheeks had turned the colour of the sheet"],
+      "es": ["la palidez era inconfundible", "la piel tenía el gris de la mala perfusión", "el color había abandonado el rostro", "las mejillas tenían el color de la sábana"]
+    },
+    "medical_tell:steady_pulse": {
+      "en": ["the pulse stayed steady", "the radial pulse held its rhythm", "the count at the wrist did not break", "the pulse kept its even time"],
+      "es": ["el pulso se mantuvo firme", "el pulso radial sostuvo su ritmo", "la cuenta en la muñeca no se quebró", "el pulso conservó su compás"]
+    },
+    "medical_tell:none": {"en": "", "es": ""}
   },
 
   "TRAVEL_CARDS": {

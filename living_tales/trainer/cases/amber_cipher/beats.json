@@ -1,0 +1,45 @@
+{
+  "_comment": "Convergence-threshold discovery beats. When the named convergence dim crosses `threshold`, the runtime force-injects scene fields (REVELATION/BEAT) on the next turn. Each beat fires at most once per session. Beats are scaffolding — they recover the legacy engine's closing-arc pressure that thin training data underemphasizes. After the model is retrained on the expanded portfolio they may become redundant; tune lower thresholds (or remove) once the BEAT head learns to fire verdict_ready on its own.",
+  "schema_version": 1,
+  "case_id": "amber_cipher",
+
+  "convergence_dim_names": ["suspect", "evidence", "motive"],
+
+  "beats": [
+    {
+      "id": "first_thread",
+      "trigger": { "any_dim_gte": 0.4 },
+      "min_turn": 6,
+      "fire_once": true,
+      "inject": { "REVELATION": "revelation:contradiction_surfaces" }
+    },
+    {
+      "id": "name_surfaces",
+      "trigger": { "dim": "suspect", "gte": 0.6 },
+      "min_turn": 12,
+      "fire_once": true,
+      "inject": { "REVELATION": "revelation:name_uncovered" }
+    },
+    {
+      "id": "motive_emerges",
+      "trigger": { "dim": "motive", "gte": 0.6 },
+      "min_turn": 14,
+      "fire_once": true,
+      "inject": { "REVELATION": "revelation:motive_emerges" }
+    },
+    {
+      "id": "closing_in",
+      "trigger": { "min_dim_gte": 0.65 },
+      "min_turn": 18,
+      "fire_once": true,
+      "inject": { "BEAT": "beat:closing_in" }
+    },
+    {
+      "id": "verdict_ready",
+      "trigger": { "min_dim_gte": 0.8 },
+      "min_turn": 24,
+      "fire_once": true,
+      "inject": { "BEAT": "beat:verdict_ready" }
+    }
+  ]
+}

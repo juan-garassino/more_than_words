@@ -1,0 +1,1086 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "accomplice_via_signalman",
+  "case_id": "amber_cipher",
+  "description": "Detective traces the unlocked door to the signalman who took a payment to look away; accuses him while Voss escapes.",
+  "outcome": "accomplice_found",
+  "starting_hypothesis": "accomplice_first_signalman",
+  "tags": [
+    "accomplice_found",
+    "signalman",
+    "station_key_chain",
+    "primary_walks"
+  ],
+  "scene_type_sequence": [
+    "evasion",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "hot_confrontation",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "breakthrough",
+    "hot_confrontation",
+    "cold_examination",
+    "hot_confrontation",
+    "cold_examination",
+    "transition",
+    "dead_end",
+    "dead_end",
+    "breakthrough",
+    "hot_confrontation",
+    "hot_confrontation",
+    "cold_examination",
+    "recap",
+    "dead_end",
+    "transition",
+    "hot_confrontation",
+    "hot_confrontation",
+    "hot_confrontation",
+    "recap",
+    "cold_examination",
+    "transition",
+    "hot_confrontation",
+    "hot_confrontation",
+    "hot_confrontation",
+    "recap",
+    "revelation"
+  ],
+  "opening": {
+    "tokens": [
+      "location:thornfield_crossing",
+      "event:aldous_verne_discovered",
+      "time:between_trains"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "player_card": "witness:signalman",
+      "scene": {
+        "LOCATION": "location:thornfield_crossing",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:avoided_contact",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.04,
+        0.04,
+        0.06
+      ],
+      "scene_type": "evasion"
+    },
+    {
+      "turn": 2,
+      "player_card": "travel:to_signal_box",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:closed_posture",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.06,
+        0.06,
+        0.08
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 3,
+      "player_card": "object:station_key",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "emotion:paused_reply",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.08,
+        0.1,
+        0.1
+      ],
+      "_note": "Signal-box key, smudged.",
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 4,
+      "player_card": "witness:telegraph_operator",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_telegraph_operator",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1,
+        0.12,
+        0.12
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 5,
+      "player_card": "object:telegraph_form",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_telegraph_operator",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:telegraph_form",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.12,
+        0.14,
+        0.14
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 6,
+      "player_card": "travel:to_platform_two",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.14,
+        0.16,
+        0.16
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 7,
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.16,
+        0.18,
+        0.18
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 8,
+      "player_card": "witness:porter",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.18,
+        0.2,
+        0.2
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 9,
+      "player_card": "witness:ticket_clerk",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_ticket_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.2,
+        0.22,
+        0.22
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 10,
+      "player_card": "travel:to_signal_box",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "emotion:avoided_contact",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.26,
+        0.28,
+        0.26
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 11,
+      "player_card": "object:station_key",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "emotion:paused_reply",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.28,
+        0.32,
+        0.3
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 12,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:paused_reply",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.32,
+        0.36,
+        0.32
+      ],
+      "_note": "Signalman in debt.",
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 13,
+      "player_card": "travel:to_station_office",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.34,
+        0.38,
+        0.34
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 14,
+      "player_card": "object:ledger_book",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:ledger_book",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.36,
+        0.4,
+        0.36
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 15,
+      "player_card": "witness:railway_clerk",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:ledger_book",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.38,
+        0.42,
+        0.38
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 16,
+      "player_card": "travel:to_carriage_siding",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.4,
+        0.44,
+        0.4
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 17,
+      "player_card": "object:satchel",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.42,
+        0.46,
+        0.42
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 18,
+      "player_card": "object:coal_dust",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:coal_dust",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.44,
+        0.48,
+        0.44
+      ],
+      "scene_type": "breakthrough"
+    },
+    {
+      "turn": 19,
+      "player_card": "travel:to_signal_box",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.46,
+        0.5,
+        0.46
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 20,
+      "player_card": "object:station_key",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.5,
+        0.52,
+        0.5
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 21,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.5,
+        0.54,
+        0.5
+      ],
+      "_note": "Signalman admits unlocking the box for a fee.",
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 22,
+      "player_card": "object:cipher_sheet",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.52,
+        0.56,
+        0.52
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 23,
+      "player_card": "travel:to_goods_shed",
+      "scene": {
+        "LOCATION": "location:goods_shed",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_renard_voss",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.54,
+        0.58,
+        0.54
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 24,
+      "player_card": "suspect:renard_voss",
+      "scene": {
+        "LOCATION": "location:goods_shed",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_renard_voss",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.56,
+        0.58,
+        0.56
+      ],
+      "_note": "Voss provides an account; detective doesn't press.",
+      "scene_type": "dead_end",
+      "forbidden_dims": {
+        "REVELATION": [
+          "revelation:name_uncovered"
+        ]
+      }
+    },
+    {
+      "turn": 25,
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:goods_shed",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_renard_voss",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.58,
+        0.6,
+        0.58
+      ],
+      "scene_type": "dead_end"
+    },
+    {
+      "turn": 26,
+      "player_card": "travel:to_signal_box",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.6,
+        0.62,
+        0.6
+      ],
+      "_note": "Key has signalman's mark.",
+      "scene_type": "breakthrough"
+    },
+    {
+      "turn": 27,
+      "player_card": "object:cipher_sheet",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.62,
+        0.64,
+        0.62
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 28,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.64,
+        0.66,
+        0.64
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 29,
+      "player_card": "witness:telegraph_operator",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_telegraph_operator",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.66,
+        0.68,
+        0.66
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 30,
+      "player_card": "travel:to_carriage_siding",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fog_lifts",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.68,
+        0.7,
+        0.68
+      ],
+      "scene_type": "recap"
+    },
+    {
+      "turn": 31,
+      "player_card": "object:sealed_envelope",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:sealed_envelope",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.7,
+        0.72,
+        0.7
+      ],
+      "_note": "Envelope unread; Voss's letter inside.",
+      "scene_type": "dead_end",
+      "forbidden_dims": {
+        "REVELATION": [
+          "revelation:motive_emerges"
+        ]
+      }
+    },
+    {
+      "turn": 32,
+      "player_card": "travel:to_signal_box",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.71,
+        0.73,
+        0.71
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 33,
+      "player_card": "object:station_key",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.72,
+        0.74,
+        0.72
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 34,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 35,
+      "player_card": "object:cipher_sheet",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 36,
+      "player_card": "travel:to_station_office",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:ledger_book",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "scene_type": "recap"
+    },
+    {
+      "turn": 37,
+      "player_card": "object:ledger_book",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:ledger_book",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 38,
+      "player_card": "travel:to_signal_box",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 39,
+      "player_card": "object:station_key",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 40,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.78,
+        0.78,
+        0.78
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 41,
+      "player_card": "object:station_key",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:station_key",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 42,
+      "player_card": "modifier:lamps_dimmed",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:chronological_drift",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:fixed_stare",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "scene_type": "recap"
+    },
+    {
+      "turn": 43,
+      "player_card": "ACCUSE:suspect:signalman",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:with_signalman",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:fixed_stare",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "_note": "Signalman accused. Voss walks free at dawn.",
+      "scene_type": "revelation"
+    }
+  ],
+  "ending": {
+    "type": "accomplice_found",
+    "accused": "suspect:signalman",
+    "true_culprit": "suspect:renard_voss",
+    "accomplice_role": "unlocking",
+    "final_convergence": [
+      0.8,
+      0.8,
+      0.8
+    ],
+    "_note": "Accomplice arrested. Voss walks."
+  }
+}

@@ -1,0 +1,1123 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "framed_estranged_daughter",
+  "case_id": "amber_cipher",
+  "description": "Voss frames his estranged daughter via planted cufflink and a misdirected envelope; detective takes the bait.",
+  "outcome": "framed_suspect",
+  "starting_hypothesis": "frame_first_daughter",
+  "tags": [
+    "framed_suspect",
+    "estranged_daughter",
+    "planted_evidence",
+    "voss_walks"
+  ],
+  "scene_type_sequence": [
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "hot_confrontation",
+    "cold_examination",
+    "dead_end",
+    "transition",
+    "cold_examination",
+    "dead_end",
+    "dead_end",
+    "hot_confrontation",
+    "hot_confrontation",
+    "hot_confrontation",
+    "cold_examination",
+    "transition",
+    "dead_end",
+    "dead_end",
+    "dead_end",
+    "hot_confrontation",
+    "hot_confrontation",
+    "hot_confrontation",
+    "hot_confrontation",
+    "cold_examination",
+    "recap",
+    "dead_end",
+    "transition",
+    "hot_confrontation",
+    "hot_confrontation",
+    "recap",
+    "revelation"
+  ],
+  "opening": {
+    "tokens": [
+      "location:thornfield_crossing",
+      "event:aldous_verne_discovered",
+      "time:between_trains"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "player_card": "witness:estranged_daughter",
+      "scene": {
+        "LOCATION": "location:thornfield_crossing",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:closed_posture",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.04,
+        0.04,
+        0.06
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 2,
+      "player_card": "travel:to_waiting_room",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:closed_posture",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.06,
+        0.06,
+        0.08
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 3,
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "emotion:paused_reply",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.08,
+        0.1,
+        0.1
+      ],
+      "_note": "Daughter pales \u2014 planted cufflink Voss left her.",
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 4,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:paused_reply",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1,
+        0.12,
+        0.12
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 5,
+      "player_card": "travel:to_platform_two",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.12,
+        0.14,
+        0.14
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 6,
+      "player_card": "object:torn_ticket",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.14,
+        0.16,
+        0.16
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 7,
+      "player_card": "witness:porter",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.16,
+        0.18,
+        0.18
+      ],
+      "_note": "Porter mentions seeing 'a woman' near the platform.",
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 8,
+      "player_card": "witness:ticket_clerk",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_ticket_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.18,
+        0.2,
+        0.2
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 9,
+      "player_card": "travel:to_waiting_room",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:closed_posture",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.2,
+        0.22,
+        0.22
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 10,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:paused_reply",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.26,
+        0.26,
+        0.28
+      ],
+      "_note": "Voss had told the daughter Verne owed her \u2014 debt theory plants.",
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 11,
+      "player_card": "object:sealed_envelope",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:sealed_envelope",
+        "TELL": "emotion:paused_reply",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.28,
+        0.3,
+        0.3
+      ],
+      "_note": "Envelope addressed to her.",
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 12,
+      "player_card": "travel:to_station_office",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3,
+        0.32,
+        0.32
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 13,
+      "player_card": "object:ledger_book",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:ledger_book",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.32,
+        0.34,
+        0.34
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 14,
+      "player_card": "witness:railway_clerk",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:ledger_book",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.34,
+        0.36,
+        0.36
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 15,
+      "player_card": "travel:to_signal_box",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_telegraph_operator",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.36,
+        0.38,
+        0.38
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 16,
+      "player_card": "object:cipher_sheet",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_telegraph_operator",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.38,
+        0.4,
+        0.4
+      ],
+      "_note": "Cipher mentions 'E' \u2014 detective reads as the daughter.",
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 17,
+      "player_card": "witness:telegraph_operator",
+      "scene": {
+        "LOCATION": "location:signal_box",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_telegraph_operator",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.4,
+        0.42,
+        0.42
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 18,
+      "player_card": "travel:to_waiting_room",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "emotion:closed_posture",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.42,
+        0.44,
+        0.44
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 19,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:paused_reply",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.44,
+        0.46,
+        0.46
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 20,
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "emotion:paused_reply",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.46,
+        0.48,
+        0.48
+      ],
+      "_note": "Detective misreads the planted cufflink.",
+      "scene_type": "dead_end"
+    },
+    {
+      "turn": 21,
+      "player_card": "travel:to_carriage_siding",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.48,
+        0.5,
+        0.5
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 22,
+      "player_card": "object:satchel",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.5,
+        0.52,
+        0.52
+      ],
+      "_note": "Satchel contains a note in Voss's hand \u2014 but addressed to the daughter.",
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 23,
+      "player_card": "object:sealed_envelope",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:sealed_envelope",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.54,
+        0.54,
+        0.54
+      ],
+      "_note": "Detective reads 'E.V.' as the daughter, not Voss's accomplice.",
+      "scene_type": "dead_end",
+      "forbidden_dims": {
+        "REVELATION": [
+          "revelation:contradiction_surfaces"
+        ]
+      }
+    },
+    {
+      "turn": 24,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:sealed_envelope",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.56,
+        0.56,
+        0.56
+      ],
+      "_note": "Daughter framed as debtor.",
+      "scene_type": "dead_end",
+      "forbidden_dims": {
+        "REVELATION": [
+          "revelation:confirmation"
+        ]
+      }
+    },
+    {
+      "turn": 25,
+      "player_card": "travel:to_waiting_room",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:sealed_envelope",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.58,
+        0.58,
+        0.58
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 26,
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.6,
+        0.6,
+        0.6
+      ],
+      "_note": "Daughter denies; detective takes denial as guilt.",
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 27,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 28,
+      "player_card": "object:torn_ticket",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.64,
+        0.64,
+        0.64
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 29,
+      "player_card": "travel:to_goods_shed",
+      "scene": {
+        "LOCATION": "location:goods_shed",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_renard_voss",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.66,
+        0.66,
+        0.66
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 30,
+      "player_card": "suspect:renard_voss",
+      "scene": {
+        "LOCATION": "location:goods_shed",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_renard_voss",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "_note": "Voss helpful \u2014 points back to daughter.",
+      "scene_type": "dead_end",
+      "forbidden_dims": {
+        "REVELATION": [
+          "revelation:name_uncovered",
+          "revelation:contradiction_surfaces"
+        ]
+      }
+    },
+    {
+      "turn": 31,
+      "player_card": "object:cipher_sheet",
+      "scene": {
+        "LOCATION": "location:goods_shed",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_renard_voss",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "_note": "Voss explains away cipher; detective accepts.",
+      "scene_type": "dead_end"
+    },
+    {
+      "turn": 32,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:goods_shed",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_renard_voss",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.71,
+        0.71,
+        0.71
+      ],
+      "scene_type": "dead_end"
+    },
+    {
+      "turn": 33,
+      "player_card": "travel:to_waiting_room",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.72,
+        0.72,
+        0.72
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 34,
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 35,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 36,
+      "player_card": "object:sealed_envelope",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:sealed_envelope",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 37,
+      "player_card": "object:torn_ticket",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "scene_type": "cold_examination"
+    },
+    {
+      "turn": 38,
+      "player_card": "travel:to_platform_two",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "scene_type": "recap"
+    },
+    {
+      "turn": 39,
+      "player_card": "witness:porter",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "_note": "Porter says 'a woman'. Detective takes it as confirmation.",
+      "scene_type": "dead_end"
+    },
+    {
+      "turn": 40,
+      "player_card": "travel:to_waiting_room",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "scene_type": "transition"
+    },
+    {
+      "turn": 41,
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.78,
+        0.78,
+        0.78
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 42,
+      "player_card": "motive:debt_pressure",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "scene_type": "hot_confrontation"
+    },
+    {
+      "turn": 43,
+      "player_card": "modifier:lamps_dimmed",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:chronological_drift",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:fixed_stare",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "scene_type": "recap"
+    },
+    {
+      "turn": 44,
+      "player_card": "ACCUSE:suspect:estranged_daughter",
+      "scene": {
+        "LOCATION": "location:waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:with_estranged_daughter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:fixed_stare",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "_note": "Daughter accused. Voss's frame holds.",
+      "scene_type": "revelation"
+    }
+  ],
+  "ending": {
+    "type": "framed_suspect",
+    "accused": "suspect:estranged_daughter",
+    "true_culprit": "suspect:renard_voss",
+    "frame_method": "planted_cufflink",
+    "final_convergence": [
+      0.8,
+      0.8,
+      0.8
+    ],
+    "_note": "The frame held."
+  }
+}

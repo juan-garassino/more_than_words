@@ -1,0 +1,1016 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "wrong_elena_rizzoli_via_auction",
+  "case_id": "venetian_mirror",
+  "description": "The detective traces Elena Rizzoli's commission on the Zurich auction, the handwritten amendments in the catalogue, and her gallery-bright over-explanations into a finger-pointing chain. Wrong: Rizzoli stood to lose her career to Marini's report, but it was the Countess on the railing.",
+  "outcome": "wrong_elena_rizzoli",
+  "starting_hypothesis": "object_first_catalogue",
+  "tags": [
+    "wrong_accusation",
+    "elena_rizzoli",
+    "auction_commission",
+    "catalogue_amendments"
+  ],
+  "opening": {
+    "tokens": [
+      "location:palazzo_contarini",
+      "event:luca_marini_discovered",
+      "time:carnival_evening"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.05,
+        0.05,
+        0.07
+      ]
+    },
+    {
+      "turn": 2,
+      "_note": "",
+      "player_card": "suspect:elena_rizzoli",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.08,
+        0.09,
+        0.1
+      ]
+    },
+    {
+      "turn": 3,
+      "_note": "",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_provenance",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.11,
+        0.11,
+        0.13
+      ]
+    },
+    {
+      "turn": 4,
+      "_note": "",
+      "player_card": "emotion:measured_deflection",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.14,
+        0.14,
+        0.16
+      ]
+    },
+    {
+      "turn": 5,
+      "_note": "",
+      "player_card": "travel:to_private_salon",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.16,
+        0.18,
+        0.18
+      ]
+    },
+    {
+      "turn": 6,
+      "_note": "",
+      "player_card": "witness:art_dealer",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_art_dealer",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.18,
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "turn": 7,
+      "_note": "",
+      "player_card": "object:sale_receipt",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_art_dealer",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:sale_receipt",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.2,
+        0.22,
+        0.22
+      ]
+    },
+    {
+      "turn": 8,
+      "_note": "",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:catalog_omission",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.4,
+        0.41,
+        0.42
+      ]
+    },
+    {
+      "turn": 9,
+      "_note": "",
+      "player_card": "suspect:elena_rizzoli",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.42,
+        0.43,
+        0.44
+      ]
+    },
+    {
+      "turn": 10,
+      "_note": "",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_provenance",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.44,
+        0.45,
+        0.46
+      ]
+    },
+    {
+      "turn": 11,
+      "_note": "",
+      "player_card": "emotion:polished_grace",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.46,
+        0.47,
+        0.48
+      ]
+    },
+    {
+      "turn": 12,
+      "_note": "",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 13,
+      "_note": "",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.52,
+        0.53,
+        0.54
+      ]
+    },
+    {
+      "turn": 14,
+      "_note": "",
+      "player_card": "suspect:countess_morvaine",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:summoned",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.54,
+        0.55,
+        0.56
+      ]
+    },
+    {
+      "turn": 15,
+      "_note": "",
+      "player_card": "travel:to_private_salon",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.56,
+        0.57,
+        0.58
+      ]
+    },
+    {
+      "turn": 16,
+      "_note": "",
+      "player_card": "object:sale_receipt",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:sale_receipt",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.58,
+        0.59,
+        0.6
+      ]
+    },
+    {
+      "turn": 17,
+      "_note": "",
+      "player_card": "witness:art_dealer",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_art_dealer",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:sale_receipt",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.6,
+        0.61,
+        0.62
+      ]
+    },
+    {
+      "turn": 18,
+      "_note": "",
+      "player_card": "object:guest_list",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:guest_list",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.62,
+        0.63,
+        0.64
+      ]
+    },
+    {
+      "turn": 19,
+      "_note": "",
+      "player_card": "emotion:practised_dismay",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:practised_dismay",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.64,
+        0.65,
+        0.66
+      ]
+    },
+    {
+      "turn": 20,
+      "_note": "",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.66,
+        0.67,
+        0.68
+      ]
+    },
+    {
+      "turn": 21,
+      "_note": "",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.68,
+        0.69,
+        0.7
+      ]
+    },
+    {
+      "turn": 22,
+      "_note": "",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.7,
+        0.71,
+        0.72
+      ]
+    },
+    {
+      "turn": 23,
+      "_note": "",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.72,
+        0.73,
+        0.74
+      ]
+    },
+    {
+      "turn": 24,
+      "_note": "",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.75,
+        0.75,
+        0.76
+      ]
+    },
+    {
+      "turn": 25,
+      "_note": "",
+      "player_card": "travel:to_main_balcony",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:pursued_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.76,
+        0.77,
+        0.77
+      ]
+    },
+    {
+      "turn": 26,
+      "_note": "",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.78,
+        0.79,
+        0.79
+      ]
+    },
+    {
+      "turn": 27,
+      "_note": "",
+      "player_card": "motive:reputation_ruin",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:practised_dismay",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 28,
+      "_note": "reflective beat",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 29,
+      "_note": "reflective beat",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 30,
+      "_note": "reflective beat",
+      "player_card": "modifier:scratch_on_stone",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 31,
+      "_note": "reflective beat",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 32,
+      "_note": "reflective beat",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 33,
+      "_note": "reflective beat",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 34,
+      "_note": "reflective beat",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 35,
+      "_note": "reflective beat",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 36,
+      "_note": "reflective beat",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 37,
+      "_note": "reflective beat",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 38,
+      "_note": "reflective beat",
+      "player_card": "modifier:scratch_on_stone",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 39,
+      "_note": "reflective beat",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 40,
+      "_note": "reflective beat",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 41,
+      "_note": "",
+      "player_card": "ACCUSE:suspect:elena_rizzoli",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.78
+      ]
+    }
+  ],
+  "ending": {
+    "type": "wrong_accusation",
+    "accused": "suspect:elena_rizzoli",
+    "final_convergence": [
+      0.8,
+      0.8,
+      0.78
+    ]
+  }
+}

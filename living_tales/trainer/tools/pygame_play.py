@@ -139,6 +139,16 @@ def _load_structured_engine(case_id: str, project_root: Path,
         print(f"[pygame] no structured_scene_model.pt at {ckpt_path} — "
               "using fallback trajectory replay.", file=sys.stderr)
 
+    # Discovery beats — convergence-threshold scaffolding for closing arc.
+    try:
+        from generator.discovery_beats import DiscoveryBeats
+        out["discovery_beats"] = DiscoveryBeats.load(case_id, project_root)
+        if out["discovery_beats"]:
+            print(f"[pygame] loaded {len(out['discovery_beats'].beats)} discovery beats")
+    except Exception as e:
+        print(f"[pygame] discovery beats load failed: {e}", file=sys.stderr)
+        out["discovery_beats"] = None
+
     return out
 
 
@@ -1325,8 +1335,22 @@ def _structured_run(case_id: str, lang: str, res: int,
         # Run engine
         scene = _structured_run_engine(engine, state,
                                         state.last_player_card_id or "")
-        # Travel-card override: force LOCATION + TRANSITION dims
+        # Player-card → scene binding. The model has not learned this
+        # binding strongly enough on its own (subagent judge flagged:
+        # "player plays coal_dust, scene narrates the telegram"). Always
+        # honor the played card as the scene's focal token.
+        played = state.last_player_card_id or ""
+        pc_meta = next(
+            (t for t in engine["spec"].get("tokens", []) if t.get("id") == played),
+            {},
+        )
+        pc_class = (pc_meta.get("token_class")
+                    or pc_meta.get("class") or "").upper()
+        dims_by_name = {d["name"]: d["vocab"]
+                        for d in engine["dimensions"]["dimensions"]}
+
         if isinstance(card, _TravelCard) and card.target_location:
+            # Travel-card override: force LOCATION + TRANSITION dims
             scene["LOCATION"] = card.target_location
             prev_loc = (state.previous_locations[-1]
                         if state.previous_locations else None)
@@ -1334,6 +1358,48 @@ def _structured_run(case_id: str, lang: str, res: int,
                 scene["TRANSITION"] = "transition:stayed"
             else:
                 scene["TRANSITION"] = "transition:crossed_to"
+        elif pc_class in ("OBJECT", "MODIFIER"):
+            if played in dims_by_name.get("OBJECT_FOCUS", []):
+                scene["OBJECT_FOCUS"] = played
+                if scene.get("ACTION") in (
+                    "action:arrives", "action:leaves",
+                    "action:none", None,
+                ):
+                    scene["ACTION"] = "action:examines"
+        elif pc_class in ("SUSPECT", "WITNESS"):
+            presence_id = f"presence:with_{played.split(':', 1)[-1]}"
+            if presence_id in dims_by_name.get("PRESENCE", []):
+                scene["PRESENCE"] = presence_id
+                if scene.get("ACTION") in (
+                    "action:arrives", "action:leaves",
+                    "action:none", None,
+                ):
+                    scene["ACTION"] = "action:questions"
+        elif pc_class in ("MOTIVE", "EVENT", "EMOTION", "ACTION", "TIME"):
+            # Player is recalling/connecting an abstract — bias ACTION,
+            # clear stale OBJECT_FOCUS so we don't get verb-object
+            # leakage like "questioned the coal dust".
+            if scene.get("ACTION") in (
+                "action:arrives", "action:leaves", "action:none",
+                "action:waits", "action:questions",
+                "action:examines", None,
+            ):
+                scene["ACTION"] = "action:recalls"
+            scene["OBJECT_FOCUS"] = "object_focus:none"
+
+        # Discovery-beats hook — convergence-threshold scaffolding for the
+        # closing arc. Apply BEFORE backdrop / prose so injected REVELATION
+        # and BEAT tokens get rendered this turn.
+        beats = engine.get("discovery_beats")
+        if beats is not None:
+            try:
+                scene = beats.apply(
+                    scene,
+                    convergence=list(state.convergence_dims),
+                    turn_idx=state.game_turn,
+                )
+            except Exception as e:
+                print(f"[pygame] discovery beats apply failed: {e}", file=sys.stderr)
 
         # Backdrop swap
         new_loc = scene.get("LOCATION")

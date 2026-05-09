@@ -30,6 +30,17 @@ class Turn:
     scene: Dict[str, str]
     convergence_after: Optional[List[float]] = None
     note: Optional[str] = None
+    # v2 schema additions (all optional; legacy trajectories omit them).
+    scene_type: Optional[str] = None                 # one of the 8 latent z modes
+    forbidden_dims: Optional[Dict[str, List[str]]] = None  # negative supervision
+
+
+@dataclass
+class CounterfactualBranch:
+    """Alternate 5-turn continuation from a given anchor turn index."""
+    anchor_turn: int                # index in parent turns from which the branch diverges
+    turns: List[Turn]
+    note: Optional[str] = None
 
 
 @dataclass
@@ -45,6 +56,9 @@ class Trajectory:
     starting_hypothesis: Optional[str] = None
     schema_version: int = 1
     raw: Dict[str, Any] = field(default_factory=dict)
+    # v2 additions.
+    scene_type_sequence: Optional[List[str]] = None  # one z-mode per turn (len == len(turns))
+    counterfactual_branches: List[CounterfactualBranch] = field(default_factory=list)
 
 
 # ─── Loader ──────────────────────────────────────────────────────────────────
@@ -107,17 +121,40 @@ class TrajectoryLoader:
         else:
             opening_tokens = list(opening_block.get("tokens", []))
 
+        def _parse_turn(t: Dict[str, Any], default_idx: int) -> Turn:
+            forbidden = t.get("forbidden_dims")
+            if forbidden is not None and not isinstance(forbidden, dict):
+                forbidden = None
+            return Turn(
+                turn=t.get("turn", default_idx),
+                player_card=t.get("player_card", ""),
+                scene=dict(t.get("scene", {})),
+                convergence_after=t.get("convergence_after"),
+                note=t.get("_note") or t.get("note"),
+                scene_type=t.get("scene_type"),
+                forbidden_dims=forbidden,
+            )
+
         turns: List[Turn] = []
         for t in data.get("turns", []):
-            turns.append(
-                Turn(
-                    turn=t.get("turn", len(turns) + 1),
-                    player_card=t.get("player_card", ""),
-                    scene=dict(t.get("scene", {})),
-                    convergence_after=t.get("convergence_after"),
-                    note=t.get("_note") or t.get("note"),
-                )
-            )
+            turns.append(_parse_turn(t, len(turns) + 1))
+
+        # Top-level scene_type_sequence (alternative to per-turn scene_type).
+        sts = data.get("scene_type_sequence")
+        if sts is not None:
+            sts = list(sts)
+            for i, mode in enumerate(sts):
+                if i < len(turns) and turns[i].scene_type is None:
+                    turns[i].scene_type = mode
+
+        # Counterfactual branches.
+        branches: List[CounterfactualBranch] = []
+        for b in data.get("counterfactual_branches", []) or []:
+            anchor = int(b.get("anchor_turn", 0))
+            b_turns = [_parse_turn(t, i + 1) for i, t in enumerate(b.get("turns", []))]
+            branches.append(CounterfactualBranch(
+                anchor_turn=anchor, turns=b_turns, note=b.get("note"),
+            ))
 
         return Trajectory(
             trajectory_id=data.get("trajectory_id", ""),
@@ -131,4 +168,6 @@ class TrajectoryLoader:
             starting_hypothesis=data.get("starting_hypothesis"),
             schema_version=int(data.get("schema_version", 1)),
             raw=data,
+            scene_type_sequence=sts,
+            counterfactual_branches=branches,
         )

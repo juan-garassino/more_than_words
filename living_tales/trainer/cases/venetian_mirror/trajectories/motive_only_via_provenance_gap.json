@@ -1,0 +1,1123 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "motive_only_via_provenance_gap",
+  "case_id": "venetian_mirror",
+  "description": "The detective uncovers the six-year forgery operation in the provenance file but cannot pin it to a person \u2014 files motive without naming a suspect.",
+  "outcome": "motive_only_confession",
+  "starting_hypothesis": "object_first_provenance",
+  "tags": [
+    "motive_only_confession",
+    "forgery_operation",
+    "provenance_chain",
+    "no_suspect"
+  ],
+  "scene_type_sequence": [
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "breakthrough",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "breakthrough",
+    "cold_examination",
+    "breakthrough",
+    "breakthrough",
+    "cold_examination",
+    "breakthrough",
+    "transition",
+    "evasion",
+    "evasion",
+    "transition",
+    "cold_examination",
+    "evasion",
+    "evasion",
+    "evasion",
+    "evasion",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "cold_examination",
+    "recap"
+  ],
+  "opening": {
+    "tokens": [
+      "location:palazzo_contarini",
+      "event:luca_marini_discovered",
+      "time:carnival_evening"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "The provenance file was first on the gallery console.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_provenance",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "turn": 2,
+      "_note": "The fourteen paintings, fourteen Vienna lines.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.08,
+        0.08,
+        0.08
+      ]
+    },
+    {
+      "turn": 3,
+      "_note": "The catalogue. Reserves circled.",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.11,
+        0.11,
+        0.11
+      ]
+    },
+    {
+      "turn": 4,
+      "_note": "The Zurich dealer named the four reserves carefully.",
+      "player_card": "witness:art_dealer",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_art_dealer",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.14,
+        0.14,
+        0.14
+      ]
+    },
+    {
+      "turn": 5,
+      "_note": "He confirmed the Vienna line \u2014 common provenance for spring sales.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_provenance",
+        "PRESENCE": "presence:with_art_dealer",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:authenticity_holds",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.17,
+        0.17,
+        0.17
+      ]
+    },
+    {
+      "turn": 6,
+      "_note": "Marini's bench. Scrapings in the pestle.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "turn": 7,
+      "_note": "Cadmium. Modern. The forgery declared itself in pigment.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.23,
+        0.23,
+        0.23
+      ]
+    },
+    {
+      "turn": 8,
+      "_note": "The operation, plain.",
+      "player_card": "modifier:modern_pigment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.26,
+        0.26,
+        0.26
+      ]
+    },
+    {
+      "turn": 9,
+      "_note": "The half-aged canvas.",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.29,
+        0.29,
+        0.29
+      ]
+    },
+    {
+      "turn": 10,
+      "_note": "Aging too uniform.",
+      "player_card": "modifier:canvas_aged",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.32,
+        0.32,
+        0.32
+      ]
+    },
+    {
+      "turn": 11,
+      "_note": "The linen scrap. Different bolt.",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.34,
+        0.34,
+        0.34
+      ]
+    },
+    {
+      "turn": 12,
+      "_note": "Marini's notes. He had named the operation but not the principal.",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "turn": 13,
+      "_note": "The provenance gap, gaping.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "turn": 14,
+      "_note": "Vienna 1721, a private collector who had never lived. Six years of these.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.42,
+        0.42,
+        0.42
+      ]
+    },
+    {
+      "turn": 15,
+      "_note": "Two paintings missing from the published list, present on the wall.",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:catalog_omission",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.44,
+        0.44,
+        0.44
+      ]
+    },
+    {
+      "turn": 16,
+      "_note": "Bruno produced the Milan file. The same alias, six years prior.",
+      "player_card": "witness:inspector_bruno",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.46,
+        0.46,
+        0.46
+      ]
+    },
+    {
+      "turn": 17,
+      "_note": "Bruno had been waiting for this file to surface.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 18,
+      "_note": "The operation, named. Six years.",
+      "player_card": "motive:forgery_operation",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 19,
+      "_note": "The Countess in the salon. Coffee unasked.",
+      "player_card": "travel:to_private_salon",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.52,
+        0.52,
+        0.52
+      ]
+    },
+    {
+      "turn": 20,
+      "_note": "She gave long composed sentences. The detective could not place a hand on the railing.",
+      "player_card": "suspect:countess_morvaine",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.54,
+        0.54,
+        0.54
+      ]
+    },
+    {
+      "turn": 21,
+      "_note": "Smile a beat too long. Cuff straightened. No physical evidence on her person.",
+      "player_card": "emotion:polished_grace",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.56,
+        0.56,
+        0.56
+      ]
+    },
+    {
+      "turn": 22,
+      "_note": "Down to the railing.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.58,
+        0.58,
+        0.58
+      ]
+    },
+    {
+      "turn": 23,
+      "_note": "The score-mark, deliberate. No fingerprint, no name.",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.59,
+        0.59,
+        0.59
+      ]
+    },
+    {
+      "turn": 24,
+      "_note": "Pelosi. Hand on apron. Would not name a name.",
+      "player_card": "travel:to_servants_stair",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    {
+      "turn": 25,
+      "_note": "She named the order of locking. She did not name the woman who had walked down.",
+      "player_card": "suspect:signora_pelosi",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.61,
+        0.61,
+        0.61
+      ]
+    },
+    {
+      "turn": 26,
+      "_note": "Bassi at the water-gate. Charm, the torn glove with a flourish.",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:silk_glove",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.62,
+        0.62,
+        0.62
+      ]
+    },
+    {
+      "turn": 27,
+      "_note": "He had been the courier. He had not been on the balcony.",
+      "player_card": "suspect:carlo_bassi",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:silk_glove",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.63,
+        0.63,
+        0.63
+      ]
+    },
+    {
+      "turn": 28,
+      "_note": "Up to the parapet.",
+      "player_card": "travel:to_main_balcony",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.64,
+        0.64,
+        0.64
+      ]
+    },
+    {
+      "turn": 29,
+      "_note": "The fibre. Pale rose. Not enough.",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    {
+      "turn": 30,
+      "_note": "The pivot. Insufficient.",
+      "player_card": "modifier:scratch_on_stone",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    {
+      "turn": 31,
+      "_note": "A glove. The cuff intact. The wearer not before her.",
+      "player_card": "object:silk_glove",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:silk_glove",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.66,
+        0.66,
+        0.66
+      ]
+    },
+    {
+      "turn": 32,
+      "_note": "Marini in pencil. The hand familiar but unattributable.",
+      "player_card": "object:guest_list",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:guest_list",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.66,
+        0.66,
+        0.66
+      ]
+    },
+    {
+      "turn": 33,
+      "_note": "The Vienna gap, named. The motive clear. The hand, no.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 34,
+      "_note": "Forgery operation, six years. The detective filed this as motive without principal.",
+      "player_card": "motive:forgery_operation",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 35,
+      "_note": "Catalog omission, written.",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:catalog_omission",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 36,
+      "_note": "Modern pigment, written.",
+      "player_card": "modifier:modern_pigment",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 37,
+      "_note": "Varnish fresh, written.",
+      "player_card": "modifier:varnish_fresh",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 38,
+      "_note": "Forged canvas, written.",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 39,
+      "_note": "Provenance gap, written. No name to attach.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 40,
+      "_note": "The motive, signed. The book closed without a verdict.",
+      "player_card": "motive:forgery_operation",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:motive_emerges",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 41,
+      "_note": "Bruno took the file. He waited.",
+      "player_card": "witness:inspector_bruno",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:motive_emerges",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 42,
+      "_note": "Motive lodged without suspect. The principal remained at the rail.",
+      "player_card": "ACCUSE:motive:forgery_operation",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:motive_emerges",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    }
+  ],
+  "ending": {
+    "type": "motive_only_confession",
+    "accused": "motive:forgery_operation",
+    "final_convergence": [
+      0.67,
+      0.67,
+      0.67
+    ]
+  }
+}

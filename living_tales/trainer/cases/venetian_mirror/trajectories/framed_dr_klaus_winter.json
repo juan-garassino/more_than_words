@@ -1,0 +1,1130 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "framed_dr_klaus_winter",
+  "case_id": "venetian_mirror",
+  "description": "The detective recovers Winter's reputation \u2014 the Countess had pencilled annotations into his appraisal designed to read as collusion. Frame dismantled, but no other accusation lodged.",
+  "outcome": "framed_suspect",
+  "starting_hypothesis": "art_first_winter_frame",
+  "tags": [
+    "framed_suspect",
+    "dr_klaus_winter",
+    "frame_dismantled",
+    "no_accusation"
+  ],
+  "scene_type_sequence": [
+    "cold_examination",
+    "evasion",
+    "cold_examination",
+    "breakthrough",
+    "evasion",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "breakthrough",
+    "cold_examination",
+    "breakthrough",
+    "cold_examination",
+    "evasion",
+    "breakthrough",
+    "breakthrough",
+    "evasion",
+    "transition",
+    "breakthrough",
+    "cold_examination",
+    "breakthrough",
+    "breakthrough",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "evasion",
+    "evasion",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "breakthrough",
+    "evasion",
+    "cold_examination",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap"
+  ],
+  "opening": {
+    "tokens": [
+      "location:palazzo_contarini",
+      "event:luca_marini_discovered",
+      "time:carnival_evening"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Winter's appraisal sheet was already on the gallery console.",
+      "player_card": "object:paint_analysis",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:paint_analysis",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "turn": 2,
+      "_note": "Winter at the second mirror, notebook tapped twice against the heel of his hand.",
+      "player_card": "suspect:dr_klaus_winter",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:paint_analysis",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.08,
+        0.08,
+        0.08
+      ]
+    },
+    {
+      "turn": 3,
+      "_note": "He named the modern pigments by chemical formula in numbered order.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:authenticity_holds",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.11,
+        0.11,
+        0.11
+      ]
+    },
+    {
+      "turn": 4,
+      "_note": "Varnish too fresh \u2014 Winter said so first, into his own notebook.",
+      "player_card": "modifier:varnish_fresh",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:varnish_inconsistency",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.14,
+        0.14,
+        0.14
+      ]
+    },
+    {
+      "turn": 5,
+      "_note": "The deflection precise, not concealing.",
+      "player_card": "emotion:measured_deflection",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.17,
+        0.17,
+        0.17
+      ]
+    },
+    {
+      "turn": 6,
+      "_note": "Marini's notes named Winter's prior reports. He had been honest before.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "turn": 7,
+      "_note": "Winter's name in Marini's hand, marked with a small approving cross.",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.23,
+        0.23,
+        0.23
+      ]
+    },
+    {
+      "turn": 8,
+      "_note": "The forged canvas. Not Winter's brushwork. Not anyone's.",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "turn": 9,
+      "_note": "The linen fragment.",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.28,
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "turn": 10,
+      "_note": "The cadmium scrapings, in Marini's pestle, ready for analysis. Winter would have produced this Friday.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.31,
+        0.31,
+        0.31
+      ]
+    },
+    {
+      "turn": 11,
+      "_note": "Winter again. He named what would be in the report. He did not soften.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "turn": 12,
+      "_note": "He read the Vienna gap aloud. The detective wrote it down.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.36,
+        0.36,
+        0.36
+      ]
+    },
+    {
+      "turn": 13,
+      "_note": "The Zurich dealer corroborated. Winter's report would have closed the operation by Friday.",
+      "player_card": "witness:art_dealer",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_art_dealer",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.39,
+        0.39,
+        0.39
+      ]
+    },
+    {
+      "turn": 14,
+      "_note": "The Countess in the salon. She produced Winter's letter \u2014 annotated.",
+      "player_card": "travel:to_private_salon",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.41,
+        0.41,
+        0.41
+      ]
+    },
+    {
+      "turn": 15,
+      "_note": "She had pencilled in the margins of Winter's appraisal \u2014 comments designed to read as collusion.",
+      "player_card": "suspect:countess_morvaine",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:paint_analysis",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.44,
+        0.44,
+        0.44
+      ]
+    },
+    {
+      "turn": 16,
+      "_note": "The annotations were not Winter's. The detective recognized the cuff-straightened hand.",
+      "player_card": "object:paint_analysis",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:paint_analysis",
+        "TELL": "tell:glanced_aside",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 17,
+      "_note": "The smile a beat too long. The frame began to surface.",
+      "player_card": "emotion:polished_grace",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 18,
+      "_note": "Marini's notes, again. Winter named honestly.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.52,
+        0.52,
+        0.52
+      ]
+    },
+    {
+      "turn": 19,
+      "_note": "Winter had not been concealing. The frame had been built around him.",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    {
+      "turn": 20,
+      "_note": "Winter, exonerated by his own consistency. He continued numbering his findings.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:paint_analysis",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.58,
+        0.58,
+        0.58
+      ]
+    },
+    {
+      "turn": 21,
+      "_note": "His report would say what it would say. The detective folded the annotated copy into evidence.",
+      "player_card": "object:paint_analysis",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:paint_analysis",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.61,
+        0.61,
+        0.61
+      ]
+    },
+    {
+      "turn": 22,
+      "_note": "Winter cleared. The detective said so plainly.",
+      "player_card": "suspect:dr_klaus_winter",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:paint_analysis",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:alibi_holds",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.63,
+        0.63,
+        0.63
+      ]
+    },
+    {
+      "turn": 23,
+      "_note": "Down to the railing. The frame remained, but who placed it was unclear.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    {
+      "turn": 24,
+      "_note": "The score on the iron \u2014 the detective could not yet pin a hand to it.",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.66,
+        0.66,
+        0.66
+      ]
+    },
+    {
+      "turn": 25,
+      "_note": "The silk fibre. Pale rose. Not Winter's, surely. But whose?",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.67,
+        0.67,
+        0.67
+      ]
+    },
+    {
+      "turn": 26,
+      "_note": "Pelosi on the stair. Hand on apron.",
+      "player_card": "travel:to_servants_stair",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.68,
+        0.68,
+        0.68
+      ]
+    },
+    {
+      "turn": 27,
+      "_note": "She named the order of locking. She did not name the Countess.",
+      "player_card": "suspect:signora_pelosi",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.69,
+        0.69,
+        0.69
+      ]
+    },
+    {
+      "turn": 28,
+      "_note": "The key. The detective could not connect it cleanly.",
+      "player_card": "object:canal_key",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "turn": 29,
+      "_note": "Up to the balcony. The Countess had withdrawn to the salon.",
+      "player_card": "travel:to_main_balcony",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.71,
+        0.71,
+        0.71
+      ]
+    },
+    {
+      "turn": 30,
+      "_note": "A silk glove on the parapet, left behind. Cuff intact.",
+      "player_card": "object:silk_glove",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:silk_glove",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.71,
+        0.71,
+        0.71
+      ]
+    },
+    {
+      "turn": 31,
+      "_note": "The half-moon. Whose hand? The detective wrote: insufficient.",
+      "player_card": "modifier:scratch_on_stone",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.71,
+        0.71,
+        0.71
+      ]
+    },
+    {
+      "turn": 32,
+      "_note": "The Vienna gap, named, but no one to attach it to with certainty.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_provenance",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.71,
+        0.71,
+        0.71
+      ]
+    },
+    {
+      "turn": 33,
+      "_note": "Bruno produced the Milan file. The alias matched. He waited.",
+      "player_card": "witness:inspector_bruno",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.72,
+        0.72,
+        0.72
+      ]
+    },
+    {
+      "turn": 34,
+      "_note": "Bruno's Milan provenance ran the same alias. Six years.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    },
+    {
+      "turn": 35,
+      "_note": "Bruno offered the conclusion. The detective did not take it.",
+      "player_card": "emotion:practised_dismay",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    },
+    {
+      "turn": 36,
+      "_note": "The fibre once more. The cuff once more. The hand unfingerable.",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    },
+    {
+      "turn": 37,
+      "_note": "The score, unattributed.",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    },
+    {
+      "turn": 38,
+      "_note": "Winter's clean copy. He stood cleared.",
+      "player_card": "object:paint_analysis",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:paint_analysis",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    },
+    {
+      "turn": 39,
+      "_note": "Winter exonerated, in writing.",
+      "player_card": "suspect:dr_klaus_winter",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:paint_analysis",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:alibi_holds",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    },
+    {
+      "turn": 40,
+      "_note": "The frame around Winter, dismantled. The principal, unnamed.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    },
+    {
+      "turn": 41,
+      "_note": "Dawn approaching. The fibre still in the score.",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    },
+    {
+      "turn": 42,
+      "_note": "The score, the score. The detective had cleared one name and named no other.",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    },
+    {
+      "turn": 43,
+      "_note": "No accusation lodged. Winter exonerated. Principal at the balcony rail.",
+      "player_card": "ACCUSE:none",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.73,
+        0.73,
+        0.73
+      ]
+    }
+  ],
+  "ending": {
+    "type": "framed_suspect",
+    "accused": "suspect:dr_klaus_winter",
+    "final_convergence": [
+      0.73,
+      0.73,
+      0.73
+    ]
+  }
+}

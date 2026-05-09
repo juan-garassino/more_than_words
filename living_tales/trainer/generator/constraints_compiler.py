@@ -75,19 +75,58 @@ class ConstraintMask:
         game_state: Dict[str, Any],
     ) -> Set[str]:
         """Return the set of legal token IDs for `dim` given partial scene
-        + state. Iterates the rule list; if a rule's `if` matches and its
-        `then` constrains this dim, intersect the dim's vocab with the
-        constraint's allowed set."""
-        allowed: Set[str] = set(self.dim_vocab.get(dim, []))
+        + state.
+
+        Two passes per rule:
+
+        Forward — rule's `if` matches scene_so_far, and rule's `then`
+        constrains `dim`. Intersect dim's vocab with the allowed set.
+
+        Reverse — rule's `if` is keyed on `dim` (with a literal token
+        value) and the `then` is over already-emitted dims / state.
+        For each candidate value in dim, hypothetically set dim=candidate
+        and evaluate `then`; if `then` would be violated, drop the
+        candidate. This catches sequential-emission cases where a later
+        dim's value is constrained by earlier ones — e.g.
+        `if TRANSITION:returned then LOCATION:@in_visited_locations`
+        must filter `transition:returned` out at TRANSITION-emission time
+        when LOCATION is already chosen but not in visited.
+        """
+        vocab: Set[str] = set(self.dim_vocab.get(dim, []))
+        allowed: Set[str] = set(vocab)
         for rule in self.rules:
             cond = rule.get("if", {})
             then = rule.get("then", {})
-            if not self._cond_matches(cond, scene_so_far, game_state):
-                continue
-            # Apply only the parts of `then` that constrain this dim.
-            allowed &= self._then_allowed_for_dim(
-                dim, then, scene_so_far, game_state, rule
-            )
+
+            # Forward direction.
+            if self._cond_matches(cond, scene_so_far, game_state):
+                allowed &= self._then_allowed_for_dim(
+                    dim, then, scene_so_far, game_state, rule
+                )
+
+            # Reverse direction: rule keyed on this dim with a literal
+            # value, then over prior dims / state.
+            if (
+                list(cond.keys()) == [dim]
+                and isinstance(cond.get(dim), str)
+                and not cond[dim].startswith("@")
+            ):
+                candidate = cond[dim]
+                if candidate in allowed:
+                    hypo = dict(scene_so_far)
+                    hypo[dim] = candidate
+                    # Only enforce if the `then` is over dims/state already
+                    # determined — checking `then` references only keys in
+                    # `hypo` or are state-level (start with @).
+                    can_evaluate = all(
+                        k.startswith("@") or k == "values" or k in hypo
+                        for k in then.keys()
+                    )
+                    if can_evaluate and not self._then_holds(
+                        then, hypo, game_state, rule
+                    ):
+                        allowed.discard(candidate)
+
         return allowed
 
     # ─── Validator ───────────────────────────────────────────────────────

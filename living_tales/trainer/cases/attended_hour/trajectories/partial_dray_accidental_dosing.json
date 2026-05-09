@@ -1,0 +1,1153 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "partial_dray_accidental_dosing",
+  "case_id": "attended_hour",
+  "description": "Player accuses Dray correctly but reads the doubled dose as exhaustion-driven dosing error rather than deliberate cover-up. Right suspect, wrong motive: misses the malpractice hearing entirely. 44-turn arc.",
+  "outcome": "partial_correct",
+  "starting_hypothesis": "object_first",
+  "tags": [
+    "partial_correct",
+    "right_suspect_wrong_motive",
+    "accidental_dosing",
+    "missed_hearing",
+    "fatigue_misread"
+  ],
+  "_authoring_note": "Player traces dosage chain to Dray but interprets him as a tired doctor who made a mistake, not a man covering up a hearing. Convergence on suspect strong; on motive misaligned (negligence_testimony chosen, malpractice_cover missed).",
+  "scene_type_sequence": [
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "breakthrough",
+    "cold_examination",
+    "recap",
+    "cold_examination",
+    "cold_examination",
+    "recap",
+    "hot_confrontation",
+    "breakthrough",
+    "transition",
+    "hot_confrontation",
+    "cold_examination",
+    "cold_examination",
+    "breakthrough",
+    "recap",
+    "cold_examination",
+    "cold_examination",
+    "recap",
+    "cold_examination",
+    "transition",
+    "hot_confrontation",
+    "breakthrough",
+    "cold_examination",
+    "recap",
+    "transition",
+    "hot_confrontation",
+    "recap",
+    "breakthrough",
+    "hot_confrontation",
+    "hot_confrontation"
+  ],
+  "opening": {
+    "tokens": [
+      "location:briar_clinic",
+      "event:harold_stroud_discovered",
+      "time:attended_observation"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Cold open. The chart in hand at the exterior.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:hospital_exterior",
+        "TRANSITION": "transition:none",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.04,
+        0.04,
+        0.06
+      ]
+    },
+    {
+      "turn": 2,
+      "_note": "Cross to the cardiac ward.",
+      "player_card": "event:harold_stroud_discovered",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.08,
+        0.08,
+        0.1
+      ]
+    },
+    {
+      "turn": 3,
+      "_note": "Examine the bedside chart.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.12,
+        0.1,
+        0.14
+      ]
+    },
+    {
+      "turn": 4,
+      "_note": "Aldworth at her clipboard.",
+      "player_card": "witness:duty_nurse",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.14,
+        0.14,
+        0.16
+      ]
+    },
+    {
+      "turn": 5,
+      "_note": "Question Aldworth about the round.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.18,
+        0.16,
+        0.2
+      ]
+    },
+    {
+      "turn": 6,
+      "_note": "Cross to medication charting area.",
+      "player_card": "travel:to_medication_charting_area",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.2,
+        0.2,
+        0.22
+      ]
+    },
+    {
+      "turn": 7,
+      "_note": "Notice the correction in different ink.",
+      "player_card": "modifier:chart_amended",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:reading_chart_signal",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.22,
+        0.22,
+        0.24
+      ]
+    },
+    {
+      "turn": 8,
+      "_note": "Examine the syringe tray.",
+      "player_card": "object:syringe_tray",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.26,
+        0.24,
+        0.26
+      ]
+    },
+    {
+      "turn": 9,
+      "_note": "Lin steps off the elevator with her ledger.",
+      "player_card": "witness:lab_assistant",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:elevator_arrives",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.28,
+        0.28,
+        0.3
+      ]
+    },
+    {
+      "turn": 10,
+      "_note": "Lin says the count was off by two on the evening round.",
+      "player_card": "suspect:pharmacist_lin",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.3,
+        0.3,
+        0.32
+      ]
+    },
+    {
+      "turn": 11,
+      "_note": "Two vials short \u2014 but she points it as a routine accounting error.",
+      "player_card": "modifier:vial_count_short",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.32,
+        0.34,
+        0.34
+      ]
+    },
+    {
+      "turn": 12,
+      "_note": "Cross to the doctor's office.",
+      "player_card": "travel:to_doctor_office",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.34,
+        0.34,
+        0.34
+      ]
+    },
+    {
+      "turn": 13,
+      "_note": "Question Dray. He recites the chart calmly. Rehearsed.",
+      "player_card": "suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.36,
+        0.36,
+        0.36
+      ],
+      "forbidden_dims": [
+        "motive:malpractice_cover",
+        "motive:negligence_testimony"
+      ]
+    },
+    {
+      "turn": 14,
+      "_note": "The interaction manual sits on his desk. The cardiac combination page dog-eared.",
+      "player_card": "object:interaction_manual",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.38,
+        0.38,
+        0.38
+      ]
+    },
+    {
+      "turn": 15,
+      "_note": "The combined cardiac dose. Dray reads it aloud as a textbook example.",
+      "player_card": "modifier:dosage_doubled",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "turn": 16,
+      "_note": "Cross-check chart against the manual. The dose written matches the warning.",
+      "player_card": "travel:to_medication_charting_area",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.42,
+        0.42,
+        0.42
+      ]
+    },
+    {
+      "turn": 17,
+      "_note": "The carbon shows the second injection added in different ink.",
+      "player_card": "object:prescription_carbon",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.44,
+        0.44,
+        0.44
+      ]
+    },
+    {
+      "turn": 18,
+      "_note": "The hand on the second injection matches Dray's. But matched in error?",
+      "player_card": "modifier:handwriting_match",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.46,
+        0.46,
+        0.46
+      ]
+    },
+    {
+      "turn": 19,
+      "_note": "The orderly says Dray was distracted that evening, working long hours.",
+      "player_card": "witness:ward_orderly",
+      "scene": {
+        "LOCATION": "location:staff_break_or_overnight_desk_area",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_ward_orderly",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.46,
+        0.46,
+        0.46
+      ]
+    },
+    {
+      "turn": 20,
+      "_note": "The clinical notes show three patients on combined cardiacs that night.",
+      "player_card": "object:clinical_notes",
+      "scene": {
+        "LOCATION": "location:staff_break_or_overnight_desk_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_ward_orderly",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:clinical_notes",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.48,
+        0.48,
+        0.48
+      ]
+    },
+    {
+      "turn": 21,
+      "_note": "Aldworth says Dray amended several charts late in shift, all under pressure.",
+      "player_card": "travel:to_nurse_station_vantage",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 22,
+      "_note": "She admits she thought the second dose looked high but did not question it.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [
+        0.52,
+        0.52,
+        0.52
+      ]
+    },
+    {
+      "turn": 23,
+      "_note": "The countersignature is Dray's. The amendment is his.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [
+        0.56,
+        0.54,
+        0.56
+      ]
+    },
+    {
+      "turn": 24,
+      "_note": "Cross back to the doctor's office. Dray still at his desk.",
+      "player_card": "travel:to_doctor_office",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.56,
+        0.54,
+        0.56
+      ]
+    },
+    {
+      "turn": 25,
+      "_note": "He admits he amended the chart. Says he was tired, miscalculated.",
+      "player_card": "suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.58,
+        0.56,
+        0.58
+      ]
+    },
+    {
+      "turn": 26,
+      "_note": "The dog-ear on the cardiac page. He says he was reviewing for Monday.",
+      "player_card": "object:interaction_manual",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.6,
+        0.58,
+        0.6
+      ]
+    },
+    {
+      "turn": 27,
+      "_note": "Fresh pencil. He says he was checking his work after the fact.",
+      "player_card": "modifier:fresh_notation",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.62,
+        0.6,
+        0.62
+      ]
+    },
+    {
+      "turn": 28,
+      "_note": "Cardiac depression, confirmed combined drug effect.",
+      "player_card": "object:autopsy_report",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:autopsy_report",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.64,
+        0.62,
+        0.64
+      ]
+    },
+    {
+      "turn": 29,
+      "_note": "Recall the chain. Dray prescribed both. The doubling was his hand.",
+      "player_card": "event:dosage_interaction",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.66,
+        0.64,
+        0.66
+      ]
+    },
+    {
+      "turn": 30,
+      "_note": "The porter at the desk. Night log under his hand.",
+      "player_card": "travel:to_reception_threshold",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.68,
+        0.66,
+        0.68
+      ],
+      "forbidden_dims": [
+        "motive:malpractice_cover",
+        "object:complaint_filing"
+      ]
+    },
+    {
+      "turn": 31,
+      "_note": "Dray's car arrived 22:14. The log shows long shifts all week.",
+      "player_card": "object:visitor_log",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.7,
+        0.68,
+        0.7
+      ]
+    },
+    {
+      "turn": 32,
+      "_note": "Bed three. The chart in hand. The story now reads as exhaustion.",
+      "player_card": "travel:to_cardiac_ward_crime_space",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.72,
+        0.7,
+        0.72
+      ]
+    },
+    {
+      "turn": 33,
+      "_note": "The notes describe a long, busy shift. Three combined cardiacs.",
+      "player_card": "object:clinical_notes",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:auscultates",
+        "OBJECT_FOCUS": "object:clinical_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.74,
+        0.72,
+        0.74
+      ],
+      "forbidden_dims": [
+        "motive:malpractice_cover"
+      ]
+    },
+    {
+      "turn": 34,
+      "_note": "Cross back to Dray's office. The office light dim.",
+      "player_card": "travel:to_doctor_office",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.76,
+        0.76,
+        0.76
+      ]
+    },
+    {
+      "turn": 35,
+      "_note": "He says: 'It was an error. A dosing error.' The voice flat.",
+      "player_card": "suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.76,
+        0.76,
+        0.76
+      ]
+    },
+    {
+      "turn": 36,
+      "_note": "The amendment is his. The hand and ink, his.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.78,
+        0.76,
+        0.78
+      ]
+    },
+    {
+      "turn": 37,
+      "_note": "The doubling \u2014 wrote on autopilot under shift fatigue.",
+      "player_card": "modifier:dosage_doubled",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.8,
+        0.78,
+        0.8
+      ]
+    },
+    {
+      "turn": 38,
+      "_note": "Negligent, the player decides. Tired, distracted, careless. Not deliberate.",
+      "player_card": "motive:negligence_testimony",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:clinical_notes",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "forbidden_dims": [
+        "motive:malpractice_cover"
+      ]
+    },
+    {
+      "turn": 39,
+      "_note": "Cross to the rear corridor. Dawn near.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 40,
+      "_note": "Lay out the chart amendment. He nods, slowly.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.81,
+        0.8,
+        0.81
+      ]
+    },
+    {
+      "turn": 41,
+      "_note": "The player names: accidental, exhaustion-driven dosing error.",
+      "player_card": "motive:negligence_testimony",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:clinical_notes",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.82,
+        0.81,
+        0.82
+      ]
+    },
+    {
+      "turn": 42,
+      "_note": "The autopsy confirms the dose. The player still reads it as accident.",
+      "player_card": "object:autopsy_report",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:autopsy_report",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.83,
+        0.82,
+        0.83
+      ]
+    },
+    {
+      "turn": 43,
+      "_note": "The chart amendment final. Charge: gross negligence, not murder.",
+      "player_card": "modifier:chart_amended",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.84,
+        0.83,
+        0.84
+      ]
+    },
+    {
+      "turn": 44,
+      "_note": "Accusation: right person, wrong motive (accidental, not deliberate).",
+      "player_card": "ACCUSE:suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.84,
+        0.84,
+        0.84
+      ]
+    }
+  ],
+  "ending": {
+    "type": "partial_correct",
+    "accused": "suspect:callum_dray",
+    "asserted_motive": "motive:negligence_testimony",
+    "actual_motive": "motive:malpractice_cover",
+    "final_convergence": [
+      0.84,
+      0.84,
+      0.84
+    ],
+    "_note": "Right person; the player believed it was an exhausted doctor's dosing error. Missed the prior complaint, missed the hearing, missed the fresh notation as deliberate study."
+  }
+}

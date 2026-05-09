@@ -1,0 +1,15 @@
+{
+  "_art_dir": "art/venetian_mirror/direct_pixel_art_v1/pixel_320x320",
+  "_default": "venetian_mirror_palazzo_canal_exterior_pixel_320x320_v01.png",
+  "_briefing": "venetian_mirror_palazzo_canal_exterior_pixel_320x320_v01.png",
+  "_ending": "venetian_mirror_balcony_fall_zone_pixel_320x320_v02.png",
+  "_comment": "venetian_mirror's art folder uses descriptive names (grand_gallery, balcony_fall_zone, etc.); LOCATION tokens use compact IDs (mirror_gallery, main_balcony). Mapping authored by hand. The masked_procession_route asset doubles as the courtyard scene (the carnival procession enters via the courtyard); private_corridor_or_stair = servants_stair. The archive_library_records_space and service_landing assets are unused for now (future locations).",
+  "location:palazzo_contarini":  "venetian_mirror_palazzo_canal_exterior_pixel_320x320_v01.png",
+  "location:main_balcony":       "venetian_mirror_balcony_fall_zone_pixel_320x320_v02.png",
+  "location:mirror_gallery":     "venetian_mirror_grand_gallery_pixel_320x320_v02.png",
+  "location:canal_entrance":     "venetian_mirror_bridge_and_canal_approach_pixel_320x320_v02.png",
+  "location:studio_room":        "venetian_mirror_restoration_chamber_pixel_320x320_v02.png",
+  "location:servants_stair":     "venetian_mirror_private_corridor_or_stair_pixel_320x320_v02.png",
+  "location:courtyard":          "venetian_mirror_masked_procession_route_pixel_320x320_v02.png",
+  "location:private_salon":      "venetian_mirror_reception_salon_pixel_320x320_v02.png"
+}

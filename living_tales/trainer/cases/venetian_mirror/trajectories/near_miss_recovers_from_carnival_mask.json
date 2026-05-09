@@ -1,0 +1,1058 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "near_miss_recovers_from_carnival_mask",
+  "case_id": "venetian_mirror",
+  "description": "Detective nearly accuses Bassi via the white silk mask in the canal \u2014 staged misdirection. Recovery comes when the fibre in the railing reads pale rose under the lantern, not white.",
+  "outcome": "near_miss",
+  "starting_hypothesis": "modifier_first_mask_then_recover",
+  "tags": [
+    "near_miss",
+    "carnival_mask_near_miss",
+    "red_herring_recovered",
+    "morvaine_correct"
+  ],
+  "scene_type_sequence": [
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "evasion",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "hot_confrontation",
+    "cold_examination",
+    "evasion",
+    "breakthrough",
+    "transition",
+    "breakthrough",
+    "cold_examination",
+    "breakthrough",
+    "breakthrough",
+    "transition",
+    "cold_examination",
+    "breakthrough",
+    "cold_examination",
+    "breakthrough",
+    "transition",
+    "breakthrough",
+    "breakthrough",
+    "cold_examination",
+    "transition",
+    "hot_confrontation",
+    "hot_confrontation",
+    "hot_confrontation",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "recap",
+    "hot_confrontation"
+  ],
+  "opening": {
+    "tokens": [
+      "location:palazzo_contarini",
+      "event:luca_marini_discovered",
+      "time:carnival_evening"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "A white silk mask in the canal water, half-submerged. The detective's first beat.",
+      "player_card": "modifier:carnival_mask",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "turn": 2,
+      "_note": "The gondolier had not seen who threw it.",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.08,
+        0.08,
+        0.08
+      ]
+    },
+    {
+      "turn": 3,
+      "_note": "Half past nine. White silk. Last guest.",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.11,
+        0.11,
+        0.11
+      ]
+    },
+    {
+      "turn": 4,
+      "_note": "Bassi at the gate, charm thickening.",
+      "player_card": "suspect:carlo_bassi",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.14,
+        0.14,
+        0.14
+      ]
+    },
+    {
+      "turn": 5,
+      "_note": "His mask, in his pocket. Identical to the one in the water.",
+      "player_card": "modifier:carnival_mask",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.17,
+        0.17,
+        0.17
+      ]
+    },
+    {
+      "turn": 6,
+      "_note": "Up to the parapet. The mask read as Bassi's confession.",
+      "player_card": "travel:to_main_balcony",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "turn": 7,
+      "_note": "The score.",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.23,
+        0.23,
+        0.23
+      ]
+    },
+    {
+      "turn": 8,
+      "_note": "A fibre \u2014 white, the detective wrote, in low light.",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "forbidden_dims": [
+        "suspect:countess_morvaine"
+      ],
+      "convergence_after": [
+        0.26,
+        0.26,
+        0.26
+      ]
+    },
+    {
+      "turn": 9,
+      "_note": "Bassi at the gate again. The detective near a verdict.",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "forbidden_dims": [
+        "suspect:carlo_bassi"
+      ],
+      "convergence_after": [
+        0.29,
+        0.29,
+        0.29
+      ]
+    },
+    {
+      "turn": 10,
+      "_note": "The mask, named, presented. Bassi laughed first.",
+      "player_card": "modifier:carnival_mask",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "forbidden_dims": [
+        "suspect:carlo_bassi"
+      ],
+      "convergence_after": [
+        0.32,
+        0.32,
+        0.32
+      ]
+    },
+    {
+      "turn": 11,
+      "_note": "His charm thicker. The detective wrote: theatrical.",
+      "player_card": "emotion:polished_grace",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.35,
+        0.35,
+        0.35
+      ]
+    },
+    {
+      "turn": 12,
+      "_note": "The Zurich dealer named Bassi as the courier \u2014 but courier of papers, not iron.",
+      "player_card": "witness:art_dealer",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_art_dealer",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.38,
+        0.38,
+        0.38
+      ]
+    },
+    {
+      "turn": 13,
+      "_note": "Bassi to the rail. The detective within a step.",
+      "player_card": "travel:to_main_balcony",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "forbidden_dims": [
+        "suspect:carlo_bassi"
+      ],
+      "convergence_after": [
+        0.41,
+        0.41,
+        0.41
+      ]
+    },
+    {
+      "turn": 14,
+      "_note": "On closer look, in lantern-light: pale rose. Not white. Not Bassi's mask.",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 15,
+      "_note": "A silk glove on the parapet. Cuff intact. Pale rose.",
+      "player_card": "object:silk_glove",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:silk_glove",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:carlo_bassi"
+      ],
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 16,
+      "_note": "The mask in the water \u2014 staged. The detective filed it under misdirection.",
+      "player_card": "modifier:carnival_mask",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:silk_glove",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "forbidden_dims": [
+        "suspect:carlo_bassi"
+      ],
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 17,
+      "_note": "Bassi narrowed to courier. The detective stepped back from the rail.",
+      "player_card": "suspect:carlo_bassi",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_carlo_bassi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:alibi_holds",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.53,
+        0.53,
+        0.53
+      ]
+    },
+    {
+      "turn": 18,
+      "_note": "Marini's bench.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    {
+      "turn": 19,
+      "_note": "Cadmium.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.57,
+        0.57,
+        0.57
+      ]
+    },
+    {
+      "turn": 20,
+      "_note": "The operation.",
+      "player_card": "modifier:modern_pigment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.59,
+        0.59,
+        0.59
+      ]
+    },
+    {
+      "turn": 21,
+      "_note": "The half-aged canvas.",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.61,
+        0.61,
+        0.61
+      ]
+    },
+    {
+      "turn": 22,
+      "_note": "The Vienna gap.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.63,
+        0.63,
+        0.63
+      ]
+    },
+    {
+      "turn": 23,
+      "_note": "The Countess. Coffee unasked.",
+      "player_card": "travel:to_private_salon",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    {
+      "turn": 24,
+      "_note": "The cuff straightened pale rose.",
+      "player_card": "suspect:countess_morvaine",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.68,
+        0.68,
+        0.68
+      ]
+    },
+    {
+      "turn": 25,
+      "_note": "Her cuff matched the fibre.",
+      "player_card": "object:silk_glove",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:silk_glove",
+        "TELL": "tell:glanced_aside",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "turn": 26,
+      "_note": "Bruno's Milan file. The same alias.",
+      "player_card": "witness:inspector_bruno",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    {
+      "turn": 27,
+      "_note": "Up to the rail with her.",
+      "player_card": "travel:to_main_balcony",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    {
+      "turn": 28,
+      "_note": "Pale rose. Hers.",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.77,
+        0.77,
+        0.77
+      ]
+    },
+    {
+      "turn": 29,
+      "_note": "The detective named her.",
+      "player_card": "object:silk_glove",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:silk_glove",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.79,
+        0.79,
+        0.79
+      ]
+    },
+    {
+      "turn": 30,
+      "_note": "The score.",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 31,
+      "_note": "The mask in the water \u2014 her staging, not Bassi's.",
+      "player_card": "modifier:carnival_mask",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.81,
+        0.81,
+        0.81
+      ]
+    },
+    {
+      "turn": 32,
+      "_note": "The Vienna gap.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:provenance_gap",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.82,
+        0.82,
+        0.82
+      ]
+    },
+    {
+      "turn": 33,
+      "_note": "The operation.",
+      "player_card": "motive:forgery_operation",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:practised_dismay",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.83,
+        0.83,
+        0.83
+      ]
+    },
+    {
+      "turn": 34,
+      "_note": "The pivot.",
+      "player_card": "modifier:scratch_on_stone",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.83,
+        0.83,
+        0.83
+      ]
+    },
+    {
+      "turn": 35,
+      "_note": "Marini in pencil.",
+      "player_card": "object:guest_list",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:guest_list",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.83,
+        0.83,
+        0.83
+      ]
+    },
+    {
+      "turn": 36,
+      "_note": "The catalogue.",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.83,
+        0.83,
+        0.83
+      ]
+    },
+    {
+      "turn": 37,
+      "_note": "The receipts.",
+      "player_card": "object:sale_receipt",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:sale_receipt",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.83,
+        0.83,
+        0.83
+      ]
+    },
+    {
+      "turn": 38,
+      "_note": "The cadmium.",
+      "player_card": "modifier:modern_pigment",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.83,
+        0.83,
+        0.83
+      ]
+    },
+    {
+      "turn": 39,
+      "_note": "The fibre, last.",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.83,
+        0.83,
+        0.83
+      ]
+    },
+    {
+      "turn": 40,
+      "_note": "Recovered from the mask. Accused at dawn.",
+      "player_card": "ACCUSE:suspect:countess_morvaine",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [
+        0.83,
+        0.83,
+        0.83
+      ]
+    }
+  ],
+  "ending": {
+    "type": "near_miss",
+    "accused": "suspect:countess_morvaine",
+    "final_convergence": [
+      0.83,
+      0.83,
+      0.83
+    ]
+  }
+}

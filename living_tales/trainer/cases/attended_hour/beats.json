@@ -1,0 +1,45 @@
+{
+  "_comment": "Convergence-threshold discovery beats for attended_hour. Mirrors amber_cipher schema with hospital-appropriate revelation tokens.",
+  "schema_version": 1,
+  "case_id": "attended_hour",
+
+  "convergence_dim_names": ["suspect", "evidence", "motive"],
+
+  "beats": [
+    {
+      "id": "first_thread",
+      "trigger": { "any_dim_gte": 0.4 },
+      "min_turn": 6,
+      "fire_once": true,
+      "inject": { "REVELATION": "revelation:contradiction_surfaces" }
+    },
+    {
+      "id": "name_surfaces",
+      "trigger": { "dim": "suspect", "gte": 0.6 },
+      "min_turn": 12,
+      "fire_once": true,
+      "inject": { "REVELATION": "revelation:name_uncovered" }
+    },
+    {
+      "id": "motive_emerges",
+      "trigger": { "dim": "motive", "gte": 0.6 },
+      "min_turn": 14,
+      "fire_once": true,
+      "inject": { "REVELATION": "revelation:motive_emerges" }
+    },
+    {
+      "id": "closing_in",
+      "trigger": { "min_dim_gte": 0.65 },
+      "min_turn": 18,
+      "fire_once": true,
+      "inject": { "BEAT": "beat:closing_in" }
+    },
+    {
+      "id": "verdict_ready",
+      "trigger": { "min_dim_gte": 0.8 },
+      "min_turn": 24,
+      "fire_once": true,
+      "inject": { "BEAT": "beat:verdict_ready" }
+    }
+  ]
+}

@@ -589,6 +589,99 @@ train-all-structured: colab-install
 	@echo "  ALL STRUCTURED CASES TRAINED"
 	@echo "################################################################"
 
+# ── V2 two-stage training (base + per-case adapters) ─────────────────────
+# Stage 1: pretrain a single shared base model on universal-core dims across
+# all cases. Stage 2: per-case LoRA adapter + case-specific heads.
+#
+# Usage:
+#   make train-v2-base OUTPUT_DIR=/content/drive/MyDrive/living_tales_outputs
+#   make train-v2-all  OUTPUT_DIR=/content/drive/MyDrive/living_tales_outputs
+
+V2_CASES = amber_cipher attended_hour venetian_mirror
+
+train-v2-base: colab-install
+	@echo ""
+	@echo "################################################################"
+	@echo "  LIVING TALES V2 — STAGE 1: BASE PRETRAIN"
+	@echo "  Cases: $(V2_CASES)  (universal-core only)"
+	@echo "################################################################"
+	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
+	  python3 tools/train_structured_v2.py base \
+	    --cases $(shell echo $(V2_CASES) | tr ' ' ',') \
+	    --epochs 80 --batch-size 32 --lr 1e-3 \
+	    --hidden-dim 256 --n-layers 4 --n-heads 8 --max-history 160
+	@if [ -n "$(OUTPUT_DIR)" ]; then \
+	  mkdir -p $(OUTPUT_DIR)/_base; \
+	  cp living_tales/trainer/outputs/_base/base_universal.pt $(OUTPUT_DIR)/_base/; \
+	  echo "saved → $(OUTPUT_DIR)/_base/base_universal.pt"; \
+	fi
+
+train-v2-adapters: colab-install
+	@echo ""
+	@echo "################################################################"
+	@echo "  LIVING TALES V2 — STAGE 2: PER-CASE ADAPTERS"
+	@echo "################################################################"
+	@for case in $(V2_CASES); do \
+	  echo ""; echo "── adapter: $$case ──"; \
+	  cd living_tales/trainer && $(ENV) PYTHONPATH=. \
+	    python3 tools/train_structured_v2.py adapter \
+	      --case $$case \
+	      --base-checkpoint outputs/_base/base_universal.pt \
+	      --epochs 150 --batch-size 16 --lr 5e-4 --lora-rank 8 && cd ../..; \
+	  if [ -n "$(OUTPUT_DIR)" ]; then \
+	    mkdir -p $(OUTPUT_DIR)/$$case; \
+	    cp living_tales/trainer/outputs/$$case/v2_full.pt $(OUTPUT_DIR)/$$case/; \
+	    echo "saved → $(OUTPUT_DIR)/$$case/v2_full.pt"; \
+	  fi; \
+	done
+
+train-v2-all: train-v2-base train-v2-adapters
+	@echo ""
+	@echo "################################################################"
+	@echo "  V2 — BASE + ALL ADAPTERS COMPLETE"
+	@echo "################################################################"
+
+# ── Eval gate ─────────────────────────────────────────────────────────────
+# Runs after a training run. Fails (nonzero exit) on regression so CI/Colab
+# can block ship.
+#   1. probe_universal_transfer.py — base must hit ≥80% universal-dim acc on
+#      a held-out case (proves the base actually generalizes).
+#   2. playtest_simulate × 5 seeds × case with claude_subagent judge — avg
+#      score must clear the threshold.
+HELD_OUT_CASE ?= venetian_mirror
+EVAL_THRESHOLD ?= 0.80
+EVAL_SEEDS ?= 1 2 3 4 5
+EVAL_TURNS ?= 30
+
+eval-gate-probe:
+	@echo ""
+	@echo "================================================================"
+	@echo "  EVAL GATE — probe universal-transfer (held-out: $(HELD_OUT_CASE))"
+	@echo "================================================================"
+	cd living_tales/trainer && $(ENV) PYTHONPATH=. \
+	  python3 tools/probe_universal_transfer.py \
+	    --base outputs/_base/base_universal.pt \
+	    --held-out $(HELD_OUT_CASE) --threshold $(EVAL_THRESHOLD)
+
+eval-gate-simulate:
+	@echo ""
+	@echo "================================================================"
+	@echo "  EVAL GATE — simulate playthroughs × 5 seeds × case"
+	@echo "================================================================"
+	@for case in $(V2_CASES); do \
+	  for seed in $(EVAL_SEEDS); do \
+	    echo "── $$case seed=$$seed ──"; \
+	    cd living_tales/trainer && $(ENV) PYTHONPATH=. \
+	      python3 tools/playtest_simulate.py $$case --turns $(EVAL_TURNS) --seed $$seed --judge claude_subagent && cd ../..; \
+	  done; \
+	done
+
+eval-gate: eval-gate-probe eval-gate-simulate
+	@echo ""
+	@echo "################################################################"
+	@echo "  EVAL GATE — PASS"
+	@echo "################################################################"
+
 train-all-production: colab-install
 	@echo ""
 	@echo "################################################################"

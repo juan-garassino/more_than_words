@@ -1,1 +1,7 @@
 .DS_Store
+unity/Library/
+unity/Temp/
+unity/Logs/
+unity/obj/
+unity/*.csproj
+unity/*.sln

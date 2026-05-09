@@ -1,0 +1,1075 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "partial_correct_via_misread_motive_c",
+  "case_id": "attended_hour",
+  "description": "Dray accused; player reads the deed as retaliation for the prior complaint but misses the deeper malpractice hearing-cover layer.",
+  "outcome": "partial_correct",
+  "starting_hypothesis": "tell_first",
+  "tags": [
+    "partial_correct",
+    "right_suspect_wrong_motive",
+    "prior_complaint_misread"
+  ],
+  "_authoring_note": "Player names motive:prior_complaint instead of motive:malpractice_cover. Close, but one degree off.",
+  "scene_type_sequence": [
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "breakthrough",
+    "transition",
+    "cold_examination",
+    "recap",
+    "transition",
+    "evasion",
+    "dead_end",
+    "transition",
+    "breakthrough",
+    "revelation",
+    "transition",
+    "cold_examination",
+    "cold_examination",
+    "cold_examination",
+    "breakthrough",
+    "transition",
+    "breakthrough",
+    "cold_examination",
+    "cold_examination",
+    "transition",
+    "hot_confrontation",
+    "hot_confrontation",
+    "hot_confrontation",
+    "recap",
+    "hot_confrontation",
+    "hot_confrontation",
+    "hot_confrontation"
+  ],
+  "opening": {
+    "tokens": [
+      "location:briar_clinic",
+      "event:harold_stroud_discovered",
+      "time:attended_observation"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Cold open. Chart at the exterior.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:hospital_exterior",
+        "TRANSITION": "transition:none",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.05,
+        0.05,
+        0.055
+      ]
+    },
+    {
+      "turn": 2,
+      "_note": "Cross to bed three.",
+      "player_card": "event:harold_stroud_discovered",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.078,
+        0.078,
+        0.083
+      ]
+    },
+    {
+      "turn": 3,
+      "_note": "Examine the bedside chart.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.107,
+        0.107,
+        0.112
+      ]
+    },
+    {
+      "turn": 4,
+      "_note": "Aldworth at her clipboard.",
+      "player_card": "witness:duty_nurse",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.135,
+        0.135,
+        0.14
+      ]
+    },
+    {
+      "turn": 5,
+      "_note": "Aldworth describes the round.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.163,
+        0.163,
+        0.168
+      ]
+    },
+    {
+      "turn": 6,
+      "_note": "Cross to the charting area.",
+      "player_card": "travel:to_medication_charting_area",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.192,
+        0.192,
+        0.197
+      ]
+    },
+    {
+      "turn": 7,
+      "_note": "Amendment in different ink.",
+      "player_card": "modifier:chart_amended",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:reading_chart_signal",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.22,
+        0.22,
+        0.225
+      ]
+    },
+    {
+      "turn": 8,
+      "_note": "Two syringes.",
+      "player_card": "object:syringe_tray",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.3,
+        0.3,
+        0.305
+      ]
+    },
+    {
+      "turn": 9,
+      "_note": "Lin off the elevator.",
+      "player_card": "witness:lab_assistant",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:elevator_arrives",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.315,
+        0.315,
+        0.32
+      ]
+    },
+    {
+      "turn": 10,
+      "_note": "Lin admits two vials short.",
+      "player_card": "suspect:pharmacist_lin",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.33,
+        0.33,
+        0.335
+      ]
+    },
+    {
+      "turn": 11,
+      "_note": "Examine the missing-vials entry.",
+      "player_card": "modifier:vial_count_short",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.345,
+        0.345,
+        0.35
+      ]
+    },
+    {
+      "turn": 12,
+      "_note": "Cross to Dray's office.",
+      "player_card": "travel:to_doctor_office",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.36,
+        0.36,
+        0.365
+      ]
+    },
+    {
+      "turn": 13,
+      "_note": "Dray clipped, latinate.",
+      "player_card": "suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.375,
+        0.375,
+        0.38
+      ]
+    },
+    {
+      "turn": 14,
+      "_note": "Manual on his desk.",
+      "player_card": "object:interaction_manual",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.39,
+        0.39,
+        0.395
+      ]
+    },
+    {
+      "turn": 15,
+      "_note": "Doubled cardiac warning page.",
+      "player_card": "modifier:dosage_doubled",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.405,
+        0.405,
+        0.41
+      ],
+      "forbidden_dims": [
+        "motive:family_grudge",
+        "motive:career_ruin"
+      ]
+    },
+    {
+      "turn": 16,
+      "_note": "Return to charting area.",
+      "player_card": "travel:to_medication_charting_area",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.42,
+        0.42,
+        0.425
+      ]
+    },
+    {
+      "turn": 17,
+      "_note": "Carbon shows the second injection.",
+      "player_card": "object:prescription_carbon",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.435,
+        0.435,
+        0.44
+      ]
+    },
+    {
+      "turn": 18,
+      "_note": "Hand on injection matches.",
+      "player_card": "modifier:handwriting_match",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.45,
+        0.45,
+        0.455
+      ]
+    },
+    {
+      "turn": 19,
+      "_note": "Cross to family waiting room.",
+      "player_card": "travel:to_family_waiting_room",
+      "scene": {
+        "LOCATION": "location:family_waiting_room",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.465,
+        0.465,
+        0.47
+      ]
+    },
+    {
+      "turn": 20,
+      "_note": "Owen rehearsed grief.",
+      "player_card": "suspect:owen_stroud",
+      "scene": {
+        "LOCATION": "location:family_waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_owen_stroud",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:insurance_form",
+        "TELL": "emotion:rehearsed_grief",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.48,
+        0.48,
+        0.485
+      ]
+    },
+    {
+      "turn": 21,
+      "_note": "Insurance angle dead-ends.",
+      "player_card": "motive:insurance_claim",
+      "scene": {
+        "LOCATION": "location:family_waiting_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_owen_stroud",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:insurance_form",
+        "TELL": "emotion:rehearsed_grief",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.495,
+        0.495,
+        0.5
+      ]
+    },
+    {
+      "turn": 22,
+      "_note": "Return to nurse station.",
+      "player_card": "travel:to_nurse_station_vantage",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.51,
+        0.51,
+        0.515
+      ],
+      "forbidden_dims": [
+        "motive:malpractice_cover"
+      ]
+    },
+    {
+      "turn": 23,
+      "_note": "Aldworth admits second injection wasn't on her chart.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [
+        0.55,
+        0.55,
+        0.555
+      ]
+    },
+    {
+      "turn": 24,
+      "_note": "Dray countersigned.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [
+        0.571,
+        0.571,
+        0.576
+      ]
+    },
+    {
+      "turn": 25,
+      "_note": "Return to bed three.",
+      "player_card": "travel:to_cardiac_ward_crime_space",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.592,
+        0.592,
+        0.597
+      ]
+    },
+    {
+      "turn": 26,
+      "_note": "Cardiac depression doubled.",
+      "player_card": "object:autopsy_report",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:autopsy_report",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.613,
+        0.613,
+        0.618
+      ]
+    },
+    {
+      "turn": 27,
+      "_note": "Monitor tape silenced before alarm.",
+      "player_card": "action:alarm_delayed",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:auscultates",
+        "OBJECT_FOCUS": "object:clinical_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.634,
+        0.634,
+        0.639
+      ]
+    },
+    {
+      "turn": 28,
+      "_note": "Night porter at reception.",
+      "player_card": "witness:night_porter",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.655,
+        0.655,
+        0.66
+      ]
+    },
+    {
+      "turn": 29,
+      "_note": "Dray's car never left.",
+      "player_card": "object:visitor_log",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.675,
+        0.675,
+        0.68
+      ]
+    },
+    {
+      "turn": 30,
+      "_note": "Return to Dray's office.",
+      "player_card": "travel:to_doctor_office",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.696,
+        0.696,
+        0.701
+      ]
+    },
+    {
+      "turn": 31,
+      "_note": "Pen in coat. Same blue-black ink.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.717,
+        0.717,
+        0.722
+      ]
+    },
+    {
+      "turn": 32,
+      "_note": "Same hand rewrote the page.",
+      "player_card": "object:clinical_notes",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:clinical_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.738,
+        0.738,
+        0.743
+      ]
+    },
+    {
+      "turn": 33,
+      "_note": "Complaint paper in the drawer.",
+      "player_card": "object:complaint_filing",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:complaint_filing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.759,
+        0.759,
+        0.764
+      ]
+    },
+    {
+      "turn": 34,
+      "_note": "Cross to the rear corridor.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.78,
+        0.78,
+        0.785
+      ]
+    },
+    {
+      "turn": 35,
+      "_note": "Dray faces her.",
+      "player_card": "suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.8,
+        0.8,
+        0.805
+      ],
+      "forbidden_dims": [
+        "motive:malpractice_cover"
+      ]
+    },
+    {
+      "turn": 36,
+      "_note": "Lay out the chart.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.807,
+        0.807,
+        0.812
+      ]
+    },
+    {
+      "turn": 37,
+      "_note": "Carbon. Dawn.",
+      "player_card": "modifier:chart_amended",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.813,
+        0.813,
+        0.818
+      ]
+    },
+    {
+      "turn": 38,
+      "_note": "Motive: motive:prior_complaint.",
+      "player_card": "motive:prior_complaint",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:complaint_filing",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.82,
+        0.82,
+        0.825
+      ]
+    },
+    {
+      "turn": 39,
+      "_note": "Combined cardiacs.",
+      "player_card": "event:dosage_interaction",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.827,
+        0.827,
+        0.832
+      ]
+    },
+    {
+      "turn": 40,
+      "_note": "Autopsy.",
+      "player_card": "object:autopsy_report",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:autopsy_report",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.833,
+        0.833,
+        0.838
+      ],
+      "forbidden_dims": [
+        "motive:malpractice_cover"
+      ]
+    },
+    {
+      "turn": 41,
+      "_note": "Accusation.",
+      "player_card": "ACCUSE:suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.84,
+        0.84,
+        0.845
+      ]
+    }
+  ],
+  "ending": {
+    "type": "partial_correct",
+    "accused": "suspect:callum_dray",
+    "asserted_motive": "motive:prior_complaint",
+    "actual_motive": "motive:malpractice_cover",
+    "final_convergence": [
+      0.84,
+      0.835,
+      0.845
+    ],
+    "_note": "Right person, wrong motive (motive:prior_complaint vs malpractice_cover)."
+  }
+}

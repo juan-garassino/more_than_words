@@ -1,0 +1,1183 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "cold_trail_canal_witnesses",
+  "case_id": "venetian_mirror",
+  "description": "The detective makes the rounds \u2014 gondolier, boatman, palazzo maid, night guard, and back \u2014 without once authenticating a single painting or examining the railing. The accounts circle but never converge. Dawn comes; the inspector walks away.",
+  "outcome": "cold_trail",
+  "starting_hypothesis": "witnesses_only",
+  "tags": [
+    "cold_trail",
+    "witnesses_circuit",
+    "no_authentication"
+  ],
+  "opening": {
+    "tokens": [
+      "location:palazzo_contarini",
+      "event:luca_marini_discovered",
+      "time:carnival_evening"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.05,
+        0.055,
+        0.060000000000000005
+      ]
+    },
+    {
+      "turn": 2,
+      "_note": "",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.057,
+        0.062,
+        0.067
+      ]
+    },
+    {
+      "turn": 3,
+      "_note": "",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.064,
+        0.069,
+        0.074
+      ]
+    },
+    {
+      "turn": 4,
+      "_note": "",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.07100000000000001,
+        0.07600000000000001,
+        0.081
+      ]
+    },
+    {
+      "turn": 5,
+      "_note": "",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.07800000000000001,
+        0.08300000000000002,
+        0.08800000000000001
+      ]
+    },
+    {
+      "turn": 6,
+      "_note": "",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.08500000000000002,
+        0.09000000000000002,
+        0.09500000000000001
+      ]
+    },
+    {
+      "turn": 7,
+      "_note": "",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.09200000000000003,
+        0.09700000000000003,
+        0.10200000000000002
+      ]
+    },
+    {
+      "turn": 8,
+      "_note": "",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.09900000000000003,
+        0.10400000000000004,
+        0.10900000000000003
+      ]
+    },
+    {
+      "turn": 9,
+      "_note": "",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.10600000000000004,
+        0.11100000000000004,
+        0.11600000000000003
+      ]
+    },
+    {
+      "turn": 10,
+      "_note": "",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.11300000000000004,
+        0.11800000000000005,
+        0.12300000000000004
+      ]
+    },
+    {
+      "turn": 11,
+      "_note": "",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.12000000000000005,
+        0.12500000000000006,
+        0.13000000000000006
+      ]
+    },
+    {
+      "turn": 12,
+      "_note": "",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.12700000000000006,
+        0.13200000000000006,
+        0.13700000000000007
+      ]
+    },
+    {
+      "turn": 13,
+      "_note": "",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.13400000000000006,
+        0.13900000000000007,
+        0.14400000000000007
+      ]
+    },
+    {
+      "turn": 14,
+      "_note": "",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.14100000000000007,
+        0.14600000000000007,
+        0.15100000000000008
+      ]
+    },
+    {
+      "turn": 15,
+      "_note": "",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.14800000000000008,
+        0.15300000000000008,
+        0.15800000000000008
+      ]
+    },
+    {
+      "turn": 16,
+      "_note": "",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.15500000000000008,
+        0.1600000000000001,
+        0.1650000000000001
+      ]
+    },
+    {
+      "turn": 17,
+      "_note": "",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1620000000000001,
+        0.1670000000000001,
+        0.1720000000000001
+      ]
+    },
+    {
+      "turn": 18,
+      "_note": "",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1690000000000001,
+        0.1740000000000001,
+        0.1790000000000001
+      ]
+    },
+    {
+      "turn": 19,
+      "_note": "",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1760000000000001,
+        0.1810000000000001,
+        0.1860000000000001
+      ]
+    },
+    {
+      "turn": 20,
+      "_note": "",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1830000000000001,
+        0.1880000000000001,
+        0.19300000000000012
+      ]
+    },
+    {
+      "turn": 21,
+      "_note": "",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.1900000000000001,
+        0.19500000000000012,
+        0.20000000000000012
+      ]
+    },
+    {
+      "turn": 22,
+      "_note": "",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.19700000000000012,
+        0.20200000000000012,
+        0.20700000000000013
+      ]
+    },
+    {
+      "turn": 23,
+      "_note": "",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.20400000000000013,
+        0.20900000000000013,
+        0.21400000000000013
+      ]
+    },
+    {
+      "turn": 24,
+      "_note": "",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.21100000000000013,
+        0.21600000000000014,
+        0.22100000000000014
+      ]
+    },
+    {
+      "turn": 25,
+      "_note": "",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.21800000000000014,
+        0.22300000000000014,
+        0.22800000000000015
+      ]
+    },
+    {
+      "turn": 26,
+      "_note": "",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.22500000000000014,
+        0.23000000000000015,
+        0.23500000000000015
+      ]
+    },
+    {
+      "turn": 27,
+      "_note": "",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.23200000000000015,
+        0.23700000000000015,
+        0.24200000000000016
+      ]
+    },
+    {
+      "turn": 28,
+      "_note": "",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.23900000000000016,
+        0.24400000000000016,
+        0.24900000000000017
+      ]
+    },
+    {
+      "turn": 29,
+      "_note": "",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [
+        0.24600000000000016,
+        0.25100000000000017,
+        0.25600000000000017
+      ]
+    },
+    {
+      "turn": 30,
+      "_note": "",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.25300000000000017,
+        0.2580000000000002,
+        0.2630000000000002
+      ]
+    },
+    {
+      "turn": 31,
+      "_note": "",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2600000000000002,
+        0.2650000000000002,
+        0.2700000000000002
+      ]
+    },
+    {
+      "turn": 32,
+      "_note": "",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2670000000000002,
+        0.2720000000000002,
+        0.2770000000000002
+      ]
+    },
+    {
+      "turn": 33,
+      "_note": "",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2740000000000002,
+        0.2790000000000002,
+        0.2840000000000002
+      ]
+    },
+    {
+      "turn": 34,
+      "_note": "",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2810000000000002,
+        0.2860000000000002,
+        0.2910000000000002
+      ]
+    },
+    {
+      "turn": 35,
+      "_note": "",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2880000000000002,
+        0.2930000000000002,
+        0.2980000000000002
+      ]
+    },
+    {
+      "turn": 36,
+      "_note": "",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.2950000000000002,
+        0.3000000000000002,
+        0.3050000000000002
+      ]
+    },
+    {
+      "turn": 37,
+      "_note": "",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3020000000000002,
+        0.3070000000000002,
+        0.3120000000000002
+      ]
+    },
+    {
+      "turn": 38,
+      "_note": "",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3090000000000002,
+        0.3140000000000002,
+        0.31900000000000023
+      ]
+    },
+    {
+      "turn": 39,
+      "_note": "",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3160000000000002,
+        0.32100000000000023,
+        0.32600000000000023
+      ]
+    },
+    {
+      "turn": 40,
+      "_note": "",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.32300000000000023,
+        0.32800000000000024,
+        0.33300000000000024
+      ]
+    },
+    {
+      "turn": 41,
+      "_note": "",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.33000000000000024,
+        0.33500000000000024,
+        0.34000000000000025
+      ]
+    },
+    {
+      "turn": 42,
+      "_note": "",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.33700000000000024,
+        0.34200000000000025,
+        0.34700000000000025
+      ]
+    },
+    {
+      "turn": 43,
+      "_note": "",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.34400000000000025,
+        0.34900000000000025,
+        0.35400000000000026
+      ]
+    },
+    {
+      "turn": 44,
+      "_note": "",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.35100000000000026,
+        0.35600000000000026,
+        0.36100000000000027
+      ]
+    },
+    {
+      "turn": 45,
+      "_note": "",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:dead_end",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.35800000000000026,
+        0.36300000000000027,
+        0.36800000000000027
+      ]
+    },
+    {
+      "turn": 46,
+      "_note": "",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.36500000000000027,
+        0.3700000000000003,
+        0.3750000000000003
+      ]
+    },
+    {
+      "turn": 47,
+      "_note": "",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3720000000000003,
+        0.3770000000000003,
+        0.3820000000000003
+      ]
+    },
+    {
+      "turn": 48,
+      "_note": "",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "ART_TELL": "art_tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [
+        0.3790000000000003,
+        0.3840000000000003,
+        0.3890000000000003
+      ]
+    }
+  ],
+  "ending": {
+    "type": "cold_trail",
+    "accused": null,
+    "final_convergence": [
+      0.3790000000000003,
+      0.3840000000000003,
+      0.3890000000000003
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_art_dir": "art/attended_hour/direct_pixel_art_v1/pixel_320x320",
+  "_default": "attended_hour_hospital_exterior_pixel_320x320_v01.png",
+  "_briefing": "attended_hour_hospital_exterior_pixel_320x320_v01.png",
+  "_ending": "attended_hour_cardiac_ward_crime_space_pixel_320x320_v01.png",
+  "location:cardiac_ward_crime_space":          "attended_hour_cardiac_ward_crime_space_pixel_320x320_v01.png",
+  "location:doctor_office":                     "attended_hour_doctor_office_pixel_320x320_v01.png",
+  "location:family_waiting_room":               "attended_hour_family_waiting_room_pixel_320x320_v01.png",
+  "location:hospital_exterior":                 "attended_hour_hospital_exterior_pixel_320x320_v01.png",
+  "location:medication_charting_area":          "attended_hour_medication_charting_area_pixel_320x320_v01.png",
+  "location:nurse_station_vantage":             "attended_hour_nurse_station_vantage_pixel_320x320_v01.png",
+  "location:rear_clinical_corridor":            "attended_hour_rear_clinical_corridor_pixel_320x320_v01.png",
+  "location:reception_threshold":               "attended_hour_reception_threshold_pixel_320x320_v01.png",
+  "location:service_elevator_zone":             "attended_hour_service_elevator_zone_pixel_320x320_v01.png",
+  "location:staff_break_or_overnight_desk_area": "attended_hour_staff_break_or_overnight_desk_area_pixel_320x320_v01.png"
+}
