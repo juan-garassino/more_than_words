@@ -1,0 +1,134 @@
+"""
+Trajectory Loader
+=================
+Loads hand-authored training trajectories for a Living Tales case.
+
+A trajectory is one complete playthrough from opening to ending, expressed
+as a sequence of (player_card, scene_tuple) pairs. See
+`living_tales/AUTHORING_TRAJECTORIES.md` for the schema.
+
+Usage
+-----
+    loader = TrajectoryLoader("amber_cipher", project_root=Path("/path/to/repo"))
+    manifest_entries = loader.list_trajectories()
+    traj = loader.load("voss_via_cufflink")
+    all_trajs = loader.load_all()
+"""
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Union
+
+
+# ─── Dataclasses ─────────────────────────────────────────────────────────────
+@dataclass
+class Turn:
+    turn: int
+    player_card: str
+    scene: Dict[str, str]
+    convergence_after: Optional[List[float]] = None
+    note: Optional[str] = None
+
+
+@dataclass
+class Trajectory:
+    trajectory_id: str
+    case_id: str
+    outcome: str
+    description: str
+    tags: List[str]
+    opening: List[str]
+    turns: List[Turn]
+    ending: Dict[str, Any]
+    starting_hypothesis: Optional[str] = None
+    schema_version: int = 1
+    raw: Dict[str, Any] = field(default_factory=dict)
+
+
+# ─── Loader ──────────────────────────────────────────────────────────────────
+class TrajectoryLoader:
+    """Reads a case's trajectory portfolio from disk."""
+
+    def __init__(self, case_id: str, project_root: Union[str, Path]):
+        self.case_id = case_id
+        self.project_root = Path(project_root)
+        self.case_dir = (
+            self.project_root
+            / "living_tales"
+            / "trainer"
+            / "cases"
+            / case_id
+        )
+        self.traj_dir = self.case_dir / "trajectories"
+        self.manifest_path = self.traj_dir / "manifest.json"
+
+    # ── Manifest ──
+    def _load_manifest(self) -> Dict[str, Any]:
+        if not self.manifest_path.exists():
+            raise FileNotFoundError(
+                f"manifest.json not found at {self.manifest_path}"
+            )
+        with open(self.manifest_path) as f:
+            return json.load(f)
+
+    def list_trajectories(self) -> List[Dict[str, Any]]:
+        """Return the manifest's trajectory list (raw dicts)."""
+        return list(self._load_manifest().get("trajectories", []))
+
+    # ── Single load ──
+    def load(self, traj_id: str) -> Trajectory:
+        path = self.traj_dir / f"{traj_id}.json"
+        if not path.exists():
+            raise FileNotFoundError(f"Trajectory file not found: {path}")
+        with open(path) as f:
+            data = json.load(f)
+        return self._parse(data)
+
+    def load_all(self) -> List[Trajectory]:
+        out: List[Trajectory] = []
+        for entry in self.list_trajectories():
+            tid = entry.get("id")
+            if not tid:
+                continue
+            try:
+                out.append(self.load(tid))
+            except FileNotFoundError as e:
+                print(f"[WARN] {e}")
+        return out
+
+    # ── Parsing ──
+    @staticmethod
+    def _parse(data: Dict[str, Any]) -> Trajectory:
+        opening_block = data.get("opening", {}) or {}
+        if isinstance(opening_block, list):
+            opening_tokens = list(opening_block)
+        else:
+            opening_tokens = list(opening_block.get("tokens", []))
+
+        turns: List[Turn] = []
+        for t in data.get("turns", []):
+            turns.append(
+                Turn(
+                    turn=t.get("turn", len(turns) + 1),
+                    player_card=t.get("player_card", ""),
+                    scene=dict(t.get("scene", {})),
+                    convergence_after=t.get("convergence_after"),
+                    note=t.get("_note") or t.get("note"),
+                )
+            )
+
+        return Trajectory(
+            trajectory_id=data.get("trajectory_id", ""),
+            case_id=data.get("case_id", ""),
+            outcome=data.get("outcome", ""),
+            description=data.get("description", ""),
+            tags=list(data.get("tags", [])),
+            opening=opening_tokens,
+            turns=turns,
+            ending=dict(data.get("ending", {})),
+            starting_hypothesis=data.get("starting_hypothesis"),
+            schema_version=int(data.get("schema_version", 1)),
+            raw=data,
+        )

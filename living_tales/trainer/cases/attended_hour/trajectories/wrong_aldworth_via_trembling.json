@@ -1,0 +1,850 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "wrong_aldworth_via_trembling",
+  "case_id": "attended_hour",
+  "description": "Player misreads Nurse Aldworth's hand tremor as guilt. Path: medication_chart -> her trembling signature on the release form -> the vial-count short under her round -> false confidence she altered the dosage herself -> accuses Aldworth. Dray surfaces at turn 22-24 (chart amendment in his ink) but the player dismisses him as 'the doctor with the leaked pen'. 41-turn wrong-accusation arc, convergence ~0.78.",
+  "outcome": "wrong_aldworth",
+  "starting_hypothesis": "tell_first",
+  "tags": [
+    "trembling_signature_misread",
+    "vial_count_misread",
+    "dray_dismissed",
+    "wrong_accusation"
+  ],
+  "_authoring_note": "Aldworth STANCE arc: cooperative(t4-9) -> defensive(t13-19) -> evasive(t27-30) -> hostile(t37-41). Tell escalation: emotion:shaking_hands -> tell:paled. Dead-end Dray dismissal at turn 23. Two transition:returned (t17, t27, t37). MEDICAL_TELL emitted every NPC scene.",
+  "opening": {
+    "tokens": [
+      "location:briar_clinic",
+      "event:harold_stroud_discovered",
+      "time:attended_observation"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Cold open. The release form on the desk. Aldworth's signature shakes.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:hospital_exterior",
+        "TRANSITION": "transition:none",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.04, 0.04, 0.06]
+    },
+    {
+      "turn": 2,
+      "_note": "Cross to the cardiac ward. Bed three, the chart still on the bedside.",
+      "player_card": "event:harold_stroud_discovered",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.08, 0.08, 0.10]
+    },
+    {
+      "turn": 3,
+      "_note": "Examine the chart. Aldworth's signature loops are uneven.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.12, 0.10, 0.14]
+    },
+    {
+      "turn": 4,
+      "_note": "Cross to the nurse station. Aldworth at her clipboard. Her hands are visibly trembling.",
+      "player_card": "witness:duty_nurse",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.14, 0.14, 0.16]
+    },
+    {
+      "turn": 5,
+      "_note": "Question Aldworth about the round. Her pen wavers as she points at the chart.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.18, 0.16, 0.20]
+    },
+    {
+      "turn": 6,
+      "_note": "Cross to the medication charting area. The carbon copies of the round.",
+      "player_card": "travel:to_medication_charting_area",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.20, 0.18, 0.22]
+    },
+    {
+      "turn": 7,
+      "_note": "Examine the prescription carbons. Her signatures shake on every page.",
+      "player_card": "object:prescription_carbon",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:reading_chart_signal",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.22, 0.22, 0.24]
+    },
+    {
+      "turn": 8,
+      "_note": "Examine the syringe tray. Two syringes in tray, one with residue.",
+      "player_card": "object:syringe_tray",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.26, 0.24, 0.26]
+    },
+    {
+      "turn": 9,
+      "_note": "Cross to the service elevator. Pharmacist Lin steps out with a tray.",
+      "player_card": "witness:lab_assistant",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:elevator_arrives",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [0.28, 0.28, 0.30]
+    },
+    {
+      "turn": 10,
+      "_note": "Examine the ledger. Two vials short on Aldworth's evening round.",
+      "player_card": "modifier:vial_count_short",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [0.32, 0.32, 0.34]
+    },
+    {
+      "turn": 11,
+      "_note": "Question Lin. She names Aldworth as the round nurse without hesitation.",
+      "player_card": "suspect:pharmacist_lin",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [0.36, 0.34, 0.36]
+    },
+    {
+      "turn": 12,
+      "_note": "Return to nurse station. Aldworth still at her post; the vial count printed page in hand.",
+      "player_card": "travel:to_nurse_station_vantage",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.38, 0.36, 0.38]
+    },
+    {
+      "turn": 13,
+      "_note": "Question Aldworth about the missing vials. Her hand tightens around the pen.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.42, 0.40, 0.42]
+    },
+    {
+      "turn": 14,
+      "_note": "Examine the chart again, now for amendment. A correction in different ink.",
+      "player_card": "modifier:chart_amended",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:reading_chart_signal",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.44, 0.42, 0.44]
+    },
+    {
+      "turn": 15,
+      "_note": "Auscultate the chart's countersignature line. The second injection initial is small, looped, hers.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:auscultates",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.46, 0.44, 0.46]
+    },
+    {
+      "turn": 16,
+      "_note": "Cross to staff break room. The orderly there closing his shift book.",
+      "player_card": "witness:ward_orderly",
+      "scene": {
+        "LOCATION": "location:staff_break_or_overnight_desk_area",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_ward_orderly",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [0.46, 0.46, 0.46]
+    },
+    {
+      "turn": 17,
+      "_note": "Return to medication charting area. Cross-check the carbons against the ledger.",
+      "player_card": "travel:to_medication_charting_area",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.52, 0.50, 0.52]
+    },
+    {
+      "turn": 18,
+      "_note": "Examine the carbons one more time. The shaky loop on the second injection countersig matches Aldworth's.",
+      "player_card": "modifier:handwriting_match",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:discovers",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.52, 0.50, 0.52]
+    },
+    {
+      "turn": 19,
+      "_note": "Examine the syringe tray once more. Two syringes — the second the doubled dose.",
+      "player_card": "object:syringe_tray",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.56, 0.54, 0.56]
+    },
+    {
+      "turn": 20,
+      "_note": "Recall the dosage doubled chain. Two safe drugs combined; her hand on both.",
+      "player_card": "modifier:dosage_doubled",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.58, 0.56, 0.58]
+    },
+    {
+      "turn": 21,
+      "_note": "Cross to the doctor's office. Dray standing by his desk, his coat across the chair.",
+      "player_card": "travel:to_doctor_office",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.58, 0.56, 0.58]
+    },
+    {
+      "turn": 22,
+      "_note": "Question Dray briefly. He produces a pen with an ink stain on the lining of his coat.",
+      "player_card": "suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.58, 0.56, 0.58]
+    },
+    {
+      "turn": 23,
+      "_note": "Notice the leaked pen. Dray dismissed: 'the doctor with the leaked pen.' The lead is read as a stained jacket and nothing more. Dead end.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.58, 0.56, 0.58]
+    },
+    {
+      "turn": 24,
+      "_note": "Leave the office. The fountain pen forgotten on the chair behind.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:leaves",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.58, 0.56, 0.58]
+    },
+    {
+      "turn": 25,
+      "_note": "Cross to reception. The night porter at the desk; the entry log.",
+      "player_card": "witness:night_porter",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.60, 0.58, 0.60]
+    },
+    {
+      "turn": 26,
+      "_note": "Examine the visitor log. Aldworth signed in at 14:30. Signed out at 22:11.",
+      "player_card": "object:visitor_log",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.62, 0.60, 0.62]
+    },
+    {
+      "turn": 27,
+      "_note": "Return to the cardiac ward, the chart in hand, the round signature now legible as guilt.",
+      "player_card": "travel:to_cardiac_ward_crime_space",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.64, 0.62, 0.64]
+    },
+    {
+      "turn": 28,
+      "_note": "Cross back to the nurse station. Aldworth has not moved. Her eyes find the floor.",
+      "player_card": "travel:to_nurse_station_vantage",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.66, 0.64, 0.66]
+    },
+    {
+      "turn": 29,
+      "_note": "Question Aldworth about the second injection. She glances aside; her answer paused before coming.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:glanced_aside",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.70, 0.68, 0.70]
+    },
+    {
+      "turn": 30,
+      "_note": "Notice she does not deny anything. Her silence reads as confession.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.72, 0.70, 0.72]
+    },
+    {
+      "turn": 31,
+      "_note": "Examine the autopsy report under the desk lamp. Cardiac depression doubled.",
+      "player_card": "object:autopsy_report",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:autopsy_report",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.74, 0.72, 0.74]
+    },
+    {
+      "turn": 32,
+      "_note": "Recall the negligence_testimony chain. The hearing was Monday, but it points to Aldworth's record.",
+      "player_card": "motive:prior_complaint",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.78, 0.76, 0.78]
+    },
+    {
+      "turn": 33,
+      "_note": "Examine the chart one final time. The countersignature loop. Hers, hers, hers.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.78, 0.76, 0.78]
+    },
+    {
+      "turn": 34,
+      "_note": "Cross to the rear clinical corridor. Aldworth follows, the chart in her shaking hand.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.78, 0.76, 0.78]
+    },
+    {
+      "turn": 35,
+      "_note": "Confront her with the vial-count short. Her shoulders tighten.",
+      "player_card": "modifier:vial_count_short",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [0.78, 0.78, 0.78]
+    },
+    {
+      "turn": 36,
+      "_note": "Lay out the chart amendment. The same loop on the second injection.",
+      "player_card": "modifier:chart_amended",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [0.80, 0.78, 0.80]
+    },
+    {
+      "turn": 37,
+      "_note": "Return to the cardiac ward with Aldworth. Bed three behind them.",
+      "player_card": "travel:to_cardiac_ward_crime_space",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [0.80, 0.78, 0.80]
+    },
+    {
+      "turn": 38,
+      "_note": "Confront her over bed three. The colour drains from her face.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [0.80, 0.78, 0.80]
+    },
+    {
+      "turn": 39,
+      "_note": "Recall the dosage interaction. The two drugs combined; her hand on both syringes.",
+      "player_card": "event:dosage_interaction",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [0.80, 0.78, 0.80]
+    },
+    {
+      "turn": 40,
+      "_note": "Examine the chart one last time. Her countersig under the second dose.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [0.80, 0.78, 0.80]
+    },
+    {
+      "turn": 41,
+      "_note": "Accusation. The wrong name spoken with full conviction.",
+      "player_card": "ACCUSE:suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [0.80, 0.78, 0.80]
+    }
+  ],
+  "ending": {
+    "type": "wrong_accusation",
+    "accused": "suspect:nurse_aldworth",
+    "final_convergence": [0.80, 0.78, 0.80],
+    "_note": "Player accuses Aldworth on her trembling, the vial-count short under her round, and the loop of her countersignature. They missed the chart was amended in Dray's blue-black ink, dismissed his leaked pen as cosmetic, never connected the prior complaint hearing to him."
+  }
+}

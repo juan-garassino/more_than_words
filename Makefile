@@ -556,6 +556,39 @@ train-all: colab-install
 	  --scale-experiment dust_and_verdict little_creature_M little_creature_XL \
 	  $(_OUTPUT_FLAG) $(_MAX_TURNS_FLAG)
 
+# ── Structured-scene engine (new architecture) ────────────────────────────
+# Trains every case that has cases/<case>/dimensions.json — i.e. the
+# multidimensional structured-scene engine cases. Reads hand-authored
+# trajectories directly; no Hopfield, no sampler, no pack step.
+# Usage:
+#   make train-all-structured OUTPUT_DIR=/content/drive/MyDrive/living_tales_outputs
+STRUCTURED_CASES = amber_cipher attended_hour venetian_mirror
+
+train-all-structured: colab-install
+	@echo ""
+	@echo "################################################################"
+	@echo "  LIVING TALES — TRAIN ALL STRUCTURED CASES"
+	@echo "  Cases: $(STRUCTURED_CASES)"
+	@echo "  OUTPUT_DIR: $(OUTPUT_DIR)"
+	@echo "################################################################"
+	@for case in $(STRUCTURED_CASES); do \
+	  echo ""; echo "── Validating $$case ──"; \
+	  cd living_tales/trainer && $(ENV) PYTHONPATH=. \
+	    python3 tools/validate_trajectories.py $$case --all && cd ../..; \
+	  echo ""; echo "── Training $$case ──"; \
+	  cd living_tales/trainer && $(ENV) PYTHONPATH=. \
+	    python3 tools/train_structured.py $$case --epochs 200 --batch-size 16 && cd ../..; \
+	  if [ -n "$(OUTPUT_DIR)" ]; then \
+	    mkdir -p $(OUTPUT_DIR)/$$case; \
+	    cp living_tales/trainer/outputs/$$case/structured_scene_model.pt $(OUTPUT_DIR)/$$case/; \
+	    echo "saved → $(OUTPUT_DIR)/$$case/structured_scene_model.pt"; \
+	  fi; \
+	done
+	@echo ""
+	@echo "################################################################"
+	@echo "  ALL STRUCTURED CASES TRAINED"
+	@echo "################################################################"
+
 train-all-production: colab-install
 	@echo ""
 	@echo "################################################################"

@@ -1,0 +1,831 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "wrong_via_atmospheric_misread",
+  "case_id": "attended_hour",
+  "description": "Player over-weights the night-corridor atmosphere. The dim corridor, the silence, the porter's closed posture — all read as guilt. Player focuses on the night porter (access to all corridors after hours), over-reads his closed posture, and accuses. 40 turns; convergence ~0.78; wrong_night_porter outcome. Dray dismissed at turn 22.",
+  "outcome": "wrong_night_porter",
+  "starting_hypothesis": "atmosphere_first",
+  "tags": [
+    "atmospheric_misread",
+    "porter_focus",
+    "corridor_dim_misread",
+    "dray_dismissed",
+    "wrong_accusation"
+  ],
+  "_authoring_note": "Atmosphere is the false lever. Heavy corridor_dims, fluorescent_flickers, silence_holds. Porter STANCE: cooperative(t6) -> defensive(t14) -> evasive(t27) -> hostile(t36). Dray dismissed at turn 22.",
+  "opening": {
+    "tokens": [
+      "location:briar_clinic",
+      "event:harold_stroud_discovered",
+      "time:attended_observation"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Cold open. The forecourt. The hospital lights flicker.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:hospital_exterior",
+        "TRANSITION": "transition:none",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.04, 0.04, 0.06]
+    },
+    {
+      "turn": 2,
+      "_note": "Cross to rear clinical corridor. Darkness, the lamp flickers.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.06, 0.08, 0.10]
+    },
+    {
+      "turn": 3,
+      "_note": "Enter the cardiac ward. The bedside chart open. The fluorescents flicker overhead.",
+      "player_card": "travel:to_cardiac_ward_crime_space",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.10, 0.10, 0.12]
+    },
+    {
+      "turn": 4,
+      "_note": "Examine the syringe tray. Two syringes. The lights flicker.",
+      "player_card": "object:syringe_tray",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.12, 0.12, 0.14]
+    },
+    {
+      "turn": 5,
+      "_note": "Cross to reception threshold. Night porter at the desk.",
+      "player_card": "travel:to_reception_threshold",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [0.14, 0.14, 0.16]
+    },
+    {
+      "turn": 6,
+      "_note": "Question the porter. He has access to every corridor after hours.",
+      "player_card": "witness:night_porter",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [0.18, 0.16, 0.18]
+    },
+    {
+      "turn": 7,
+      "_note": "Examine the visitor log. The porter signed in everyone but himself for his round.",
+      "player_card": "object:visitor_log",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [0.20, 0.18, 0.20]
+    },
+    {
+      "turn": 8,
+      "_note": "Examine the corridor badge. The porter's swipes mark every corridor that night.",
+      "player_card": "object:corridor_badge",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [0.22, 0.20, 0.22]
+    },
+    {
+      "turn": 9,
+      "_note": "Cross to rear clinical corridor. The dim lamp at the far end. The porter's domain.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.24, 0.22, 0.24]
+    },
+    {
+      "turn": 10,
+      "_note": "Cross to nurse station. Aldworth on duty. The lights flicker as she shifts.",
+      "player_card": "witness:duty_nurse",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.28, 0.26, 0.28]
+    },
+    {
+      "turn": 11,
+      "_note": "Press Aldworth. She heard the corridor door at twenty-three-forty. The detective reads it as the porter passing.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [0.30, 0.28, 0.30]
+    },
+    {
+      "turn": 12,
+      "_note": "Cross to staff break / overnight desk. The orderly closing his report.",
+      "player_card": "witness:ward_orderly",
+      "scene": {
+        "LOCATION": "location:staff_break_or_overnight_desk_area",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_ward_orderly",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:pupil_response"
+      },
+      "convergence_after": [0.32, 0.30, 0.32]
+    },
+    {
+      "turn": 13,
+      "_note": "The orderly recalls the porter walking the rear corridor at twenty-three-thirty. Confirmed.",
+      "player_card": "suspect:ward_orderly",
+      "scene": {
+        "LOCATION": "location:staff_break_or_overnight_desk_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_ward_orderly",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:pupil_response"
+      },
+      "convergence_after": [0.34, 0.32, 0.34]
+    },
+    {
+      "turn": 14,
+      "_note": "Return to reception. Press the porter on the corridor walk. He goes defensive.",
+      "player_card": "travel:to_reception_threshold",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:pupil_response"
+      },
+      "convergence_after": [0.38, 0.36, 0.38]
+    },
+    {
+      "turn": 15,
+      "_note": "Press the porter on the unsigned out-time. He glances at the door.",
+      "player_card": "suspect:night_porter",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "tell:glanced_aside",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:pupil_response"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 16,
+      "_note": "Cross to medication charting area. Re-pull the chart. The dim lamp reads.",
+      "player_card": "travel:to_medication_charting_area",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.42, 0.42, 0.42]
+    },
+    {
+      "turn": 17,
+      "_note": "Examine the chart amendment. Read as the porter's after-hours intrusion.",
+      "player_card": "modifier:chart_amended",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:reading_chart_signal",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.44, 0.44, 0.44]
+    },
+    {
+      "turn": 18,
+      "_note": "Examine the drug ledger. The withdrawal time matches the porter's badge swipe.",
+      "player_card": "object:drug_ledger",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.46, 0.46, 0.46]
+    },
+    {
+      "turn": 19,
+      "_note": "Cross to cardiac ward. Auscultate the bedside chart in the silence.",
+      "player_card": "travel:to_cardiac_ward_crime_space",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:auscultates",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.48, 0.48, 0.48]
+    },
+    {
+      "turn": 20,
+      "_note": "Examine the autopsy report. Cardiac suppression doubled. Read as opportunistic.",
+      "player_card": "object:autopsy_report",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:autopsy_report",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.50, 0.50, 0.50]
+    },
+    {
+      "turn": 21,
+      "_note": "Cross to service elevator zone. Pharmacist Lin arrives with a tray. The lift announces itself.",
+      "player_card": "witness:pharmacist_lin",
+      "scene": {
+        "LOCATION": "location:service_elevator_zone",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_pharmacist_lin",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:elevator_arrives",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.52, 0.52, 0.52]
+    },
+    {
+      "turn": 22,
+      "_note": "Cross to doctor office. Dray, professionally calm. The detective dismisses him as 'the doctor with the leaked pen'.",
+      "player_card": "travel:to_doctor_office",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.54, 0.54, 0.54]
+    },
+    {
+      "turn": 23,
+      "_note": "Return to rear clinical corridor. The dim lamp again. The detective's atmosphere builds.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.54, 0.54, 0.54]
+    },
+    {
+      "turn": 24,
+      "_note": "Examine the corridor badge again. The porter's swipes a second time.",
+      "player_card": "object:corridor_badge",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.56, 0.56, 0.56]
+    },
+    {
+      "turn": 25,
+      "_note": "Recall the porter's domain. Every door, every corridor.",
+      "player_card": "modifier:lock_overridden",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.58, 0.58, 0.58]
+    },
+    {
+      "turn": 26,
+      "_note": "Cross to medication charting area. Re-pull the prescription carbon.",
+      "player_card": "travel:to_medication_charting_area",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.60, 0.60, 0.60]
+    },
+    {
+      "turn": 27,
+      "_note": "Return to reception. The porter evasive now. Glances at the door.",
+      "player_card": "travel:to_reception_threshold",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "tell:glanced_aside",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.62, 0.62, 0.62]
+    },
+    {
+      "turn": 28,
+      "_note": "Press the porter. He hesitates, won't meet the detective's eye.",
+      "player_card": "suspect:night_porter",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.64, 0.64, 0.64]
+    },
+    {
+      "turn": 29,
+      "_note": "Recall the corridor lock. He could have overridden any door.",
+      "player_card": "modifier:lock_overridden",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.66, 0.66, 0.66]
+    },
+    {
+      "turn": 30,
+      "_note": "Examine the visitor log a third time. The porter's missing out-time. The detective is sure now.",
+      "player_card": "object:visitor_log",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.68, 0.68, 0.68]
+    },
+    {
+      "turn": 31,
+      "_note": "Recall the family grudge motive. The porter's brother had been a patient under Dray's care, lost.",
+      "player_card": "motive:family_grudge",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.70, 0.70, 0.70]
+    },
+    {
+      "turn": 32,
+      "_note": "Cross to rear clinical corridor. The dim lamp. The case feels sealed.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.72, 0.72, 0.72]
+    },
+    {
+      "turn": 33,
+      "_note": "Examine the chart again. The detective overlays the porter's swipe path.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.74, 0.74, 0.74]
+    },
+    {
+      "turn": 34,
+      "_note": "Recall the badge unsigned. The porter's chain holds in the player's mind.",
+      "player_card": "modifier:badge_unsigned",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [0.76, 0.76, 0.76]
+    },
+    {
+      "turn": 35,
+      "_note": "Return to reception. The porter still at the desk. The detective ready to confront.",
+      "player_card": "travel:to_reception_threshold",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.78, 0.78, 0.78]
+    },
+    {
+      "turn": 36,
+      "_note": "Confront the porter. His shoulders tighten under the dim lamp.",
+      "player_card": "object:corridor_badge",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.79, 0.79, 0.79]
+    },
+    {
+      "turn": 37,
+      "_note": "Lay out the visitor log gap. The unsigned out-time.",
+      "player_card": "modifier:badge_unsigned",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    },
+    {
+      "turn": 38,
+      "_note": "Press the family grudge motive. The porter's silence reads as confession to the detective.",
+      "player_card": "motive:family_grudge",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.81, 0.81, 0.81]
+    },
+    {
+      "turn": 39,
+      "_note": "Recall the chart amendment. Read as the porter's tampering, not a doctor's hand.",
+      "player_card": "modifier:chart_amended",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.82, 0.82, 0.82]
+    },
+    {
+      "turn": 40,
+      "_note": "Accusation. Wrong target. Dawn breaks behind the reception window.",
+      "player_card": "ACCUSE:suspect:night_porter",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [0.82, 0.82, 0.82]
+    }
+  ],
+  "ending": {
+    "type": "wrong_accusation",
+    "accused": "suspect:night_porter",
+    "final_convergence": [0.82, 0.82, 0.82],
+    "_note": "The porter had every door, every corridor, every after-hours minute. The detective took the dim lamp and the silence as confession. Wrong. Dray's leaked pen and the chart amendment were the chain — dismissed at turn 22."
+  }
+}

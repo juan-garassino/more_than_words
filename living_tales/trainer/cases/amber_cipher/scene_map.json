@@ -1,0 +1,14 @@
+{
+  "_art_dir": "art/amber_cipher/direct_pixel_art_v1/pixel_320x320",
+  "_default": "amber_cipher_station_gate_and_approach_pixel_320x320_v01.png",
+  "_briefing": "amber_cipher_station_gate_and_approach_pixel_320x320_v01.png",
+  "_ending": "amber_cipher_footbridge_with_stopped_clock_pixel_320x320_v01.png",
+  "location:thornfield_crossing": "amber_cipher_thornfield_crossing_pixel_320x320_v01.png",
+  "location:platform_two":        "amber_cipher_platform_two_pixel_320x320_v01.png",
+  "location:platform_one":        "amber_cipher_platform_one_northern_end_pixel_320x320_v01.png",
+  "location:station_office":      "amber_cipher_station_office_interior_pixel_320x320_v01.png",
+  "location:signal_box":          "amber_cipher_station_office_doorway_pixel_320x320_v01.png",
+  "location:waiting_room":        "amber_cipher_waiting_room_pixel_320x320_v01.png",
+  "location:goods_shed":          "amber_cipher_goods_shed_pixel_320x320_v01.png",
+  "location:carriage_siding":     "amber_cipher_carriage_siding_pixel_320x320_v01.png"
+}

@@ -1,0 +1,863 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "morvaine_via_varnish_inconsistency",
+  "case_id": "venetian_mirror",
+  "description": "Detective opens the studio bench, lifts a varnish sample, traces it to the gallery's Titian, finds the ART_TELL:varnish_inconsistency, presses Dr Winter on his appraisal until he turns defensive, cross-checks the pigment ledger, returns to the gallery for an authentication pass, follows the chain to Inspector Bruno's Zurich receipt, and confronts Countess Morvaine on the main balcony at dawn.",
+  "outcome": "correct_countess_morvaine",
+  "starting_hypothesis": "object_first",
+  "tags": ["varnish_chain", "art_forgery", "winter_pressed", "studio_heavy"],
+  "opening": {
+    "tokens": [
+      "location:palazzo_contarini",
+      "event:luca_marini_discovered",
+      "time:carnival_evening"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Studio room. Marini's bench. A small vial of varnish stands open, the pad still damp.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.04, 0.05, 0.08]
+    },
+    {
+      "turn": 2,
+      "_note": "Marini's notebook on the bench. Three pages of varnish chemistry annotations.",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.07, 0.09, 0.12]
+    },
+    {
+      "turn": 3,
+      "_note": "Authenticate the pigment vial against the case the studio kept for restoration solvents. Authenticity holds — for now.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:authenticity_holds"
+      },
+      "convergence_after": [0.10, 0.12, 0.15]
+    },
+    {
+      "turn": 4,
+      "_note": "Cross to the mirror gallery to locate the painting Marini was treating.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.13, 0.14, 0.18]
+    },
+    {
+      "turn": 5,
+      "_note": "Examine the gallery's Titian under the lantern. Surface gloss too even.",
+      "player_card": "modifier:varnish_fresh",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.16, 0.17, 0.20]
+    },
+    {
+      "turn": 6,
+      "_note": "Authenticate against the provenance file. Authenticity still holds — but the varnish is the wrong age.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_provenance",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:authenticity_holds"
+      },
+      "convergence_after": [0.19, 0.20, 0.22]
+    },
+    {
+      "turn": 7,
+      "_note": "Palazzo maid passes. Dusts the console. Saw Marini at midnight.",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.22, 0.23, 0.24]
+    },
+    {
+      "turn": 8,
+      "_note": "Pursue Dr Winter to the private salon. Independent appraiser. Cooperative on first approach.",
+      "player_card": "suspect:dr_klaus_winter",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:pursued_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.24, 0.25, 0.26]
+    },
+    {
+      "turn": 9,
+      "_note": "Question Winter on the Titian. Procedural answers, German precision.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.27, 0.28, 0.29]
+    },
+    {
+      "turn": 10,
+      "_note": "Press him on the varnish age. He cites a 1968 conservation precedent. Hands stay flat on the leather.",
+      "player_card": "modifier:varnish_fresh",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.30, 0.31, 0.32]
+    },
+    {
+      "turn": 11,
+      "_note": "Cross to studio. Restoration notes mention solvent ratios that don't match Winter's claim.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.33, 0.34, 0.35]
+    },
+    {
+      "turn": 12,
+      "_note": "Linen fragment in the waste bin. Belgian weave, modern. Wrong period.",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.36, 0.37, 0.38]
+    },
+    {
+      "turn": 13,
+      "_note": "Cross to the gallery for the authentication pass with the new chain in hand. Fresh varnish on a 16th-century painting. ART_TELL: varnish_inconsistency.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:varnish_inconsistency"
+      },
+      "convergence_after": [0.39, 0.40, 0.41]
+    },
+    {
+      "turn": 14,
+      "_note": "Re-question Dr Winter. He shifts to defensive when the varnish age is laid out beside the catalogue date.",
+      "player_card": "suspect:dr_klaus_winter",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.41, 0.43, 0.43]
+    },
+    {
+      "turn": 15,
+      "_note": "Show Winter the auction catalogue. He admits he signed a provisional certificate three years ago.",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.43, 0.45, 0.45]
+    },
+    {
+      "turn": 16,
+      "_note": "Dead end. Winter's certificate explained: he was given the wrong painting to inspect. He is a dupe, not the architect.",
+      "player_card": "modifier:frame_swapped",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_dr_klaus_winter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.44, 0.46, 0.46]
+    },
+    {
+      "turn": 17,
+      "_note": "Return to the gallery. Examine the Bellini's varnish too. Same fresh sheen.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.46, 0.48, 0.48]
+    },
+    {
+      "turn": 18,
+      "_note": "Authenticate the Bellini against the provenance file. The varnish chemistry diverges from the chain.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:varnish_inconsistency"
+      },
+      "convergence_after": [0.48, 0.50, 0.50]
+    },
+    {
+      "turn": 19,
+      "_note": "Elena Rizzoli enters the gallery. Gallery-bright tone. Defensive when the Titian is mentioned.",
+      "player_card": "suspect:elena_rizzoli",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.50, 0.52, 0.52]
+    },
+    {
+      "turn": 20,
+      "_note": "Show Rizzoli the catalogue and the varnish report. She insists the appraisal was independent.",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.52, 0.54, 0.54]
+    },
+    {
+      "turn": 21,
+      "_note": "Cross to studio. Reconcile the studio's solvent inventory with the gallery's restoration record.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.54, 0.56, 0.56]
+    },
+    {
+      "turn": 22,
+      "_note": "Aged canvas off the bench. Stretchers new, linen tea-soaked. Confirmation of the forgery production line.",
+      "player_card": "object:forged_canvas",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.56, 0.58, 0.58]
+    },
+    {
+      "turn": 23,
+      "_note": "Pelosi descends past the studio door with a tray. Stiff Veneto formality. Saw the Countess on the upper floor.",
+      "player_card": "suspect:signora_pelosi",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:stiff_formality",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.58, 0.60, 0.60]
+    },
+    {
+      "turn": 24,
+      "_note": "Cross to mirror gallery. Authenticate again with the Pelosi placement in mind. The varnish report finally names the painter who applied it.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:varnish_inconsistency"
+      },
+      "convergence_after": [0.61, 0.63, 0.62]
+    },
+    {
+      "turn": 25,
+      "_note": "Re-question Rizzoli. The pigment ledger ties payments to a Zurich account.",
+      "player_card": "suspect:elena_rizzoli",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_elena_rizzoli",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:over_explained",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.63, 0.65, 0.64]
+    },
+    {
+      "turn": 26,
+      "_note": "Cross to the courtyard. Marini's fall site. Score on the railing visible from below.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.65, 0.66, 0.66]
+    },
+    {
+      "turn": 27,
+      "_note": "The night guard found the body. Saw no climbers, no canal exits.",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.66, 0.68, 0.68]
+    },
+    {
+      "turn": 28,
+      "_note": "Inspector Bruno arrives. Cultural crimes division. He recognizes the varnish profile.",
+      "player_card": "suspect:inspector_bruno",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:softened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.68, 0.70, 0.70]
+    },
+    {
+      "turn": 29,
+      "_note": "Bruno produces a Zurich sale receipt. Authenticate it against the gallery's provenance file.",
+      "player_card": "object:sale_receipt",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_provenance",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.70, 0.72, 0.71]
+    },
+    {
+      "turn": 30,
+      "_note": "Reputation_ruin: the Countess built her standing on the collection.",
+      "player_card": "motive:reputation_ruin",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.72, 0.73, 0.72]
+    },
+    {
+      "turn": 31,
+      "_note": "Cross to servants' stair. The bolt thrown from inside.",
+      "player_card": "travel:to_servants_stair",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.73, 0.74, 0.73]
+    },
+    {
+      "turn": 32,
+      "_note": "Re-question Pelosi on the stair. She names la Contessa as the one who passed at midnight.",
+      "player_card": "suspect:signora_pelosi",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "emotion:stiff_formality",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.74, 0.75, 0.74]
+    },
+    {
+      "turn": 33,
+      "_note": "Return to mirror gallery. Authenticate one last time against the silk residue caught in the frame.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:varnish_inconsistency"
+      },
+      "convergence_after": [0.75, 0.76, 0.75]
+    },
+    {
+      "turn": 34,
+      "_note": "Silk residue on the railing. Matches the Countess's evening wrap.",
+      "player_card": "modifier:silk_residue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.76, 0.77, 0.76]
+    },
+    {
+      "turn": 35,
+      "_note": "Cross to studio. Recall the chain end to end.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.77, 0.78, 0.77]
+    },
+    {
+      "turn": 36,
+      "_note": "Forgery operation. Marini's report. The motive crystallises.",
+      "player_card": "motive:forgery_operation",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.78, 0.80, 0.79]
+    },
+    {
+      "turn": 37,
+      "_note": "Descend to courtyard. Re-examine the railing's score from below. Masonry tool.",
+      "player_card": "modifier:railing_scored",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.80, 0.81, 0.80]
+    },
+    {
+      "turn": 38,
+      "_note": "Pursue to main balcony. Countess at the railing, wrap drawn close. Hostile when the file appears.",
+      "player_card": "travel:to_main_balcony",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:pursued_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.81, 0.82, 0.81]
+    },
+    {
+      "turn": 39,
+      "_note": "Lay out the pigment sample. Cadmium yellow, zinc white. Wrong century.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:varnish_inconsistency"
+      },
+      "convergence_after": [0.82, 0.84, 0.82]
+    },
+    {
+      "turn": 40,
+      "_note": "Show the provenance file. The dawn light catches the canal.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:provenance_gap"
+      },
+      "convergence_after": [0.83, 0.85, 0.83]
+    },
+    {
+      "turn": 41,
+      "_note": "Show the Zurich receipt. The buyer's alias. She measures the dismay.",
+      "player_card": "object:sale_receipt",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:sale_receipt",
+        "TELL": "emotion:practised_dismay",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:catalog_omission"
+      },
+      "convergence_after": [0.84, 0.86, 0.84]
+    },
+    {
+      "turn": 42,
+      "_note": "Accusation. The bell of San Marco. End of trajectory.",
+      "player_card": "ACCUSE:suspect:countess_morvaine",
+      "scene": {
+        "LOCATION": "location:main_balcony",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.85, 0.86, 0.85]
+    }
+  ],
+  "ending": {
+    "type": "all_strong",
+    "accused": "suspect:countess_morvaine",
+    "final_convergence": [0.85, 0.86, 0.85]
+  }
+}

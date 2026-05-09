@@ -1,0 +1,1066 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "dray_via_corridor_badge",
+  "case_id": "attended_hour",
+  "description": "The detective begins at the reception threshold, examines the corridor-badge swipe records, and finds Dray's swipes do not match his stated movements. From the badge log she traces his actual path through the rear corridor, the medication area, and back to the ward. 43 turns; heavy reception_threshold + rear_clinical_corridor presence; the night porter is the recurring witness.",
+  "outcome": "correct_callum_dray",
+  "starting_hypothesis": "object_first",
+  "tags": [
+    "corridor_badge_chain",
+    "swipe_log_focus",
+    "porter_recurring",
+    "reception_focus"
+  ],
+  "_authoring_note": "Turns 1-9 orientation: forecourt, reception threshold, badge log first scan, night porter testimony. Turns 10-22 investigation: corridor badge swipe times traced through ward, medication area; first Dray questioning. Turns 23-30 closing: re-question porter, re-examine badge, ledger contradiction; dead-end through Solicitor Pike. Turns 31-43 verdict_ready: dawn confrontation in the rear corridor.",
+  "opening": {
+    "tokens": [
+      "location:briar_clinic",
+      "event:harold_stroud_discovered",
+      "time:attended_observation"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Cold open. Forecourt.",
+      "player_card": "object:corridor_badge",
+      "scene": {
+        "LOCATION": "location:hospital_exterior",
+        "TRANSITION": "transition:none",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.04,
+        0.04,
+        0.06
+      ]
+    },
+    {
+      "turn": 2,
+      "_note": "Cross to the reception threshold. Night porter at his desk.",
+      "player_card": "travel:to_reception_threshold",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.06,
+        0.06,
+        0.08
+      ]
+    },
+    {
+      "turn": 3,
+      "_note": "Examine the corridor-badge swipe log on the porter's clipboard.",
+      "player_card": "object:corridor_badge",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.1,
+        0.1,
+        0.12
+      ]
+    },
+    {
+      "turn": 4,
+      "_note": "Question the porter. He recites the night's swipes from memory.",
+      "player_card": "witness:night_porter",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.14,
+        0.12,
+        0.14
+      ]
+    },
+    {
+      "turn": 5,
+      "_note": "Examine the visitor log entry. Dray's car in at twenty-two-fourteen.",
+      "player_card": "object:visitor_log",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.16,
+        0.14,
+        0.18
+      ]
+    },
+    {
+      "turn": 6,
+      "_note": "Notice an inconsistency: Dray's badge swiped the rear corridor door at twenty-three-thirty-eight.",
+      "player_card": "modifier:badge_unsigned",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.18,
+        0.18,
+        0.2
+      ]
+    },
+    {
+      "turn": 7,
+      "_note": "Cross to the rear clinical corridor. The door Dray's badge unlocked at the wrong hour.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.2,
+        0.2,
+        0.22
+      ]
+    },
+    {
+      "turn": 8,
+      "_note": "Notice the corridor lock at the ward entrance. Override scratch on the brass.",
+      "player_card": "modifier:lock_overridden",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.22,
+        0.22,
+        0.22
+      ]
+    },
+    {
+      "turn": 9,
+      "_note": "Cross to the cardiac ward. Bed three. The trolley still where it was wheeled.",
+      "player_card": "travel:to_cardiac_ward_crime_space",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_flickers",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.24,
+        0.24,
+        0.24
+      ]
+    },
+    {
+      "turn": 10,
+      "_note": "Examine the syringe tray. Two syringes, residue in one.",
+      "player_card": "object:syringe_tray",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:syringe_tray",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.26,
+        0.26,
+        0.26
+      ]
+    },
+    {
+      "turn": 11,
+      "_note": "Examine the medication chart. Amendment in second hand.",
+      "player_card": "object:medication_chart",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.3,
+        0.28,
+        0.3
+      ]
+    },
+    {
+      "turn": 12,
+      "_note": "Cross to medication charting area. Dispensary log on the bench.",
+      "player_card": "travel:to_medication_charting_area",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.3,
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "turn": 13,
+      "_note": "Examine the drug ledger. The 22:48 entry signed by a badge that does not match the porter's log.",
+      "player_card": "object:drug_ledger",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.34,
+        0.32,
+        0.32
+      ]
+    },
+    {
+      "turn": 14,
+      "_note": "Notice the ledger's badge code matches Dray's swipe in the rear corridor.",
+      "player_card": "modifier:handwriting_match",
+      "scene": {
+        "LOCATION": "location:medication_charting_area",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.36,
+        0.36,
+        0.34
+      ]
+    },
+    {
+      "turn": 15,
+      "_note": "Cross to nurse station. Aldworth on duty, hands trembling.",
+      "player_card": "witness:duty_nurse",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [
+        0.38,
+        0.38,
+        0.36
+      ]
+    },
+    {
+      "turn": 16,
+      "_note": "Question Aldworth. She did not see Dray, only heard the corridor door at twenty-three-forty.",
+      "player_card": "suspect:nurse_aldworth",
+      "scene": {
+        "LOCATION": "location:nurse_station_vantage",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_nurse_aldworth",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "emotion:shaking_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:hand_tremor"
+      },
+      "convergence_after": [
+        0.4,
+        0.4,
+        0.38
+      ]
+    },
+    {
+      "turn": 17,
+      "_note": "Cross to the doctor office. Dray here. First questioning.",
+      "player_card": "travel:to_doctor_office",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.42,
+        0.42,
+        0.4
+      ]
+    },
+    {
+      "turn": 18,
+      "_note": "Question Dray. He places his evening between the office and the staff break room. Not the corridor.",
+      "player_card": "suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.44,
+        0.42,
+        0.42
+      ]
+    },
+    {
+      "turn": 19,
+      "_note": "Press Dray with the badge time. Twenty-three-thirty-eight, rear corridor.",
+      "player_card": "object:corridor_badge",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.46,
+        0.46,
+        0.44
+      ]
+    },
+    {
+      "turn": 20,
+      "_note": "Detour. Solicitor Pike walks in with a case file. Pursue him as a possible co-conspirator. Dead end.",
+      "player_card": "witness:solicitor_pike",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_solicitor_pike",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.46,
+        0.46,
+        0.44
+      ]
+    },
+    {
+      "turn": 21,
+      "_note": "Question Pike. His clinic visits the prior week were straightforward. Stroud was his honest client.",
+      "player_card": "suspect:solicitor_pike",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_solicitor_pike",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:glanced_aside",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:alibi_holds",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.46,
+        0.46,
+        0.44
+      ]
+    },
+    {
+      "turn": 22,
+      "_note": "Return to reception threshold. Re-question the porter with the badge time in hand.",
+      "player_card": "travel:to_reception_threshold",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.48,
+        0.48,
+        0.46
+      ]
+    },
+    {
+      "turn": 23,
+      "_note": "Re-question the porter. He confirms Dray's car never left and Dray never came back through reception.",
+      "player_card": "witness:night_porter",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:investigation",
+        "MEDICAL_TELL": "medical_tell:steady_pulse"
+      },
+      "convergence_after": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "turn": 24,
+      "_note": "Examine the badge log a second time. Dray's swipes trace a route only an attending could have known.",
+      "player_card": "object:corridor_badge",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:pulse_irregular"
+      },
+      "convergence_after": [
+        0.56,
+        0.56,
+        0.54
+      ]
+    },
+    {
+      "turn": 25,
+      "_note": "Cross to the rear clinical corridor. Walk Dray's badge route in order.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:corridor_dims",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.58,
+        0.58,
+        0.56
+      ]
+    },
+    {
+      "turn": 26,
+      "_note": "Examine the prescription carbon Dray must have crossed past. Same hand as the chart amendment.",
+      "player_card": "object:prescription_carbon",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:prescription_carbon",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.62,
+        0.6,
+        0.58
+      ]
+    },
+    {
+      "turn": 27,
+      "_note": "Return to the cardiac ward. Re-examine the scene with the swipe times overlaid.",
+      "player_card": "travel:to_cardiac_ward_crime_space",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.64,
+        0.62,
+        0.62
+      ]
+    },
+    {
+      "turn": 28,
+      "_note": "Auscultate the cardiac monitor's record tape. Silenced at twenty-three-forty-two.",
+      "player_card": "action:alarm_delayed",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:auscultates",
+        "OBJECT_FOCUS": "object:clinical_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.66,
+        0.64,
+        0.64
+      ]
+    },
+    {
+      "turn": 29,
+      "_note": "Examine the autopsy report. Doubled cardiac depression confirmed.",
+      "player_card": "object:autopsy_report",
+      "scene": {
+        "LOCATION": "location:cardiac_ward_crime_space",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:autopsy_report",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.7,
+        0.68,
+        0.68
+      ]
+    },
+    {
+      "turn": 30,
+      "_note": "Return to the doctor office. Dray's coat on the chair. Pull the badge from the pocket.",
+      "player_card": "travel:to_doctor_office",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.72,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "turn": 31,
+      "_note": "Examine the clinical notes in the desk drawer. Page on bed three rewritten in same hand.",
+      "player_card": "object:clinical_notes",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:clinical_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.74,
+        0.72,
+        0.72
+      ]
+    },
+    {
+      "turn": 32,
+      "_note": "Examine the complaint filing in the same drawer. Hearing date circled in red.",
+      "player_card": "object:complaint_filing",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:complaint_filing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.76,
+        0.74,
+        0.74
+      ]
+    },
+    {
+      "turn": 33,
+      "_note": "Recall the malpractice cover. Stroud's testimony Monday would have ended Dray.",
+      "player_card": "motive:malpractice_cover",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:complaint_filing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.78,
+        0.76,
+        0.76
+      ]
+    },
+    {
+      "turn": 34,
+      "_note": "Examine the drug interaction manual on the desk. Cardiac combination page dog-eared.",
+      "player_card": "object:interaction_manual",
+      "scene": {
+        "LOCATION": "location:doctor_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "MEDICAL_TELL": "medical_tell:none"
+      },
+      "convergence_after": [
+        0.8,
+        0.78,
+        0.78
+      ]
+    },
+    {
+      "turn": 35,
+      "_note": "Return to the reception threshold. Confirm Dray has not exited.",
+      "player_card": "travel:to_reception_threshold",
+      "scene": {
+        "LOCATION": "location:reception_threshold",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_night_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object:visitor_log",
+        "TELL": "emotion:professional_calm",
+        "ATMOSPHERE": "atmosphere:fluorescent_steady",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pupil_response"
+      },
+      "convergence_after": [
+        0.82,
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "turn": 36,
+      "_note": "Cross to the rear clinical corridor. Dray here, pacing the length of it.",
+      "player_card": "travel:to_rear_clinical_corridor",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.84,
+        0.82,
+        0.82
+      ]
+    },
+    {
+      "turn": 37,
+      "_note": "Lay out the corridor badge. The swipes are in his hand.",
+      "player_card": "object:corridor_badge",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:corridor_badge",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.86,
+        0.85,
+        0.84
+      ]
+    },
+    {
+      "turn": 38,
+      "_note": "Lay out the drug ledger. The 22:48 entry is his.",
+      "player_card": "object:drug_ledger",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:drug_ledger",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.86,
+        0.86,
+        0.86
+      ]
+    },
+    {
+      "turn": 39,
+      "_note": "Lay out the chart amendment.",
+      "player_card": "modifier:chart_amended",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:medication_chart",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.87,
+        0.87,
+        0.87
+      ]
+    },
+    {
+      "turn": 40,
+      "_note": "Dawn through the corridor window. Lay out the complaint filing.",
+      "player_card": "object:complaint_filing",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:complaint_filing",
+        "TELL": "emotion:rigid_composure",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.88,
+        0.88,
+        0.88
+      ]
+    },
+    {
+      "turn": 41,
+      "_note": "Recall the negligence_testimony chain. Stroud's hearing was Monday.",
+      "player_card": "motive:negligence_testimony",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:complaint_filing",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.89,
+        0.89,
+        0.89
+      ]
+    },
+    {
+      "turn": 42,
+      "_note": "Lay out the dosage interaction. Two drugs combined into a doubled cardiac suppression.",
+      "player_card": "event:dosage_interaction",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:interaction_manual",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.9,
+        0.9,
+        0.9
+      ]
+    },
+    {
+      "turn": 43,
+      "_note": "Accusation. End of trajectory.",
+      "player_card": "ACCUSE:suspect:callum_dray",
+      "scene": {
+        "LOCATION": "location:rear_clinical_corridor",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:with_callum_dray",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:clipped_answers",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "MEDICAL_TELL": "medical_tell:pallor_visible"
+      },
+      "convergence_after": [
+        0.9,
+        0.9,
+        0.9
+      ]
+    }
+  ],
+  "ending": {
+    "type": "all_strong",
+    "accused": "suspect:callum_dray",
+    "final_convergence": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "_note": "The corridor-badge swipe log was the wedge. Dray's badge swiped the rear corridor door at twenty-three-thirty-eight, the medication area at twenty-two-forty-eight, and the ward door at the silenced-monitor hour — none of which matched his statement."
+  }
+}

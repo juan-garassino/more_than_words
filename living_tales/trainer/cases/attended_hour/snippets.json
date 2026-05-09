@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "case_id": "attended_hour",
+  "_comment": "Reusable scene-tuple templates for trajectory authoring. Each snippet fixes 5-7 of the dim slots (the constants that define the scene type) and lists the slots the author must supply per use (the variables that distinguish one instance from another). Token IDs are drawn from cases/attended_hour/dimensions.json. The medical_check_moment template is case-specific and uses the MEDICAL_TELL extension dimension defined for attended_hour.",
+
+  "snippets": {
+
+    "cold_object_examination": {
+      "description": "Detective alone with a single piece of clinical evidence — a chart, a vial, a slip of laboratory paper. Cold, methodical inspection. No NPC pressure, no tell, no stance. Used for opening turns and quiet evidence beats between interviews.",
+      "template": {
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "TELL": "tell:none"
+      },
+      "fill_in_per_turn": ["LOCATION", "OBJECT_FOCUS", "ATMOSPHERE", "REVELATION", "BEAT"]
+    },
+
+    "first_witness_interview_cooperative": {
+      "description": "First contact with a clinic witness — orderly, duty nurse, junior paramedic — who has no reason to lie. They give what they saw plainly within the small institutional rhythms of their role. The detective is questioning, the witness is open, the tell is steady. Use early in trajectory before any pressure has built.",
+      "template": {
+        "CAUSE": "cause:following_witness_lead",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lamp_steady"
+      },
+      "fill_in_per_turn": ["LOCATION", "TRANSITION", "PRESENCE", "OBJECT_FOCUS", "REVELATION", "BEAT"]
+    },
+
+    "witness_reinterview_defensive": {
+      "description": "Returning to a clinic witness already questioned, this time with a chart entry or keycard log in hand. Their stance shifts to defensive; the small institutional language tightens. Use mid-game, second or third pass on a witness, after a contradiction has surfaced elsewhere.",
+      "template": {
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "TELL": "tell:tightened",
+        "BEAT": "beat:investigation"
+      },
+      "fill_in_per_turn": ["LOCATION", "PRESENCE", "OBJECT_FOCUS", "ATMOSPHERE", "REVELATION"]
+    },
+
+    "transition_pursuing_lead": {
+      "description": "A movement turn — the detective is in motion between rooms of the converted Victorian house, having just been pointed somewhere by witness or evidence. Brief, kinetic. The corridor lights and the soft shoes of nurses pass by; the scene proper begins next turn.",
+      "template": {
+        "TRANSITION": "transition:pursued_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "TELL": "tell:none",
+        "REVELATION": "revelation:none"
+      },
+      "fill_in_per_turn": ["LOCATION", "OBJECT_FOCUS", "ATMOSPHERE", "BEAT"]
+    },
+
+    "dead_end_witness": {
+      "description": "A witness has nothing useful — the duty nurse who recorded normal vitals and saw nothing more, the night porter who saw no second car. Cooperative but uninformed. The lead closes here. Used to puncture momentum and force the detective back to the chart.",
+      "template": {
+        "CAUSE": "cause:following_witness_lead",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "TELL": "tell:none",
+        "REVELATION": "revelation:dead_end",
+        "ATMOSPHERE": "atmosphere:silence_holds"
+      },
+      "fill_in_per_turn": ["LOCATION", "TRANSITION", "PRESENCE", "OBJECT_FOCUS", "BEAT"]
+    },
+
+    "revelation_object_recognition": {
+      "description": "An object the detective has already seen — the medication chart, the dog-eared interaction manual, the visitor log — suddenly resolves into meaning. Alone, looking at the same thing in a new light. Late investigation or closing-in beat. Pairs with name_uncovered or motive_emerges revelations.",
+      "template": {
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:discovers",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds"
+      },
+      "fill_in_per_turn": ["LOCATION", "OBJECT_FOCUS", "REVELATION", "BEAT"]
+    },
+
+    "confrontation_hostile": {
+      "description": "Direct accusation. The detective has the chain in hand — the dispensary entry, the rewritten clinical notes, the matched handwriting — and is putting it to the suspect across a desk in a converted Victorian consulting room. The stance is hostile, the tell is sharp, the beat is closing_in or verdict_ready. Use sparingly — once or twice per trajectory.",
+      "template": {
+        "CAUSE": "cause:pursued_suspicion",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "BEAT": "beat:closing_in"
+      },
+      "fill_in_per_turn": ["LOCATION", "TRANSITION", "PRESENCE", "OBJECT_FOCUS", "REVELATION"]
+    },
+
+    "revisit_for_reframing": {
+      "description": "The detective returns to a room already visited — bed three of the private ward, the dispensary, the records office — alone, to look at it again with the new context. Nothing dramatic — a quiet recasting of an earlier scene. Often produces a partial_match or contradiction_surfaces.",
+      "template": {
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "TELL": "tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "fill_in_per_turn": ["LOCATION", "OBJECT_FOCUS", "ATMOSPHERE", "REVELATION"]
+    },
+
+    "atmospheric_interlude": {
+      "description": "A low-activity beat. The fluorescent strip light hums; somewhere a cardiac monitor in another bay beeps at its slow regular interval. Time passes; the converted Victorian house breathes around the detective. Minimal scene activity, no revelation, no NPC. Used to mark act breaks, hour changes, or simply to give the prose a place to rest. One or two per trajectory.",
+      "template": {
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:chronological_drift",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "REVELATION": "revelation:none"
+      },
+      "fill_in_per_turn": ["LOCATION", "ATMOSPHERE", "BEAT"]
+    },
+
+    "medical_check_moment": {
+      "description": "Case-specific snippet. The detective notices a small clinical tell in the NPC during a presence scene — a hand finding an absent pulse, a stethoscope still around a neck at the wrong hour, a pen leak darker against white linen, the involuntary turn of an inventory page. The MEDICAL_TELL slot carries the body-language signal that maps to the suspect's relationship to the case (e.g. medical_tell:pen_leak_visible for Dray, medical_tell:trembling_signature for Aldworth, medical_tell:avoided_threshold for Parris, medical_tell:over_apologetic for Lin). The detective auscultates — observes clinically rather than questions — and the moment yields a partial_match or contradiction_surfaces. Use once per suspect per trajectory.",
+      "template": {
+        "CAUSE": "cause:examining_evidence",
+        "ACTION": "action:auscultates",
+        "STANCE": "stance:defensive",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "BEAT": "beat:investigation"
+      },
+      "fill_in_per_turn": ["LOCATION", "TRANSITION", "PRESENCE", "OBJECT_FOCUS", "MEDICAL_TELL", "TELL", "REVELATION"]
+    }
+
+  }
+}

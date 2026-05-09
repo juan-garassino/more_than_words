@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "case_id": "amber_cipher",
+  "voice": "third_person_past",
+  "_comment": "Slot-fillable phrases per dim token in en + es. Phrases are 2-8 words, designed to compose into Obra-Dinn-style detective prose. The composer assembles them per the grammar in SCHEMA.md. The detective is referred to as 'the detective' (en) / 'la detective' (es) — gender female by default; configurable.",
+
+  "LOCATION": {
+    "location:thornfield_crossing":  {"en": "Thornfield Crossing",         "es": "el cruce de Thornfield"},
+    "location:platform_two":         {"en": "Platform Two",                "es": "el andén dos"},
+    "location:platform_one":         {"en": "Platform One",                "es": "el andén uno"},
+    "location:station_office":       {"en": "the station office",          "es": "la oficina de la estación"},
+    "location:signal_box":           {"en": "the signal box",              "es": "la caseta de señales"},
+    "location:waiting_room":         {"en": "the waiting room",            "es": "la sala de espera"},
+    "location:goods_shed":           {"en": "the goods shed",              "es": "el cobertizo de mercancías"},
+    "location:carriage_siding":      {"en": "the carriage siding",         "es": "la vía muerta de los coches"},
+    "location:none":                 {"en": "",                            "es": ""}
+  },
+
+  "TRANSITION": {
+    "transition:stayed":             {"en": "Still at",                    "es": "Aún en"},
+    "transition:crossed_to":         {"en": "Crossed to",                  "es": "Cruzó hasta"},
+    "transition:entered":            {"en": "Entered",                     "es": "Entró en"},
+    "transition:exited":             {"en": "Stepped out of",              "es": "Salió de"},
+    "transition:returned":           {"en": "Returned to",                 "es": "Volvió a"},
+    "transition:pursued_to":         {"en": "Followed the lead to",        "es": "Siguió la pista hasta"},
+    "transition:called_away_to":     {"en": "Was summoned to",             "es": "Fue llamada a"},
+    "transition:descended_to":       {"en": "Descended into",              "es": "Bajó a"},
+    "transition:none":               {"en": "Began at",                    "es": "Comenzó en"}
+  },
+
+  "CAUSE": {
+    "cause:following_witness_lead":  {"en": "On the witness's word,",      "es": "Por la palabra del testigo,"},
+    "cause:examining_evidence":      {"en": "Tracing the evidence,",       "es": "Siguiendo la evidencia,"},
+    "cause:recognized_object":       {"en": "Something about the object struck her;", "es": "Algo del objeto la detuvo;"},
+    "cause:noticed_inconsistency":   {"en": "A detail did not match;",     "es": "Un detalle no encajaba;"},
+    "cause:pursued_suspicion":       {"en": "On a hunch,",                 "es": "Por una corazonada,"},
+    "cause:revisiting_scene":        {"en": "Returning to confirm,",       "es": "Volviendo para confirmar,"},
+    "cause:summoned":                {"en": "Called by name,",             "es": "Llamada por su nombre,"},
+    "cause:chronological_drift":     {"en": "As the hour wore on,",        "es": "Mientras la hora se alargaba,"},
+    "cause:reading_telegram_signal": {"en": "Reading the wire's signal,",  "es": "Leyendo la señal del telégrafo,"},
+    "cause:none":                    {"en": "",                            "es": ""}
+  },
+
+  "PRESENCE": {
+    "presence:with_stationmaster":    {"en": "the stationmaster stood by the desk",     "es": "el jefe de estación estaba junto al escritorio"},
+    "presence:with_railway_clerk":    {"en": "the railway clerk was at his ledger",     "es": "el oficinista estaba con su registro"},
+    "presence:with_estranged_daughter": {"en": "the estranged daughter waited at the door", "es": "la hija distanciada esperaba en la puerta"},
+    "presence:with_renard_voss":      {"en": "Renard Voss was already there",           "es": "Renard Voss ya estaba allí"},
+    "presence:with_night_porter":     {"en": "the night porter watched from the bench", "es": "el portero nocturno vigilaba desde el banco"},
+    "presence:with_platform_guard":   {"en": "the platform guard stood at attention",   "es": "el guardia del andén se mantenía firme"},
+    "presence:with_travelling_broker": {"en": "the travelling broker leaned on his case", "es": "el corredor viajero se apoyaba en su maletín"},
+    "presence:with_ticket_clerk":     {"en": "the ticket clerk peered through the window", "es": "el taquillero miraba por la ventanilla"},
+    "presence:with_porter":           {"en": "the porter was idle nearby",              "es": "el mozo de cuerda estaba desocupado cerca"},
+    "presence:with_signalman":        {"en": "the signalman was at his levers",         "es": "el señalero estaba en sus palancas"},
+    "presence:with_carriage_cleaner": {"en": "the carriage cleaner moved between rows", "es": "el limpiador de coches se movía entre filas"},
+    "presence:with_telegraph_operator": {"en": "the telegraph operator sat at his key", "es": "el telegrafista estaba en su manipulador"},
+    "presence:alone":                 {"en": "no one else was there",                   "es": "no había nadie más"}
+  },
+
+  "STANCE": {
+    "stance:cooperative":  {"en": "open, willing to speak",         "es": "abierto, dispuesto a hablar"},
+    "stance:defensive":    {"en": "the hands flat against the desk", "es": "con las manos a la vista"},
+    "stance:evasive":      {"en": "the eyes finding the floor",     "es": "con los ojos en el suelo"},
+    "stance:hostile":      {"en": "the jaw set, the voice low",     "es": "con la mandíbula tensa, la voz baja"},
+    "stance:unaware":      {"en": "still unaware of her purpose",   "es": "aún ignorando el propósito de su visita"},
+    "stance:none":         {"en": "",                                "es": ""}
+  },
+
+  "ACTION": {
+    "action:examines":     {"en": "examined",   "es": "examinó"},
+    "action:questions":    {"en": "questioned", "es": "interrogó"},
+    "action:notices":      {"en": "noticed",    "es": "advirtió"},
+    "action:discovers":    {"en": "found",      "es": "halló"},
+    "action:confronts":    {"en": "confronted", "es": "confrontó"},
+    "action:follows":      {"en": "followed",   "es": "siguió"},
+    "action:waits":        {"en": "waited",     "es": "esperó"},
+    "action:leaves":       {"en": "stepped away from", "es": "se alejó de"},
+    "action:arrives":      {"en": "stepped into", "es": "entró en"},
+    "action:recalls":      {"en": "recalled",   "es": "recordó"},
+    "action:none":         {"en": "stood",      "es": "se detuvo"}
+  },
+
+  "OBJECT_FOCUS": {
+    "object:ledger_book":         {"en": "the ledger book",          "es": "el libro de registro"},
+    "object:telegraph_form":      {"en": "the telegraph form",       "es": "el formulario telegráfico"},
+    "object:coal_dust":           {"en": "the coal dust",            "es": "el polvo de carbón"},
+    "object:sealed_envelope":     {"en": "the sealed envelope",      "es": "el sobre lacrado"},
+    "object:station_key":         {"en": "the station key",          "es": "la llave de la estación"},
+    "object:cipher_sheet":        {"en": "the cipher sheet",         "es": "la hoja cifrada"},
+    "object:initialed_cufflink":  {"en": "the initialed cufflink",   "es": "el gemelo grabado"},
+    "object:torn_ticket":         {"en": "the torn ticket",          "es": "el billete roto"},
+    "object:telegram":            {"en": "the telegram",             "es": "el telegrama"},
+    "object:satchel":             {"en": "the satchel",              "es": "el maletín"},
+    "object:cash_tin":            {"en": "the cash tin",             "es": "la caja de caudales"},
+    "object:platform_lantern":    {"en": "the platform lantern",     "es": "la linterna del andén"},
+    "object:ink_blotter":         {"en": "the ink blotter",          "es": "el secante"},
+    "object_focus:none":          {"en": "",                          "es": ""}
+  },
+
+  "TELL": {
+    "emotion:steady_hands":     {"en": "the hands stayed steady",         "es": "las manos no temblaron"},
+    "emotion:fixed_stare":      {"en": "the stare did not waver",         "es": "la mirada no se desvió"},
+    "emotion:avoided_contact":  {"en": "the eyes did not lift to meet hers", "es": "los ojos no se alzaron a cruzar la mirada"},
+    "emotion:measured_breath":  {"en": "the breathing stayed measured",   "es": "la respiración se mantuvo medida"},
+    "emotion:paused_reply":     {"en": "the answer paused before coming", "es": "la respuesta tardó en llegar"},
+    "emotion:closed_posture":   {"en": "the coat stayed buttoned",        "es": "el abrigo siguió abrochado"},
+    "tell:paled":               {"en": "all colour drained at the question", "es": "todo el color se retiró ante la pregunta"},
+    "tell:tightened":           {"en": "the shoulders tightened",         "es": "los hombros se tensaron"},
+    "tell:none":                {"en": "",                                 "es": ""}
+  },
+
+  "ATMOSPHERE": {
+    "atmosphere:fog_thickens":    {"en": "Outside, the fog thickened around the lamps.",     "es": "Fuera, la niebla se espesaba en torno a las lámparas."},
+    "atmosphere:fog_lifts":       {"en": "The fog had begun to lift.",                       "es": "La niebla empezaba a levantarse."},
+    "atmosphere:lamp_flickers":   {"en": "A lamp flickered at the platform's end.",          "es": "Una lámpara parpadeó al final del andén."},
+    "atmosphere:lamp_steady":     {"en": "The lamps held steady.",                            "es": "Las lámparas ardían firmes."},
+    "atmosphere:silence_holds":   {"en": "Silence held between them.",                        "es": "El silencio se mantuvo entre ellos."},
+    "atmosphere:train_passes":    {"en": "A train passed without slowing.",                   "es": "Un tren pasó sin reducir la marcha."},
+    "atmosphere:dawn_approaches": {"en": "The first grey of dawn pressed at the windows.",    "es": "El primer gris del alba presionaba en las ventanas."},
+    "atmosphere:none":            {"en": "",                                                  "es": ""},
+    "time:fog_thickens":          {"en": "The fog had thickened in the lapse.",               "es": "La niebla se había espesado en el intervalo."}
+  },
+
+  "REVELATION": {
+    "revelation:contradiction_surfaces": {"en": "The two accounts no longer agreed.",        "es": "Los dos relatos ya no concordaban."},
+    "revelation:alibi_holds":            {"en": "The alibi held.",                            "es": "La coartada se sostuvo."},
+    "revelation:name_uncovered":         {"en": "A name became legible at last.",             "es": "Un nombre se hizo legible al fin."},
+    "revelation:motive_emerges":         {"en": "A reason rose to the surface.",              "es": "Un motivo salió a la superficie."},
+    "revelation:dead_end":               {"en": "The line went nowhere.",                     "es": "La línea no llevaba a ninguna parte."},
+    "revelation:partial_match":          {"en": "Close — but not certain.",                   "es": "Cercano — pero no seguro."},
+    "revelation:confirmation":           {"en": "An earlier hypothesis was confirmed.",       "es": "Se confirmó una hipótesis anterior."},
+    "revelation:none":                   {"en": "",                                            "es": ""}
+  },
+
+  "BEAT": {
+    "beat:orientation":   {"en": "",  "es": ""},
+    "beat:investigation": {"en": "",  "es": ""},
+    "beat:closing_in":    {"en": "The shape of it was visible now.",  "es": "Su forma ya era visible."},
+    "beat:verdict_ready": {"en": "Time to name them.",                 "es": "Era hora de nombrarlos."}
+  },
+
+  "TRAVEL_CARDS": {
+    "_comment": "Player travel cards. Their action label is what appears on the card; their played effect forces the corresponding LOCATION + a TRANSITION.",
+    "travel:to_thornfield_crossing":  {"en": "Go to Thornfield Crossing",  "es": "Ir al cruce de Thornfield"},
+    "travel:to_platform_two":         {"en": "Go to Platform Two",          "es": "Ir al andén dos"},
+    "travel:to_platform_one":         {"en": "Go to Platform One",          "es": "Ir al andén uno"},
+    "travel:to_station_office":       {"en": "Go to the station office",    "es": "Ir a la oficina"},
+    "travel:to_signal_box":           {"en": "Go to the signal box",        "es": "Ir a la caseta de señales"},
+    "travel:to_waiting_room":         {"en": "Go to the waiting room",      "es": "Ir a la sala de espera"},
+    "travel:to_goods_shed":           {"en": "Go to the goods shed",        "es": "Ir al cobertizo"},
+    "travel:to_carriage_siding":      {"en": "Go to the carriage siding",   "es": "Ir a la vía muerta"}
+  }
+}

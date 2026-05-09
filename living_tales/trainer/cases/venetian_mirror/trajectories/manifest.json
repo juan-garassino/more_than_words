@@ -1,0 +1,48 @@
+{
+  "case_id": "venetian_mirror",
+  "schema_version": 1,
+  "trajectories": [
+    {
+      "id": "morvaine_via_provenance_gap",
+      "outcome": "correct_countess_morvaine",
+      "length": 45,
+      "starting_hypothesis": "object_first",
+      "tags": ["provenance_chain", "art_forgery", "back_and_forth", "starter_template", "flagship"]
+    },
+    {
+      "id": "morvaine_via_torn_glove",
+      "outcome": "correct_countess_morvaine",
+      "length": 43,
+      "starting_hypothesis": "object_first_glove",
+      "tags": ["physical_evidence", "courtyard_anchored", "marco_dandolo_chain"]
+    },
+    {
+      "id": "morvaine_via_varnish_inconsistency",
+      "outcome": "correct_countess_morvaine",
+      "length": 42,
+      "starting_hypothesis": "art_first_varnish",
+      "tags": ["forensic_chain", "studio_room_heavy", "art_tell_varnish_inconsistency"]
+    },
+    {
+      "id": "cold_trail_circular",
+      "outcome": "cold_trail",
+      "length": 55,
+      "starting_hypothesis": "circular_loop",
+      "tags": ["cold_trail", "circular_visits", "no_progress"]
+    },
+    {
+      "id": "wrong_carlo_bassi_via_torn_glove",
+      "outcome": "wrong_carlo_bassi",
+      "length": 41,
+      "starting_hypothesis": "object_first_glove",
+      "tags": ["wrong_accusation", "carlo_bassi", "torn_glove_misread", "canal_entrance_heavy"]
+    },
+    {
+      "id": "wrong_signora_pelosi_via_keys",
+      "outcome": "wrong_signora_pelosi",
+      "length": 41,
+      "starting_hypothesis": "tells_first",
+      "tags": ["wrong_accusation", "signora_pelosi", "keys_misread", "private_salon_heavy"]
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "case_id": "attended_hour",
+
+  "_comment": "Multidimensional structured-scene schema for the clinical/Victorian hospital case. Each engine turn emits one token per dim. Universal core dimensions are shared with amber_cipher; case-specific extensions cover hospital setting, NPCs, and the MEDICAL_TELL extension dimension. Tokens with dim=null (anchor_tokens below) are graph/convergence anchors only — never emitted directly.",
+
+  "dimensions": [
+    {
+      "name": "LOCATION",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "location:cardiac_ward_crime_space",
+        "location:doctor_office",
+        "location:family_waiting_room",
+        "location:hospital_exterior",
+        "location:medication_charting_area",
+        "location:nurse_station_vantage",
+        "location:rear_clinical_corridor",
+        "location:reception_threshold",
+        "location:service_elevator_zone",
+        "location:staff_break_or_overnight_desk_area",
+        "location:none"
+      ]
+    },
+    {
+      "name": "TRANSITION",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "transition:stayed",
+        "transition:crossed_to",
+        "transition:entered",
+        "transition:exited",
+        "transition:returned",
+        "transition:pursued_to",
+        "transition:called_away_to",
+        "transition:descended_to",
+        "transition:none"
+      ]
+    },
+    {
+      "name": "CAUSE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "cause:following_witness_lead",
+        "cause:examining_evidence",
+        "cause:recognized_object",
+        "cause:noticed_inconsistency",
+        "cause:pursued_suspicion",
+        "cause:revisiting_scene",
+        "cause:summoned",
+        "cause:chronological_drift",
+        "cause:reading_chart_signal",
+        "cause:none"
+      ]
+    },
+    {
+      "name": "PRESENCE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "presence:with_callum_dray",
+        "presence:with_nurse_aldworth",
+        "presence:with_dr_parris",
+        "presence:with_owen_stroud",
+        "presence:with_records_clerk",
+        "presence:with_pharmacist_lin",
+        "presence:with_solicitor_pike",
+        "presence:with_night_porter",
+        "presence:with_ward_orderly",
+        "presence:with_lab_assistant",
+        "presence:with_duty_nurse",
+        "presence:with_ambulance_driver",
+        "presence:alone"
+      ]
+    },
+    {
+      "name": "STANCE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "stance:cooperative",
+        "stance:defensive",
+        "stance:evasive",
+        "stance:hostile",
+        "stance:unaware",
+        "stance:none"
+      ]
+    },
+    {
+      "name": "ACTION",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "action:examines",
+        "action:questions",
+        "action:notices",
+        "action:discovers",
+        "action:confronts",
+        "action:follows",
+        "action:waits",
+        "action:leaves",
+        "action:arrives",
+        "action:recalls",
+        "action:auscultates",
+        "action:none"
+      ]
+    },
+    {
+      "name": "OBJECT_FOCUS",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "object:medication_chart",
+        "object:syringe_tray",
+        "object:drug_ledger",
+        "object:interaction_manual",
+        "object:visitor_log",
+        "object:autopsy_report",
+        "object:prescription_carbon",
+        "object:insurance_form",
+        "object:corridor_badge",
+        "object:ward_keycard",
+        "object:clinical_notes",
+        "object:lab_slip",
+        "object:complaint_filing",
+        "object_focus:none"
+      ]
+    },
+    {
+      "name": "TELL",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "emotion:professional_calm",
+        "emotion:shaking_hands",
+        "emotion:clipped_answers",
+        "emotion:avoided_ward",
+        "emotion:rehearsed_grief",
+        "emotion:rigid_composure",
+        "tell:paled",
+        "tell:tightened",
+        "tell:glanced_aside",
+        "tell:silent",
+        "tell:hesitated",
+        "tell:over_explained",
+        "tell:softened",
+        "tell:none"
+      ]
+    },
+    {
+      "name": "ATMOSPHERE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "atmosphere:corridor_dims",
+        "atmosphere:fog_lifts",
+        "atmosphere:fluorescent_flickers",
+        "atmosphere:fluorescent_steady",
+        "atmosphere:elevator_arrives",
+        "atmosphere:lamp_steady",
+        "atmosphere:silence_holds",
+        "atmosphere:silence_breaks",
+        "atmosphere:train_passes",
+        "atmosphere:dawn_approaches",
+        "atmosphere:wind_rises",
+        "atmosphere:none"
+      ]
+    },
+    {
+      "name": "REVELATION",
+      "universal": true,
+      "always_emit": true,
+      "gated_by_convergence": {
+        "revelation:name_uncovered": 0.5,
+        "revelation:motive_emerges": 0.5,
+        "revelation:confirmation": 0.4
+      },
+      "vocab": [
+        "revelation:contradiction_surfaces",
+        "revelation:alibi_holds",
+        "revelation:name_uncovered",
+        "revelation:motive_emerges",
+        "revelation:dead_end",
+        "revelation:partial_match",
+        "revelation:confirmation",
+        "revelation:none"
+      ]
+    },
+    {
+      "name": "BEAT",
+      "universal": true,
+      "always_emit": true,
+      "gated_by_convergence": {
+        "beat:closing_in": 0.5,
+        "beat:verdict_ready": 0.75
+      },
+      "vocab": [
+        "beat:orientation",
+        "beat:investigation",
+        "beat:closing_in",
+        "beat:verdict_ready"
+      ]
+    },
+    {
+      "name": "MEDICAL_TELL",
+      "universal": false,
+      "always_emit": true,
+      "case_specific": true,
+      "gated_by_convergence": {
+        "medical_tell:pulse_irregular": 0.4,
+        "medical_tell:hand_tremor": 0.4
+      },
+      "vocab": [
+        "medical_tell:pulse_irregular",
+        "medical_tell:pupil_response",
+        "medical_tell:hand_tremor",
+        "medical_tell:pallor_visible",
+        "medical_tell:steady_pulse",
+        "medical_tell:none"
+      ]
+    }
+  ],
+
+  "_anchors_only_comment": "Tokens that contribute to convergence + graph but are never directly emitted as scene-tuple slots. They remain as player cards (motives, modifiers, legacy actions, legacy time tokens) or graph anchors driving logit_bias. Note: emotion:* tokens listed in TELL above ARE emitted; the legacy ACTION/TIME tokens here are NOT.",
+  "anchor_tokens": {
+    "MOTIVE": [
+      "motive:negligence_testimony",
+      "motive:malpractice_cover",
+      "motive:insurance_claim",
+      "motive:career_ruin",
+      "motive:family_grudge",
+      "motive:prior_complaint"
+    ],
+    "MODIFIER": [
+      "modifier:dosage_doubled",
+      "modifier:chart_amended",
+      "modifier:badge_unsigned",
+      "modifier:insulin_combined",
+      "modifier:corridor_dim",
+      "modifier:lock_overridden",
+      "modifier:handwriting_match",
+      "modifier:fresh_notation",
+      "modifier:vial_count_short",
+      "modifier:filing_date_wrong"
+    ],
+    "EVENT": [
+      "event:dosage_interaction",
+      "event:harold_stroud_discovered",
+      "event:medication_round"
+    ],
+    "TIME_LEGACY": [
+      "time:attended_observation",
+      "time:night_round",
+      "time:shift_handover",
+      "time:dawn_alarm",
+      "time:hearing_scheduled"
+    ],
+    "ACTION_LEGACY": [
+      "action:chart_signed",
+      "action:dispensary_visited",
+      "action:records_accessed",
+      "action:injection_given",
+      "action:alarm_delayed",
+      "action:notes_rewritten",
+      "action:family_visited",
+      "action:complaint_filed",
+      "action:lab_ordered"
+    ]
+  },
+
+  "_player_cards_comment": "Tokens the player can play as cards. Includes inquiry cards (witnesses/objects/motives/legacy actions) and travel cards (one per location — let the player choose to move).",
+  "player_cards": {
+    "inquiry": "@all_PLAYER_or_SHARED_with_dim_in_[OBJECT_FOCUS,PRESENCE,ACTION_LEGACY,MOTIVE]",
+    "travel": [
+      "travel:to_cardiac_ward_crime_space",
+      "travel:to_doctor_office",
+      "travel:to_family_waiting_room",
+      "travel:to_hospital_exterior",
+      "travel:to_medication_charting_area",
+      "travel:to_nurse_station_vantage",
+      "travel:to_rear_clinical_corridor",
+      "travel:to_reception_threshold"
+    ]
+  }
+}

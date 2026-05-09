@@ -1,0 +1,825 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "red_herring_satchel_wrong_owner",
+  "case_id": "amber_cipher",
+  "description": "The detective finds the satchel in the carriage siding and reads it as the broker's. The travelling broker's late_arrival, his theatrical English, his presence in the first-class lounge with an unused ticket — every fact gets fitted to the satchel's owner. Coal dust, the cipher sheet, the cufflink — all are reframed as the broker's effects. Voss appears at turn 28 and is dismissed: 'the broker is already obvious'. Convergence reaches 0.80 on the broker-shaped pattern. The detective accuses the broker at dawn — wrongly. The satchel had been Voss's; the broker had merely shared a carriage with him an hour earlier and seen nothing.",
+  "outcome": "red_herring_trap",
+  "starting_hypothesis": "object_first_satchel_misowner",
+  "tags": ["red_herring_trap", "satchel_misowner", "travelling_broker", "object_misread"],
+
+  "opening": {
+    "tokens": [
+      "location:thornfield_crossing",
+      "event:aldous_verne_discovered",
+      "time:between_trains"
+    ]
+  },
+
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Cold open. Detective at the crossing. Examines the torn ticket first.",
+      "player_card": "object:torn_ticket",
+      "scene": {
+        "LOCATION": "location:thornfield_crossing",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [0.06, 0.06, 0.10]
+    },
+    {
+      "turn": 2,
+      "_note": "Cross to carriage_siding. The carriage cleaner is here. The satchel under the third seat.",
+      "player_card": "travel:to_carriage_siding",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_carriage_cleaner",
+        "STANCE": "stance:unaware",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [0.10, 0.10, 0.16]
+    },
+    {
+      "turn": 3,
+      "_note": "Examine the satchel. Brown leather, well-travelled, no name on the strap.",
+      "player_card": "object:satchel",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_carriage_cleaner",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [0.14, 0.14, 0.20]
+    },
+    {
+      "turn": 4,
+      "_note": "Question the carriage_cleaner. She had cleaned the carriage at ten-fifty. She had seen a man with a coat — broker-shaped.",
+      "player_card": "witness:carriage_cleaner",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_carriage_cleaner",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [0.18, 0.18, 0.22]
+    },
+    {
+      "turn": 5,
+      "_note": "Cross to platform_one. Travelling broker in the first-class lounge area, smiling.",
+      "player_card": "travel:to_platform_one",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [0.20, 0.20, 0.24]
+    },
+    {
+      "turn": 6,
+      "_note": "Question the broker on the satchel. He laughs — yes, he carries one, of course.",
+      "player_card": "suspect:travelling_broker",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [0.24, 0.24, 0.28]
+    },
+    {
+      "turn": 7,
+      "_note": "Examine the broker's unused ticket. North-bound, decided against.",
+      "player_card": "object:torn_ticket",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation"
+      },
+      "convergence_after": [0.26, 0.26, 0.30]
+    },
+    {
+      "turn": 8,
+      "_note": "Recognize late_arrival modifier. The broker arrived at the lounge after the eleven o'clock door.",
+      "player_card": "modifier:late_arrival",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.30, 0.30, 0.32]
+    },
+    {
+      "turn": 9,
+      "_note": "Return to carriage_siding. Re-examine the satchel with the broker in mind.",
+      "player_card": "travel:to_carriage_siding",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.32, 0.32, 0.36]
+    },
+    {
+      "turn": 10,
+      "_note": "Examine inside the satchel. Find the cipher sheet. Detective treats it as the broker's commercial code.",
+      "player_card": "object:cipher_sheet",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.36, 0.36, 0.40]
+    },
+    {
+      "turn": 11,
+      "_note": "Examine the initialed cufflink. The R.V. — but the broker's full name has an R, says the detective.",
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.38, 0.40, 0.42]
+    },
+    {
+      "turn": 12,
+      "_note": "Recognize coal_dust on the satchel's underside.",
+      "player_card": "object:coal_dust",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:coal_dust",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.42, 0.42, 0.44]
+    },
+    {
+      "turn": 13,
+      "_note": "Cross to platform_two. Examine the body's position with broker theory.",
+      "player_card": "travel:to_platform_two",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.44, 0.44, 0.46]
+    },
+    {
+      "turn": 14,
+      "_note": "Question the porter. Did the broker pass platform two?",
+      "player_card": "witness:porter",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.46, 0.46, 0.48]
+    },
+    {
+      "turn": 15,
+      "_note": "Porter remembers a satchel passing the lamp room twice. Detective folds this into broker's beat.",
+      "player_card": "modifier:misplaced",
+      "scene": {
+        "LOCATION": "location:platform_two",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_porter",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.50, 0.50, 0.50]
+    },
+    {
+      "turn": 16,
+      "_note": "Return to platform_one. Re-question the broker. Charm thickens. He laughs first, answers second.",
+      "player_card": "travel:to_platform_one",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:closed_posture",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.52, 0.52, 0.52]
+    },
+    {
+      "turn": 17,
+      "_note": "Confront broker with the cipher sheet. His eyes go to the lounge door.",
+      "player_card": "object:cipher_sheet",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "emotion:avoided_contact",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.54, 0.54, 0.54]
+    },
+    {
+      "turn": 18,
+      "_note": "Lay out the cufflink. The broker affects surprise.",
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "emotion:closed_posture",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.56, 0.56, 0.56]
+    },
+    {
+      "turn": 19,
+      "_note": "Cross to office. Cross-check the ledger for broker's bookings.",
+      "player_card": "travel:to_station_office",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:ledger_book",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.58, 0.58, 0.58]
+    },
+    {
+      "turn": 20,
+      "_note": "Question railway_clerk on the broker's tickets.",
+      "player_card": "witness:ticket_clerk",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:ledger_book",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation"
+      },
+      "convergence_after": [0.60, 0.60, 0.60]
+    },
+    {
+      "turn": 21,
+      "_note": "Recognize unclaimed modifier. The unused ticket — broker's evidence of intent.",
+      "player_card": "modifier:unclaimed",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:torn_ticket",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.62, 0.62, 0.62]
+    },
+    {
+      "turn": 22,
+      "_note": "Recall third_party_link motive. Broker as fixer.",
+      "player_card": "motive:third_party_link",
+      "scene": {
+        "LOCATION": "location:station_office",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_railway_clerk",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:ledger_book",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:lamp_steady",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.64, 0.64, 0.64]
+    },
+    {
+      "turn": 23,
+      "_note": "Return to carriage_siding. Open the satchel fully. The sealed_envelope is inside.",
+      "player_card": "travel:to_carriage_siding",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.66, 0.66, 0.66]
+    },
+    {
+      "turn": 24,
+      "_note": "Examine sealed_envelope. Detective reads its phrasing as commercial — broker-shaped.",
+      "player_card": "object:sealed_envelope",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:sealed_envelope",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.68, 0.68, 0.68]
+    },
+    {
+      "turn": 25,
+      "_note": "Question carriage_cleaner second time. Did she see the broker in this carriage?",
+      "player_card": "witness:carriage_cleaner",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_carriage_cleaner",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.70, 0.70, 0.70]
+    },
+    {
+      "turn": 26,
+      "_note": "She places the broker in the carriage at ten-fifty. Detective hears confirmation.",
+      "player_card": "modifier:late_arrival",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_carriage_cleaner",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:steady_hands",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.72, 0.72, 0.72]
+    },
+    {
+      "turn": 27,
+      "_note": "Return to platform_one. Confront broker with the satchel's contents.",
+      "player_card": "travel:to_platform_one",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:avoided_contact",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.74, 0.74, 0.74]
+    },
+    {
+      "turn": 28,
+      "_note": "Cross to goods_shed. VOSS APPEARS. Detective notes him and turns back: 'the broker is already obvious.'",
+      "player_card": "travel:to_goods_shed",
+      "scene": {
+        "LOCATION": "location:goods_shed",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_renard_voss",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:closed_posture",
+        "ATMOSPHERE": "atmosphere:fog_thickens",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.74, 0.74, 0.74]
+    },
+    {
+      "turn": 29,
+      "_note": "Return to platform_one. Lay out cipher sheet, cufflink, satchel — to the broker.",
+      "player_card": "travel:to_platform_one",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:avoided_contact",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.74, 0.74, 0.74]
+    },
+    {
+      "turn": 30,
+      "_note": "Lay out the cipher_sheet. The broker pales.",
+      "player_card": "object:cipher_sheet",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.76, 0.76, 0.76]
+    },
+    {
+      "turn": 31,
+      "_note": "Lay out the initialed cufflink. The broker laughs — the laugh is wrong.",
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in"
+      },
+      "convergence_after": [0.77, 0.77, 0.77]
+    },
+    {
+      "turn": 32,
+      "_note": "Recall third_party_link aloud. The chain holds.",
+      "player_card": "motive:third_party_link",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.78, 0.78, 0.78]
+    },
+    {
+      "turn": 33,
+      "_note": "Return to carriage_siding. Lift the satchel. Bring it back as the centerpiece.",
+      "player_card": "travel:to_carriage_siding",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.79, 0.79, 0.79]
+    },
+    {
+      "turn": 34,
+      "_note": "Recognize coal_dust on the satchel one final time. The labourer's residue, the detective decides, is broker's.",
+      "player_card": "object:coal_dust",
+      "scene": {
+        "LOCATION": "location:carriage_siding",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:coal_dust",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    },
+    {
+      "turn": 35,
+      "_note": "Cross back to platform_one. The broker, now still.",
+      "player_card": "travel:to_platform_one",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "emotion:fixed_stare",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    },
+    {
+      "turn": 36,
+      "_note": "Confront with the satchel.",
+      "player_card": "object:satchel",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    },
+    {
+      "turn": 37,
+      "_note": "Confront with sealed_envelope.",
+      "player_card": "object:sealed_envelope",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:sealed_envelope",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    },
+    {
+      "turn": 38,
+      "_note": "Question him a final time. He answers each question once.",
+      "player_card": "suspect:travelling_broker",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:satchel",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    },
+    {
+      "turn": 39,
+      "_note": "Recall fraud_concealment. The detective binds it to the broker's commercial wires.",
+      "player_card": "motive:fraud_concealment",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:cipher_sheet",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    },
+    {
+      "turn": 40,
+      "_note": "Dawn at the lounge windows.",
+      "player_card": "modifier:late_arrival",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:chronological_drift",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:fixed_stare",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    },
+    {
+      "turn": 41,
+      "_note": "Lay out the cufflink one final time. Broker has nothing left.",
+      "player_card": "object:initialed_cufflink",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:initialed_cufflink",
+        "TELL": "tell:paled",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    },
+    {
+      "turn": 42,
+      "_note": "Accusation. Wrong man. The satchel had been Voss's; the broker had merely shared a carriage with him an hour earlier.",
+      "player_card": "ACCUSE:suspect:travelling_broker",
+      "scene": {
+        "LOCATION": "location:platform_one",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:with_travelling_broker",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:fixed_stare",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:verdict_ready"
+      },
+      "convergence_after": [0.80, 0.80, 0.80]
+    }
+  ],
+
+  "ending": {
+    "type": "red_herring_trap",
+    "accused": "suspect:travelling_broker",
+    "final_convergence": [0.80, 0.80, 0.80],
+    "_note": "Convergence reached 0.80 on the strength of the satchel chain — but the satchel had been Voss's, set down in the carriage at ten-fifty when the two men shared the compartment. The broker's late_arrival was theatrical, his unused ticket simple cowardice; he had heard nothing, seen nothing, and would have nothing to say at the assize. Voss, dismissed at turn 28, walked north before the dawn lifted, the unsigned manifest still in his coat."
+  }
+}

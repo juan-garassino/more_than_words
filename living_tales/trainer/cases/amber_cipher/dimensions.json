@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "case_id": "amber_cipher",
+
+  "_comment": "Multidimensional structured-scene schema. Each engine turn emits one token per dim. Existing tokens are tagged with their dim; new dim-specific tokens (transitions, causes, beats, atmospheres, stances, tells, revelations) are added below. Tokens with dim=null are graph/convergence anchors only — never emitted directly.",
+
+  "dimensions": [
+    {
+      "name": "LOCATION",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "location:thornfield_crossing",
+        "location:platform_two",
+        "location:platform_one",
+        "location:station_office",
+        "location:signal_box",
+        "location:waiting_room",
+        "location:goods_shed",
+        "location:carriage_siding",
+        "location:none"
+      ]
+    },
+    {
+      "name": "TRANSITION",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "transition:stayed",
+        "transition:crossed_to",
+        "transition:entered",
+        "transition:exited",
+        "transition:returned",
+        "transition:pursued_to",
+        "transition:called_away_to",
+        "transition:descended_to",
+        "transition:none"
+      ]
+    },
+    {
+      "name": "CAUSE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "cause:following_witness_lead",
+        "cause:examining_evidence",
+        "cause:recognized_object",
+        "cause:noticed_inconsistency",
+        "cause:pursued_suspicion",
+        "cause:revisiting_scene",
+        "cause:summoned",
+        "cause:chronological_drift",
+        "cause:reading_telegram_signal",
+        "cause:none"
+      ]
+    },
+    {
+      "name": "PRESENCE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "presence:with_stationmaster",
+        "presence:with_railway_clerk",
+        "presence:with_estranged_daughter",
+        "presence:with_renard_voss",
+        "presence:with_night_porter",
+        "presence:with_platform_guard",
+        "presence:with_travelling_broker",
+        "presence:with_ticket_clerk",
+        "presence:with_porter",
+        "presence:with_signalman",
+        "presence:with_carriage_cleaner",
+        "presence:with_telegraph_operator",
+        "presence:alone"
+      ]
+    },
+    {
+      "name": "STANCE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "stance:cooperative",
+        "stance:defensive",
+        "stance:evasive",
+        "stance:hostile",
+        "stance:unaware",
+        "stance:none"
+      ]
+    },
+    {
+      "name": "ACTION",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "action:examines",
+        "action:questions",
+        "action:notices",
+        "action:discovers",
+        "action:confronts",
+        "action:follows",
+        "action:waits",
+        "action:leaves",
+        "action:arrives",
+        "action:recalls",
+        "action:none"
+      ]
+    },
+    {
+      "name": "OBJECT_FOCUS",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "object:ledger_book",
+        "object:telegraph_form",
+        "object:coal_dust",
+        "object:sealed_envelope",
+        "object:station_key",
+        "object:cipher_sheet",
+        "object:initialed_cufflink",
+        "object:torn_ticket",
+        "object:telegram",
+        "object:satchel",
+        "object:cash_tin",
+        "object:platform_lantern",
+        "object:ink_blotter",
+        "object_focus:none"
+      ]
+    },
+    {
+      "name": "TELL",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "emotion:steady_hands",
+        "emotion:fixed_stare",
+        "emotion:avoided_contact",
+        "emotion:measured_breath",
+        "emotion:paused_reply",
+        "emotion:closed_posture",
+        "tell:paled",
+        "tell:tightened",
+        "tell:none"
+      ]
+    },
+    {
+      "name": "ATMOSPHERE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "atmosphere:fog_thickens",
+        "atmosphere:fog_lifts",
+        "atmosphere:lamp_flickers",
+        "atmosphere:lamp_steady",
+        "atmosphere:silence_holds",
+        "atmosphere:train_passes",
+        "atmosphere:dawn_approaches",
+        "atmosphere:none",
+        "time:fog_thickens"
+      ]
+    },
+    {
+      "name": "REVELATION",
+      "universal": true,
+      "always_emit": true,
+      "gated_by_convergence": {
+        "revelation:name_uncovered": 0.5,
+        "revelation:motive_emerges": 0.5,
+        "revelation:confirmation": 0.4
+      },
+      "vocab": [
+        "revelation:contradiction_surfaces",
+        "revelation:alibi_holds",
+        "revelation:name_uncovered",
+        "revelation:motive_emerges",
+        "revelation:dead_end",
+        "revelation:partial_match",
+        "revelation:confirmation",
+        "revelation:none"
+      ]
+    },
+    {
+      "name": "BEAT",
+      "universal": true,
+      "always_emit": true,
+      "gated_by_convergence": {
+        "beat:closing_in": 0.5,
+        "beat:verdict_ready": 0.75
+      },
+      "vocab": [
+        "beat:orientation",
+        "beat:investigation",
+        "beat:closing_in",
+        "beat:verdict_ready"
+      ]
+    }
+  ],
+
+  "_anchors_only_comment": "Tokens that contribute to convergence + graph but are never directly emitted as scene-tuple slots. They remain as player cards (motives, modifiers) or graph anchors driving logit_bias.",
+  "anchor_tokens": {
+    "MOTIVE": [
+      "motive:sealed_proof",
+      "motive:third_party_link",
+      "motive:fraud_concealment",
+      "motive:partnership_ruin",
+      "motive:ledger_exposure",
+      "motive:debt_pressure"
+    ],
+    "MODIFIER": [
+      "modifier:lamps_dimmed",
+      "modifier:damp",
+      "modifier:initialed_RV",
+      "modifier:late_arrival",
+      "modifier:paid_off",
+      "modifier:unlocked",
+      "modifier:misplaced",
+      "modifier:unclaimed",
+      "modifier:smudged",
+      "modifier:ticket_punched"
+    ],
+    "EVENT": [
+      "event:platform_two_scene",
+      "event:aldous_verne_discovered",
+      "event:window_between_trains"
+    ],
+    "TIME_LEGACY": [
+      "time:signal_reset",
+      "time:between_trains",
+      "time:last_arrival",
+      "time:first_departure"
+    ],
+    "ACTION_LEGACY": [
+      "action:signal_paused",
+      "action:platform_crossed",
+      "action:telegram_handled",
+      "action:satchel_swapped",
+      "action:office_entered",
+      "action:ledger_checked",
+      "action:guard_bribed",
+      "action:door_left_open",
+      "action:footsteps_faded"
+    ]
+  },
+
+  "_player_cards_comment": "Tokens the player can play as cards. Includes inquiry cards (witnesses/objects/motives/legacy actions) and travel cards (new — let the player choose to move).",
+  "player_cards": {
+    "inquiry": "@all_PLAYER_or_SHARED_with_dim_in_[OBJECT_FOCUS,PRESENCE,ACTION_LEGACY,MOTIVE]",
+    "travel": [
+      "travel:to_thornfield_crossing",
+      "travel:to_platform_two",
+      "travel:to_platform_one",
+      "travel:to_station_office",
+      "travel:to_signal_box",
+      "travel:to_waiting_room",
+      "travel:to_goods_shed",
+      "travel:to_carriage_siding"
+    ]
+  }
+}

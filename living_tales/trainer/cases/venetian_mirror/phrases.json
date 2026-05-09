@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "case_id": "venetian_mirror",
+  "voice": "third_person_past",
+  "_comment": "Slot-fillable phrases per dim token in en + es. Phrases are 2-8 words, designed to compose into Obra-Dinn-style detective prose adapted to Venetian Carnevale Baroque. The composer assembles them per the grammar in SCHEMA.md. The detective is referred to as 'the inspector' (en) / 'el inspector' (es). Universal STANCE/TELL phrases are gender-neutral.",
+
+  "LOCATION": {
+    "location:palazzo_contarini": {"en": "Palazzo Contarini",            "es": "el Palazzo Contarini"},
+    "location:main_balcony":      {"en": "the main balcony",             "es": "el balcón principal"},
+    "location:mirror_gallery":    {"en": "the mirror gallery",           "es": "la galería de los espejos"},
+    "location:canal_entrance":    {"en": "the canal entrance",           "es": "la entrada del canal"},
+    "location:studio_room":       {"en": "the restoration studio",       "es": "el taller de restauración"},
+    "location:servants_stair":    {"en": "the servants' stair",          "es": "la escalera de servicio"},
+    "location:courtyard":         {"en": "the courtyard",                "es": "el patio interior"},
+    "location:private_salon":     {"en": "the private salon",            "es": "el salón privado"},
+    "location:none":              {"en": "",                              "es": ""}
+  },
+
+  "TRANSITION": {
+    "transition:stayed":          {"en": "Still at",                     "es": "Aún en"},
+    "transition:crossed_to":      {"en": "Crossed to",                   "es": "Cruzó hasta"},
+    "transition:entered":         {"en": "Entered",                      "es": "Entró en"},
+    "transition:exited":          {"en": "Stepped out of",               "es": "Salió de"},
+    "transition:returned":        {"en": "Returned to",                  "es": "Volvió a"},
+    "transition:pursued_to":      {"en": "Followed the lead to",         "es": "Siguió la pista hasta"},
+    "transition:called_away_to":  {"en": "Was summoned to",              "es": "Fue llamado a"},
+    "transition:descended_to":    {"en": "Descended into",               "es": "Bajó a"},
+    "transition:none":            {"en": "Began at",                     "es": "Comenzó en"}
+  },
+
+  "CAUSE": {
+    "cause:following_witness_lead": {"en": "On the witness's word,",      "es": "Por la palabra del testigo,"},
+    "cause:examining_evidence":     {"en": "Tracing the evidence,",       "es": "Siguiendo la evidencia,"},
+    "cause:recognized_object":      {"en": "Something about the object struck him;", "es": "Algo del objeto lo detuvo;"},
+    "cause:noticed_inconsistency":  {"en": "A detail did not match;",     "es": "Un detalle no encajaba;"},
+    "cause:pursued_suspicion":      {"en": "On a hunch,",                 "es": "Por una corazonada,"},
+    "cause:revisiting_scene":       {"en": "Returning to confirm,",       "es": "Volviendo para confirmar,"},
+    "cause:summoned":               {"en": "Called by name,",             "es": "Llamado por su nombre,"},
+    "cause:chronological_drift":    {"en": "As the hour wore on,",        "es": "Mientras la hora se alargaba,"},
+    "cause:examining_provenance":   {"en": "Reading the provenance card,", "es": "Leyendo la cédula de procedencia,"},
+    "cause:none":                   {"en": "",                             "es": ""}
+  },
+
+  "PRESENCE": {
+    "presence:with_countess_morvaine": {"en": "the Countess received the inspector in the gallery", "es": "la Condesa recibía al inspector en la galería"},
+    "presence:with_carlo_bassi":       {"en": "Carlo Bassi stood by the canal door, his white silk mask still in his hand", "es": "Carlo Bassi estaba junto a la puerta del canal, la máscara de seda blanca aún en la mano"},
+    "presence:with_dr_klaus_winter":   {"en": "Dr Winter was at the inventory desk", "es": "el doctor Winter estaba en el escritorio de inventario"},
+    "presence:with_elena_rizzoli":     {"en": "Elena Rizzoli was at the sales register", "es": "Elena Rizzoli estaba con el registro de ventas"},
+    "presence:with_marco_dandolo":     {"en": "Marco Dandolo waited in the courtyard, his glove torn", "es": "Marco Dandolo esperaba en el patio, el guante roto"},
+    "presence:with_signora_pelosi":    {"en": "Signora Pelosi held the keys",          "es": "la signora Pelosi sostenía las llaves"},
+    "presence:with_inspector_bruno":   {"en": "Inspector Bruno was at the courtyard rail", "es": "el inspector Bruno estaba junto a la balaustrada"},
+    "presence:with_gondolier":         {"en": "the gondolier waited at the steps",     "es": "el gondolero esperaba en los escalones"},
+    "presence:with_palazzo_maid":      {"en": "the maid moved between corridors",     "es": "la sirvienta se movía entre los corredores"},
+    "presence:with_night_guard":       {"en": "the night guard stood at the gate",    "es": "el guardia nocturno estaba en el portal"},
+    "presence:with_art_dealer":        {"en": "the art dealer was at the catalog",    "es": "el marchante estaba con el catálogo"},
+    "presence:with_canal_boatman":     {"en": "the canal boatman lingered at the steps", "es": "el barquero esperaba en los escalones"},
+    "presence:alone":                  {"en": "no one else was there",                "es": "no había nadie más"}
+  },
+
+  "STANCE": {
+    "stance:cooperative":  {"en": "open, willing to speak",                "es": "abierto, dispuesto a hablar"},
+    "stance:defensive":    {"en": "the hands flat against the railing",    "es": "con las manos a la vista"},
+    "stance:evasive":      {"en": "the eyes finding the floor",            "es": "con los ojos en el suelo"},
+    "stance:hostile":      {"en": "the jaw set, the voice low",            "es": "con la mandíbula tensa, la voz baja"},
+    "stance:unaware":      {"en": "still unaware of the inspector's purpose", "es": "aún ignorando el propósito de la visita"},
+    "stance:none":         {"en": "",                                       "es": ""}
+  },
+
+  "ACTION": {
+    "action:examines":       {"en": "examined",          "es": "examinó"},
+    "action:questions":      {"en": "questioned",        "es": "interrogó"},
+    "action:notices":        {"en": "noticed",           "es": "advirtió"},
+    "action:discovers":      {"en": "found",             "es": "halló"},
+    "action:confronts":      {"en": "confronted",        "es": "confrontó"},
+    "action:follows":        {"en": "followed",          "es": "siguió"},
+    "action:waits":          {"en": "waited",            "es": "esperó"},
+    "action:leaves":         {"en": "stepped away from", "es": "se alejó de"},
+    "action:arrives":        {"en": "stepped into",      "es": "entró en"},
+    "action:recalls":        {"en": "recalled",          "es": "recordó"},
+    "action:authenticates":  {"en": "authenticated",     "es": "autentificó"},
+    "action:none":           {"en": "stood",             "es": "se detuvo"}
+  },
+
+  "OBJECT_FOCUS": {
+    "object:cracked_mirror":     {"en": "the cracked mirror",       "es": "el espejo agrietado"},
+    "object:paint_analysis":     {"en": "the paint analysis",       "es": "el análisis de pintura"},
+    "object:forged_canvas":      {"en": "the forged canvas",        "es": "el lienzo falsificado"},
+    "object:balcony_railing":    {"en": "the balcony railing",      "es": "la balaustrada del balcón"},
+    "object:guest_list":         {"en": "the guest list",           "es": "la lista de invitados"},
+    "object:provenance_file":    {"en": "the provenance file",      "es": "el expediente de procedencia"},
+    "object:pigment_sample":     {"en": "the pigment sample",       "es": "la muestra de pigmento"},
+    "object:silk_glove":         {"en": "the silk glove",           "es": "el guante de seda"},
+    "object:auction_catalogue":  {"en": "the auction catalogue",    "es": "el catálogo de la subasta"},
+    "object:restoration_notes":  {"en": "the restoration notes",    "es": "las notas de restauración"},
+    "object:canal_key":          {"en": "the canal key",            "es": "la llave del canal"},
+    "object:linen_fragment":     {"en": "the linen fragment",       "es": "el fragmento de lino"},
+    "object:sale_receipt":       {"en": "the sale receipt",         "es": "el recibo de venta"},
+    "object_focus:none":         {"en": "",                          "es": ""}
+  },
+
+  "TELL": {
+    "emotion:polished_grace":      {"en": "the hands stayed steady",          "es": "las manos no temblaron"},
+    "emotion:startled_poise":      {"en": "the glass came down too quickly",  "es": "el vaso bajó demasiado pronto"},
+    "emotion:measured_deflection": {"en": "the answer turned to the file",    "es": "la respuesta se desvió hacia el expediente"},
+    "emotion:stiff_formality":     {"en": "the hands stayed clasped",         "es": "las manos siguieron entrelazadas"},
+    "emotion:avoided_subject":     {"en": "the subject was changed twice",    "es": "el tema fue cambiado dos veces"},
+    "emotion:practised_dismay":    {"en": "the dismay arrived precisely on cue", "es": "la consternación llegó justo a tiempo"},
+    "tell:paled":                  {"en": "all colour drained at the question", "es": "todo el color se retiró ante la pregunta"},
+    "tell:tightened":              {"en": "the shoulders tightened",          "es": "los hombros se tensaron"},
+    "tell:glanced_aside":          {"en": "the eyes broke contact",           "es": "los ojos se apartaron"},
+    "tell:silent":                 {"en": "no answer came",                   "es": "no llegó respuesta"},
+    "tell:hesitated":              {"en": "the answer paused before coming",  "es": "la respuesta tardó en llegar"},
+    "tell:over_explained":         {"en": "the explanation went on too long", "es": "la explicación se alargó demasiado"},
+    "tell:softened":               {"en": "the stance eased",                 "es": "la postura se aflojó"},
+    "tell:none":                   {"en": "",                                  "es": ""}
+  },
+
+  "ATMOSPHERE": {
+    "atmosphere:canal_mist_thickens": {"en": "Mist thickened over the canal.",                 "es": "La bruma espesaba sobre el canal."},
+    "atmosphere:canal_mist_lifts":    {"en": "The canal mist began to lift.",                  "es": "La bruma del canal empezaba a levantarse."},
+    "atmosphere:lantern_gutters":     {"en": "A carnival lantern guttered above the door.",    "es": "Un farolillo de Carnaval titilaba sobre la puerta."},
+    "atmosphere:lantern_steady":      {"en": "The carnival lanterns held steady.",             "es": "Los farolillos de Carnaval ardían firmes."},
+    "atmosphere:silence_holds":       {"en": "Silence held between them.",                     "es": "El silencio se mantuvo entre ellos."},
+    "atmosphere:silence_breaks":      {"en": "A bell broke the silence.",                      "es": "Una campana rompió el silencio."},
+    "atmosphere:gondola_passes":      {"en": "A gondola passed below the balcony.",            "es": "Una góndola pasó bajo el balcón."},
+    "atmosphere:dawn_approaches":     {"en": "The first grey of dawn touched the canal.",      "es": "El primer gris del alba tocó el canal."},
+    "atmosphere:bell_tolls":          {"en": "San Marco's bell tolled the hour.",              "es": "La campana de San Marco dio la hora."},
+    "atmosphere:none":                {"en": "",                                                "es": ""}
+  },
+
+  "REVELATION": {
+    "revelation:contradiction_surfaces": {"en": "The two accounts no longer agreed.",          "es": "Los dos relatos ya no concordaban."},
+    "revelation:alibi_holds":            {"en": "The alibi held.",                              "es": "La coartada se sostuvo."},
+    "revelation:name_uncovered":         {"en": "A name became legible at last.",               "es": "Un nombre se hizo legible al fin."},
+    "revelation:motive_emerges":         {"en": "A reason rose to the surface.",                "es": "Un motivo salió a la superficie."},
+    "revelation:dead_end":               {"en": "The line went nowhere.",                       "es": "La línea no llevaba a ninguna parte."},
+    "revelation:partial_match":          {"en": "Close — but not certain.",                     "es": "Cercano — pero no seguro."},
+    "revelation:confirmation":           {"en": "An earlier hypothesis was confirmed.",         "es": "Se confirmó una hipótesis anterior."},
+    "revelation:none":                   {"en": "",                                              "es": ""}
+  },
+
+  "BEAT": {
+    "beat:orientation":   {"en": "",                                "es": ""},
+    "beat:investigation": {"en": "",                                "es": ""},
+    "beat:closing_in":    {"en": "The shape of it was visible now.", "es": "Su forma ya era visible."},
+    "beat:verdict_ready": {"en": "Time to name them.",               "es": "Era hora de nombrarlos."}
+  },
+
+  "ART_TELL": {
+    "art_tell:provenance_gap":         {"en": "the provenance card showed a six-year gap",   "es": "la cédula de procedencia mostraba un vacío de seis años"},
+    "art_tell:varnish_inconsistency":  {"en": "the varnish was newer than the canvas",       "es": "el barniz era más reciente que el lienzo"},
+    "art_tell:brushwork_mismatch":     {"en": "the brushwork did not match the master's hand", "es": "la pincelada no encajaba con la mano del maestro"},
+    "art_tell:frame_anomaly":          {"en": "the frame post-dated the painting",           "es": "el marco era posterior al cuadro"},
+    "art_tell:catalog_omission":       {"en": "the painting was absent from the official catalog", "es": "la pintura faltaba del catálogo oficial"},
+    "art_tell:authenticity_holds":     {"en": "the authentication held",                     "es": "la autenticación se sostuvo"},
+    "art_tell:none":                   {"en": "",                                              "es": ""}
+  },
+
+  "TRAVEL_CARDS": {
+    "_comment": "Player travel cards. Their action label is what appears on the card; their played effect forces the corresponding LOCATION + a TRANSITION.",
+    "travel:to_palazzo_contarini": {"en": "Go to Palazzo Contarini",        "es": "Ir al Palazzo Contarini"},
+    "travel:to_main_balcony":      {"en": "Go to the main balcony",         "es": "Ir al balcón principal"},
+    "travel:to_mirror_gallery":    {"en": "Go to the mirror gallery",       "es": "Ir a la galería de los espejos"},
+    "travel:to_canal_entrance":    {"en": "Go to the canal entrance",       "es": "Ir a la entrada del canal"},
+    "travel:to_studio_room":       {"en": "Go to the restoration studio",   "es": "Ir al taller de restauración"},
+    "travel:to_servants_stair":    {"en": "Go to the servants' stair",      "es": "Ir a la escalera de servicio"},
+    "travel:to_courtyard":         {"en": "Go to the courtyard",            "es": "Ir al patio interior"},
+    "travel:to_private_salon":     {"en": "Go to the private salon",        "es": "Ir al salón privado"}
+  }
+}

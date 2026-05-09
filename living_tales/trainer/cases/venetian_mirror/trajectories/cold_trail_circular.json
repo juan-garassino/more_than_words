@@ -1,0 +1,1123 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "cold_trail_circular",
+  "case_id": "venetian_mirror",
+  "description": "The inspector walks the same Palazzo Contarini circuit for 55 turns. Mirror gallery, courtyard, canal entrance, studio, back to the gallery. Five returned-transitions. Witnesses repeat themselves; the provenance file gives nothing new on each pass. Convergence rises to about 0.40 and stalls under it. Many dead ends, many partial matches. The inspector never reaches closing_in. The fog over the canal does not lift.",
+  "outcome": "cold_trail",
+  "starting_hypothesis": "circular_loop",
+  "tags": ["cold_trail", "lyapunov_plateau", "circular_visits", "no_progress"],
+  "opening": {
+    "tokens": [
+      "location:palazzo_contarini",
+      "event:luca_marini_discovered",
+      "time:carnival_evening"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Cold open. The inspector arrives at the palazzo. The mist on the canal.",
+      "player_card": "object:cracked_mirror",
+      "scene": {
+        "LOCATION": "location:palazzo_contarini",
+        "TRANSITION": "transition:none",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.04, 0.04, 0.06]
+    },
+    {
+      "turn": 2,
+      "_note": "Cross to mirror gallery. First survey of the paintings.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.06, 0.06, 0.08]
+    },
+    {
+      "turn": 3,
+      "_note": "Examine the provenance file. Nothing reads as wrong yet.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:authenticity_holds"
+      },
+      "convergence_after": [0.08, 0.08, 0.10]
+    },
+    {
+      "turn": 4,
+      "_note": "Cross to courtyard. The flagstones where the body lay.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.10, 0.10, 0.12]
+    },
+    {
+      "turn": 5,
+      "_note": "Examine the railing from below. Nothing the inspector did not already know.",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.12, 0.12, 0.14]
+    },
+    {
+      "turn": 6,
+      "_note": "Cross to canal entrance.",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.14, 0.14, 0.16]
+    },
+    {
+      "turn": 7,
+      "_note": "Question gondolier. He gives the half-hour of the last arrival. Nothing new.",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.16, 0.16, 0.18]
+    },
+    {
+      "turn": 8,
+      "_note": "Cross to studio.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.18, 0.18, 0.20]
+    },
+    {
+      "turn": 9,
+      "_note": "Restoration notes on the bench. The inspector reads slowly.",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.20, 0.20, 0.22]
+    },
+    {
+      "turn": 10,
+      "_note": "Return to mirror gallery — first repeat.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.22, 0.22, 0.24]
+    },
+    {
+      "turn": 11,
+      "_note": "The auction catalogue on the console. Same listing.",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.24, 0.24, 0.26]
+    },
+    {
+      "turn": 12,
+      "_note": "Palazzo maid passes through the gallery. Brief, cooperative.",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.26, 0.26, 0.28]
+    },
+    {
+      "turn": 13,
+      "_note": "Return to courtyard.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.28, 0.28, 0.30]
+    },
+    {
+      "turn": 14,
+      "_note": "Examine the railing again. The score mark sits exactly where it sat an hour ago.",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.29, 0.29, 0.31]
+    },
+    {
+      "turn": 15,
+      "_note": "Night guard passes. Same patrol times. He did not look up.",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.30, 0.30, 0.32]
+    },
+    {
+      "turn": 16,
+      "_note": "Return to canal entrance.",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.31, 0.31, 0.33]
+    },
+    {
+      "turn": 17,
+      "_note": "Canal boatman lingers. He saw the studio light come on.",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.32, 0.32, 0.34]
+    },
+    {
+      "turn": 18,
+      "_note": "Question gondolier again. Same answers.",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.33, 0.33, 0.35]
+    },
+    {
+      "turn": 19,
+      "_note": "Return to studio. The bench has not been touched.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.34, 0.34, 0.36]
+    },
+    {
+      "turn": 20,
+      "_note": "Linen fragment in the bin. Wrong period; reads as scrap.",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.35, 0.35, 0.37]
+    },
+    {
+      "turn": 21,
+      "_note": "Return to mirror gallery — second repeat.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:authenticity_holds"
+      },
+      "convergence_after": [0.36, 0.36, 0.38]
+    },
+    {
+      "turn": 22,
+      "_note": "Examine the catalogue again. Same plates.",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.37, 0.37, 0.39]
+    },
+    {
+      "turn": 23,
+      "_note": "Return to courtyard — second revisit.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.38, 0.38, 0.40]
+    },
+    {
+      "turn": 24,
+      "_note": "Atmospheric drift. The bell tolls a quarter to.",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:chronological_drift",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.38, 0.38, 0.40]
+    },
+    {
+      "turn": 25,
+      "_note": "Return to canal entrance — second revisit.",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.38, 0.38, 0.40]
+    },
+    {
+      "turn": 26,
+      "_note": "Question canal boatman again. He has nothing more.",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.38, 0.38, 0.40]
+    },
+    {
+      "turn": 27,
+      "_note": "Return to studio — second revisit.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.39, 0.39, 0.40]
+    },
+    {
+      "turn": 28,
+      "_note": "Pigment sample on the bench. The inspector does not press on it.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.39, 0.39, 0.40]
+    },
+    {
+      "turn": 29,
+      "_note": "Return to mirror gallery — third repeat.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.39, 0.39, 0.40]
+    },
+    {
+      "turn": 30,
+      "_note": "Maid passes again. Hands fold and unfold the apron corner. She has nothing new.",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.39, 0.39, 0.40]
+    },
+    {
+      "turn": 31,
+      "_note": "Examine the cracked mirror at the gallery's far end.",
+      "player_card": "object:cracked_mirror",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.39, 0.39, 0.40]
+    },
+    {
+      "turn": 32,
+      "_note": "Return to courtyard — third revisit.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.39, 0.39, 0.40]
+    },
+    {
+      "turn": 33,
+      "_note": "Question night guard once more. Same hours, same nothing.",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 34,
+      "_note": "Return to canal entrance — third revisit.",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 35,
+      "_note": "Examine the canal key the inspector found earlier in the courtyard pocket.",
+      "player_card": "object:canal_key",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 36,
+      "_note": "Return to studio — third revisit.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 37,
+      "_note": "Examine the linen again. Same fragment.",
+      "player_card": "object:linen_fragment",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:linen_fragment",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 38,
+      "_note": "Return to mirror gallery — fourth repeat.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 39,
+      "_note": "Examine the catalogue. Memorized.",
+      "player_card": "object:auction_catalogue",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:auction_catalogue",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 40,
+      "_note": "Return to courtyard — fourth revisit.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 41,
+      "_note": "Examine the railing one more time. The score has not changed.",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 42,
+      "_note": "Return to canal entrance — fourth revisit.",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 43,
+      "_note": "Question gondolier a third time. He smiles politely and gives the same answer.",
+      "player_card": "witness:gondolier",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_gondolier",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 44,
+      "_note": "Return to studio — fourth revisit.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 45,
+      "_note": "Examine the pigment sample again.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 46,
+      "_note": "Return to mirror gallery — fifth repeat.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 47,
+      "_note": "Examine cracked mirror once more.",
+      "player_card": "object:cracked_mirror",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:cracked_mirror",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 48,
+      "_note": "Return to courtyard — fifth revisit.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 49,
+      "_note": "A bell tolls. The hour passes.",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:chronological_drift",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 50,
+      "_note": "Question canal boatman — third time. He has not seen anyone leave by water.",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 51,
+      "_note": "Return to canal entrance — fifth revisit.",
+      "player_card": "travel:to_canal_entrance",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 52,
+      "_note": "Examine the canal key once more. No new lock comes to mind.",
+      "player_card": "object:canal_key",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 53,
+      "_note": "Return to studio — fifth revisit.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 54,
+      "_note": "The restoration notes again. The page has been read.",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    },
+    {
+      "turn": 55,
+      "_note": "Return to the palazzo entrance. The mist over the canal has not lifted.",
+      "player_card": "travel:to_palazzo_contarini",
+      "scene": {
+        "LOCATION": "location:palazzo_contarini",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:chronological_drift",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:leaves",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.40, 0.40, 0.40]
+    }
+  ],
+  "ending": {
+    "type": "cold_case",
+    "accused": null,
+    "final_convergence": [0.40, 0.40, 0.40]
+  }
+}

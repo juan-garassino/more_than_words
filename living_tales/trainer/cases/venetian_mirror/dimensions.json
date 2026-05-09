@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "case_id": "venetian_mirror",
+
+  "_comment": "Multidimensional structured-scene schema for the Venetian carnival art-forgery / staged-accident case at Palazzo Contarini. Each engine turn emits one token per dim. Universal core dimensions are shared with amber_cipher; case-specific extensions cover the Venetian setting, NPCs, and the ART_TELL extension dimension (forgery-specific observable signals). Tokens listed in anchor_tokens are graph/convergence anchors only — never emitted directly.",
+
+  "dimensions": [
+    {
+      "name": "LOCATION",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "location:palazzo_contarini",
+        "location:main_balcony",
+        "location:mirror_gallery",
+        "location:canal_entrance",
+        "location:studio_room",
+        "location:servants_stair",
+        "location:courtyard",
+        "location:private_salon",
+        "location:none"
+      ]
+    },
+    {
+      "name": "TRANSITION",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "transition:stayed",
+        "transition:crossed_to",
+        "transition:entered",
+        "transition:exited",
+        "transition:returned",
+        "transition:pursued_to",
+        "transition:called_away_to",
+        "transition:descended_to",
+        "transition:none"
+      ]
+    },
+    {
+      "name": "CAUSE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "cause:following_witness_lead",
+        "cause:examining_evidence",
+        "cause:recognized_object",
+        "cause:noticed_inconsistency",
+        "cause:pursued_suspicion",
+        "cause:revisiting_scene",
+        "cause:summoned",
+        "cause:chronological_drift",
+        "cause:examining_provenance",
+        "cause:none"
+      ]
+    },
+    {
+      "name": "PRESENCE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "presence:with_countess_morvaine",
+        "presence:with_carlo_bassi",
+        "presence:with_dr_klaus_winter",
+        "presence:with_elena_rizzoli",
+        "presence:with_marco_dandolo",
+        "presence:with_signora_pelosi",
+        "presence:with_inspector_bruno",
+        "presence:with_gondolier",
+        "presence:with_palazzo_maid",
+        "presence:with_night_guard",
+        "presence:with_art_dealer",
+        "presence:with_canal_boatman",
+        "presence:alone"
+      ]
+    },
+    {
+      "name": "STANCE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "stance:cooperative",
+        "stance:defensive",
+        "stance:evasive",
+        "stance:hostile",
+        "stance:unaware",
+        "stance:none"
+      ]
+    },
+    {
+      "name": "ACTION",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "action:examines",
+        "action:questions",
+        "action:notices",
+        "action:discovers",
+        "action:confronts",
+        "action:follows",
+        "action:waits",
+        "action:leaves",
+        "action:arrives",
+        "action:recalls",
+        "action:authenticates",
+        "action:none"
+      ]
+    },
+    {
+      "name": "OBJECT_FOCUS",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "object:cracked_mirror",
+        "object:paint_analysis",
+        "object:forged_canvas",
+        "object:balcony_railing",
+        "object:guest_list",
+        "object:provenance_file",
+        "object:pigment_sample",
+        "object:silk_glove",
+        "object:auction_catalogue",
+        "object:restoration_notes",
+        "object:canal_key",
+        "object:linen_fragment",
+        "object:sale_receipt",
+        "object_focus:none"
+      ]
+    },
+    {
+      "name": "TELL",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "emotion:polished_grace",
+        "emotion:startled_poise",
+        "emotion:measured_deflection",
+        "emotion:stiff_formality",
+        "emotion:avoided_subject",
+        "emotion:practised_dismay",
+        "tell:paled",
+        "tell:tightened",
+        "tell:glanced_aside",
+        "tell:silent",
+        "tell:hesitated",
+        "tell:over_explained",
+        "tell:softened",
+        "tell:none"
+      ]
+    },
+    {
+      "name": "ATMOSPHERE",
+      "universal": true,
+      "always_emit": true,
+      "vocab": [
+        "atmosphere:canal_mist_thickens",
+        "atmosphere:canal_mist_lifts",
+        "atmosphere:lantern_gutters",
+        "atmosphere:lantern_steady",
+        "atmosphere:silence_holds",
+        "atmosphere:silence_breaks",
+        "atmosphere:gondola_passes",
+        "atmosphere:dawn_approaches",
+        "atmosphere:bell_tolls",
+        "atmosphere:none"
+      ]
+    },
+    {
+      "name": "REVELATION",
+      "universal": true,
+      "always_emit": true,
+      "gated_by_convergence": {
+        "revelation:name_uncovered": 0.5,
+        "revelation:motive_emerges": 0.5,
+        "revelation:confirmation": 0.4
+      },
+      "vocab": [
+        "revelation:contradiction_surfaces",
+        "revelation:alibi_holds",
+        "revelation:name_uncovered",
+        "revelation:motive_emerges",
+        "revelation:dead_end",
+        "revelation:partial_match",
+        "revelation:confirmation",
+        "revelation:none"
+      ]
+    },
+    {
+      "name": "BEAT",
+      "universal": true,
+      "always_emit": true,
+      "gated_by_convergence": {
+        "beat:closing_in": 0.5,
+        "beat:verdict_ready": 0.75
+      },
+      "vocab": [
+        "beat:orientation",
+        "beat:investigation",
+        "beat:closing_in",
+        "beat:verdict_ready"
+      ]
+    },
+    {
+      "name": "ART_TELL",
+      "universal": false,
+      "always_emit": true,
+      "case_specific": true,
+      "gated_by_convergence": {
+        "art_tell:provenance_gap": 0.4,
+        "art_tell:brushwork_mismatch": 0.4
+      },
+      "vocab": [
+        "art_tell:provenance_gap",
+        "art_tell:varnish_inconsistency",
+        "art_tell:brushwork_mismatch",
+        "art_tell:frame_anomaly",
+        "art_tell:catalog_omission",
+        "art_tell:authenticity_holds",
+        "art_tell:none"
+      ]
+    }
+  ],
+
+  "_anchors_only_comment": "Tokens that contribute to convergence + graph but are never directly emitted as scene-tuple slots. They remain as player cards (motives, modifiers, legacy actions, legacy time tokens) or graph anchors driving logit_bias. Note: emotion:* tokens listed in TELL above ARE emitted; the legacy ACTION/TIME/EVENT tokens here are NOT.",
+  "anchor_tokens": {
+    "MOTIVE": [
+      "motive:forgery_operation",
+      "motive:collection_value",
+      "motive:exposure_risk",
+      "motive:rival_claim",
+      "motive:insurance_fraud",
+      "motive:reputation_ruin"
+    ],
+    "MODIFIER": [
+      "modifier:railing_scored",
+      "modifier:modern_pigment",
+      "modifier:frame_swapped",
+      "modifier:carnival_mask",
+      "modifier:door_bolted",
+      "modifier:canvas_aged",
+      "modifier:varnish_fresh",
+      "modifier:scratch_on_stone",
+      "modifier:glove_torn",
+      "modifier:silk_residue"
+    ],
+    "EVENT": [
+      "event:balcony_fall",
+      "event:luca_marini_discovered",
+      "event:carnival_reception"
+    ],
+    "TIME_LEGACY": [
+      "time:carnival_evening",
+      "time:midnight_bell",
+      "time:body_found_dawn",
+      "time:gallery_closed",
+      "time:auction_date"
+    ],
+    "ACTION_LEGACY": [
+      "action:canvas_switched",
+      "action:railing_weakened",
+      "action:studio_locked",
+      "action:mask_removed",
+      "action:notes_destroyed",
+      "action:sale_arranged",
+      "action:provenance_forged",
+      "action:stair_descended",
+      "action:gallery_inspected"
+    ]
+  },
+
+  "_player_cards_comment": "Tokens the player can play as cards. Includes inquiry cards (witnesses/objects/motives/legacy actions) and travel cards (one per location — let the player choose to move).",
+  "player_cards": {
+    "inquiry": "@all_PLAYER_or_SHARED_with_dim_in_[OBJECT_FOCUS,PRESENCE,ACTION_LEGACY,MOTIVE]",
+    "travel": [
+      "travel:to_palazzo_contarini",
+      "travel:to_main_balcony",
+      "travel:to_mirror_gallery",
+      "travel:to_canal_entrance",
+      "travel:to_studio_room",
+      "travel:to_servants_stair",
+      "travel:to_courtyard",
+      "travel:to_private_salon"
+    ]
+  }
+}

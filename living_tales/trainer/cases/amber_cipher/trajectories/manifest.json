@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "case_id": "amber_cipher",
+  "_comment": "Index of hand-authored trajectories. Add an entry here for every new trajectory file. The trainer loads the manifest first, then reads each listed trajectory file. Outcomes drive training-data balance.",
+
+  "trajectories": [
+    {
+      "id": "voss_via_cufflink",
+      "outcome": "correct_voss",
+      "length": 15,
+      "starting_hypothesis": "object_first",
+      "tags": ["cufflink_chain", "RV_initials", "starter_template"],
+      "_status": "STARTER — author 20+ more turns to extend to a full ~40-turn trajectory"
+    },
+    {
+      "id": "voss_via_cipher_sheet",
+      "outcome": "correct_voss",
+      "length": 42,
+      "starting_hypothesis": "object_first",
+      "tags": ["cipher_chain", "encryption_first", "signal_box_heavy", "telegraph_operator_double"],
+      "_status": "draft_v1"
+    },
+    {
+      "id": "voss_via_ledger_book",
+      "outcome": "correct_voss",
+      "length": 44,
+      "starting_hypothesis": "object_first",
+      "tags": ["ledger_chain", "financial_trail", "station_office_heavy"],
+      "_status": "draft_v1"
+    },
+    {
+      "id": "voss_via_coal_dust",
+      "outcome": "correct_voss",
+      "length": 41,
+      "starting_hypothesis": "object_first",
+      "tags": ["forensic_chain", "coal_dust", "alone_heavy"],
+      "_status": "draft_v1"
+    },
+    {
+      "id": "voss_via_telegraph_form",
+      "outcome": "correct_voss",
+      "length": 43,
+      "starting_hypothesis": "object_first",
+      "tags": ["time_chain", "telegraph_first", "signal_box_heavy", "signalman_pressure"],
+      "_status": "draft_v1"
+    },
+    {
+      "id": "voss_via_daughter",
+      "outcome": "correct_voss",
+      "length": 46,
+      "starting_hypothesis": "witness_first",
+      "tags": ["witness_chain", "daughter_first", "daughter_heavy"],
+      "_status": "draft_v1"
+    },
+    {
+      "id": "voss_via_satchel",
+      "outcome": "correct_voss",
+      "length": 42,
+      "starting_hypothesis": "object_first_satchel",
+      "tags": ["satchel_chain", "carriage_siding_anchored", "personal_effects"]
+    },
+    {
+      "id": "voss_via_signal_box",
+      "outcome": "correct_voss",
+      "length": 44,
+      "starting_hypothesis": "witness_first_signalman",
+      "tags": ["signal_box_anchored", "signalman_evasion", "telegraph_pressure"]
+    },
+    {
+      "id": "voss_via_partnership_motive",
+      "outcome": "correct_voss",
+      "length": 47,
+      "starting_hypothesis": "motive_first_partnership_ruin",
+      "tags": ["red_herring_recovery", "partnership_ruin_dead_end", "fraud_concealment_landing", "complex"]
+    },
+    {
+      "id": "voss_speedrun_lucky",
+      "outcome": "correct_voss",
+      "length": 32,
+      "starting_hypothesis": "speedrun_object_first",
+      "tags": ["speedrun", "lucky_guess", "low_convergence", "thin_evidence"]
+    },
+    {
+      "id": "wrong_stationmaster_via_defensive",
+      "outcome": "wrong_stationmaster",
+      "length": 41,
+      "starting_hypothesis": "office_first",
+      "tags": ["wrong_accusation", "stationmaster", "defensive_misread", "ledger_chain"]
+    },
+    {
+      "id": "wrong_railway_clerk_via_ledger",
+      "outcome": "wrong_railway_clerk",
+      "length": 42,
+      "starting_hypothesis": "ledger_first",
+      "tags": ["wrong_accusation", "railway_clerk", "ledger_chain", "fraud_misread"]
+    },
+    {
+      "id": "wrong_estranged_daughter_via_motive",
+      "outcome": "wrong_estranged_daughter",
+      "length": 43,
+      "starting_hypothesis": "motive_first",
+      "tags": ["wrong_accusation", "estranged_daughter", "motive_misread", "debt_pressure"]
+    },
+    {
+      "id": "wrong_night_porter_via_evasion",
+      "outcome": "wrong_night_porter",
+      "length": 40,
+      "starting_hypothesis": "tells_first",
+      "tags": ["wrong_accusation", "night_porter", "evasion_misread", "missing_keys"]
+    },
+    {
+      "id": "cold_trail_circular",
+      "outcome": "cold_trail",
+      "length": 55,
+      "starting_hypothesis": "circular_loop",
+      "tags": ["cold_trail", "lyapunov_plateau", "circular_visits", "no_progress"]
+    },
+    {
+      "id": "cold_trail_witness_avoidance",
+      "outcome": "cold_trail",
+      "length": 48,
+      "starting_hypothesis": "objects_only",
+      "tags": ["cold_trail", "no_witness_engaged", "object_focus", "silent"]
+    },
+    {
+      "id": "cold_trail_red_herring_tunnel",
+      "outcome": "cold_trail",
+      "length": 50,
+      "starting_hypothesis": "motive_first_partnership_ruin",
+      "tags": ["cold_trail", "red_herring_tunnel", "partnership_ruin_loop", "ignored_evidence"]
+    },
+    {
+      "id": "cold_trail_quit_early",
+      "outcome": "cold_trail",
+      "length": 30,
+      "starting_hypothesis": "early_giveup",
+      "tags": ["cold_trail", "early_quit", "rising_curve_abandoned"]
+    },
+    {
+      "id": "red_herring_lamps_dimmed",
+      "outcome": "red_herring_trap",
+      "length": 43,
+      "starting_hypothesis": "atmospheric_first_lamps",
+      "tags": ["red_herring_trap", "lamps_dimmed", "night_porter", "modifier_inflated", "atmospheric_misread"]
+    },
+    {
+      "id": "red_herring_satchel_wrong_owner",
+      "outcome": "red_herring_trap",
+      "length": 42,
+      "starting_hypothesis": "object_first_satchel_misowner",
+      "tags": ["red_herring_trap", "satchel_misowner", "travelling_broker", "object_misread"]
+    },
+    {
+      "id": "red_herring_partnership_inflated",
+      "outcome": "red_herring_trap",
+      "length": 44,
+      "starting_hypothesis": "motive_first_partnership_ruin",
+      "tags": ["red_herring_trap", "partnership_inflated", "estranged_daughter", "motive_misread", "partnership_ruin", "convergence_trap"]
+    },
+    {
+      "id": "wrong_platform_guard_via_lantern",
+      "outcome": "wrong_platform_guard",
+      "length": 41,
+      "starting_hypothesis": "object_first_lantern",
+      "tags": ["wrong_accusation", "platform_guard", "lantern_chain", "platform_one_heavy"]
+    },
+    {
+      "id": "wrong_travelling_broker_via_cufflinks",
+      "outcome": "wrong_travelling_broker",
+      "length": 42,
+      "starting_hypothesis": "object_first_cufflink",
+      "tags": ["wrong_accusation", "travelling_broker", "cufflink_chain", "waiting_room_heavy"]
+    },
+    {
+      "id": "wrong_via_partnership_ruin",
+      "outcome": "wrong_renard_voss",
+      "length": 44,
+      "starting_hypothesis": "motive_first_partnership_ruin",
+      "tags": ["wrong_accusation_partial", "renard_voss_correct", "motive_misread", "partnership_ruin_anchored", "daughter_chain"]
+    },
+    {
+      "id": "wrong_via_atmospheric_misread",
+      "outcome": "wrong_night_porter",
+      "length": 40,
+      "starting_hypothesis": "atmospheric_first",
+      "tags": ["wrong_accusation", "night_porter", "atmospheric_misread", "missing_keys", "stealth_killer_theory"]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "case_id": "attended_hour",
+  "voice": "third_person_past",
+  "_comment": "Slot-fill phrase set for the structured-scene engine. Phrases compose deterministically per the grammar in SCHEMA.md. Voice: third-person past, Obra-Dinn-style — cold, observational, terse. Gender-neutral wherever a body or stance is described (no he/she pronouns in STANCE/TELL phrases). The detective is referred to as 'the detective' (en) / 'la detective' (es). Hospital case: clinical setting, fluorescent light, the long night.",
+
+  "LOCATION": {
+    "location:cardiac_ward_crime_space":     {"en": "the cardiac ward, bed three",         "es": "la sala cardíaca, cama tres"},
+    "location:doctor_office":                {"en": "the doctor's office",                  "es": "la consulta del médico"},
+    "location:family_waiting_room":          {"en": "the family waiting room",              "es": "la sala de familias"},
+    "location:hospital_exterior":            {"en": "the clinic forecourt",                 "es": "la entrada de la clínica"},
+    "location:medication_charting_area":     {"en": "the medication charting area",         "es": "la zona de la hoja de medicación"},
+    "location:nurse_station_vantage":        {"en": "the nurse station",                    "es": "el puesto de enfermería"},
+    "location:rear_clinical_corridor":       {"en": "the rear corridor",                    "es": "el pasillo posterior"},
+    "location:reception_threshold":          {"en": "the reception threshold",              "es": "el umbral de recepción"},
+    "location:service_elevator_zone":        {"en": "the service-elevator alcove",          "es": "la antesala del montacargas"},
+    "location:staff_break_or_overnight_desk_area": {"en": "the staff break room",           "es": "la sala de descanso del personal"},
+    "location:none":                         {"en": "",                                      "es": ""}
+  },
+
+  "TRANSITION": {
+    "transition:stayed":             {"en": "Still at",                    "es": "Aún en"},
+    "transition:crossed_to":         {"en": "Crossed to",                  "es": "Cruzó hasta"},
+    "transition:entered":            {"en": "Entered",                     "es": "Entró en"},
+    "transition:exited":             {"en": "Stepped out of",              "es": "Salió de"},
+    "transition:returned":           {"en": "Returned to",                 "es": "Volvió a"},
+    "transition:pursued_to":         {"en": "Followed the lead to",        "es": "Siguió la pista hasta"},
+    "transition:called_away_to":     {"en": "Was summoned to",             "es": "Fue llamada a"},
+    "transition:descended_to":       {"en": "Descended into",              "es": "Bajó a"},
+    "transition:none":               {"en": "Began at",                    "es": "Comenzó en"}
+  },
+
+  "CAUSE": {
+    "cause:following_witness_lead":  {"en": "On the witness's word,",      "es": "Por la palabra del testigo,"},
+    "cause:examining_evidence":      {"en": "Tracing the evidence,",       "es": "Siguiendo la evidencia,"},
+    "cause:recognized_object":       {"en": "Something about the object struck the detective;", "es": "Algo del objeto detuvo a la detective;"},
+    "cause:noticed_inconsistency":   {"en": "A detail did not match;",     "es": "Un detalle no encajaba;"},
+    "cause:pursued_suspicion":       {"en": "On a hunch,",                 "es": "Por una corazonada,"},
+    "cause:revisiting_scene":        {"en": "Returning to confirm,",       "es": "Volviendo para confirmar,"},
+    "cause:summoned":                {"en": "Called by name,",             "es": "Llamada por su nombre,"},
+    "cause:chronological_drift":     {"en": "As the hour wore on,",        "es": "Mientras la hora se alargaba,"},
+    "cause:reading_chart_signal":    {"en": "Reading the chart's signal,", "es": "Leyendo la señal del registro,"},
+    "cause:none":                    {"en": "",                            "es": ""}
+  },
+
+  "PRESENCE": {
+    "presence:with_callum_dray":     {"en": "Dr Dray was at the chart",                     "es": "el doctor Dray estaba con la hoja"},
+    "presence:with_nurse_aldworth":  {"en": "Nurse Aldworth was at the bedside",            "es": "la enfermera Aldworth estaba junto a la cama"},
+    "presence:with_dr_parris":       {"en": "Dr Parris stood by the corridor",              "es": "el doctor Parris estaba junto al pasillo"},
+    "presence:with_owen_stroud":     {"en": "Owen Stroud waited in the chairs",             "es": "Owen Stroud esperaba en las sillas"},
+    "presence:with_records_clerk":   {"en": "the records clerk was at her cabinet",         "es": "la archivista estaba junto a su archivador"},
+    "presence:with_pharmacist_lin":  {"en": "Pharmacist Lin stood by the dispensary tray",  "es": "la farmacéutica Lin estaba junto a la bandeja"},
+    "presence:with_solicitor_pike":  {"en": "Solicitor Pike was already seated",            "es": "el abogado Pike ya estaba sentado"},
+    "presence:with_night_porter":    {"en": "the night porter watched from the door",       "es": "el portero nocturno vigilaba desde la puerta"},
+    "presence:with_ward_orderly":    {"en": "the ward orderly was rolling a cart",          "es": "el celador empujaba un carrito"},
+    "presence:with_lab_assistant":   {"en": "the lab assistant stood with a slip in hand",  "es": "la auxiliar de laboratorio sostenía un volante"},
+    "presence:with_duty_nurse":      {"en": "the duty nurse was at her clipboard",          "es": "la enfermera de turno estaba con su tablilla"},
+    "presence:with_ambulance_driver":{"en": "the ambulance driver leaned on the doorframe", "es": "el conductor de la ambulancia se apoyaba en el marco"},
+    "presence:alone":                {"en": "no one else was there",                        "es": "no había nadie más"}
+  },
+
+  "STANCE": {
+    "stance:cooperative":  {"en": "the posture open, the words within reach", "es": "la postura abierta, las palabras al alcance"},
+    "stance:defensive":    {"en": "the hands flat against the chart",         "es": "con las manos sobre la hoja"},
+    "stance:evasive":      {"en": "the eyes finding the floor",               "es": "con los ojos en el suelo"},
+    "stance:hostile":      {"en": "the jaw set, the voice low",               "es": "con la mandíbula tensa, la voz baja"},
+    "stance:unaware":      {"en": "still unaware of the visit's purpose",     "es": "aún ignorando el propósito de la visita"},
+    "stance:none":         {"en": "",                                         "es": ""}
+  },
+
+  "ACTION": {
+    "action:examines":     {"en": "examined",   "es": "examinó"},
+    "action:questions":    {"en": "questioned", "es": "interrogó"},
+    "action:notices":      {"en": "noticed",    "es": "advirtió"},
+    "action:discovers":    {"en": "found",      "es": "halló"},
+    "action:confronts":    {"en": "confronted", "es": "confrontó"},
+    "action:follows":      {"en": "followed",   "es": "siguió"},
+    "action:waits":        {"en": "waited",     "es": "esperó"},
+    "action:leaves":       {"en": "stepped away from", "es": "se alejó de"},
+    "action:arrives":      {"en": "stepped into", "es": "entró en"},
+    "action:recalls":      {"en": "recalled",   "es": "recordó"},
+    "action:auscultates":  {"en": "auscultated", "es": "auscultó"},
+    "action:none":         {"en": "stood",      "es": "se detuvo"}
+  },
+
+  "OBJECT_FOCUS": {
+    "object:medication_chart":     {"en": "the medication chart",        "es": "la hoja de medicación"},
+    "object:syringe_tray":         {"en": "the syringe tray",            "es": "la bandeja de jeringas"},
+    "object:drug_ledger":          {"en": "the drug ledger",             "es": "el libro de la dispensaría"},
+    "object:interaction_manual":   {"en": "the drug interaction manual", "es": "el manual de interacciones"},
+    "object:visitor_log":          {"en": "the visitor log",             "es": "el registro de visitas"},
+    "object:autopsy_report":       {"en": "the autopsy report",          "es": "el informe de la autopsia"},
+    "object:prescription_carbon":  {"en": "the prescription carbon",     "es": "la copia carbónica de la receta"},
+    "object:insurance_form":       {"en": "the insurance form",          "es": "el formulario del seguro"},
+    "object:corridor_badge":       {"en": "the corridor badge",          "es": "la credencial del pasillo"},
+    "object:ward_keycard":         {"en": "the ward keycard log",        "es": "el registro de la tarjeta de sala"},
+    "object:clinical_notes":       {"en": "the clinical notes",          "es": "las notas clínicas"},
+    "object:lab_slip":             {"en": "the laboratory slip",         "es": "el volante de laboratorio"},
+    "object:complaint_filing":     {"en": "the complaint filing",        "es": "la denuncia archivada"},
+    "object:cardiac_monitor":      {"en": "the cardiac monitor",         "es": "el monitor cardíaco"},
+    "object_focus:none":           {"en": "",                             "es": ""}
+  },
+
+  "TELL": {
+    "emotion:steady_hands":     {"en": "the hands stayed steady",                              "es": "las manos no temblaron"},
+    "emotion:fixed_stare":      {"en": "the stare did not waver",                              "es": "la mirada no se desvió"},
+    "emotion:avoided_contact":  {"en": "the eyes did not lift to meet the question",           "es": "los ojos no se alzaron al cruzar la pregunta"},
+    "emotion:measured_breath":  {"en": "the breathing stayed measured",                        "es": "la respiración se mantuvo medida"},
+    "emotion:paused_reply":     {"en": "the answer paused before coming",                      "es": "la respuesta tardó en llegar"},
+    "emotion:closed_posture":   {"en": "the coat stayed buttoned",                             "es": "la bata siguió cerrada"},
+    "emotion:professional_calm":{"en": "the bedside manner held its even register",            "es": "el trato clínico mantuvo su registro parejo"},
+    "emotion:shaking_hands":    {"en": "a small tremor ran through the writing hand",          "es": "un pequeño temblor recorrió la mano que escribía"},
+    "emotion:clipped_answers":  {"en": "each reply arrived already trimmed",                   "es": "cada respuesta llegaba ya recortada"},
+    "emotion:avoided_ward":     {"en": "the gaze stopped short of the ward door",              "es": "la mirada se detenía antes de la puerta de la sala"},
+    "emotion:rehearsed_grief":  {"en": "the grief arrived in its rehearsed cadence",           "es": "el duelo llegó con su cadencia ensayada"},
+    "emotion:rigid_composure":  {"en": "the composure held, mirror-rehearsed",                 "es": "la compostura se mantuvo, ensayada en el espejo"},
+    "tell:paled":               {"en": "all colour drained at the question",                   "es": "todo el color se retiró ante la pregunta"},
+    "tell:tightened":           {"en": "the shoulders tightened",                              "es": "los hombros se tensaron"},
+    "tell:glanced_aside":       {"en": "the eyes broke from the question",                     "es": "los ojos se apartaron de la pregunta"},
+    "tell:silent":              {"en": "no answer came",                                       "es": "ninguna respuesta llegó"},
+    "tell:hesitated":           {"en": "a pause came before the answer",                       "es": "una pausa precedió a la respuesta"},
+    "tell:over_explained":      {"en": "the detail spilled past the question asked",           "es": "los detalles se desbordaron de la pregunta hecha"},
+    "tell:softened":            {"en": "the stance eased a fraction",                          "es": "la postura cedió una fracción"},
+    "tell:none":                {"en": "",                                                     "es": ""}
+  },
+
+  "ATMOSPHERE": {
+    "atmosphere:corridor_dims":         {"en": "The corridor lights dimmed for the night ward.",  "es": "Las luces del pasillo se atenuaron para la sala nocturna."},
+    "atmosphere:fluorescent_flickers":  {"en": "A fluorescent tube flickered overhead.",          "es": "Un tubo fluorescente parpadeó arriba."},
+    "atmosphere:fluorescent_steady":    {"en": "The fluorescents held steady.",                    "es": "Los fluorescentes mantenían su luz."},
+    "atmosphere:silence_holds":         {"en": "Silence held between them.",                       "es": "El silencio se mantuvo entre ellos."},
+    "atmosphere:silence_breaks":        {"en": "Silence broke with a distant page.",               "es": "El silencio se rompió con un aviso lejano."},
+    "atmosphere:elevator_arrives":      {"en": "The service elevator arrived with a chime.",       "es": "El montacargas llegó con un timbre."},
+    "atmosphere:dawn_approaches":       {"en": "The first grey of dawn pressed at the windows.",   "es": "El primer gris del alba presionaba en las ventanas."},
+    "atmosphere:wind_rises":            {"en": "Wind rose against the side door.",                 "es": "El viento se alzó contra la puerta lateral."},
+    "atmosphere:none":                  {"en": "",                                                  "es": ""}
+  },
+
+  "REVELATION": {
+    "revelation:contradiction_surfaces": {"en": "The two accounts no longer agreed.",        "es": "Los dos relatos ya no concordaban."},
+    "revelation:alibi_holds":            {"en": "The alibi held.",                            "es": "La coartada se sostuvo."},
+    "revelation:name_uncovered":         {"en": "A name became legible at last.",             "es": "Un nombre se hizo legible al fin."},
+    "revelation:motive_emerges":         {"en": "A reason rose to the surface.",              "es": "Un motivo salió a la superficie."},
+    "revelation:dead_end":               {"en": "The line went nowhere.",                     "es": "La línea no llevaba a ninguna parte."},
+    "revelation:partial_match":          {"en": "Close — but not certain.",                   "es": "Cercano — pero no seguro."},
+    "revelation:confirmation":           {"en": "An earlier hypothesis was confirmed.",       "es": "Se confirmó una hipótesis anterior."},
+    "revelation:none":                   {"en": "",                                            "es": ""}
+  },
+
+  "BEAT": {
+    "beat:orientation":   {"en": "",                                       "es": ""},
+    "beat:investigation": {"en": "",                                       "es": ""},
+    "beat:closing_in":    {"en": "The shape of it was visible now.",      "es": "Su forma ya era visible."},
+    "beat:verdict_ready": {"en": "Time to name them.",                     "es": "Era hora de nombrarlos."}
+  },
+
+  "MEDICAL_TELL": {
+    "medical_tell:pulse_irregular": {"en": "the pulse skipped at the wrist",                    "es": "el pulso saltaba en la muñeca"},
+    "medical_tell:pupil_response":  {"en": "the pupils responded slowly to the penlight",       "es": "las pupilas respondieron lentas a la luz"},
+    "medical_tell:hand_tremor":     {"en": "a tremor crossed the writing hand",                 "es": "un temblor cruzó la mano que escribía"},
+    "medical_tell:pallor_visible":  {"en": "the pallor was unmistakable",                       "es": "la palidez era inconfundible"},
+    "medical_tell:steady_pulse":    {"en": "the pulse stayed steady",                           "es": "el pulso se mantuvo firme"},
+    "medical_tell:none":            {"en": "",                                                   "es": ""}
+  },
+
+  "TRAVEL_CARDS": {
+    "_comment": "Player travel cards. The action label appears on the card; played effect forces LOCATION + a sensible TRANSITION.",
+    "travel:to_cardiac_ward":             {"en": "Go to the cardiac ward",        "es": "Ir a la sala cardíaca"},
+    "travel:to_doctor_office":            {"en": "Go to the doctor's office",     "es": "Ir a la consulta"},
+    "travel:to_family_waiting_room":      {"en": "Go to the family waiting room", "es": "Ir a la sala de familias"},
+    "travel:to_hospital_exterior":        {"en": "Go to the forecourt",           "es": "Ir a la entrada"},
+    "travel:to_medication_charting_area": {"en": "Go to the charting area",       "es": "Ir a la zona de hojas"},
+    "travel:to_nurse_station":            {"en": "Go to the nurse station",       "es": "Ir al puesto de enfermería"},
+    "travel:to_rear_clinical_corridor":   {"en": "Go to the rear corridor",       "es": "Ir al pasillo posterior"},
+    "travel:to_reception_threshold":      {"en": "Go to reception",               "es": "Ir a recepción"},
+    "travel:to_service_elevator_zone":    {"en": "Go to the service elevator",    "es": "Ir al montacargas"},
+    "travel:to_staff_break_room":         {"en": "Go to the staff break room",    "es": "Ir a la sala de descanso"}
+  }
+}

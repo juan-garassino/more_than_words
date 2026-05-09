@@ -1,0 +1,59 @@
+# Venetian Mirror — Voices
+
+## Narrative voice
+
+The case is told in third-person past tense, in the manner of a recovered carabinieri dossier rebound for a private archive. The detective is the camera; the world acts upon her, and she acts upon the world, and the prose records both without commentary. There are no thoughts, no feelings, no wonderings — only what was seen, what was heard, what was touched, and what could be inferred from the surfaces of the night. Sentences are short. Verbs are concrete. A sensory anchor — the slap of canal water against stone, the cold of a gilded frame, the smell of varnish too freshly applied, the wax of a guttered lantern — grounds every scene before any human enters it.
+
+The setting is Palazzo Contarini on the night of Carnevale, with gondolas drawing up at the canal entrance and masked guests passing under the lanterns into the piano nobile. Six years deep into a forgery operation, the household has rehearsed this evening many times: the mirror gallery runs the length of the upper floor with fourteen paintings on the east wall, each carrying a provenance card that lists a Viennese collection that does not exist. By dawn Luca Marini lies on the courtyard flagstones beneath the main balcony and the lanterns have burned to stubs, and the detective walks into a room where every person she meets has rehearsed what they intend to say. The voice trusts the reader to assemble the case from observed surfaces — a smile held a beat too long, a glove torn at the palm, a varnish too fresh, a provenance line that closes too neatly — exactly as the detective must.
+
+## Suspects
+
+### Countess Morvaine
+
+She received the inspector with her gloves on, and that was the first thing about her, and it was meaningful. She spoke in the long, composed sentences of an older European aristocracy, her English carrying the small flourishes of French and Italian — *enfin*, *naturalmente*, *si vous voulez* — laid down with the gentlewoman's diction of someone who had buried more than one inconvenience. Under pressure she did not pale and did not raise her voice; she tightened the gloves, very slightly, at the wrist, and her smile was held a beat too long after each answer was finished. Her alibi was the upper floor and the company of her own household; what she was hiding was the entirety of the operation — the six years, the Zurich dealer, the prior matter in Milan, and the hour on the balcony when the railing gave. *She poured the inspector coffee without being asked, and the cuff of the left glove was drawn straight a half-inch as she set the cup down.*
+
+### Carlo Bassi
+
+He arrived at the canal entrance at half past nine in a white silk mask, on an invitation that had been printed for someone else, and he carried himself through the gallery as a man performing the role of a man at a reception. He spoke in the smooth, slightly performative cadence of a man who travels under invitations, his phrasing clean and rehearsed and a half-beat ahead of what was actually being asked. Under pressure his charm thickened rather than thinned; he laughed first, answered second, and his torn glove came out of his coat pocket with the small sleight of a man who had already decided which version of the night to give. His alibi was the gallery floor and the unmasking; what he was hiding, in the end, was less than he wished the detective to suspect — he had been the courier, not the hand on the railing. *He produced the torn glove with a small flourish and explained the snag on the railing as though it had been a charming mishap, and his eyes went briefly to the salon door.*
+
+### Dr Klaus Winter
+
+He spoke in the technical, lightly accented register of a man who reads varnish for a living, his English correct and slightly clipped at the consonants in the way of a German educated in Vienna. His sentences arrived in numbered order — *first, second, finally* — and his vocabulary was the working cant of conservation: *cadmium yellow*, *zinc white*, *ground layer*, *underpaint*. Under pressure he did not soften; he became, if anything, more precise, and the small notebook he carried was tapped twice against the heel of his hand between answers as though the rhythm steadied him. His alibi was the gallery and the request for a pigment sample that had been refused; what he was hiding was nothing of substance — his report was due Friday, and the report would say what it would say. *He named the modern pigments in the Titian by their chemical formulas in order, and the notebook tapped twice against his palm before he named the third.*
+
+### Elena Rizzoli
+
+She spoke in the fluent, gallery-bright cadence of someone who had sold the same picture three times and could do it again without changing register. Her sentences were polished and her vocabulary commercial — *consigned*, *catalogued*, *attributed to*, *the spring auction* — and she answered each question with the practised brevity of someone who had been deposed before. Under pressure her composure did not crack; it brightened, the smile widening, the explanations becoming more accommodating, the references to the provenance file more frequent. Her alibi was the private salon and the dealer from Zurich; what she was hiding was the commission on the Zurich auction, the handwritten amendments she had made to the catalogue, and the quiet certainty that Marini's report would have ended her career. *She referred each question about the paintings back to the provenance file in the same level tone, and her glance to the auction catalogue on the console was brief enough to seem incidental.*
+
+### Marco Dandolo
+
+He waited in the courtyard after the masks came down at midnight, his glove torn at the palm and no explanation offered for either thing, and he answered the inspector's questions with the clipped, defensive Veneto consonant of a man caught where he should not be. His sentences were short and ended hard, with the local dialect tightening around the vowels whenever he was pressed. Under pressure he did not over-explain; he closed, his shoulders squared toward the well at the centre of the courtyard, and the torn glove was tucked into his coat pocket and not produced again. His alibi was the courtyard itself, which was the problem; what he was hiding was a small, separate matter — a debt, a meeting, a thing unrelated to the body — and his refusal to name it made him look guilty of the larger thing. *He gave the hours of his presence in the courtyard in order and did not name the man he had come to meet, and the torn glove stayed in the pocket and was not produced again.*
+
+### Signora Pelosi
+
+She spoke in the slow, formal Veneto of a woman who knew every door in the palazzo and had not unlocked them all for the inspector. Her sentences began with respectful titles — *Signor commissario*, *la Contessa* — and ended with the deliberate pauses of someone who weighed each word against thirty years of household discretion. Her vocabulary was domestic and precise: which key opened which lock, which hour the kitchen had closed, which landing the maid had checked. Under pressure she did not flinch; she went still, her hands clasped at her apron, and the bronze canal key in her pocket made a small weight against the cloth. Her alibi was the kitchen and the keys; what she was hiding was the resentment from the previous owners' time, the master key she still carried, and the door she had bolted on the servants' stair after the fact. *She named the order in which the doors had been locked at midnight in the same patient cadence as the order of the evening's service, and her hand stayed flat on the apron pocket where the key lay.*
+
+### Inspector Bruno
+
+He arrived at dawn from the cultural crimes division with the procedural, slightly weary courtesy of an officer who had investigated this kind of room before. He spoke in complete, plain Italian sentences and answered the detective's questions in the cadence of a colleague who had decided, after some thought, to be helpful within limits. His vocabulary was procedural — *the file*, *the prior matter*, *the warrant* — and he produced his old notes on the Milan investigation without ceremony when asked. Under pressure he did not change; the weariness was the constant. His alibi was his own division and the timing of the dawn call; what he was hiding was the slow professional satisfaction of having waited six years for the Countess to make a single mistake. *He named the year of the Milan file from memory and offered the reference number a moment later, and the small folder he had brought with him stayed closed on the table while he spoke.*
+
+## Witnesses
+
+### The Gondolier
+
+He spoke in the easy, river-cadenced Veneziano of a man who had brought guests to the Contarini water-gate for twenty years and knew which faces had paid and which had not. His sentences ran in the order of the evening — who arrived, when, in what mask — and he gave them without elaboration and without hurry. He had no tell to speak of; he was simply observant, and his oar lay across his knees as he spoke. *He named the half hour at which the last guest had been brought and said no gondola had left by water before one, and his hand rested on the oar as he said it.*
+
+### The Palazzo Maid
+
+She spoke quietly, in the soft consonants of a young woman who had been on her feet since before dawn and had found the body, and the finding had not yet entirely settled in her. Her sentences were short, observational, and slightly displaced — the courtyard door had been unbolted, the footsteps on the servants' stair had been after midnight, the lanterns had still been burning when she came down. Her tell was that her hands kept finding the corner of her apron and folding it, then unfolding it. *She said she had found the courtyard door unbolted and had heard footsteps on the stair an hour before the bell, and her hand folded the corner of her apron once as she said it.*
+
+### The Night Guard
+
+He spoke in the clipped, uninflected register of a man whose job was to walk a circuit and report what he had seen, and who preferred to report nothing. His sentences gave the hours of his rounds and the order of them; the balcony was named twice and not looked at on either round. Under what pressure there was, he did not flinch; he had not, by his own admission, been looking up. *He gave the times of his patrols at midnight and at three in the same flat voice and added, after the second time, that he had not looked up at the balcony on either round.*
+
+### The Art Dealer
+
+He spoke in the deliberate, transactional English of a Zurich dealer who had flown in for the carnival and intended to leave with the matter quietly closed, his accent neutral and his vocabulary auction-room — *consignment*, *reserve price*, *the spring catalogue*. His sentences were complete and lawyer-careful, and he gave the names of the four reserved paintings without being asked twice. His tell was a small one: he adjusted his cufflink before each answer of any substance, as though resetting the mechanism. *He named the four paintings reserved for the spring auction in the order they appeared in the catalogue, and his hand went to the cufflink before he named the Bellini.*
+
+### The Canal Boatman
+
+He spoke in the unhurried, slightly amused cadence of a man who passed the palazzo on the water at all hours and noticed what the household did not. His sentences were short and visual — the light in the studio window at half past one, how long it had stayed lit, how it had gone out — and he gave them with the small smile of someone who had been waiting to be asked. He had no tell because he had nothing to hide. *He said the studio light had come on at half past one and gone out again within ten minutes, and he said it the same way both times he was asked.*

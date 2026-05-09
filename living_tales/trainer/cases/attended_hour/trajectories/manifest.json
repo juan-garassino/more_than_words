@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "case_id": "attended_hour",
+  "_comment": "Index of hand-authored trajectories for The Attended Hour. Add an entry here for every new trajectory file. The trainer loads the manifest first, then reads each listed trajectory file. Outcomes drive training-data balance.",
+
+  "trajectories": [
+    {
+      "id": "dray_via_pen_leak",
+      "outcome": "correct_callum_dray",
+      "length": 45,
+      "starting_hypothesis": "object_first",
+      "tags": ["pen_leak_chain", "ink_traced", "back_and_forth", "starter_template", "flagship"],
+      "_status": "FLAGSHIP — gold-standard template for all attended_hour trajectories"
+    },
+    {
+      "id": "dray_via_aldworth_signature",
+      "outcome": "correct_callum_dray",
+      "length": 46,
+      "starting_hypothesis": "tell_first",
+      "tags": ["aldworth_signature_chain", "dosage_altered", "two_aldworth_press", "back_and_forth"]
+    },
+    {
+      "id": "dray_via_car_log",
+      "outcome": "correct_callum_dray",
+      "length": 43,
+      "starting_hypothesis": "object_first",
+      "tags": ["car_log_chain", "false_alibi", "hospital_exterior_anchored", "visitor_log_pattern"]
+    },
+    {
+      "id": "dray_via_clinical_notes",
+      "outcome": "correct_callum_dray",
+      "length": 42,
+      "starting_hypothesis": "object_first",
+      "tags": ["clinical_notes_chain", "annotation_pattern", "doctor_office_anchored", "drug_interaction_traced"]
+    },
+    {
+      "id": "dray_via_corridor_badge",
+      "outcome": "correct_callum_dray",
+      "length": 43,
+      "starting_hypothesis": "object_first",
+      "tags": ["corridor_badge_chain", "swipe_log_focus", "porter_recurring", "reception_focus"]
+    },
+    {
+      "id": "dray_via_drug_ledger",
+      "outcome": "correct_callum_dray",
+      "length": 41,
+      "starting_hypothesis": "object_first",
+      "tags": ["drug_ledger_chain", "vial_count_short", "lin_methodical", "dispensary_anchored"]
+    },
+    {
+      "id": "dray_via_medication_chart",
+      "outcome": "correct_callum_dray",
+      "length": 44,
+      "starting_hypothesis": "object_first",
+      "tags": ["medication_chart_chain", "dosage_alteration", "ledger_correlation", "medication_charting_area_anchored", "aldworth_defensive"]
+    },
+    {
+      "id": "dray_via_orderly_glimpse",
+      "outcome": "correct_callum_dray",
+      "length": 42,
+      "starting_hypothesis": "witness_first",
+      "tags": ["orderly_glimpse", "cardiac_monitor_silenced", "ward_focus", "nurse_station_chain"]
+    },
+    {
+      "id": "dray_via_parris_avoidance",
+      "outcome": "correct_callum_dray",
+      "length": 44,
+      "starting_hypothesis": "witness_first",
+      "tags": ["parris_avoidance", "shift_cover_unwound", "rear_corridor_focus", "ledger_chain"]
+    },
+    {
+      "id": "dray_speedrun_lucky",
+      "outcome": "correct_callum_dray",
+      "length": 32,
+      "starting_hypothesis": "object_first",
+      "tags": ["speedrun", "lucky_guess", "incomplete_chain", "closing_in_only"]
+    },
+    {
+      "id": "wrong_aldworth_via_trembling",
+      "outcome": "wrong_aldworth",
+      "length": 41,
+      "starting_hypothesis": "tell_first",
+      "tags": ["trembling_signature_misread", "vial_count_misread", "dray_dismissed", "wrong_accusation"]
+    },
+    {
+      "id": "wrong_owen_stroud_via_insurance",
+      "outcome": "wrong_owen_stroud",
+      "length": 42,
+      "starting_hypothesis": "motive_first",
+      "tags": ["insurance_motive_misread", "rehearsed_grief_misread", "dray_dismissed", "wrong_accusation"]
+    },
+    {
+      "id": "wrong_parris_via_avoidance",
+      "outcome": "wrong_parris",
+      "length": 43,
+      "starting_hypothesis": "tell_first",
+      "tags": ["avoided_ward_misread", "shift_records_misread", "dray_dismissed", "wrong_accusation"]
+    },
+    {
+      "id": "wrong_pharmacist_lin_via_count",
+      "outcome": "wrong_pharmacist_lin",
+      "length": 42,
+      "starting_hypothesis": "dispensary_first",
+      "tags": ["vial_count_chain", "pharmacy_trail", "lin_misread", "dray_dismissed", "wrong_accusation"]
+    },
+    {
+      "id": "wrong_solicitor_pike_via_visits",
+      "outcome": "wrong_solicitor_pike",
+      "length": 41,
+      "starting_hypothesis": "legal_angle_first",
+      "tags": ["visitor_log_chain", "legal_motive", "pike_misread", "dray_dismissed", "wrong_accusation"]
+    },
+    {
+      "id": "wrong_records_clerk_via_complaint",
+      "outcome": "wrong_records_clerk",
+      "length": 40,
+      "starting_hypothesis": "object_first",
+      "tags": ["complaint_filing_misread", "records_clerk_chain", "legal_angle", "dray_dismissed", "wrong_accusation"]
+    },
+    {
+      "id": "wrong_via_atmospheric_misread",
+      "outcome": "wrong_night_porter",
+      "length": 40,
+      "starting_hypothesis": "atmosphere_first",
+      "tags": ["atmospheric_misread", "porter_focus", "corridor_dim_misread", "dray_dismissed", "wrong_accusation"]
+    },
+    {
+      "id": "wrong_via_negligence_motive",
+      "outcome": "wrong_callum_dray",
+      "length": 44,
+      "starting_hypothesis": "clinical_notes_first",
+      "tags": ["clinical_notes_chain", "negligence_misread", "right_person_wrong_motive", "partial_correctness", "wrong_accusation"]
+    },
+    {
+      "id": "cold_trail_circular",
+      "outcome": "cold_trail",
+      "length": 55,
+      "starting_hypothesis": "scene_revisit",
+      "tags": ["circular_path", "no_anchor", "high_returned_count", "cold_trail"]
+    },
+    {
+      "id": "cold_trail_paperwork_tunnel",
+      "outcome": "cold_trail",
+      "length": 50,
+      "starting_hypothesis": "negligence_paperwork_theory",
+      "tags": ["negligence_motive_locked_in", "paper_only", "missed_pen_chain", "cold_trail"]
+    },
+    {
+      "id": "cold_trail_quit_early",
+      "outcome": "cold_trail",
+      "length": 30,
+      "starting_hypothesis": "diffuse_walkthrough",
+      "tags": ["cold_trail", "quit_early", "lyapunov_plateau", "no_accusation"]
+    },
+    {
+      "id": "cold_trail_witness_avoidance",
+      "outcome": "cold_trail",
+      "length": 48,
+      "starting_hypothesis": "object_only",
+      "tags": ["object_only", "no_witness_engaged", "alone_dominant", "cold_trail"]
+    },
+    {
+      "id": "red_herring_negligence_inflated",
+      "outcome": "red_herring_trap",
+      "length": 44,
+      "starting_hypothesis": "motive_first_negligence",
+      "tags": ["red_herring_trap", "records_clerk_inflated", "negligence_attractor", "complaint_filing_chain", "badge_unsigned", "dray_dismissed", "convergence_trap"]
+    },
+    {
+      "id": "red_herring_owen_insurance",
+      "outcome": "red_herring_trap",
+      "length": 42,
+      "starting_hypothesis": "motive_first_insurance",
+      "tags": ["red_herring_trap", "owen_stroud_inflated", "insurance_claim_attractor", "visitor_log_chain", "dray_dismissed", "convergence_trap"]
+    },
+    {
+      "id": "red_herring_pharmacist_count",
+      "outcome": "red_herring_trap",
+      "length": 43,
+      "starting_hypothesis": "dispensary_first_inflated",
+      "tags": ["red_herring_trap", "pharmacist_lin_inflated", "vial_count_chain", "drug_ledger_attractor", "dray_dismissed", "convergence_trap"]
+    }
+  ]
+}

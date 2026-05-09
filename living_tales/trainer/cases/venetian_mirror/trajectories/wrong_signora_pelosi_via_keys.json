@@ -1,0 +1,844 @@
+{
+  "schema_version": 1,
+  "trajectory_id": "wrong_signora_pelosi_via_keys",
+  "case_id": "venetian_mirror",
+  "description": "The detective fastens onto Signora Pelosi early — she has the master keys, knows every lock, and her formal Veneto silences read as guilt. The chain of access overwhelms the chain of evidence: keychain at the servants' stair, master access to the private salon, the bolted door thrown from inside, footsteps after midnight. Morvaine's provenance trail surfaces but is dismissed at turn 22 as a household matter Pelosi must have aided. The pigment evidence is treated as background; the housekeeper's silences are mistaken for confession. Accusation lands on Pelosi at dawn. Wrong: Pelosi covered for the household out of thirty-year loyalty, not as the hand on the railing.",
+  "outcome": "wrong_signora_pelosi",
+  "starting_hypothesis": "access_first",
+  "tags": ["wrong_accusation", "pelosi_misread", "keys_trail", "access_overweight"],
+  "_authoring_note": "41 turns. Convergence ~0.77 by verdict (just past gate). revelation:dead_end on the provenance file at turn 22 (Morvaine dismissed). Two transition:returned at turns 16 and 33. Pelosi questioned across three locations (servants_stair, private_salon, kitchen-via-courtyard). Final confrontation in the private_salon; verdict_ready fires once convergence min crosses 0.75 at turn 38.",
+  "opening": {
+    "tokens": [
+      "location:palazzo_contarini",
+      "event:luca_marini_discovered",
+      "time:carnival_evening"
+    ]
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "_note": "Cold open in the courtyard. The body has been moved; the flagstones still hold the score mark.",
+      "player_card": "object:balcony_railing",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:entered",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:balcony_railing",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.04, 0.04, 0.06]
+    },
+    {
+      "turn": 2,
+      "_note": "The maid finds the inspector and gives her account: courtyard door unbolted, footsteps on the stair an hour before the bell.",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.07, 0.08, 0.10]
+    },
+    {
+      "turn": 3,
+      "_note": "Door bolted from inside. The bolt is the household's, not a guest's.",
+      "player_card": "modifier:door_bolted",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:notices",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.10, 0.11, 0.13]
+    },
+    {
+      "turn": 4,
+      "_note": "Cross to the servants' stair. The maid points up the flight where she heard the steps.",
+      "player_card": "travel:to_servants_stair",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.12, 0.13, 0.15]
+    },
+    {
+      "turn": 5,
+      "_note": "The bronze canal key on the lower landing. Master pattern. Household issue.",
+      "player_card": "object:canal_key",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.15, 0.16, 0.18]
+    },
+    {
+      "turn": 6,
+      "_note": "Pelosi descends with linens. Her hand goes to the apron pocket where her own key sits.",
+      "player_card": "suspect:signora_pelosi",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:orientation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.18, 0.20, 0.22]
+    },
+    {
+      "turn": 7,
+      "_note": "Pelosi names the order in which doors were locked at midnight. The detective notes a half-second delay before the salon is named.",
+      "player_card": "modifier:door_bolted",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "emotion:stiff_formality",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.22, 0.24, 0.25]
+    },
+    {
+      "turn": 8,
+      "_note": "Cross to the private salon. The salon door is one of Pelosi's keys.",
+      "player_card": "travel:to_private_salon",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.24, 0.26, 0.27]
+    },
+    {
+      "turn": 9,
+      "_note": "Guest list on the salon console. Pelosi's hand annotated the seating in pencil.",
+      "player_card": "object:guest_list",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:guest_list",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.27, 0.28, 0.29]
+    },
+    {
+      "turn": 10,
+      "_note": "Pelosi appears at the salon door uninvited. Stiff formality. The detective questions her here, on her ground.",
+      "player_card": "suspect:signora_pelosi",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:guest_list",
+        "TELL": "emotion:stiff_formality",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.30, 0.31, 0.32]
+    },
+    {
+      "turn": 11,
+      "_note": "Pelosi says she bolted the salon at midnight. Her hands stay clasped. The detective hears it as evasion.",
+      "player_card": "emotion:stiff_formality",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:guest_list",
+        "TELL": "emotion:avoided_subject",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.33, 0.34, 0.35]
+    },
+    {
+      "turn": 12,
+      "_note": "Cross to the mirror gallery. The provenance file is open on the console. The detective notes it but reads it as an alibi prop.",
+      "player_card": "travel:to_mirror_gallery",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.35, 0.36, 0.37]
+    },
+    {
+      "turn": 13,
+      "_note": "Authenticate the provenance file. The Bellini's chain shows a six-year gap. The detective reads it as a household forgery — Pelosi's hand on the ledger.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_provenance",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:authenticity_holds"
+      },
+      "convergence_after": [0.37, 0.38, 0.40]
+    },
+    {
+      "turn": 14,
+      "_note": "Countess Morvaine receives the inspector in the gallery. Her hands stay steady. Composed.",
+      "player_card": "suspect:countess_morvaine",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.39, 0.40, 0.42]
+    },
+    {
+      "turn": 15,
+      "_note": "Morvaine refers the provenance question back to her housekeeper. The detective notes it as deflection — toward Pelosi.",
+      "player_card": "emotion:polished_grace",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:evasive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "emotion:measured_deflection",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.41, 0.42, 0.44]
+    },
+    {
+      "turn": 16,
+      "_note": "Return to the servants' stair to test the door. The bolt is heavy; only the household carries the means.",
+      "player_card": "travel:to_servants_stair",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.43, 0.44, 0.46]
+    },
+    {
+      "turn": 17,
+      "_note": "The maid passes the stair again. The detective asks her who she saw on the landing. She names Pelosi.",
+      "player_card": "witness:palazzo_maid",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_palazzo_maid",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.46, 0.47, 0.48]
+    },
+    {
+      "turn": 18,
+      "_note": "The pigment sample on the gallery console — Marini left it. The detective notes the cadmium yellow but slots it as Pelosi's loose oversight.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:servants_stair",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.47, 0.48, 0.49]
+    },
+    {
+      "turn": 19,
+      "_note": "Cross to the studio. The forged canvas in the corner. The detective reads it as evidence of household labour — the housekeeper's authority over every door.",
+      "player_card": "travel:to_studio_room",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:forged_canvas",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:canal_mist_thickens",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.48, 0.49, 0.50]
+    },
+    {
+      "turn": 20,
+      "_note": "Marini's restoration notes. His query about the provenance gap. The detective skims and sets aside.",
+      "player_card": "object:restoration_notes",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.49, 0.50, 0.51]
+    },
+    {
+      "turn": 21,
+      "_note": "Morvaine arrives in the studio, gloves on. She offers to walk the inspector through the collection.",
+      "player_card": "suspect:countess_morvaine",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:restoration_notes",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.50, 0.51, 0.52]
+    },
+    {
+      "turn": 22,
+      "_note": "DEAD END for Morvaine. The detective tries the Countess on the provenance gap. She walks the chain through Pelosi's ledger and the line goes nowhere — the inspector dismisses it as a household accounting matter.",
+      "player_card": "object:provenance_file",
+      "scene": {
+        "LOCATION": "location:studio_room",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_countess_morvaine",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:provenance_file",
+        "TELL": "emotion:polished_grace",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.50, 0.51, 0.52]
+    },
+    {
+      "turn": 23,
+      "_note": "Cross to the courtyard. The maid waits with the lantern she saw burning at the body's hour.",
+      "player_card": "travel:to_courtyard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:pursued_suspicion",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:bell_tolls",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.51, 0.52, 0.53]
+    },
+    {
+      "turn": 24,
+      "_note": "Pelosi crosses the courtyard with linens. The detective stops her. Her face goes still.",
+      "player_card": "suspect:signora_pelosi",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:investigation",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.53, 0.54, 0.55]
+    },
+    {
+      "turn": 25,
+      "_note": "Pelosi is asked who unbolted the courtyard door. She does not answer. The silence is taken for confession.",
+      "player_card": "modifier:door_bolted",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.56, 0.57, 0.58]
+    },
+    {
+      "turn": 26,
+      "_note": "The night guard passes. He saw Pelosi cross the courtyard at midnight. The lantern was lit.",
+      "player_card": "witness:night_guard",
+      "scene": {
+        "LOCATION": "location:courtyard",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_night_guard",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.58, 0.59, 0.60]
+    },
+    {
+      "turn": 27,
+      "_note": "Cross to the canal entrance. The boatman saw a figure at the water-gate near one. Could not say whose.",
+      "player_card": "witness:canal_boatman",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_canal_boatman",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:gondola_passes",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.60, 0.61, 0.62]
+    },
+    {
+      "turn": 28,
+      "_note": "The canal key fits the water-gate. Pelosi has the duplicate. The detective reads the chain.",
+      "player_card": "object:canal_key",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.62, 0.63, 0.64]
+    },
+    {
+      "turn": 29,
+      "_note": "Recall: Pelosi named the salon late in the lock order. The half-second hesitation was the first tell.",
+      "player_card": "emotion:stiff_formality",
+      "scene": {
+        "LOCATION": "location:canal_entrance",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.64, 0.65, 0.66]
+    },
+    {
+      "turn": 30,
+      "_note": "Cross to the mirror gallery. The guest list, again. Pelosi's pencilled seating chart.",
+      "player_card": "object:guest_list",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:crossed_to",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:guest_list",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_gutters",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.65, 0.66, 0.67]
+    },
+    {
+      "turn": 31,
+      "_note": "The pigment sample once more. Cadmium yellow. The detective files it as Pelosi's careless mishandling of the studio.",
+      "player_card": "object:pigment_sample",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:authenticates",
+        "OBJECT_FOCUS": "object:pigment_sample",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.66, 0.67, 0.68]
+    },
+    {
+      "turn": 32,
+      "_note": "Bruno appears in the gallery. Procedural courtesy. He produces an old Milan file and offers it. The detective declines — wrong direction.",
+      "player_card": "suspect:inspector_bruno",
+      "scene": {
+        "LOCATION": "location:mirror_gallery",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_inspector_bruno",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:dead_end",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.67, 0.68, 0.69]
+    },
+    {
+      "turn": 33,
+      "_note": "Return to the private salon. The room where Pelosi paused. The detective sets up the confrontation here.",
+      "player_card": "travel:to_private_salon",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:none",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.68, 0.69, 0.70]
+    },
+    {
+      "turn": 34,
+      "_note": "Pelosi summoned. She sets the keys on the table without being asked. The detective takes it for surrender.",
+      "player_card": "suspect:signora_pelosi",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "emotion:stiff_formality",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:partial_match",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.70, 0.71, 0.72]
+    },
+    {
+      "turn": 35,
+      "_note": "Pelosi names every door she locked at midnight. The salon comes second this time. The order is wrong against the maid's account.",
+      "player_card": "modifier:door_bolted",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:hesitated",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:contradiction_surfaces",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.72, 0.73, 0.73]
+    },
+    {
+      "turn": 36,
+      "_note": "Recall: the bolt thrown from inside, the canal key on the lower landing, the salon door delayed. Three points of access. One housekeeper.",
+      "player_card": "modifier:door_bolted",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:recalls",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "emotion:stiff_formality",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:name_uncovered",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.74, 0.75, 0.74]
+    },
+    {
+      "turn": 37,
+      "_note": "Motive: thirty years of household resentment. Pelosi's previous masters. The detective writes it as a long grievance closing.",
+      "player_card": "motive:reputation_ruin",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:motive_emerges",
+        "BEAT": "beat:closing_in",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.75, 0.76, 0.75]
+    },
+    {
+      "turn": 38,
+      "_note": "Confrontation. The keys laid out on the salon table. The detective names the chain.",
+      "player_card": "object:canal_key",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "emotion:practised_dismay",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.76, 0.77, 0.76]
+    },
+    {
+      "turn": 39,
+      "_note": "Pelosi sits very still. Her hands stay clasped. The detective takes it for the closing of the case.",
+      "player_card": "emotion:stiff_formality",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:noticed_inconsistency",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "emotion:stiff_formality",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.76, 0.77, 0.76]
+    },
+    {
+      "turn": 40,
+      "_note": "Bell tolls. Dawn at the windows of the salon. The detective draws the chain together.",
+      "player_card": "object:canal_key",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:examines",
+        "OBJECT_FOCUS": "object:canal_key",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.76, 0.77, 0.76]
+    },
+    {
+      "turn": 41,
+      "_note": "Accusation. Pelosi. End of trajectory. Wrong.",
+      "player_card": "ACCUSE:suspect:signora_pelosi",
+      "scene": {
+        "LOCATION": "location:private_salon",
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:none",
+        "PRESENCE": "presence:with_signora_pelosi",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:dawn_approaches",
+        "REVELATION": "revelation:confirmation",
+        "BEAT": "beat:verdict_ready",
+        "ART_TELL": "art_tell:none"
+      },
+      "convergence_after": [0.76, 0.77, 0.76]
+    }
+  ],
+  "ending": {
+    "type": "wrong_accusation",
+    "accused": "suspect:signora_pelosi",
+    "final_convergence": [0.76, 0.77, 0.76]
+  }
+}

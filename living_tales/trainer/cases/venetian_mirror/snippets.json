@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "case_id": "venetian_mirror",
+  "_comment": "Reusable scene-tuple templates for trajectory authoring. Each snippet fixes 5-7 of the dim slots (the constants that define the scene type) and lists the slots the author must supply per use (the variables that distinguish one instance from another). Token IDs are drawn from cases/venetian_mirror/dimensions.json. The art_authentication_moment template is case-specific and uses the ART_TELL extension dimension defined for venetian_mirror.",
+
+  "snippets": {
+
+    "cold_object_examination": {
+      "description": "Detective alone with a single piece of evidence — a provenance card, a pigment sample, a torn glove, the bronze canal key. Cold, methodical inspection in the half-light of the gallery or the courtyard at dawn. No NPC pressure, no tell, no stance. Used for opening turns and quiet evidence beats between interviews.",
+      "template": {
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:examining_evidence",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:examines",
+        "TELL": "tell:none"
+      },
+      "fill_in_per_turn": ["LOCATION", "OBJECT_FOCUS", "ATMOSPHERE", "REVELATION", "BEAT"]
+    },
+
+    "first_witness_interview_cooperative": {
+      "description": "First contact with a household witness — gondolier, palazzo maid, night guard, canal boatman — who has no reason to lie. They give what they saw plainly within the small institutional rhythms of their role. The detective is questioning, the witness is open, the tell is steady. Use early in trajectory before any pressure has built.",
+      "template": {
+        "CAUSE": "cause:following_witness_lead",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:lantern_steady"
+      },
+      "fill_in_per_turn": ["LOCATION", "TRANSITION", "PRESENCE", "OBJECT_FOCUS", "REVELATION", "BEAT"]
+    },
+
+    "witness_reinterview_defensive": {
+      "description": "Returning to a suspect or witness already questioned, this time with a provenance file or a pigment analysis in hand. Their stance shifts to defensive; the rehearsed phrasing tightens. Use mid-game, second or third pass on a household member, after a contradiction has surfaced elsewhere.",
+      "template": {
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:noticed_inconsistency",
+        "STANCE": "stance:defensive",
+        "ACTION": "action:questions",
+        "TELL": "tell:tightened",
+        "BEAT": "beat:investigation"
+      },
+      "fill_in_per_turn": ["LOCATION", "PRESENCE", "OBJECT_FOCUS", "ATMOSPHERE", "REVELATION"]
+    },
+
+    "transition_pursuing_lead": {
+      "description": "A movement turn — the detective is in motion between rooms of the palazzo or down to the canal entrance, having just been pointed somewhere by witness or evidence. Brief, kinetic. Lantern light passes along the gallery; the scene proper begins next turn.",
+      "template": {
+        "TRANSITION": "transition:pursued_to",
+        "CAUSE": "cause:following_witness_lead",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:arrives",
+        "TELL": "tell:none",
+        "REVELATION": "revelation:none"
+      },
+      "fill_in_per_turn": ["LOCATION", "OBJECT_FOCUS", "ATMOSPHERE", "BEAT"]
+    },
+
+    "dead_end_witness": {
+      "description": "A witness has nothing useful — the night guard who did not look up, the gondolier who saw no one leave by water. Cooperative but uninformed. The lead closes here. Used to puncture momentum and force the detective back to the paintings.",
+      "template": {
+        "CAUSE": "cause:following_witness_lead",
+        "STANCE": "stance:cooperative",
+        "ACTION": "action:questions",
+        "TELL": "tell:none",
+        "REVELATION": "revelation:dead_end",
+        "ATMOSPHERE": "atmosphere:silence_holds"
+      },
+      "fill_in_per_turn": ["LOCATION", "TRANSITION", "PRESENCE", "OBJECT_FOCUS", "BEAT"]
+    },
+
+    "revelation_object_recognition": {
+      "description": "An object the detective has already seen — the provenance file, the auction catalogue, the canal key — suddenly resolves into meaning. Alone, looking at the same thing in a new light. Late investigation or closing-in beat. Pairs with name_uncovered or motive_emerges revelations.",
+      "template": {
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:recognized_object",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:discovers",
+        "TELL": "tell:none",
+        "ATMOSPHERE": "atmosphere:silence_holds"
+      },
+      "fill_in_per_turn": ["LOCATION", "OBJECT_FOCUS", "REVELATION", "BEAT"]
+    },
+
+    "confrontation_hostile": {
+      "description": "Direct accusation. The detective has the chain in hand — the matched silk fibre, the modern pigment, the Zurich receipt — and is putting it to the suspect across the gallery or in the private salon. The stance is hostile, the tell is sharp, the beat is closing_in or verdict_ready. Use sparingly — once or twice per trajectory.",
+      "template": {
+        "CAUSE": "cause:pursued_suspicion",
+        "STANCE": "stance:hostile",
+        "ACTION": "action:confronts",
+        "TELL": "tell:tightened",
+        "ATMOSPHERE": "atmosphere:silence_holds",
+        "BEAT": "beat:closing_in"
+      },
+      "fill_in_per_turn": ["LOCATION", "TRANSITION", "PRESENCE", "OBJECT_FOCUS", "REVELATION"]
+    },
+
+    "revisit_for_reframing": {
+      "description": "The detective returns to a room already visited — the mirror gallery, the studio room, the balcony — alone, to look at it again with the new context. Nothing dramatic — a quiet recasting of an earlier scene. Often produces a partial_match or contradiction_surfaces.",
+      "template": {
+        "TRANSITION": "transition:returned",
+        "CAUSE": "cause:revisiting_scene",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:recalls",
+        "TELL": "tell:none",
+        "BEAT": "beat:investigation"
+      },
+      "fill_in_per_turn": ["LOCATION", "OBJECT_FOCUS", "ATMOSPHERE", "REVELATION"]
+    },
+
+    "atmospheric_interlude": {
+      "description": "A low-activity beat. Canal water slaps against the water-gate; somewhere a guttered lantern hisses out. Time passes; the palazzo breathes around the detective. Minimal scene activity, no revelation, no NPC. Used to mark act breaks, hour changes, or simply to give the prose a place to rest. One or two per trajectory.",
+      "template": {
+        "TRANSITION": "transition:stayed",
+        "CAUSE": "cause:chronological_drift",
+        "PRESENCE": "presence:alone",
+        "STANCE": "stance:none",
+        "ACTION": "action:waits",
+        "OBJECT_FOCUS": "object_focus:none",
+        "TELL": "tell:none",
+        "REVELATION": "revelation:none"
+      },
+      "fill_in_per_turn": ["LOCATION", "ATMOSPHERE", "BEAT"]
+    },
+
+    "art_authentication_moment": {
+      "description": "Case-specific snippet. The detective auscultates the artwork rather than questioning a person — examines a painting, a provenance card, a frame, a pigment scraping with the slow attention of a conservator. The ART_TELL slot carries the forgery indicator (provenance_gap, varnish_inconsistency, brushwork_mismatch, frame_anomaly, catalog_omission, authenticity_holds). The action is action:authenticates; the cause is cause:examining_provenance. Often unmasks a contradiction with what a suspect has just claimed; pairs with contradiction_surfaces or partial_match. Use once per painting under suspicion per trajectory.",
+      "template": {
+        "CAUSE": "cause:examining_provenance",
+        "ACTION": "action:authenticates",
+        "STANCE": "stance:defensive",
+        "ATMOSPHERE": "atmosphere:lantern_steady",
+        "BEAT": "beat:investigation"
+      },
+      "fill_in_per_turn": ["LOCATION", "TRANSITION", "PRESENCE", "OBJECT_FOCUS", "ART_TELL", "TELL", "REVELATION"]
+    }
+
+  }
+}
